@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 54754C0E-A974-3B56-A19C-C779D9FA21D0' ]
-platform:        macosx
+uuids:           [ 'x86_64: FCCA67FE-325C-3A7E-81F9-ABADD46B8FE4', 'x86_64: FCCA67FE-325C-3A7E-81F9-ABADD46B8FE4' ]
+platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DeviceManagement.framework/Versions/A/DeviceManagement'
-current-version: 30.86
+current-version: 32.4
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst' ]
@@ -108,11 +108,11 @@ exports:
                        _DMFErrorWithCodeAndUserInfo, _DMFHighestPolicyPriority, _DMFInterfaceOrientationIsValid, 
                        _DMFInvalidParameterErrorKey, _DMFInvalidPropertyErrorKey, 
                        _DMFItemNameErrorKey, _DMFItemPathErrorKey, _DMFLowestPolicyPriority, 
-                       _DMFMachServiceName, _DMFObjectDescription, _DMFObjectDescriptionWithProperties, 
-                       _DMFPersonalHotspotLog, _DMFPolicyLog, _DMFPolicyMachServiceName, 
-                       _DMFPolicyUnlocalizedDisplayName, _DMFProfileIdentifierErrorKey, 
-                       _DMFRMEchoStatusFail, _DMFRMEchoStatusOK, _DMFRMEchoStatusPending, 
-                       _DMFReportingRequirementsUpdateCoalescenceIntervalDefault, 
+                       _DMFMachServiceName, _DMFOSUpdateLog, _DMFObjectDescription, 
+                       _DMFObjectDescriptionWithProperties, _DMFPersonalHotspotLog, 
+                       _DMFPolicyLog, _DMFPolicyMachServiceName, _DMFPolicyUnlocalizedDisplayName, 
+                       _DMFProfileIdentifierErrorKey, _DMFRMEchoStatusFail, _DMFRMEchoStatusOK, 
+                       _DMFRMEchoStatusPending, _DMFReportingRequirementsUpdateCoalescenceIntervalDefault, 
                        _DMFSecuirtySupportsFileLevelEncryptionKey, _DMFSecurityFirewallSettingsKey, 
                        _DMFSecurityFirmwarePasswordStatusKey, _DMFSecurityFullDiskEncryptionEnabledKey, 
                        _DMFSecurityFullDiskEncryptionHasInstitutionalRecoveryKey, 
@@ -200,10 +200,10 @@ exports:
                        DMFWebsitePolicyMonitor, DMFiCloudPolicyMonitor ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F1B42AF0-28D6-30BD-8DBD-34274BB4EC41', 'x86_64: F1B42AF0-28D6-30BD-8DBD-34274BB4EC41' ]
+uuids:           [ 'x86_64: 37642E5D-B54B-310A-A302-77F796415F00', 'x86_64: 37642E5D-B54B-310A-A302-77F796415F00' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst'
-current-version: 6
+current-version: 6.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CATAssertIsNotQueue, _CATAssertIsQueue, _CATErrorDomain, 

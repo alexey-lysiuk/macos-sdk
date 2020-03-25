@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C380FF1E-965E-3F05-BDCF-BB9EAC7F7B74' ]
+uuids:           [ 'x86_64: A46D4D00-6251-302B-9A4A-3A930855BC1F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleVA.framework/Versions/A/AppleVA'
 current-version: 5.1.1

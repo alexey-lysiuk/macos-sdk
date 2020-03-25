@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 75BBAE06-7360-3291-A4E6-71DE9F38772D', 'x86_64: 75BBAE06-7360-3291-A4E6-71DE9F38772D' ]
+uuids:           [ 'x86_64: 939499D5-179D-380F-82D2-E5CFF566CC8E', 'x86_64: 939499D5-179D-380F-82D2-E5CFF566CC8E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppSSO.framework/Versions/A/AppSSO'
 exports:         

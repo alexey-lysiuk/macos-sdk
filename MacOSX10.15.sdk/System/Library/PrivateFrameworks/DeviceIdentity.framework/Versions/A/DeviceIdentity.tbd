@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E137A1FF-37D9-3BDA-BED5-08584232F3C2', 'x86_64: E137A1FF-37D9-3BDA-BED5-08584232F3C2' ]
+uuids:           [ 'x86_64: 5476D0B4-DC0A-3B12-8975-CD1242919116', 'x86_64: 5476D0B4-DC0A-3B12-8975-CD1242919116' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DeviceIdentity.framework/Versions/A/DeviceIdentity'
 current-version: 0

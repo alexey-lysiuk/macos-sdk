@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0EB567E1-C4F4-3976-9DB9-BEF7F92D3C89', 'x86_64: 0EB567E1-C4F4-3976-9DB9-BEF7F92D3C89' ]
+uuids:           [ 'x86_64: 8EE651B7-9ACC-30FE-822D-C2BD0FFCF472', 'x86_64: 8EE651B7-9ACC-30FE-822D-C2BD0FFCF472' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreHandwriting.framework/Versions/A/CoreHandwriting'
 current-version: 0

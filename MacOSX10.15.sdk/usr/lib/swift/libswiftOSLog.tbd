@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C4F5D770-E000-3C41-AC9F-1762B76A4658', 'x86_64: C4F5D770-E000-3C41-AC9F-1762B76A4658' ]
+uuids:           [ 'x86_64: 54396A65-0F04-339B-B794-767DC1201F2C', 'x86_64: 54396A65-0F04-339B-B794-767DC1201F2C' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftOSLog.dylib'
 current-version: 0

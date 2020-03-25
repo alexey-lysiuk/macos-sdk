@@ -132,8 +132,8 @@ typedef struct ledger                   *ledger_t;
 typedef struct alarm                    *alarm_t;
 typedef struct clock                    *clock_serv_t;
 typedef struct clock                    *clock_ctrl_t;
-
 typedef struct arcade_register          *arcade_register_t;
+typedef struct suid_cred               *suid_cred_t;
 
 /*
  * OBSOLETE: lock_set interfaces are obsolete.
@@ -153,8 +153,8 @@ struct semaphore;
 struct ledger;
 struct alarm;
 struct clock;
-
 struct arcade_register;
+struct suid_cred;
 
 __END_DECLS
 
@@ -226,6 +226,8 @@ typedef exception_handler_t     exception_port_t;
 typedef exception_handler_array_t exception_port_arrary_t;
 typedef char vfs_path_t[4096];
 typedef char nspace_path_t[1024]; /* 1024 == PATH_MAX */
+typedef char suid_cred_path_t[1024];
+typedef uint32_t suid_cred_uid_t;
 
 #define TASK_NULL               ((task_t) NULL)
 #define TASK_NAME_NULL          ((task_name_t) NULL)
@@ -249,6 +251,7 @@ typedef char nspace_path_t[1024]; /* 1024 == PATH_MAX */
 #define CLOCK_NULL              ((clock_t) NULL)
 #define UND_SERVER_NULL         ((UNDServerRef) NULL)
 #define ARCADE_REG_NULL         ((arcade_register_t) NULL)
+#define SUID_CRED_NULL         ((suid_cred_t) NULL)
 
 /* DEPRECATED */
 typedef natural_t       ledger_item_t;

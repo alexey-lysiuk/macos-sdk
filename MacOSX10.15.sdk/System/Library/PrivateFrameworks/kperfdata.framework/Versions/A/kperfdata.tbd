@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7AD80C00-E60E-383A-9C15-04C63A9943DF', 'x86_64: 7AD80C00-E60E-383A-9C15-04C63A9943DF' ]
+uuids:           [ 'x86_64: 98516239-EEE9-3415-AA2B-339F06D4F1FB', 'x86_64: 98516239-EEE9-3415-AA2B-339F06D4F1FB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/kperfdata.framework/Versions/A/kperfdata'
 exports:         

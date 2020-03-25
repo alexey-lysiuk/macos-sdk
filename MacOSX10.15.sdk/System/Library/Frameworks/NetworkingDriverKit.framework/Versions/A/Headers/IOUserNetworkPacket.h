@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOUserNetworkPacket.iig */
+/* iig(DriverKit-73.100.4) generated from IOUserNetworkPacket.iig */
 
-/* IOUserNetworkPacket.iig:1-35 */
+/* IOUserNetworkPacket.iig:1-26 */
 #ifndef _IOUSERNETWORKPACKET_IIG
 #define _IOUSERNETWORKPACKET_IIG
 
@@ -27,16 +27,71 @@ struct IOUserNetworkPacketState {
     uint8_t  linkHeaderLength;
 } __attribute__((packed));
 
+/* source class IOUserNetworkPacket IOUserNetworkPacket.iig:27-86 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
-@iig implementation
-#if KERNEL
-#include <IOSkywalkFamily/IOSkywalkNetworkPacket.h>
-#include <NetworkingDriverKit/IOUserNetworkPacket_kext.h>
-#endif
-@iig end
 */
 
-/* class IOUserNetworkPacket IOUserNetworkPacket.iig:36-86 */
+class KERNEL IOUserNetworkPacket : public OSObject
+{
+public:
+    virtual bool
+    init() override;
+
+    virtual void
+    free() override;
+
+    virtual kern_return_t
+    SetDataLength(uint32_t length) LOCALONLY;
+
+    virtual kern_return_t
+    GetDataLength(uint32_t * length) const LOCALONLY;
+
+    virtual kern_return_t
+    SetDataOffset(uint16_t offset) LOCALONLY;
+
+    virtual kern_return_t
+    GetDataOffset(uint16_t * offset) const LOCALONLY;
+
+    virtual kern_return_t
+    SetHeadroom(uint8_t headroom) LOCALONLY;
+
+    virtual kern_return_t
+    GetHeadroom(uint8_t * headroom) const LOCALONLY;
+
+    virtual kern_return_t
+    SetLinkHeaderLength(uint8_t length) LOCALONLY;
+
+    virtual kern_return_t
+    GetLinkHeaderLength(uint8_t * length) const LOCALONLY;
+
+    virtual kern_return_t
+    GetMemorySegmentOffset(uint64_t * offset) const LOCALONLY;
+
+    virtual kern_return_t
+    GetPacketBufferPool(
+        IOUserNetworkPacketBufferPool ** pool) const LOCALONLY;
+
+    virtual kern_return_t
+    PrepareWithQueue(
+        IOUserNetworkPacketQueue * queue,
+        IOUserNetworkPacketDirection direction,
+        const IOUserNetworkPacketState * state) LOCALONLY;
+
+    virtual kern_return_t
+    CompleteWithQueue(
+        IOUserNetworkPacketQueue * queue,
+        IOUserNetworkPacketDirection direction,
+        IOUserNetworkPacketState * state) LOCALONLY;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOUserNetworkPacket IOUserNetworkPacket.iig:27-86 */
 
 
 #define IOUserNetworkPacket_Methods \
@@ -250,6 +305,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 
 /* IOUserNetworkPacket.iig:104- */

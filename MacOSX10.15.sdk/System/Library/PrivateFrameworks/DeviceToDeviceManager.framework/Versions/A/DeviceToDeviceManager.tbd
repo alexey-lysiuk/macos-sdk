@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CD09E79D-7C5D-3D03-BA7F-67A3E7834974', 'x86_64: CD09E79D-7C5D-3D03-BA7F-67A3E7834974' ]
+uuids:           [ 'x86_64: 811B68D6-C97C-3224-9843-45FAD5462E76', 'x86_64: 811B68D6-C97C-3224-9843-45FAD5462E76' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DeviceToDeviceManager.framework/Versions/A/DeviceToDeviceManager'
 current-version: 38

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4525DC61-0B5B-33B2-A249-68C6A1267EE7', 'x86_64: 4525DC61-0B5B-33B2-A249-68C6A1267EE7' ]
+uuids:           [ 'x86_64: 302226E1-87E3-34D2-87E8-F6CEF6B8EC71', 'x86_64: 302226E1-87E3-34D2-87E8-F6CEF6B8EC71' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText'
 exports:         

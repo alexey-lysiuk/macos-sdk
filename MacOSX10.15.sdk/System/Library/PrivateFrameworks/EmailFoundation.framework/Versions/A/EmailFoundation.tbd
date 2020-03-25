@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C361C3BA-EE7C-3483-953E-2EC0D52B4028', 'x86_64: C361C3BA-EE7C-3483-953E-2EC0D52B4028' ]
+uuids:           [ 'x86_64: DDC3A5DE-5B3F-3AEE-B8E8-786B10B75B2F', 'x86_64: DDC3A5DE-5B3F-3AEE-B8E8-786B10B75B2F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmailFoundation.framework/Versions/A/EmailFoundation'
-current-version: 3601.0.10
+current-version: 3608.80.23
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EFArraysAreEqual, _EFAtomicObjectLoad, _EFAtomicObjectRelease, 
@@ -13,11 +13,11 @@ exports:
                        _EFContentProtectionSimulateState, _EFDecodeCacheableInstance, 
                        _EFDefaultsKeyLogWithPII, _EFDeviceUnlockedSinceBoot, _EFEmailMessageUTType, 
                        _EFEncodeCacheableInstance, _EFErrorDomain, _EFFetchSignpostLog, 
-                       _EFFrameworkVersion, _EFIsNotNull, _EFIsNull, _EFIsSeedBuild, 
-                       _EFMurmurHash3Mix, _EFObjectsAreEqual, _EFPriorityDesignatorKey, 
-                       _EFProductName, _EFProtectedDataAvailable, _EFPublicErrorInfoKey, 
-                       _EFRegisterContentProtectionObserver, _EFRoundUnsignedInteger, 
-                       _EFSQLSchemaColumnNameRowID, _EFSQLSchemaDatabaseNameMain, 
+                       _EFFrameworkVersion, _EFHEICImageUTType, _EFIsNotNull, _EFIsNull, 
+                       _EFIsSeedBuild, _EFLogRegisterStateCaptureBlock, _EFMurmurHash3Mix, 
+                       _EFObjectsAreEqual, _EFPriorityDesignatorKey, _EFProductName, 
+                       _EFProtectedDataAvailable, _EFPublicErrorInfoKey, _EFRegisterContentProtectionObserver, 
+                       _EFRoundUnsignedInteger, _EFSQLSchemaColumnNameRowID, _EFSQLSchemaDatabaseNameMain, 
                        _EFSQLStringForCollation, _EFSQLStringForConflictResolution, 
                        _EFSQLStringForOrderDirection, _EFSQLVerboseDebugLoggingEnabled, 
                        _EFSQLiteErrorDomain, _EFSQLiteExtendedErrorCodeKey, _EFSaveTailspin, 

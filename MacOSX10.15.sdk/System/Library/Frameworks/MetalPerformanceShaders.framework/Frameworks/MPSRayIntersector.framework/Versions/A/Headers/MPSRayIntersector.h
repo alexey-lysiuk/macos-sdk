@@ -195,36 +195,44 @@ typedef NS_ENUM(NSUInteger, MPSRayMaskOperator) {
     MPSRayMaskOperatorNotOr = 3,
 
     /**
-     * @brief Accept the intersection if (primitive mask ^ ray mask) != 0. Note that this is
-     * equivalent to the "!=" operator.
+     * @brief Accept the intersection if (primitive mask ^ ray mask) != 0.
      */
     MPSRayMaskOperatorXor = 4,
 
     /**
-     * @brief Accept the intersection if ~(primitive mask ^ ray mask) != 0. Note that this is
-     * equivalent to the "==" operator.
+     * @brief Accept the intersection if ~(primitive mask ^ ray mask) != 0.
      */
     MPSRayMaskOperatorNotXor = 5,
 
     /**
-     * @brief Accept the intersection if (primitive mask < ray mask) != 0.
+     * @brief Accept the intersection if primitive mask < ray mask.
      */
     MPSRayMaskOperatorLessThan = 6,
 
     /**
-     * @brief Accept the intersection if (primitive mask <= ray mask) != 0.
+     * @brief Accept the intersection if primitive mask <= ray mask.
      */
     MPSRayMaskOperatorLessThanOrEqualTo = 7,
 
     /**
-     * @brief Accept the intersection if (primitive mask > ray mask) != 0.
+     * @brief Accept the intersection if primitive mask > ray mask.
      */
     MPSRayMaskOperatorGreaterThan = 8,
 
     /**
-     * @brief Accept the intersection if (primitive mask >= ray mask) != 0.
+     * @brief Accept the intersection if primitive mask >= ray mask.
      */
     MPSRayMaskOperatorGreaterThanOrEqualTo = 9,
+
+    /**
+     * @brief Accept the intersection if primitive mask == ray mask.
+     */
+    MPSRayMaskOperatorEqual MPS_ENUM_AVAILABLE_STARTING(macos(10.15.4), ios(13.4), macCatalyst(13.4), tvos(13.4)) = 10,
+
+    /**
+     * @brief Accept the intersection if primitive mask != ray mask.
+     */
+    MPSRayMaskOperatorNotEqual MPS_ENUM_AVAILABLE_STARTING(macos(10.15.4), ios(13.4), macCatalyst(13.4), tvos(13.4)) = 11,
 } MPS_ENUM_AVAILABLE_STARTING(macos(10.15), ios(13.0), macCatalyst(13.0), tvos(13.0));
 
 /**

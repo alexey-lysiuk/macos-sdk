@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 5FE15AFE-A0BE-3DF7-9E90-1BB6485AEA0A', 'x86_64: 5FE15AFE-A0BE-3DF7-9E90-1BB6485AEA0A', 
-                   'x86_64h: 2809F8D6-7B13-3703-B266-C5B7A6B62D97', 'x86_64h: 2809F8D6-7B13-3703-B266-C5B7A6B62D97' ]
+uuids:           [ 'x86_64: A3A69400-1E28-3E29-9E3C-9CEA76254318', 'x86_64: A3A69400-1E28-3E29-9E3C-9CEA76254318', 
+                   'x86_64h: EDAA3E6B-6D65-3807-86C2-91736BC0AF88', 'x86_64h: EDAA3E6B-6D65-3807-86C2-91736BC0AF88' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO'
 exports:         

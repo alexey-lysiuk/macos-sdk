@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AD3D80AD-FF50-3652-B42B-A26030249CDF', 'x86_64: AD3D80AD-FF50-3652-B42B-A26030249CDF' ]
+uuids:           [ 'x86_64: 3A485687-23E8-3C53-83B0-1AA9625DCD37', 'x86_64: 3A485687-23E8-3C53-83B0-1AA9625DCD37' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/libTrueTypeScaler.dylib'
 exports:         

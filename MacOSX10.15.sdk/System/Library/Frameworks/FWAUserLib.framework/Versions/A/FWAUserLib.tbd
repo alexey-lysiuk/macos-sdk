@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D71F9044-9FFF-3E10-A8EC-1C92CF531801' ]
+uuids:           [ 'x86_64: 9F1F37D9-FA29-36CB-8A05-1DB66B2769EB' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/FWAUserLib.framework/Versions/A/FWAUserLib'
 exports:         

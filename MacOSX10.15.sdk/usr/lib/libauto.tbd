@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F4B3519A-A4FC-30E0-805C-70C99BA3FDDA' ]
+uuids:           [ 'x86_64: FD0E5750-7004-36A7-B9C2-D6B6B4EF559B' ]
 platform:        macosx
 install-name:    '/usr/lib/libauto.dylib'
 exports:         

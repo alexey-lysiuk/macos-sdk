@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2114563E-8A23-3E38-ACA8-DDF35F37DA9B', 'x86_64: 2114563E-8A23-3E38-ACA8-DDF35F37DA9B' ]
+uuids:           [ 'x86_64: 067FB315-C417-3222-9B6F-8C5AB9B7C287', 'x86_64: 067FB315-C417-3222-9B6F-8C5AB9B7C287' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/LatentSemanticMapping.framework/Versions/A/LatentSemanticMapping'
 current-version: 2.12.5

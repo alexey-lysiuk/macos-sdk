@@ -168,6 +168,15 @@ typedef NS_ENUM(NSInteger, LACredentialType)
     ///             When entered from the LocalAuthentication user interface, the password is stored as
     ///             UTF-8 encoded string.
     LACredentialTypeApplicationPassword = kLACredentialTypeApplicationPassword,
+    
+    /// Smart card PIN provided by application
+    ///
+    /// @discussion If not set, LocalAuthentication will ask users for the smart card PIN when necessary.
+    ///             Applications can provide the PIN using setCredential method. In such case,
+    ///             LocalAuthentication will not show the smart card PIN user interface.
+    ///             When entered from the LocalAuthentication user interface, the PIN is stored as
+    ///             UTF-8 encoded string.
+    LACredentialTypeSmartCardPIN API_AVAILABLE(macos(10.15.4), ios(13.4), watchos(6.2), tvos(13.4)) = kLACredentialSmartCardPIN,
 } API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0), tvos(10.0));
 
 /// Sets a credential to this context.

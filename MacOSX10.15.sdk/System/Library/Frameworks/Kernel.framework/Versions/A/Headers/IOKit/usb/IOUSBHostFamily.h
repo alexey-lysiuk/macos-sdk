@@ -105,6 +105,8 @@
 #include <IOKit/usb/StandardUSB.h>
 #include <IOKit/usb/IOUSBHostFamilyDefinitions.h>
 
+#define __IOUSBHOSTFAMILY_DEPRECATED __kpi_deprecated("Use USBDriverKit")
+
 #pragma mark Typedefs
 
 typedef uint16_t tUSBHostDeviceAddress;
@@ -182,7 +184,7 @@ enum
  * @enum tInternalUSBHostConnectionSpeed
  * @brief Connection speeds used internally by IOUSBHostFamily
  */
-enum
+enum tInternalUSBHostConnectionSpeed
 {
     kUSBHostConnectionSpeedLow          = 0,
     kUSBHostConnectionSpeedFull         = 1,

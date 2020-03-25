@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9C2A5DA1-5769-30AD-ACF1-E3EE0D064A07' ]
+uuids:           [ 'x86_64: 21948311-BE46-3749-9150-DE1CC0E6606A' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/PDFKit.framework/Versions/A/PDFKit'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 97C53944-75C4-375C-B124-FCCB4068A9A2' ]
+uuids:           [ 'x86_64: D5CE22EC-9C9A-3A15-B2E8-134D50905AEF' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/InstantMessage.framework/Versions/A/InstantMessage'
 current-version: 800

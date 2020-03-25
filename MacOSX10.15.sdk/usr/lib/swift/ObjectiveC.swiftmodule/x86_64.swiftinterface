@@ -1,14 +1,19 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftObjectiveC -swift-version 5 -O -enforce-exclusivity=unchecked -disable-objc-attr-requires-foundation-module -module-name ObjectiveC
 @_exported import ObjectiveC
 import Swift
 import _SwiftObjectiveCOverlayShims
 @frozen public struct ObjCBool : Swift.ExpressibleByBooleanLiteral {
+  @usableFromInline
   internal var _value: Swift.Int8
-  public init(_ value: Swift.Bool)
-  public var boolValue: Swift.Bool {
-    get
+  @_transparent public init(_ value: Swift.Bool) {
+    self._value = value ? 1 : 0
+  }
+  @_transparent public var boolValue: Swift.Bool {
+    @_transparent get {
+    return _value != 0
+  }
   }
   @_transparent public init(booleanLiteral value: Swift.Bool) {
     self.init(value)
@@ -25,8 +30,12 @@ extension ObjCBool : Swift.CustomStringConvertible {
     get
   }
 }
-public func _convertBoolToObjCBool(_ x: Swift.Bool) -> ObjectiveC.ObjCBool
-public func _convertObjCBoolToBool(_ x: ObjectiveC.ObjCBool) -> Swift.Bool
+@_transparent public func _convertBoolToObjCBool(_ x: Swift.Bool) -> ObjectiveC.ObjCBool {
+  return ObjCBool(x)
+}
+@_transparent public func _convertObjCBoolToBool(_ x: ObjectiveC.ObjCBool) -> Swift.Bool {
+  return x.boolValue
+}
 @frozen public struct Selector : Swift.ExpressibleByStringLiteral {
   internal var ptr: Swift.OpaquePointer
   public init(_ str: Swift.String)

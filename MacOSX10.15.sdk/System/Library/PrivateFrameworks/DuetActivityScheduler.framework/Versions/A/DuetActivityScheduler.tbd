@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D97B344-9B01-3D36-9AEC-395AE11413AE', 'x86_64: 0D97B344-9B01-3D36-9AEC-395AE11413AE' ]
+uuids:           [ 'x86_64: 9E7A184D-142D-39C2-802B-A1B5EEF67738', 'x86_64: 9E7A184D-142D-39C2-802B-A1B5EEF67738' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DuetActivityScheduler.framework/Versions/A/DuetActivityScheduler'
 exports:         

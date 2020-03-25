@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D50ECA7B-550E-3FD3-829B-010725740191' ]
+uuids:           [ 'x86_64: 05D230F7-E3F4-35E1-89A5-1A80CDFD70FE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FindMyDevice.framework/Versions/A/FindMyDevice'
 exports:         
@@ -24,8 +24,8 @@ exports:
                        _kFindMyDeviceIdentityXPCInterfaceErrorDomain, _kLostModeChangedNotification, 
                        _kStopLostModeAlarmNotification ]
     objc-classes:    [ FMDAccessoryIdentifier, FMDActivationLockContext, FMDActivationLockInfo, 
-                       FMDBAAAttestation, FMDDeviceIdentityFactory, FMDEraseProxy, 
-                       FMDFMMAccountInfo, FMDFMMManager, FMDIdentitySigningRequest, 
+                       FMDBAAAttestation, FMDDeviceIdentityFactory, FMDEraseOptions, 
+                       FMDEraseProxy, FMDFMMAccountInfo, FMDFMMManager, FMDIdentitySigningRequest, 
                        FMDVolatileMetaDataRecord, FMNSXPCConnection, FMNSXPCConnectionCache, 
                        FMNSXPCConnectionConfiguration ]
 ...

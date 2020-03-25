@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9375FE72-EBBE-3027-A518-7D91F3D6BB81' ]
+uuids:           [ 'x86_64: 22DB2302-9502-3E6D-9BA0-8A02E4B6943D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleAppSupport.framework/Versions/A/AppleAppSupport'
 current-version: 1.4

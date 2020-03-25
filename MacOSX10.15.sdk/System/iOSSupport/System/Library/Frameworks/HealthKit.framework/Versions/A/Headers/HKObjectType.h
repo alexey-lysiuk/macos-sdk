@@ -69,7 +69,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @property      isMaximumDurationRestricted
  @abstract      Returns YES if the start and end date for samples of this type are restricted by a maximum duration.
  */
-@property (nonatomic, readonly) BOOL isMaximumDurationRestricted;
+@property (nonatomic, readonly) BOOL isMaximumDurationRestricted API_AVAILABLE(ios(13.0), watchos(6.0));
 
 /*!
  @property      maximumAllowedDuration
@@ -77,13 +77,13 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 calculated as the difference between end and start dates.
  @discussion    Throws an exception if there is no maximum restriction on duration for samples of this type.
  */
-@property (nonatomic, readonly) NSTimeInterval maximumAllowedDuration;
+@property (nonatomic, readonly) NSTimeInterval maximumAllowedDuration API_AVAILABLE(ios(13.0), watchos(6.0));
 
 /*!
  @property      isMinimumDurationRestricted
  @abstract      Returns YES if the start and end date for samples of this type are restricted by a minimum duration.
  */
-@property (nonatomic, readonly) BOOL isMinimumDurationRestricted;
+@property (nonatomic, readonly) BOOL isMinimumDurationRestricted API_AVAILABLE(ios(13.0), watchos(6.0));
 
 /*!
  @property      minimumAllowedDuration
@@ -91,7 +91,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 calculated as the difference between end and start dates.
  @discussion    Throws an exception if there is no minimum restriction on duration for samples of this type.
  */
-@property (nonatomic, readonly) NSTimeInterval minimumAllowedDuration;
+@property (nonatomic, readonly) NSTimeInterval minimumAllowedDuration API_AVAILABLE(ios(13.0), watchos(6.0));
 
 @end
 

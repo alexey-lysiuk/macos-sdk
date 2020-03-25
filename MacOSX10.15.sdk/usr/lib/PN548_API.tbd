@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 73052149-F591-3C42-953A-FAF9D4B10816' ]
+uuids:           [ 'x86_64: 3BA2C1A1-4058-3D94-96B6-67A7BF54FC94' ]
 platform:        macosx
 install-name:    '/usr/lib/PN548_API.dylib'
 exports:         
@@ -8,7 +8,8 @@ exports:
     symbols:         [ _GetManifestQuery_P73, _GetPresenceOfAttackLog, _NFCallbackMutexCreate, 
                        _NFCallbackMutexRelease, _NFCallbackMutexRetain, _NFCallbackMutexSetTimeout, 
                        _NFCallbackMutexSignal, _NFCallbackMutexWait, _NFDriverChangeDynamicTransitRFSettings, 
-                       _NFDriverClose, _NFDriverConfigureExpressFelicaEntry, _NFDriverConfigureReaderModeRFForCathaySigned, 
+                       _NFDriverChangeReaderModeDynamicRFSetting, _NFDriverClose, 
+                       _NFDriverConfigureExpressFelicaEntry, _NFDriverConfigureReaderModeRFForCathaySigned, 
                        _NFDriverConfigureReaderModeRFForMercurySigned, _NFDriverConfigureReaderModeRFForTransitPartner, 
                        _NFDriverCreateErrorCode, _NFDriverDebugFailedHW, _NFDriverDisableHeadlessModeMiniNV, 
                        _NFDriverDumpLPMDebugLog, _NFDriverDumpUART, _NFDriverEnableFelicaTxEndPatternV2, 
@@ -56,6 +57,6 @@ exports:
                        _NFDriverTriggerDelayedWake, _NFDriverUARTDebugLastMessage, 
                        _NFDriverUnloadStack, _NFDriverUpdateFirmware, _UnlockRequestInfo, 
                        __Async_NFDriverIoCtl, __Async_NFDriverSetNfccParams, __Callback_NFDriverRemoteDevGetMiFareInfo, 
-                       __NFDriverHasMFW, __NFDriverSetRFSettings, __NFDriverSetStandbyMode, 
-                       _gPN548_API_logv, _nfc_err ]
+                       __NFDriverHasMFW, __NFDriverIsRestoreOS, __NFDriverSetRFSettings, 
+                       __NFDriverSetStandbyMode, _gPN548_API_logv, _nfc_err ]
 ...

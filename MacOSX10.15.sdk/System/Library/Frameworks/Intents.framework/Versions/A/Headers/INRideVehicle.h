@@ -2,7 +2,7 @@
 //  INRideVehicle.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,7 +11,7 @@
 @class INImage;
 
 API_AVAILABLE(ios(10.0), watchos(3.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INRideVehicle : NSObject <NSCopying, NSSecureCoding>
 
 @property (readwrite, copy, nullable, NS_NONATOMIC_IOSONLY) CLLocation *location; // The course of this location is significant; see below.

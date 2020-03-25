@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A248E6A3-11D2-3C48-8681-7F27F3F79820' ]
+uuids:           [ 'x86_64: 8321FAB1-071D-366E-A88F-4E8600D4A346' ]
 platform:        macosx
 install-name:    '/usr/lib/libXSEvent.dylib'
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BD24F310-41FD-3736-9E4E-59CFB94F76D2' ]
+uuids:           [ 'x86_64: 79C5CE2C-1BE7-394C-8DAE-A0FBA6281A48' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/ShareSheet.framework/Versions/A/ShareSheet'
-current-version: 1496.4
+current-version: 1526.14
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ShareSheetVersionNumber, _ShareSheetVersionString, _UIActivityTypeAddToReadingList, 
@@ -18,10 +18,12 @@ exports:
                        _UIActivityTypeRemoteOpenInApplicationUsingInPlaceOpeningMethod, 
                        _UIActivityTypeRunWorkflow, _UIActivityTypeSaveToCameraRoll, 
                        _UIActivityTypeSaveToNotes, _UIActivityTypeUserDefaults, _UIActivityTypeViewInAR, 
-                       _UIActivityViewControllerSharingExpandedNotification, __ShareSheetBundle, 
-                       __ShareSheetBundleIDFromAuditToken, __SharingUIAuditTokenForCurrentProcess, 
-                       __UIActivityOpenInApplicationTypeForActivityType, __UIActivityRecipientManagerServiceName, 
-                       __UIActivityUserDefaultsManagerServiceName, __UIApplicationExtensionDiscoveryShouldExcludeiCloudDriveForActivityItemURLs, 
+                       _UIActivityViewControllerSharingExpandedNotification, _UINSFromUIActivityCategory, 
+                       _UINSFromUIActivityViewControllerSharingStyle, __ShareSheetBundle, 
+                       __ShareSheetBundleIDFromAuditToken, __ShareSheetCurrentDeviceClass, 
+                       __SharingUIAuditTokenForCurrentProcess, __UIActivityOpenInApplicationTypeForActivityType, 
+                       __UIActivityRecipientManagerServiceName, __UIActivityUserDefaultsManagerServiceName, 
+                       __UIApplicationExtensionDiscoveryShouldExcludeiCloudDriveForActivityItemURLs, 
                        __UIKitUserDefaults, __UINSExtensionItemUserInfoIsContentManagedKey, 
                        __UISecureDecodeCGSizeWithKeyAndDefaultSize, __UISecureDecodeExtensionItemsWithKey, 
                        __UISecureEncodeCGSizeWithKey, __UISecureStandardPropertyListClasses, 

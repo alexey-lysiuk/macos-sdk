@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftDispatch -swift-version 5 -O -enforce-exclusivity=unchecked -module-name Dispatch
 import Combine
 @_exported import Dispatch
@@ -102,7 +102,7 @@ public struct DispatchWorkItemFlags : Swift.OptionSet, Swift.RawRepresentable {
   public typealias ArrayLiteralElement = Dispatch.DispatchWorkItemFlags
   public typealias RawValue = Swift.UInt
 }
-@available(OSX 10.10, iOS 8.0, *)
+@_hasMissingDesignatedInitializers @available(OSX 10.10, iOS 8.0, *)
 @_objcRuntimeName(_TtC8Dispatch17_DispatchWorkItem) public class DispatchWorkItem {
   public init(qos: Dispatch.DispatchQoS = .unspecified, flags: Dispatch.DispatchWorkItemFlags = [], block: @escaping @convention(block) () -> Swift.Void)
   public func perform()
@@ -142,10 +142,10 @@ public struct DispatchData : Swift.RandomAccessCollection, Swift._ObjectiveCBrid
   @available(swift, obsoleted: 4.2, renamed: "enumerateBytes(_:)")
   public func enumerateBytes(block: (Swift.UnsafeBufferPointer<Swift.UInt8>, Swift.Int, inout Swift.Bool) -> Swift.Void)
   @available(swift, deprecated: 4, message: "Use append(_: UnsafeRawBufferPointer) instead")
-  mutating public func append(_ bytes: Swift.UnsafePointer<Swift.UInt8>, count: Swift.Int)
-  mutating public func append(_ bytes: Swift.UnsafeRawBufferPointer)
-  mutating public func append(_ other: Dispatch.DispatchData)
-  mutating public func append<SourceType>(_ buffer: Swift.UnsafeBufferPointer<SourceType>)
+  public mutating func append(_ bytes: Swift.UnsafePointer<Swift.UInt8>, count: Swift.Int)
+  public mutating func append(_ bytes: Swift.UnsafeRawBufferPointer)
+  public mutating func append(_ other: Dispatch.DispatchData)
+  public mutating func append<SourceType>(_ buffer: Swift.UnsafeBufferPointer<SourceType>)
   @available(swift, deprecated: 4, message: "Use copyBytes(to: UnsafeMutableRawBufferPointer, count: Int) instead")
   public func copyBytes(to pointer: Swift.UnsafeMutablePointer<Swift.UInt8>, count: Swift.Int)
   public func copyBytes(to pointer: Swift.UnsafeMutableRawBufferPointer, count: Swift.Int)
@@ -177,7 +177,7 @@ public struct DispatchData : Swift.RandomAccessCollection, Swift._ObjectiveCBrid
 public struct DispatchDataIterator : Swift.IteratorProtocol, Swift.Sequence {
   public typealias Element = Swift.UInt8
   public init(_data: Dispatch.DispatchData)
-  mutating public func next() -> Dispatch.DispatchData.Element?
+  public mutating func next() -> Dispatch.DispatchData.Element?
   public typealias Iterator = Dispatch.DispatchDataIterator
 }
 extension DispatchData {

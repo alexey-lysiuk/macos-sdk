@@ -1,35 +1,33 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0472C6F2-CED9-30F0-8C51-B5B6D36DDED6', 'x86_64: 0472C6F2-CED9-30F0-8C51-B5B6D36DDED6' ]
+uuids:           [ 'x86_64: 86910240-E081-365D-87E2-7ED06FE7994D', 'x86_64: 86910240-E081-365D-87E2-7ED06FE7994D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SiriTTS.framework/Versions/A/SiriTTS'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ __ZN14NeuralTTSUtils17compile_ane_modelEPKc, __ZN14NeuralTTSUtils18disable_neural_ttsE, 
-                       __ZN14NeuralTTSUtils21is_ane_model_compiledEPKc, __ZN14TTSSynthesizer10initializeERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS0_8functionIFP10VE_INSTALLvEEE, 
+    symbols:         [ __ZN14NeuralTTSUtils16is_amx_availableEv, __ZN14NeuralTTSUtils17compile_ane_modelEPKc, 
+                       __ZN14NeuralTTSUtils17should_prefer_amxEv, __ZN14NeuralTTSUtils18disable_neural_ttsE, 
+                       __ZN14NeuralTTSUtils21is_ane_model_compiledEPKc, __ZN14NeuralTTSUtils21is_neural_voice_readyEPKc, 
+                       __ZN14TTSSynthesizer10initializeERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS0_8functionIFP10VE_INSTALLvEEE, 
                        __ZN14TTSSynthesizer10initializeERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES8_S8_, 
                        __ZN14TTSSynthesizer13dump_analysisERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
                        __ZN14TTSSynthesizer13load_resourceERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES8_, 
-                       __ZN14TTSSynthesizer13set_log_levelEi, __ZN14TTSSynthesizer14set_patch_fileERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
-                       __ZN14TTSSynthesizer14stop_synthesisEv, __ZN14TTSSynthesizer17set_force_prosodyEb, 
+                       __ZN14TTSSynthesizer13set_log_levelEi, __ZN14TTSSynthesizer14stop_synthesisEv, 
                        __ZN14TTSSynthesizer18set_global_whisperEb, __ZN14TTSSynthesizer19ready_for_synthesisEv, 
                        __ZN14TTSSynthesizer19set_global_propertyENS_14GlobalPropertyEf, 
                        __ZN14TTSSynthesizer20has_phatic_responsesERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
                        __ZN14TTSSynthesizer20set_analysis_enabledEb, __ZN14TTSSynthesizer20set_censor_plaintextEb, 
                        __ZN14TTSSynthesizer20set_prompts_disabledEb, __ZN14TTSSynthesizer20synthesize_text_syncERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERNS0_6vectorIhNS4_IhEEEE, 
                        __ZN14TTSSynthesizer21get_voice_descriptionEv, __ZN14TTSSynthesizer21synthesize_text_asyncERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERNS0_6vectorIhNS4_IhEEEENS0_8functionIFiNS_15CallbackMessageEEEE, 
-                       __ZN14TTSSynthesizer22get_engine_descriptionEv, __ZN14TTSSynthesizer22set_performance_tuningERK24GryphonPerformanceTuning, 
-                       __ZN14TTSSynthesizer22set_use_tigris_backendEb, __ZN14TTSSynthesizer22using_gryphon_frontendEv, 
-                       __ZN14TTSSynthesizer24set_whisper_next_requestEb, __ZN14TTSSynthesizer34synthesize_text_with_markers_asyncERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERNS0_6vectorIhNS4_IhEEEERNS9_INS_6MarkerENS4_ISD_EEEENS0_8functionIFiNS_15CallbackMessageEEEE, 
+                       __ZN14TTSSynthesizer22get_engine_descriptionEv, __ZN14TTSSynthesizer22set_use_tigris_backendEb, 
+                       __ZN14TTSSynthesizer22using_gryphon_frontendEv, __ZN14TTSSynthesizer34synthesize_text_with_markers_asyncERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERNS0_6vectorIhNS4_IhEEEERNS9_INS_6MarkerENS4_ISD_EEEENS0_8functionIFiNS_15CallbackMessageEEEE, 
                        __ZN14TTSSynthesizer7preheatEv, __ZN14TTSSynthesizerC1Ev, 
                        __ZN14TTSSynthesizerC2Ev, __ZN14TTSSynthesizerD1Ev, __ZN14TTSSynthesizerD2Ev, 
                        _gryphon_AnalysisDumpAnalysis, _gryphon_AnalysisSetEnabled, 
                        _gryphon_GetCurrentCompatibilityVersion, _gryphon_GetMinCompatibilityVersion, 
                        _gryphon_HasPhaticResponses, _gryphon_InitWithInstallPath, 
-                       _gryphon_NewBackendSetEnabled, _gryphon_ReportSubstitution, 
-                       _gryphon_SetDisablePrompts, _gryphon_SetForceProsody, _gryphon_SetGlobalWhisper, 
-                       _gryphon_SetOriginalText, _gryphon_SetPatchFilePath, _gryphon_SetPerformanceTuning, 
-                       _gryphon_WhisperNextRequest, _ve_ttsAnalyzeText, _ve_ttsClose, 
+                       _gryphon_ReportSubstitution, _gryphon_SetDisablePrompts, _gryphon_SetGlobalWhisper, 
+                       _gryphon_SetOriginalText, _ve_ttsAnalyzeText, _ve_ttsClose, 
                        _ve_ttsGetAdditionalProductInfo, _ve_ttsGetClmInfo, _ve_ttsGetLanguageList, 
                        _ve_ttsGetLipSyncInfo, _ve_ttsGetNtsInfo, _ve_ttsGetParamList, 
                        _ve_ttsGetProductVersion, _ve_ttsGetSpeechDBList, _ve_ttsGetVoiceList, 

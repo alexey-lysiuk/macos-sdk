@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D811D46-9909-342A-B936-E837936DA069', 'x86_64: 0D811D46-9909-342A-B936-E837936DA069' ]
+uuids:           [ 'x86_64: 33987A17-0281-32D0-85EF-2EC2D9F9D2BB', 'x86_64: 33987A17-0281-32D0-85EF-2EC2D9F9D2BB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/QuickLookSupport.framework/Versions/A/QuickLookSupport'
 current-version: 0
@@ -13,10 +13,9 @@ exports:
                        _QLCachedDrawingDispose, _QLCachedDrawingDraw, _QLContextCreateGrayColorSpace, 
                        _QLContextCreateRGBColorSpace, _QLContextSetGrayFillColor, 
                        _QLContextSetGrayStrokeColor, _QLContextSetRGBFillColor, _QLContextSetRGBStrokeColor, 
-                       _QLCopyIconImageFromURL, _QLCreateImageWithBitmapContext, 
-                       _QLCreateImageWithBlock, _QLCreateImageWithMallocedBitmapContextTransferData, 
-                       _QLCreateMallocedBitmapContextWithSize, _QLCreateMallocedBitmapContextWithSizeAndColorSpace, 
-                       _QLCreateMallocedBitmapContextWithSizeSupportingSubPixelAntialiasing, 
+                       _QLCreateImageWithBitmapContext, _QLCreateImageWithBlock, 
+                       _QLCreateImageWithMallocedBitmapContextTransferData, _QLCreateMallocedBitmapContextWithSize, 
+                       _QLCreateMallocedBitmapContextWithSizeAndColorSpace, _QLCreateMallocedBitmapContextWithSizeSupportingSubPixelAntialiasing, 
                        _QLCreateMallocedGrayscaleContextWithSize, _QLCreateReservedBitmapContextWithSize, 
                        _QLCreateVMBitmapContextWithSize, _QLDrawCGPDFPage, _QLDrawDebugRect, 
                        _QLDrawGrayLinearGradient, _QLDrawLinearGradient, _QLDrawPDFPage, 
@@ -71,8 +70,8 @@ exports:
                        _kQLThumbnailIconShadow512Offset2, _kQLThumbnailIconSlideMaximumAlpha, 
                        _kQLThumbnailIconSlideMinimumAlpha ]
     objc-classes:    [ QLExtension, QLExtensionManager, QLExtensionManagerCache, 
-                       QLExtensionThumbnailGenerator, QLPlatformImage, QLThumbnailUTICache, 
-                       QLUTIManager, QLZipArchive, QLZipArchiveEntry ]
+                       QLExtensionThumbnailGenerator, QLIconGenerator, QLPlatformImage, 
+                       QLThumbnailUTICache, QLUTIManager, QLZipArchive, QLZipArchiveEntry ]
     objc-ivars:      [ QLPlatformImage._cgImage, QLPlatformImage._cleanupDataBlock, 
                        QLPlatformImage._orientation, QLPlatformImage._scale, QLThumbnailUTICache._itemTypeCache, 
                        QLThumbnailUTICache._synchronizationQueue, QLZipArchive._archive, 

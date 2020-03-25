@@ -1,12 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 240016D6-1813-3EC1-834D-229F800AE6E6' ]
+uuids:           [ 'x86_64: CC6B6604-439F-3AFB-BD4A-51DA3ED03424' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PowerlogCore.framework/Versions/A/PowerlogCore'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _PLADClientAddValueForPrefixScalarKey, _PLADClientAddValueForScalarKey, 
-                       _PLADClientBatchKeys, _PLADClientPushValueForDistributionKey, 
+    symbols:         [ _PLADClientAddValueForScalarKey, _PLADClientBatchKeys, _PLADClientPushValueForDistributionKey, 
                        _PLADClientSetValueForScalarKey, _PLADMonotonicTimeGetCurrent, 
                        _PLADPushTimeIntervalForDistributionKeySinceStartTime, _PLCFPreferencesAppSynchronize, 
                        _PLCFPreferencesCopyAppValue, _PLCFPreferencesCopyAppValueWithContainer, 
@@ -74,7 +73,19 @@ exports:
                        _kPLEDTypeArraySizeKey, _kPLEDTypeArrayValueKey, _kPLEDTypeKey, 
                        _kPLEDUnitKey, _kPLEDWarningLimit, _kPLED_AggregateKey, _kPLED_DynamicKey, 
                        _kPLED_EventBackwardKey, _kPLED_EventForwardKey, _kPLED_EventIntervalKey, 
-                       _kPLED_EventNoneKey, _kPLED_EventPointKey, _kPLIOHID_AmbientLightSensor, 
+                       _kPLED_EventNoneKey, _kPLED_EventPointKey, _kPLEnhancedTaskingAgentAnimatorRunning, 
+                       _kPLEnhancedTaskingAgentCount, _kPLEnhancedTaskingAgentCustomNavigationTransition, 
+                       _kPLEnhancedTaskingAgentDiagonalScroll, _kPLEnhancedTaskingAgentDuration, 
+                       _kPLEnhancedTaskingAgentEventIntervalNameScrollView, _kPLEnhancedTaskingAgentEventIntervalNameUIInProcessAnimation, 
+                       _kPLEnhancedTaskingAgentEventIntervalNameUINavigationController, 
+                       _kPLEnhancedTaskingAgentEventNoneNameAppSwitchTrigger, _kPLEnhancedTaskingAgentHighRateDuration, 
+                       _kPLEnhancedTaskingAgentHorizontalScroll, _kPLEnhancedTaskingAgentNavigationTransition, 
+                       _kPLEnhancedTaskingAgentProcessName, _kPLEnhancedTaskingAgentScrollAnimating, 
+                       _kPLEnhancedTaskingAgentScrollDeceleration, _kPLEnhancedTaskingAgentScrollDragging, 
+                       _kPLEnhancedTaskingAgentScrollZooming, _kPLEnhancedTaskingAgentSignpostName, 
+                       _kPLEnhancedTaskingAgentSignpostValueGroup, _kPLEnhancedTaskingAgentStringEnabled, 
+                       _kPLEnhancedTaskingAgentSwitchTabs, _kPLEnhancedTaskingAgentTimestampEnd, 
+                       _kPLEnhancedTaskingAgentVerticalScroll, _kPLIOHID_AmbientLightSensor, 
                        _kPLIOHID_AmbientLightSensorLevel, _kPLIOKit_MainDisplay, 
                        _kPLIce, _kPLMav1, _kPLMav10, _kPLMav13, _kPLMav16, _kPLMav16B, 
                        _kPLMav2, _kPLMav4, _kPLMav5, _kPLMav7, _kPLMemoryPressureNotification, 
@@ -123,19 +134,23 @@ exports:
                        _kPLStorageModeLockedTask, _kPLStorageModeTask, _kPLStoragePID, 
                        _kPLStorageParentProcessName, _kPLStorageProcessName, _kPLStorageVersion, 
                        _kPLTimerFiredNotification, _logHandle, _nanoSecondsFromMachTime ]
-    objc-classes:    [ PLAccountingOperator, PLActivity, PLActivityCriterion, PLActivityCriterionEntry, 
-                       PLActivityCriterionTime, PLActivityScheduler, PLAgent, PLAggregateEntry, 
-                       PLArchiveEntry, PLArchiveJob, PLArchiveManager, PLCFNotificationOperatorComposition, 
-                       PLCoreAgent, PLCoreOperator, PLCoreService, PLCoreStorage, 
-                       PLDefaults, PLEntry, PLEntryDefinition, PLEntryKey, PLEntryNotificationOperatorComposition, 
+    objc-classes:    [ OperatorTask, PLAccountingOperator, PLActivity, PLActivityCriterion, 
+                       PLActivityCriterionEntry, PLActivityCriterionTime, PLActivityScheduler, 
+                       PLAgent, PLAggregateEntry, PLArchiveEntry, PLArchiveJob, PLArchiveManager, 
+                       PLCFNotificationOperatorComposition, PLChargingState, PLCoreAgent, 
+                       PLCoreOperator, PLCoreService, PLCoreStorage, PLDarkWakeState, 
+                       PLDefaults, PLDisplayState, PLEnhancedTaskingAgent, PLEntry, 
+                       PLEntryDefinition, PLEntryKey, PLEntryNotificationOperatorComposition, 
                        PLFileStats, PLHIDEventOperatorComposition, PLIOHIDOperatorComposition, 
                        PLIOKitOperatorComposition, PLKQueue, PLModelingUtilities, 
                        PLMonotonicTimer, PLMultiKeyEntry, PLNSNotificationOperatorComposition, 
-                       PLNetworkUtilities, PLOperator, PLPlatform, PLPowerNode, PLQLDuetInMemoryCache, 
-                       PLSQLStatement, PLSQLiteConnection, PLSemaphore, PLService, 
+                       PLNetworkUtilities, PLOperator, PLPlatform, PLPluggedState, 
+                       PLPowerNode, PLQLDuetInMemoryCache, PLSQLStatement, PLSQLiteConnection, 
+                       PLSemaphore, PLService, PLSleepState, PLState, PLStateTrackingComposition, 
                        PLStorageCache, PLStorageOperator, PLSubmissions, PLTimeManager, 
                        PLTimeReference, PLTimeReferenceDynamic, PLTimeReferenceKernel, 
                        PLTimeReferenceSystem, PLTimer, PLUtilities, PLValueComparison, 
-                       PLValueUtilties, PLXPCListenerOperatorComposition, PLXPCRelay, 
-                       PLXPCResponderOperatorComposition, PowerlogCore, SignpostReaderHelper ]
+                       PLValueUtilties, PLWakeState, PLXPCListenerOperatorComposition, 
+                       PLXPCRelay, PLXPCResponderOperatorComposition, PowerlogCore, 
+                       SignpostReaderHelper ]
 ...

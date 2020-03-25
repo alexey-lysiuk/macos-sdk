@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1AEE46EE-449F-3AF8-9E15-47575B4209EA' ]
+uuids:           [ 'x86_64: E0ED85FE-3A0F-3715-BC38-FC72E4594516' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ByteRangeLocking.framework/Versions/A/ByteRangeLocking'
 exports:         

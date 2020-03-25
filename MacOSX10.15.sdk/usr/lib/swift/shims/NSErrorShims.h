@@ -20,4 +20,6 @@ NS_INLINE void __NSErrorPerformRecoverySelector(_Nullable id delegate, SEL selec
     msg(delegate, selector, success, contextInfo);
 }
 
+NSError *_Nonnull _NSErrorWithFilePathAndErrno(NSInteger posixErrno, id _Nullable pathOrURL, BOOL reading);
+
 NS_END_DECLS

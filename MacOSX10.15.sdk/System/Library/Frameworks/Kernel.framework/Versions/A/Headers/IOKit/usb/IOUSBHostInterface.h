@@ -167,7 +167,7 @@ while(deviceCandidate != NULL)
  * @brief       The IOService object representing a USB interface
  * @discussion  This class provides functionality to send control requests to the default control endpoint, as well as create IOUSBHostPipe objects to transfer data.  Function drivers should not subclass IOUSBHostInterface.
  */
-class IOUSBHostInterface : public IOService
+class __IOUSBHOSTFAMILY_DEPRECATED IOUSBHostInterface : public IOService
 {
 #if TARGET_OS_OSX
     OSDeclareDefaultStructorsWithDispatch(IOUSBHostInterface)

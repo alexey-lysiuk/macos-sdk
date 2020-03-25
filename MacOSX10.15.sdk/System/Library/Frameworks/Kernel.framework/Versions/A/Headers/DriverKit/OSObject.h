@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from OSObject.iig */
+/* iig(DriverKit-73.100.4) generated from OSObject.iig */
 
-/* OSObject.iig:1-112 */
+/* OSObject.iig:1-145 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -37,42 +37,75 @@
 #define _IOKIT_UOSOBJECT_H
 
 
-#if __IIG && !__IIG_ATTRIBUTES_DEFINED__
+#if !__IIG_ATTRIBUTES_DEFINED__
 
 #define __IIG_ATTRIBUTES_DEFINED__	1
 
-#define KERNEL       __attribute__((annotate("kernel")))
-#define NATIVE       __attribute__((annotate("native")))
-#define LOCAL        __attribute__((annotate("local")))
-#define LOCALONLY    __attribute__((annotate("localonly")))
-#define REMOTE       __attribute__((annotate("remote")))
+#if __IIG || __DOCUMENTATION__
 
-#define LOCALHOST    __attribute__((annotate("localhost")))
+#define IIG_KERNEL				__attribute__((annotate("kernel")))
+#define IIG_NATIVE       		__attribute__((annotate("native")))
+#define IIG_LOCAL        		__attribute__((annotate("local")))
+#define IIG_LOCALONLY    		__attribute__((annotate("localonly")))
+#define IIG_REMOTE       		__attribute__((annotate("remote")))
+#define IIG_LOCALHOST    		__attribute__((annotate("localhost")))
+#define IIG_INVOKEREPLY  		__attribute__((annotate("invokereply")))
+#define IIG_REPLY        		__attribute__((annotate("reply")))
+#define IIG_PORTMAKESEND 		__attribute__((annotate("MACH_MSG_TYPE_MAKE_SEND")))
+#define IIG_PORTCOPYSEND 		__attribute__((annotate("MACH_MSG_TYPE_COPY_SEND")))
+#define IIG_TARGET       		__attribute__((annotate("target")))
+#define IIG_TYPE(p)      		__attribute__((annotate("type=" # p)))
+//#define IIG_ARRAY(maxcount)	__attribute__((annotate(# maxcount), annotate("array")))
+#define IIG_EXTENDS(cls) 		__attribute__((annotate("extends=" # cls)))
+//#define IIG_INTERFACE  		__attribute__((annotate("interface")))
+//#define IIG_IMPLEMENTS(i)		void __implements(i *);
+#define IIG_QUEUENAME(name)		__attribute__((annotate("queuename=" # name)))
+#define IIG_SERIALIZABLE		__attribute__((annotate("serializable")))
 
-#define INVOKEREPLY  __attribute__((annotate("invokereply")))
-#define REPLY        __attribute__((annotate("reply")))
+#if __IIG
+#define KERNEL					IIG_KERNEL
+#endif /* __IIG */
+#define NATIVE					IIG_NATIVE
+#define LOCAL					IIG_LOCAL
+#define LOCALONLY				IIG_LOCALONLY
+#define REMOTE					IIG_REMOTE
+#define LOCALHOST				IIG_LOCALHOST
+#define INVOKEREPLY				IIG_INVOKEREPLY
+#define REPLY					IIG_REPLY
+#define PORTMAKESEND			IIG_PORTMAKESEND
+#define PORTCOPYSEND			IIG_PORTCOPYSEND
+#define TARGET					IIG_TARGET
+#define TYPE(p)					IIG_TYPE(p)
+//#define ARRAY(maxcount)		IIG_ARRAY(maxcount)
+#define EXTENDS(cls)			IIG_EXTENDS(cls)
+//#define INTERFACE				IIG_INTERFACE
+//#define IMPLEMENTS(i)			IIG_IMPLEMENTS(i)
+#define QUEUENAME(name)			IIG_QUEUENAME(name)
 
-#define PORTMAKESEND __attribute__((annotate("MACH_MSG_TYPE_MAKE_SEND")))
-#define PORTCOPYSEND __attribute__((annotate("MACH_MSG_TYPE_COPY_SEND")))
+#else /* __IIG || __DOCUMENTATION__ */
 
-#define TARGET       __attribute__((annotate("target")))
-#define TYPE(p)      __attribute__((annotate("type=" # p)))
-
-//#define ARRAY(maxcount) __attribute__((annotate(# maxcount), annotate("array")))
-#define EXTENDS(cls) __attribute__((annotate("extends=" # cls)))
-
-//#define INTERFACE    __attribute__((annotate("interface")))
-//#define IMPLEMENTS(i)   void implements(i *);
-
-#define QUEUENAME(name) __attribute__((annotate("queuename=" # name)))
-
-#define IIG_SERIALIZABLE __attribute__((annotate("serializable")))
-
-#else
-
+#define IIG_KERNEL
+#define IIG_NATIVE
+#define IIG_LOCAL
+#define IIG_LOCALONLY
+#define IIG_REMOTE
+#define IIG_LOCALHOST
+#define IIG_INVOKEREPLY
+#define IIG_REPLY
+#define IIG_PORTMAKESEND
+#define IIG_PORTCOPYSEND
+#define IIG_TARGET
+#define IIG_TYPE(p)
+//#define IIG_ARRAY(maxcount)
+#define IIG_EXTENDS(cls)
+//#define IIG_INTERFACE
+//#define IIG_IMPLEMENTS(i)
+#define IIG_QUEUENAME(name)
 #define IIG_SERIALIZABLE
 
-#endif /* __IIG */
+#endif /* __IIG || __DOCUMENTATION__ */
+
+#endif /* __IIG_ATTRIBUTES_DEFINED__ */
 
 
 #if !__IIG
@@ -93,17 +126,49 @@ class IODispatchQueue;
 typedef char IODispatchQueueName[256];
 
 #if __IIG
-/* OSObject.iig:127-135 */
+/* OSObject.iig:160-162 */
 #endif /* __IIG */
 
 
+/* source class OSObject OSObject.iig:163-193 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
-@iig implementation
-#include <DriverKit/IODispatchQueue.h>
-@iig end
 */
 
-/* class OSObject OSObject.iig:136-160 */
+class OSObject : public OSMetaClassBase
+{
+public:
+
+	virtual bool
+	init() LOCALONLY;
+
+	virtual void
+	free() LOCALONLY;
+
+    virtual void
+    retain() const override;
+
+    virtual void
+    release() const override;
+
+	virtual kern_return_t
+	SetDispatchQueue(
+		const IODispatchQueueName name,
+		IODispatchQueue         * queue) KERNEL = 0;
+
+	virtual kern_return_t
+	CopyDispatchQueue(
+		const IODispatchQueueName name,
+		IODispatchQueue        ** queue) KERNEL = 0;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class OSObject OSObject.iig:163-193 */
 
 #define OSObject_SetDispatchQueue_ID            0xe608ae8273dae1bcULL
 #define OSObject_CopyDispatchQueue_ID            0x95115b48fd29f7c9ULL
@@ -191,7 +256,10 @@ public:\
 
 
 
-/* OSObject.iig:162- */
+
+#endif /* !__DOCUMENTATION__ */
+
+/* OSObject.iig:195- */
 
 #define DEFN(classname, name)                                       \
 name ## _Impl(classname ## _ ## name ## _Args)

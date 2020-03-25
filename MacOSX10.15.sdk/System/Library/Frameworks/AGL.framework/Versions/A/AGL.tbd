@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2DAAE917-6792-35B7-8BCE-C785ACDF8174' ]
+uuids:           [ 'x86_64: 104E71F4-AC28-32C5-AA87-9D7DCA28BBC4' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AGL.framework/Versions/A/AGL'
 exports:         

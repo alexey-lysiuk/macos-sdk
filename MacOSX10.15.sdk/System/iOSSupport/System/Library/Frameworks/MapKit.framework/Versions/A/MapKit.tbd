@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C6E163D5-3799-3504-B8F6-B19239B8CEFA' ]
+uuids:           [ 'x86_64: 7F4DD163-40C4-365C-9580-6D5BA0B53C66' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MapKit.framework/Versions/A/MapKit'
 current-version: 14
@@ -135,10 +135,12 @@ exports:
                        _MapKitConfig_MinimumMapViewSizeToShowAppleLogoHeight, _MapKitConfig_MinimumMapViewSizeToShowControlsHeight, 
                        _MapKitConfig_MinimumMapViewSizeToShowControlsWidth, _MapKitConfig_MinimumSnapshotSizeToShowAppleLogoHeight, 
                        _MapKitConfig_MinimumSnapshotSizeToShowAppleLogoWidth, _MapKitConfig_PlaceCardCustomLayout, 
-                       _MapKitConfig_PlaceLayoutDebugEnabled, _MapKitConfig_PlaceLayoutLogEnabled, 
-                       _MapKitConfig_PlaceShowGEOID, _MapKitConfig_RAPForceOverrideServerConfig, 
-                       _MapKitConfig_RAPForceShowSuggestAnEditButton, _MapKitConfig_ReportAProblemIsDisabled, 
-                       _MapKitConfig_RideBookingExtensionsAppBundleIdentifiers, _MapKitConfig_RideBookingShouldAutomaticallyEnableExtensions, 
+                       _MapKitConfig_PlaceCardShouldHideMuninForParsec, _MapKitConfig_PlaceCardShouldShowPhotoGalleryInParsec, 
+                       _MapKitConfig_PlaceCardShouldShowPhotoGalleryInSiri, _MapKitConfig_PlaceLayoutDebugEnabled, 
+                       _MapKitConfig_PlaceLayoutLogEnabled, _MapKitConfig_PlaceShowGEOID, 
+                       _MapKitConfig_RAPForceOverrideServerConfig, _MapKitConfig_RAPForceShowSuggestAnEditButton, 
+                       _MapKitConfig_ReportAProblemIsDisabled, _MapKitConfig_RideBookingExtensionsAppBundleIdentifiers, 
+                       _MapKitConfig_RideBookingShouldAutomaticallyEnableExtensions, 
                        _MapKitConfig_SearchCompleteReplaceInterval, _MapKitConfig_SearchCompleteRequestInterval, 
                        _MapKitConfig_SearchCompleteRequestIntervalCellular, _MapKitConfig_SnapshotServiceEnabled, 
                        _MapKitConfig_SnapshotServiceQueueWidth, _MapKitConfig_SnapshotterNumberOfRequestsAllowedPerThrottle, 
@@ -215,16 +217,16 @@ exports:
                        MKShape, MKSizedTransitArtwork, MKStackingViewController, 
                        MKStarRatingAndLabelView, MKStarRatingView, MKStarkCompassView, 
                        MKSystemController, MKTableViewCell, MKTileOverlay, MKTileOverlayRenderer, 
-                       MKTiltGestureRecognizer, MKTrafficSupport, MKTransitArtwork, 
-                       MKTransitArtworkManager, MKTransitAttributionViewController, 
-                       MKTransitDeparturesCell, MKTransitDeparturesDataSource, MKTransitIcon, 
-                       MKTransitIncidentStringProvider, MKTransitIncidentsViewController, 
-                       MKTransitInfoLabelView, MKTransitInfoPreloader, MKTransitItemIncidentCell, 
-                       MKTransitItemReferenceDateUpdater, MKTransitLineItemViewController, 
-                       MKTransitMapItemUpdater, MKTransitShield, MKURLContext, MKURLSerializer, 
-                       MKUserLocation, MKUserLocationView, MKUserTrackingBarButtonItem, 
-                       MKUserTrackingButton, MKVariableDelayTapRecognizer, MKVibrantHairlineView, 
-                       MKVibrantLabel, MKVibrantView, MKViewWithHairline, MKWalletMerchantLookupRequest, 
+                       MKTrafficSupport, MKTransitArtwork, MKTransitArtworkManager, 
+                       MKTransitAttributionViewController, MKTransitDeparturesCell, 
+                       MKTransitDeparturesDataSource, MKTransitIcon, MKTransitIncidentStringProvider, 
+                       MKTransitIncidentsViewController, MKTransitInfoLabelView, 
+                       MKTransitInfoPreloader, MKTransitItemIncidentCell, MKTransitItemReferenceDateUpdater, 
+                       MKTransitLineItemViewController, MKTransitMapItemUpdater, 
+                       MKTransitShield, MKURLContext, MKURLSerializer, MKUserLocation, 
+                       MKUserLocationView, MKUserTrackingBarButtonItem, MKUserTrackingButton, 
+                       MKVariableDelayTapRecognizer, MKVibrantHairlineView, MKVibrantLabel, 
+                       MKVibrantView, MKViewWithHairline, MKWalletMerchantLookupRequest, 
                        MKWalletMerchantResponse, MKWalletMerchantStylingInfo, MKWalletRAPReport, 
                        _MKBalloonCalloutView, _MKContactPlaceItem, _MKCustomFeatureStore, 
                        _MKLabelMarkerItem, _MKLocalSearchExternalTransitLookupParameters, 
@@ -247,8 +249,6 @@ exports:
                        _MXExtensionService, _MXExtensionServiceCenter ]
     objc-ivars:      [ MKMapItemMetadataRequester._dataForTasks, MKMapItemMetadataRequester._requestsForURLs, 
                        MKMapItemMetadataRequester._session, MKMapItemMetadataRequester._tasksForURLs, 
-                       MKTiltGestureRecognizer._initialDistance, MKTiltGestureRecognizer._initialTouch1Point, 
-                       MKTiltGestureRecognizer._initialTouch2Point, MKTiltGestureRecognizer._touch1, 
-                       MKTiltGestureRecognizer._touch2, MKVariableDelayTapRecognizer.originalMaximumIntervalBetweenSuccessiveTaps, 
+                       MKVariableDelayTapRecognizer.originalMaximumIntervalBetweenSuccessiveTaps, 
                        _MKPuckAnnotationView._puckLayer, _MXExtensionProvider._extensionMatchingClass ]
 ...

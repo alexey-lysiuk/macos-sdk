@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5C748FD2-43CA-3F1E-83B9-66C3CD459E37', 'x86_64: 5C748FD2-43CA-3F1E-83B9-66C3CD459E37' ]
+uuids:           [ 'x86_64: 52A62FBC-F2D0-304D-8215-ACC1D50F0543', 'x86_64: 52A62FBC-F2D0-304D-8215-ACC1D50F0543' ]
 platform:        zippered
 install-name:    '/usr/lib/libmarisa.dylib'
 current-version: 16

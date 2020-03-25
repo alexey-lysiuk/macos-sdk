@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DC18BBB0-E0D2-3D9F-8123-FA521B16B80A' ]
+uuids:           [ 'x86_64: 68655A85-5745-33FD-8B68-A3479B1BEE0B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotosPlayer.framework/Versions/A/PhotosPlayer'
-current-version: 111.16.180
+current-version: 141.19.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ISCircularEaseOut, _ISCubicEaseOut, _ISLivePhotoShouldRenderAtPlaybackTime, 

@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOBufferMemoryDescriptor.iig */
+/* iig(DriverKit-73.100.4) generated from IOBufferMemoryDescriptor.iig */
 
-/* IOBufferMemoryDescriptor.iig:1-52 */
+/* IOBufferMemoryDescriptor.iig:1-40 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -38,6 +38,11 @@
 
 #include <DriverKit/IOMemoryDescriptor.h>  /* .iig include */
 
+/* source class IOBufferMemoryDescriptor IOBufferMemoryDescriptor.iig:41-96 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class IOBufferMemoryDescriptor
  *
@@ -45,12 +50,61 @@
  * IOBufferMemoryDescriptor describes a memory buffer allocated in the callers address space.
  *
  * @discussion
- * To allocate memory for I/O or sharing, use IOBufferMemoryDescriptor::Create()
- * Methods in this class are used for memory that was supplied as a parameter.
+ * To allocate memory for I/O or sharing, use IOBufferMemoryDescriptor::Create().
  * IOBufferMemoryDescriptor can be handed to any API that expects an IOMemoryDescriptor.
  */
 
-/* class IOBufferMemoryDescriptor IOBufferMemoryDescriptor.iig:53-97 */
+class KERNEL IOBufferMemoryDescriptor : public IOMemoryDescriptor
+{
+public:
+
+    /*!
+     * @brief       Create an IOBufferMemoryDescriptor.
+     * @param       options Pass the flags 	kIOMemoryDirectionIn, kIOMemoryDirectionOut or kIOMemoryDirectionOutIn
+     *              to set the direction of the i/o
+     * @param       capacity Maximum length of the memory buffer. The descriptor has no valid data
+     *              and zero length until set with SetLength().
+     * @param       memory Created descriptor with +1 retain count to be released by the caller.
+     * @param       alignment For small less-than-page-size buffers, control the alignment of the memory buffer.
+     *              Pass zero for no guaranteed alignment.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	static kern_return_t
+	Create(
+		uint64_t options,
+		uint64_t capacity,
+		uint64_t alignment,
+		IOBufferMemoryDescriptor ** memory);
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+    /*!
+     * @brief       Obtain the address and length of the memory buffer.
+     * @param       range An IOAddressSegment structure filled out with the address and length of the memory buffer.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	kern_return_t
+	GetAddressRange(IOAddressSegment * range) LOCALONLY;
+
+    /*!
+     * @brief       Set the valid length of the memory buffer.
+     * @discussion  IOBufferMemoryDescriptor have capacity allocated at Create() but no valid data until set
+     *              with this method.
+     * @param       length New valid length of the memory described.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SetLength(uint64_t length);
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOBufferMemoryDescriptor IOBufferMemoryDescriptor.iig:41-96 */
 
 #define IOBufferMemoryDescriptor_Create_ID            0xb78de684e17d5a4bULL
 #define IOBufferMemoryDescriptor_SetLength_ID            0xc115230c191a6a9aULL
@@ -179,6 +233,9 @@ public:
 
 };
 
-/* IOBufferMemoryDescriptor.iig:99- */
+
+#endif /* !__DOCUMENTATION__ */
+
+/* IOBufferMemoryDescriptor.iig:98- */
 
 #endif /* ! _IOKIT_UIOBUFFERMEMORYDESCRIPTOR_H */

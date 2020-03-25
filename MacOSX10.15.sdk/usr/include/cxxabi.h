@@ -11,7 +11,7 @@
 
 /*
  * This header provides the interface to the C++ ABI as defined at:
- *       http://www.codesourcery.com/cxx-abi/
+ *       https://itanium-cxx-abi.github.io/cxx-abi/
  */
 
 #include <stddef.h>
@@ -77,7 +77,7 @@ extern _LIBCXXABI_FUNC_VIS _LIBCXXABI_NORETURN void __cxa_pure_virtual(void);
 extern _LIBCXXABI_FUNC_VIS _LIBCXXABI_NORETURN void __cxa_deleted_virtual(void);
 
 // 3.3.2 One-time Construction API
-#if defined(__arm__) || defined(__ARM64_ARCH_8_32__)
+#if defined(_LIBCXXABI_GUARD_ABI_ARM)
 extern _LIBCXXABI_FUNC_VIS int __cxa_guard_acquire(uint32_t *);
 extern _LIBCXXABI_FUNC_VIS void __cxa_guard_release(uint32_t *);
 extern _LIBCXXABI_FUNC_VIS void __cxa_guard_abort(uint32_t *);

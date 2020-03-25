@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.40.3) generated from IOUserHIDEventService.iig */
+/* iig(DriverKit-73.100.4) generated from IOUserHIDEventService.iig */
 
 /* IOUserHIDEventService.iig:1-38 */
 /*
@@ -39,7 +39,223 @@
 
 class OSArray;
 
-/* class IOUserHIDEventService IOUserHIDEventService.iig:39-244 */
+/* source class IOUserHIDEventService IOUserHIDEventService.iig:39-244 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
+class  IOUserHIDEventService : public IOHIDEventService
+{
+
+public:
+    /*!
+     * @function init
+     *
+     * @abstract
+     * Initializes IOUserHIDEventService object.
+     *
+     * @return
+     * true on success.
+     */
+    virtual bool init() override;
+    
+    /*!
+     * @function free
+     *
+     * @abstract
+     * frees the IOUserHIDEventService object.
+     */
+    virtual void free() override;
+    
+    /*!
+     * @function Start
+     *
+     * @abstract
+     * Function called after initialization to start the IOService.
+     *
+     * @param provider
+     * The IOService that is provider for this object.
+     *
+     * @return
+     * returns kIOReturnSucess on sucess.
+     */
+    virtual kern_return_t Start(IOService * provider) override;
+    
+    /*!
+     * @function Start
+     *
+     * @abstract
+     * Function called during termination to stop the IOService.
+     *
+     * @param provider
+     * The IOService that is provider for this object.
+     *
+     * @return
+     * returns kIOReturnSucess on sucess.
+     */
+    virtual kern_return_t Stop(IOService * provider) override;
+    
+    /*!
+     * @function conformsTo
+     *
+     * @abstract
+     * Checks if a service conforms to a certain usage page/usage by iterating
+     * through the device usage pairs.
+     *
+     * @param usagePage
+     * The usage page to conform to.
+     *
+     * @param usage
+     * The usage to conform to.
+     *
+     * @result
+     * True if the service conforms to the specified usage page/usage.
+     */
+    virtual bool conformsTo(uint32_t usagePage, uint32_t usage) LOCALONLY;
+    
+    /*!
+     * @function dispatchDigitizerStylusEvent
+     *
+     * @abstract
+     * Dispatches a digitizer stylus event.
+     *
+     * @param timestamp
+     * The timestamp of the event.
+     *
+     * @param stylusData
+     * A struct containing the stylus data. See IOHIDDigtizerStructs.h for more 
+     * info.
+     */
+    virtual kern_return_t dispatchDigitizerStylusEvent(
+                                        uint64_t timeStamp,
+                                        IOHIDDigitizerStylusData *stylusData) override LOCALONLY;
+    
+    /*!
+     * @function dispatchDigitizerTouchEvent
+     *
+     * @abstract
+     * Dispatches a digitizer touch pad event.
+     *
+     * @param timestamp
+     * The timestamp of the event.
+     *
+     * @param touchData
+     * An array of touch data, where each struct represents a surface contact. 
+     * See IOHIDDigtizerStructs.h for more info.
+     *
+     * @param touchDataCount
+     * The touchData array count.
+     */
+    virtual kern_return_t dispatchDigitizerTouchEvent(
+                                            uint64_t timeStamp,
+                                            IOHIDDigitizerTouchData *touchData,
+                                            uint32_t touchDataCount) override LOCALONLY;
+    
+protected:
+    
+    /*!
+     * @function handleStart
+     * @abstract
+     * method called from Start and can be use to initlialize the service.
+     *
+     * @param provider
+     * The IOService that is provider for this object.
+     *
+     * @return
+     * true on success.
+     */
+    virtual bool handleStart(IOService * provider) LOCALONLY;
+    
+    /*!
+     * @function handleReport
+     *
+     * @abstract
+     * Callback invoked when an input report is received from the device.
+     *
+     * @param timestamp
+     * The timestamp of the report.
+     *
+     * @param report
+     * Bytes that describe the report.
+     *
+     * @param reportLength
+     * The length of the report.
+     *
+     * @param type
+     * The report type.
+     *
+     * @param reportID
+     * The report ID.
+     */
+    virtual void handleReport (uint64_t                    timestamp,
+                               uint8_t                     *report,
+                               uint32_t                    reportLength,
+                               IOHIDReportType             type,
+                               uint32_t                    reportID) LOCALONLY;
+    
+    /*!
+     * @function getElements
+     *
+     * @abstract
+     * Returns an array of IOHIDElement objects. The element values will be
+     * updates on calls to the handleReport() function.
+     *
+     * @return
+     * Returns an array of IOHIDElement objects.
+     */
+    virtual OSArray *getElements() LOCALONLY;
+
+private:
+    bool createReportPool() LOCALONLY;
+    
+    /*!
+     * @function dispatchEvent
+     *
+     * @abstract
+     * Dispatches an event.
+     *
+     * @param event
+     * The IOHIDEvent to dispatch.
+     */
+    virtual void dispatchEvent(IOHIDEvent *event) override LOCALONLY;
+    
+    /*!
+     * @function ReportAvailable
+     *
+     * @abstract
+     * Callback invoked when an input report is received from the device.
+     *
+     * @param timestamp
+     * The timestamp of the report.
+     *
+     * @param reportID
+     * The report ID.
+     *
+     * @param reportLength
+     * The length of the report.
+     *
+     * @param type
+     * The report type.
+     *
+     * @param report
+     * A memory descriptor that describes the report.
+     *
+     * @param action
+     * The OSAction object that will handle the asynchronous report callback.
+     */
+    virtual void ReportAvailable(uint64_t timestamp,
+                                 uint32_t reportID,
+                                 uint32_t reportLength,
+                                 IOHIDReportType type,
+                                 IOMemoryDescriptor *report,
+                                 OSAction *action) LOCAL
+                                 TYPE(IOHIDInterface::ReportAvailable);
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOUserHIDEventService IOUserHIDEventService.iig:39-244 */
 
 #define IOUserHIDEventService_ReportAvailable_ID            0x64b213ea6ab88649ULL
 
@@ -217,6 +433,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* IOUserHIDEventService.iig:246- */
 

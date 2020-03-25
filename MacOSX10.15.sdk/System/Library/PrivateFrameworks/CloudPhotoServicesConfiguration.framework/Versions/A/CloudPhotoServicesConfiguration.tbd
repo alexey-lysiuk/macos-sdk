@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B7348FD-62D6-3060-A843-0AB167EDE2F6' ]
+uuids:           [ 'x86_64: 669B0F59-AD37-320F-AE4C-6F1906A6461F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudPhotoServicesConfiguration.framework/Versions/A/CloudPhotoServicesConfiguration'
-current-version: 111.16.180
+current-version: 141.19.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CPSAccountAppleIDKey, _CPSAccountAuthTokenKey, _CPSAccountAvailabilityDataClassURLKey, 

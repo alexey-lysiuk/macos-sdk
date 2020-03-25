@@ -1,14 +1,14 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4FF2CAE0-985D-3708-8ABA-915A4B4A3CF1', 'x86_64: 4FF2CAE0-985D-3708-8ABA-915A4B4A3CF1' ]
+uuids:           [ 'x86_64: C2FA96F6-8466-3064-B9F8-39FC0C1A4F9F', 'x86_64: C2FA96F6-8466-3064-B9F8-39FC0C1A4F9F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaServices.framework/Versions/A/MediaServices'
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MSVArchivedDataWithRootObject, _MSVArtworkServiceErrorDomain, 
-                       _MSVBundleIDForPID, _MSVCLIPrint, _MSVCLIPrintErr, _MSVCLIPrompt, 
-                       _MSVCLIStartMainRunLoop, _MSVCLIStopMainRunLoop, _MSVCopyDeviceName, 
-                       _MSVCopyDeviceUniqueIdentifier, _MSVCopyLocalizedModelName, 
+                       _MSVBundleIDForAuditToken, _MSVBundleIDForPID, _MSVCLIPrint, 
+                       _MSVCLIPrintErr, _MSVCLIPrompt, _MSVCLIStartMainRunLoop, _MSVCLIStopMainRunLoop, 
+                       _MSVCopyDeviceName, _MSVCopyDeviceUniqueIdentifier, _MSVCopyLocalizedModelName, 
                        _MSVCopySystemBuildVersion, _MSVCreateTemporaryFileHandle, 
                        _MSVCryptoDigestForContentsOfFile, _MSVCryptoDigestForContentsOfInputStream, 
                        _MSVCryptoDigestForData, _MSVCryptoDigestForString, _MSVCryptoUtilitiesHexStringFromDigest, 
@@ -16,10 +16,10 @@ exports:
                        _MSVDeviceIsiPad, _MSVDeviceOSHasInternalDiagnostics, _MSVDeviceOSIsInternalInstall, 
                        _MSVDevicePPTTestsAreInProgress, _MSVDeviceSupportsDelegatedIdentities, 
                        _MSVDeviceSupportsExtendedColorDisplay, _MSVDeviceSupportsMultipleLibraries, 
-                       _MSVDiagnoseSecureCodingClassesWithPrefix, _MSVErrorDomain, 
-                       _MSVFrameworkExists, _MSVGetMaximumScreenScale, _MSVGetMaximumScreenSize, 
-                       _MSVGzipCompressData, _MSVGzipCompressFile, _MSVGzipDecompressData, 
-                       _MSVGzipDecompressFile, _MSVImageUtilitiesAddImageToDestination, 
+                       _MSVDeviceSupportsSideLoadedMediaContent, _MSVDiagnoseSecureCodingClassesWithPrefix, 
+                       _MSVErrorDomain, _MSVFrameworkExists, _MSVGetMaximumScreenScale, 
+                       _MSVGetMaximumScreenSize, _MSVGzipCompressData, _MSVGzipCompressFile, 
+                       _MSVGzipDecompressData, _MSVGzipDecompressFile, _MSVImageUtilitiesAddImageToDestination, 
                        _MSVImageUtilitiesAddJPEGToDestination, _MSVImageUtilitiesAddSourceImageToDestination, 
                        _MSVImageUtilitiesAddSourceImageToJPEGDestination, _MSVImageUtilitiesCopyUTTypeForImage, 
                        _MSVImageUtilitiesCopyUTTypeForImageFormat, _MSVImageUtilitiesCreateDataImageDestination, 
@@ -55,6 +55,6 @@ exports:
                        MSVPropertyListEncoder, MSVSegmentedCodingPackage, MSVSegmentedDecoder, 
                        MSVSegmentedEncoder, MSVStreamReader, MSVStreamWriter, MSVSystemDialog, 
                        MSVSystemDialogOptions, MSVSystemDialogResponse, MSVSystemDialogTextField, 
-                       MSVTaskAssertion, MSVTimer, MSVWatchdog, MSVXPCTransaction, 
+                       MSVTaskAssertion, MSVTimer, MSVWatchdog, MSVWeakProxy, MSVXPCTransaction, 
                        MSVZipArchive ]
 ...

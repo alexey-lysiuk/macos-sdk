@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4CF46106-48AB-3CD5-B00A-0170CE4207C8' ]
+uuids:           [ 'x86_64: 141D41FC-49FC-3131-9A74-56B7F9854DD2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/AccessibilitySupport'
 current-version: 2
@@ -13,7 +13,7 @@ exports:
     symbols:         [ _AccessibilitySupportVersionNumber, _AccessibilitySupportVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CD6363D7-8C3A-3503-A49F-E0FD51CBE5CA' ]
+uuids:           [ 'x86_64: ACF1A362-FE29-3E49-99FF-5F96148AC7C8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityEvents.framework/Versions/A/AccessibilityEvents'
 current-version: 2
@@ -50,7 +50,7 @@ exports:
                        _AXETrackingStabilizingTouchHistory ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8B52D6AC-BCE1-307A-AC58-9B4A59443629' ]
+uuids:           [ 'x86_64: C3039294-79A6-309D-BAD0-57A5D3F2E291' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityFoundation.framework/Versions/A/AccessibilityFoundation'
 current-version: 2
@@ -158,7 +158,7 @@ exports:
     objc-ivars:      [ _AXFFaultingArray._elements ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 661020C7-2CBA-3CEC-8070-38E19C350A64' ]
+uuids:           [ 'x86_64: A367C817-7A7C-3A46-BF2F-1AD8FD100B65' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityKit.framework/Versions/A/AccessibilityKit'
 current-version: 2
@@ -192,7 +192,7 @@ exports:
                        _AXKElementCacheValue, _AXKKeyboardFocusListenerWrapper, _AXKTextElementEditListenerWrapper ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BEC9812D-5DF3-33BF-ABEB-50E1D3FE9475' ]
+uuids:           [ 'x86_64: 22B8AD7B-2A62-3613-AAD2-0EB37CB19DB8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityVisuals.framework/Versions/A/AccessibilityVisuals'
 current-version: 2

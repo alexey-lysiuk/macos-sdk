@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 093146EF-0CF8-3E0C-984C-BBE003CB8680' ]
+uuids:           [ 'x86_64: E3E99282-6012-373B-8EDF-2B9937D1E6B3' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Collaboration.framework/Versions/A/Collaboration'
 current-version: 81

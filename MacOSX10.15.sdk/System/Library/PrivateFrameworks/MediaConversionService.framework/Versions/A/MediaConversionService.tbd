@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E19CA9B5-007D-341D-9F4A-BEBD5ADC0C0B', 'x86_64: E19CA9B5-007D-341D-9F4A-BEBD5ADC0C0B' ]
+uuids:           [ 'x86_64: 5AE44D59-ACDA-3E56-9E4C-C1DF1A96BE35', 'x86_64: 5AE44D59-ACDA-3E56-9E4C-C1DF1A96BE35' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaConversionService.framework/Versions/A/MediaConversionService'
-current-version: 111.16.180
+current-version: 141.19.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MediaConversionServiceVersionNumber, _MediaConversionServiceVersionString, 

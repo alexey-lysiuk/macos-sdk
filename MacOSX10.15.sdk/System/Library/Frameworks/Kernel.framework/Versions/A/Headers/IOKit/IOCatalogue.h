@@ -227,7 +227,6 @@ private:
 	IOReturn unloadModule( OSString * moduleName ) const;
 
 	IOReturn _removeDrivers(OSDictionary * matching);
-	IOReturn _terminateDrivers(OSDictionary * matching);
 };
 
 extern const OSSymbol * gIOClassKey;

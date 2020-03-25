@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F0E5753-CF77-3243-BC10-0E6A0E18EC9D', 'x86_64: 5F0E5753-CF77-3243-BC10-0E6A0E18EC9D' ]
+uuids:           [ 'x86_64: C02892EE-9148-36DB-A7D6-EB7AC1B7CCE8', 'x86_64: C02892EE-9148-36DB-A7D6-EB7AC1B7CCE8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libGPUCompilerImplLazy.dylib'
-current-version: 902.11.1
+current-version: 902.14.9
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ ___clang_metalfe_GPUCompiler_compileFromSourceToBufferWrapper, 

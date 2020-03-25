@@ -1,23 +1,62 @@
-/* iig(DriverKit-73.40.3) generated from IOUserNetworkPacketBufferPool.iig */
+/* iig(DriverKit-73.100.4) generated from IOUserNetworkPacketBufferPool.iig */
 
-/* IOUserNetworkPacketBufferPool.iig:1-16 */
+/* IOUserNetworkPacketBufferPool.iig:1-6 */
 #ifndef _IOUSERNETWORKPACKETBUFFERPOOL_IIG
 #define _IOUSERNETWORKPACKETBUFFERPOOL_IIG
 
 #include <DriverKit/IOMemoryDescriptor.h>  /* .iig include */
 #include <NetworkingDriverKit/IOUserNetworkPacket.h>  /* .iig include */
 
+/* source class IOUserNetworkPacketBufferPool IOUserNetworkPacketBufferPool.iig:7-52 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
-@iig implementation
-#if KERNEL
-#include <IOSkywalkFamily/IOSkywalkPacketBufferPool.h>
-#include <NetworkingDriverKit/IOUserNetworkPacket_kext.h>
-#include <NetworkingDriverKit/IOUserNetworkPacketBufferPool_kext.h>
-#endif
-@iig end
 */
 
-/* class IOUserNetworkPacketBufferPool IOUserNetworkPacketBufferPool.iig:17-52 */
+class KERNEL IOUserNetworkPacketBufferPool : public OSObject
+{
+public:
+    virtual bool
+    init() override;
+
+    virtual void
+    free() override;
+
+    static kern_return_t
+    Create(
+        OSObject * poolOwner,
+        const char name[1024],
+        uint32_t packetCount,
+        uint32_t bufferCount,
+        uint32_t bufferSize,
+        IOUserNetworkPacketBufferPool ** pool) LOCAL;
+
+    virtual kern_return_t
+    DeallocatePacket(
+        IOUserNetworkPacket * packet) LOCALONLY;
+
+    virtual kern_return_t
+    DeallocatePackets(
+        IOUserNetworkPacket ** packets,
+        uint32_t packetsCount) LOCALONLY;
+
+    virtual kern_return_t
+    CopyMemoryDescriptor(
+        IOMemoryDescriptor ** memory);
+
+    virtual kern_return_t
+    GetPacketCount(uint32_t * count) LOCAL;
+
+    virtual kern_return_t
+    GetBufferCount(uint32_t * count) LOCAL;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOUserNetworkPacketBufferPool IOUserNetworkPacketBufferPool.iig:7-52 */
 
 #define IOUserNetworkPacketBufferPool__DeallocatePacket_ID            0x96e008792b9286b5ULL
 #define IOUserNetworkPacketBufferPool__CopyPacketWithIndex_ID            0xf0165b114d39c9f8ULL
@@ -257,6 +296,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 
 /* IOUserNetworkPacketBufferPool.iig:71- */

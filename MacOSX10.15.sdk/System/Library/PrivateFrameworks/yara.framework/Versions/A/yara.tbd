@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C9B9AA63-7C06-34F5-BD19-1743BB262982' ]
+uuids:           [ 'x86_64: D45BCEF6-F595-3E6E-994E-304CBB7A1E2A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/yara.framework/Versions/A/yara'
 exports:         
@@ -151,10 +151,10 @@ exports:
                        _yr_rules_define_boolean_variable, _yr_rules_define_float_variable, 
                        _yr_rules_define_integer_variable, _yr_rules_define_string_variable, 
                        _yr_rules_destroy, _yr_rules_get_stats, _yr_rules_load, _yr_rules_load_stream, 
-                       _yr_rules_save, _yr_rules_save_stream, _yr_rules_scan_fd, 
-                       _yr_rules_scan_file, _yr_rules_scan_mem, _yr_rules_scan_mem_blocks, 
-                       _yr_rules_scan_proc, _yr_scan_verify_match, _yr_scanner_create, 
-                       _yr_scanner_define_boolean_variable, _yr_scanner_define_float_variable, 
+                       _yr_rules_reset_profiling_info, _yr_rules_save, _yr_rules_save_stream, 
+                       _yr_rules_scan_fd, _yr_rules_scan_file, _yr_rules_scan_mem, 
+                       _yr_rules_scan_mem_blocks, _yr_rules_scan_proc, _yr_scan_verify_match, 
+                       _yr_scanner_create, _yr_scanner_define_boolean_variable, _yr_scanner_define_float_variable, 
                        _yr_scanner_define_integer_variable, _yr_scanner_define_string_variable, 
                        _yr_scanner_destroy, _yr_scanner_last_error_rule, _yr_scanner_last_error_string, 
                        _yr_scanner_scan_fd, _yr_scanner_scan_file, _yr_scanner_scan_mem, 

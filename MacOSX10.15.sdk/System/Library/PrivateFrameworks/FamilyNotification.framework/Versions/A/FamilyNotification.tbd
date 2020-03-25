@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6926EF77-1C52-3DB4-9A22-0E55BE2BF3D2' ]
+uuids:           [ 'x86_64: 9A3D9AFB-0E89-33C4-8723-542CEB82B644' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FamilyNotification.framework/Versions/A/FamilyNotification'
 exports:         

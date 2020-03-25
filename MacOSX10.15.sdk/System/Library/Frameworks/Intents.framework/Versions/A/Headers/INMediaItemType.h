@@ -2,7 +2,7 @@
 //  INMediaItemType.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #ifndef INMediaItemType_h
@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, INMediaItemType) {
     INMediaItemTypeRadioStation API_AVAILABLE(ios(13.0), watchos(6.0)),
     INMediaItemTypeStation API_AVAILABLE(ios(13.0), watchos(6.0)),
     INMediaItemTypeMusic API_AVAILABLE(ios(13.0), watchos(6.0)),
-} API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macosx);
+    INMediaItemTypeAlgorithmicRadioStation API_AVAILABLE(ios(13.4), watchos(6.2)),
+} API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macos, tvos);
 
 #endif // INMediaItemType_h

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A70EB174-198E-337F-95C4-BD516310BAF8' ]
+uuids:           [ 'x86_64: C418C928-BA15-3ADE-882E-116377996FB4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AXHearingSupport.framework/Versions/A/AXHearingSupport'
 exports:         

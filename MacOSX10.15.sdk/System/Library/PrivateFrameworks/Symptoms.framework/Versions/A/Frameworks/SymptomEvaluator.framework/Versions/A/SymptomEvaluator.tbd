@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 251848B8-FA84-39EF-BC98-E3175A339A32' ]
+uuids:           [ 'x86_64: A71C8EFB-1BAF-3F16-B2E1-7B406457208D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/Versions/A/SymptomEvaluator'
-current-version: 1238.40.4
+current-version: 1238.100.26
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CLIPS_BASEBAND_BEDF_MODULE, _CLIPS_BASEBAND_MODULE, _CLIPS_BLUETOOTH_MODULE, 
@@ -12,6 +12,16 @@ exports:
                        _CLIPS_MODULE_FAILURE_REASON_KEY, _CLIPS_MODULE_NAME_KEY, 
                        _CLIPS_MODULE_OTA_SERIAL_NUMBER_KEY, _CLIPS_MODULE_REQUIRED_MODULES_KEY, 
                        _CLIPS_NETWORKING_MODULE, _CLIPS_SYMPTOMS_MODULE, _CLIPS_WIFI_MODULE, 
+                       _CTShimSubscriberLastUpdateTime, _CTShimSubscriberMDN, _CTShimSubscriberSlotID, 
+                       _CTShimSubscriberTag, _CTShimSubscriberTagCounter, _CTShimSubscriptionInfoBars, 
+                       _CTShimSubscriptionInfoCTCellInfo, _CTShimSubscriptionInfoCarrierName, 
+                       _CTShimSubscriptionInfoDataStall, _CTShimSubscriptionInfoDataTransferTime, 
+                       _CTShimSubscriptionInfoDataTransferTimeEnabled, _CTShimSubscriptionInfoInUse, 
+                       _CTShimSubscriptionInfoIsCurrentDataSubscription, _CTShimSubscriptionInfoLinkPowerCost, 
+                       _CTShimSubscriptionInfoLinkQualityFingerprint, _CTShimSubscriptionInfoLinkState, 
+                       _CTShimSubscriptionInfoOperatorName, _CTShimSubscriptionInfoSlot, 
+                       _CTShimSubscriptionInfoTimestamp, _CTShimSubscriptionInfoTrafficClass, 
+                       _CTShimSubscriptionInfoUserDataPreferred, _CTShimSubscriptions, 
                        _activate_symptom_evaluator_handling, _boottime_secs, _client_transactions_release, 
                        _configure_analytics_launchpad_for_helper, _configure_symptom_evaluator_handling, 
                        _configure_symptom_logging, _dateStringMillisecondsFromReferenceInterval, 
@@ -41,15 +51,16 @@ exports:
                        _timeIntervalFromMachAbsoluteTime, _timeStringMillisecondsBetweenTimeIntervals, 
                        _timeStringMillisecondsDuration, _timeStringMillisecondsFromReferenceInterval, 
                        _timeStringMillisecondsFromTimeInterval, _uptime_secs ]
-    objc-classes:    [ AnalyticsEngineCore, CLIPSShim, CellFallbackHandler, CountDown, 
-                       DailyMaintenanceActivity, DateRounder, DecisionDetails, Evaluation, 
-                       EventDescription, ExpertSystemHandlerCore, ExpertSystemStateCore, 
+    objc-classes:    [ AnalyticsEngineCore, CLIPSShim, CellFallbackHandler, CoreTelephonyShim, 
+                       CountDown, DailyMaintenanceActivity, DateRounder, DecisionDetails, 
+                       Evaluation, EventDescription, ExpertSystemHandlerCore, ExpertSystemStateCore, 
                        FlowAnalyticsEngine, ImpoExpoService, JournalTimeStamp, LQMPredictionInternalRecord, 
                        ManagedEventHandler, ManagedEventTransport, MathUtility, NWAppAdvice, 
                        NWNetworkAdviceUpdate, NWNetworkOfInterest, NWNetworkPredictions, 
                        NetworkAnalyticsEngine, NetworkAnalyticsModel, NetworkAnalyticsStateRelay, 
                        NoBackhaulHandler, PeriodicMaintenanceActivity, SFActivityBitmaps, 
                        SFActivityFullBitmaps, SemiDailyMaintenanceActivity, StopWatch, 
-                       SymptomEvaluator, SymptomExpertSystemHandler, WeeklyMaintenanceActivity ]
+                       SymptomEvaluator, SymptomExpertSystemHandler, SystemProperties, 
+                       WeeklyMaintenanceActivity ]
     objc-ivars:      [ AnalyticsEngineCore.workspace ]
 ...

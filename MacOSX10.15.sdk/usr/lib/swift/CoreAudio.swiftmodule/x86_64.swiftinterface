@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreAudio -swift-version 5 -O -enforce-exclusivity=unchecked -module-name CoreAudio
 @_exported import CoreAudio
 import Swift
@@ -138,7 +138,7 @@ public struct ManagedAudioChannelLayout {
     get
     set(newValue)
   }
-  mutating public func setAllToUnknown()
+  public mutating func setAllToUnknown()
   public var channelDescriptions: CoreAudio.ManagedAudioChannelLayout.ChannelDescriptions {
     _read
     _modify
@@ -150,7 +150,7 @@ public struct ManagedAudioChannelLayout {
     get
   }
   public func withUnsafePointer<Result>(_ body: (Swift.UnsafePointer<CoreAudioTypes.AudioChannelLayout>) throws -> Result) rethrows -> Result
-  mutating public func withUnsafeMutablePointer<Result>(_ body: (Swift.UnsafeMutablePointer<CoreAudioTypes.AudioChannelLayout>) throws -> Result) rethrows -> Result
+  public mutating func withUnsafeMutablePointer<Result>(_ body: (Swift.UnsafeMutablePointer<CoreAudioTypes.AudioChannelLayout>) throws -> Result) rethrows -> Result
   public struct ChannelDescriptions : Swift.MutableCollection, Swift.RandomAccessCollection {
     public typealias Element = CoreAudioTypes.AudioChannelDescription
     public typealias Index = Swift.Int

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1071517F-71C5-3F14-A1B8-6895800ECE7B', 'x86_64: 1071517F-71C5-3F14-A1B8-6895800ECE7B' ]
+uuids:           [ 'x86_64: B67CC937-F46B-33FA-9BF8-3BAA68BBC0FD', 'x86_64: B67CC937-F46B-33FA-9BF8-3BAA68BBC0FD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/ToneLibrary'
 exports:         
@@ -15,26 +15,26 @@ exports:
                        _TLAlertTopicPassbookNFCScanComplete, _TLAlertTopicPhotosNotificationMemory, 
                        _TLAlertTopicPhotosNotificationSharingPost, _TLAlertTopicSOSButtonChordingTimeout, 
                        _TLAlertTopicSOSCountdownPreannounce, _TLAlertTopicSOSCountdownTick, 
-                       _TLAlertTopicSOSDialStart, _TLAlertTopicSystemNotificationFindMyDevice, 
-                       _TLAlertTopicSystemNotificationGeneric, _TLAlertTopicTextMessageAcknowledgmentExclamation, 
-                       _TLAlertTopicTextMessageAcknowledgmentHaHa, _TLAlertTopicTextMessageAcknowledgmentHeart, 
-                       _TLAlertTopicTextMessageAcknowledgmentQuestionMark, _TLAlertTopicTextMessageAcknowledgmentThumbsDown, 
-                       _TLAlertTopicTextMessageAcknowledgmentThumbsUp, _TLAlertTopicTextMessageInConversation, 
-                       _TLAlertTopicWalkieTalkieActiveEnd, _TLAlertTopicWalkieTalkieActiveStart, 
-                       _TLAlertTypeFromString, _TLLocalizedString, _TLLogGeneral, 
-                       _TLLogPlayback, _TLLogToneManagement, _TLLogVibrationManagement, 
-                       _TLServiceAgentIdentifier, _TLServiceAgentPreferencesDomain, 
+                       _TLAlertTopicSOSDialStart, _TLAlertTopicSystemNotificationBackgroundMicUsage, 
+                       _TLAlertTopicSystemNotificationFindMyDevice, _TLAlertTopicSystemNotificationGeneric, 
+                       _TLAlertTopicTextMessageAcknowledgmentExclamation, _TLAlertTopicTextMessageAcknowledgmentHaHa, 
+                       _TLAlertTopicTextMessageAcknowledgmentHeart, _TLAlertTopicTextMessageAcknowledgmentQuestionMark, 
+                       _TLAlertTopicTextMessageAcknowledgmentThumbsDown, _TLAlertTopicTextMessageAcknowledgmentThumbsUp, 
+                       _TLAlertTopicTextMessageInConversation, _TLAlertTopicWalkieTalkieActiveEnd, 
+                       _TLAlertTopicWalkieTalkieActiveStart, _TLAlertTypeFromString, 
+                       _TLLocalizedString, _TLLogGeneral, _TLLogPlayback, _TLLogToneManagement, 
+                       _TLLogVibrationManagement, _TLServiceAgentIdentifier, _TLServiceAgentPreferencesDomain, 
                        _TLServiceCommunicationErrorDomain, _TLServicePersistenceErrorDomain, 
                        _TLServiceValidationErrorDomain, _TLToneIdentifierNone, __TLAlertOverridePolicyDidChangeNotification, 
                        __TLAlertTopicIncomingCallDeemphasized, __TLAlertTypeGetHumanReadableDescription, 
-                       __TLAlertTypeValidateConsistencyOfEnumeration, __TLAssertShouldAbort, 
-                       __TLToneManagerContentsChangedNotification, _kSystemSoundID_InvalidTone, 
-                       _kSystemSoundID_NoneTone, _kToneAlbumKey, _kToneArtistKey, 
-                       _kToneArtworkFileKey, _kToneDurationKey, _kToneFileExtensionKey, 
-                       _kToneGenreKey, _kToneGloballyUniqueIdentifierKey, _kToneMediaKindAlertTone, 
-                       _kToneMediaKindKey, _kToneMediaKindRingtone, _kTonePrivateKey, 
-                       _kToneProtectedContentKey, _kTonePurchasedKey, _kToneStoreFrontIdentifierKey, 
-                       _kToneStoreItemIdentifierKey, _kToneSyncIdentifierKey, _kToneTitleKey ]
+                       __TLAlertTypeValidateConsistencyOfEnumeration, __TLToneManagerContentsChangedNotification, 
+                       _kSystemSoundID_InvalidTone, _kSystemSoundID_NoneTone, _kToneAlbumKey, 
+                       _kToneArtistKey, _kToneArtworkFileKey, _kToneDurationKey, 
+                       _kToneFileExtensionKey, _kToneGenreKey, _kToneGloballyUniqueIdentifierKey, 
+                       _kToneMediaKindAlertTone, _kToneMediaKindKey, _kToneMediaKindRingtone, 
+                       _kTonePrivateKey, _kToneProtectedContentKey, _kTonePurchasedKey, 
+                       _kToneStoreFrontIdentifierKey, _kToneStoreItemIdentifierKey, 
+                       _kToneSyncIdentifierKey, _kToneTitleKey ]
     objc-classes:    [ TLAccessQueue, TLAlert, TLAlertActivationAssertion, TLAlertConfiguration, 
                        TLAlertContext, TLAlertController, TLAlertPlaybackCompletionContext, 
                        TLAlertPlaybackPolicy, TLAlertQueuePlayerController, TLAlertStoppingOptions, 

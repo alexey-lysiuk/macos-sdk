@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 99CC9436-D653-3762-ADBB-9054EBD1BA2B', 'x86_64: 99CC9436-D653-3762-ADBB-9054EBD1BA2B' ]
+uuids:           [ 'x86_64: 32B0E31E-9DA3-328B-A962-BC9591B93537', 'x86_64: 32B0E31E-9DA3-328B-A962-BC9591B93537' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libxpc.dylib'
-current-version: 1738.40.10
+current-version: 1738.100.39
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -67,15 +67,15 @@ exports:
                        __xpc_int64_set_value, __xpc_payload_create_from_mach_msg, 
                        __xpc_pipe_handle_mig, __xpc_runtime_get_entitlements_data, 
                        __xpc_runtime_get_self_entitlements, __xpc_runtime_is_app_sandboxed, 
-                       __xpc_service_last_xref_cancel, __xpc_spawnattr_pack_string, 
-                       __xpc_spawnattr_pack_string_fragment, __xpc_spawnattr_unpack_string, 
-                       __xpc_spawnattr_unpack_strings, __xpc_string_set_value, __xpc_type_activity, 
-                       __xpc_type_array, __xpc_type_base, __xpc_type_bool, __xpc_type_bundle, 
-                       __xpc_type_connection, __xpc_type_data, __xpc_type_date, __xpc_type_dictionary, 
-                       __xpc_type_double, __xpc_type_endpoint, __xpc_type_error, 
-                       __xpc_type_fd, __xpc_type_file_transfer, __xpc_type_int64, 
-                       __xpc_type_mach_recv, __xpc_type_mach_send, __xpc_type_null, 
-                       __xpc_type_pipe, __xpc_type_pointer, __xpc_type_serializer, 
+                       __xpc_service_last_xref_cancel, __xpc_shmem_get_mach_port, 
+                       __xpc_spawnattr_pack_string, __xpc_spawnattr_pack_string_fragment, 
+                       __xpc_spawnattr_unpack_string, __xpc_spawnattr_unpack_strings, 
+                       __xpc_string_set_value, __xpc_type_activity, __xpc_type_array, 
+                       __xpc_type_base, __xpc_type_bool, __xpc_type_bundle, __xpc_type_connection, 
+                       __xpc_type_data, __xpc_type_date, __xpc_type_dictionary, __xpc_type_double, 
+                       __xpc_type_endpoint, __xpc_type_error, __xpc_type_fd, __xpc_type_file_transfer, 
+                       __xpc_type_int64, __xpc_type_mach_recv, __xpc_type_mach_send, 
+                       __xpc_type_null, __xpc_type_pipe, __xpc_type_pointer, __xpc_type_serializer, 
                        __xpc_type_service, __xpc_type_service_instance, __xpc_type_shmem, 
                        __xpc_type_string, __xpc_type_uint64, __xpc_type_uuid, _bootstrap_check_in, 
                        _bootstrap_check_in2, _bootstrap_check_in3, _bootstrap_create_server, 
@@ -147,10 +147,11 @@ exports:
                        _xpc_atfork_prepare, _xpc_bool_create, _xpc_bool_get_value, 
                        _xpc_bundle_copy_info_dictionary, _xpc_bundle_copy_resource_path, 
                        _xpc_bundle_copy_services, _xpc_bundle_create, _xpc_bundle_create_from_origin, 
-                       _xpc_bundle_create_main, _xpc_bundle_get_executable_path, 
+                       _xpc_bundle_create_main, _xpc_bundle_get_error, _xpc_bundle_get_executable_path, 
                        _xpc_bundle_get_info_dictionary, _xpc_bundle_get_path, _xpc_bundle_get_property, 
                        _xpc_bundle_get_xpcservice_dictionary, _xpc_bundle_populate, 
-                       _xpc_bundle_resolve, _xpc_coalition_copy_info, _xpc_coalition_history_pipe_async, 
+                       _xpc_bundle_resolve, _xpc_bundle_resolve_on_queue, _xpc_bundle_resolve_sync, 
+                       _xpc_coalition_copy_info, _xpc_coalition_history_pipe_async, 
                        _xpc_connection_activate, _xpc_connection_cancel, _xpc_connection_copy_bundle_id, 
                        _xpc_connection_copy_entitlement_value, _xpc_connection_create, 
                        _xpc_connection_create_from_endpoint, _xpc_connection_create_listener, 
@@ -231,15 +232,16 @@ exports:
                        _xpc_pipe_routine_reply, _xpc_pipe_routine_with_flags, _xpc_pipe_simpleroutine, 
                        _xpc_pipe_try_receive, _xpc_pointer_create, _xpc_pointer_get_value, 
                        _xpc_receive_mach_msg, _xpc_receive_remote_msg, _xpc_release, 
-                       _xpc_retain, _xpc_service_create, _xpc_service_get_rendezvous_token, 
-                       _xpc_service_instance_dup2, _xpc_service_instance_get_context, 
-                       _xpc_service_instance_get_host_pid, _xpc_service_instance_get_pid, 
-                       _xpc_service_instance_get_type, _xpc_service_instance_is_configurable, 
-                       _xpc_service_instance_run, _xpc_service_instance_set_binpref, 
-                       _xpc_service_instance_set_context, _xpc_service_instance_set_cwd, 
-                       _xpc_service_instance_set_endpoint, _xpc_service_instance_set_environment, 
-                       _xpc_service_instance_set_finalizer_f, _xpc_service_instance_set_jetsam_properties, 
-                       _xpc_service_instance_set_path, _xpc_service_instance_set_start_suspended, 
+                       _xpc_retain, _xpc_service_attach, _xpc_service_create, _xpc_service_create_from_specifier, 
+                       _xpc_service_get_rendezvous_token, _xpc_service_instance_dup2, 
+                       _xpc_service_instance_get_context, _xpc_service_instance_get_host_pid, 
+                       _xpc_service_instance_get_pid, _xpc_service_instance_get_type, 
+                       _xpc_service_instance_is_configurable, _xpc_service_instance_run, 
+                       _xpc_service_instance_set_binpref, _xpc_service_instance_set_context, 
+                       _xpc_service_instance_set_cwd, _xpc_service_instance_set_endpoint, 
+                       _xpc_service_instance_set_environment, _xpc_service_instance_set_finalizer_f, 
+                       _xpc_service_instance_set_jetsam_properties, _xpc_service_instance_set_path, 
+                       _xpc_service_instance_set_start_suspended, _xpc_service_kickstart, 
                        _xpc_service_set_attach_handler, _xpc_set_event, _xpc_set_event_state, 
                        _xpc_set_event_stream_handler, _xpc_set_event_with_flags, 
                        _xpc_set_idle_handler, _xpc_shmem_create, _xpc_shmem_create_readonly, 

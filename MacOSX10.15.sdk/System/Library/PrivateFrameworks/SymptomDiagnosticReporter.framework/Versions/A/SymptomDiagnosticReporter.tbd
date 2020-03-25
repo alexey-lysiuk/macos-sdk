@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FB255398-53B0-3462-8227-EBD173B5F93E', 'x86_64: FB255398-53B0-3462-8227-EBD173B5F93E' ]
+uuids:           [ 'x86_64: A2197A8A-796E-321C-8EBB-075AED9995B0', 'x86_64: A2197A8A-796E-321C-8EBB-075AED9995B0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SymptomDiagnosticReporter.framework/Versions/A/SymptomDiagnosticReporter'
-current-version: 1238.40.4
+current-version: 1238.100.26
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SDRGetAllLogFileURLs, _diagnosticErrorStringForCode, _kAutoBugCaptureStatusKeyAPNSEnable, 

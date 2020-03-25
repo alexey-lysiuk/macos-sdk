@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AFBB6FA7-3670-3F6C-B35C-73FEC9533B7F' ]
+uuids:           [ 'x86_64: D70F9B08-02E2-3FE8-8F28-270847F61FE8' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftCreateML.dylib'
 swift-abi-version: 7
@@ -16,6 +16,7 @@ exports:
                        '_$s8CreateML028getSimilarItemsParameterNameE0SSvp', '_$s8CreateML034getSimilarItemsParameterNameGetAllE0SSvau', 
                        '_$s8CreateML034getSimilarItemsParameterNameGetAllE0SSvp', 
                        '_$s8CreateML035validateAndConvertRawDataToInternalG0_14featureColumns11labelColumn013recordingFileM0AA11MLDataTableVAG_SaySSGS2StKF', 
+                       '_$s8CreateML08metaDataA12MLVersionKeySSvau', '_$s8CreateML08metaDataA12MLVersionKeySSvp', 
                        '_$s8CreateML10CMLVariantC10int64Values5Int64VyKF', '_$s8CreateML10CMLVariantC10parametersAA13CMLParametersCyKF', 
                        '_$s8CreateML10CMLVariantC12featureValueAA010CMLFeatureE0CyKF', 
                        '_$s8CreateML10CMLVariantC12isParametersSbyF', '_$s8CreateML10CMLVariantC14isFeatureValueSbyF', 
@@ -716,9 +717,9 @@ exports:
                        '_$s8CreateML12confusionKeySSvau', '_$s8CreateML12confusionKeySSvp', 
                        '_$s8CreateML12csvDelimiterSSvau', '_$s8CreateML12csvDelimiterSSvp', 
                        '_$s8CreateML12datExtensionSSvau', '_$s8CreateML12datExtensionSSvp', 
-                       '_$s8CreateML12l1PenaltyKeySSvau', '_$s8CreateML12l1PenaltyKeySSvp', 
-                       '_$s8CreateML12l2PenaltyKeySSvau', '_$s8CreateML12l2PenaltyKeySSvp', 
-                       '_$s8CreateML13CMLAggregatorC3add18concatToColumnName03keygH005valuegH0ySS_S2StKF', 
+                       '_$s8CreateML12getOSVersionSSyF', '_$s8CreateML12l1PenaltyKeySSvau', 
+                       '_$s8CreateML12l1PenaltyKeySSvp', '_$s8CreateML12l2PenaltyKeySSvau', 
+                       '_$s8CreateML12l2PenaltyKeySSvp', '_$s8CreateML13CMLAggregatorC3add18concatToColumnName03keygH005valuegH0ySS_S2StKF', 
                        '_$s8CreateML13CMLAggregatorC3add5isMax12toColumnName03agghI006outputhI0ySb_S3StKF', 
                        '_$s8CreateML13CMLAggregatorC3add8quantile12toColumnName04fromgH0ySd_S2StKF', 
                        '_$s8CreateML13CMLAggregatorC3add9operation12toColumnName04fromgH0ySS_S2StKF', 

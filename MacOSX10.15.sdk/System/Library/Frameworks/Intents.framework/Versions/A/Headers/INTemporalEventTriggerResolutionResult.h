@@ -2,7 +2,7 @@
 //  INTemporalEventTriggerResolutionResult.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntentResolutionResult.h>
@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(11.0), watchos(4.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INTemporalEventTriggerResolutionResult : INIntentResolutionResult
 
 // This resolution result is for when the app extension wants to tell Siri to proceed, with a given INTemporalEventTrigger. The resolvedTemporalEventTrigger can be different than the original INTemporalEventTrigger. This allows app extensions to apply business logic constraints.

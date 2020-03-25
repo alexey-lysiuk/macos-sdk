@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: FA807D79-8F25-30E9-9422-1FE421FB6D73', 'x86_64: FA807D79-8F25-30E9-9422-1FE421FB6D73', 
-                   'x86_64h: DBE9F84B-D9A2-3044-BFE2-B3853025FD9F', 'x86_64h: DBE9F84B-D9A2-3044-BFE2-B3853025FD9F' ]
+uuids:           [ 'x86_64: 4B64A128-E898-336D-9ECF-C90244DA7EEB', 'x86_64: 4B64A128-E898-336D-9ECF-C90244DA7EEB', 
+                   'x86_64h: 52DC775B-CAB5-32B7-AC86-D9AAF7851BE9', 'x86_64h: 52DC775B-CAB5-32B7-AC86-D9AAF7851BE9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib'
 exports:         

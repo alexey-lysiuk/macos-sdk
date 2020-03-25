@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A7A09B8B-CEAD-3480-906E-9C3B685E6611' ]
+uuids:           [ 'x86_64: 852E7EE8-EC39-3CFF-9605-9F971F7BCED5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DFRFoundation.framework/Versions/A/DFRFoundation'
-current-version: 252
+current-version: 252.40.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DFRAccessibilityRemoteUIElementsChangedNotification, _DFRControlStripPlayPauseButtonIdentifier, 

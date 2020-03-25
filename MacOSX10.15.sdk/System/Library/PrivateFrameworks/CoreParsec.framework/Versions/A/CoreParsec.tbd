@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BACCCE9B-832F-3210-9669-5F4E284006EA', 'x86_64: BACCCE9B-832F-3210-9669-5F4E284006EA' ]
+uuids:           [ 'x86_64: 1CCB3C68-4E43-3E09-A162-A1ED5AE3D441', 'x86_64: 1CCB3C68-4E43-3E09-A162-A1ED5AE3D441' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreParsec.framework/Versions/A/CoreParsec'
 exports:         
@@ -54,9 +54,9 @@ exports:
                        _kPARWebsiteCategoryLabels, _kSilhouetteConfig, _kSilhouetteTopicMapping, 
                        _kSilhouetteWhitelistedTopics ]
     objc-classes:    [ PARAsyncCard, PARAsyncMoreResults, PARBag, PARCardRequest, 
-                       PARCustomSearchResult, PARDefaultFactory, PAREngagedCompletionCache, 
-                       PARFlightResponse, PARFlightSearchRequest, PARFuture, PARHashtagImagesVisibility, 
-                       PARImage, PARLookupRequest, PARMoreResultsRequest, PARNewsVisibility, 
+                       PARDefaultFactory, PAREngagedCompletionCache, PARFlightResponse, 
+                       PARFlightSearchRequest, PARFuture, PARHashtagImagesVisibility, 
+                       PARLookupRequest, PARMoreResultsRequest, PARNewsVisibility, 
                        PARPromise, PARReply, PARRequest, PARResponse, PARSearchClient, 
                        PARSearchRequest, PARSession, PARSessionConfiguration, PARSyncCard, 
                        PARTask, PARZeroKeywordRequest, _CPActionItemForFeedback, 

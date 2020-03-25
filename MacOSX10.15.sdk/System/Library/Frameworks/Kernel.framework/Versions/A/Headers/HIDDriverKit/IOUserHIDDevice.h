@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.40.3) generated from IOUserHIDDevice.iig */
+/* iig(DriverKit-73.100.4) generated from IOUserHIDDevice.iig */
 
 /* IOUserHIDDevice.iig:1-37 */
 /*
@@ -38,7 +38,86 @@
 class  OSData;
 class  OSDictionary;
 
-/* class IOUserHIDDevice IOUserHIDDevice.iig:38-106 */
+/* source class IOUserHIDDevice IOUserHIDDevice.iig:38-106 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
+class  IOUserHIDDevice : public IOHIDDevice
+{
+
+public:
+
+    /*!
+     * @function    Start
+     * @brief       Device start
+     * @discussion  method called from Start and can be use to initlialize device.
+     * @param       provider The IOService that is provider for this object.
+     * @return      KERN_SUCCESS is successful see IOReturn.h for error codes.
+     */
+
+    virtual kern_return_t Start (IOService * provider) override;
+
+
+protected:
+
+    
+    /*!
+     * @function    handleStart
+     * @brief       Handle device start
+     * @discussion  method called from Start and can be use to initlialize device.
+     * @param       provider The IOService that is provider for this object.
+     * @return      true on success.
+     */
+
+    virtual bool handleStart(IOService * provider) LOCALONLY;
+
+
+    /*!
+     * @function newDeviceDescription
+     * @abstract Create and return a new dicitonary that describe the device HID device
+     * @discussion A subclass must override this pure virtual function, and
+     * return a dictionary of key value pairs that describe device.
+     * Supported keys (see  IOHIDDeviceKeys.h ):
+     *  kIOHIDReportIntervalKey
+     *  kIOHIDVendorIDKey
+     *  kIOHIDProductIDKey
+     *  kIOHIDTransportKey
+     *  kIOHIDVersionNumberKey
+     *  kIOHIDCountryCodeKey
+     *  kIOHIDLocationIDKey
+     *  kIOHIDManufacturerKey
+     *  kIOHIDProductKey
+     *  kIOHIDSerialNumberKey
+     *  kIOHIDRequestTimeoutKey
+     *  @param description Ponter to the description dictionary pointer
+     *  @result OSDictionary that contains device deccription dicitonary.
+     */
+    
+    virtual OSDictionary * newDeviceDescription () LOCALONLY;
+    
+    
+    /*!
+     * @function newReportDescriptor
+     * @abstract Create and return a new memory descriptor that describes the
+     * report descriptor for the HID device.
+     * @discussion A subclass must override this pure virtual function, and
+     * return a memory descriptor that describes the HID report descriptor as
+     * defined by the USB Device Class Definition for Human Interface Devices
+     * Version 1.1 specification.
+     * @result OSData object that contains HID descriptor.
+     */
+    
+    virtual OSData * newReportDescriptor () LOCALONLY;
+
+public:
+  
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOUserHIDDevice IOUserHIDDevice.iig:38-106 */
 
 
 #define IOUserHIDDevice_Start_Args \
@@ -151,6 +230,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* IOUserHIDDevice.iig:108- */
 

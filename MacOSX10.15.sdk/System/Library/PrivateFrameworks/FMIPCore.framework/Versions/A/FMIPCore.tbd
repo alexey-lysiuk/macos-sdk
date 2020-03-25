@@ -1,12 +1,13 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7C0BFE31-C266-3C8E-8486-CABCFD6ACD72' ]
+uuids:           [ 'x86_64: B1D080DF-272B-365A-A5E3-9E602F10C46E' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/FMIPCore.framework/Versions/A/FMIPCore'
 swift-abi-version: 7
 exports:         
   - archs:           [ x86_64 ]
-    allowable-clients: [ FMIPCoreTests, FindMy, FindMySiriIntents, FindMyTests, fmipcoretool ]
+    allowable-clients: [ FMIPCoreTests, FindMy, FindMySiriIntents, FindMyTests, SiriFindMy, 
+                         SiriFindMyBundle, SiriFindMyTester, SiriFindMyTests, fmipcoretool ]
     symbols:         [ '_$s8FMIPCore032FMIPBeaconRefreshingControllerIsC0Sbvau', 
                        '_$s8FMIPCore032FMIPBeaconRefreshingControllerIsC0Sbvp', '_$s8FMIPCore0A16PreferenceDomainSSvau', 
                        '_$s8FMIPCore0A16PreferenceDomainSSvp', '_$s8FMIPCore10FMIPDeviceV10identifierSSvg', 
@@ -101,6 +102,16 @@ exports:
                        '_$s8FMIPCore11FMIPAddressVSQAAMc', '_$s8FMIPCore11FMIPAddressVSeAAMc', 
                        '_$s8FMIPCore11FMIPAddressVs28CustomDebugStringConvertibleAAMc', 
                        '_$s8FMIPCore11FMIPManagerC10initializeyyF', '_$s8FMIPCore11FMIPManagerC10initializeyyFTq', 
+                       '_$s8FMIPCore11FMIPManagerC12siriDelegateAA0b4SiriD0_pSgvM', 
+                       '_$s8FMIPCore11FMIPManagerC12siriDelegateAA0b4SiriD0_pSgvMTq', 
+                       '_$s8FMIPCore11FMIPManagerC12siriDelegateAA0b4SiriD0_pSgvg', 
+                       '_$s8FMIPCore11FMIPManagerC12siriDelegateAA0b4SiriD0_pSgvgTq', 
+                       '_$s8FMIPCore11FMIPManagerC12siriDelegateAA0b4SiriD0_pSgvpMV', 
+                       '_$s8FMIPCore11FMIPManagerC12siriDelegateAA0b4SiriD0_pSgvpWvd', 
+                       '_$s8FMIPCore11FMIPManagerC12siriDelegateAA0b4SiriD0_pSgvpfi', 
+                       '_$s8FMIPCore11FMIPManagerC12siriDelegateAA0b4SiriD0_pSgvs', 
+                       '_$s8FMIPCore11FMIPManagerC12siriDelegateAA0b4SiriD0_pSgvsTq', 
+                       '_$s8FMIPCore11FMIPManagerC13delegateQueue33_2C896CDCBBB3FEED6B3798C85D481EDFLLSo17OS_dispatch_queueCvpfi', 
                        '_$s8FMIPCore11FMIPManagerC13familyMembersSayAA10FMIPPersonVGvg', 
                        '_$s8FMIPCore11FMIPManagerC13familyMembersSayAA10FMIPPersonVGvgTq', 
                        '_$s8FMIPCore11FMIPManagerC13familyMembersSayAA10FMIPPersonVGvpMV', 
@@ -144,6 +155,7 @@ exports:
                        '_$s8FMIPCore11FMIPManagerC8delegateAA0B8Delegate_pSgvpfi', 
                        '_$s8FMIPCore11FMIPManagerC8delegateAA0B8Delegate_pSgvs', 
                        '_$s8FMIPCore11FMIPManagerC8delegateAA0B8Delegate_pSgvsTq', 
+                       '_$s8FMIPCore11FMIPManagerC9dataQueue33_2C896CDCBBB3FEED6B3798C85D481EDFLLSo17OS_dispatch_queueCvpfi', 
                        '_$s8FMIPCore11FMIPManagerCACycfC', '_$s8FMIPCore11FMIPManagerCACycfCTq', 
                        '_$s8FMIPCore11FMIPManagerCACycfc', '_$s8FMIPCore11FMIPManagerCMa', 
                        '_$s8FMIPCore11FMIPManagerCMm', '_$s8FMIPCore11FMIPManagerCMn', 
@@ -159,9 +171,13 @@ exports:
                        '_$s8FMIPCore12FMIPFeaturesV17isLostModeEnabledACvau', '_$s8FMIPCore12FMIPFeaturesV17isLostModeEnabledACvgZ', 
                        '_$s8FMIPCore12FMIPFeaturesV17isLostModeEnabledACvpZ', '_$s8FMIPCore12FMIPFeaturesV18isPlaySoundEnabledACvau', 
                        '_$s8FMIPCore12FMIPFeaturesV18isPlaySoundEnabledACvgZ', '_$s8FMIPCore12FMIPFeaturesV18isPlaySoundEnabledACvpZ', 
-                       '_$s8FMIPCore12FMIPFeaturesV20isPinRequiredForWipeACvau', 
+                       '_$s8FMIPCore12FMIPFeaturesV19isBluetoothRequiredACvau', '_$s8FMIPCore12FMIPFeaturesV19isBluetoothRequiredACvgZ', 
+                       '_$s8FMIPCore12FMIPFeaturesV19isBluetoothRequiredACvpZ', '_$s8FMIPCore12FMIPFeaturesV20isPinRequiredForWipeACvau', 
                        '_$s8FMIPCore12FMIPFeaturesV20isPinRequiredForWipeACvgZ', 
                        '_$s8FMIPCore12FMIPFeaturesV20isPinRequiredForWipeACvpZ', 
+                       '_$s8FMIPCore12FMIPFeaturesV20isStopSoundSupportedACvau', 
+                       '_$s8FMIPCore12FMIPFeaturesV20isStopSoundSupportedACvgZ', 
+                       '_$s8FMIPCore12FMIPFeaturesV20isStopSoundSupportedACvpZ', 
                        '_$s8FMIPCore12FMIPFeaturesV23isLockAndMessageEnabledACvau', 
                        '_$s8FMIPCore12FMIPFeaturesV23isLockAndMessageEnabledACvgZ', 
                        '_$s8FMIPCore12FMIPFeaturesV23isLockAndMessageEnabledACvpZ', 
@@ -440,6 +456,18 @@ exports:
                        '_$s8FMIPCore18FMIPURLDevicesHostSSvp', '_$s8FMIPCore19FMIPDemoModeEnabledSbvau', 
                        '_$s8FMIPCore19FMIPDemoModeEnabledSbvp', '_$s8FMIPCore19FMIPFindMyURLSchemeSSvau', 
                        '_$s8FMIPCore19FMIPFindMyURLSchemeSSvp', '_$s8FMIPCore19FMIPManagerDelegateMp', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE11fmipManager_10didReceiveyAA0B0C_AA9FMIPAlertCtF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE11fmipManager_13deviceRemovedyAA0B0C_AA10FMIPDeviceVtF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE11fmipManager_14ownerDidChangeyAA0B0C_AA10FMIPPersonVtF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE11fmipManager_15deviceDidChangeyAA0B0C_AA10FMIPDeviceVtF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE11fmipManager_16devicesDidChangeyAA0B0C_SayAA10FMIPDeviceVGtF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE11fmipManager_19imageVersionChangedyAA0B0C_SStF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE11fmipManager_21initializationDidFailyAA0B0C_s5Error_pSgtF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE11fmipManager_22familyMembersDidChangeyAA0B0C_SayAA10FMIPPersonVGtF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE21fmipManagerDidRefresh_9startDate03endI010tapContextyAA0B0C_10Foundation0I0VALSaySDys11AnyHashableVypGGtF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE23fmipManagerDidLoadCacheyyAA0B0CF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE24fmipManagerDidInitializeyyAA0B0CF', 
+                       '_$s8FMIPCore19FMIPManagerDelegatePAAE30fmipManagerRequestLastLocationyyAA0B0CF', 
                        '_$s8FMIPCore19FMIPManagerDelegateTL', '_$s8FMIPCore19FMIPPlaySoundReasonO8rawValueACSgSS_tcfC', 
                        '_$s8FMIPCore19FMIPPlaySoundReasonO8rawValueSSvg', '_$s8FMIPCore19FMIPPlaySoundReasonO8rawValueSSvpMV', 
                        '_$s8FMIPCore19FMIPPlaySoundReasonOMa', '_$s8FMIPCore19FMIPPlaySoundReasonOMn', 
@@ -501,7 +529,11 @@ exports:
                        '_$s8FMIPCore22FMIPRemoveDeviceActionCMa', '_$s8FMIPCore22FMIPRemoveDeviceActionCMm', 
                        '_$s8FMIPCore22FMIPRemoveDeviceActionCMn', '_$s8FMIPCore22FMIPRemoveDeviceActionCN', 
                        '_$s8FMIPCore22FMIPRemoveDeviceActionCSQAAMc', '_$s8FMIPCore22FMIPRemoveDeviceActionCfD', 
-                       '_$s8FMIPCore22FMIPRemoveDeviceActionCfd', '_$s8FMIPCore25FMIPPlaySoundDeviceActionC22safetyWarningConfirmedSbvg', 
+                       '_$s8FMIPCore22FMIPRemoveDeviceActionCfd', '_$s8FMIPCore22FMIPShowLocationSourceSbvau', 
+                       '_$s8FMIPCore22FMIPShowLocationSourceSbvp', '_$s8FMIPCore23FMIPManagerSiriDelegateMp', 
+                       '_$s8FMIPCore23FMIPManagerSiriDelegatePAAE11fmipManager_10didRecieve13familyMembersyAA0B0C_AA10FMIPPersonVSayAJGtF', 
+                       '_$s8FMIPCore23FMIPManagerSiriDelegatePAAE11fmipManager_20didInitializeDevicesyAA0B0C_SayAA10FMIPDeviceVGtF', 
+                       '_$s8FMIPCore23FMIPManagerSiriDelegateTL', '_$s8FMIPCore25FMIPPlaySoundDeviceActionC22safetyWarningConfirmedSbvg', 
                        '_$s8FMIPCore25FMIPPlaySoundDeviceActionC22safetyWarningConfirmedSbvpMV', 
                        '_$s8FMIPCore25FMIPPlaySoundDeviceActionC22safetyWarningConfirmedSbvpWvd', 
                        '_$s8FMIPCore25FMIPPlaySoundDeviceActionC6device8channels22safetyWarningConfirmedAcA10FMIPDeviceV_SayAA0bC8ChannelsOGSbtcfC', 

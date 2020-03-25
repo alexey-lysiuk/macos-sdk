@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, UISearchBarStyle) {
 
 
 @protocol UISearchBarDelegate;
-@class UITextField, UILabel, UIButton, UIColor;
+@class UITextField, UILabel, UIButton, UIColor, UISearchTextField;
 
 /*
  UISearchBar officially conformed to UITextInputTraits in iOS 8.0 and privately conformed in iOS 7.0. Prior to 7.0, UISearchBar only implemented these four traits: autocapitalizationType, autocorrectionType, spellCheckingType and keyboardType. If your deployment target is <7.0 and you are using any trait other than one of the four mentioned, you must check its availability with respondsToSelector:
@@ -50,6 +50,7 @@ UIKIT_EXTERN API_AVAILABLE(ios(2.0)) @interface UISearchBar : UIView <UIBarPosit
 @property(nullable,nonatomic,copy)   NSString               *prompt;                // default is nil
 @property(nullable,nonatomic,copy)   NSString               *placeholder;           // default is nil
 @property(nonatomic)        BOOL                    showsBookmarkButton API_UNAVAILABLE(tvos);   // default is NO
+@property(nonatomic,readonly) UISearchTextField *searchTextField API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(tvos,watchos);
 
 /* New behavior on iOS 13.
  If the search bar is owned by a UISearchController, then using the setter

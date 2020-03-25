@@ -33,6 +33,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdarg.h>
 #include <os/overflow.h>
 #include <os/log.h>
 #include <TargetConditionals.h>
@@ -47,11 +48,24 @@ IOLogBuffer(const char * title, const void * buffer, size_t size);
 uint32_t
 crc32(uint32_t crc, const void *buf, size_t size);
 
-#if TARGET_OS_DRIVERKIT
-#define IOLog(fmt, args...)	{ os_log(OS_LOG_DEFAULT, fmt, ## args); }
-#else
-#define IOLog(fmt, args...)	{ printf(fmt, ## args); os_log(OS_LOG_DEFAULT, fmt, ## args); }
-#endif
+
+/*! @function IOLog
+ *   @abstract Log a message to console in text mode, and os_log.
+ *   @discussion This function allows a driver to log diagnostic information to the screen during verbose boots, and to os_log.
+ *   @param format A printf() style format string (see printf(3) documentation).
+ */
+
+int IOLog(const char *format, ...)
+__attribute__((format(printf, 1, 2)));
+
+/*! @function IOLogv
+ *   @abstract Log a message to console in text mode, and os_log.
+ *   @discussion This function allows a driver to log diagnostic information to the screen during verbose boots, and to os_log.
+ *   @param format A printf() style format string (see printf(3) documentation).
+ *   @param ap stdarg(3) style variable arguments. */
+
+int IOLogv(const char *format, va_list ap)
+__attribute__((format(printf, 1, 0)));
 
 /*! @function IOMalloc
  *   @abstract Allocates general purpose memory.
@@ -154,6 +168,25 @@ mach_absolute_time(void);
  */
 uint64_t
 mach_continuous_time(void);
+
+#ifndef NSEC_PER_SEC
+#define NSEC_PER_SEC    1000000000ull   /* nanoseconds per second */
+
+/*! @enum Scale Factors
+ *   @discussion Used when a scale_factor parameter is required to define a unit of time.
+ *   @constant kNanosecondScale Scale factor for nanosecond based times.
+ *   @constant kMicrosecondScale Scale factor for microsecond based times.
+ *   @constant kMillisecondScale Scale factor for millisecond based times.
+ *   @constant kSecondScale Scale factor for second based times. */
+
+enum {
+	kNanosecondScale  = 1,
+	kMicrosecondScale = 1000,
+	kMillisecondScale = 1000 * 1000,
+	kSecondScale      = 1000 * 1000 * 1000,
+};
+
+#endif /* NSEC_PER_SEC */
 
 #endif // TARGET_OS_DRIVERKIT && !DRIVERKIT_PRIVATE
 
@@ -286,6 +319,193 @@ OSReportWithBacktrace(const char *str, ...);
  */
 extern uint64_t IOVMPageSize;
 
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+struct IOLock;
+
+/*! @function IOLockAlloc
+ *   @abstract Allocates and initializes a mutex.
+ *   @discussion Allocates a mutex in general purpose memory, and initializes it.
+ *   @result Pointer to the allocated lock, or zero on failure. */
+
+struct IOLock * IOLockAlloc( void );
+
+/*! @function IOLockFree
+ *   @abstract Frees a mutex.
+ *   @discussion Frees a lock allocated with IOLockAlloc. Mutex should be unlocked with no waiters.
+ *   @param lock Pointer to the allocated lock. */
+
+void    IOLockFree(struct IOLock * lock);
+
+/*! @function IOLockFreeZero
+ *   @abstract Frees a mutex and zeroes pointer.
+ *   @discussion Frees a lock allocated with IOLockAlloc. Mutex should be unlocked with no waiters.
+ *   @param lock Pointer to the allocated lock. */
+
+#define IOLockFreeZero(l)	do { if (l) { IOLockFree(l); l = NULL; } } while (0);
+
+
+/*! @function IOLockLock
+ *   @abstract Lock a mutex.
+ *   @discussion Lock the mutex. If the lock is held by any thread, block waiting for its unlock. Locking the mutex recursively from one thread will result in deadlock.
+ *   @param lock Pointer to the allocated lock. */
+
+void    IOLockLock(struct IOLock * lock);
+
+
+/*! @function IOLockUnlock
+ *   @abstract Unlock a mutex.
+ *  @discussion Unlock the mutex and wake any blocked waiters. Results are undefined if the caller has not locked the mutex.
+ *   @param lock Pointer to the allocated lock. */
+
+void    IOLockUnlock(struct IOLock * lock);
+
+
+/*! @function IOLockTryLock
+ *   @abstract Attempt to lock a mutex.
+ *   @discussion Lock the mutex if it is currently unlocked, and return true. If the lock is held by any thread, return false.
+ *   @param lock Pointer to the allocated lock.
+ *   @result True if the mutex was unlocked and is now locked by the caller, otherwise false. */
+
+bool IOLockTryLock(struct IOLock * lock);
+
+typedef enum {
+	kIOLockAssertOwned    = 1,
+	kIOLockAssertNotOwned = 2
+} IOLockAssertState;
+
+/*! @function   IOLockAssert
+ *  @abstract   Assert that lock is either held or not held by current thread.
+ *  @discussion Call with either kIOLockAssertOwned or kIOLockAssertNotOwned.
+ *  Panics the kernel if the lock is not owned if called with kIOLockAssertOwned,
+ *  and vice-versa.
+ */
+void
+IOLockAssert(struct IOLock * lock, IOLockAssertState type);
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+struct IORecursiveLock;
+
+
+/*! @function IORecursiveLockAlloc
+ *   @abstract Allocates and initializes an recursive lock.
+ *   @discussion Allocates a recursive lock in general purpose memory, and initializes it. Recursive locks function identically to mutexes but allow one thread to lock more than once, with balanced unlocks.
+ *   @result Pointer to the allocated lock, or zero on failure. */
+
+struct IORecursiveLock * IORecursiveLockAlloc( void );
+
+/*! @function IORecursiveLockFree
+ *   @abstract Frees a recursive lock.
+ *   @discussion Frees a lock allocated with IORecursiveLockAlloc. Lock should be unlocked with no waiters.
+ *   @param lock Pointer to the allocated lock. */
+
+void IORecursiveLockFree(struct IORecursiveLock * lock);
+
+/*! @function IORecursiveLockFreeZero
+ *   @abstract Frees a recursive lock and zeroes pointer.
+ *   @discussion Frees a lock allocated with IORecursiveLockAlloc. Lock should be unlocked with no waiters.
+ *   @param lock Pointer to the allocated lock. */
+
+#define IORecursiveLockFreeZero(l)	do { if (l) { IORecursiveLockFree(l); l = NULL; } } while (0);
+
+/*! @function IORecursiveLockLock
+ *   @abstract Lock a recursive lock.
+ *   @discussion Lock the recursive lock. If the lock is held by another thread, block waiting for its unlock. The lock may be taken recursively by the same thread, with a balanced number of calls to IORecursiveLockUnlock.
+ *   @param lock Pointer to the allocated lock. */
+
+void            IORecursiveLockLock(struct IORecursiveLock * lock);
+
+/*! @function IORecursiveLockTryLock
+ *   @abstract Attempt to lock a recursive lock.
+ *   @discussion Lock the lock if it is currently unlocked, or held by the calling thread, and return true. If the lock is held by another thread, return false. Successful calls to IORecursiveLockTryLock should be balanced with calls to IORecursiveLockUnlock.
+ *   @param lock Pointer to the allocated lock.
+ *   @result True if the lock is now locked by the caller, otherwise false. */
+
+bool       IORecursiveLockTryLock(struct IORecursiveLock * lock);
+
+/*! @function IORecursiveLockUnlock
+ *   @abstract Unlock a recursive lock.
+ *  @discussion Undo one call to IORecursiveLockLock, if the lock is now unlocked wake any blocked waiters. Results are undefined if the caller does not balance calls to IORecursiveLockLock with IORecursiveLockUnlock.
+ *   @param lock Pointer to the allocated lock. */
+
+void            IORecursiveLockUnlock(struct IORecursiveLock * lock);
+
+/*! @function IORecursiveLockHaveLock
+ *   @abstract Check if a recursive lock is held by the calling thread.
+ *   @discussion If the lock is held by the calling thread, return true, otherwise the lock is unlocked, or held by another thread and false is returned.
+ *   @param lock Pointer to the allocated lock.
+ *   @result True if the calling thread holds the lock otherwise false. */
+
+bool       IORecursiveLockHaveLock(struct IORecursiveLock * lock);
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+struct IORWLock;
+
+/*! @function IORWLockAlloc
+ *   @abstract Allocates and initializes a read/write lock.
+ *   @discussion Allocates and initializes a read/write lock in general purpose memory. Read/write locks provide for multiple readers, one exclusive writer.
+ *   @result Pointer to the allocated lock, or zero on failure. */
+
+struct IORWLock * IORWLockAlloc(void);
+
+/*! @function IORWLockFree
+ *  @abstract Frees a read/write lock.
+ *  @discussion Frees a lock allocated with IORWLockAlloc. Lock should be unlocked with no waiters.
+ *   @param lock Pointer to the allocated lock. */
+
+void    IORWLockFree(struct IORWLock * lock);
+
+/*! @function IORWLockFree
+ *  @abstract Frees a read/write lock and zeroes pointer.
+ *  @discussion Frees a lock allocated with IORWLockAlloc. Lock should be unlocked with no waiters.
+ *   @param lock Pointer to the allocated lock. */
+
+#define IORWLockFreeZero(l)	do { if (l) { IORWLockFree(l); l = NULL; } } while (0);
+
+/*! @function IORWLockRead
+ *   @abstract Lock a read/write lock for read.
+ *  @discussion Lock the lock for read, allowing multiple readers when there are no writers. If the lock is held for write, block waiting for its unlock. Locking the lock recursively from one thread, for read or write, can result in deadlock.
+ *   @param lock Pointer to the allocated lock. */
+void    IORWLockRead(struct IORWLock * lock);
+
+/*! @function IORWLockWrite
+ *   @abstract Lock a read/write lock for write.
+ *   @discussion Lock the lock for write, allowing one writer exlusive access. If the lock is held for read or write, block waiting for its unlock. Locking the lock recursively from one thread, for read or write, can result in deadlock.
+ *   @param lock Pointer to the allocated lock. */
+void    IORWLockWrite(struct IORWLock * lock);
+
+/*! @function IORWLockUnlock
+ *   @abstract Unlock a read/write lock.
+ *   @discussion Undo one call to IORWLockRead or IORWLockWrite. Results are undefined if the caller has not locked the lock.
+ *   @param lock Pointer to the allocated lock. */
+void    IORWLockUnlock(struct IORWLock * lock);
+
+/*! @enum     IORWLockAssertState
+ *  @abstract Used with IORWLockAssert to assert the state of a lock.
+ */
+typedef enum {
+	kIORWLockAssertRead    = 1,
+	kIORWLockAssertWrite   = 2,
+	kIORWLockAssertHeld    = 3,
+	kIORWLockAssertNotHeld = 4
+} IORWLockAssertState;
+
+/*! @function   IORWLockAssert
+ *  @abstract   Assert that a reader-writer lock is either held or not held
+ *  by the current thread.
+ *  @discussion Call with a value defined by the IORWLockAssertState type.
+ *  If the specified lock is not in the state specified by the type argument,
+ *  then the kernel will panic.
+ */
+#if NOT_YET_56378490
+void    IORWLockAssert(struct IORWLock * lock, IORWLockAssertState type);
+#endif
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 #if TARGET_OS_DRIVERKIT && !DRIVERKIT_PRIVATE
 
 /*!
@@ -332,7 +552,21 @@ extern uint64_t IOVMPageSize;
 
 #endif // TARGET_OS_DRIVERKIT && !DRIVERKIT_PRIVATE
 
+#if DRIVERKIT_TEST || DRIVERKIT_PRIVATE
+
+extern kern_return_t
+IODriverKitTest(int options);
+
+#endif
+
 #if DRIVERKIT_PRIVATE
+
+extern void
+__assert_rtn(
+	const char *func,
+	const char *file,
+	int line,
+	const char *failedexpr);
 
 #if !TARGET_OS_DRIVERKIT
 extern kern_return_t

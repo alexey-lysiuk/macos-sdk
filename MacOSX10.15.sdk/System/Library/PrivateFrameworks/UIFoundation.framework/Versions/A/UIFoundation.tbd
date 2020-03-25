@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 99072103-6A73-3538-944A-5FD2AF709A78', 'x86_64: 99072103-6A73-3538-944A-5FD2AF709A78' ]
+uuids:           [ 'x86_64: 27837A1C-A833-3F99-B8D8-84A583EEA523', 'x86_64: 27837A1C-A833-3F99-B8D8-84A583EEA523' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation'
-current-version: 659.5
+current-version: 661.2
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, UIKitCore ]

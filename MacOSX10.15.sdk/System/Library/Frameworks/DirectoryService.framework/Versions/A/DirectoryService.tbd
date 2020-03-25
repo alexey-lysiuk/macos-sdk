@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 71100385-C865-3DEE-9B4E-B78E918E542B' ]
+uuids:           [ 'x86_64: A2504DEB-2C9D-3F87-90FF-70104421DAF7' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService'
 exports:         

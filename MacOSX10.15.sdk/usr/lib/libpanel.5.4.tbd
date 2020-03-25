@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EA20745C-4D76-391C-BD9E-4BDF3D189170', 'x86_64: EA20745C-4D76-391C-BD9E-4BDF3D189170' ]
+uuids:           [ 'x86_64: 97A59EBE-D9F1-3FAA-8CB5-63F44D4FD6A8', 'x86_64: 97A59EBE-D9F1-3FAA-8CB5-63F44D4FD6A8' ]
 platform:        zippered
 install-name:    '/usr/lib/libpanel.5.4.dylib'
 current-version: 5.4

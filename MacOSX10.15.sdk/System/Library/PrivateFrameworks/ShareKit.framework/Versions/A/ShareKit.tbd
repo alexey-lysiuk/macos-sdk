@@ -1,24 +1,25 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 247F44E5-7D38-380C-86DB-97ECA647ADAC' ]
+uuids:           [ 'x86_64: D77DF9CF-8459-3205-B213-48786112113C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ShareKit.framework/Versions/A/ShareKit'
-current-version: 641.4
+current-version: 641.6
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSSharingPlugInServiceOptionAppIDKey, _NSSharingPlugInServiceOptionAppIsBackgroundOnlyKey, 
                        _NSSharingPlugInServiceOptionAuditSessionKey, _NSSharingPlugInServiceOptionParametersKey, 
-                       _NSSharingPlugInServiceOptionServiceDictionaryKey, _NSSharingPlugInServiceOptionSharingContentScopeKey, 
-                       _NSSharingPlugInServiceOptionSourceWindowFrameKey, _NSSharingPlugInServiceOptionSourceWindowFullscreenKey, 
-                       _NSSharingPlugInServiceOptionUIDKey, _SHK_anyAncestorWindowIsFullscreen, 
-                       _SHK_anyAncestorWindowIsMovable, _SHK_asyncConvertSharingItemsToExtensionItem, 
-                       _SHK_computeThumbnail, _SHK_defaultMailApplicationBundle, 
-                       _SHK_defaultMailApplicationBundleIdentifier, _SHK_defaultMailApplicationIsMailApp, 
-                       _SHK_defaultMailApplicationSupportsSpecialAppleEvent, _SHK_defaultMailApplicationSupportsWebPageMailing, 
-                       _SHK_defaultMailApplicationURL, _SHK_extractParametersFromAttributes, 
-                       _SHK_internetRegionIsChina, _SHK_matchingDictionaryForSHKSharingItems, 
-                       _SHK_messagesAppIcon, _SHK_mouseDownEventCaught, _SHK_sharingCancelledError, 
-                       _framework_log, _plugin_log ]
+                       _NSSharingPlugInServiceOptionServiceDictionaryKey, _NSSharingPlugInServiceOptionServiceSandboxExtensionsKey, 
+                       _NSSharingPlugInServiceOptionSharingContentScopeKey, _NSSharingPlugInServiceOptionSourceWindowFrameKey, 
+                       _NSSharingPlugInServiceOptionSourceWindowFullscreenKey, _NSSharingPlugInServiceOptionUIDKey, 
+                       _SHK_anyAncestorWindowIsFullscreen, _SHK_anyAncestorWindowIsMovable, 
+                       _SHK_asyncConvertSharingItemsToExtensionItem, _SHK_computeThumbnail, 
+                       _SHK_defaultMailApplicationBundle, _SHK_defaultMailApplicationBundleIdentifier, 
+                       _SHK_defaultMailApplicationIsMailApp, _SHK_defaultMailApplicationSupportsSpecialAppleEvent, 
+                       _SHK_defaultMailApplicationSupportsWebPageMailing, _SHK_defaultMailApplicationURL, 
+                       _SHK_extractParametersFromAttributes, _SHK_internetRegionIsChina, 
+                       _SHK_matchingDictionaryForSHKSharingItems, _SHK_messagesAppIcon, 
+                       _SHK_mouseDownEventCaught, _SHK_sharingCancelledError, _framework_log, 
+                       _plugin_log ]
     objc-classes:    [ NSSharingAccountConfigurationViewController, NSSharingExtensionContext, 
                        NSSharingItem, NSSharingMachPortWrapper, NSSharingPlugInHelper, 
                        NSSharingServiceDescription, NSSharingUIExtensionContext, 

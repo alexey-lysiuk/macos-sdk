@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B683E2F1-73FA-35FF-80AC-F386B6EA8A5D' ]
+uuids:           [ 'x86_64: ACEBFBF8-42BB-3532-8C91-8FB856665491' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ConstantClasses.framework/Versions/A/ConstantClasses'
 exports:         

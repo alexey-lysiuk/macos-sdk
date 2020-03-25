@@ -28,14 +28,14 @@ typedef NS_ENUM(NSInteger, HKWorkoutSessionState) {
     HKWorkoutSessionStatePaused API_AVAILABLE(watchos(3.0)),
     HKWorkoutSessionStatePrepared API_AVAILABLE(watchos(5.0)),
     HKWorkoutSessionStateStopped API_AVAILABLE(watchos(5.0)),
-} API_AVAILABLE(watchos(2.0)) __API_UNAVAILABLE(ios);
+} API_AVAILABLE(watchos(2.0)) API_UNAVAILABLE(ios);
 
 
 /*!
  @class         HKWorkoutSession
  @abstract      An HKWorkoutSession is an object describing the properties of a workout activity session.
  */
-HK_EXTERN API_AVAILABLE(watchos(2.0)) __API_UNAVAILABLE(ios)
+HK_EXTERN API_AVAILABLE(watchos(2.0)) API_UNAVAILABLE(ios)
 @interface HKWorkoutSession : NSObject <NSSecureCoding>
 
 /*!
@@ -202,7 +202,7 @@ HK_EXTERN API_AVAILABLE(watchos(2.0)) __API_UNAVAILABLE(ios)
  @abstract      This protocol should be implemented to be notified when a workout session's state changes.
  @discussion    The methods on this protocol are called on an anonymous serial background queue.
  */
-API_AVAILABLE(watchos(2.0)) __IOS_PROHIBITED
+API_AVAILABLE(watchos(2.0)) API_UNAVAILABLE(ios)
 @protocol HKWorkoutSessionDelegate <NSObject>
 
 /*!

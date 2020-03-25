@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2A62766F-569B-3CFA-A851-9A8090A7D40D' ]
+uuids:           [ 'x86_64: 90BB1B76-687A-30F1-9606-EA25D3E96979' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Coherence.framework/Versions/A/Coherence'
 swift-abi-version: 7

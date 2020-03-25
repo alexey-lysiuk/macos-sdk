@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9BE9D62-C4E4-32AF-9E98-770AE8778A90', 'x86_64: D9BE9D62-C4E4-32AF-9E98-770AE8778A90' ]
+uuids:           [ 'x86_64: ACC174CE-32D4-3DFB-BD94-13A980F28CBC', 'x86_64: ACC174CE-32D4-3DFB-BD94-13A980F28CBC' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreLocation.framework/Versions/A/CoreLocation'
-current-version: 2388.0.21
+current-version: 2394.0.22
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CLAppResetChangedNotification, _CLAppStatusChangedNotification, 
@@ -27,12 +27,13 @@ exports:
                        _CLClientStopHeadingUpdates, _CLClientStopLocationUpdates, 
                        _CLClientStopVehicleHeadingUpdates, _CLClientStopVehicleSpeedUpdates, 
                        _CLClientUpdateARSessionState, _CLClientUpdateLSLHeadingEstimation, 
-                       _CLClientUpdateVIOEstimation, _CLCopyAppsUsingLocation, _CLCopyNearbyAssetSettings, 
-                       _CLCopyTechnologiesInUse, _CLDaemonShutdownNotification, _CLDaemonStartedNotification, 
-                       _CLDeleteCurrentEmergencyLocationAsset, _CLGenerateRoadSegmentId, 
-                       _CLGetArchivedAuthorizationDecisions, _CLGetControlPlaneStatusReport, 
-                       _CLGetEmergencyLocationSettingsVersionInfo, _CLGetLocationDefault, 
-                       _CLGetStatusBarIconState, _CLInternalPerformMigration, _CLLocationCoordinate2DGetDistanceFrom, 
+                       _CLClientUpdateVIOEstimation, _CLCopyAppsUsingLocation, _CLCopyGnssBandsInUse, 
+                       _CLCopyNearbyAssetSettings, _CLCopyTechnologiesInUse, _CLDaemonShutdownNotification, 
+                       _CLDaemonStartedNotification, _CLDeleteCurrentEmergencyLocationAsset, 
+                       _CLGenerateRoadSegmentId, _CLGetArchivedAuthorizationDecisions, 
+                       _CLGetControlPlaneStatusReport, _CLGetEmergencyLocationSettingsVersionInfo, 
+                       _CLGetLocationDefault, _CLGetStatusBarIconState, _CLGnssBandsChangedNotification, 
+                       _CLInternalPerformMigration, _CLLocationCoordinate2DGetDistanceFrom, 
                        _CLLocationCoordinate2DIsValid, _CLLocationCoordinate2DMake, 
                        _CLLocationDistanceMax, _CLPassKitNotifyPayment, _CLPingDaemon, 
                        _CLSetLocationDefault, _CLSetMapMatchingRouteHint, _CLSetRouteHintsForMapMatching, 

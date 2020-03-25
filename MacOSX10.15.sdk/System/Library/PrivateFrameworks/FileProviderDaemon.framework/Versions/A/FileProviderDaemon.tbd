@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AE53D101-D834-3E18-8106-DB2BE287E3C1', 'x86_64: AE53D101-D834-3E18-8106-DB2BE287E3C1' ]
+uuids:           [ 'x86_64: 1FB02E47-AC12-363F-AF15-EA939BC9A52F', 'x86_64: 1FB02E47-AC12-363F-AF15-EA939BC9A52F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FileProviderDaemon.framework/Versions/A/FileProviderDaemon'
 current-version: 0
@@ -9,8 +9,8 @@ exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FPDAppStoreServiceName, _FPDAppStoreServiceXPCInterface ]
     objc-classes:    [ FPDAccessControlStore, FPDActionOperation, FPDActionOperationQueue, 
-                       FPDAppMonitor, FPDDomain, FPDDomainIndexer, FPDDownloadOperation, 
-                       FPDDownloader, FPDExtension, FPDFetchAppLibraryIconOperation, 
+                       FPDAppMonitor, FPDDomain, FPDDomainExtensionBackend, FPDDomainIndexer, 
+                       FPDDownloadOperation, FPDDownloader, FPDExtension, FPDFetchAppLibraryIconOperation, 
                        FPDMoveAtom, FPDMoveOperation, FPDMoveReader, FPDMoveWriter, 
                        FPDProcessMonitor, FPDProvider, FPDProviderDescriptor, FPDRequest, 
                        FPDServer ]

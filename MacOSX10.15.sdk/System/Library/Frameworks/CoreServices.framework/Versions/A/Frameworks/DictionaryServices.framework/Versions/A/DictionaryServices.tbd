@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C1798F09-36D3-3C8E-AF72-A3DE63962AF1', 'x86_64: C1798F09-36D3-3C8E-AF72-A3DE63962AF1' ]
+uuids:           [ 'x86_64: 11513ED9-8B4B-39BB-A6B2-AA6AA0A2DF72', 'x86_64: 11513ED9-8B4B-39BB-A6B2-AA6AA0A2DF72' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices'
-current-version: 323
+current-version: 323.7
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]

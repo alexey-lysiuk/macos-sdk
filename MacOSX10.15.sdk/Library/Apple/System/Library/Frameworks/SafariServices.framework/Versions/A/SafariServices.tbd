@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7E93EF33-52B8-3212-992F-EFCBEA12F377' ]
+uuids:           [ 'x86_64: 0750CC9F-F8E8-3F55-BA25-A4553130B638' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/SafariServices.framework/Versions/A/SafariServices'
-current-version: 608.3.10
+current-version: 609.1.20
 compatibility-version: 535
 exports:         
   - archs:           [ x86_64 ]

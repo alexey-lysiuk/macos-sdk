@@ -26,7 +26,10 @@ API_UNAVAILABLE(watchos, macosx, tvos)
 /*!
  @param shortcut The shortcut is what will be run when the resulting voice shortcut is invoked. It also provides the suggested invocation phrase, via the @c suggestedInvocationPhrase property on the intent or user activity.
  */
-- (instancetype)initWithShortcut:(INShortcut *)shortcut API_UNAVAILABLE(macCatalyst);
+- (instancetype)initWithShortcut:(INShortcut *)shortcut;
+
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil NS_UNAVAILABLE;
 
 @end
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E7EEEDB2-D1E3-3DCF-9B26-D6DBF7191A88' ]
+uuids:           [ 'x86_64: A0A4EB1B-4D00-3CB6-80F7-736A890F6718' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MonitorPanel.framework/Versions/A/MonitorPanel'
 exports:         
@@ -18,19 +18,22 @@ exports:
     objc-classes:    [ MPDisplay, MPDisplayMgr, MPDisplayMode, MPDisplayModeBucket, 
                        MPDisplayPreset, MonitorPanel ]
     objc-ivars:      [ MPDisplay._accessLock, MPDisplay._aliasID, MPDisplay._allModes, 
-                       MPDisplay._currentMode, MPDisplay._defaultMode, MPDisplay._displayID, 
-                       MPDisplay._displayIcon, MPDisplay._displayName, MPDisplay._displayResolutionPreviewIcon, 
-                       MPDisplay._displayResolutionPreviewRect, MPDisplay._hasMultipleRates, 
+                       MPDisplay._coreDisplayFrameworkBundle, MPDisplay._currentMode, 
+                       MPDisplay._defaultMode, MPDisplay._displayID, MPDisplay._displayIcon, 
+                       MPDisplay._displayName, MPDisplay._displayResolutionPreviewIcon, 
+                       MPDisplay._displayResolutionPreviewRect, MPDisplay._enableHDRMode, 
+                       MPDisplay._hasHDRModeSupport, MPDisplay._hasHDRModes, MPDisplay._hasMultipleRates, 
                        MPDisplay._hasSafeMode, MPDisplay._hasSimulscan, MPDisplay._hasTVModes, 
                        MPDisplay._hasZeroRate, MPDisplay._hqModesForChiclets, MPDisplay._ioService, 
                        MPDisplay._is4K, MPDisplay._isAirPlayDisplay, MPDisplay._isBuiltIn, 
+                       MPDisplay._isHDRModeEnabled, MPDisplay._isHDRModeSupported, 
                        MPDisplay._isHiDPI, MPDisplay._isMirrorMaster, MPDisplay._isMirrored, 
                        MPDisplay._isProjector, MPDisplay._isRetina, MPDisplay._isSidecarDisplay, 
                        MPDisplay._isSmartDisplay, MPDisplay._isTV, MPDisplay._listHQModes, 
                        MPDisplay._listHQResolutions, MPDisplay._listModes, MPDisplay._listResolutions, 
                        MPDisplay._nativeMode, MPDisplay._needsUpdate, MPDisplay._orientation, 
-                       MPDisplay._scanRateStrings, MPDisplay._scanRates, MPDisplay._trimmedModes, 
-                       MPDisplay._trimmedResolutions, MPDisplay._uiProjectorOverride, 
+                       MPDisplay._preferHDRModes, MPDisplay._scanRateStrings, MPDisplay._scanRates, 
+                       MPDisplay._trimmedModes, MPDisplay._trimmedResolutions, MPDisplay._uiProjectorOverride, 
                        MPDisplay._userFlags, MPDisplay._userModes, MPDisplay._userResolutions, 
                        MPDisplay._uuid, MPDisplayMgr._accessLock, MPDisplayMgr._dataLock, 
                        MPDisplayMgr._displays, MPDisplayMgr._hasBuiltinRetina, MPDisplayMgr._hasSmallBuiltinRetina, 

@@ -167,7 +167,7 @@ module RbConfig
   CONFIG["AR"] = "libtool -static"
   CONFIG["RANLIB"] = ":"
   CONFIG["try_header"] = "try_compile"
-  CONFIG["CC_VERSION_MESSAGE"] = "Apple clang version 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc-selector-opts)\nTarget: x86_64-apple-darwin18.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/OSX10.15.xctoolchain/usr/bin"
+  CONFIG["CC_VERSION_MESSAGE"] = "Apple clang version 11.0.3 (clang-1103.0.29.20) (-macos10.15-objc-selector-opts)\nTarget: x86_64-apple-darwin18.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/OSX10.15.xctoolchain/usr/bin"
   CONFIG["CC_VERSION"] = "$(CC) --version"
   CONFIG["CSRCFLAG"] = ""
   CONFIG["COUTFLAG"] = "-o "

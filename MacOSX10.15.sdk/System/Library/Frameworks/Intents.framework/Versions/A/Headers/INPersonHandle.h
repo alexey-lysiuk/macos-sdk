@@ -2,7 +2,7 @@
 //  INPersonHandle.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,11 +13,12 @@ typedef NS_ENUM(NSInteger, INPersonHandleType) {
     INPersonHandleTypeUnknown = 0,
     INPersonHandleTypeEmailAddress,
     INPersonHandleTypePhoneNumber,
-} API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macosx);
+} API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macosx, tvos);
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macosx)
+API_AVAILABLE(ios(10.0), watchos(3.2))
+API_UNAVAILABLE(macosx, tvos)
 @interface INPersonHandle : NSObject <NSCopying, NSSecureCoding>
 
 @property (readonly, nullable, copy, NS_NONATOMIC_IOSONLY) NSString *value;

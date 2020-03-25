@@ -67,6 +67,18 @@ Note only the IOProviderClass is mandatory.  The other keys allow the searcher t
 #define kIOTTYWaitForIdleKey		"IOTTYWaitForIdle"
 
 #if KERNEL
+#if !defined(KERNEL_PRIVATE)
+extern const OSSymbol *gIOSerialBSDServiceValue __deprecated_msg("Use DriverKit");
+extern const OSSymbol *gIOSerialBSDTypeKey __deprecated_msg("Use DriverKit");
+extern const OSSymbol *gIOSerialBSDAllTypes __deprecated_msg("Use DriverKit");
+extern const OSSymbol *gIOSerialBSDModemType __deprecated_msg("Use DriverKit");
+extern const OSSymbol *gIOSerialBSDRS232Type __deprecated_msg("Use DriverKit");
+extern const OSSymbol *gIOTTYDeviceKey __deprecated_msg("Use DriverKit");
+extern const OSSymbol *gIOTTYBaseNameKey __deprecated_msg("Use DriverKit");
+extern const OSSymbol *gIOTTYSuffixKey __deprecated_msg("Use DriverKit");
+extern const OSSymbol *gIOCalloutDeviceKey __deprecated_msg("Use DriverKit");
+extern const OSSymbol *gIODialinDeviceKey __deprecated_msg("Use DriverKit");
+#else
 extern const OSSymbol *gIOSerialBSDServiceValue;
 extern const OSSymbol *gIOSerialBSDTypeKey;
 extern const OSSymbol *gIOSerialBSDAllTypes;
@@ -77,4 +89,5 @@ extern const OSSymbol *gIOTTYBaseNameKey;
 extern const OSSymbol *gIOTTYSuffixKey;
 extern const OSSymbol *gIOCalloutDeviceKey;
 extern const OSSymbol *gIODialinDeviceKey;
+#endif
 #endif /* KERNEL */

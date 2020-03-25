@@ -70,6 +70,9 @@ typedef kern_return_t           IOReturn;
 #define sub_iokit_graphics_acceleration   err_sub(30)
 #define sub_iokit_keystore                err_sub(31)
 #define sub_iokit_apfs                    err_sub(33)
+#define sub_iokit_acpiec                  err_sub(34)
+#define sub_iokit_timesync_avb            err_sub(35)
+
 #define sub_iokit_platform                err_sub(0x2A)
 #define sub_iokit_audio_video             err_sub(0x45)
 #define sub_iokit_cec                     err_sub(0x46)

@@ -2,7 +2,7 @@
 //  GKLocalPlayer.h
 //  Game Center
 //
-//  Copyright 2010-2019 Apple Inc. All rights reserved.
+//  Copyright 2010-2020 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -92,7 +92,7 @@ NS_CLASS_AVAILABLE(10_8, 4_1) __WATCHOS_AVAILABLE(3_0)
 //Possible reasons for error:
 // 1. Communications problem
 // 2. Unauthenticated player
-- (void)generateIdentityVerificationSignatureWithCompletionHandler:(void (^__nullable)(NSURL * __nullable publicKeyUrl, NSData * __nullable signature, NSData * __nullable salt, uint64_t timestamp, NSError * __nullable error))completionHandler NS_AVAILABLE(10_10, 7_0) __WATCHOS_AVAILABLE(3_0);
+- (void)fetchItemsForIdentityVerificationSignature:(void (^__nullable)(NSURL * __nullable publicKeyURL, NSData * __nullable signature, NSData * __nullable salt, uint64_t timestamp, NSError * __nullable error))completionHandler API_AVAILABLE(ios(13.5), macos(10.15.5), tvos(13.5), watchos(6.5));
 
 @end
 
@@ -132,5 +132,11 @@ GK_EXTERN NSNotificationName GKPlayerAuthenticationDidChangeNotificationName NS_
 
 - (void)loadFriendPlayersWithCompletionHandler:(void(^__nullable)(NSArray<GKPlayer *> * __nullable friendPlayers, NSError * __nullable error))completionHandler NS_DEPRECATED(10_10, 10_11, 8_0, 10_0);
 
+
+// Generates a signature allowing 3rd party server to authenticate the GKLocalPlayer
+//Possible reasons for error:
+// 1. Communications problem
+// 2. Unauthenticated player
+- (void)generateIdentityVerificationSignatureWithCompletionHandler:(void (^__nullable)(NSURL * __nullable publicKeyUrl, NSData * __nullable signature, NSData * __nullable salt, uint64_t timestamp, NSError * __nullable error))completionHandler  API_DEPRECATED("API deprecated. Use fetchItemsForIdentityVerificationSignature: and the teamPlayerID value to verify a user identity.", ios(7.0, 13.5), tvos(9.0, 13.5), macosx(10.10, 10.15.5), watchos(3.0,6.5));
 @end
 NS_ASSUME_NONNULL_END

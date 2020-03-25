@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftPencilKit -swift-version 5 -O -enforce-exclusivity=unchecked -module-name PencilKit
 @_exported import PencilKit
 import Swift
@@ -12,9 +12,9 @@ public struct PKDrawing {
     get
   }
   public func image(from rect: CoreGraphics.CGRect, scale: CoreGraphics.CGFloat) -> UIKit.UIImage
-  mutating public func transform(using transform: CoreGraphics.CGAffineTransform)
+  public mutating func transform(using transform: CoreGraphics.CGAffineTransform)
   public func transformed(using transform: CoreGraphics.CGAffineTransform) -> PencilKit.PKDrawing
-  mutating public func append(_ toAppend: PencilKit.PKDrawing)
+  public mutating func append(_ toAppend: PencilKit.PKDrawing)
   public func appending(_ toAppend: PencilKit.PKDrawing) -> PencilKit.PKDrawing
 }
 @available(iOS 13.0, OSX 10.15, *)

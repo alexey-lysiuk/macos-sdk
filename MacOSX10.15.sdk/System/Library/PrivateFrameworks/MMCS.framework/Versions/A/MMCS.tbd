@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 96116173-4690-3F38-AC46-E22AC0D467B9', 'x86_64: 96116173-4690-3F38-AC46-E22AC0D467B9' ]
+uuids:           [ 'x86_64: E66D1D23-0CCE-35A3-B4DE-2961EE860C5B', 'x86_64: E66D1D23-0CCE-35A3-B4DE-2961EE860C5B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MMCS.framework/Versions/A/MMCS'
-current-version: 487
+current-version: 495
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _C3BaseRelease, _C3BaseRetain, _CKChunkSchemeAndEncryptionKeySize, 

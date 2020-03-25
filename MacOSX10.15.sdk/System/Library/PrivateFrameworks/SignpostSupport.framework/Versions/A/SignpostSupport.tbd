@@ -1,15 +1,17 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E538EF89-5719-3AB6-811A-5C10DEF8FC95', 'x86_64: E538EF89-5719-3AB6-811A-5C10DEF8FC95' ]
+uuids:           [ 'x86_64: B70BC757-3004-3BD1-A29E-71F43BFDABE6', 'x86_64: B70BC757-3004-3BD1-A29E-71F43BFDABE6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SignpostSupport.framework/Versions/A/SignpostSupport'
-current-version: 41
+current-version: 42.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IsPerfLoggingInterval, _PassesPerfLoggingWhitelist, _SSCAEventTypeForSignpost, 
                        _SSCAIntervalTypeForSignpostInterval, _SSCAIsCAMetadataSubsystemCategory, 
                        _SSCAIsCAWindowServerInMemorySubsystemCategory, _SignpostPlatformForDevice, 
-                       _SignpostPlatformForString, _SignpostReporterShouldUseWhitelist, 
+                       _SignpostPlatformForString, _SignpostReporterCrossPlatformAppleAccountWhitelist, 
+                       _SignpostReporterCrossPlatformAppleIDAuthenticationWhitelist, 
+                       _SignpostReporterCrossPlatformAuthKitWhitelist, _SignpostReporterShouldUseWhitelist, 
                        _SignpostReporterWhitelistedStringSet, _SignpostSupportAverageDurationMachContinuousTimeForIntervals, 
                        _SignpostSupportAverageDurationNsForIntervals, _SignpostSupportAverageDurationOfLongestIntervalsInMachContinuousTime, 
                        _SignpostSupportAverageDurationOfLongestIntervalsInNs, _SignpostSupportAverageDurationOfShortestIntervalsInMachContinuousTime, 

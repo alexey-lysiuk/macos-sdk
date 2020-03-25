@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E8A4A136-A035-3C43-BF6A-BDB25C0FEC8A' ]
+uuids:           [ 'x86_64: 28D18FD3-0033-33D9-8395-C6F58E4958AA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DASDaemon.framework/Versions/A/DASDaemon'
 exports:         

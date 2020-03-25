@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40A6CE90-66FA-341B-ABF9-5EE0FB506645', 'x86_64: 40A6CE90-66FA-341B-ABF9-5EE0FB506645' ]
+uuids:           [ 'x86_64: F86763CC-6791-390E-8BCF-512B04C931BA', 'x86_64: F86763CC-6791-390E-8BCF-512B04C931BA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaExperience.framework/Versions/A/MediaExperience'
 exports:         
@@ -43,9 +43,10 @@ exports:
                        _FigVolumeControllerGetTypeID, _FigVolumeControllerStartServer, 
                        _FigXPCEndpointRemoteControlGroupServerRetainEndpointGroupForID, 
                        _MXDumpCppNotificationPayload, _MXDumpObjCNotificationPayload, 
-                       _kFigEndpointDescriptorKey_AirPlayEndpointProperties, _kFigEndpointDescriptorKey_AirPlaySecurity, 
-                       _kFigEndpointDescriptorKey_AirPlayVodkaVersion, _kFigEndpointDescriptorKey_AudioRouteName, 
-                       _kFigEndpointDescriptorKey_AudioRouteName_AirTunes, _kFigEndpointDescriptorKey_AudioRouteName_BluetoothLEOutput, 
+                       _kFigEndpointDescriptorKey_AdvertisesHAPSupport, _kFigEndpointDescriptorKey_AirPlayEndpointProperties, 
+                       _kFigEndpointDescriptorKey_AirPlaySecurity, _kFigEndpointDescriptorKey_AirPlayVodkaVersion, 
+                       _kFigEndpointDescriptorKey_AudioRouteName, _kFigEndpointDescriptorKey_AudioRouteName_AirTunes, 
+                       _kFigEndpointDescriptorKey_AudioRouteName_BluetoothLEOutput, 
                        _kFigEndpointDescriptorKey_AudioRouteName_CarAudioOutput, 
                        _kFigEndpointDescriptorKey_AudioRouteName_HDMI, _kFigEndpointDescriptorKey_AudioRouteName_HDMIOutput, 
                        _kFigEndpointDescriptorKey_AudioRouteName_Headphone, _kFigEndpointDescriptorKey_AudioRouteName_HeadphonesBT, 
@@ -203,6 +204,7 @@ exports:
                        _kFigRoutingContextProperty_RemoteControlChannelAvailable, 
                        _kFigRoutingContextProperty_SupportsBluetoothMultiDeviceRouting, 
                        _kFigRoutingContextProperty_SupportsWHAMultiDeviceRouting, 
+                       _kFigRoutingContextRemoveRouteOptionKey_ContinuePlaybackWhenLastRouteIsRemoved, 
                        _kFigRoutingContextSelectRouteOptionKey_AuthInfo, _kFigRoutingContextSelectRouteOptionKey_AvoidAuthPrompt, 
                        _kFigRoutingContextSelectRouteOptionKey_ClientPID, _kFigRoutingContextSelectRouteOptionKey_ClientRouteRequestID, 
                        _kFigRoutingContextSelectRouteOptionKey_Initiator, _kFigRoutingContextSelectRouteOptionKey_RemoteScreenSender, 

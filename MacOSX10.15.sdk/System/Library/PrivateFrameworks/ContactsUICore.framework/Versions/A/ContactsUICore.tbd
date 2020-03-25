@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 70390D1D-1B49-328B-B8DA-C6E4BEC5ECDA', 'x86_64: 70390D1D-1B49-328B-B8DA-C6E4BEC5ECDA' ]
+uuids:           [ 'x86_64: 6B933608-5C0D-3D71-A1BE-D6FDBF678269', 'x86_64: 6B933608-5C0D-3D71-A1BE-D6FDBF678269' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsUICore.framework/Versions/A/ContactsUICore'
 exports:         
@@ -15,7 +15,6 @@ exports:
                        _CNUIClipContextWithRoundedRectInRect, _CNUIClipPathInRect, 
                        _CNUIDrawCircularImagesInRects, _CNUIDrawImagesInRects, _CNUIDrawLikenessPlatterInContext, 
                        _CNUIDrawRoundedRectImagesInRects, _CNUIFamilyMemberContainerIdenifier, 
-                       _CNUIFamilyMemberNotWhitelistedMark, _CNUIFamilyMemberWhitelistedMark, 
                        _CNUIIntentIdentifierCreateContact, _CNUILikenessResolverMaxContacts, 
                        _CNUIRectIntegralWithScale, _CNUIRoundedRectImageCreate, _CNUIUserActionRecentsAddressKindForContactProperty, 
                        _CNUIUserActionRecentsBundleIdentifierKey, _CNUIUserActionRecentsChangedNotification, 
@@ -36,7 +35,8 @@ exports:
                        CNUICoreContactPropertyValueFilterFactory, CNUICoreContactRefetcher, 
                        CNUICoreContactRelationshipsFilter, CNUICoreContactScratchpad, 
                        CNUICoreContactStoreProductionFacade, CNUICoreContactStoreTestFacade, 
-                       CNUICoreContactTypeAssessor, CNUICoreFamilyElement, CNUICoreFamilyInfo, 
+                       CNUICoreContactTypeAssessor, CNUICoreContactsSyncProductionTrigger, 
+                       CNUICoreEditAuthorizationCheck, CNUICoreFamilyElement, CNUICoreFamilyInfo, 
                        CNUICoreFamilyInfoRetriever, CNUICoreFamilyMemberContactItem, 
                        CNUICoreFamilyMemberContactsController, CNUICoreFamilyMemberContactsModel, 
                        CNUICoreFamilyMemberContactsModelBuilder, CNUICoreFamilyMemberContactsModelRetriever, 

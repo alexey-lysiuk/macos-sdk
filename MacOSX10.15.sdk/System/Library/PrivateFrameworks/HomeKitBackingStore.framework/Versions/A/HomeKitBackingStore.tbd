@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 946BC7C1-BCBA-3197-8618-1D0970EE07CA' ]
+uuids:           [ 'x86_64: 0058A392-6C3D-316F-9114-C3FD35F36A8F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HomeKitBackingStore.framework/Versions/A/HomeKitBackingStore'
 exports:         

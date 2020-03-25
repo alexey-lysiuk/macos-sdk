@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 129F46FF-73BB-3D38-878B-852B767B74A0' ]
+uuids:           [ 'x86_64: 25FCBDA6-904A-3193-BEAF-D3D4AF02967A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/MechanismBase.framework/Versions/A/MechanismBase'
-current-version: 693.40.8
+current-version: 693.100.21
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ ACMContextRecord, MechanismACM, MechanismBase, MechanismContext, 

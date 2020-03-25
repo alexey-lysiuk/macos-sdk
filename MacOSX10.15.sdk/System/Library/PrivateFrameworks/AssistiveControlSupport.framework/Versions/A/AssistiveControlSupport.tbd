@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C85020C4-569F-3A9C-8FE2-D9E526BD35DE' ]
+uuids:           [ 'x86_64: 52A31B44-10F7-3F12-A116-7DFC329EC498' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AssistiveControlSupport.framework/Versions/A/AssistiveControlSupport'
 current-version: 87
@@ -140,6 +140,8 @@ exports:
                        _ACSH_STORAGE_ACTION_PARAM_SYSTEM_SLEEP, _ACSH_STORAGE_ACTION_PARAM_SYSTEM_TOGGLE_DFR, 
                        _ACSH_STORAGE_ACTION_PARAM_SYSTEM_VOLUME_DOWN, _ACSH_STORAGE_ACTION_PARAM_SYSTEM_VOLUME_MUTE, 
                        _ACSH_STORAGE_ACTION_PARAM_SYSTEM_VOLUME_UP, _ACSH_STORAGE_ACTION_PARAM_TEXT_KEY, 
+                       _ACSH_STORAGE_ACTION_PARAM_TOGGLE_ALTERNATE_MOUSE_BUTTONS, 
+                       _ACSH_STORAGE_ACTION_PARAM_TOGGLE_HEAD_MOUSE, _ACSH_STORAGE_ACTION_PARAM_TOGGLE_HEAD_MOUSE_AMB, 
                        _ACSH_STORAGE_ACTION_PARAM_TOOLBAR_VISIBILITY_CHANGE_MODE_KEY, 
                        _ACSH_STORAGE_ACTION_PARAM_USB_KEY_CODE_KEY, _ACSH_STORAGE_ACTION_PARAM_USB_KEY_CODE_KEY_OLD, 
                        _ACSH_STORAGE_ACTION_PARAM_USES_MAC_KEY_CODE_KEY, _ACSH_STORAGE_ACTION_PARAM_VOICE_KEY, 
@@ -312,13 +314,13 @@ exports:
     objc-ivars:      [ ACSHAction._actionType, ACSHAction._eventPerformer, ACSHActionAppleScript._scriptUUID, 
                        ACSHActionOpenApp._absolutePath, ACSHActionOpenApp._bundleID, 
                        ACSHActionOpenApp._icon, ACSHActionOpenApp._name, ACSHActionPressKeyCharSequence._charString, 
-                       ACSHActionSystem._systemActionType, ACSHCursorView._allTabInfo, 
-                       ACSHCursorView._cursorColor1, ACSHCursorView._cursorColor2, 
-                       ACSHCursorView._cursorDrawFrameInCarbonCoords, ACSHCursorView._cursorScreenFrameInCarbonCoords, 
-                       ACSHCursorView._highlightColor1, ACSHCursorView._highlightColor2, 
-                       ACSHCursorView._orderedTabInfoKeys, ACSHCursorView._originalCursorScreenFrameInCarbonCoords, 
-                       ACSHCursorView._positionForCurrentTabs, ACSHPanelGroupOutlineView._backgroundImage, 
-                       ACSHPanelGroupView._outlineView, ACSHPanelGroupView._previewView, 
-                       ACSHPlistObject._identifier, ACSHPlistObject._isInitializing, 
-                       ACSHPlistObject._undoManager, ACSHSequencedAction._subactions ]
+                       ACSHCursorView._allTabInfo, ACSHCursorView._cursorColor1, 
+                       ACSHCursorView._cursorColor2, ACSHCursorView._cursorDrawFrameInCarbonCoords, 
+                       ACSHCursorView._cursorScreenFrameInCarbonCoords, ACSHCursorView._highlightColor1, 
+                       ACSHCursorView._highlightColor2, ACSHCursorView._orderedTabInfoKeys, 
+                       ACSHCursorView._originalCursorScreenFrameInCarbonCoords, ACSHCursorView._positionForCurrentTabs, 
+                       ACSHPanelGroupOutlineView._backgroundImage, ACSHPanelGroupView._outlineView, 
+                       ACSHPanelGroupView._previewView, ACSHPlistObject._identifier, 
+                       ACSHPlistObject._isInitializing, ACSHPlistObject._undoManager, 
+                       ACSHSequencedAction._subactions ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 946994C1-96F1-328D-A5E5-90FC99274BDE', 'x86_64: 946994C1-96F1-328D-A5E5-90FC99274BDE' ]
+uuids:           [ 'x86_64: ADA955E5-7A35-3B73-A731-D8BF62FC10A8', 'x86_64: ADA955E5-7A35-3B73-A731-D8BF62FC10A8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDAV.framework/Versions/A/CoreDAV'
 exports:         
@@ -248,12 +248,13 @@ exports:
                        CoreDAVDiscoveryTaskGroup._httpsPorts, CoreDAVDiscoveryTaskGroup._httpsServiceString, 
                        CoreDAVDiscoveryTaskGroup._potentialContextPaths, CoreDAVDiscoveryTaskGroup._requiredComplianceClass, 
                        CoreDAVDiscoveryTaskGroup._shouldBailEarly, CoreDAVDiscoveryTaskGroup._wellKnownPath, 
-                       CoreDAVErrorItem._ctagOkay, CoreDAVErrorItem._imageError, 
-                       CoreDAVErrorItem._invalidImageType, CoreDAVErrorItem._maxAttendees, 
-                       CoreDAVErrorItem._maxImageSize, CoreDAVErrorItem._maxResourceSize, 
-                       CoreDAVErrorItem._maxResources, CoreDAVErrorItem._noUIDConflict, 
-                       CoreDAVErrorItem._numberOfMatchesWithinLimits, CoreDAVErrorItem._quotaExceeded, 
-                       CoreDAVErrorItem._status, CoreDAVErrorItem._uid, CoreDAVErrorItem._validAddressData, 
+                       CoreDAVErrorItem._ctagOkay, CoreDAVErrorItem._guardianRestricted, 
+                       CoreDAVErrorItem._imageError, CoreDAVErrorItem._invalidImageType, 
+                       CoreDAVErrorItem._maxAttendees, CoreDAVErrorItem._maxImageSize, 
+                       CoreDAVErrorItem._maxResourceSize, CoreDAVErrorItem._maxResources, 
+                       CoreDAVErrorItem._noUIDConflict, CoreDAVErrorItem._numberOfMatchesWithinLimits, 
+                       CoreDAVErrorItem._quotaExceeded, CoreDAVErrorItem._status, 
+                       CoreDAVErrorItem._uid, CoreDAVErrorItem._validAddressData, 
                        CoreDAVErrorItem._validSplit, CoreDAVErrorItem._validSyncToken, 
                        CoreDAVErrorItem._validTimezone, CoreDAVExpandPropertiesTask._propertiesToExpand, 
                        CoreDAVExpandProperty._expandedName, CoreDAVExpandProperty._expandedNameSpace, 

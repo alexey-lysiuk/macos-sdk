@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKitDefines.h>
+#import <UIKit/UICommand.h>
+#import <UIKit/UIEvent.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -76,6 +78,11 @@ UIKIT_EXTERN API_AVAILABLE(ios(3.2)) @interface UIGestureRecognizer : NSObject
 
 @property (nullable, nonatomic, copy) NSString *name API_AVAILABLE(ios(11.0), tvos(11.0)); // name for debugging to appear in logging
 
+// Values from the last event processed.
+// These values are not considered as requirements for the gesture.
+@property (nonatomic, readonly) UIKeyModifierFlags modifierFlags API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, watchos);
+@property (nonatomic, readonly) UIEventButtonMask buttonMask API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, watchos);
+
 @end
 
 
@@ -102,6 +109,10 @@ UIKIT_EXTERN API_AVAILABLE(ios(3.2)) @interface UIGestureRecognizer : NSObject
 
 // called before pressesBegan:withEvent: is called on the gesture recognizer for a new press. return NO to prevent the gesture recognizer from seeing this press
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceivePress:(UIPress *)press;
+
+// called once before either -gestureRecognizer:shouldReceiveTouch: or -gestureRecognizer:shouldReceivePress:
+// return NO to prevent the gesture recognizer from seeing this event
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveEvent:(UIEvent *)event API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
 
 @end
 

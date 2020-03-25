@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 277F40EC-7E61-359D-B67E-3A7C0984913D', 'x86_64: 277F40EC-7E61-359D-B67E-3A7C0984913D' ]
+uuids:           [ 'x86_64: 45A3CE87-52C0-3E86-BCED-174E002ACABD', 'x86_64: 45A3CE87-52C0-3E86-BCED-174E002ACABD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/iAdServices.framework/Versions/A/iAdServices'
 exports:         

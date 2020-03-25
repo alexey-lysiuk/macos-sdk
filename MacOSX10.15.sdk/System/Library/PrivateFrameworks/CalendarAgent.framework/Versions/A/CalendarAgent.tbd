@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0C6AABB4-3FAF-31AA-96CC-68D2F4DE2FAE' ]
+uuids:           [ 'x86_64: 53216E60-6E23-38EB-B6D9-5F5A11469EF7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CalendarAgent.framework/Versions/A/CalendarAgent'
-current-version: 930.2.2
+current-version: 930.4.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CalAgentErrorDomain, _CalAgentErrorGenerateStringVersion, 

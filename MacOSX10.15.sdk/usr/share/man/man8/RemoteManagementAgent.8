@@ -1,0 +1,18 @@
+.Dd July 12. 2019
+.Os macOS
+.Dt RemoteManagementAgent 8
+.Sh NAME
+.Nm RemoteManagementAgent
+.Nd Remote Management protocol agent
+.Sh SYNOPSIS
+.Nm
+.Sh DESCRIPTION
+.Nm
+handles HTTP communication with a Remote Management server, processing configuration information, and sending status messages back to the server.
+.Sh FILES
+.Pa /System/Library/LaunchAgents/com.apple.RemoteManagementAgent.plist
+.Sh DIAGNOSTICS
+Logging can be viewed via:
+.Pp .\" blank line
+log stream --predicate 'senderImagePath contains "RemoteManagement.framework"'
+.\" .Sh STANDARDS <-- Link to public spec when available

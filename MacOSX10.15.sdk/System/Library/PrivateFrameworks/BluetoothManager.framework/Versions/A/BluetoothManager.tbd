@@ -1,24 +1,25 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2C3F4AEC-C822-3521-94F6-8C754C603031', 'x86_64: 2C3F4AEC-C822-3521-94F6-8C754C603031' ]
+uuids:           [ 'x86_64: 53234A24-BD3D-3996-9199-D42CCDA629F7', 'x86_64: 53234A24-BD3D-3996-9199-D42CCDA629F7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BluetoothManager.framework/Versions/A/BluetoothManager'
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AddressForBTDevice, _BluetoothAccessoryInEarStatusNotification, 
-                       _BluetoothAccessorySealValueStatusNotification, _BluetoothAdvertisingStateChangedNotification, 
-                       _BluetoothAvailabilityChangedNotification, _BluetoothBlacklistStateChangedNotification, 
-                       _BluetoothConnectabilityChangedNotification, _BluetoothConnectionStatusChangedNotification, 
-                       _BluetoothDeviceBatteryChangedNotification, _BluetoothDeviceChangedNotification, 
-                       _BluetoothDeviceConnectFailedNotification, _BluetoothDeviceConnectSuccessNotification, 
-                       _BluetoothDeviceDisconnectFailedNotification, _BluetoothDeviceDisconnectSuccessNotification, 
-                       _BluetoothDeviceDiscoveredNotification, _BluetoothDeviceRemovedNotification, 
-                       _BluetoothDeviceSupportsContactSyncNotification, _BluetoothDeviceSupportsMAPClientNotification, 
-                       _BluetoothDeviceUnpairedNotification, _BluetoothDeviceUpdatedNotification, 
-                       _BluetoothDiscoveryStateChangedNotification, _BluetoothDiscoveryStoppedNotification, 
-                       _BluetoothErrorKey, _BluetoothFirstDeviceUnlockCompleted, 
-                       _BluetoothHandsfreeEndedVoiceCommand, _BluetoothHandsfreeInitiatedVoiceCommand, 
-                       _BluetoothHighPowerDisabled, _BluetoothHighPowerEnabled, _BluetoothMagicPairedDeviceNameChangedNotification, 
+                       _BluetoothAccessorySealValueStatusNotification, _BluetoothAccessorySettingsChanged, 
+                       _BluetoothAdvertisingStateChangedNotification, _BluetoothAvailabilityChangedNotification, 
+                       _BluetoothBlacklistStateChangedNotification, _BluetoothConnectabilityChangedNotification, 
+                       _BluetoothConnectionStatusChangedNotification, _BluetoothDeviceBatteryChangedNotification, 
+                       _BluetoothDeviceChangedNotification, _BluetoothDeviceConnectFailedNotification, 
+                       _BluetoothDeviceConnectSuccessNotification, _BluetoothDeviceDisconnectFailedNotification, 
+                       _BluetoothDeviceDisconnectSuccessNotification, _BluetoothDeviceDiscoveredNotification, 
+                       _BluetoothDeviceRemovedNotification, _BluetoothDeviceSupportsContactSyncNotification, 
+                       _BluetoothDeviceSupportsMAPClientNotification, _BluetoothDeviceUnpairedNotification, 
+                       _BluetoothDeviceUpdatedNotification, _BluetoothDiscoveryStateChangedNotification, 
+                       _BluetoothDiscoveryStoppedNotification, _BluetoothErrorKey, 
+                       _BluetoothFirstDeviceUnlockCompleted, _BluetoothHandsfreeEndedVoiceCommand, 
+                       _BluetoothHandsfreeInitiatedVoiceCommand, _BluetoothHighPowerDisabled, 
+                       _BluetoothHighPowerEnabled, _BluetoothMagicPairedDeviceNameChangedNotification, 
                        _BluetoothNotificationNameKey, _BluetoothPairedStatusChangedNotification, 
                        _BluetoothPairingPINRequestNotification, _BluetoothPairingPINResultFailedNotification, 
                        _BluetoothPairingPINResultSuccessNotification, _BluetoothPairingPassKeyDisplayNotification, 

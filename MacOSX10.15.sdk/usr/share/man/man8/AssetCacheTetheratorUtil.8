@@ -3,7 +3,7 @@
 .\"man mdoc.samples for a complete listing of options
 .\"man mdoc for the short list of editing options
 .\"/usr/share/misc/mdoc.template
-.Dd 10/24/16               \" DATE 
+.Dd 8/1/19               \" DATE 
 .Dt AssetCacheTetheratorUtil 8      \" Program name and manual section number 
 .Os "macOS"
 .Sh NAME                 \" Section Header - required - don't modify 
@@ -18,10 +18,6 @@
 .Nm
 .Op -j|--json
 .Ar enable
-.Op --duration seconds
-.Ar --first address
-.Ar --last address
-.Ar --server path
 .Nm
 .Op -j|--json
 .Ar disable
@@ -35,30 +31,14 @@
 iOS and tvOS devices connected to a computer with a USB cable can be "tethered,"
 so that they route their Internet requests through the computer.
 .Nm
-enables a tethered network (perhaps for a specified number of seconds), disables it, or reports on its status.
+enables a tethered network, disables it, or reports on its status.
+Tethering requires Content Caching.
 .Nm
 must be run by root, except for the isEnabled and status commands.
 .Sh OPTIONS
 .Bl -tag
 .It -j|--json
 Print results in machine-parseable JSON format to stdout.
-.It --duration seconds
-Automatically tear down the tether after a specified amount of time.
-.It --first address
-.It --last address
-The first and last IPv4 addresses, in dot notation, to use for the tethered network.
-The gateway -- the tethering Mac -- will have the first address.
-.It --server path
-The path to a plist specifying the tethered content cache.
-The plist must be a dictionary with the following keys and values:
-.Bl -tag
-.It capabilities dictionary
-A set of capabilities that the content cache supports.
-.It guid string
-The content cache's ServerGUID.
-.It port number
-The port number on which the content cache accepts requests.
-.El
 .El
 .Sh "SEE ALSO"
 System Preferences > Sharing > Content Caching,

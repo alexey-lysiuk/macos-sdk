@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, SFContentBlockerErrorCode) {
     SFContentBlockerLoadingInterrupted API_DEPRECATED_WITH_REPLACEMENT("SFErrorLoadingInterrupted", ios(9.0, 10.0)) = SFErrorLoadingInterrupted,
 } API_DEPRECATED_WITH_REPLACEMENT("SFErrorCode", ios(9.0, 10.0)) API_UNAVAILABLE(macCatalyst);
 
-SF_EXTERN API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(macCatalyst)
+SF_EXTERN API_AVAILABLE(ios(9.0), macCatalyst(13.4))
 @interface SFContentBlockerManager : NSObject
 
 + (void)reloadContentBlockerWithIdentifier:(NSString *)identifier completionHandler:(nullable void (^)(NSError *_Nullable error))completionHandler;

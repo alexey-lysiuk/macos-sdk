@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 12BE3DB8-A775-3B86-B815-2AC8C3E7F702', 'x86_64: 12BE3DB8-A775-3B86-B815-2AC8C3E7F702' ]
+uuids:           [ 'x86_64: 9B49AD34-5CD6-3F8E-8409-5E624BC38E54', 'x86_64: 9B49AD34-5CD6-3F8E-8409-5E624BC38E54' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContextKit.framework/Versions/A/ContextKit'
 exports:         

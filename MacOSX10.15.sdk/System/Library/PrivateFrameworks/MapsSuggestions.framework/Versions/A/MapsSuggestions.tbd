@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30E737A8-2BA4-38D1-BBB1-BDEF3554161E', 'x86_64: 30E737A8-2BA4-38D1-BBB1-BDEF3554161E' ]
+uuids:           [ 'x86_64: 1CD6B156-78FF-3ADD-89DC-8896C60A0C0F', 'x86_64: 1CD6B156-78FF-3ADD-89DC-8896C60A0C0F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MapsSuggestions.framework/Versions/A/MapsSuggestions'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _CLLocationCoordinateFromNSData, _GEOComposedWaypointFromMapsSuggestionsEntry, 
-                       _GEOConfigFromMapsSuggestionsEntryType, _GEOConfigMapsSuggestionsAlreadyThereFilterEnabled, 
-                       _GEOConfigMapsSuggestionsAppConnectionAndRecentsDeduperEnabled, 
+    symbols:         [ _CLLocationCoordinate2DFromGEOLocationCoordinate2D, _CLLocationCoordinateFromNSData, 
+                       _GEOComposedWaypointFromMapsSuggestionsEntry, _GEOConfigFromMapsSuggestionsEntryType, 
+                       _GEOConfigMapsSuggestionsAlreadyThereFilterEnabled, _GEOConfigMapsSuggestionsAppConnectionAndRecentsDeduperEnabled, 
                        _GEOConfigMapsSuggestionsAppConnectionDeduperEnabled, _GEOConfigMapsSuggestionsAppConnectionExpirationOverflowInSeconds, 
                        _GEOConfigMapsSuggestionsAppConnectionFilterEnabled, _GEOConfigMapsSuggestionsAppConnectionImproverEnabled, 
                        _GEOConfigMapsSuggestionsAppConnectionInitialWeight, _GEOConfigMapsSuggestionsAppConnectionMaxValidDistance, 
@@ -117,6 +117,8 @@ exports:
                        _GEOConfigMapsSuggestionsMinPercentageForHighChanceOfSnow, 
                        _GEOConfigMapsSuggestionsMinTemperatureForHotWeather, _GEOConfigMapsSuggestionsMinimumDurationForImminentWindow, 
                        _GEOConfigMapsSuggestionsNanoMapsFilterCompanionsRoutineSource, 
+                       _GEOConfigMapsSuggestionsNavigationTrackingTaskMaxAge, _GEOConfigMapsSuggestionsNavigationTrackingTaskMaxDistance, 
+                       _GEOConfigMapsSuggestionsNavigationTrackingTaskMinVisits, 
                        _GEOConfigMapsSuggestionsNearbyFilterEnabled, _GEOConfigMapsSuggestionsNearbyFilterMinNearbyDistance, 
                        _GEOConfigMapsSuggestionsNoAddressFilterEnabled, _GEOConfigMapsSuggestionsNoTitleFilterEnabled, 
                        _GEOConfigMapsSuggestionsNumberOfAppConnectionSourcePredictions, 
@@ -273,6 +275,7 @@ exports:
                        _GEOConfigMapsSuggestionsVerboseLogging, _GEOConfigMapsSuggestionsVisitTrackingLocationUpdaterDistanceBuffer, 
                        _GEOConfigMapsSuggestionsWalletMaxMapItemCache, _GEOConfigMapsSuggestionsWalletSourceEnabled, 
                        _GEOConfigMapsSuggestionsWalletUpdateIntervalInSeconds, _GEOConfigMapsSuggestionsWeatherFeelerEnabled, 
+                       _GEOConfigMapsSuggestionsWeatherFeelerExpireTimeForNonSignalValue, 
                        _GEOConfigMapsSuggestionsWeightForSharedToMeEvents, _GEOConfigNMGSuggestionsRelayDefaultInterval, 
                        _GEOConfigNMGSuggestionsRelayDefaultLeeway, _GEOConfigNanoMapsSuggestionsExitTimeCacheExpiration, 
                        _GEOConfigNanoMapsSuggestionsExitTimeOverrideInSeconds, _GEOConfigNanoMapsSuggestionsRunConditionsConsiderGroundSpeed, 
@@ -334,12 +337,13 @@ exports:
                        _MapsSuggestionsMapItemIsTerminal, _MapsSuggestionsMapItemIsVenue, 
                        _MapsSuggestionsMapItemShortAddress, _MapsSuggestionsMapItemStreetName, 
                        _MapsSuggestionsMapItemStreetWithNumber, _MapsSuggestionsMapItemWithCorrectedLocation, 
-                       _MapsSuggestionsMapItemsAreEqual, _MapsSuggestionsMergeAsShortcut, 
-                       _MapsSuggestionsMostRecentLocation, _MapsSuggestionsMutableSignalPackFromData, 
-                       _MapsSuggestionsNonNilString, _MapsSuggestionsNow, _MapsSuggestionsNowWithOffset, 
-                       _MapsSuggestionsOnlyOneIsPureShortcut, _MapsSuggestionsPeriodFromEntry, 
-                       _MapsSuggestionsPreviousMidnight, _MapsSuggestionsRealNow, 
-                       _MapsSuggestionsRealTimeZone, _MapsSuggestionsRecentlyViewedString, 
+                       _MapsSuggestionsMapItemsAreEqual, _MapsSuggestionsMeCardFilter, 
+                       _MapsSuggestionsMeCardUnion, _MapsSuggestionsMeCardWithinDistance, 
+                       _MapsSuggestionsMergeAsShortcut, _MapsSuggestionsMostRecentLocation, 
+                       _MapsSuggestionsMutableSignalPackFromData, _MapsSuggestionsNonNilString, 
+                       _MapsSuggestionsNow, _MapsSuggestionsNowWithOffset, _MapsSuggestionsOnlyOneIsPureShortcut, 
+                       _MapsSuggestionsPeriodFromEntry, _MapsSuggestionsPreviousMidnight, 
+                       _MapsSuggestionsRealNow, _MapsSuggestionsRealTimeZone, _MapsSuggestionsRecentlyViewedString, 
                        _MapsSuggestionsRemovalBehaviorEnumerate, _MapsSuggestionsResetCurrentLocation, 
                        _MapsSuggestionsRestaurantReservationStringCancelled, _MapsSuggestionsRestaurantReservationStringConfirmed, 
                        _MapsSuggestionsRestaurantReservationStringPending, _MapsSuggestionsSawHomeOrWorkOnThisDevice, 
@@ -430,5 +434,5 @@ exports:
                        MapsSuggestionsTooEarlyFilter, MapsSuggestionsTooFewVisitsFilter, 
                        MapsSuggestionsTracker, MapsSuggestionsTrafficAndETAResult, 
                        MapsSuggestionsTravelFlightImprover, MapsSuggestionsUniqueIdentifierDeduper, 
-                       MapsSuggestionsUnknownFilter, MapsSuggestionsVisitTrackingLocationUpdater ]
+                       MapsSuggestionsUnknownFilter, MapsSuggestionsUser, MapsSuggestionsVisitTrackingLocationUpdater ]
 ...

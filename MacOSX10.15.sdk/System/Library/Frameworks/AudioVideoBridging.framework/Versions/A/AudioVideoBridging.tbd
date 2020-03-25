@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 35C94420-0D0C-3F79-B050-0A30A85D3CDE' ]
+uuids:           [ 'x86_64: 612C666C-18C5-3576-ADDB-BC685DFD06BB' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AudioVideoBridging.framework/Versions/A/AudioVideoBridging'
 exports:         

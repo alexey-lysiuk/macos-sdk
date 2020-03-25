@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8A1DDA4C-B1B0-3D49-91B2-237BA869EAAE', 'x86_64: 8A1DDA4C-B1B0-3D49-91B2-237BA869EAAE' ]
+uuids:           [ 'x86_64: B95102D5-E0DA-38B0-AA56-44FBA4C0621C', 'x86_64: B95102D5-E0DA-38B0-AA56-44FBA4C0621C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RemoteConfiguration.framework/Versions/A/RemoteConfiguration'
 exports:         

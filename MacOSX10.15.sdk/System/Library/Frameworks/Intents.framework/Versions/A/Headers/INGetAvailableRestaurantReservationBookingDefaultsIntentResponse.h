@@ -2,7 +2,7 @@
 //  INGetAvailableRestaurantReservationBookingDefaultsIntentResponse.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 // This API requires you to work with Apple Maps before your application can use it. For information on how to get started, please go to MapsConnect.
 //

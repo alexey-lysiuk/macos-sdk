@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D2AD02D6-EC45-3AA9-A3E9-701A3CE1476F', 'x86_64: D2AD02D6-EC45-3AA9-A3E9-701A3CE1476F' ]
+uuids:           [ 'x86_64: 72249962-BB6D-3CBD-A89B-02200D907C21', 'x86_64: 72249962-BB6D-3CBD-A89B-02200D907C21' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/BackgroundTasks.framework/Versions/A/BackgroundTasks'
 exports:         

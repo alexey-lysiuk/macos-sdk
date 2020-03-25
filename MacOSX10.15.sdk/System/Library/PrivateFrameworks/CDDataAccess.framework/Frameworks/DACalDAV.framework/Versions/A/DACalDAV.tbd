@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 345A9264-D1A9-3786-9265-D552CDE60F6A' ]
+uuids:           [ 'x86_64: FDB5600D-5249-3788-ADA3-79500E5775B6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV'
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 24314442-4781-3B73-ACB8-4FF96B29BC03', 'x86_64: 24314442-4781-3B73-ACB8-4FF96B29BC03' ]
+uuids:           [ 'x86_64: 1996E3B4-E9DD-3E94-8CD7-150B4E814001', 'x86_64: 1996E3B4-E9DD-3E94-8CD7-150B4E814001' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OSLog.framework/Versions/A/OSLog'
-current-version: 1147.40.13
+current-version: 1147.100.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __catalog_create, __catalog_create_with_chunk, __catalog_destroy, 

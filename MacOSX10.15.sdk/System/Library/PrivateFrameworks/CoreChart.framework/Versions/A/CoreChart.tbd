@@ -1,10 +1,27 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 88D805F1-6A1B-3C22-84EC-0ADDE2F548A6' ]
+uuids:           [ 'x86_64: 60CDE97E-5738-35C0-AE25-4556E1F79194' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreChart.framework/Versions/A/CoreChart'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _CoreChartVersionNumber, _CoreChartVersionString ]
-    objc-classes:    [ CCChartView ]
+    symbols:         [ _CCBaseConfigApple, _CCBaseConfigVega, _CCChartViewBaseConfig, 
+                       _CCChartViewCATransactionFromBackgroundThread, _CCChartViewDelegate, 
+                       _CCChartViewRendererType, _CCChartViewZoomFactor, _CCRendererTypeCoreAnimation, 
+                       _CCRendererTypeCoreGraphics, _CoreChartVersionNumber, _CoreChartVersionString ]
+    objc-classes:    [ CCChartDataRowBinding, CCChartView, CCVegaAreaMarkDef, CCVegaCARenderer, 
+                       CCVegaCGCanvas, CCVegaCGContext, CCVegaCGFontProperties, CCVegaCGImage, 
+                       CCVegaCGLinearGradient, CCVegaCGTextMetrics, CCVegaCSSCursorMap, 
+                       CCVegaCSSStyleDeclaration, CCVegaColorHandler, CCVegaColorOrGradient, 
+                       CCVegaCurveFactory, CCVegaCurveFactoryCardinal, CCVegaCurveFactoryLinear, 
+                       CCVegaCurveFactoryLinearClosed, CCVegaCurves, CCVegaEventQueueItem, 
+                       CCVegaGroupMarkDef, CCVegaHTMLElement, CCVegaJSColor, CCVegaJSColorMap, 
+                       CCVegaJSConsole, CCVegaJSDocument, CCVegaJSFont, CCVegaJSFontCache, 
+                       CCVegaJSMouseEvent, CCVegaLineMarkDef, CCVegaLogProxy, CCVegaLogProxyHandler, 
+                       CCVegaLogger, CCVegaMark, CCVegaMarkDef, CCVegaMarkItem, CCVegaMultiItemShapeMarkDef, 
+                       CCVegaPathMarkDef, CCVegaRectMarkDef, CCVegaRenderer, CCVegaRendererOptions, 
+                       CCVegaRuleMarkDef, CCVegaSVGRenderer, CCVegaScenegraphUtils, 
+                       CCVegaScripts, CCVegaShapeMarkDef, CCVegaSignalListener, CCVegaSingleItemShapeMarkDef, 
+                       CCVegaStringHandler, CCVegaSymbolMarkDef, CCVegaSymbolPath, 
+                       CCVegaTextMarkDef, CCVegaWorker, CCViewRendererDelegate ]
 ...

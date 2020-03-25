@@ -1,10 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 87DCDFD6-3CC2-3740-8375-53176039A5EE', 'x86_64: 87DCDFD6-3CC2-3740-8375-53176039A5EE' ]
+uuids:           [ 'x86_64: C283F845-6EA6-3D41-9BBE-B6C5F09881CC', 'x86_64: C283F845-6EA6-3D41-9BBE-B6C5F09881CC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SiriCore.framework/Versions/A/SiriCore'
 current-version: 0
 compatibility-version: 0
+swift-abi-version: 7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SiriCoreAceSerializationErrorDomain, _SiriCoreAceSerializationErrorUserInfoBytesAvailableKey, 

@@ -1,14 +1,15 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4997DCB2-4280-3E02-B261-BD66DF6D9EBD' ]
+uuids:           [ 'x86_64: 0FB6AB80-0A10-3165-9722-2CD9D7FD753E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AdID.framework/Versions/A/AdID'
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ADSimulatedCrashKillCode_InternalInconsistency, _AdIDVersionNumber, 
-                       _AdIDVersionString ]
-    objc-classes:    [ ADAMSBagManager, ADAdTrackingSchedulingManager, ADClientDPIDManager, 
-                       ADIDManagerService, ADJingleOptOutRequest, ADJingleRequest, 
-                       ADJingleRequestManager, ADJingleSegmentRequest, ADLATStatusManager, 
-                       ADOptInStatusService, ADSegmentDataManager ]
+                       _AdIDVersionString, _kVectorSignature, _kVectorsFileSignature ]
+    objc-classes:    [ ADAMSBagManager, ADAdTrackingSchedulingManager, ADAppVector, 
+                       ADAppVectorsFile, ADClientDPIDManager, ADIDManagerService, 
+                       ADJingleOptOutRequest, ADJingleRequest, ADJingleRequestManager, 
+                       ADJingleSegmentRequest, ADLATStatusManager, ADOptInStatusService, 
+                       ADSegmentDataManager ]
 ...

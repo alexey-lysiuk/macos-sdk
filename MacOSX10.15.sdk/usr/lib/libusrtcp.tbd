@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9FE938A6-BC56-3245-87D6-88C3C7A1F81D', 'x86_64: 9FE938A6-BC56-3245-87D6-88C3C7A1F81D' ]
+uuids:           [ 'x86_64: EA950C6F-2EE4-324E-81D7-A0B02B372165', 'x86_64: EA950C6F-2EE4-324E-81D7-A0B02B372165' ]
 platform:        zippered
 install-name:    '/usr/lib/libusrtcp.dylib'
 exports:         

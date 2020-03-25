@@ -16,6 +16,7 @@ MP_API(ios(10.3))
 MP_PROHIBITED(tvos, watchos)
 @interface MPMusicPlayerControllerQueue : NSObject
 
++ (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
 @property (nonatomic, copy, readonly) NSArray<MPMediaItem *> *items;

@@ -1,7 +1,7 @@
 /*
     FinderSync.h
 
-    Copyright (c) 2014-2019, Apple Inc.
+    Copyright (c) 2014-2020, Apple Inc.
     All rights reserved.
 */
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D4C4ACA-A1DD-3D0B-B362-8D202EBE8D9B', 'x86_64: 4D4C4ACA-A1DD-3D0B-B362-8D202EBE8D9B' ]
+uuids:           [ 'x86_64: 4B7C18B2-1E51-376E-9D6A-CE3F58D2AE53', 'x86_64: 4B7C18B2-1E51-376E-9D6A-CE3F58D2AE53' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom'
 current-version: 195

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8B4BE476-3CD1-300D-B7FB-E0E8F0CD6267' ]
+uuids:           [ 'x86_64: 090DE1EC-B311-3554-ADBD-25293681421A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SemanticDocumentManagement.framework/Versions/A/SemanticDocumentManagement'
 current-version: 2.0.5

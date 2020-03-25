@@ -58,6 +58,7 @@ mach_msg_rpc_from_kernel_proper(
 
 #define mach_msg_rpc_from_kernel mach_msg_rpc_from_kernel_proper
 
+
 extern void
 mach_msg_destroy_from_kernel_proper(
 	mach_msg_header_t       *msg);

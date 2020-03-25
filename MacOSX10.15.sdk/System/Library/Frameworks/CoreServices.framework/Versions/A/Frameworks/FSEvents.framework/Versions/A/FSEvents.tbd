@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9BB76885-7CD7-3369-B759-33F7E5DA5392', 'x86_64: 9BB76885-7CD7-3369-B759-33F7E5DA5392' ]
+uuids:           [ 'x86_64: CE3D8B13-2583-3527-8532-D5DDAAD7D56B', 'x86_64: CE3D8B13-2583-3527-8532-D5DDAAD7D56B' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents'
-current-version: 1268.40.5
+current-version: 1268.100.1
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]

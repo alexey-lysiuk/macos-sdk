@@ -44,7 +44,9 @@ API_AVAILABLE(ios(6.0), watchos(3.0))
 + (BOOL)isPaymentPassActivationAvailable API_DEPRECATED("Use -[PKPassLibrary isPaymentPassActivationAvailable] instead", ios(8.0, 9.0));
 
 // If this pass library supports activating payment passes, this method will return YES. Otherwise, NO will be returned.
-- (BOOL)isPaymentPassActivationAvailable API_AVAILABLE(ios(9.0));
+- (BOOL)isPaymentPassActivationAvailable API_DEPRECATED("Use -[PKPassLibrary isSecureElementPassActivationAvailable] instead", ios(9.0, API_TO_BE_DEPRECATED));
+
+@property(nonatomic, assign, readonly, getter=isSecureElementPassActivationAvailable) BOOL secureElementPassActivationAvailable API_AVAILABLE(ios(13.4));
 
 // These return only local passes the process is entitled to access.
 - (NSArray<PKPass *> *)passes;
@@ -52,7 +54,9 @@ API_AVAILABLE(ios(6.0), watchos(3.0))
 - (NSArray<PKPass *> *)passesOfType:(PKPassType)passType API_AVAILABLE(ios(8.0), watchos(3.0));
 
 // This returns the remote payment passes from attached devices
-- (NSArray<PKPaymentPass *> *)remotePaymentPasses API_AVAILABLE(ios(9.0));
+- (NSArray<PKPaymentPass *> *)remotePaymentPasses API_DEPRECATED("Use -[PKPassLibrary remoteSecureElementPasses] instead", ios(9.0, API_TO_BE_DEPRECATED));
+
+@property(nonatomic, copy, readonly) NSArray<PKSecureElementPass *> *remoteSecureElementPasses API_AVAILABLE(ios(13.4));
 
 - (void)removePass:(PKPass *)pass;
 
@@ -75,19 +79,26 @@ API_AVAILABLE(ios(6.0), watchos(3.0))
 - (void)openPaymentSetup API_AVAILABLE(ios(8.3)) __WATCHOS_PROHIBITED;
 
 // Presents the pass for use above the current application. The pass must already be in the pass library for this to have effect.
-- (void)presentPaymentPass:(PKPaymentPass *)pass API_AVAILABLE(ios(10.0)) __WATCHOS_PROHIBITED;
+- (void)presentPaymentPass:(PKPaymentPass *)pass API_DEPRECATED("Use -[PKPassLibrary remoteSecureElementPasses] instead", ios(10.0, API_TO_BE_DEPRECATED)) __WATCHOS_PROHIBITED;
+- (void)presentSecureElementPass:(PKSecureElementPass *)pass API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos);
+
 
 // Returns YES if either the current device or an attached device both supports adding payment passes and does not already contain
 // a payment pass with the supplied primary account identifier.
-- (BOOL)canAddPaymentPassWithPrimaryAccountIdentifier:(NSString *)primaryAccountIdentifier API_AVAILABLE(ios(9.0));
+- (BOOL)canAddPaymentPassWithPrimaryAccountIdentifier:(NSString *)primaryAccountIdentifier API_DEPRECATED("Use -[PKPassLibrary canAddSecureElementPassWithPrimaryAccountIdentifier] instead", ios(9.0, API_TO_BE_DEPRECATED));
+- (BOOL)canAddSecureElementPassWithPrimaryAccountIdentifier:(NSString *)primaryAccountIdentifier NS_SWIFT_NAME(canAddSecureElementPass(primaryAccountIdentifier:)) API_AVAILABLE(ios(13.4));
 
 // If the library can add Felica passes, this method will return YES. Otherwise, NO will be returned.
 - (BOOL)canAddFelicaPass API_AVAILABLE(ios(10.1), watchos(3.1));
 
 // These methods may be utilized to activate a payment pass that is provisioned but currently in the inactive state, by providing
 // either a cryptographic OTP, or an activation code.
-- (void)activatePaymentPass:(PKPaymentPass *)paymentPass withActivationData:(NSData *)activationData completion:(nullable void(^)(BOOL success, NSError* error))completion API_AVAILABLE(ios(8.0)) __WATCHOS_PROHIBITED;
-- (void)activatePaymentPass:(PKPaymentPass *)paymentPass withActivationCode:(NSString *)activationCode completion:(nullable void(^)(BOOL success, NSError* error))completion API_DEPRECATED("Use activatePaymentPass:withActivationData:completion: instead", ios(8.0, 9.0)) __WATCHOS_PROHIBITED;
+- (void)activatePaymentPass:(PKPaymentPass *)paymentPass withActivationData:(NSData *)activationData completion:(nullable void(^)(BOOL success, NSError *error))completion API_DEPRECATED("Use activateSecureElementPass:withActivationData:completion: instead", ios(8.0, API_TO_BE_DEPRECATED));
+- (void)activatePaymentPass:(PKPaymentPass *)paymentPass withActivationCode:(NSString *)activationCode completion:(nullable void(^)(BOOL success, NSError *error))completion API_DEPRECATED("Use activatePaymentPass:withActivationData:completion: instead", ios(8.0, 9.0)) __WATCHOS_PROHIBITED;
+- (void)activateSecureElementPass:(PKSecureElementPass *)secureElementPass withActivationData:(NSData *)activationData completion:(nullable void(^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_NAME(activate(_:activationData:completion:)) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos);
+
+// Sign a payload using the pass
+- (void)signData:(NSData *)signData withSecureElementPass:(PKSecureElementPass *)secureElementPass completion:(void(^)(NSData * _Nullable signedData, NSData * _Nullable signature, NSError * _Nullable error))completion NS_SWIFT_NAME(sign(_:using:completion:)) API_AVAILABLE(ios(13.4), watchos(6.2));
 @end
 
 // This notification is issued by a library instance, with that instance as the sender.  If there are no instantiated library objects,

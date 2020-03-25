@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 129CAFF3-818C-3D6B-9BDE-74262A030741' ]
+uuids:           [ 'x86_64: A58C5EF6-3069-3F48-9D3A-5C40754FCDDA' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/AVKit.framework/Versions/A/AVKit'
 exports:         

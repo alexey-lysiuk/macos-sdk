@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-macos10.15 -enable-objc-interop -swift-version 5 -enforce-exclusivity=checked -O -enable-library-evolution -module-name Combine
 import Darwin
 import Swift
@@ -46,7 +46,7 @@ final public class AnyCancellable : Combine.Cancellable, Swift.Hashable {
   final public func cancel()
   final public func hash(into hasher: inout Swift.Hasher)
   public static func == (lhs: Combine.AnyCancellable, rhs: Combine.AnyCancellable) -> Swift.Bool
-  public var hashValue: Swift.Int {
+  final public var hashValue: Swift.Int {
     get
   }
 }
@@ -115,6 +115,7 @@ extension Publishers {
     public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, S.Failure == Combine.Publishers.TryDropWhile<Upstream>.Failure
   }
 }
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 public struct Record<Output, Failure> : Combine.Publisher where Failure : Swift.Error {
   public let recording: Combine.Record<Output, Failure>.Recording
   public init(record: (inout Combine.Record<Output, Failure>.Recording) -> Swift.Void)
@@ -125,21 +126,23 @@ public struct Record<Output, Failure> : Combine.Publisher where Failure : Swift.
     public typealias Input = Output
     public var output: [Output] {
       get
-      }
+    }
     public var completion: Combine.Subscribers.Completion<Failure> {
       get
-      }
+    }
     public init()
     public init(output: [Output], completion: Combine.Subscribers.Completion<Failure> = .finished)
-    mutating public func receive(_ input: Combine.Record<Output, Failure>.Recording.Input)
-    mutating public func receive(completion: Combine.Subscribers.Completion<Failure>)
+    public mutating func receive(_ input: Combine.Record<Output, Failure>.Recording.Input)
+    public mutating func receive(completion: Combine.Subscribers.Completion<Failure>)
   }
 }
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension Record.Recording : Swift.Codable where Output : Swift.Decodable, Output : Swift.Encodable, Failure : Swift.Decodable, Failure : Swift.Encodable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(into encoder: Swift.Encoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension Record : Swift.Codable where Output : Swift.Decodable, Output : Swift.Encodable, Failure : Swift.Decodable, Failure : Swift.Encodable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
@@ -282,7 +285,7 @@ extension Subscribers {
   @inlinable override final internal func receive(subscription: Combine.Subscription) {
         base.receive(subscription: subscription)
     }
-  @inlinable override final internal func receive(_ input: Base.Input) -> Combine.Subscribers.Demand {
+  @inlinable override final internal func receive(_ input: Combine.AnySubscriberBox<Base>.Input) -> Combine.Subscribers.Demand {
         base.receive(input)
     }
   @inlinable override final internal func receive(completion: Combine.Subscribers.Completion<Combine.AnySubscriberBox<Base>.Failure>) {
@@ -568,7 +571,7 @@ extension Publishers {
     public let a: A
     public let b: B
     public init(_ a: A, _ b: B)
-    public func receive<S>(subscriber: S) where S : Combine.Subscriber, B.Failure == S.Failure, S.Input == (A.Output, B.Output)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, B.Failure == S.Failure, S.Input == Combine.Publishers.CombineLatest<A, B>.Output
   }
   public struct CombineLatest3<A, B, C> : Combine.Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, A.Failure == B.Failure, B.Failure == C.Failure {
     public typealias Output = (A.Output, B.Output, C.Output)
@@ -577,7 +580,7 @@ extension Publishers {
     public let b: B
     public let c: C
     public init(_ a: A, _ b: B, _ c: C)
-    public func receive<S>(subscriber: S) where S : Combine.Subscriber, C.Failure == S.Failure, S.Input == (A.Output, B.Output, C.Output)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, C.Failure == S.Failure, S.Input == Combine.Publishers.CombineLatest3<A, B, C>.Output
   }
   public struct CombineLatest4<A, B, C, D> : Combine.Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, A.Failure == B.Failure, B.Failure == C.Failure, C.Failure == D.Failure {
     public typealias Output = (A.Output, B.Output, C.Output, D.Output)
@@ -587,7 +590,7 @@ extension Publishers {
     public let c: C
     public let d: D
     public init(_ a: A, _ b: B, _ c: C, _ d: D)
-    public func receive<S>(subscriber: S) where S : Combine.Subscriber, D.Failure == S.Failure, S.Input == (A.Output, B.Output, C.Output, D.Output)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, D.Failure == S.Failure, S.Input == Combine.Publishers.CombineLatest4<A, B, C, D>.Output
   }
 }
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
@@ -642,14 +645,14 @@ public protocol ObservableObject : AnyObject {
   associatedtype ObjectWillChangePublisher : Combine.Publisher = Combine.ObservableObjectPublisher where Self.ObjectWillChangePublisher.Failure == Swift.Never
   var objectWillChange: Self.ObjectWillChangePublisher { get }
 }
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@_hasMissingDesignatedInitializers @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 final public class ObservableObjectPublisher : Combine.Publisher {
   public typealias Output = Swift.Void
   public typealias Failure = Swift.Never
   public init()
+  @objc deinit
   final public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == Combine.ObservableObjectPublisher.Failure, S.Input == Combine.ObservableObjectPublisher.Output
   final public func send()
-  @objc deinit
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension ObservableObject where Self.ObjectWillChangePublisher == Combine.ObservableObjectPublisher {
@@ -807,6 +810,9 @@ extension Publisher {
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 @propertyWrapper public struct Published<Value> {
+  @_alwaysEmitIntoClient public init(wrappedValue: Value) {
+        self.init(initialValue: wrappedValue)
+    }
   public init(initialValue: Value)
   @available(*, unavailable, message: "@Published is only available on properties of classes")
   public var wrappedValue: Value {
@@ -863,14 +869,14 @@ extension Publishers {
     public let strategy: Combine.Publishers.TimeGroupingStrategy<Context>
     public let options: Context.SchedulerOptions?
     public init(upstream: Upstream, strategy: Combine.Publishers.TimeGroupingStrategy<Context>, options: Context.SchedulerOptions?)
-    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == [Upstream.Output]
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == Combine.Publishers.CollectByTime<Upstream, Context>.Output
   }
   public struct Collect<Upstream> : Combine.Publisher where Upstream : Combine.Publisher {
     public typealias Output = [Upstream.Output]
     public typealias Failure = Upstream.Failure
     public let upstream: Upstream
     public init(upstream: Upstream)
-    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == [Upstream.Output]
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == Combine.Publishers.Collect<Upstream>.Output
   }
   public struct CollectByCount<Upstream> : Combine.Publisher where Upstream : Combine.Publisher {
     public typealias Output = [Upstream.Output]
@@ -878,7 +884,7 @@ extension Publishers {
     public let upstream: Upstream
     public let count: Swift.Int
     public init(upstream: Upstream, count: Swift.Int)
-    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == [Upstream.Output]
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == Combine.Publishers.CollectByCount<Upstream>.Output
   }
 }
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
@@ -1240,6 +1246,7 @@ public protocol Subject : AnyObject, Combine.Publisher {
   func send(completion: Combine.Subscribers.Completion<Self.Failure>)
   func send(subscription: Combine.Subscription)
 }
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension Subject where Self.Output == Swift.Void {
   public func send()
 }
@@ -1667,7 +1674,7 @@ extension Subscribers {
     public typealias Failure = Swift.Never
     final public var object: Root? {
       get
-      }
+    }
     final public let keyPath: Swift.ReferenceWritableKeyPath<Root, Input>
     final public var description: Swift.String {
       get
@@ -2244,7 +2251,7 @@ extension Publishers {
     public let a: A
     public let b: B
     public init(_ a: A, _ b: B)
-    public func receive<S>(subscriber: S) where S : Combine.Subscriber, B.Failure == S.Failure, S.Input == (A.Output, B.Output)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, B.Failure == S.Failure, S.Input == Combine.Publishers.Zip<A, B>.Output
   }
   public struct Zip3<A, B, C> : Combine.Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, A.Failure == B.Failure, B.Failure == C.Failure {
     public typealias Output = (A.Output, B.Output, C.Output)
@@ -2253,7 +2260,7 @@ extension Publishers {
     public let b: B
     public let c: C
     public init(_ a: A, _ b: B, _ c: C)
-    public func receive<S>(subscriber: S) where S : Combine.Subscriber, C.Failure == S.Failure, S.Input == (A.Output, B.Output, C.Output)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, C.Failure == S.Failure, S.Input == Combine.Publishers.Zip3<A, B, C>.Output
   }
   public struct Zip4<A, B, C, D> : Combine.Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, A.Failure == B.Failure, B.Failure == C.Failure, C.Failure == D.Failure {
     public typealias Output = (A.Output, B.Output, C.Output, D.Output)
@@ -2263,7 +2270,7 @@ extension Publishers {
     public let c: C
     public let d: D
     public init(_ a: A, _ b: B, _ c: C, _ d: D)
-    public func receive<S>(subscriber: S) where S : Combine.Subscriber, D.Failure == S.Failure, S.Input == (A.Output, B.Output, C.Output, D.Output)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, D.Failure == S.Failure, S.Input == Combine.Publishers.Zip4<A, B, C, D>.Output
   }
 }
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)

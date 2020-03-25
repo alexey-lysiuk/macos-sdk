@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 673201B7-8014-354B-8AB3-203EF8A1A722' ]
+uuids:           [ 'x86_64: AC359899-B84D-3136-9EEA-3CA6277D2488' ]
 platform:        macosx
 install-name:    '/usr/lib/libSecRecord.dylib'
 current-version: 0

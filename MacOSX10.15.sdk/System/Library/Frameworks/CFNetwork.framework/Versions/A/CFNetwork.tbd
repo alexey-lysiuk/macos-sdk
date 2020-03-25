@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5EA797F3-2F7A-3E0C-8DBC-DBE145004EC5', 'x86_64: 5EA797F3-2F7A-3E0C-8DBC-DBE145004EC5' ]
+uuids:           [ 'x86_64: 1D4D81F7-FC48-3588-87FC-481E2586E345', 'x86_64: 1D4D81F7-FC48-3588-87FC-481E2586E345' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork'
 current-version: 0

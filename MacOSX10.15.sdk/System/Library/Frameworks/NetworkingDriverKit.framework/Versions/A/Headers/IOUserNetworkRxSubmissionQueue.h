@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOUserNetworkRxSubmissionQueue.iig */
+/* iig(DriverKit-73.100.4) generated from IOUserNetworkRxSubmissionQueue.iig */
 
-/* IOUserNetworkRxSubmissionQueue.iig:1-17 */
+/* IOUserNetworkRxSubmissionQueue.iig:1-7 */
 #ifndef _IOUSERNETWORKRXSUBMISSIONQUEUE_IIG
 #define _IOUSERNETWORKRXSUBMISSIONQUEUE_IIG
 
@@ -8,17 +8,40 @@
 #include <NetworkingDriverKit/IOUserNetworkPacketBufferPool.h>  /* .iig include */
 #include <NetworkingDriverKit/IOUserNetworkPacketQueue.h>  /* .iig include */
 
+/* source class IOUserNetworkRxSubmissionQueue IOUserNetworkRxSubmissionQueue.iig:8-37 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
-@iig implementation
-#if KERNEL
-#include <NetworkingDriverKit/IOUserNetworkPacketQueue_kext.h>
-#include <NetworkingDriverKit/IOUserNetworkPacketBufferPool_kext.h>
-#include <NetworkingDriverKit/IOUserNetworkRxSubmissionQueue_kext.h>
-#endif
-@iig end
 */
 
-/* class IOUserNetworkRxSubmissionQueue IOUserNetworkRxSubmissionQueue.iig:18-37 */
+class KERNEL IOUserNetworkRxSubmissionQueue : public IOUserNetworkPacketQueue
+{
+public:
+    static kern_return_t
+    Create(
+        IOUserNetworkPacketBufferPool *     pool,
+        OSObject *                          owner,
+        uint32_t                            capacity,
+        uint32_t                            queueId,
+        IODispatchQueue *                   dispatchQueue,
+        IOUserNetworkRxSubmissionQueue **   queue) LOCAL;
+
+    virtual bool
+    init() override;
+
+    virtual void
+    free() override;
+
+    virtual kern_return_t
+    SetEnable(bool isEnable) LOCAL;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOUserNetworkRxSubmissionQueue IOUserNetworkRxSubmissionQueue.iig:8-37 */
 
 #define IOUserNetworkRxSubmissionQueue_Create_ID            0x9267f6a275193b57ULL
 
@@ -147,6 +170,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* IOUserNetworkRxSubmissionQueue.iig:39- */
 

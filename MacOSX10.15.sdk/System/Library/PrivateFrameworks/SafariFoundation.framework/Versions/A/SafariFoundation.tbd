@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B58D7FB3-D4C6-3036-8A2A-E4EB98DA4620', 'x86_64: B58D7FB3-D4C6-3036-8A2A-E4EB98DA4620' ]
+uuids:           [ 'x86_64: 5802BACD-93C7-3041-86EB-8F5AB7E51F80', 'x86_64: 5802BACD-93C7-3041-86EB-8F5AB7E51F80' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SafariFoundation.framework/Versions/A/SafariFoundation'
-current-version: 608.3.10
+current-version: 609.1.20
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SFAutoFillFromAddressBookPreferenceKey, _SFCredentialProviderDeveloperEntitlement, 

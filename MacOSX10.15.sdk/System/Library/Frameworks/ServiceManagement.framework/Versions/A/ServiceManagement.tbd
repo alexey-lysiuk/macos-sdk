@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2B80E13A-AFFC-355A-AA82-CCDEF4718E66', 'x86_64: 2B80E13A-AFFC-355A-AA82-CCDEF4718E66' ]
+uuids:           [ 'x86_64: C66FC9CF-224B-348C-94A5-ABAC579F5C0A', 'x86_64: C66FC9CF-224B-348C-94A5-ABAC579F5C0A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement'
-current-version: 1738.40.10
+current-version: 1738.100.39
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SMCopyAllJobDictionaries, _SMCopyEnabledLoginItems_4BTM, 

@@ -1,11 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F9B177D0-204D-35C5-8FF0-225B2F3A6ECB' ]
+uuids:           [ 'x86_64: 0B63FB18-41E8-3DEA-91B7-A2931F74F974' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EAFirmwareUpdater.framework/Versions/A/EAFirmwareUpdater'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _isCloseEASession, _kOverrideProtocol, _payload_length_for_command ]
     objc-classes:    [ EAFirmwareUpdater, FirmwareBundle, HSModel, iAUPServer ]
     objc-ivars:      [ EAFirmwareUpdater._accessory, EAFirmwareUpdater._appProtocol, 
                        EAFirmwareUpdater._applyCompletion, EAFirmwareUpdater._bootloaderProtocol, 

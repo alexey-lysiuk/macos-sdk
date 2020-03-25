@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BA2461D1-D8E3-3939-826B-2D22037189F3' ]
+uuids:           [ 'x86_64: F4C1CABA-D19F-3AEA-A2B3-AB500BDD198E' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MultipeerConnectivity.framework/Versions/A/MultipeerConnectivity'
-current-version: 164
+current-version: 166
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MCErrorDomain, _kMCSessionMaximumNumberOfPeers, _kMCSessionMinimumNumberOfPeers ]

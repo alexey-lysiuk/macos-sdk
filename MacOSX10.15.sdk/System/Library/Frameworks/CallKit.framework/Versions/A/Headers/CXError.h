@@ -10,16 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-CX_EXTERN NSErrorDomain const CXErrorDomain API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos);
-CX_EXTERN NSErrorDomain const CXErrorDomainIncomingCall API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos);
-CX_EXTERN NSErrorDomain const CXErrorDomainRequestTransaction API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos);
-CX_EXTERN NSErrorDomain const CXErrorDomainCallDirectoryManager API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos);
+CX_EXTERN NSErrorDomain const CXErrorDomain API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos);
+CX_EXTERN NSErrorDomain const CXErrorDomainIncomingCall API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos);
+CX_EXTERN NSErrorDomain const CXErrorDomainRequestTransaction API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos);
+CX_EXTERN NSErrorDomain const CXErrorDomainCallDirectoryManager API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos);
 
 typedef NS_ERROR_ENUM(CXErrorDomain, CXErrorCode) {
     CXErrorCodeUnknownError = 0,
     CXErrorCodeUnentitled API_AVAILABLE(ios(13.2), macCatalyst(13.2)) API_UNAVAILABLE(macos, watchos) = 1,
     CXErrorCodeInvalidArgument API_AVAILABLE(ios(13.2), macCatalyst(13.2)) API_UNAVAILABLE(macos, watchos) = 2,
-} API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos);
+} API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos);
 
 typedef NS_ERROR_ENUM(CXErrorDomainIncomingCall, CXErrorCodeIncomingCallError) {
     CXErrorCodeIncomingCallErrorUnknown = 0,
@@ -27,7 +27,7 @@ typedef NS_ERROR_ENUM(CXErrorDomainIncomingCall, CXErrorCodeIncomingCallError) {
     CXErrorCodeIncomingCallErrorCallUUIDAlreadyExists = 2,
     CXErrorCodeIncomingCallErrorFilteredByDoNotDisturb = 3,
     CXErrorCodeIncomingCallErrorFilteredByBlockList = 4,
-} API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos);
+} API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos);
 
 typedef NS_ERROR_ENUM(CXErrorDomainRequestTransaction, CXErrorCodeRequestTransactionError) {
     CXErrorCodeRequestTransactionErrorUnknown = 0,
@@ -38,7 +38,7 @@ typedef NS_ERROR_ENUM(CXErrorDomainRequestTransaction, CXErrorCodeRequestTransac
     CXErrorCodeRequestTransactionErrorCallUUIDAlreadyExists = 5,
     CXErrorCodeRequestTransactionErrorInvalidAction = 6,
     CXErrorCodeRequestTransactionErrorMaximumCallGroupsReached = 7,
-} API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos);
+} API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos);
 
 typedef NS_ERROR_ENUM(CXErrorDomainCallDirectoryManager, CXErrorCodeCallDirectoryManagerError) {
     CXErrorCodeCallDirectoryManagerErrorUnknown = 0,
@@ -50,6 +50,6 @@ typedef NS_ERROR_ENUM(CXErrorDomainCallDirectoryManager, CXErrorCodeCallDirector
     CXErrorCodeCallDirectoryManagerErrorExtensionDisabled = 6,
     CXErrorCodeCallDirectoryManagerErrorCurrentlyLoading API_AVAILABLE(ios(10.3), macCatalyst(13.0)) = 7,
     CXErrorCodeCallDirectoryManagerErrorUnexpectedIncrementalRemoval API_AVAILABLE(ios(11.0), macCatalyst(13.0)) = 8,
-} API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos);
+} API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos);
 
 NS_ASSUME_NONNULL_END

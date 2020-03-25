@@ -150,6 +150,7 @@ MTL_EXPORT API_AVAILABLE(macos(10.11), ios(8.0))
 @property (readwrite, nonatomic, getter = isRasterizationEnabled) BOOL rasterizationEnabled;
 
 
+@property (readwrite, nonatomic) NSUInteger maxVertexAmplificationCount API_AVAILABLE(macos(10.15.4), ios(13.0), macCatalyst(13.4));
 
 @property (readonly) MTLRenderPipelineColorAttachmentDescriptorArray *colorAttachments;
 

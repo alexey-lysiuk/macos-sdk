@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FF974AAF-C86D-315B-A10A-036575DB2A7C' ]
+uuids:           [ 'x86_64: 2FC0AB44-9504-33D8-8EB4-8F28315970FC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SearchAds.framework/Versions/A/SearchAds'
 exports:         

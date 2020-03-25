@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4FB18B88-8B58-3963-8DE9-B49CBA7B1BCF' ]
+uuids:           [ 'x86_64: 275081C1-A1ED-39F6-9B21-9D4B60BB8C8F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices'
 current-version: 0

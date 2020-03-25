@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9A418312-05E9-3ACB-A5C7-E14B744FC0B0' ]
+uuids:           [ 'x86_64: 7A07A725-8E1E-37AA-A32A-C724C2CD6B82' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Lookup.framework/Versions/A/Lookup'
 exports:         

@@ -264,5 +264,42 @@ API_AVAILABLE(ios(13.0))
 
 #endif
 
+
+// UIPointerInteraction
+
+#if TARGET_OS_IOS
+
+#if __has_feature(nullability)
+#pragma clang assume_nonnull begin
+#endif
+
+
+API_AVAILABLE(ios(13.4))
+typedef NS_ENUM(NSInteger, _UIPointerShapeType) {
+    _UIPointerShapeTypeRoundedRect = 0,
+    _UIPointerShapeTypePath,
+    _UIPointerShapeTypeVerticalBeam,
+    _UIPointerShapeTypeHorizontalBeam,
+};
+
+API_AVAILABLE(ios(13.4))
+@interface UIPointerShape (SwiftOverlayOnly)
+@property (nonatomic, readonly) _UIPointerShapeType _type;
+@property (nonatomic, readonly, nullable) UIBezierPath *path;
+@property (nonatomic, readonly) CGRect rect;
+@property (nonatomic, readonly) CGFloat cornerRadius;
+@property (nonatomic, readonly) CGSize size;
+@property (nonatomic, readonly) CGFloat beamLength;
+
+@end
+
+#if __has_feature(nullability)
+#pragma clang assume_nonnull end
+#endif
+
+#endif // TARGET_OS_IOS: UIPointerInteraction
+
 #endif // SWIFT_STDLIB_SHIMS_UIKIT_OVERLAY_H
+
+
 

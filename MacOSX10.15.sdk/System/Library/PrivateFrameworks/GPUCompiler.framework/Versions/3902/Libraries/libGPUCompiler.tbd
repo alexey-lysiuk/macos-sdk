@@ -1,30 +1,38 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 10EE9A02-CEC4-3552-8542-A7F13A0BCCDA', 'x86_64: 10EE9A02-CEC4-3552-8542-A7F13A0BCCDA' ]
+uuids:           [ 'x86_64: 141C97B5-8A24-3A6F-9A58-038CD1CC6F16', 'x86_64: 141C97B5-8A24-3A6F-9A58-038CD1CC6F16' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libGPUCompiler.dylib'
-current-version: 902.11.1
+current-version: 902.14.9
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LLVMExtraCreateBinary, _LLVMExtraCreateIRObjectFile, _LLVMExtraCreateMetalLibObjectFile, 
                        _LLVMExtraCreateObjectFile, _LLVMExtraDisposeBinary, _LLVMExtraDisposeIRObjectFile, 
                        _LLVMExtraDisposeMetalLibObjectFile, _LLVMExtraDisposeObjectFile, 
-                       _LLVMExtraDisposeSharedModule, _LLVMExtraMakeSharedModule, 
-                       _MTLArchiveAddMember, _MTLArchiveCreate, _MTLArchiveDestroy, 
-                       _MTLArchiveGetAsObject, _MTLArchiveGetMemberNo, _MTLArchiveGetMembersCount, 
-                       _MTLDowngradeAIRModule, _MTLGPUCompilerBuildFromSource, _MTLGPUCompilerBuildFromSourceToBuffer, 
+                       _LLVMExtraDisposeSharedModule, _LLVMExtraGetSymbolImplAddress, 
+                       _LLVMExtraGetSymbolImplSize, _LLVMExtraMakeSharedModule, _MTLArchiveAddMember, 
+                       _MTLArchiveCreate, _MTLArchiveDestroy, _MTLArchiveGetAsObject, 
+                       _MTLArchiveGetMemberNo, _MTLArchiveGetMembersCount, _MTLDowngradeAIRModule, 
+                       _MTLGPUCompilerBuildFromSource, _MTLGPUCompilerBuildFromSourceToBuffer, 
                        _MTLGPUCompilerCompileFromSource, _MTLGPUCompilerCompileFromSourceToBuffer, 
                        _MTLGPUCompilerCreate, _MTLGPUCompilerDestroy, _MTLGPUCompilerLink, 
                        _MTLGPUCompilerLinkToBuffer, _MTLGPUCompilerLoadModule, _MTLGPUCompilerLoadModuleToBuffer, 
                        _MTLGPUCompilerSpecializeFunction, _MTLGPUCompilerSpecializeFunctionToBuffer, 
-                       _MTLMetalFunctionCreate, _MTLMetalFunctionDestroy, _MTLMetalFunctionGetAIRVersion, 
+                       _MTLMetalDynamicLibraryGetInstallName, _MTLMetalFunctionCreate, 
+                       _MTLMetalFunctionDestroy, _MTLMetalFunctionGetAIRVersion, 
                        _MTLMetalFunctionGetKind, _MTLMetalFunctionGetMetalVersion, 
-                       _MTLMetalFunctionGetModule, _MTLMetalFunctionGetName, _MTLMetalLibCreateCoreImage, 
-                       _MTLMetalLibCreateDynamicLibrary, _MTLMetalLibCreateExecutable, 
-                       _MTLMetalLibDestroy, _MTLMetalLibGetAsObject, _MTLMetalLibGetFunctionNo, 
-                       _MTLMetalLibGetFunctionsCount, _MTLMetalLibInsertFunction, 
-                       _MTLModuleGetAsObject, _MTLObjectCreate, _MTLObjectDestroy, 
-                       _MTLObjectGetAsArchive, _MTLObjectGetAsMetalLib, _MTLObjectGetAsModule, 
-                       _MTLUpgradeAIRModule, _MTLVerifyAIRModule, _MTLWriteAIRBitcodeToMemoryBuffer, 
-                       _MTLWriteMetalLibToMemoryBuffer ]
+                       _MTLMetalFunctionGetModule, _MTLMetalFunctionGetName, _MTLMetalImportedSymbolGetName, 
+                       _MTLMetalLibCreateCoreImage, _MTLMetalLibCreateDynamicLibrary, 
+                       _MTLMetalLibCreateExecutable, _MTLMetalLibDestroy, _MTLMetalLibGetAsObject, 
+                       _MTLMetalLibGetDynamicLibrariesCount, _MTLMetalLibGetDynamicLibraryNo, 
+                       _MTLMetalLibGetFunctionNo, _MTLMetalLibGetFunctionsCount, 
+                       _MTLMetalLibGetImportedSymbolNo, _MTLMetalLibGetImportedSymbolsCount, 
+                       _MTLMetalLibGetInstallName, _MTLMetalLibGetVariableNo, _MTLMetalLibGetVariablesCount, 
+                       _MTLMetalLibInsertFunction, _MTLMetalLibInsertVariable, _MTLMetalVariableCreate, 
+                       _MTLMetalVariableDestroy, _MTLMetalVariableGetAIRVersion, 
+                       _MTLMetalVariableGetMetalVersion, _MTLMetalVariableGetModule, 
+                       _MTLMetalVariableGetName, _MTLModuleGetAsObject, _MTLObjectCreate, 
+                       _MTLObjectDestroy, _MTLObjectGetAsArchive, _MTLObjectGetAsMetalLib, 
+                       _MTLObjectGetAsModule, _MTLUpgradeAIRModule, _MTLVerifyAIRModule, 
+                       _MTLWriteAIRBitcodeToMemoryBuffer, _MTLWriteMetalLibToMemoryBuffer ]
 ...

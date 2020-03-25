@@ -2,7 +2,7 @@
 //  INSearchCallHistoryIntent.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntent.h>
@@ -23,7 +23,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(10.0), watchos(3.2))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INSearchCallHistoryIntent : INIntent
 
 - (instancetype)initWithDateCreated:(nullable INDateComponentsRange *)dateCreated
@@ -39,9 +39,9 @@ API_UNAVAILABLE(macosx)
 
 @property (readonly, assign, NS_NONATOMIC_IOSONLY) INCallCapabilityOptions callCapabilities;
 
-@property (readonly, assign, NS_NONATOMIC_IOSONLY) INCallRecordTypeOptions callTypes API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
+@property (readonly, assign, NS_NONATOMIC_IOSONLY) INCallRecordTypeOptions callTypes API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macos);
 
-@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSNumber *unseen NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
+@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSNumber *unseen NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macos);
 
 @end
 
@@ -53,7 +53,7 @@ API_UNAVAILABLE(macosx)
  */
 
 API_AVAILABLE(ios(10.0), watchos(3.2))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @protocol INSearchCallHistoryIntentHandling <NSObject>
 
 @required
@@ -97,7 +97,7 @@ API_UNAVAILABLE(macosx)
  */
 
 - (void)resolveCallTypeForSearchCallHistory:(INSearchCallHistoryIntent *)intent
-                    withCompletion:(void (^)(INCallRecordTypeResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveCallType(for:with:)) API_DEPRECATED("resolveCallTypeForSearchCallHistory:withCompletion: is deprecated. Use resolveCallTypesForSearchCallHistory:withCompletion: instead", ios(10.0, 11.0), watchos(3.2, 4.0));
+                    withCompletion:(void (^)(INCallRecordTypeResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveCallType(for:with:)) API_DEPRECATED("resolveCallTypeForSearchCallHistory:withCompletion: is deprecated. Use resolveCallTypesForSearchCallHistory:withCompletion: instead", ios(10.0, 11.0), watchos(3.2, 4.0)) API_UNAVAILABLE(macos);
 
 - (void)resolveDateCreatedForSearchCallHistory:(INSearchCallHistoryIntent *)intent
                     withCompletion:(void (^)(INDateComponentsRangeResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveDateCreated(for:with:));
@@ -106,10 +106,10 @@ API_UNAVAILABLE(macosx)
                     withCompletion:(void (^)(INPersonResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveRecipient(for:with:));
 
 - (void)resolveCallTypesForSearchCallHistory:(INSearchCallHistoryIntent *)intent
-                    withCompletion:(void (^)(INCallRecordTypeOptionsResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveCallTypes(for:with:)) API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
+                    withCompletion:(void (^)(INCallRecordTypeOptionsResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveCallTypes(for:with:)) API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macos);
 
 - (void)resolveUnseenForSearchCallHistory:(INSearchCallHistoryIntent *)intent
-                    withCompletion:(void (^)(INBooleanResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveUnseen(for:with:)) API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
+                    withCompletion:(void (^)(INBooleanResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveUnseen(for:with:)) API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macos);
 
 @end
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EC372B51-96D8-3828-845E-3F9C93B35D84' ]
+uuids:           [ 'x86_64: C31083B0-734B-371A-82B4-667CABE75E9D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMTranscoding.framework/Versions/A/IMTranscoding'
 current-version: 800

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1C2CDF6E-43B9-3E5D-8D5F-D50400C56FCD', 'x86_64: 1C2CDF6E-43B9-3E5D-8D5F-D50400C56FCD' ]
+uuids:           [ 'x86_64: 7AACFAB0-8C6C-38CF-A7EE-10D554450C37', 'x86_64: 7AACFAB0-8C6C-38CF-A7EE-10D554450C37' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CalendarPersistence.framework/Versions/A/CalendarPersistence'
-current-version: 1040.2.2
+current-version: 1040.2.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CALAbbrevDateFormat, _CALAbbrevDateWithoutYearFormat, _CALAbbrevDayOfWeekFormat, 

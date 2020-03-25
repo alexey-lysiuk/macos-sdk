@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 48C3CA4F-69EF-31E7-9120-0BA8E9162ACA', 'x86_64: 48C3CA4F-69EF-31E7-9120-0BA8E9162ACA' ]
+uuids:           [ 'x86_64: 65052150-BEFD-38D8-A789-560C2FB1644A', 'x86_64: 65052150-BEFD-38D8-A789-560C2FB1644A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib'
 exports:         

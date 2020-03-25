@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5E9479DE-7F83-3536-81B8-F77279E9730B' ]
+uuids:           [ 'x86_64: 5E9561DC-B8AC-3D01-A1C9-52C9D01CCC4F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AuthKitUI.framework/Versions/A/AuthKitUI'
 exports:         
@@ -30,7 +30,8 @@ exports:
                        _kAKCARedactedString, _kAKCARequestID, _kAKCASatoriAvailableLate, 
                        _kAKCASatoriPerformVerificationDuration, _kAKCASatoriPerformedVerification, 
                        _kAKCASatoriSuccess, _kAKCASatoriVerificationDuration, _kAKCASatoriVerificationResults, 
-                       _kAKCATeamID, _kAKCAUseAnonymous, _kAKCAUseAppleID, _kAccountAPNSPushTokenKey, 
+                       _kAKCATeamID, _kAKCAUnderlyingErrorCode, _kAKCAUnderlyingErrorDomain, 
+                       _kAKCAUseAnonymous, _kAKCAUseAppleID, _kAccountAPNSPushTokenKey, 
                        _kAccountAltDSID, _kAccountAnisetteMID, _kAccountAnisetteOTP, 
                        _kAccountAppleIDKey, _kAccountAuthTokenKey, _kAccountDSIDKey, 
                        _kAccountEmailsInMeCardKey, _kAccountFirstNameKey, _kAccountGSAppleIDAuthToken, 
@@ -86,21 +87,23 @@ exports:
                        AKAuthorizationSubPanePrivacyLink, AKAuthorizationSubPaneSeparator, 
                        AKAuthorizationUIProviderImp, AKAuthorizationViewController, 
                        AKAuthorizationViewHelper, AKAuthorizationWindowController, 
-                       AKBarButtonItem, AKBaseSignInViewController, AKCAReporter, 
-                       AKCurvePoint, AKDateFormatter, AKDeviceInfo, AKGeneratedComplexCodeFormatter, 
+                       AKBarButtonItem, AKBaseSignInViewController, AKBasicLoginActions, 
+                       AKBasicLoginSecondFactorActions, AKCAReporter, AKCurvePoint, 
+                       AKDateFormatter, AKDeviceInfo, AKGeneratedComplexCodeFormatter, 
                        AKICAWebKitViewController, AKIDPHandler, AKIDPProvidedSignInViewController, 
-                       AKIDPProvidedSignInWindow, AKIcon, AKInAssistantSecondFactorCodeEntry, 
-                       AKInfoLabel, AKInlineSignInViewController, AKKeepUsingController, 
-                       AKLegacyInlineSignInViewController, AKMaxLengthFormatter, 
-                       AKNameTextField, AKNavigationController, AKNavigationItem, 
-                       AKNoCodeReceivedController, AKPaddedTextFieldCell, AKPinFieldBoxUIElement, 
-                       AKPinFieldView, AKRoundLoginContainerView, AKRoundedPath, 
-                       AKSatoriReport, AKSecondFactorCodeEntryController, AKShortInlineSignInViewController, 
-                       AKSignInPromptController, AKTapToSignInViewController, AKTextualLinkButton, 
-                       AKTiburonAuthorizationUIReport, AKTiburonPasswordUIReport, 
-                       AKTiburonRequestAttemptReport, AKTiburonRequestReport, AKTooManyAttemptsController, 
-                       AKTouchBarController, AKTrustedDeviceViewItem, AKURLRequestApprover, 
-                       AKWebKitController, AKWebViewButtonBar, AKiCDPDeviceValidationFlowViewController, 
+                       AKIDPProvidedSignInWindow, AKIcon, AKInAppAuthenticationMacOSUIProvider, 
+                       AKInAssistantSecondFactorCodeEntry, AKInfoLabel, AKInlineSignInViewController, 
+                       AKKeepUsingController, AKLegacyInlineSignInViewController, 
+                       AKMaxLengthFormatter, AKNameTextField, AKNavigationController, 
+                       AKNavigationItem, AKNoCodeReceivedController, AKPaddedTextFieldCell, 
+                       AKPinFieldBoxUIElement, AKPinFieldView, AKRoundLoginContainerView, 
+                       AKRoundedPath, AKSatoriReport, AKSecondFactorCodeEntryController, 
+                       AKShortInlineSignInViewController, AKSignInPromptController, 
+                       AKTapToSignInViewController, AKTextualLinkButton, AKTiburonAuthorizationUIReport, 
+                       AKTiburonPasswordUIReport, AKTiburonRequestAttemptReport, 
+                       AKTiburonRequestReport, AKTooManyAttemptsController, AKTouchBarController, 
+                       AKTrustedDeviceViewItem, AKURLRequestApprover, AKWebKitController, 
+                       AKWebViewButtonBar, AKiCDPDeviceValidationFlowViewController, 
                        AKiCDPEnrollmentDeviceListViewController, AKiCDPEnrollmentDevicePasscodeViewController, 
                        AKiCDPRecoveryKeyViewController, AKiCDPValidationDevice, AKiCDPWaitForApprovalViewController, 
                        AKiCSCEntryView ]

@@ -1,5 +1,5 @@
 .\" Copyright (c) 2000-2019 Apple Inc. All rights reserved.
-.Dd June 9, 2019
+.Dd Oct. 4, 2019
 .Dt "leaks" 1
 .Os
 .Sh NAME
@@ -15,7 +15,6 @@
 .Ss Options:
 .Op Fl list
 .Op Fl groupByType
-.Op Fl nocontext
 .Op Fl nostacks
 .Op Fl nosources
 .Op Fl quiet
@@ -23,6 +22,8 @@
 .Op Fl traceTree Ar address
 .Op Fl outputGraph Ar path
 .Op Fl fullContent
+.Op Fl readonlyContent
+.Op Fl noContent
 .Sh DESCRIPTION
 .Nm leaks
 identifies leaked memory -- memory that the application has allocated, but has been lost and cannot be freed.
@@ -92,13 +93,6 @@ Warning: this option may be removed in the future.
 .It Fl groupByType
 When printing a tree of leaked objects, group the children of a node in the tree
 by type, rather than showing individual instances.
-.It Fl nocontext
-Do not print the string or hex representation of leaked memory.
-Although that information
-can be useful for recognizing the contents of the buffer and understanding
-why it might be leaked, it can also provide overwhelming detail,
-and could expose confidential information from your process if
-you, for example, file bug reports with that output included.
 .It Fl nostacks
 Do not print backtraces of leaked blocks even if the target process has the
 MallocStackLogging environment variable set.
@@ -122,9 +116,31 @@ nodes, and the references between them.
 .Ar path
 can be a path to a file, or just a directory name; in the latter case
 a filename with the ".memgraph" suffix will be generated.
+.Pp
+By default (for security) when generating a memory graph file, descriptions
+of the content of some objects will be included but ONLY if they are backed
+by read-only memory in Mach-O binary images or the dyld shared cache.  To
+store full content pass the
+.Fl fullContent
+flag.
 .It Fl fullContent
 When generating a memory graph file, include descriptions of the content of various objects,
-as would be shown by "heap <pid> -addresses all", and as needed by "stringdups <pid>".
+as would be shown by
+.Ic "heap <pid> -addresses all",
+and as needed by
+.Ic "stringdups <pid>".
+(Full content is the default when targeting a live process, without generating a memory graph file.)
+.It Fl readonlyContent
+When running leaks against a live target process, print descriptions
+of the content of memory only if they are backed by read-only memory.
+(Read-only content is the default when generating memory graph files.)
+.It Fl noContent
+Do not print the descriptions of the content of leaked memory,
+or save descriptions of allocation memory into memory graph files.
+Although that information can be useful for recognizing the contents
+of the buffer and understanding why it might be leaked,
+it could expose confidential information from the process if
+you, for example, file bug reports with that output included.
 .It Fl atExit \- Ar command
 Launches the specified command and runs
 .Nm leaks

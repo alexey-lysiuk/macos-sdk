@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 85310F8D-7B0C-3321-B0CC-FDCAD8084740' ]
+uuids:           [ 'x86_64: 184A2289-03A6-36BE-BEA8-99E5E340E67C' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/GameKit.framework/Versions/A/GameKit'
-current-version: 665.11.4
+current-version: 665.26
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/Metal.framework/Versions/A/Metal', 
@@ -21,7 +21,7 @@ exports:
                        _kGameKitGameKitVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6BCBBE30-8C4A-313B-AA52-1BE7CB6FE50C', 'x86_64: 6BCBBE30-8C4A-313B-AA52-1BE7CB6FE50C' ]
+uuids:           [ 'x86_64: 2DE89B86-AC5A-3707-AAD0-E1837B35697C', 'x86_64: 2DE89B86-AC5A-3707-AAD0-E1837B35697C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation'
 exports:         
@@ -365,7 +365,7 @@ exports:
                        _GKStateMachine._validTransitions ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6210BBBC-7F98-30D3-83DC-00E18F959F9C' ]
+uuids:           [ 'x86_64: BE30AB00-DBFA-3D7F-9EC3-B7F2F8A8C0DA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUI.framework/Versions/A/GameCenterUI'
 exports:         

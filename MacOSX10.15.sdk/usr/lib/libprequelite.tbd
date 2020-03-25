@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 05734797-94BC-33DF-AA28-4F6602EE6B1F', 'x86_64: 05734797-94BC-33DF-AA28-4F6602EE6B1F' ]
+uuids:           [ 'x86_64: 8F69F1AF-00BB-34A5-A2D3-E26195C0920E', 'x86_64: 8F69F1AF-00BB-34A5-A2D3-E26195C0920E' ]
 platform:        zippered
 install-name:    '/usr/lib/libprequelite.dylib'
-current-version: 101
+current-version: 102
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PQLSqliteErrorDomain, _pql_sqlite3_bind_pointer, _pql_sqlite3_value_object, 

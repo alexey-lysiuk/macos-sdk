@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1CCD822F-D355-3995-97CF-0E615F0C57FA', 'x86_64: 1CCD822F-D355-3995-97CF-0E615F0C57FA' ]
+uuids:           [ 'x86_64: 80BB56DC-B5BE-39F1-92F9-133A64C356BC', 'x86_64: 80BB56DC-B5BE-39F1-92F9-133A64C356BC' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftMetal.dylib'
 current-version: 0
@@ -48,6 +48,14 @@ exports:
                        '_$sSo24MTLComputeCommandEncoderP5MetalE8useHeapsyySaySo7MTLHeap_pGF', 
                        '_$sSo24MTLIndirectCommandBufferP5MetalE5resetyySnySiGF', 
                        '_$sSo25MTLFunctionConstantValuesC5MetalE03setbC0_4type5rangeySV_So11MTLDataTypeVSnySiGtF', 
+                       '_$sSo31MTLRasterizationRateSampleArrayC5MetalEySfSiciM', 
+                       '_$sSo31MTLRasterizationRateSampleArrayC5MetalEySfSicig', 
+                       '_$sSo31MTLRasterizationRateSampleArrayC5MetalEySfSicipMV', 
+                       '_$sSo31MTLRasterizationRateSampleArrayC5MetalEySfSicis', 
+                       '_$sSo33MTLRasterizationRateMapDescriptorC5MetalE10screenSize5labelABSo7MTLSizea_SSSgtcfC', 
+                       '_$sSo33MTLRasterizationRateMapDescriptorC5MetalE10screenSize5layer5labelABSo7MTLSizea_So0ab5LayerD0CSSSgtcfC', 
+                       '_$sSo33MTLRasterizationRateMapDescriptorC5MetalE10screenSize6layers5labelABSo7MTLSizea_SaySo0ab5LayerD0CGSSSgtcfC', 
+                       '_$sSo35MTLRasterizationRateLayerDescriptorC5MetalE10horizontal8verticalABSaySfG_AFtcfC', 
                        '_$sSo9MTLBufferP5MetalE14addDebugMarker_5rangeySS_SnySiGtF', 
                        '_$sSo9MTLBufferP5MetalE14didModifyRangeyySnySiGF', '_$sSo9MTLDeviceP5MetalE25getDefaultSamplePositions11sampleCountSaySo17MTLSamplePositionaGSi_tF', 
                        '__swift_FORCE_LOAD_$_swiftMetal' ]

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30C89668-9DEE-3948-B4EA-6DC9099497C2', 'x86_64: 30C89668-9DEE-3948-B4EA-6DC9099497C2' ]
+uuids:           [ 'x86_64: 28C26D68-F1F5-3ADC-832B-AF63336F35FB', 'x86_64: 28C26D68-F1F5-3ADC-832B-AF63336F35FB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RunningBoardServices.framework/Versions/A/RunningBoardServices'
-current-version: 223.40.19
+current-version: 223.100.31
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromRBSAcquisitionCompletionPolicy, _NSStringFromRBSCPUMaximumUsageViolationPolicy, 

@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOInterruptDispatchSource.iig */
+/* iig(DriverKit-73.100.4) generated from IOInterruptDispatchSource.iig */
 
-/* IOInterruptDispatchSource.iig:1-51 */
+/* IOInterruptDispatchSource.iig:1-39 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -40,6 +40,11 @@ struct IOInterruptDispatchSourcePayload {
 	uint64_t count;
 };
 
+/* source class IOInterruptDispatchSource IOInterruptDispatchSource.iig:40-115 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class IOInterruptDispatchSource
  *
@@ -52,7 +57,76 @@ struct IOInterruptDispatchSourcePayload {
  * the primary interrupt fired. For IOPCIDevices, only MSI interrupt sources are supported.
  */
  
-/* class IOInterruptDispatchSource IOInterruptDispatchSource.iig:52-115 */
+class NATIVE KERNEL IOInterruptDispatchSource : public IODispatchSource
+{
+public:
+
+    /*!
+     * @brief       Create an IOInterruptDispatchSource for an interrupt by index from an IOService provider.
+     * @param       provider The IOService object representing the HW device producing the interrupt.
+     * @param       index Index for the interrupt.
+     * @param       queue Target queue to run the handler block.
+     * @param       source Created source with +1 retain count to be released by the caller.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	static kern_return_t
+	Create(IOService * provider,
+	    uint32_t index,
+	    IODispatchQueue * queue,
+	    IOInterruptDispatchSource ** source) LOCAL;
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+    /*!
+     * @brief       Set the handler block to run when the interupt fires.
+     * @param       action OSAction instance specifying the callback method. The OSAction object will be retained
+     *              until SetHandler is called again or the event source is cancelled.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	    SetHandler(
+		OSAction * action TYPE(InterruptOccurred)) LOCAL;
+
+    /*!
+     * @brief       Control the enable state of the interrupt source.
+     * @param       enable Pass true to enable the source or false to disable.
+     * @param       handler Optional block to be executed after the interrupt has been disabled and any pending
+     *              interrupt handlers completed.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SetEnableWithCompletion(
+		bool enable,
+		IODispatchSourceCancelHandler handler) override LOCAL;
+
+    /*!
+     * @brief       Cancel all callbacks from the event source.
+     * @discussion  After cancellation, the source can only be freed. It cannot be reactivated.
+     * @param       handler Handler block to be invoked after any callbacks have completed.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	Cancel(IODispatchSourceCancelHandler handler) override LOCAL;
+
+private:
+	virtual kern_return_t
+	CheckForWork(bool synchronous) override LOCAL;
+
+	virtual void
+	InterruptOccurred(
+		OSAction * action TARGET,
+		uint64_t   count,
+		uint64_t   time) REPLY LOCAL;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOInterruptDispatchSource IOInterruptDispatchSource.iig:40-115 */
 
 #define IOInterruptDispatchSource_Create_ID            0xb6a948b1585fc259ULL
 #define IOInterruptDispatchSource_SetHandler_ID            0xfcc79b0928501bb1ULL
@@ -208,6 +282,9 @@ public:
 
     IOInterruptDispatchSource_VirtualMethods
 };
+
+#endif /* !__DOCUMENTATION__ */
+
 /* IOInterruptDispatchSource.iig:117- */
 
 #endif /* ! _IOKIT_UIOINTERRUPTDISPATCHSOURCE_H */

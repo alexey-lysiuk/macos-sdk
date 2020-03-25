@@ -14,8 +14,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef __SWIFT_SHIMS_KEYPATH_H__
-#define __SWIFT_SHIMS_KEYPATH_H__
+#ifndef SWIFT_STDLIB_SHIMS_KEYPATH_H
+#define SWIFT_STDLIB_SHIMS_KEYPATH_H
 
 #include "SwiftStdint.h"
 
@@ -135,4 +135,4 @@ static const __swift_uint16_t _SwiftKeyPath_ptrauth_MetadataAccessor = 0x7474;
 } // namespace swift
 #endif
 
-#endif // __SWIFT_SHIMS_KEYPATH_H__
+#endif // SWIFT_STDLIB_SHIMS_KEYPATH_H

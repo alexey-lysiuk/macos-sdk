@@ -49,7 +49,7 @@ typedef function_table_entry   *function_table_t;
 #endif /* AUTOTEST */
 
 #ifndef	sysdiagnose_notification_MSG_COUNT
-#define	sysdiagnose_notification_MSG_COUNT	1
+#define	sysdiagnose_notification_MSG_COUNT	2
 #endif	/* sysdiagnose_notification_MSG_COUNT */
 
 #include <mach/std_types.h>
@@ -80,6 +80,20 @@ kern_return_t receive_sysdiagnose_notification
 	uint32_t flags
 );
 
+/* SimpleRoutine sysdiagnose_notification_with_audit_token */
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+MIG_SERVER_ROUTINE
+kern_return_t receive_sysdiagnose_notification_with_audit_token
+(
+	mach_port_t sysdiagnose_port,
+	uint32_t flags,
+	audit_token_t atoken
+);
+
 #ifdef	mig_external
 mig_external
 #else
@@ -106,7 +120,7 @@ extern const struct receive_sysdiagnose_notification_subsystem {
 	unsigned int	maxsize;	/* Max msg size */
 	vm_address_t	reserved;	/* Reserved */
 	struct routine_descriptor	/*Array of routine descriptors */
-		routine[1];
+		routine[2];
 } receive_sysdiagnose_notification_subsystem;
 
 /* typedefs for all requests */
@@ -125,6 +139,18 @@ extern const struct receive_sysdiagnose_notification_subsystem {
 #ifdef  __MigPackStructs
 #pragma pack(pop)
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(push, 4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		uint32_t flags;
+	} __Request__sysdiagnose_notification_with_audit_token_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack(pop)
+#endif
 #endif /* !__Request__sysdiagnose_notification_subsystem__defined */
 
 
@@ -134,6 +160,7 @@ extern const struct receive_sysdiagnose_notification_subsystem {
 #define __RequestUnion__receive_sysdiagnose_notification_subsystem__defined
 union __RequestUnion__receive_sysdiagnose_notification_subsystem {
 	__Request__sysdiagnose_notification_t Request_sysdiagnose_notification;
+	__Request__sysdiagnose_notification_with_audit_token_t Request_sysdiagnose_notification_with_audit_token;
 };
 #endif /* __RequestUnion__receive_sysdiagnose_notification_subsystem__defined */
 /* typedefs for all replies */
@@ -152,6 +179,18 @@ union __RequestUnion__receive_sysdiagnose_notification_subsystem {
 #ifdef  __MigPackStructs
 #pragma pack(pop)
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(push, 4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		kern_return_t RetCode;
+	} __Reply__sysdiagnose_notification_with_audit_token_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack(pop)
+#endif
 #endif /* !__Reply__sysdiagnose_notification_subsystem__defined */
 
 
@@ -161,12 +200,14 @@ union __RequestUnion__receive_sysdiagnose_notification_subsystem {
 #define __ReplyUnion__receive_sysdiagnose_notification_subsystem__defined
 union __ReplyUnion__receive_sysdiagnose_notification_subsystem {
 	__Reply__sysdiagnose_notification_t Reply_sysdiagnose_notification;
+	__Reply__sysdiagnose_notification_with_audit_token_t Reply_sysdiagnose_notification_with_audit_token;
 };
 #endif /* __ReplyUnion__receive_sysdiagnose_notification_subsystem__defined */
 
 #ifndef subsystem_to_name_map_sysdiagnose_notification
 #define subsystem_to_name_map_sysdiagnose_notification \
-    { "sysdiagnose_notification", 31337 }
+    { "sysdiagnose_notification", 31337 },\
+    { "sysdiagnose_notification_with_audit_token", 31338 }
 #endif
 
 #ifdef __AfterMigServerHeader

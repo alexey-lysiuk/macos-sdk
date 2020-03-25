@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 79F8C837-4866-35D2-B5B5-EE6CFD856755' ]
+uuids:           [ 'x86_64: 765C077A-C94D-3984-98CA-D9AD9FDC86C0' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI'
 swift-abi-version: 7
@@ -320,7 +320,13 @@ exports:
                        '_$s7SwiftUI11GestureMaskVMn', '_$s7SwiftUI11GestureMaskVN', 
                        '_$s7SwiftUI11GestureMaskVSQAAMc', '_$s7SwiftUI11GestureMaskVSYAAMc', 
                        '_$s7SwiftUI11GestureMaskVs10SetAlgebraAAMc', '_$s7SwiftUI11GestureMaskVs25ExpressibleByArrayLiteralAAMc', 
-                       '_$s7SwiftUI11GestureMaskVs9OptionSetAAMc', '_$s7SwiftUI11OffsetShapeV14animatableDataAA14AnimatablePairVy0gF0QzAFy12CoreGraphics7CGFloatVAKGGvM', 
+                       '_$s7SwiftUI11GestureMaskVs9OptionSetAAMc', '_$s7SwiftUI11HoverEffectV4liftACvMZ', 
+                       '_$s7SwiftUI11HoverEffectV4liftACvgZ', '_$s7SwiftUI11HoverEffectV4liftACvsZ', 
+                       '_$s7SwiftUI11HoverEffectV9automaticACvMZ', '_$s7SwiftUI11HoverEffectV9automaticACvgZ', 
+                       '_$s7SwiftUI11HoverEffectV9automaticACvsZ', '_$s7SwiftUI11HoverEffectV9highlightACvMZ', 
+                       '_$s7SwiftUI11HoverEffectV9highlightACvgZ', '_$s7SwiftUI11HoverEffectV9highlightACvsZ', 
+                       '_$s7SwiftUI11HoverEffectVMa', '_$s7SwiftUI11HoverEffectVMn', 
+                       '_$s7SwiftUI11HoverEffectVN', '_$s7SwiftUI11OffsetShapeV14animatableDataAA14AnimatablePairVy0gF0QzAFy12CoreGraphics7CGFloatVAKGGvM', 
                        '_$s7SwiftUI11OffsetShapeV14animatableDataAA14AnimatablePairVy0gF0QzAFy12CoreGraphics7CGFloatVAKGGvg', 
                        '_$s7SwiftUI11OffsetShapeV14animatableDataAA14AnimatablePairVy0gF0QzAFy12CoreGraphics7CGFloatVAKGGvpMV', 
                        '_$s7SwiftUI11OffsetShapeV14animatableDataAA14AnimatablePairVy0gF0QzAFy12CoreGraphics7CGFloatVAKGGvs', 
@@ -2219,6 +2225,8 @@ exports:
                        '_$s7SwiftUI19ColorSchemeContrastOMn', '_$s7SwiftUI19ColorSchemeContrastON', 
                        '_$s7SwiftUI19ColorSchemeContrastOSHAAMc', '_$s7SwiftUI19ColorSchemeContrastOSQAAMc', 
                        '_$s7SwiftUI19ColorSchemeContrastOs12CaseIterableAAMc', '_$s7SwiftUI19ContentSizeCategoryO010extraExtraG5LargeyA2CmFWC', 
+                       '_$s7SwiftUI19ContentSizeCategoryO015isAccessibilityE0Sbvg', 
+                       '_$s7SwiftUI19ContentSizeCategoryO015isAccessibilityE0SbvpMV', 
                        '_$s7SwiftUI19ContentSizeCategoryO018accessibilityExtraG5LargeyA2CmFWC', 
                        '_$s7SwiftUI19ContentSizeCategoryO018accessibilityExtragG5LargeyA2CmFWC', 
                        '_$s7SwiftUI19ContentSizeCategoryO10extraLargeyA2CmFWC', '_$s7SwiftUI19ContentSizeCategoryO10extraSmallyA2CmFWC', 
@@ -2724,7 +2732,12 @@ exports:
                        '_$s7SwiftUI21_ViewModifier_ContentVMa', '_$s7SwiftUI21_ViewModifier_ContentVMn', 
                        '_$s7SwiftUI21_ViewModifier_ContentVyxGAA0C0AAMc', '_$s7SwiftUI21_ViewModifier_ContentVyxGAA0C0AAWP', 
                        '_$s7SwiftUI21__designTimeSelectionyQrx_SStAA4ViewRzlF', '_$s7SwiftUI21__designTimeSelectionyQrx_SStAA4ViewRzlFQOMQ', 
-                       '_$s7SwiftUI21__designTimeSelectionyxx_SStlF', '_$s7SwiftUI22DefaultDatePickerStyleV5_body13configurationQrAA0dE0VyAA01_deF5LabelVG_tF', 
+                       '_$s7SwiftUI21__designTimeSelectionyxx_SStlF', '_$s7SwiftUI22CompactDatePickerStyleV5_body13configurationQrAA0dE0VyAA01_deF5LabelVG_tF', 
+                       '_$s7SwiftUI22CompactDatePickerStyleV5_body13configurationQrAA0dE0VyAA01_deF5LabelVG_tFQOMQ', 
+                       '_$s7SwiftUI22CompactDatePickerStyleVAA0deF0AAMc', '_$s7SwiftUI22CompactDatePickerStyleVAA0deF0AAWP', 
+                       '_$s7SwiftUI22CompactDatePickerStyleVACycfC', '_$s7SwiftUI22CompactDatePickerStyleVMa', 
+                       '_$s7SwiftUI22CompactDatePickerStyleVMn', '_$s7SwiftUI22CompactDatePickerStyleVN', 
+                       '_$s7SwiftUI22DefaultDatePickerStyleV5_body13configurationQrAA0dE0VyAA01_deF5LabelVG_tF', 
                        '_$s7SwiftUI22DefaultDatePickerStyleV5_body13configurationQrAA0dE0VyAA01_deF5LabelVG_tFQOMQ', 
                        '_$s7SwiftUI22DefaultDatePickerStyleVAA0deF0AAMc', '_$s7SwiftUI22DefaultDatePickerStyleVAA0deF0AAWP', 
                        '_$s7SwiftUI22DefaultDatePickerStyleVACycfC', '_$s7SwiftUI22DefaultDatePickerStyleVMa', 
@@ -3651,6 +3664,7 @@ exports:
                        '_$s7SwiftUI4ViewPAAE11controlSizeyQrAA07ControlE0OF', '_$s7SwiftUI4ViewPAAE11controlSizeyQrAA07ControlE0OFQOMQ', 
                        '_$s7SwiftUI4ViewPAAE11environmentyQrs15WritableKeyPathCyAA17EnvironmentValuesVqd__G_qd__tlF', 
                        '_$s7SwiftUI4ViewPAAE11environmentyQrs15WritableKeyPathCyAA17EnvironmentValuesVqd__G_qd__tlFQOMQ', 
+                       '_$s7SwiftUI4ViewPAAE11hoverEffectyQrAA05HoverE0VF', '_$s7SwiftUI4ViewPAAE11hoverEffectyQrAA05HoverE0VFQOMQ', 
                        '_$s7SwiftUI4ViewPAAE11hueRotationyQrAA5AngleVF', '_$s7SwiftUI4ViewPAAE11hueRotationyQrAA5AngleVFQOMQ', 
                        '_$s7SwiftUI4ViewPAAE11lineSpacingyQr12CoreGraphics7CGFloatVF', 
                        '_$s7SwiftUI4ViewPAAE11lineSpacingyQr12CoreGraphics7CGFloatVFQOMQ', 

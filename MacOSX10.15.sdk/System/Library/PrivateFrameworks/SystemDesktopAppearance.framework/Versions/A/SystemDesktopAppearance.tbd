@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4CA54C5B-975E-3F7E-B1D7-6A373BA70C0E' ]
+uuids:           [ 'x86_64: 4D0E05A6-5943-32D9-8344-BC031F461DD6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SystemDesktopAppearance.framework/Versions/A/SystemDesktopAppearance'
 current-version: 0

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CDBACA90-25FD-327C-83F1-F5FD4255972B', 'x86_64: CDBACA90-25FD-327C-83F1-F5FD4255972B' ]
+uuids:           [ 'x86_64: 9B0993EC-1471-3423-8688-304C8D32774A', 'x86_64: 9B0993EC-1471-3423-8688-304C8D32774A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppSSOKerberos.framework/Versions/A/AppSSOKerberos'
 exports:         

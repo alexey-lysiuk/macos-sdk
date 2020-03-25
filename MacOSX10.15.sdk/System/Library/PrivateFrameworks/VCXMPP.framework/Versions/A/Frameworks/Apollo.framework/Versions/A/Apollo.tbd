@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D6FF8C33-6B4F-3B78-8D74-55CDDA17411F' ]
+uuids:           [ 'x86_64: F59810BE-F420-3CB3-9D1D-9A77A3495CCE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/Apollo.framework/Versions/A/Apollo'
 exports:         
@@ -90,7 +90,7 @@ exports:
                        XMLStreamAuthenticator.previousDelegate, XMLStreamAuthenticator.xmlStream ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 42260307-7646-3CD8-8ECA-255CC08AA159' ]
+uuids:           [ 'x86_64: 84492947-E429-3A32-93BD-E698990E5D14' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/XMPPToolkit.framework/Versions/A/XMPPToolkit'
 exports:         
@@ -226,7 +226,7 @@ exports:
                        XTInvocationQueue.delegate ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6CA9C139-ADF9-3708-9FC9-A41C0F6579BB' ]
+uuids:           [ 'x86_64: F1D2CAF3-0A5F-397E-82C7-02FD2BB07B11' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/uxmi.framework/Versions/0.1/uxmi'
 exports:         

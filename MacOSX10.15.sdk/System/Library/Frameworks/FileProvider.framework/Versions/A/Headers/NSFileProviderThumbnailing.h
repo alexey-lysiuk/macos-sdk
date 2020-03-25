@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSProgress *)fetchThumbnailsForItemIdentifiers:(NSArray<NSFileProviderItemIdentifier> *)itemIdentifiers
                                     requestedSize:(CGSize)size
                     perThumbnailCompletionHandler:(void (^)(NSFileProviderItemIdentifier identifier, NSData * _Nullable imageData, NSError * _Nullable error))perThumbnailCompletionHandler
-                                completionHandler:(void (^)(NSError * _Nullable error))completionHandler NS_SWIFT_NAME(fetchThumbnails(for:requestedSize:perThumbnailCompletionHandler:completionHandler:)) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
+                                completionHandler:(void (^)(NSError * _Nullable error))completionHandler NS_SWIFT_NAME(fetchThumbnails(for:requestedSize:perThumbnailCompletionHandler:completionHandler:)) FILEPROVIDER_API_AVAILABILITY_V2;
 
 @end
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 06956CB1-397C-3367-B885-1B98E1D57614' ]
+uuids:           [ 'x86_64: F2ED480B-AC36-3DAA-B544-32E0B7EE2528' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ContactsAutocompleteUI.framework/Versions/A/ContactsAutocompleteUI'
 current-version: 0

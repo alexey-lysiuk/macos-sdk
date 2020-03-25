@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C8775BED-DC5D-334C-9874-1856713E968C' ]
+uuids:           [ 'x86_64: 7F8A2C13-FFBE-3B1D-8929-510EA05A7559' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterAWDMetrics.dylib'
 exports:         
@@ -628,6 +628,7 @@ exports:
                        __ZN3awd7metrics18SoundUMB_REGUPDATE21kTimestampFieldNumberE, 
                        __ZN3awd7metrics18SoundUMB_REGUPDATE22kAreaIdIos8FieldNumberE, 
                        __ZN3awd7metrics18SoundUMB_REGUPDATE22kCellIdIos8FieldNumberE, 
+                       __ZN3awd7metrics18SoundUMB_REGUPDATE24kConnectivityFieldNumberE, 
                        __ZN3awd7metrics18SoundUMB_REGUPDATE27MergePartialFromCodedStreamEPN20wireless_diagnostics6google8protobuf2io16CodedInputStreamE, 
                        __ZN3awd7metrics18SoundUMB_REGUPDATE4SwapEPS1_, __ZN3awd7metrics18SoundUMB_REGUPDATE5ClearEv, 
                        __ZN3awd7metrics18SoundUMB_REGUPDATE8CopyFromERKS1_, __ZN3awd7metrics18SoundUMB_REGUPDATE9MergeFromERKS1_, 
@@ -2390,6 +2391,8 @@ exports:
                        __ZN3awd7metrics27CommCenterDataRoamingSwitch21kTimestampFieldNumberE, 
                        __ZN3awd7metrics27CommCenterDataRoamingSwitch23kSwitchStateFieldNumberE, 
                        __ZN3awd7metrics27CommCenterDataRoamingSwitch24kChangeOriginFieldNumberE, 
+                       __ZN3awd7metrics27CommCenterDataRoamingSwitch24kSwitchState2FieldNumberE, 
+                       __ZN3awd7metrics27CommCenterDataRoamingSwitch25kChangeOrigin2FieldNumberE, 
                        __ZN3awd7metrics27CommCenterDataRoamingSwitch27MergePartialFromCodedStreamEPN20wireless_diagnostics6google8protobuf2io16CodedInputStreamE, 
                        __ZN3awd7metrics27CommCenterDataRoamingSwitch4SwapEPS1_, __ZN3awd7metrics27CommCenterDataRoamingSwitch5ClearEv, 
                        __ZN3awd7metrics27CommCenterDataRoamingSwitch8CopyFromERKS1_, 

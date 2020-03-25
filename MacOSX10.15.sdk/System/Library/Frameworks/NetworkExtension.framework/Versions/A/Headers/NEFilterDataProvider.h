@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2019 Apple Inc.
+ * Copyright (c) 2015-2020 Apple Inc.
  * All rights reserved.
  */
 
@@ -8,6 +8,7 @@
 #endif
 
 #import <NetworkExtension/NEFilterProvider.h>
+#import <NetworkExtension/NENetworkRule.h>
 
 @class NEFilterVerdict;
 @class NEFilterNewFlowVerdict;
@@ -112,6 +113,15 @@ API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
  */
 - (void)resumeFlow:(NEFilterFlow *)flow withVerdict:(NEFilterVerdict *)verdict API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios, watchos, tvos);
 
+/*!
+ * @method updateFlow:withVerdict:forDirection:
+ * @discussion This function is called by the provider to update the verdict for a flow outside the context of any NEFilterDataProvider callback.
+ * @param flow The NEFilterSocketFlow to update the verdict for.
+ * @param verdict The NEFilterDataVerdict. Must be a +[NEFilterDataVerdict allowVerdict], a +[NEFilterDataVerdict dropVerdict], or a +[NEFilterDataVerdict dataVerdictWithPassBytes:peekBytes:].
+ * @param direction The direction to which the verdict applies. Pass NETrafficDirectionAny to update the verdict for both the inbound and outbound directions. This parameter is ignored if the verdict is +[NEFilterDataVerdict dropVerdict].
+ */
+- (void)updateFlow:(NEFilterSocketFlow *)flow usingVerdict:(NEFilterDataVerdict *)verdict forDirection:(NETrafficDirection)direction API_AVAILABLE(macos(10.15.4)) API_UNAVAILABLE(ios, watchos, tvos);
+
 @end
 
 /*!
@@ -122,6 +132,13 @@ API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
  */
 API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
 @interface NEFilterDataVerdict : NEFilterVerdict <NSSecureCoding,NSCopying>
+
+/*!
+ * @property statisticsReportFrequency
+ * @discussion The frequency at which the data provider's -[NEFilterProvider handleReport:] method is called with a NEFilterReport instance with an event of NEFilterReportEventFlowStatistics.
+ *     The default value is NEFilterReportFrequencyNone, so by default no statistics are reported.
+ */
+@property NEFilterReportFrequency statisticsReportFrequency API_AVAILABLE(macos(10.15.4)) API_UNAVAILABLE(ios, watchos, tvos);
 
 /*!
  * @method allowVerdict

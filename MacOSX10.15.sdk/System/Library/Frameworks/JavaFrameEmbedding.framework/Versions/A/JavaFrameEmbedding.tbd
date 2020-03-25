@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 05F3EC0C-9C33-3601-BF4B-BE22EA1F132B' ]
+uuids:           [ 'x86_64: 227FB2D9-C7F7-3158-8DE0-E317C53C3851' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/JavaFrameEmbedding.framework/Versions/A/JavaFrameEmbedding'
 exports:         

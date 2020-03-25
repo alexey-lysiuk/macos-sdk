@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4646AC1D-AE43-3341-B7D7-0E6ECD724A2B', 'x86_64: 4646AC1D-AE43-3341-B7D7-0E6ECD724A2B' ]
+uuids:           [ 'x86_64: 5991FA34-2809-3269-928A-A50558855D31', 'x86_64: 5991FA34-2809-3269-928A-A50558855D31' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/EventKit.framework/Versions/A/EventKit'
-current-version: 1370.2.5
+current-version: 1370.4.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EKActionConfirmSuggestedEvent, _EKActionRejectSuggestedEvent, 
@@ -96,8 +96,8 @@ exports:
                        EKConferenceURLDetector, EKConflictDetails, EKConflictScanJob, 
                        EKConflictScanner, EKCoreDataFaultDelegate, EKCredentials, 
                        EKDataProtectionObserver, EKDebugPreferences, EKDirectoryLocation, 
-                       EKDirectoryRecord, EKDirectorySearchOperation, EKDirectorySearchQuery, 
-                       EKDirectorySearchResultSet, EKEphemeralCacheEventStoreProvider, 
+                       EKDirectoryPerson, EKDirectoryRecord, EKDirectorySearchOperation, 
+                       EKDirectorySearchQuery, EKDirectorySearchResultSet, EKEphemeralCacheEventStoreProvider, 
                        EKEvent, EKEventOccurrenceCache, EKEventRangePredicate, EKEventSliceInfo, 
                        EKEventStore, EKFeatureSet, EKFrozenAlarm, EKFrozenCalendar, 
                        EKFrozenCalendarItem, EKFrozenCalendarSource, EKFrozenEvent, 

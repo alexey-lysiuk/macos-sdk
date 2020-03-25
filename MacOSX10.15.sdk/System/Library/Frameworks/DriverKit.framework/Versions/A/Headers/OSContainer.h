@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from OSContainer.iig */
+/* iig(DriverKit-73.100.4) generated from OSContainer.iig */
 
-/* OSContainer.iig:1-44 */
+/* OSContainer.iig:1-37 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -38,6 +38,11 @@
 class OSContainer;
 typedef OSContainer * OSContainerPtr;
 
+/* source class OSContainer OSContainer.iig:38-46 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class OSContainer
  *
@@ -45,7 +50,14 @@ typedef OSContainer * OSContainerPtr;
  * Base class for DriverKit container objects.
  */
 
-/* class OSContainer OSContainer.iig:45-46 */
+class LOCALONLY OSContainer : public OSObject
+{
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class OSContainer OSContainer.iig:38-46 */
 
 
 #define OSContainer_Methods \
@@ -123,6 +135,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* OSContainer.iig:48- */
 

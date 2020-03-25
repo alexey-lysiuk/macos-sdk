@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B2A3DDB0-B9BC-38B0-8DA3-27EC3E49F061' ]
+uuids:           [ 'x86_64: D3E91F7A-5B03-3105-81DB-9BA40AB6F110' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DirectoryEditor.framework/Versions/A/DirectoryEditor'
 exports:         

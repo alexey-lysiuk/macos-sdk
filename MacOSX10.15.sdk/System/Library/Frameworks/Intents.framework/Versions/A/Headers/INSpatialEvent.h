@@ -2,7 +2,7 @@
 //  INSpatialEvent.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #ifndef INSpatialEvent_h
@@ -15,6 +15,6 @@ typedef NS_ENUM(NSInteger, INSpatialEvent) {
     INSpatialEventUnknown = 0,
     INSpatialEventArrive,
     INSpatialEventDepart,
-} API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
+} API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macos, tvos);
 
 #endif // INSpatialEvent_h

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 013B09C8-2BE3-35CD-8EDC-5BC33E8B969D' ]
+uuids:           [ 'x86_64: EF9D5036-2D9D-3F5E-9F6D-3019F29891CB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUAEHZoom.dylib'
 exports:         

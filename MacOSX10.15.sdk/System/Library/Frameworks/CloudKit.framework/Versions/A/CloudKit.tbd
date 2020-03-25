@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9A3AB320-1CB0-3C02-A492-5DD069964403', 'x86_64: 9A3AB320-1CB0-3C02-A492-5DD069964403' ]
+uuids:           [ 'x86_64: 4E84CB31-D94A-3665-81BD-6AF7E0BB1867', 'x86_64: 4E84CB31-D94A-3665-81BD-6AF7E0BB1867' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CloudKit.framework/Versions/A/CloudKit'
-current-version: 854
+current-version: 867
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CKAPSEnvironmentEntitlementString, _CKAbsoluteHostTime, _CKAcceptablePredicateValueClasses, 

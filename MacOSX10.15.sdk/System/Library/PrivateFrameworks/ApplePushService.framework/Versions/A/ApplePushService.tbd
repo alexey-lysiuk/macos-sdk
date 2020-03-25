@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A6FDA31A-83D5-3215-A2C5-09F51841E122', 'x86_64: A6FDA31A-83D5-3215-A2C5-09F51841E122' ]
+uuids:           [ 'x86_64: 0B30938A-3D9A-368D-831A-B249DF07E6E5', 'x86_64: 0B30938A-3D9A-368D-831A-B249DF07E6E5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ApplePushService.framework/Versions/A/ApplePushService'
 exports:         

@@ -2,7 +2,7 @@
 //  INEndWorkoutIntentResponse.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntentResponse.h>
@@ -16,12 +16,12 @@ typedef NS_ENUM(NSInteger, INEndWorkoutIntentResponseCode) {
     INEndWorkoutIntentResponseCodeFailureNoMatchingWorkout,
     INEndWorkoutIntentResponseCodeHandleInApp API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(watchos),
     INEndWorkoutIntentResponseCodeSuccess NS_EXTENSION_UNAVAILABLE("INEndWorkoutIntentResponseCodeSuccess is not available to extensions. This can only be returned from the app.") API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(watchos),
-} API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macosx);
+} API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macos, tvos);
 
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(10.0), watchos(3.2))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INEndWorkoutIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;

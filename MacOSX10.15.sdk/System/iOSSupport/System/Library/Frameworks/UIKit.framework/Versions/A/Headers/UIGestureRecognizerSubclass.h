@@ -42,6 +42,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer API_AVAILABLE(ios(7.0));
 - (BOOL)shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer API_AVAILABLE(ios(7.0));
 
+// same behavior as the equivalent delegate method
+- (BOOL)shouldReceiveEvent:(UIEvent *)event API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+
 // mirror of the touch-delivery methods on UIResponder
 // UIGestureRecognizers aren't in the responder chain, but observe touches hit-tested to their view and their view's subviews
 // UIGestureRecognizers receive touches before the view to which the touch was hit-tested

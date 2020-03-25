@@ -2,7 +2,7 @@
 //  INSendMessageIntentResponse.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntentResponse.h>
@@ -17,12 +17,12 @@ typedef NS_ENUM(NSInteger, INSendMessageIntentResponseCode) {
     INSendMessageIntentResponseCodeFailure,
     INSendMessageIntentResponseCodeFailureRequiringAppLaunch,
     INSendMessageIntentResponseCodeFailureMessageServiceNotAvailable,
-} API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macosx);
+} API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macos, tvos);
 
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(10.0), watchos(3.2))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INSendMessageIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;
@@ -34,7 +34,7 @@ API_UNAVAILABLE(macosx)
 
 @property (readonly, NS_NONATOMIC_IOSONLY) INSendMessageIntentResponseCode code;
 
-@property (readwrite, copy, nullable, NS_NONATOMIC_IOSONLY) INMessage *sentMessage API_AVAILABLE(ios(10.3), watchos(3.2)) API_UNAVAILABLE(macosx);
+@property (readwrite, copy, nullable, NS_NONATOMIC_IOSONLY) INMessage *sentMessage API_AVAILABLE(ios(10.3)) API_UNAVAILABLE(macos);
 
 @end
 

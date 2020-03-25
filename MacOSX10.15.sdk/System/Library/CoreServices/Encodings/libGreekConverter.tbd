@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4ED0C003-E945-36D5-843C-54D696C4044C', 'x86_64: 4ED0C003-E945-36D5-843C-54D696C4044C' ]
+uuids:           [ 'x86_64: 105E698B-E5FB-36B7-B54E-5E5A710DB108', 'x86_64: 105E698B-E5FB-36B7-B54E-5E5A710DB108' ]
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libGreekConverter.dylib'
 current-version: 76

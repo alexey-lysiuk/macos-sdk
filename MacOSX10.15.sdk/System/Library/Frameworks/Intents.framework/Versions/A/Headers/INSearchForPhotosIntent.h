@@ -2,7 +2,7 @@
 //  INSearchForPhotosIntent.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntent.h>
@@ -22,7 +22,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(10.0), watchos(3.2))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INSearchForPhotosIntent : INIntent
 
 - (instancetype)initWithDateCreated:(nullable INDateComponentsRange *)dateCreated
@@ -70,7 +70,7 @@ API_UNAVAILABLE(macosx)
  */
 
 API_AVAILABLE(ios(10.0), watchos(3.2))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @protocol INSearchForPhotosIntentHandling <NSObject>
 
 @required
@@ -123,7 +123,7 @@ API_UNAVAILABLE(macosx)
                     withCompletion:(void (^)(INStringResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveAlbumName(for:with:));
 
 - (void)resolveSearchTermsForSearchForPhotos:(INSearchForPhotosIntent *)intent
-                    withCompletion:(void (^)(NSArray<INStringResolutionResult *> *resolutionResults))completion NS_SWIFT_NAME(resolveSearchTerms(for:with:)) API_AVAILABLE(ios(11.0), watchos(4.0));
+                    withCompletion:(void (^)(NSArray<INStringResolutionResult *> *resolutionResults))completion NS_SWIFT_NAME(resolveSearchTerms(for:with:)) API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macos);
 
 - (void)resolvePeopleInPhotoForSearchForPhotos:(INSearchForPhotosIntent *)intent
                     withCompletion:(void (^)(NSArray<INPersonResolutionResult *> *resolutionResults))completion NS_SWIFT_NAME(resolvePeopleInPhoto(for:with:));

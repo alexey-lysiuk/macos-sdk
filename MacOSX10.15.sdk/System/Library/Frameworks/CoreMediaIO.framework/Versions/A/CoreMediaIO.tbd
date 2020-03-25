@@ -1,11 +1,12 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 61698CAC-C8A3-33F2-B09F-DDC1A7319644', 'x86_64: 61698CAC-C8A3-33F2-B09F-DDC1A7319644' ]
+uuids:           [ 'x86_64: 11F1EB21-E366-3AEE-8012-D72DEEAC4D3C', 'x86_64: 11F1EB21-E366-3AEE-8012-D72DEEAC4D3C' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreMediaIO.framework/Versions/A/CoreMediaIO'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _CMIOAddAtExitListener, _CMIODeviceProcessAVCCommand, _CMIODeviceProcessRS422Command, 
+    symbols:         [ _CMIOAddAtExitListener, _CMIOAnalyticsRegisterDevice, _CMIOAnalyticsSendStart, 
+                       _CMIODeviceProcessAVCCommand, _CMIODeviceProcessRS422Command, 
                        _CMIODeviceStartStream, _CMIODeviceStopStream, _CMIOFileWritingControlTokenAllVolumesAreOutOfDiskSpace, 
                        _CMIOFileWritingControlTokenBufferIsIncompatibleWithCurrentFile, 
                        _CMIOFileWritingControlTokenCreate, _CMIOFileWritingControlTokenCreateOutputPathToCapturePathDictionary, 

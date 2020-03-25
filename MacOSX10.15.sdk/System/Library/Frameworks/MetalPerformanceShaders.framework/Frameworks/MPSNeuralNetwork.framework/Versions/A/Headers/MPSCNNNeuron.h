@@ -239,7 +239,7 @@ MPS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), macCatalyst(13.0), tvos(11.3))
  *  MPSCNNNeuronTypeReLU            ///< df/dx = [ 1, if x >= 0
  *                                               [ a, if x <  0
  *  MPSCNNNeuronTypeSigmoid         ///< df/dx = e^x / (e^x + 1)^2
- *  MPSCNNNeuronTypeHardSigmoid     ///< df/dx = [ a, if (x >= 0) and (x <= 1)
+ *  MPSCNNNeuronTypeHardSigmoid     ///< df/dx = [ a, if ((x * a) + b >= 0) and ((x * a) + b <= 1)
  *                                               [ 0, otherwise
  *  MPSCNNNeuronTypeTanH            ///< df/dx = a * b * (1 - tanh^2(b * x))
  *  MPSCNNNeuronTypeAbsolute        ///< df/dx = sign(x)

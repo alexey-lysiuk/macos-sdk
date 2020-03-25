@@ -1,19 +1,20 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CE504D1E-A203-364B-87A5-4A73E5199BDF' ]
+uuids:           [ 'x86_64: 0CC1256D-AB0C-393A-8A16-48D16A277756' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudKitCode.framework/Versions/A/CloudKitCode'
-current-version: 854
+current-version: 867
 swift-abi-version: 7
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ CloudKitIntegrationTests, CloudKitSerialIntegrationTests, 
                          CloudKitTestSupport, CloudKitUnitTests, CloudPhotoLibraryTests, 
-                         DPSubmissionService, DeviceSimulator, Fitness, OctagonTests, 
-                         SessionTrackerApp, SeymourClient, SeymourCore, SeymourServerProtocol, 
-                         SeymourServices, SeymourTestApp, SeymourUI, SeymourViewService, 
-                         TrustedPeersHelper, TrustedPeersHelperUnitTests, UnitTests, 
-                         cloudphotod, cplctl, seymourcatalogd, seymoursessiond, smctl ]
+                         DPSubmissionService, DeviceSimulator, DistributedEvaluation, 
+                         Fitness, OctagonTests, SessionTrackerApp, SeymourClient, 
+                         SeymourCore, SeymourServerProtocol, SeymourServices, SeymourTestApp, 
+                         SeymourUI, SeymourViewService, TrustedPeersHelper, TrustedPeersHelperUnitTests, 
+                         UnitTests, cloudphotod, cplctl, seymourcatalogd, seymoursessiond, 
+                         smctl ]
     symbols:         [ '_$s10Foundation4DataV12CloudKitCodeE22_CKBase64URLSafeStringSSyF', 
                        '_$s12CloudKitCode0C10ConnectionC6invoke8function7request10completionySS_xyq_Sg_s5Error_pSgtct0abC8Protobuf7MessageRzAkLR_r0_lFTj', 
                        '_$s12CloudKitCode0C10ConnectionC6invoke8function7request10completionySS_xyq_Sg_s5Error_pSgtct0abC8Protobuf7MessageRzAkLR_r0_lFTq', 

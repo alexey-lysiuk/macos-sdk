@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 62C3066A-3991-313F-AE2D-75B2B5934D52', 'x86_64: 62C3066A-3991-313F-AE2D-75B2B5934D52' ]
+uuids:           [ 'x86_64: AEB4E42C-F5A2-3F63-80B0-4226483AD4F5', 'x86_64: AEB4E42C-F5A2-3F63-80B0-4226483AD4F5' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList'
-current-version: 131
+current-version: 131.4
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -24,8 +24,9 @@ exports:
                        _LSSharedFileListSetProperty, _SFLListChangeNotification, 
                        _SFLListLaunchNotification, _SFLServiceName, __LSSharedFileListCopyListType, 
                        __LSSharedFileListIsURLSharePoint, __LSSharedFileListItemCopyBinding, 
-                       __LSSharedFileListItemCopyURL, __LSSharedFileListItemSetBookmarkData, 
-                       __LSSharedFileListItemSetURL, __LSSharedFileListUpgrade, __LSSharedFileListVolumeIsVisibleInSidebar, 
+                       __LSSharedFileListItemCopyURL, __LSSharedFileListItemOpen, 
+                       __LSSharedFileListItemSetBookmarkData, __LSSharedFileListItemSetURL, 
+                       __LSSharedFileListUpgrade, __LSSharedFileListVolumeIsVisibleInSidebar, 
                        __SFLCreateSnapshot, __SFLGetRestrictedCustomFileList, __SFLIsFolderShareable, 
                        __SFLRelease, __SFLReleaseSnapshot, __kLSSharedFileListFavoriteItems, 
                        __kLSSharedFileListFavoriteVolumes, __kLSSharedFileListGlobalLoginItems, 

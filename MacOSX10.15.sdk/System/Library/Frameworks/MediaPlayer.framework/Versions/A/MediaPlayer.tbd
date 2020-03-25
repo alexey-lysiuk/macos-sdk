@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 41C84531-7B33-3169-8CC7-AA4D60B65A1D' ]
+uuids:           [ 'x86_64: 74DF946F-09C6-3053-BED6-EB83374261AE' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/MediaPlayer.framework/Versions/A/MediaPlayer'
 exports:         
@@ -63,14 +63,17 @@ exports:
                        _MPNowPlayingContentItemDeviceUserInfoKeyUserRating, _MPNowPlayingContentItemUserInfoKeyArtworkLookupItems, 
                        _MPNowPlayingContentItemUserInfoKeyArtworkTemplateDictionary, 
                        _MPNowPlayingContentItemUserInfoKeyArtworkURL, _MPNowPlayingContentItemUserInfoKeyContainerUniqueID, 
-                       _MPNowPlayingContentItemUserInfoKeyEndTime, _MPNowPlayingContentItemUserInfoKeyHasStoreLyrics, 
-                       _MPNowPlayingContentItemUserInfoKeyHasTimeSyncedLyrics, _MPNowPlayingContentItemUserInfoKeyIsLibraryEligible, 
-                       _MPNowPlayingContentItemUserInfoKeyIsLoading, _MPNowPlayingContentItemUserInfoKeyIsPlaceholder, 
-                       _MPNowPlayingContentItemUserInfoKeyPodcastEpisodeShareURL, 
+                       _MPNowPlayingContentItemUserInfoKeyEndTime, _MPNowPlayingContentItemUserInfoKeyExplicitBadge, 
+                       _MPNowPlayingContentItemUserInfoKeyHasStoreLyrics, _MPNowPlayingContentItemUserInfoKeyHasTimeSyncedLyrics, 
+                       _MPNowPlayingContentItemUserInfoKeyIsLibraryEligible, _MPNowPlayingContentItemUserInfoKeyIsLoading, 
+                       _MPNowPlayingContentItemUserInfoKeyIsPlaceholder, _MPNowPlayingContentItemUserInfoKeyPodcastEpisodeShareURL, 
                        _MPNowPlayingContentItemUserInfoKeyPodcastEpisodeStreamURL, 
                        _MPNowPlayingContentItemUserInfoKeyPodcastFeedURL, _MPNowPlayingContentItemUserInfoKeyPodcastShareURL, 
                        _MPNowPlayingContentItemUserInfoKeyPodcastSupportsSubscription, 
                        _MPNowPlayingContentItemUserInfoKeyRadioStationAttributionLabel, 
+                       _MPNowPlayingContentItemUserInfoKeyRadioStationProviderBundlerID, 
+                       _MPNowPlayingContentItemUserInfoKeyRadioStationProviderID, 
+                       _MPNowPlayingContentItemUserInfoKeyRadioStationProviderUniversalLink, 
                        _MPNowPlayingContentItemUserInfoKeyRadioStationSubtype, _MPNowPlayingContentItemUserInfoKeyRadioStationType, 
                        _MPNowPlayingContentItemUserInfoKeyShouldShowComposer, _MPNowPlayingContentItemUserInfoKeyStoreAssetRedownloadable, 
                        _MPNowPlayingContentItemUserInfoKeyStoreAssetSubscriptionRequired, 
@@ -124,9 +127,9 @@ exports:
                        MPAdvanceRepeatModeCommandEvent, MPAdvanceShuffleModeCommand, 
                        MPAdvanceShuffleModeCommandEvent, MPArtworkResizeOperation, 
                        MPCFWrapper, MPChangeLanguageOptionCommandEvent, MPChangePlaybackPositionCommand, 
-                       MPChangePlaybackPositionCommandEvent, MPChangePlaybackProgressCommand, 
-                       MPChangePlaybackProgressCommandEvent, MPChangePlaybackRateCommand, 
-                       MPChangePlaybackRateCommandEvent, MPChangeRepeatModeCommand, 
+                       MPChangePlaybackPositionCommandEvent, MPChangePlaybackRateCommand, 
+                       MPChangePlaybackRateCommandEvent, MPChangeQueueEndActionCommand, 
+                       MPChangeQueueEndActionCommandEvent, MPChangeRepeatModeCommand, 
                        MPChangeRepeatModeCommandEvent, MPChangeShuffleModeCommand, 
                        MPChangeShuffleModeCommandEvent, MPContentItem, MPCreateRadioStationCommandEvent, 
                        MPCustomDataPlaybackQueue, MPEmptyPlaybackQueue, MPFeedbackCommand, 

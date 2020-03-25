@@ -997,6 +997,7 @@ kd_event_t kd_events[] = {
         {0x3130164, "VFS_devfs_label_associate_device"},
         {0x3130168, "VFS_devfs_label_associate_directory"},
         {0x313016c, "VFS_label_associate_fdesc"},
+        {0x3130170, "VFS_mount_check_snapshot_mount"},
         {0x3cf0000, "CP_OFFSET_IO"},
         {0x4010004, "proc_exit"},
         {0x4010008, "force_exit"},

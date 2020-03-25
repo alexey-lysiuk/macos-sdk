@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 68B96729-4CC7-3F8A-8A18-FCC33F9FF9B2' ]
+uuids:           [ 'x86_64: F58D0ACB-5766-3C48-96A8-3757A8F65B99' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/iAd.framework/Versions/A/iAd'
 exports:         

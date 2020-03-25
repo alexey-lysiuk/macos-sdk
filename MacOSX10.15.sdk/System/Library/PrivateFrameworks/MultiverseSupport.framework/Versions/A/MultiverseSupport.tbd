@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CD20EF8D-2CD9-361A-8C2E-376C4571702C' ]
+uuids:           [ 'x86_64: D4E54FB1-27F2-312E-B396-EE2358545F8A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MultiverseSupport.framework/Versions/A/MultiverseSupport'
 current-version: 99.40.1

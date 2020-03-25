@@ -25,7 +25,10 @@ API_UNAVAILABLE(watchos, macosx, tvos)
 /*!
  @param voiceShortcut The voice shortcut to be edited.
  */
-- (instancetype)initWithVoiceShortcut:(INVoiceShortcut *)voiceShortcut API_UNAVAILABLE(macCatalyst);
+- (instancetype)initWithVoiceShortcut:(INVoiceShortcut *)voiceShortcut;
+
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil NS_UNAVAILABLE;
 
 @end
 

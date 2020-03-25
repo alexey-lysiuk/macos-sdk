@@ -1,5 +1,5 @@
-.\" Copyright (c) 2000-2018  Apple Inc. All rights reserved.
-.Dd April 26, 2018
+.\" Copyright (c) 2000-2019  Apple Inc. All rights reserved.
+.Dd Oct. 7, 2019
 .Dt "heap" 1
 .Os
 .Sh NAME
@@ -52,16 +52,41 @@ Show the distribution of each malloc size for each object, instead of summing an
 .It Fl addresses Ar all | Ar <classes-pattern>
 Print the addresses of all malloc blocks found on the heap in ascending address order, or the 
 addresses of those objects whose full class name is matched by the regular expression <classes-pattern>.
-The string "all" indicates that the addresses of all blocks (both objects and non-objects) should be printed.
-The <classes-pattern> regular expression is interpreted as an extended (modern) regular expression as
-described by the re_format(7) manual page.  Note that toll-free-bridged CoreFoundation and Foundation
-classes have the "__NSCF" prefix rather than just "NS" or "CF".  Examples of valid classes-patterns include:
+The string "all" indicates that the addresses of all blocks should be printed.
 .Pp
+The <classes-pattern> regular expression is interpreted as an extended (modern) regular expression as
+described by the re_format(7) manual page.  "malloc" or "non-object" can be used to refer to blocks that
+are not of any specific type.  Examples of valid classes-patterns include:
 .Bl -tag -offset indent -compact
 .It __NSCFString
 .It 'NS.*'
 .It '__NSCFString|__NSCFArray'
 .It '.*(String|Array)'
+.It malloc
+.It non-object
+.It malloc|.*String
+.El
+.Pp
+The <classes-pattern> pattern can be followed by an optional allocation size specifier, which can be
+one of the following forms. The square brackets are required. The size can include
+a 'k' suffix for kilobytes, or an 'm' suffix for megabytes:
+.Bl -tag -offset indent -compact
+.It [size]
+.It [lowerBound-upperBound]
+.It [lowerBound+]
+.It [-upperBound]
+.El
+.Pp
+Examples of <classes-pattern> with size specifications include:
+.Bl -tag -offset indent -compact -width "malloc[1k-8k]"
+.It malloc[2048]
+// all malloc blocks of size 2048
+.It malloc[1k-8k]
+// all malloc blocks between 1k and 8k
+.It CFData[50k+]
+// all CFData objects 50k or larger
+.It [-1024]
+// all allocations 1024 bytes or less
 .El
 .It Fl noContent
 Do not show object content in -addresses mode.

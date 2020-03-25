@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9D473FCC-764E-347C-B819-1D4DAC95345D' ]
+uuids:           [ 'x86_64: 857442A1-CF99-3002-BEA4-A34985359320' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UIRecording.framework/Versions/A/UIRecording'
 current-version: 28

@@ -33,7 +33,7 @@ typedef NSString *NSFileProviderDomainIdentifier NS_EXTENSIBLE_STRING_ENUM;
  common directory. That directory path is indicated by the
  @p pathRelativeToDocumentStorage property.
  */
-API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
+FILEPROVIDER_API_AVAILABILITY_V2
 @interface NSFileProviderDomain : NSObject
 
 /**
@@ -67,7 +67,7 @@ API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(wat
 @property (readonly, copy) NSString *pathRelativeToDocumentStorage;
 
 
-/* If set, the domain is present, but disconnected from its extension.
+/** If set, the domain is present, but disconnected from its extension.
  In this state, the user continues to be able to browse the domain's contents,
  but the extension doesn't receive updates on modifications to the files, nor is
  it consulted to update folder's contents.
@@ -75,14 +75,36 @@ API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(wat
  The disconnected state can be modified on an existing domain by recreating a domain
  with the same identifier, then passing it to addDomain.
  */
-@property (readwrite, getter=isDisconnected) BOOL disconnected API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
+@property (readwrite, getter=isDisconnected) BOOL disconnected FILEPROVIDER_API_AVAILABILITY_V3;
+
+/** If user has disabled this domain from Files.app on iOS or System Preferences on macOS, this will bet set
+ to NO.
+*/
+@property (readonly) BOOL userEnabled FILEPROVIDER_API_AVAILABILITY_V3;
+
+/** If this domain is not user visible.
+
+ Typically, this can be used for dry-run migration. The files are still on disk though.
+*/
+@property (readwrite, assign, getter=isHidden) BOOL hidden FILEPROVIDER_API_AVAILABILITY_V3;
 
 @end
 
-API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
+FILEPROVIDER_API_AVAILABILITY_V2
 @interface NSFileProviderExtension (NSFileProviderDomain)
 @property(nonatomic, readonly, nullable) NSFileProviderDomain *domain;
 @end
+
+/** Posted when any domain changed.
+
+Interested client should then call `+[NSFileProviderManager getDomainsWithCompletionHandler:]` and see
+ what changed.
+
+ Note, this notification starts to be posted only after `+[NSFileProviderManager getDomainsWithCompletionHandler:]` is
+ called.
+ */
+FOUNDATION_EXPORT NSNotificationName const NSFileProviderDomainDidChange
+FILEPROVIDER_API_AVAILABILITY_V3;
 
 NS_ASSUME_NONNULL_END
 

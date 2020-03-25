@@ -265,6 +265,13 @@
 #define CPUID_MODEL_KABYLAKE_ULT        0x8E
 #define CPUID_MODEL_KABYLAKE_ULX        0x8E
 #define CPUID_MODEL_KABYLAKE_DT         0x9E
+#if !defined(RC_HIDE_XNU_ICELAKE)
+#define CPUID_MODEL_ICELAKE             0x7E
+#define CPUID_MODEL_ICELAKE_ULT         0x7E
+#define CPUID_MODEL_ICELAKE_ULX         0x7E
+#define CPUID_MODEL_ICELAKE_DT          0x7D
+#define CPUID_MODEL_ICELAKE_H           0x9F
+#endif /* not RC_HIDE_XNU_ICELAKE */
 
 #define CPUID_VMM_FAMILY_UNKNOWN        0x0
 #define CPUID_VMM_FAMILY_VMWARE         0x1

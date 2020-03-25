@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EECC495E-98E8-3E71-9DF7-D963E339EB66', 'x86_64: EECC495E-98E8-3E71-9DF7-D963E339EB66' ]
+uuids:           [ 'x86_64: 6593ACCA-D578-3BFF-B339-5798C4AC384E', 'x86_64: 6593ACCA-D578-3BFF-B339-5798C4AC384E' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftDarwin.dylib'
 current-version: 0
@@ -14,6 +14,8 @@ exports:
                        '_$s6Darwin0A7BooleanV11descriptionSSvg', '_$s6Darwin0A7BooleanV11descriptionSSvpMV', 
                        '_$s6Darwin0A7BooleanV12customMirrors0D0Vvg', '_$s6Darwin0A7BooleanV12customMirrors0D0VvpMV', 
                        '_$s6Darwin0A7BooleanV14booleanLiteralACSb_tcfC', '_$s6Darwin0A7BooleanV2eeoiySbAC_ACtFZ', 
+                       '_$s6Darwin0A7BooleanV6_values5UInt8VvM', '_$s6Darwin0A7BooleanV6_values5UInt8Vvg', 
+                       '_$s6Darwin0A7BooleanV6_values5UInt8VvpMV', '_$s6Darwin0A7BooleanV6_values5UInt8Vvs', 
                        '_$s6Darwin0A7BooleanV9boolValueSbvg', '_$s6Darwin0A7BooleanV9boolValueSbvpMV', 
                        '_$s6Darwin0A7BooleanVMa', '_$s6Darwin0A7BooleanVMn', '_$s6Darwin0A7BooleanVN', 
                        '_$s6Darwin0A7BooleanVSQAAMc', '_$s6Darwin0A7BooleanVs013ExpressibleByB7LiteralAAMc', 

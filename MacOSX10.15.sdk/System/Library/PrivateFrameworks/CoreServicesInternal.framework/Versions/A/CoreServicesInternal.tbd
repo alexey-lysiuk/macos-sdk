@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E9CE4776-4375-384B-B4A8-D0BF1D5BBFA4', 'x86_64: E9CE4776-4375-384B-B4A8-D0BF1D5BBFA4' ]
+uuids:           [ 'x86_64: 4C4834E0-EA46-36DE-BA11-16B8826DD754', 'x86_64: 4C4834E0-EA46-36DE-BA11-16B8826DD754' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreServicesInternal.framework/Versions/A/CoreServicesInternal'
-current-version: 446.4
+current-version: 446.7
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ CoreFoundation ]

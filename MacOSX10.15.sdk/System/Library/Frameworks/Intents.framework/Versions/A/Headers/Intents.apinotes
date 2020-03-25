@@ -329,6 +329,17 @@ SwiftVersions:
     - Selector: 'resolveWorkoutNameForEndWorkout:withCompletion:'
       MethodKind: Instance
       SwiftName: 'resolveWorkoutName(forEndWorkout:with:)'
+  - Name: INFindDeviceAndPlaySoundIntentHandling
+    Methods:
+    - Selector: 'confirmFindDeviceAndPlaySound:completion:'
+      MethodKind: Instance
+      SwiftName: 'confirm(findDeviceAndPlaySound:completion:)'
+    - Selector: 'handleFindDeviceAndPlaySound:completion:'
+      MethodKind: Instance
+      SwiftName: 'handle(findDeviceAndPlaySound:completion:)'
+    - Selector: 'resolveDevicesForFindDeviceAndPlaySound:withCompletion:'
+      MethodKind: Instance
+      SwiftName: 'resolveDevices(forFindDeviceAndPlaySound:with:)'
   - Name: INGetCarLockStatusIntentHandling
     Methods:
     - Selector: 'confirmGetCarLockStatus:completion:'
@@ -718,6 +729,14 @@ SwiftVersions:
     - Selector: 'resolveWorkoutNameForResumeWorkout:withCompletion:'
       MethodKind: Instance
       SwiftName: 'resolveWorkoutName(forResumeWorkout:with:)'
+  - Name: INRetrieveParkingLocationIntentHandling
+    Methods:
+    - Selector: 'confirmRetrieveParkingLocation:completion:'
+      MethodKind: Instance
+      SwiftName: 'confirm(retrieveParkingLocation:completion:)'
+    - Selector: 'handleRetrieveParkingLocation:completion:'
+      MethodKind: Instance
+      SwiftName: 'handle(retrieveParkingLocation:completion:)'
   - Name: INRunVoiceCommandIntentHandling
     Methods:
     - Selector: 'confirmRunVoiceCommand:completion:'
@@ -1259,6 +1278,17 @@ SwiftVersions:
     - Selector: 'resolveToLabelForSetTimerAttribute:withCompletion:'
       MethodKind: Instance
       SwiftName: 'resolveToLabel(forSetTimerAttribute:with:)'
+  - Name: INShareETAIntentHandling
+    Methods:
+    - Selector: 'confirmShareETA:completion:'
+      MethodKind: Instance
+      SwiftName: 'confirm(shareETA:completion:)'
+    - Selector: 'handleShareETA:completion:'
+      MethodKind: Instance
+      SwiftName: 'handle(shareETA:completion:)'
+    - Selector: 'resolveRecipientsForShareETA:withCompletion:'
+      MethodKind: Instance
+      SwiftName: 'resolveRecipients(forShareETA:with:)'
   - Name: INShareFileIntentHandling
     Methods:
     - Selector: 'confirmShareFile:completion:'
@@ -1393,6 +1423,17 @@ SwiftVersions:
     - Selector: 'resolveWorkoutNameForStartWorkout:withCompletion:'
       MethodKind: Instance
       SwiftName: 'resolveWorkoutName(forStartWorkout:with:)'
+  - Name: INStopShareETAIntentHandling
+    Methods:
+    - Selector: 'confirmStopShareETA:completion:'
+      MethodKind: Instance
+      SwiftName: 'confirm(stopShareETA:completion:)'
+    - Selector: 'handleStopShareETA:completion:'
+      MethodKind: Instance
+      SwiftName: 'handle(stopShareETA:completion:)'
+    - Selector: 'resolveRecipientsForStopShareETA:withCompletion:'
+      MethodKind: Instance
+      SwiftName: 'resolveRecipients(forStopShareETA:with:)'
   - Name: INTransferMoneyIntentHandling
     Methods:
     - Selector: 'confirmTransferMoney:completion:'

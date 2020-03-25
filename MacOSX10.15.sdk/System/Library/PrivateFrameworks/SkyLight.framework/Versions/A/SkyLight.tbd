@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 87B4BC36-78DA-3320-B455-FACB48DC63AA', 'x86_64: 87B4BC36-78DA-3320-B455-FACB48DC63AA' ]
+uuids:           [ 'x86_64: C6AF6A79-C673-3B9E-95E0-993F43AE7EED', 'x86_64: C6AF6A79-C673-3B9E-95E0-993F43AE7EED' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight'
 current-version: 600

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F30A7871-3E32-327B-BF6C-B0B28681928B', 'x86_64: F30A7871-3E32-327B-BF6C-B0B28681928B' ]
+uuids:           [ 'x86_64: 333EE360-9F34-3A46-9EDE-376DF8439717', 'x86_64: 333EE360-9F34-3A46-9EDE-376DF8439717' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIKitMacHelper.framework/Versions/A/UIKitMacHelper'
 current-version: 61000
@@ -23,11 +23,12 @@ exports:
                        _UINSNewDragImageWithSlotID, _UINSNewDragItem, _UINSNewDragOperationMasks, 
                        _UINSNewFixedSpaceToolbarItem, _UINSNewFlexibleSpaceToolbarItem, 
                        _UINSNewFontPickerController, _UINSNewGroupToolbarItem, _UINSNewLabelToolbarItem, 
-                       _UINSNewPopupButtonMenuItem, _UINSNewPopupButtonToolbarItem, 
+                       _UINSNewOverlayDatePicker, _UINSNewPopupButtonMenuItem, _UINSNewPopupButtonToolbarItem, 
                        _UINSNewSearchFieldToolbarItem, _UINSNewSegmentedControlToolbarItem, 
-                       _UINSNewShareToolbarItem, _UINSNewTouchBarItem, _UINSNewTrackingShadowRemoteController, 
-                       _UINSSceneIDUserInfoKey, _UINSSceneShouldHideHostWindowValueUserInfoKey, 
-                       _UINSShareSheetLog, _UINSSharedApplicationDelegate, _UINSSharedGraphicsContextStack, 
+                       _UINSNewShadowDatePicker, _UINSNewShareToolbarItem, _UINSNewTouchBarItem, 
+                       _UINSNewTrackingShadowRemoteController, _UINSSceneIDUserInfoKey, 
+                       _UINSSceneShouldHideHostWindowValueUserInfoKey, _UINSShareSheetLog, 
+                       _UINSSharedApplicationDelegate, _UINSSharedGraphicsContextStack, 
                        _UINSSharedRevealController, _UINSSharedShareSheetController, 
                        _UINSSharedTouchBar, _UINSSharingServiceItemsFromActivityItemsConfiguration, 
                        _UINSSharingServicesFromActivityItemsConfiguration, _UINSShouldHideHostWindowDidChangeNotification, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E4F9FEFA-B218-37D9-A94B-809981AACADF' ]
+uuids:           [ 'x86_64: 669AE9B7-6595-31A3-8A3F-BBE75A6B27DF' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/AuthenticationServices'
-current-version: 608.3.10
+current-version: 609.1.20
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ASAuthorizationAppleIDProviderCredentialRevokedNotification, 
@@ -24,5 +24,5 @@ exports:
                        ASPasswordCredential, ASWebAuthenticationSession, ASWebAuthenticationSessionController, 
                        ASWebAuthenticationSessionLaunchAgentProxy, ASWebAuthenticationSessionRequest, 
                        ASWebAuthenticationSessionRequestClient, ASWebAuthenticationSessionWebBrowserSessionManager, 
-                       _ASWebAuthenticationSessionRequestServer ]
+                       _ASIncomingCallObserver, _ASWebAuthenticationSessionRequestServer ]
 ...

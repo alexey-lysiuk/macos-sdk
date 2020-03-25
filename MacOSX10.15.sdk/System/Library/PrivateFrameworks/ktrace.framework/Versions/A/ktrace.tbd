@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 01560258-122E-33EE-86C3-E3809990A31B', 'x86_64: 01560258-122E-33EE-86C3-E3809990A31B' ]
+uuids:           [ 'x86_64: 8D0A8B45-79C7-367A-81EC-63280FF1ED0D', 'x86_64: 8D0A8B45-79C7-367A-81EC-63280FF1ED0D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ktrace.framework/Versions/A/ktrace'
-current-version: 354.40.7
+current-version: 354.100.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CFArrayApplierTrampoline, _CFDictionaryApplierTrampoline, 
@@ -134,8 +134,8 @@ exports:
                        _ktrace_ignore_process_filter_for_event, _ktrace_is_kernel_64_bit, 
                        _ktrace_iter_copy, _ktrace_iter_destroy, _ktrace_iter_equal, 
                        _ktrace_iter_get_event, _ktrace_iter_next, _ktrace_iter_next_until, 
-                       _ktrace_iter_prev, _ktrace_iterate_threads, _ktrace_kperf, 
-                       _ktrace_log, _ktrace_log_init, _ktrace_machine_active_cpus, 
+                       _ktrace_iter_prev, _ktrace_iterate_threads, _ktrace_kpdecode, 
+                       _ktrace_kperf, _ktrace_log, _ktrace_log_init, _ktrace_machine_active_cpus, 
                        _ktrace_machine_apple_internal, _ktrace_machine_boot_args, 
                        _ktrace_machine_boot_uuid, _ktrace_machine_copy_description, 
                        _ktrace_machine_cpu_family, _ktrace_machine_cpu_subtype, _ktrace_machine_cpu_type, 

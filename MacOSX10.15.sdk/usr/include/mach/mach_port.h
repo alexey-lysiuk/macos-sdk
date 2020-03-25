@@ -49,7 +49,7 @@ typedef function_table_entry   *function_table_t;
 #endif /* AUTOTEST */
 
 #ifndef	mach_port_MSG_COUNT
-#define	mach_port_MSG_COUNT	39
+#define	mach_port_MSG_COUNT	40
 #endif	/* mach_port_MSG_COUNT */
 
 #include <mach/std_types.h>
@@ -595,6 +595,21 @@ kern_return_t mach_port_swap_guard
 	mach_port_context_t new_guard
 );
 
+/* Routine mach_port_kobject_description */
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+kern_return_t mach_port_kobject_description
+(
+	ipc_space_inspect_t task,
+	mach_port_name_t name,
+	natural_t *object_type,
+	mach_vm_address_t *object_addr,
+	kobject_description_t description
+);
+
 __END_DECLS
 
 /********************** Caution **************************/
@@ -1112,6 +1127,18 @@ __END_DECLS
 #ifdef  __MigPackStructs
 #pragma pack(pop)
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(push, 4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		mach_port_name_t name;
+	} __Request__mach_port_kobject_description_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack(pop)
+#endif
 #endif /* !__Request__mach_port_subsystem__defined */
 
 /* union of all requests */
@@ -1157,6 +1184,7 @@ union __RequestUnion__mach_port_subsystem {
 	__Request__mach_port_space_basic_info_t Request_mach_port_space_basic_info;
 	__Request__mach_port_guard_with_flags_t Request_mach_port_guard_with_flags;
 	__Request__mach_port_swap_guard_t Request_mach_port_swap_guard;
+	__Request__mach_port_kobject_description_t Request_mach_port_kobject_description;
 };
 #endif /* !__RequestUnion__mach_port_subsystem__defined */
 /* typedefs for all replies */
@@ -1664,6 +1692,23 @@ union __RequestUnion__mach_port_subsystem {
 #ifdef  __MigPackStructs
 #pragma pack(pop)
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(push, 4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		kern_return_t RetCode;
+		natural_t object_type;
+		mach_vm_address_t object_addr;
+		mach_msg_type_number_t descriptionOffset; /* MiG doesn't use it */
+		mach_msg_type_number_t descriptionCnt;
+		char description[512];
+	} __Reply__mach_port_kobject_description_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack(pop)
+#endif
 #endif /* !__Reply__mach_port_subsystem__defined */
 
 /* union of all replies */
@@ -1709,6 +1754,7 @@ union __ReplyUnion__mach_port_subsystem {
 	__Reply__mach_port_space_basic_info_t Reply_mach_port_space_basic_info;
 	__Reply__mach_port_guard_with_flags_t Reply_mach_port_guard_with_flags;
 	__Reply__mach_port_swap_guard_t Reply_mach_port_swap_guard;
+	__Reply__mach_port_kobject_description_t Reply_mach_port_kobject_description;
 };
 #endif /* !__RequestUnion__mach_port_subsystem__defined */
 
@@ -1751,7 +1797,8 @@ union __ReplyUnion__mach_port_subsystem {
     { "mach_port_unguard", 3234 },\
     { "mach_port_space_basic_info", 3235 },\
     { "mach_port_guard_with_flags", 3237 },\
-    { "mach_port_swap_guard", 3238 }
+    { "mach_port_swap_guard", 3238 },\
+    { "mach_port_kobject_description", 3239 }
 #endif
 
 #ifdef __AfterMigUserHeader

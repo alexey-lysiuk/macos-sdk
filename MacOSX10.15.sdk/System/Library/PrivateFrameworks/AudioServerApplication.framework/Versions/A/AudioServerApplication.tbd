@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4752466F-DAC7-3A22-90D5-E3EA46447CD4', 'x86_64: 4752466F-DAC7-3A22-90D5-E3EA46447CD4' ]
+uuids:           [ 'x86_64: 169B31A5-90E3-34FD-A7C0-A353FB8A516C', 'x86_64: 169B31A5-90E3-34FD-A7C0-A353FB8A516C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AudioServerApplication.framework/Versions/A/AudioServerApplication'
 exports:         

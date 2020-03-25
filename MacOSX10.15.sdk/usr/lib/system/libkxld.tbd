@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F9FF90CE-DCB0-3918-882F-6E475A6E244A', 'x86_64: F9FF90CE-DCB0-3918-882F-6E475A6E244A' ]
+uuids:           [ 'x86_64: 77282DCB-83D6-3199-874E-9A4A0FD7D4F3', 'x86_64: 77282DCB-83D6-3199-874E-9A4A0FD7D4F3' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libkxld.dylib'
 exports:         

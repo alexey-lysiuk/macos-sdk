@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B6AA1919-BBF3-3332-A67B-E7320C085658' ]
+uuids:           [ 'x86_64: 05E8D5C4-50A9-3769-8B7C-BF621333B51B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PrivateFederatedLearning.framework/Versions/A/PrivateFederatedLearning'
 exports:         
@@ -22,9 +22,9 @@ exports:
                        __ZN21PFLUniformRVGenerator34uniformRandomVariableInRangeSampleEdd, 
                        __ZN22PFLGaussianRVGenerator31PFLGaussianRandomVariableSampleEdd, 
                        _count, _kPFLAllowedEntitlement, _kPFLCFMaxBetaComputation, 
-                       _kPFLPrivatizeIdentifierProactivePhoneEn, _kPFLPrivatizeIdentifierProactiveResponses, 
-                       _kPFLPrivatizeIdentifierQuickTypeLM, _kPFLPrivatizeIdentifierVocalClassifier, 
-                       _kPFLPrivatizeTaskIdentifierQuickTypeCNNTextClassification, 
+                       _kPFLPrivatizeIdentifierPhotos, _kPFLPrivatizeIdentifierProactivePhoneEn, 
+                       _kPFLPrivatizeIdentifierProactiveResponses, _kPFLPrivatizeIdentifierQuickTypeLM, 
+                       _kPFLPrivatizeIdentifierVocalClassifier, _kPFLPrivatizeTaskIdentifierQuickTypeCNNTextClassification, 
                        _kPFLPrivatizeTaskIdentifierQuickTypeLM, _temp ]
     objc-classes:    [ PFLDiagnosticReporting, _PFLContinuedFraction, _PFLGaussianNoiseGenerator, 
                        _PFLLog, _PFLMathHelper, _PFLModelTrainer, _PFLPrivacyParameters, 

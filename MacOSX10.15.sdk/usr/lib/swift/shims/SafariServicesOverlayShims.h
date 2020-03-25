@@ -15,7 +15,7 @@
 
 #include <TargetConditionals.h>
 
-#if !TARGET_OS_UIKITFORMAC
+#if !TARGET_OS_MACCATALYST
 
 #import <SafariServices/SFSwiftOverlaySupport.h>
 
@@ -32,7 +32,7 @@ static inline bool _swift_SafariServices_isSafariServicesAvailable(SFSafariServi
   return *latestVersion >= version;
 }
 
-#endif // !TARGET_OS_MACCATALYST 
+#endif // !TARGET_OS_MACCATALYST
 
 #endif // SWIFT_STDLIB_SHIMS_SAFARISERVICES_OVERLAY_H
 

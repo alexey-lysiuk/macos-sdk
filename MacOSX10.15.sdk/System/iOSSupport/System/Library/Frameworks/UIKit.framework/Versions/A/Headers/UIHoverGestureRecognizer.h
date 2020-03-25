@@ -10,7 +10,7 @@
 #import <UIKit/UIKitDefines.h>
 
 // UIHoverGestureRecognizer
-// On iOSMac, this gesture recognizer will begin recognition when the cursor
+// On macOS or iPadOS, this gesture recognizer will begin recognition when the cursor
 // (while no mouse buttons are pressed) enters its view, changes during movement
 // within the view and ends when the cursor leaves said view.
 // Note: While buttons are pressed any currently active hover gesture recognizers

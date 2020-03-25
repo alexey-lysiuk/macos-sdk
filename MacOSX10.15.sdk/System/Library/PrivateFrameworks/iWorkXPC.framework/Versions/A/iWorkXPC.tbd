@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8CCAF56-5307-3AAA-AF83-336AE8859A6C', 'x86_64: B8CCAF56-5307-3AAA-AF83-336AE8859A6C' ]
+uuids:           [ 'x86_64: 6500894C-408C-32BD-9B62-46B83B889D32', 'x86_64: 6500894C-408C-32BD-9B62-46B83B889D32' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/iWorkXPC.framework/Versions/A/iWorkXPC'
 current-version: 11

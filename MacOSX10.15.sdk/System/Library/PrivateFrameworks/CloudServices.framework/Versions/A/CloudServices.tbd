@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CA6C0762-42D3-3330-BC26-0ED639250851', 'x86_64: CA6C0762-42D3-3330-BC26-0ED639250851' ]
+uuids:           [ 'x86_64: 4AE7A0E3-E48F-3752-91E3-78E46924594E', 'x86_64: 4AE7A0E3-E48F-3752-91E3-78E46924594E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CloudServices.framework/Versions/A/CloudServices'
 exports:         

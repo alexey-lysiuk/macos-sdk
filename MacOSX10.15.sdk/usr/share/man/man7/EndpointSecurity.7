@@ -12,17 +12,28 @@ The
 events to applications (ES clients).
 ES clients can either be standalone applications/executables or installed as system extensions.
 .Pp
-If the ES client is a system extension, the following optional Boolean keys can be set in the bundle's Info.plist:
+If the ES client is a system extension, the following optional keys can be set in the bundle's Info.plist:
 .Bl -tag -width -indent
 .It Ar NSEndpointSecurityEarlyBoot
+Type: Boolean
+.Pp
 If set to TRUE, the ES subsystem will hold up all third party executions
 (anything that is not a platform binary) until all early boot ES extensions make their first subscription.
 .It Ar NSEndpointSecurityRebootRequired
+Type: Boolean
+.Pp
 If not set or set to FALSE, the new version of the extension is started immediately after terminating the old version.
 .Pp
 If set to TRUE, the new version of the extension is NOT started until the system reboots.
 When the system reboots, only the new version will be started and the old version will be removed.
 This ensures there is no gap in monitoring of subscribed events.
+.It Ar NSEndpointSecurityMachServiceName
+Type: String
+.Pp
+If set, this string will be the name of the MachService which can be used for XPC between the ES extension and its app.
+If ES extension is combined with a Network Extension, set the NEMachServiceName key in the Info.plist.
+If not set, a default mach service (name: <teamID>.<bundleID>.xpc) will be provided but its usage is deprecated.
+.Pp
 .El
 .Sh SEE ALSO
 .Xr endpointsecurityd 8 ,

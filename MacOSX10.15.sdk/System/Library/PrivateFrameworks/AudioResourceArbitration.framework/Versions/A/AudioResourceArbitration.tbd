@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D51DC94A-FFDE-3B61-8E71-A05298853297' ]
+uuids:           [ 'x86_64: B7E163FF-F028-32A5-9AD3-DB7022E99DE7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AudioResourceArbitration.framework/Versions/A/AudioResourceArbitration'
 exports:         

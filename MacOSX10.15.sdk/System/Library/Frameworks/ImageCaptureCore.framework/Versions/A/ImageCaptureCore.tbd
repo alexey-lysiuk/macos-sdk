@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E61ECB5C-38AC-3D4F-A770-A422260B3E77', 'x86_64: E61ECB5C-38AC-3D4F-A770-A422260B3E77' ]
+uuids:           [ 'x86_64: 47AD8B27-A38D-3A6A-B3F1-2770A8CF7EB3', 'x86_64: 47AD8B27-A38D-3A6A-B3F1-2770A8CF7EB3' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageCaptureCore.framework/Versions/A/ImageCaptureCore'
 exports:         
@@ -19,10 +19,10 @@ exports:
                        _ICDeviceLocationDescriptionFireWire, _ICDeviceLocationDescriptionMassStorage, 
                        _ICDeviceLocationDescriptionUSB, _ICDownloadSidecarFiles, 
                        _ICDownloadsDirectoryURL, _ICEnumerationChronologicalOrder, 
-                       _ICErrorDomain, _ICImageSourceShouldCache, _ICImageSourceThumbnailMaxPixelSize, 
-                       _ICLocalizedStatusNotificationKey, _ICLoggingDomain, _ICLoggingLevel, 
-                       _ICMetadataBrevity, _ICMetadataBrevityEssential, _ICOverwrite, 
-                       _ICPreferencesDomain, _ICRawExtension, _ICSaveAsFilename, 
+                       _ICEnumerationPrioritizeSpeed, _ICErrorDomain, _ICImageSourceShouldCache, 
+                       _ICImageSourceThumbnailMaxPixelSize, _ICLocalizedStatusNotificationKey, 
+                       _ICLoggingDomain, _ICLoggingLevel, _ICMetadataBrevity, _ICMetadataBrevityEssential, 
+                       _ICOverwrite, _ICPreferencesDomain, _ICRawExtension, _ICSaveAsFilename, 
                        _ICSavedAncillaryFiles, _ICSavedFilename, _ICScannerStatusRequestsOverviewScan, 
                        _ICScannerStatusWarmUpDone, _ICScannerStatusWarmingUp, _ICStatusCodeKey, 
                        _ICStatusNotificationKey, _ICStatusSoftwareInstallation, _ICTransportTypeBluetooth, 
@@ -33,8 +33,9 @@ exports:
                        __ICDidRemoveLegacyDevice, __ICImageCaptureGetScannerButtonMappingPreference, 
                        __ICImageCaptureSetScannerButtonMappingPreference, __ICInitialize, 
                        __ICIsValidDevice, __ICSetSharingPreferences, __ICStartReceivingSharingPreferences, 
-                       ___ICLogDateString, ___ICLogTypeEnabled, ___ICOSLogCreate, 
-                       ___ICReadPrefs, __gICOSLog ]
+                       ___ICAddDecodedErrorToDict, ___ICLogDateString, ___ICLogTypeEnabled, 
+                       ___ICLongValueToErrorString, ___ICOSLogCreate, ___ICReadPrefs, 
+                       ___ICValueToErrorString, __gICOSLog ]
     objc-classes:    [ ICAccessManager, ICCameraDevice, ICCameraFile, ICCameraFolder, 
                        ICCameraItem, ICDevice, ICDeviceBrowser, ICScannerBandData, 
                        ICScannerDevice, ICScannerFeature, ICScannerFeatureBoolean, 

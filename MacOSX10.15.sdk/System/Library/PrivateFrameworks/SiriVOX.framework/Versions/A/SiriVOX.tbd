@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 753EAE24-FA32-3AD2-9D74-7E9DA131796C', 'x86_64: 753EAE24-FA32-3AD2-9D74-7E9DA131796C' ]
+uuids:           [ 'x86_64: 59E4CDD9-3E75-3B93-B7B1-9980BC8738F7', 'x86_64: 59E4CDD9-3E75-3B93-B7B1-9980BC8738F7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SiriVOX.framework/Versions/A/SiriVOX'
 current-version: 0

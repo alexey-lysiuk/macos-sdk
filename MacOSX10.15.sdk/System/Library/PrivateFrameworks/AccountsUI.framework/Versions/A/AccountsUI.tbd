@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 42ED1604-3AE3-3835-98EC-D6B61F0E5F5C' ]
+uuids:           [ 'x86_64: 18B5E69E-07EF-3663-A04F-CD3CA7FA59B0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccountsUI.framework/Versions/A/AccountsUI'
 exports:         
@@ -10,10 +10,11 @@ exports:
                        _ACUIRevealAccountInPreferencePane, _ACUIRevealAccountInPreferencePaneAndPromptToEnable, 
                        _ACUIUID, _AccountsUIVersionNumber, _AccountsUIVersionString ]
     objc-classes:    [ ACUIAccountDataclass, ACUIAccountDataclassCellView, ACUIAccountDetailsViewController, 
-                       ACUIAccountInfoViewController, ACUIAccountNotifier, ACUIAccountSetupViewController, 
-                       ACUIAccountTypeRowRadio, ACUIAccountTypesCellView, ACUIAccountTypesViewController, 
-                       ACUIAccountsTableViewController, ACUICertificatePanelManager, 
-                       ACUICredentialPromptViewController, ACUIInvisibleButton, ACUIPluginManager, 
-                       ACUISetupManagerViewController, ACUITableCellView, ACUIUtilities, 
-                       ACUIViewController, ACUIWebAuthViewController, ACUIWebLoginViewController ]
+                       ACUIAccountInfoViewController, ACUIAccountNotifier, ACUIAccountRowItem, 
+                       ACUIAccountSetupViewController, ACUIAccountTypeRowRadio, ACUIAccountTypesCellView, 
+                       ACUIAccountTypesViewController, ACUIAccountsTableViewController, 
+                       ACUICertificatePanelManager, ACUICredentialPromptViewController, 
+                       ACUIInvisibleButton, ACUIPluginManager, ACUISetupManagerViewController, 
+                       ACUITableCellView, ACUIUtilities, ACUIViewController, ACUIWebAuthViewController, 
+                       ACUIWebLoginViewController ]
 ...

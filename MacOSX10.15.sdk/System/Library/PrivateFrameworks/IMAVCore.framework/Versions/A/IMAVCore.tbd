@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 38423966-DB8E-3813-9777-08F59BFC574E' ]
+uuids:           [ 'x86_64: 15E7578C-755F-3578-9383-A738B4AFFE77' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMAVCore.framework/Versions/A/IMAVCore'
 current-version: 800

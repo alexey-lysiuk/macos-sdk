@@ -145,7 +145,11 @@
 #define PD_S_RXQ_MASK		(PD_S_TXQ_MASK       >> PD_S_RX_OFFSET)
 
 class IOSerialDriverSync;
+#if defined(KERNEL) && !defined(KERNEL_PRIVATE)
+class __deprecated_msg("Use DriverKit") IOSerialStreamSync : public IOService
+#else
 class IOSerialStreamSync : public IOService
+#endif
 {
     OSDeclareDefaultStructors(IOSerialStreamSync);
 

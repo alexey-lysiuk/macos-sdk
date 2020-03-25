@@ -2,7 +2,7 @@
 //  INSearchForNotebookItemsIntent.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntent.h>
@@ -32,7 +32,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(11.0), watchos(4.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INSearchForNotebookItemsIntent : INIntent
 
 - (instancetype)initWithTitle:(nullable INSpeakableString *)title
@@ -63,9 +63,9 @@ API_UNAVAILABLE(macosx)
 
 @property (readonly, assign, NS_NONATOMIC_IOSONLY) INDateSearchType dateSearchType;
 
-@property (readonly, assign, NS_NONATOMIC_IOSONLY) INTemporalEventTriggerTypeOptions temporalEventTriggerTypes API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+@property (readonly, assign, NS_NONATOMIC_IOSONLY) INTemporalEventTriggerTypeOptions temporalEventTriggerTypes API_AVAILABLE(ios(13.0), watchos(6.0));
 
-@property (readonly, assign, NS_NONATOMIC_IOSONLY) INTaskPriority taskPriority API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+@property (readonly, assign, NS_NONATOMIC_IOSONLY) INTaskPriority taskPriority API_AVAILABLE(ios(13.0), watchos(6.0));
 
 @property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSString *notebookItemIdentifier API_AVAILABLE(ios(11.2), watchos(4.2));
 
@@ -79,7 +79,7 @@ API_UNAVAILABLE(macosx)
  */
 
 API_AVAILABLE(ios(11.0), watchos(4.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @protocol INSearchForNotebookItemsIntentHandling <NSObject>
 
 @required
@@ -147,10 +147,10 @@ API_UNAVAILABLE(macosx)
                     withCompletion:(void (^)(INDateSearchTypeResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveDateSearchType(for:with:));
 
 - (void)resolveTemporalEventTriggerTypesForSearchForNotebookItems:(INSearchForNotebookItemsIntent *)intent
-                    withCompletion:(void (^)(INTemporalEventTriggerTypeOptionsResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveTemporalEventTriggerTypes(for:with:)) API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+                    withCompletion:(void (^)(INTemporalEventTriggerTypeOptionsResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveTemporalEventTriggerTypes(for:with:)) API_AVAILABLE(ios(13.0), watchos(6.0));
 
 - (void)resolveTaskPriorityForSearchForNotebookItems:(INSearchForNotebookItemsIntent *)intent
-                    withCompletion:(void (^)(INTaskPriorityResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveTaskPriority(for:with:)) API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+                    withCompletion:(void (^)(INTaskPriorityResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveTaskPriority(for:with:)) API_AVAILABLE(ios(13.0), watchos(6.0));
 
 @end
 

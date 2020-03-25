@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26E67A41-CF10-35CC-95D1-F68D2DAFE210', 'x86_64: 26E67A41-CF10-35CC-95D1-F68D2DAFE210' ]
+uuids:           [ 'x86_64: D6CB2732-E62F-34D1-97E7-ED57E05ED8D4', 'x86_64: D6CB2732-E62F-34D1-97E7-ED57E05ED8D4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication'
-current-version: 64510.160.2
+current-version: 64535.34
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _VMUBacktraceIsExcludedMarker, _VMUCreateRootNodeMarkingMap, 
@@ -32,16 +32,17 @@ exports:
                        _vmu_print_backtrace_uniquing_table, _vmu_ptrSized_stack_frames_for_uniqued_stack, 
                        _vmu_remove_stack_from_backtrace_uniquing_table, _vmu_stack_frames_for_uniqued_stack ]
     objc-classes:    [ VMUArchitecture, VMUBacktrace, VMUCallTreeNode, VMUCallTreeRoot, 
-                       VMUClassInfo, VMUClassInfoMap, VMUDebugTimer, VMUDirectedGraph, 
-                       VMUFieldInfo, VMUGraphStackLogReader, VMUMutableClassInfo, 
-                       VMUMutableFieldInfo, VMUNodeToStringMap, VMUNonOverlappingRangeArray, 
-                       VMUObjectGraph, VMUObjectIdentifier, VMUProcInfo, VMUProcList, 
-                       VMUProcessDescription, VMUProcessObjectGraph, VMURangeArray, 
-                       VMURangeToStringMap, VMUSampler, VMUScanOverlay, VMUSourceInfo, 
-                       VMUStackLogConsolidator, VMUStackLogReaderBase, VMUSwiftRuntimeInfo, 
-                       VMUSymbol, VMUSymbolOwnerCache, VMUSymbolicator, VMUTaskMemoryCache, 
-                       VMUTaskMemoryScanner, VMUTaskStackLogReader, VMUVMRegion, 
-                       VMUVMRegionIdentifier, VMUVMRegionRangeInfo, VMUVMRegionTracker ]
+                       VMUCallTreeRootWithBacktrace, VMUClassInfo, VMUClassInfoMap, 
+                       VMUDebugTimer, VMUDirectedGraph, VMUFieldInfo, VMUGraphStackLogReader, 
+                       VMULeakDetector, VMUMutableClassInfo, VMUMutableFieldInfo, 
+                       VMUNodeToStringMap, VMUNonOverlappingRangeArray, VMUObjectGraph, 
+                       VMUObjectIdentifier, VMUProcInfo, VMUProcList, VMUProcessDescription, 
+                       VMUProcessObjectGraph, VMURangeArray, VMURangeToStringMap, 
+                       VMUSampler, VMUScanOverlay, VMUSourceInfo, VMUStackLogConsolidator, 
+                       VMUStackLogReaderBase, VMUSwiftRuntimeInfo, VMUSymbol, VMUSymbolOwnerCache, 
+                       VMUSymbolicator, VMUTaskMemoryCache, VMUTaskMemoryScanner, 
+                       VMUTaskStackLogReader, VMUVMRegion, VMUVMRegionIdentifier, 
+                       VMUVMRegionRangeInfo, VMUVMRegionTracker ]
     objc-ivars:      [ VMUBacktrace._callstack, VMUBacktrace._flavor, VMUCallTreeNode._address, 
                        VMUCallTreeNode._children, VMUCallTreeNode._count, VMUCallTreeNode._name, 
                        VMUCallTreeNode._numBytes, VMUCallTreeNode._numChildren, VMUCallTreeNode._parent, 

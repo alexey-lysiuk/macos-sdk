@@ -1,23 +1,17 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C5EC925B-85B8-3AB3-B35F-4E2367C19183' ]
+uuids:           [ 'x86_64: BC60A871-F8D5-3B2E-9444-66BB2C114479' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ScreenTimeUI.framework/Versions/A/ScreenTimeUI'
-current-version: 354
+current-version: 433
 exports:         
   - archs:           [ x86_64 ]
-    allowable-clients: [ ContactsUI, FaceTime, FaceTimeNotificationCenterService, 
-                         IMCore, LockoutUI, Messages, ParentalControls, QuickLookUI, 
-                         QuickLookUIService, Safari, SafariShared, SafariSharedUnitTests, 
-                         ScreenTime, ScreenTimeViewService ]
-    symbols:         [ _STNotificationKeyPINSuccess, _STPINRemoteViewControllerInterface, 
-                       _STPINServiceViewControllerInterface, _STRestrictionsPINControllerDidFinishNotification ]
-    objc-classes:    [ STAlwaysAllowedController, STAlwaysAllowedItem, STContentAndPrivacyController, 
-                       STControlProtection, STDowntimeCommunicationViewController, 
-                       STKeyValuePair, STLockoutRestrictionsPINController, STLockoutViewController, 
-                       STPINAuthenticationViewController, STPINRemoteViewController, 
-                       STPINSetupViewController, STProtectedButton, STProtectedDatePicker, 
-                       STProtectedPopUpButton, STProtectedSegmentedControl, STRequestItem, 
-                       STRequestsController, STScreenTimeCommunicationViewController, 
-                       STUsersController ]
+    allowable-clients: [ ChatKit, ContactsUI, DataDetectorsViewDebug, DataDetectorsViewService, 
+                         FaceTime, FaceTimeNotificationCenterService, IMCore, LockoutUI, 
+                         Messages, Messages Assistant Extension, Messages Share Extension, 
+                         ParentalControls, QuickLookUI, QuickLookUIService, Safari, 
+                         SafariShared, SafariSharedUnitTests, ScreenTimeViewService ]
+    symbols:         [ _STNotificationKeyPINSuccess, _STRestrictionsPINControllerDidFinishNotification ]
+    objc-classes:    [ STLockoutRestrictionsPINController, STLockoutViewController, 
+                       STPINAuthenticationViewController, STPINSetupViewController ]
 ...

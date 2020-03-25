@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E7C8B563-8C55-30CC-AA12-EC9A6B1DAB1A', 'x86_64: E7C8B563-8C55-30CC-AA12-EC9A6B1DAB1A' ]
+uuids:           [ 'x86_64: 5A0F87CA-81C0-3444-B958-AAC7BD4319BC', 'x86_64: 5A0F87CA-81C0-3444-B958-AAC7BD4319BC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/libhvf.dylib'
 exports:         

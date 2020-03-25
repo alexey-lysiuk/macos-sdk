@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 470C2315-3047-39BB-BB6B-2C620087091C', 'x86_64: 470C2315-3047-39BB-BB6B-2C620087091C' ]
+uuids:           [ 'x86_64: 9A74FA97-7F7B-3929-B381-D9514B1E4754', 'x86_64: 9A74FA97-7F7B-3929-B381-D9514B1E4754' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation'
-current-version: 1673.126
+current-version: 1675.129
 compatibility-version: 300
 exports:         
   - archs:           [ x86_64 ]
@@ -975,16 +975,17 @@ exports:
                        __NSPersonNameComponentPhoneticFamilyNameKeyPath, __NSPersonNameComponentPhoneticGivenNameKeyPath, 
                        __NSPersonNameComponentPhoneticMiddleNameKeyPath, __NSPersonNameComponentPhoneticNicknameKeyPath, 
                        __NSPersonNameComponentPhoneticPrefixKeyPath, __NSPersonNameComponentPhoneticSuffixKeyPath, 
-                       __NSPrintForDebugger, __NSRaiseError, __NSReadExtendedAttributesFromFileDescriptor, 
-                       __NSRemoveAltHandler2, __NSRemoveExceptionHandlerForLock, 
-                       __NSRemoveHandler2, __NSRequestConcreteObject, __NSRuleNodeAppendDebugDescription, 
-                       __NSSetExceptionRaiser, __NSSetLogCStringFunction, __NSSetMainBundle, 
-                       __NSSetUsingKeyValueSetter, __NSSetupLibXML, __NSSoftLinkingGetFrameworkFunction, 
-                       __NSSoftLinkingLoadFramework, __NSUserDefaults_Log_Nonsensical_Suites, 
-                       __NSUserNotificationActivationSeedKey, __NSWriteExtendedAttributesToFileDescriptor, 
-                       __NSXMLCreateStringFromContentsOfHTML, __NSXPCConnectionInvocationReplyToSelectorKey, 
-                       __NSXPCConnectionInvocationReplyUserInfoKey, __NS_OSAGetSource, 
-                       __NS_os_log_callback, __NXAccessFile, __NXCurrentWorkingDir, 
+                       __NSPrintForDebugger, __NSProgressRemoteLocalizedAdditionalDescriptionKey, 
+                       __NSProgressRemoteLocalizedDescriptionKey, __NSRaiseError, 
+                       __NSReadExtendedAttributesFromFileDescriptor, __NSRemoveAltHandler2, 
+                       __NSRemoveExceptionHandlerForLock, __NSRemoveHandler2, __NSRequestConcreteObject, 
+                       __NSRuleNodeAppendDebugDescription, __NSSetExceptionRaiser, 
+                       __NSSetLogCStringFunction, __NSSetMainBundle, __NSSetUsingKeyValueSetter, 
+                       __NSSetupLibXML, __NSSoftLinkingGetFrameworkFunction, __NSSoftLinkingLoadFramework, 
+                       __NSUserDefaults_Log_Nonsensical_Suites, __NSUserNotificationActivationSeedKey, 
+                       __NSWriteExtendedAttributesToFileDescriptor, __NSXMLCreateStringFromContentsOfHTML, 
+                       __NSXPCConnectionInvocationReplyToSelectorKey, __NSXPCConnectionInvocationReplyUserInfoKey, 
+                       __NS_OSAGetSource, __NS_os_log_callback, __NXAccessFile, __NXCurrentWorkingDir, 
                        __NXMakeDirs, __NXRenameFile, __NXStatFile, ___NSCoderInvalidState, 
                        ___NSDefaultStringEncodingFullyInited, ___NSDescribeDelayedPerformCallout, 
                        ___NSDescribeNSMachPortCallout, ___NSDescribeTimerCallout, 

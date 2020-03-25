@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB3BFE0F-FABA-3E61-B4D8-8FA83D2E81FE' ]
+uuids:           [ 'x86_64: 14E43529-B9A0-3D9C-874E-AFE723BDEB76' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/MediaLibrary.framework/Versions/A/MediaLibrary'
-current-version: 785
+current-version: 787
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MLApertureAllPhotosTypeIdentifier, _MLApertureAllProjectsTypeIdentifier, 

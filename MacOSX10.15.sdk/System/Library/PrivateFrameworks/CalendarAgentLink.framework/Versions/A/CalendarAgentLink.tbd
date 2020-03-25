@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A4899625-38D1-3355-9281-C48F2FB21490', 'x86_64: A4899625-38D1-3355-9281-C48F2FB21490' ]
+uuids:           [ 'x86_64: 078543B6-DBB7-3C44-9BA3-0F2BEB442F9F', 'x86_64: 078543B6-DBB7-3C44-9BA3-0F2BEB442F9F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CalendarAgentLink.framework/Versions/A/CalendarAgentLink'
 current-version: 840.2.1

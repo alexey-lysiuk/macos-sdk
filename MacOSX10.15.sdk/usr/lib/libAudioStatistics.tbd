@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26761E48-3286-3F62-BDCA-C093980DB412', 'x86_64: 26761E48-3286-3F62-BDCA-C093980DB412' ]
+uuids:           [ 'x86_64: 9ED11599-1BB1-34B2-A4A2-CD69989DE9EA', 'x86_64: 9ED11599-1BB1-34B2-A4A2-CD69989DE9EA' ]
 platform:        zippered
 install-name:    '/usr/lib/libAudioStatistics.dylib'
 exports:         

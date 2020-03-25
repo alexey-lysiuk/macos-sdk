@@ -137,7 +137,7 @@ class AppleUSBHostController;
  * @brief       The OSObject representing a USB endpoint
  * @discussion  This class provides functionality to transfer data across USB.  Function drivers should not subclass IOUSBHostPipe.
  */
-class IOUSBHostPipe : public IOUSBHostIOSource
+class __IOUSBHOSTFAMILY_DEPRECATED IOUSBHostPipe : public IOUSBHostIOSource
 {
     friend class IOUSBHostInterface;
     friend class IOUSBHostDevice;

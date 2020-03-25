@@ -26,6 +26,7 @@
 #import "NSDataShims.h"
 #import "NSDictionaryShims.h"
 #import "NSErrorShims.h"
+#import "NSFileHandleShims.h"
 #import "NSFileManagerShims.h"
 #import "NSIndexPathShims.h"
 #import "NSIndexSetShims.h"

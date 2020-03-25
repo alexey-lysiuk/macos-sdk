@@ -13,14 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class CXCallDirectoryExtensionContext;
 
-CX_EXTERN API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos)
+CX_EXTERN API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos)
 @protocol CXCallDirectoryExtensionContextDelegate <NSObject>
 
 - (void)requestFailedForExtensionContext:(CXCallDirectoryExtensionContext *)extensionContext withError:(NSError *)error;
 
 @end
 
-CX_EXTERN API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos)
+CX_EXTERN API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos)
 @interface CXCallDirectoryExtensionContext : NSExtensionContext
 
 @property (nonatomic, weak, nullable) id<CXCallDirectoryExtensionContextDelegate> delegate;

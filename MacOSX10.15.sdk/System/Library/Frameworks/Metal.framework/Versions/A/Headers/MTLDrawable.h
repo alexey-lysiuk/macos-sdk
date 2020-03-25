@@ -31,6 +31,32 @@ API_AVAILABLE(macos(10.11), ios(8.0))
 /* Present this drawable at the given host time */
 - (void)presentAtTime:(CFTimeInterval)presentationTime;
 
+/*!
+ @method presentAfterMinimumDuration
+ @abstract Present this drawable while setting a minimum duration in seconds before allowing this drawable to appear on the display.
+ @param duration Duration in seconds before this drawable is allowed to appear on the display
+ */
+- (void)presentAfterMinimumDuration:(CFTimeInterval)duration API_AVAILABLE(macos(10.15.4), ios(10.3), macCatalyst(13.4));
+
+/*!
+ @method addPresentedHandler
+ @abstract Add a block to be called when this drawable is presented on screen.
+ */
+- (void)addPresentedHandler:(MTLDrawablePresentedHandler)block API_AVAILABLE(macos(10.15.4), ios(10.3), macCatalyst(13.4));
+
+/*!
+ @property presentedTime
+ @abstract The host time that this drawable was presented on screen.
+ @discussion Returns 0 if a frame has not been presented or has been skipped.
+ */
+@property(nonatomic, readonly) CFTimeInterval presentedTime API_AVAILABLE(macos(10.15.4), ios(10.3), macCatalyst(13.4));
+
+/*!
+ @property drawableID
+ @abstract The monotonically incremented ID for all MTLDrawable objects created from the same CAMetalLayer object.
+  @discussion The value starts from 0.
+*/
+@property (nonatomic, readonly) NSUInteger drawableID API_AVAILABLE(macos(10.15.4), ios(10.3), macCatalyst(13.4));
 
 @end
 NS_ASSUME_NONNULL_END

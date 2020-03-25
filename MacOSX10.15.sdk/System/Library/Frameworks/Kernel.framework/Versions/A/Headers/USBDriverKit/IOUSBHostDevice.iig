@@ -221,11 +221,7 @@ public:
      *  <code>
      *  OSAction *callback;
      *
-     *  ret = OSAction::Create(this,
-     *                     <YourDriver>_DeviceRequestComplete_ID,
-     *                     IOUSBHostDevice_CompleteAsyncDeviceRequest_ID,
-     *                     sizeof(<YourDriver>CallbackContext),
-     *                     &callback);
+     *  ret = CreateActionDeviceRequestComplete(sizeof(<YourDriver>CallbackContext), &callback);
      *  </code>
      * @param       completionTimeoutMs Timeout of the request in milliseconds.  If 0, the request will never timeout.
      * @return      KERN_SUCCESS if the completion will be called in the future, otherwise error

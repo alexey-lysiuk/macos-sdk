@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 51DB9CFB-808F-32E8-BB34-39F6702DBDED', 'x86_64: 51DB9CFB-808F-32E8-BB34-39F6702DBDED' ]
+uuids:           [ 'x86_64: A970C7A8-7CCD-3701-A459-078BD5E8FE4E', 'x86_64: A970C7A8-7CCD-3701-A459-078BD5E8FE4E' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Kerberos.framework/Versions/A/Libraries/libHeimdalProxy.dylib'
 exports:         

@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.40.3) generated from IOHIDDigitizerCollection.iig */
+/* iig(DriverKit-73.100.4) generated from IOHIDDigitizerCollection.iig */
 
 /* IOHIDDigitizerCollection.iig:1-44 */
 /*
@@ -45,7 +45,50 @@ typedef enum {
     kIOHIDDigitizerCollectionTypeHand
 } IOHIDDigitizerCollectionType;
 
-/* class IOHIDDigitizerCollection IOHIDDigitizerCollection.iig:45-77 */
+/* source class IOHIDDigitizerCollection IOHIDDigitizerCollection.iig:45-77 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
+class LOCALONLY IOHIDDigitizerCollection : public OSContainer
+{
+private:
+    bool initWithType(IOHIDDigitizerCollectionType type,
+                      IOHIDElement *parentCollection);
+    
+public:
+    virtual void free(void) override;
+    
+    static IOHIDDigitizerCollection *withType(IOHIDDigitizerCollectionType type,
+                                              IOHIDElement *parentCollection);
+    
+    void addElement(IOHIDElement *element);
+    OSArray *getElements();
+    
+    IOHIDElement *getParentCollection();
+
+    IOHIDDigitizerCollectionType getType();
+    
+    bool getTouch();
+    void setTouch(bool touch);
+    
+    bool getInRange();
+    void setInRange(bool inRange);
+    
+    IOFixed getX();
+    void setX(IOFixed x);
+    
+    IOFixed getY();
+    void setY(IOFixed y);
+    
+    IOFixed getZ();
+    void setZ(IOFixed z);
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOHIDDigitizerCollection IOHIDDigitizerCollection.iig:45-77 */
 
 
 #define IOHIDDigitizerCollection_Methods \
@@ -193,6 +236,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* IOHIDDigitizerCollection.iig:79- */
 

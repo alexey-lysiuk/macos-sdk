@@ -242,7 +242,7 @@ class AppleUSBHostResources;
  * @brief       The IOService object representing a USB device
  * @discussion  This class provides functionality to send control requests to the default control endpoint, as well as create IOUSBHostInterface objects to represent the interfaces contained in the selected configuration.  Function drivers should not subclass IOUSBHostDevice.
  */
-class IOUSBHostDevice : public IOService
+class __IOUSBHOSTFAMILY_DEPRECATED IOUSBHostDevice : public IOService
 {
     friend class AppleUSBHostController;
     friend class IOUSBHostInterface;

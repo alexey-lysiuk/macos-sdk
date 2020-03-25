@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DA509475-AA6B-3E2D-8BA3-18E2C63EF582' ]
+uuids:           [ 'x86_64: 789CDC67-0DC0-37CD-ACFE-C63DC8FF51DC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TemplateKit.framework/Versions/A/TemplateKit'
 exports:         

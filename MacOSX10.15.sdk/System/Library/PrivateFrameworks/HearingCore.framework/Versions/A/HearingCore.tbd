@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9CDA6116-7F54-3231-85B2-C8F92E5B848B', 'x86_64: 9CDA6116-7F54-3231-85B2-C8F92E5B848B' ]
+uuids:           [ 'x86_64: F61F52F6-9C9C-3BA2-A9B6-0452CDC19E89', 'x86_64: F61F52F6-9C9C-3BA2-A9B6-0452CDC19E89' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/HearingCore.framework/Versions/A/HearingCore'
 exports:         

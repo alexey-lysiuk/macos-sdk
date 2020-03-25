@@ -40,7 +40,8 @@ typedef NS_ENUM(NSInteger, CBError) {
 	CBErrorUnkownDevice NS_ENUM_DEPRECATED(10_13, 10_15, 9_0, 13_0, "Use CBErrorUnknownDevice instead") = 12,
 	CBErrorUnknownDevice NS_ENUM_AVAILABLE(10_14, 12_0)			= 12,
 	CBErrorOperationNotSupported NS_ENUM_AVAILABLE(10_14, 12_0)	= 13,
-
+	CBErrorPeerRemovedPairingInformation NS_ENUM_AVAILABLE(10_15, 13_4)	= 14,
+	CBErrorEncryptionTimedOut NS_ENUM_AVAILABLE(10_15, 13_3)	= 15,
 };
 
 CB_EXTERN NSString * const CBATTErrorDomain;

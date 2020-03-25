@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 106C9E85-52D3-3721-82C4-17A902E573D7' ]
+uuids:           [ 'x86_64: 3B16524A-2134-3B3B-B9B3-5871FCD4874B' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftMediaPlayer.dylib'
 current-version: 0

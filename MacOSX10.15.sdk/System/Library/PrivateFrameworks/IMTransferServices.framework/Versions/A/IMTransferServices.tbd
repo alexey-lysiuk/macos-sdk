@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3FCDA5DC-5B3B-38C9-A5CA-792DCC1D2023', 'x86_64: 3FCDA5DC-5B3B-38C9-A5CA-792DCC1D2023' ]
+uuids:           [ 'x86_64: A67FB579-2D3B-3881-9FB4-B61F78E2116D', 'x86_64: A67FB579-2D3B-3881-9FB4-B61F78E2116D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IMTransferServices.framework/Versions/A/IMTransferServices'
 current-version: 800

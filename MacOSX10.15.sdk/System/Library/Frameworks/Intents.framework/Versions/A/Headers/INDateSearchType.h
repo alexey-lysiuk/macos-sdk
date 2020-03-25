@@ -2,7 +2,7 @@
 //  INDateSearchType.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #ifndef INDateSearchType_h
@@ -16,6 +16,6 @@ typedef NS_ENUM(NSInteger, INDateSearchType) {
     INDateSearchTypeByDueDate,
     INDateSearchTypeByModifiedDate,
     INDateSearchTypeByCreatedDate,
-} API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
+} API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macos, tvos);
 
 #endif // INDateSearchType_h

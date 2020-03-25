@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 398713CC-6B41-32AC-AD94-833D3D777FC0' ]
+uuids:           [ 'x86_64: 47EB2246-8FE4-3427-8ECF-DF6277C8B129' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleGVACore.framework/Versions/A/AppleGVACore'
-current-version: 10.0.20
+current-version: 76.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AVFPixelProcessCore_CreateInstance, _AVFPixelProcessCore_GetSupportedPixelFormats, 

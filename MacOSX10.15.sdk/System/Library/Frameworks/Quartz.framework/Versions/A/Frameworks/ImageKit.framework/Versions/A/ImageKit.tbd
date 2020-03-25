@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED29D27A-B76B-3507-A0E9-C32C265BA0C7' ]
+uuids:           [ 'x86_64: 8E987D0B-D19B-3740-8EAF-865E71F6BD3D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit'
 exports:         

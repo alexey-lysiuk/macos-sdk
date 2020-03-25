@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5E297121-22A7-3A2F-92B9-DD3E5C829CC7', 'x86_64: 5E297121-22A7-3A2F-92B9-DD3E5C829CC7' ]
+uuids:           [ 'x86_64: 8091F952-B592-38E3-982B-7DEA0A44E211', 'x86_64: 8091F952-B592-38E3-982B-7DEA0A44E211' ]
 platform:        zippered
 install-name:    '/usr/lib/libgermantok.dylib'
 exports:         

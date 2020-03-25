@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 952EC324-EA4A-3CE2-BD7D-45C45356CEFF', 'x86_64: 952EC324-EA4A-3CE2-BD7D-45C45356CEFF' ]
+uuids:           [ 'x86_64: 760193A3-D742-3FF4-B535-837FD3D7B034', 'x86_64: 760193A3-D742-3FF4-B535-837FD3D7B034' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Navigation.framework/Versions/A/Navigation'
 exports:         
@@ -29,15 +29,14 @@ exports:
                        _MNLogFacilityNavigationService, _MNLogFacilityNavigationSession, 
                        _MNLogFacilityNavigationSessionManager, _MNLogFacilityNavigationStateGuidance, 
                        _MNLogFacilityNavigationStateManager, _MNLogFacilityNavigationStateNoDestination, 
-                       _MNLogFacilityNavigationStatePrepareGuidance, _MNLogFacilityPreloadSession, 
-                       _MNLogFacilityRouteStorage, _MNLogFacilitySessionUpdateManager, 
-                       _MNLogFacilitySettingsManager, _MNLogFacilityTimeballCache, 
-                       _MNLogFacilityTimeballDatabase, _MNLogFacilityTimeballLocalPeer, 
-                       _MNLogFacilityTimeballLocalProxy, _MNLogFacilityTimeballLocationManager, 
-                       _MNLogFacilityTimeballRefreshPolicy, _MNLogFacilityTimeballRequester, 
-                       _MNLogFacilityTimeballRoutingProvider, _MNLogFacilityTimeballServer, 
-                       _MNLogFacilityTimeballService, _MNLogFacilityTimeballXPC, 
-                       _MNLogFacilityTrace, _MNLogFacilityTrafficIncidentAlertUpdater, 
+                       _MNLogFacilityNavigationStatePrepareGuidance, _MNLogFacilityRouteStorage, 
+                       _MNLogFacilitySessionUpdateManager, _MNLogFacilitySettingsManager, 
+                       _MNLogFacilityTimeballCache, _MNLogFacilityTimeballDatabase, 
+                       _MNLogFacilityTimeballLocalPeer, _MNLogFacilityTimeballLocalProxy, 
+                       _MNLogFacilityTimeballLocationManager, _MNLogFacilityTimeballRefreshPolicy, 
+                       _MNLogFacilityTimeballRequester, _MNLogFacilityTimeballRoutingProvider, 
+                       _MNLogFacilityTimeballServer, _MNLogFacilityTimeballService, 
+                       _MNLogFacilityTimeballXPC, _MNLogFacilityTrace, _MNLogFacilityTrafficIncidentAlertUpdater, 
                        _MNLogFacilityTransitUpdateRequest, _MNLogFacilityTunnelProjector, 
                        _MNLogFacilityXPC, _MNLogFacilityXPCTransactionCounter, _MNLogFacilityXPCTransactionManager, 
                        _MNLogProcessHandling, _MNLogRouteStorage, _MNLoggingSubsystem, 
@@ -101,13 +100,13 @@ exports:
                        MNNavigationStateGuidanceTurnByTurn, MNNavigationStateManager, 
                        MNNavigationStateNoDestination, MNNavigationStatePredictingDestination, 
                        MNNavigationStatePrepareGuidance, MNNavigationTraceInfo, MNNavigationTraceManager, 
-                       MNNotificationManager, MNPlannedDestination, MNPreloadSession, 
-                       MNRealtimeTransitUpdate, MNRealtimeUpdate, MNRouteCoordinate, 
-                       MNRouteCoordinateWithType, MNRouteManager, MNRouteProximitySensor, 
-                       MNRouteRefreshPolicyFactory, MNRouteRefreshPolicyRulesDefault, 
-                       MNRouteRefreshPolicyRulesForeground, MNRouteRefreshPolicyRulesTimeToLeave, 
-                       MNRouteRefreshPolicyScheduler, MNRouteUpdate, MNRouteUpdateFreshness, 
-                       MNSessionUpdateManager, MNSettings, MNSettingsManager, MNSignInstructionContents, 
+                       MNNotificationManager, MNPlannedDestination, MNRealtimeTransitUpdate, 
+                       MNRealtimeUpdate, MNRouteCoordinate, MNRouteCoordinateWithType, 
+                       MNRouteManager, MNRouteProximitySensor, MNRouteRefreshPolicyFactory, 
+                       MNRouteRefreshPolicyRulesDefault, MNRouteRefreshPolicyRulesForeground, 
+                       MNRouteRefreshPolicyRulesTimeToLeave, MNRouteRefreshPolicyScheduler, 
+                       MNRouteUpdate, MNRouteUpdateFreshness, MNSessionUpdateManager, 
+                       MNSettings, MNSettingsManager, MNSignInstructionContents, 
                        MNSpokenInstructionContents, MNStartNavigationDetails, MNSuggestionsManager, 
                        MNTimeManager, MNTimeballCache, MNTimeballCacheEntry, MNTimeballLocationManager, 
                        MNTimeballMockLocationProvider, MNTimeballMockNetworkRequester, 

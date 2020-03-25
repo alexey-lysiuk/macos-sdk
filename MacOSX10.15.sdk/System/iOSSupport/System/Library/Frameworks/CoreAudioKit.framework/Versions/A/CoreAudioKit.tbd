@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4883FDF0-AE18-344E-931A-6515B333524A' ]
+uuids:           [ 'x86_64: 68778A92-89E6-3D32-BE79-54CA121A6E20' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/CoreAudioKit.framework/Versions/A/CoreAudioKit'
 exports:         

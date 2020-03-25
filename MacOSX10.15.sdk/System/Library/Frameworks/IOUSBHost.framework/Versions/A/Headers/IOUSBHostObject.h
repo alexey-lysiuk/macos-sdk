@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param      queue A serial queue that all asynchronous io will be serviced. By
  *             default a serial queue will be created on behalf of the client. Setting
  *             a queue will create a dispatch source event handler for the target queue to service
- *             all underlying io and notifications.
+ *             all underlying io.
  * @param      interestHandler IOUSBHostInterestHandler a generalInterest IOService handler. This is
  *             to handle underlying service state changes such as termination. See
  *             IOServiceAddInterestNotification in IOKitLib for more details. All notifications will be serviced
@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param      queue A serial queue that all asynchronous io will be serviced. By
  *             default a serial queue will be created on behalf of the client. Setting
  *             a queue will create a dispatch source event handler for the target queue to service
- *             all underlying io and notifications.
+ *             all underlying io.
  * @param      interestHandler IOUSBHostInterestHandler a generalInterest IOService handler. This is
  *             to handle underlying service state changes such as termination. See
  *             IOServiceAddInterestNotification in IOKitLib for more details. All notifications will be serviced

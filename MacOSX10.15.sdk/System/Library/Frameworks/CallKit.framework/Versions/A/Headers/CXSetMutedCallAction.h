@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-CX_EXTERN API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos)
+CX_EXTERN API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos)
 @interface CXSetMutedCallAction : CXCallAction
 
 - (instancetype)initWithCallUUID:(NSUUID *)callUUID muted:(BOOL)muted NS_DESIGNATED_INITIALIZER;

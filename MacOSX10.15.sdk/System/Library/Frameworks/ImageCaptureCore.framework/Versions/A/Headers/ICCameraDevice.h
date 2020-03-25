@@ -68,7 +68,7 @@ IMAGECAPTURE_EXTERN ICDeviceCapability const ICCameraDeviceCanReceiveFile IC_AVA
  */
 IMAGECAPTURE_EXTERN ICDeviceCapability const ICCameraDeviceCanAcceptPTPCommands IC_AVAILABLE(macos(10.4), ios(13.0));
 
-typedef NSString* ICUploadOption NS_TYPED_ENUM IC_AVAILABLE (macos (10.15), ios (13.0));
+typedef NSString* ICUploadOption NS_TYPED_ENUM IC_AVAILABLE (macos (10.4), ios (13.0));
 
 typedef NSString* ICDeleteResult NS_TYPED_ENUM IC_AVAILABLE (macos (10.15), ios (13.0));
 
@@ -76,19 +76,19 @@ typedef NSString* ICDeleteResult NS_TYPED_ENUM IC_AVAILABLE (macos (10.15), ios 
   @const      ICDeleteSuccessful
   @discussion The value for this key should be an NSArray<ICCameraItem*>*
  */
-IMAGECAPTURE_EXTERN ICDeleteResult const ICDeleteSuccessful IC_AVAILABLE(macos(10.4), ios(13.0));
+IMAGECAPTURE_EXTERN ICDeleteResult const ICDeleteSuccessful IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
   @const      ICDeleteCanceled
   @discussion The value for this key should be an NSArray<ICCameraItem*>*
  */
-IMAGECAPTURE_EXTERN ICDeleteResult const ICDeleteCanceled IC_AVAILABLE(macos(10.4), ios(13.0));
+IMAGECAPTURE_EXTERN ICDeleteResult const ICDeleteCanceled IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
   @const      ICDeleteFailed
   @discussion The value for this key should be an NSArray<ICCameraItem*>*
  */
-IMAGECAPTURE_EXTERN ICDeleteResult const ICDeleteFailed IC_AVAILABLE(macos(10.4), ios(13.0));
+IMAGECAPTURE_EXTERN ICDeleteResult const ICDeleteFailed IC_AVAILABLE(macos(10.15), ios(13.0));
 
 typedef NSString* ICDeleteError NS_TYPED_ENUM IC_AVAILABLE (macos (10.15), ios (13.0));
 
@@ -96,25 +96,25 @@ typedef NSString* ICDeleteError NS_TYPED_ENUM IC_AVAILABLE (macos (10.15), ios (
   @const      ICDeleteErrorReadOnly
   @discussion The value for this key should be an ICCameraItem*
  */
-IMAGECAPTURE_EXTERN ICDeleteError const ICDeleteErrorReadOnly IC_AVAILABLE(macos(10.4), ios(13.0));
+IMAGECAPTURE_EXTERN ICDeleteError const ICDeleteErrorReadOnly IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
   @const      ICDeleteErrorFileMissing
   @discussion The value for this key should be an ICCameraItem*
  */
-IMAGECAPTURE_EXTERN ICDeleteError const ICDeleteErrorFileMissing IC_AVAILABLE(macos(10.4), ios(13.0));
+IMAGECAPTURE_EXTERN ICDeleteError const ICDeleteErrorFileMissing IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
   @const      ICDeleteErrorDeviceMissing
   @discussion The value for this key should be an ICCameraItem*
  */
-IMAGECAPTURE_EXTERN ICDeleteError const ICDeleteErrorDeviceMissing IC_AVAILABLE(macos(10.4), ios(13.0));
+IMAGECAPTURE_EXTERN ICDeleteError const ICDeleteErrorDeviceMissing IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
   @const      ICDeleteErrorDeviceMissing
   @discussion The value for this key should be an ICCameraItem*
  */
-IMAGECAPTURE_EXTERN ICDeleteError const ICDeleteErrorCanceled IC_AVAILABLE(macos(10.4), ios(13.0));
+IMAGECAPTURE_EXTERN ICDeleteError const ICDeleteErrorCanceled IC_AVAILABLE(macos(10.15), ios(13.0));
 
 //--------------------------------------------------------------------------------------------------------- Forward Declarations
 
@@ -132,7 +132,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
   @property contentCatalogPercentCompleted
   @abstract ￼Indicates the percentage of content cataloging completed on the device. Its value ranges from 0 to 100.
  */
-@property (nonatomic, readonly) NSUInteger contentCatalogPercentCompleted IC_AVAILABLE(macos(10.14), ios(13.0));
+@property (nonatomic, readonly) NSUInteger contentCatalogPercentCompleted IC_AVAILABLE(macos(10.4), ios(13.0));
 
 /*!
   @property contents
@@ -211,7 +211,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
   @method cancelDownload
   @abstract Cancels the current download operation if supported
  */
-- (void) cancelDownload IC_AVAILABLE(macos(10.4), ios(13.0));
+- (void) cancelDownload IC_AVAILABLE(macos(10.4)) IC_UNAVAILABLE(ios);
 
 #pragma mark - Delete
 
@@ -238,7 +238,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
   - ICDeleteSuccessful: NSArray<ICCameraItem*>* success
   - ICDeleteFailed: NSArray<ICCameraItem*>* failed
  */
-- (NSProgress*)requestDeleteFiles:(NSArray<ICCameraItem*>*)files
+- (nullable NSProgress*)requestDeleteFiles:(NSArray<ICCameraItem*>*)files
     deleteFailed:(void (^)(NSDictionary<ICDeleteError, ICCameraItem*>*))deleteFailed
     completion:(void (^)(NSDictionary<ICDeleteResult, NSArray<ICCameraItem*>*>* result, NSError* _Nullable error)) completion IC_AVAILABLE(macos(10.15), ios(13.0));
 
@@ -337,7 +337,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
   @discussion The response, data, and any error message will be returned the block.
  */
 - (void)requestSendPTPCommand:(NSData*)ptpCommand
-    outData:(NSData*)ptpData
+    outData:(NSData* _Nullable)ptpData
     completion:(void (^)(NSData* responseData, NSData* ptpResponseData, NSError* _Nullable error)) completion IC_AVAILABLE(macos(10.15), ios(13.0));
 
 @end

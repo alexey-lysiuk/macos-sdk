@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E949EA60-664A-3521-A329-21AF722C1787', 'x86_64: E949EA60-664A-3521-A329-21AF722C1787' ]
+uuids:           [ 'x86_64: EA1826D6-D88D-33A4-B5AA-6BE4D329689E', 'x86_64: EA1826D6-D88D-33A4-B5AA-6BE4D329689E' ]
 platform:        zippered
 install-name:    '/usr/lib/libcupolicy.dylib'
 exports:         

@@ -3,9 +3,9 @@
  
      Contains:   Algebraic and logical operations on large operands.
  
-     Version:    vecLib-735.0
+     Version:    vecLib-735.100
  
-     Copyright:  Copyright (c) 1999-2019 by Apple Inc. All rights reserved.
+     Copyright:  Copyright (c) 1999-2020 by Apple Inc. All rights reserved.
  
      Bugs:       For bug reports, consult the following page on
                  the World Wide Web:

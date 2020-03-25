@@ -1,23 +1,30 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 166B47B5-95EB-3FD5-98CC-17FE3A54EFE4', 'x86_64: 166B47B5-95EB-3FD5-98CC-17FE3A54EFE4' ]
+uuids:           [ 'x86_64: 8719F8A5-7762-3862-8673-7C0F96CD642D', 'x86_64: 8719F8A5-7762-3862-8673-7C0F96CD642D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PrototypeTools.framework/Versions/A/PrototypeTools'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _PTDomainClientInterface, _PTDomainMachService, _PTDomainServerDomainsChangedNotification, 
-                       _PTDomainServerInterface, _PTDomainServerTestRecipesChangedNotification, 
-                       _PTLogObjectForTopic, _PTPrototypingEnumerateHardwareEventsWithBlock, 
+    symbols:         [ _PTClassIsPlistable, _PTDomainClientInterface, _PTDomainIdentifierKey, 
+                       _PTDomainMachService, _PTDomainServerActiveTestRecipeChangedNotification, 
+                       _PTDomainServerDomainsChangedNotification, _PTDomainServerInterface, 
+                       _PTDomainServerSettingsProxyDefinitionChangedNotification, 
+                       _PTDomainServerTestRecipesChangedNotification, _PTDomainSettingsProxyDefinitionKey, 
+                       _PTEqualFloats, _PTLogObjectForTopic, _PTObjectIsRecursivelyPlistable, 
+                       _PTPlistableClasses, _PTPrototypingEnumerateHardwareEventsWithBlock, 
                        _PTPrototypingEventAvailable, _PTPrototypingEventName, _PTPrototypingEventShortName, 
-                       _PTPrototypingIsActiveDarwinNotification, _PTSettingsIsAppleInternal, 
-                       _PTTransactionBegin, _PTTransactionEnd ]
+                       _PTPrototypingEventsDescription, _PTPrototypingIsActiveDarwinNotification, 
+                       _PTRowActionClassIsWhitelistedForRemoteEditing, _PTRowClassIsWhitelistedForRemoteEditing, 
+                       _PTSettingsIsAppleInternal, _PTTransactionBegin, _PTTransactionEnd, 
+                       _PTValidateArray, _PTValidateDictionary, _PTValidateSet ]
     objc-classes:    [ PTButtonRow, PTChoiceRow, PTDefaults, PTDomain, PTDomainInfo, 
                        PTDomainServer, PTDoubleTestRecipe, PTDrillDownRow, PTEditFloatRow, 
-                       PTEditStringRow, PTModule, PTOutlet, PTPointSettings, PTRestoreDefaultSettingsRowAction, 
+                       PTEditStringRow, PTModule, PTOutlet, PTPointSettings, PTProxySettings, 
+                       PTProxySettingsDefinition, PTRestoreDefaultSettingsRowAction, 
                        PTRow, PTRowAction, PTSButtonRow, PTSChoiceRow, PTSDrillDownRow, 
                        PTSEditFloatRow, PTSEditStringRow, PTSModule, PTSRestoreDefaultSettingsRowAction, 
                        PTSRow, PTSRowAction, PTSSection, PTSSliderRow, PTSSwitchRow, 
-                       PTSection, PTSettings, PTSingleTestRecipe, PTSizeSettings, 
-                       PTSliderRow, PTSwitchRow, PTTestRecipe, PTTestRecipeInfo, 
-                       PTToggleTestRecipe, _PTAppearanceCondition ]
+                       PTSection, PTSettings, PTSettingsClassStructure, PTSingleTestRecipe, 
+                       PTSizeSettings, PTSliderRow, PTSwitchRow, PTTestRecipe, PTTestRecipeInfo, 
+                       PTToggleTestRecipe ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B0E559EC-C69A-3FF2-BC01-125175C0931F' ]
+uuids:           [ 'x86_64: 6A4F5AA0-F724-388F-9BE5-308A1AA04B4C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CSCSupport.framework/Versions/A/CSCSupport'
 current-version: 0

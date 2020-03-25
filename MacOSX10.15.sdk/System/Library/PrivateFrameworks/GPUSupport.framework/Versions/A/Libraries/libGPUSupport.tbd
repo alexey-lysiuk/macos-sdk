@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2AA5036C-8892-3813-92A6-2420A759783A', 'x86_64: 2AA5036C-8892-3813-92A6-2420A759783A' ]
+uuids:           [ 'x86_64: 34EECB90-8110-3BFF-BB57-2947FF5DD3ED', 'x86_64: 34EECB90-8110-3BFF-BB57-2947FF5DD3ED' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUSupport.framework/Versions/A/Libraries/libGPUSupport.dylib'
 exports:         

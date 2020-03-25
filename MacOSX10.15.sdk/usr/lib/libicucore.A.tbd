@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4CBF52D7-7235-34C8-9FF1-8657076B604F', 'x86_64: 4CBF52D7-7235-34C8-9FF1-8657076B604F' ]
+uuids:           [ 'x86_64: DCC4A4EE-32FD-350F-84D8-E857F2F29855', 'x86_64: DCC4A4EE-32FD-350F-84D8-E857F2F29855' ]
 platform:        zippered
 install-name:    '/usr/lib/libicucore.A.dylib'
 current-version: 64.2

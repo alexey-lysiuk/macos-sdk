@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol ASWebAuthenticationPresentationContextProviding;
 
-AS_EXTERN API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(10.15)) API_UNAVAILABLE(tvos, watchos)
+AS_EXTERN API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(10.15), watchos(6.2)) API_UNAVAILABLE(tvos)
 NSErrorDomain const ASWebAuthenticationSessionErrorDomain;
 
 /*! @enum ASWebAuthenticationSessionErrorCode
@@ -27,9 +27,9 @@ NSErrorDomain const ASWebAuthenticationSessionErrorDomain;
  */
 typedef NS_ERROR_ENUM(ASWebAuthenticationSessionErrorDomain, ASWebAuthenticationSessionErrorCode) {
     ASWebAuthenticationSessionErrorCodeCanceledLogin = 1,
-    ASWebAuthenticationSessionErrorCodePresentationContextNotProvided API_AVAILABLE(ios(13.0), macos(10.15)) = 2,
-    ASWebAuthenticationSessionErrorCodePresentationContextInvalid API_AVAILABLE(ios(13.0), macos(10.15)) = 3,
-} API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(10.15)) API_UNAVAILABLE(tvos, watchos);
+    ASWebAuthenticationSessionErrorCodePresentationContextNotProvided API_AVAILABLE(ios(13.0), macos(10.15)) API_UNAVAILABLE(watchos) = 2,
+    ASWebAuthenticationSessionErrorCodePresentationContextInvalid API_AVAILABLE(ios(13.0), macos(10.15)) API_UNAVAILABLE(watchos) = 3,
+} API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(10.15), watchos(6.2)) API_UNAVAILABLE(tvos);
 
 typedef void (^ASWebAuthenticationSessionCompletionHandler)(NSURL *_Nullable callbackURL, NSError *_Nullable error) NS_SWIFT_NAME(ASWebAuthenticationSession.CompletionHandler);
 
@@ -56,11 +56,8 @@ typedef void (^ASWebAuthenticationSessionCompletionHandler)(NSURL *_Nullable cal
  The app can cancel the session by calling -[ASWebAuthenticationSession cancel]. This will also dismiss the view controller that
  is showing the web service's login page.
  */
-AS_EXTERN API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(10.15)) API_UNAVAILABLE(tvos, watchos)
+AS_EXTERN API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(10.15), watchos(6.2)) API_UNAVAILABLE(tvos)
 @interface ASWebAuthenticationSession : NSObject
-
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
 
 /*! @abstract Returns an ASWebAuthenticationSession object.
  @param URL the initial URL pointing to the authentication webpage. Only supports URLs with http:// or https:// schemes.
@@ -73,13 +70,18 @@ AS_EXTERN API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(10.15)) API_UNAVAILA
  must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS prior to
  13.0, the desired window is inferred by the application's key window.
  */
-@property (nonatomic, weak) id <ASWebAuthenticationPresentationContextProviding> presentationContextProvider API_AVAILABLE(ios(13.0), macos(10.15));
+@property (nonatomic, weak) id <ASWebAuthenticationPresentationContextProviding> presentationContextProvider API_AVAILABLE(ios(13.0), macos(10.15)) API_UNAVAILABLE(watchos);
 
 /*! @abstract Indicates whether this session should ask the browser for an ephemeral session.
  @discussion Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser session.
  This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no effect.
  */
-@property (nonatomic) BOOL prefersEphemeralWebBrowserSession API_AVAILABLE(ios(13.0), macos(10.15));
+@property (nonatomic) BOOL prefersEphemeralWebBrowserSession API_AVAILABLE(ios(13.0), macos(10.15), watchos(6.2));
+
+/*! @abstract Returns whether the session can be successfully started. This property returns the same value as calling -start,
+ but without the side effect of actually starting the session.
+ */
+@property (nonatomic, readonly) BOOL canStart API_AVAILABLE(ios(13.4), macos(10.15.4), watchos(6.2));
 
 /*! @abstract Starts the ASWebAuthenticationSession instance after it is instantiated.
  @discussion start can only be called once for an ASWebAuthenticationSession instance. This also means calling start on a
@@ -92,6 +94,9 @@ AS_EXTERN API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(10.15)) API_UNAVAILA
  authentication, it will be dismissed. Calling cancel on an already canceled session will have no effect.
  */
 - (void)cancel;
+
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

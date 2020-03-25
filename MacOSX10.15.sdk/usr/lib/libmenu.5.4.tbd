@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0FC7837E-352E-34DD-AFF2-78BA06DFE6F3', 'x86_64: 0FC7837E-352E-34DD-AFF2-78BA06DFE6F3' ]
+uuids:           [ 'x86_64: F332F24F-20E8-357A-8EA4-08D9B0A9D6AF', 'x86_64: F332F24F-20E8-357A-8EA4-08D9B0A9D6AF' ]
 platform:        zippered
 install-name:    '/usr/lib/libmenu.5.4.dylib'
 current-version: 5.4

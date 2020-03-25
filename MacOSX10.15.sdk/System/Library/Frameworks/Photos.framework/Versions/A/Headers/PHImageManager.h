@@ -25,8 +25,7 @@
 typedef NS_ENUM(NSInteger, UIImageOrientation);
 
 NS_ASSUME_NONNULL_BEGIN
-API_AVAILABLE_BEGIN(ios(8), tvos(10))
-API_AVAILABLE_BEGIN(macos(10.13))
+API_AVAILABLE_BEGIN(macos(10.13), ios(8), tvos(10))
 
 #pragma mark - PHImageRequestOptions - Configuration
 
@@ -66,8 +65,8 @@ OS_EXPORT
 
 @end
 
-API_AVAILABLE_END // macos(10.13)
-API_AVAILABLE_BEGIN(macos(10.15))
+API_AVAILABLE_END // macos(10.13), ios(8), tvos(10)
+API_AVAILABLE_BEGIN(macos(10.15), ios(9.1), tvos(10))
 
 #pragma mark -
 OS_EXPORT
@@ -80,6 +79,9 @@ OS_EXPORT
 
 @end
 
+API_AVAILABLE_END // macos(10.15), ios(9.1), tvos(10)
+API_AVAILABLE_BEGIN(ios(8), tvos(10))
+API_AVAILABLE_BEGIN(macos(10.15))
 
 #pragma mark - PHVideoRequestOptions - Configuration
 

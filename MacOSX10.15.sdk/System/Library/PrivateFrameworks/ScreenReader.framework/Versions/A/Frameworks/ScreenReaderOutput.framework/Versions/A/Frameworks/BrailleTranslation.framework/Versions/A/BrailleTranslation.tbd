@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9087880D-DE7F-385B-9A00-3B9BEBC0752F' ]
+uuids:           [ 'x86_64: 0B3466DA-6852-3AF8-86AF-4B0CA59A21DC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderOutput.framework/Versions/A/Frameworks/BrailleTranslation.framework/Versions/A/BrailleTranslation'
 exports:         

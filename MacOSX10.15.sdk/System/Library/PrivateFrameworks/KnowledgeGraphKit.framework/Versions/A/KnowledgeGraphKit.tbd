@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2C578FC5-9920-3630-A9E0-22DA0204B4B2' ]
+uuids:           [ 'x86_64: 2EE5CD25-217B-383F-B0C7-3CDF240F9269' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/KnowledgeGraphKit.framework/Versions/A/KnowledgeGraphKit'
 swift-abi-version: 7
@@ -1325,8 +1325,9 @@ exports:
                        __ZN5degas8Database18nodeAttributeValueEyyRd, __ZN5degas8Database18nodeAttributeValueEyyRx, 
                        __ZN5degas8Database19edgeAttributeCursorEyyRNS_23AttributeInstanceCursorE, 
                        __ZN5degas8Database19nodeAttributeCursorEyyRNS_23AttributeInstanceCursorE, 
-                       __ZN5degas8Database19releaseSqliteMemoryEv, __ZN5degas8Database20updateTableInstancesEv, 
-                       __ZN5degas8Database21purgeEmptyBitsetPagesEv, __ZN5degas8Database21setEdgeAttributeValueEyyRKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
+                       __ZN5degas8Database19releaseSqliteMemoryEv, __ZN5degas8Database19rollbackTransactionEv, 
+                       __ZN5degas8Database20updateTableInstancesEv, __ZN5degas8Database21purgeEmptyBitsetPagesEv, 
+                       __ZN5degas8Database21setEdgeAttributeValueEyyRKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN5degas8Database21setEdgeAttributeValueEyyd, __ZN5degas8Database21setEdgeAttributeValueEyyx, 
                        __ZN5degas8Database21setNodeAttributeValueEyyRKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN5degas8Database21setNodeAttributeValueEyyd, __ZN5degas8Database21setNodeAttributeValueEyyx, 

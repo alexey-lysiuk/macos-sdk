@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EB3D7EE2-97B0-3FAC-9A80-7D92A5DCB087', 'x86_64: EB3D7EE2-97B0-3FAC-9A80-7D92A5DCB087' ]
+uuids:           [ 'x86_64: A1E4B21C-BD9E-30EC-8ED9-2027D0304C8A', 'x86_64: A1E4B21C-BD9E-30EC-8ED9-2027D0304C8A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices'
 exports:         

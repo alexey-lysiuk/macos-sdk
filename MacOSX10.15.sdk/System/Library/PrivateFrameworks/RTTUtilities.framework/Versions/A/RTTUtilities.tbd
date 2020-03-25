@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2BA92C00-27D3-3941-AE2D-A8CC01FFADBA', 'x86_64: 2BA92C00-27D3-3941-AE2D-A8CC01FFADBA' ]
+uuids:           [ 'x86_64: 8756C0A0-9C89-3B46-BC4B-CACAD77D7B0C', 'x86_64: 8756C0A0-9C89-3B46-BC4B-CACAD77D7B0C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RTTUtilities.framework/Versions/A/RTTUtilities'
 exports:         

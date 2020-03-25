@@ -259,6 +259,8 @@ Preserve the entitlement data (--entitlements).
 Preserve the internal requirements (--requirements option), including any explicit Designated
 Requirement. Note that all internal requirements are preserved or regenerated as a whole; you
 cannot pick and choose individual elements with this option.
+.It flags
+Preserve the option flags (-o), see the OPTION FLAGS section below.
 .It runtime
 Preserve the hardened runtime version (-o runtime flag, --runtime-version option) instead of
 overriding or deriving the version.
@@ -554,6 +556,10 @@ To display all information about Terminal.app's code signature:
 .Pp
 To extract the internal requirements from Terminal.app to standard output:
 .Dl codesign --display -r- Terminal.app
+.Pp
+To display the entitlements of a binary or bundle:
+.Dl codesign --display --entitlements :- /sbin/launchd
+.Dl codesign --display --entitlements :- Terminal.app
 .Sh DIAGNOSTICS
 .Nm
 exits 0 if all operations succeed. This indicates that all codes were

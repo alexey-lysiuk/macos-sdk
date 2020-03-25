@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DD6304A2-1692-3C69-9FEA-B51F92510D5B', 'x86_64: DD6304A2-1692-3C69-9FEA-B51F92510D5B' ]
+uuids:           [ 'x86_64: B2F72AF8-99DC-3613-B618-C588252EEAC2', 'x86_64: B2F72AF8-99DC-3613-B618-C588252EEAC2' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MediaAccessibility.framework/Versions/A/MediaAccessibility'
 current-version: 62
@@ -90,8 +90,9 @@ exports:
                        _MADisplayFilterPrefSuspendNotifications, _MADisplayFilterSetGain, 
                        _MADisplayFilterSetMatrix, _MADisplayFilterSetPostOffsets, 
                        _MADisplayFilterSetReduceWhitePoint, _MAImageCaptioningCopyCaption, 
-                       _MAImageCaptioningCopyMetadataTagPath, _MAImageCaptioningSetCaption, 
-                       _MALegibleOutputDidOutputAttributedStrings, _MALegibleOutputDidOutputAttributedStringsRegisterCallback, 
+                       _MAImageCaptioningCopyCaptionWithSource, _MAImageCaptioningCopyMetadataTagPath, 
+                       _MAImageCaptioningSetCaption, _MALegibleOutputDidOutputAttributedStrings, 
+                       _MALegibleOutputDidOutputAttributedStringsRegisterCallback, 
                        _MAMediaCharacteristicDescribesMusicAndSoundForAccessibility, 
                        _MAMediaCharacteristicDescribesVideoForAccessibility, _MAMediaCharacteristicTranscribesSpokenDialogForAccessibility, 
                        _MATestingCopyProfileIDs, _MAXCaptionAppearanceBehaviorCopyBackgroundColor, 

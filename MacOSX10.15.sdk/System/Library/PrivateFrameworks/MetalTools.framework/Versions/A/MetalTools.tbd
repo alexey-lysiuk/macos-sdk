@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 494BAEE0-8742-31F9-BC6D-C947A2756C5F', 'x86_64: 494BAEE0-8742-31F9-BC6D-C947A2756C5F' ]
+uuids:           [ 'x86_64: BA343D96-58EA-374A-818C-E42968101EA8', 'x86_64: BA343D96-58EA-374A-818C-E42968101EA8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MetalTools.framework/Versions/A/MetalTools'
 current-version: 0
@@ -33,13 +33,14 @@ exports:
     objc-classes:    [ MTLCountersBlitCommandEncoder, MTLCountersCommandBuffer, MTLCountersCommandQueue, 
                        MTLCountersComputeCommandEncoder, MTLCountersDevice, MTLCountersParallelRenderCommandEncoder, 
                        MTLCountersRenderCommandEncoder, MTLDebugArgumentEncoder, 
-                       MTLDebugBlitCommandEncoder, MTLDebugBuffer, MTLDebugBufferMarker, 
-                       MTLDebugCommandBuffer, MTLDebugCommandQueue, MTLDebugComputeCommandEncoder, 
-                       MTLDebugComputePipelineState, MTLDebugCounterSampleBuffer, 
-                       MTLDebugDepthStencilState, MTLDebugDevice, MTLDebugFunction, 
-                       MTLDebugHeap, MTLDebugIndirectCommandBuffer, MTLDebugIndirectRenderCommand, 
-                       MTLDebugLibrary, MTLDebugMotionEstimationPipeline, MTLDebugParallelRenderCommandEncoder, 
-                       MTLDebugPipelineLibrary, MTLDebugRenderCommandEncoder, MTLDebugRenderPipelineState, 
+                       MTLDebugBinaryArchive, MTLDebugBinaryLibrary, MTLDebugBlitCommandEncoder, 
+                       MTLDebugBuffer, MTLDebugBufferMarker, MTLDebugCommandBuffer, 
+                       MTLDebugCommandQueue, MTLDebugComputeCommandEncoder, MTLDebugComputePipelineState, 
+                       MTLDebugCounterSampleBuffer, MTLDebugDepthStencilState, MTLDebugDevice, 
+                       MTLDebugDynamicLibrary, MTLDebugFunction, MTLDebugHeap, MTLDebugIndirectCommandBuffer, 
+                       MTLDebugIndirectRenderCommand, MTLDebugLibrary, MTLDebugMotionEstimationPipeline, 
+                       MTLDebugParallelRenderCommandEncoder, MTLDebugPipelineLibrary, 
+                       MTLDebugRenderCommandEncoder, MTLDebugRenderPipelineState, 
                        MTLDebugResource, MTLDebugSamplerState, MTLDebugSharedEvent, 
                        MTLDebugTexture, MTLDebugVideoCommandEncoder, MTLGPUDebugCommandBuffer, 
                        MTLGPUDebugCommandQueue, MTLGPUDebugComputeCommandEncoder, 
@@ -51,16 +52,17 @@ exports:
                        MTLTelemetryDevice, MTLTelemetryHeap, MTLTelemetryParallelRenderCommandEncoder, 
                        MTLTelemetryRenderCommandEncoder, MTLTelemetryRenderPipelineState, 
                        MTLTelemetrySamplerState, MTLTelemetryTexture, MTLToolsArgumentEncoder, 
-                       MTLToolsBlitCommandEncoder, MTLToolsBuffer, MTLToolsCommandBuffer, 
-                       MTLToolsCommandEncoder, MTLToolsCommandQueue, MTLToolsComputeCommandEncoder, 
-                       MTLToolsComputePipelineState, MTLToolsCounterSampleBuffer, 
-                       MTLToolsDepthStencilState, MTLToolsDevice, MTLToolsEvent, 
-                       MTLToolsFence, MTLToolsFunction, MTLToolsHeap, MTLToolsIndirectCommandBuffer, 
-                       MTLToolsIndirectRenderCommand, MTLToolsLibrary, MTLToolsMotionEstimationPipeline, 
-                       MTLToolsObject, MTLToolsParallelRenderCommandEncoder, MTLToolsPipelineLibrary, 
-                       MTLToolsRenderCommandEncoder, MTLToolsRenderPipelineState, 
-                       MTLToolsResource, MTLToolsSamplerState, MTLToolsSharedEvent, 
-                       MTLToolsTexture, MTLToolsVideoCommandEncoder ]
+                       MTLToolsBinaryArchive, MTLToolsBinaryLibrary, MTLToolsBlitCommandEncoder, 
+                       MTLToolsBuffer, MTLToolsCommandBuffer, MTLToolsCommandEncoder, 
+                       MTLToolsCommandQueue, MTLToolsComputeCommandEncoder, MTLToolsComputePipelineState, 
+                       MTLToolsCounterSampleBuffer, MTLToolsDepthStencilState, MTLToolsDevice, 
+                       MTLToolsDynamicLibrary, MTLToolsEvent, MTLToolsFence, MTLToolsFunction, 
+                       MTLToolsHeap, MTLToolsIndirectCommandBuffer, MTLToolsIndirectRenderCommand, 
+                       MTLToolsLibrary, MTLToolsMotionEstimationPipeline, MTLToolsObject, 
+                       MTLToolsParallelRenderCommandEncoder, MTLToolsPipelineLibrary, 
+                       MTLToolsRasterizationRateMap, MTLToolsRenderCommandEncoder, 
+                       MTLToolsRenderPipelineState, MTLToolsResource, MTLToolsSamplerState, 
+                       MTLToolsSharedEvent, MTLToolsTexture, MTLToolsVideoCommandEncoder ]
     objc-ivars:      [ MTLDebugBuffer._common, MTLDebugCommandBuffer._currentEncoder, 
                        MTLDebugHeap._historyLock, MTLDebugRenderCommandEncoder._attachmentInfo, 
                        MTLDebugRenderCommandEncoder._dirtyBits, MTLDebugRenderCommandEncoder._openGLModeEnabled, 

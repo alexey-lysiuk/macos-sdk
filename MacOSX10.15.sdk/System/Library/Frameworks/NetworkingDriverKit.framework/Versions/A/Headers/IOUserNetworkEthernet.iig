@@ -89,6 +89,18 @@ public:
 
     virtual kern_return_t
     SetWakeOnMagicPacketEnable(bool enable) = 0;
+
+    virtual kern_return_t
+    SetMTU( uint32_t mtu ) LOCAL = 0;
+
+    virtual kern_return_t
+    GetMaxTransferUnit( uint32_t *mtu ) LOCAL = 0;
+    
+    virtual kern_return_t
+    SetHardwareAssists( uint32_t hardwareAssists ) LOCAL = 0;
+
+    virtual kern_return_t
+    GetHardwareAssists( uint32_t *hardwareAssists ) LOCAL = 0;
 };
 
 class EXTENDS (IOUserNetworkEthernet) IOUserNetworkEthernetPrivate

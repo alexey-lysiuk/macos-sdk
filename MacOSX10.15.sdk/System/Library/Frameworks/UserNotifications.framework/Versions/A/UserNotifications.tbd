@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F01735A5-5DCF-301D-AB0F-E28FCECA3C4A', 'x86_64: F01735A5-5DCF-301D-AB0F-E28FCECA3C4A' ]
+uuids:           [ 'x86_64: 5D9AF9BD-5A3F-3805-B94E-280BF0E02F54', 'x86_64: 5D9AF9BD-5A3F-3805-B94E-280BF0E02F54' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/UserNotifications.framework/Versions/A/UserNotifications'
 exports:         

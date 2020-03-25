@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D54D57D1-6CDC-3A24-A02D-77E87FFE92D0', 'x86_64: D54D57D1-6CDC-3A24-A02D-77E87FFE92D0' ]
+uuids:           [ 'x86_64: 9B131F28-080B-370D-A6FD-BDF3F20DED98', 'x86_64: 9B131F28-080B-370D-A6FD-BDF3F20DED98' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Rapport.framework/Versions/A/Rapport'
 current-version: 0
@@ -37,7 +37,8 @@ exports:
                        RPIdentity, RPLegacyDeviceDiscovery, RPLegacyService, RPLegacySession, 
                        RPMediaControlSession, RPPeopleDiscovery, RPPerson, RPPrivateAdvertiser, 
                        RPPrivateDiscovery, RPRemoteDisplayDevice, RPRemoteDisplayDiscovery, 
-                       RPRemoteDisplayServer, RPRemoteDisplaySession, RPRequestRegistration, 
-                       RPServer, RPSession, RPSiriAudioSession, RPSiriSession, RPStreamServer, 
-                       RPStreamSession, RPTextInputSession ]
+                       RPRemoteDisplayServer, RPRemoteDisplaySession, RPRemoteXPCConnection, 
+                       RPRemoteXPCListener, RPRequestRegistration, RPServer, RPSession, 
+                       RPSiriAudioSession, RPSiriSession, RPStreamServer, RPStreamSession, 
+                       RPTextInputSession ]
 ...

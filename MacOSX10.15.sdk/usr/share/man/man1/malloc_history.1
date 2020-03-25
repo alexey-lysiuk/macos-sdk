@@ -1,5 +1,5 @@
-.\" Copyright (c) 2000-2018 Apple Inc. All rights reserved.
-.Dd June 12, 2018
+.\" Copyright (c) 2000-2019 Apple Inc. All rights reserved.
+.Dd Oct. 7, 2019
 .Dt "malloc_history" 1
 .Os
 .Sh NAME
@@ -101,17 +101,45 @@ The
 .Fl callTree
 option generates a call tree of the backtraces of malloc calls and anonymous VM regions for live allocations in the target process, or
 for allocations that were live at the high water mark.  The call tree can be filtered to backtraces of specific allocations or classes,
-by passing one or more addresses or a <classes-pattern>.  The <classes-pattern> regular expression is interpreted as an extended
-(modern) regular expression as
-described by the re_format(7) manual page.  Note that toll-free-bridged CoreFoundation and Foundation
-classes have the "__NSCF" prefix rather than just "NS" or "CF".  Examples of valid classes-patterns include:
+by passing one or more addresses or a <classes-pattern>.
 .Pp
+The <classes-pattern> regular expression is interpreted as an extended
+(modern) regular expression as described by the re_format(7) manual page.
+"malloc" or "non-object" can be used to refer to blocks that are not of
+any specific type. Examples of valid classes-patterns include:
 .Bl -tag -offset indent -compact
-.It __NSCFString
+.It CFString
 .It 'NS.*'
 .It '__NSCFString|__NSCFArray'
 .It '.*(String|Array)'
 .It 'VM:.*'
+.It malloc
+.It non-object
+.It malloc|.*String
+.El
+.Pp
+The <classes-pattern> pattern can be followed by an optional allocation size specifier, which can be
+one of the following forms. The square brackets are required. The size can include
+a 'k' suffix for kilobytes, or an 'm' suffix for megabytes:
+.Bl -tag -offset indent -compact
+.It [size]
+.It [lowerBound-upperBound]
+.It [lowerBound+]
+.It [-upperBound]
+.El
+.Pp
+Examples of <classes-pattern> with size specifications include:
+.Bl -tag -offset indent -compact -width "'(NS|CF).*[10k+]'"
+.It malloc[2048]
+all malloc blocks of size 2048
+.It malloc[1k-8k]
+all malloc blocks between 1k and 8k
+.It '(NS|CF).*[10k+]'
+all NS or CF objects 10k or larger
+.It [-1024]
+all allocations 1024 bytes or less
+.It VM.*[1m+]
+all Virtual Memory regions of size 1m or larger; by default this is dirty+swapped-volative size, unless the -virtual flag is passed
 .El
 .Pp
 The call tree format is similar to the output from

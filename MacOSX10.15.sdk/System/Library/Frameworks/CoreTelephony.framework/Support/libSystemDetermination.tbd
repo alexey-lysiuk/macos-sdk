@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F6D18E93-4D34-3F39-9B68-C1F32E6049C2' ]
+uuids:           [ 'x86_64: D0A27274-4657-3287-B54C-BE481D793C63' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libSystemDetermination.dylib'
 exports:         
@@ -30,6 +30,7 @@ exports:
                        __ZN26SystemDeterminationManager22notifyServiceBootstrapERKN8dispatch5groupE, 
                        __ZN26SystemDeterminationManager23handleAppIDChanged_syncEN10subscriber7SimSlotEi, 
                        __ZN26SystemDeterminationManager23handleCallInactive_syncERK13PersonalityIDb, 
+                       __ZN26SystemDeterminationManager23handleRadioEnabled_syncEv, 
                        __ZN26SystemDeterminationManager24ImsEmergencyAuthDelegate18handleAuthenticateERKN3ims3aka7RequestE, 
                        __ZN26SystemDeterminationManager24createEmergencyIMSClientEv, 
                        __ZN26SystemDeterminationManager24handleRadioDisabled_syncEv, 
@@ -64,7 +65,6 @@ exports:
                        __ZN26SystemDeterminationManager31sendRequestCountryOfOriginationEv, 
                        __ZN26SystemDeterminationManager32evaluateWifiKeepAliveStatus_syncERKNSt3__110shared_ptrIN2sd32IMSSubscriberControllerInterfaceEEE, 
                        __ZN26SystemDeterminationManager32handleRegisteredNetworkInfo_syncEN10subscriber7SimSlotERKNSt3__16vectorI27RegisteredNetworkInfoChangeNS2_9allocatorIS4_EEEERK21RegisteredNetworkInfo, 
-                       __ZN26SystemDeterminationManager32handleWiFiOffInAirplaneMode_syncEb, 
                        __ZN26SystemDeterminationManager32updateFullFunctionPCRegistrationERK13PersonalityIDRKN2sd20ImsRegistrationStateE, 
                        __ZN26SystemDeterminationManager33handleESIMSubscriptionChange_syncEv, 
                        __ZN26SystemDeterminationManager33notifyServicesOfRegistrationStateERKNSt3__110shared_ptrIN2sd27IMSSubscriberModelInterfaceEEERKNS2_20ImsRegistrationStateE, 
@@ -345,7 +345,8 @@ exports:
                        __ZNK2sd23IMSSubscriberController26getDCNHysteresisTimeoutValEv, 
                        __ZNK2sd23IMSSubscriberController27getIMSNetworkInterface_syncEv, 
                        __ZNK2sd23IMSSubscriberController27isXcapConfigUpdateNecessaryEv, 
-                       __ZNK2sd23IMSSubscriberController28sendAirplaneModeToggled_syncEv, 
+                       __ZNK2sd23IMSSubscriberController28sendAirplaneModeEnabled_syncEv, 
+                       __ZNK2sd23IMSSubscriberController29sendAirplaneModeDisabled_syncEv, 
                        __ZNK2sd23IMSSubscriberController29shouldSendImsStatusToBasebandEv, 
                        __ZNK2sd23IMSSubscriberController32sendAccessNetworkInfoUpdate_syncEv, 
                        __ZNK2sd23IMSSubscriberController37getPendingImsSwitchStatusNotificationEv, 
@@ -379,6 +380,7 @@ exports:
                        __ZThn112_N26SystemDeterminationManager22handleSimsChanged_syncERK12BasicSimInfo, 
                        __ZThn112_N26SystemDeterminationManager23handleAppIDChanged_syncEN10subscriber7SimSlotEi, 
                        __ZThn112_N26SystemDeterminationManager23handleCallInactive_syncERK13PersonalityIDb, 
+                       __ZThn112_N26SystemDeterminationManager23handleRadioEnabled_syncEv, 
                        __ZThn112_N26SystemDeterminationManager24handleRadioDisabled_syncEv, 
                        __ZThn112_N26SystemDeterminationManager24handleWifiAvailable_syncEb, 
                        __ZThn112_N26SystemDeterminationManager25handleImsDownCommand_syncEN10subscriber7SimSlotE, 
@@ -399,7 +401,6 @@ exports:
                        __ZThn112_N26SystemDeterminationManager31handleOperatorBundleChange_syncEN10subscriber7SimSlotE16BundleChangeType, 
                        __ZThn112_N26SystemDeterminationManager31handlePhoneNumberAvailable_syncEN10subscriber7SimSlotERKNSt3__110shared_ptrI14CSIPhoneNumberEEb, 
                        __ZThn112_N26SystemDeterminationManager32handleRegisteredNetworkInfo_syncEN10subscriber7SimSlotERKNSt3__16vectorI27RegisteredNetworkInfoChangeNS2_9allocatorIS4_EEEERK21RegisteredNetworkInfo, 
-                       __ZThn112_N26SystemDeterminationManager32handleWiFiOffInAirplaneMode_syncEb, 
                        __ZThn112_N26SystemDeterminationManager33handleESIMSubscriptionChange_syncEv, 
                        __ZThn112_N26SystemDeterminationManager36handleAccessControlClassChanged_syncEN10subscriber7SimSlotERKNSt3__16vectorIhNS2_9allocatorIhEEEE, 
                        __ZThn112_N26SystemDeterminationManager37handleDataLowPowerModeTransition_syncEb, 

@@ -50,7 +50,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 restore or synchronization.
                 Call supportsHealthRecords before attempting to request authorization for any clinical types.
  */
-- (BOOL)supportsHealthRecords API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
+- (BOOL)supportsHealthRecords API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
 
 /*!
  @method        authorizationStatusForType:
@@ -261,7 +261,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @discussion    This method will asynchronously begin a workout session. The methods on the session's delegate will be 
                 called when the session has successfully started or fails to start.
  */
-- (void)startWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's start method", watchos(2.0, 5.0)) __IOS_PROHIBITED;
+- (void)startWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's start method", watchos(2.0, 5.0)) API_UNAVAILABLE(ios);
 
 /*!
  @method        endWorkoutSession:
@@ -270,7 +270,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 transition to HKWorkoutSessionStateEnded. Once a workout session is ended, it cannot be reused to start
                 a new workout session.
  */
-- (void)endWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's end method", watchos(2.0, 5.0)) __IOS_PROHIBITED;
+- (void)endWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's end method", watchos(2.0, 5.0)) API_UNAVAILABLE(ios);
 
 /*!
  @method        pauseWorkoutSession:
@@ -279,7 +279,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 will transition to HKWorkoutSessionStatePaused. An HKWorkoutEventTypePause will be generated and
                 delivered to the workout session's delegate.
  */
-- (void)pauseWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's pause method", watchos(3.0, 5.0)) __IOS_PROHIBITED;
+- (void)pauseWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's pause method", watchos(3.0, 5.0)) API_UNAVAILABLE(ios);
 
 /*!
  @method        resumeWorkoutSession:
@@ -288,7 +288,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 will transition to HKWorkoutSessionStateRunning. An HKWorkoutEventTypeResume will be generated and
                 delivered to the workout session's delegate.
  */
-- (void)resumeWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's resume method", watchos(3.0, 5.0)) __IOS_PROHIBITED;
+- (void)resumeWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's resume method", watchos(3.0, 5.0)) API_UNAVAILABLE(ios);
 
 /*!
  @method        startWatchAppWithWorkoutConfiguration:completion:
@@ -305,7 +305,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @abstract      Recovers an active workout session after a client crash. If no session is available to be re-attached,
                 nil will be returned. If an error occurs, session will be nil and error will be set appropriately.
  */
-- (void)recoverActiveWorkoutSessionWithCompletion:(void (^)(HKWorkoutSession * _Nullable session, NSError * _Nullable error))completion API_AVAILABLE(watchos(5.0)) __IOS_PROHIBITED;
+- (void)recoverActiveWorkoutSessionWithCompletion:(void (^)(HKWorkoutSession * _Nullable session, NSError * _Nullable error))completion API_AVAILABLE(watchos(5.0)) API_UNAVAILABLE(ios);
 
 @end
 
@@ -321,11 +321,11 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 HKQuantityTypeIdentifierStepCount) have a minimum frequency of HKUpdateFrequencyHourly. This is enforced
                 transparently to the caller.
  */
-- (void)enableBackgroundDeliveryForType:(HKObjectType *)type frequency:(HKUpdateFrequency)frequency withCompletion:(void(^)(BOOL success, NSError * _Nullable error))completion __WATCHOS_PROHIBITED;
+- (void)enableBackgroundDeliveryForType:(HKObjectType *)type frequency:(HKUpdateFrequency)frequency withCompletion:(void(^)(BOOL success, NSError * _Nullable error))completion API_UNAVAILABLE(watchos);
 
-- (void)disableBackgroundDeliveryForType:(HKObjectType *)type withCompletion:(void(^)(BOOL success, NSError * _Nullable error))completion __WATCHOS_PROHIBITED;
+- (void)disableBackgroundDeliveryForType:(HKObjectType *)type withCompletion:(void(^)(BOOL success, NSError * _Nullable error))completion API_UNAVAILABLE(watchos);
 
-- (void)disableAllBackgroundDeliveryWithCompletion:(void(^)(BOOL success, NSError * _Nullable error))completion __WATCHOS_PROHIBITED;
+- (void)disableAllBackgroundDeliveryWithCompletion:(void(^)(BOOL success, NSError * _Nullable error))completion API_UNAVAILABLE(watchos);
 
 @end
 

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreMedia -swift-version 5 -O -enforce-exclusivity=unchecked -module-name CoreMedia
 import CoreAudio
 import CoreAudioTypes
@@ -12,78 +12,6 @@ import Dispatch
 import Foundation
 import Swift
 import _SwiftCoreMediaOverlayShims
-@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-public protocol CMAttachmentBearerProtocol {
-  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-  var attachments: CoreMedia.CMAttachmentBearerAttachments { get }
-  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-  func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
-}
-@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-public struct CMAttachmentBearerAttachments {
-  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-  public enum Value {
-    case shouldNotPropagate(Any)
-    case shouldPropagate(Any)
-    public var value: Any {
-      get
-    }
-    public var mode: CoreMedia.CMAttachmentBearerAttachments.Mode {
-      get
-    }
-  }
-  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-  public enum Mode : CoreMedia.CMAttachmentMode {
-    case shouldNotPropagate
-    case shouldPropagate
-    public typealias RawValue = CoreMedia.CMAttachmentMode
-    public init?(rawValue: CoreMedia.CMAttachmentMode)
-    public var rawValue: CoreMedia.CMAttachmentMode {
-      get
-    }
-  }
-  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-  public subscript(key: Swift.String) -> CoreMedia.CMAttachmentBearerAttachments.Value? {
-    get
-    set(newValue)
-  }
-  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-  public func removeAll()
-  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-  public var nonPropagated: [Swift.String : Any] {
-    get
-  }
-  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-  public var propagated: [Swift.String : Any] {
-    get
-  }
-  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-  public func merge(_ attachments: [Swift.String : Any], mode: CoreMedia.CMAttachmentBearerAttachments.Mode)
-}
-@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-extension CMBlockBuffer : CoreMedia.CMAttachmentBearerProtocol {
-  public var attachments: CoreMedia.CMAttachmentBearerAttachments {
-    get
-    _modify
-  }
-  public func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
-}
-@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-extension CMSampleBuffer : CoreMedia.CMAttachmentBearerProtocol {
-  public var attachments: CoreMedia.CMAttachmentBearerAttachments {
-    get
-    _modify
-  }
-  public func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
-}
-@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-extension CVBuffer : CoreMedia.CMAttachmentBearerProtocol {
-  public var attachments: CoreMedia.CMAttachmentBearerAttachments {
-    get
-    _modify
-  }
-  public func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
-}
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 public protocol CMBlockBufferProtocol {
   var owner: CoreMedia.CMBlockBuffer { get }
@@ -290,12 +218,12 @@ extension CMBufferQueue {
     public let getSize: CoreMedia.CMBufferGetSizeHandler?
     public struct Builder {
       public var dataBecameReadyNotification: Swift.String?
-      mutating public func getDecodeTimeStamp(_ body: @escaping CoreMedia.CMBufferGetTimeHandler)
-      mutating public func getPresentationTimeStamp(_ body: @escaping CoreMedia.CMBufferGetTimeHandler)
-      mutating public func getDuration(_ body: @escaping CoreMedia.CMBufferGetTimeHandler)
-      mutating public func isDataReady(_ body: @escaping CoreMedia.CMBufferGetBooleanHandler)
-      mutating public func compare(_ body: @escaping CoreMedia.CMBufferCompareHandler)
-      mutating public func getSize(_ body: @escaping CoreMedia.CMBufferGetSizeHandler)
+      public mutating func getDecodeTimeStamp(_ body: @escaping CoreMedia.CMBufferGetTimeHandler)
+      public mutating func getPresentationTimeStamp(_ body: @escaping CoreMedia.CMBufferGetTimeHandler)
+      public mutating func getDuration(_ body: @escaping CoreMedia.CMBufferGetTimeHandler)
+      public mutating func isDataReady(_ body: @escaping CoreMedia.CMBufferGetBooleanHandler)
+      public mutating func compare(_ body: @escaping CoreMedia.CMBufferCompareHandler)
+      public mutating func getSize(_ body: @escaping CoreMedia.CMBufferGetSizeHandler)
     }
     public init(withHandlers body: (inout CoreMedia.CMBufferQueue.Handlers.Builder) -> Swift.Void)
     public func withHandlers(_ body: (inout CoreMedia.CMBufferQueue.Handlers.Builder) -> Swift.Void) -> CoreMedia.CMBufferQueue.Handlers
@@ -424,7 +352,7 @@ extension CMBufferQueue {
   public struct Buffers : Swift.Sequence {
     public typealias Element = CoreMedia.CMBuffer
     public struct Iterator : Swift.IteratorProtocol {
-      mutating public func next() -> CoreMedia.CMBuffer?
+      public mutating func next() -> CoreMedia.CMBuffer?
       public typealias Element = AnyObject
     }
     public func makeIterator() -> CoreMedia.CMBufferQueue.Buffers.Iterator
@@ -1332,7 +1260,7 @@ extension CMSampleBuffer {
     }
     public typealias Element = (key: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key, value: Any)
     public struct Iterator : Swift.IteratorProtocol {
-      mutating public func next() -> (key: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key, value: Any)?
+      public mutating func next() -> (key: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key, value: Any)?
       public typealias Element = (key: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key, value: Any)
     }
     public func makeIterator() -> CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Iterator
@@ -1368,7 +1296,7 @@ extension CMSampleBuffer {
   public struct SingleSampleBuffers : Swift.Sequence {
     public typealias Element = CoreMedia.CMSampleBuffer
     public struct Iterator : Swift.IteratorProtocol {
-      mutating public func next() -> CoreMedia.CMSampleBuffer?
+      public mutating func next() -> CoreMedia.CMSampleBuffer?
       public typealias Element = CoreMedia.CMSampleBuffer
     }
     public func makeIterator() -> CoreMedia.CMSampleBuffer.SingleSampleBuffers.Iterator
@@ -1820,6 +1748,78 @@ extension _CMObjectiveCBridgeableWithRawValue where Self.RawValue : Swift._Objec
   public static func _forceBridgeFromObjectiveC(_ source: Self._ObjectiveCType, result: inout Self?)
   public static func _conditionallyBridgeFromObjectiveC(_ source: Self._ObjectiveCType, result: inout Self?) -> Swift.Bool
   public static func _unconditionallyBridgeFromObjectiveC(_ source: Self._ObjectiveCType?) -> Self
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol CMAttachmentBearerProtocol {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  var attachments: CoreMedia.CMAttachmentBearerAttachments { get }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public struct CMAttachmentBearerAttachments {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum Value {
+    case shouldNotPropagate(Any)
+    case shouldPropagate(Any)
+    public var value: Any {
+      get
+    }
+    public var mode: CoreMedia.CMAttachmentBearerAttachments.Mode {
+      get
+    }
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum Mode : CoreMedia.CMAttachmentMode {
+    case shouldNotPropagate
+    case shouldPropagate
+    public typealias RawValue = CoreMedia.CMAttachmentMode
+    public init?(rawValue: CoreMedia.CMAttachmentMode)
+    public var rawValue: CoreMedia.CMAttachmentMode {
+      get
+    }
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public subscript(key: Swift.String) -> CoreMedia.CMAttachmentBearerAttachments.Value? {
+    get
+    set(newValue)
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func removeAll()
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var nonPropagated: [Swift.String : Any] {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var propagated: [Swift.String : Any] {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func merge(_ attachments: [Swift.String : Any], mode: CoreMedia.CMAttachmentBearerAttachments.Mode)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBlockBuffer : CoreMedia.CMAttachmentBearerProtocol {
+  public var attachments: CoreMedia.CMAttachmentBearerAttachments {
+    get
+    _modify
+  }
+  public func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMSampleBuffer : CoreMedia.CMAttachmentBearerProtocol {
+  public var attachments: CoreMedia.CMAttachmentBearerAttachments {
+    get
+    _modify
+  }
+  public func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CVBuffer : CoreMedia.CMAttachmentBearerProtocol {
+  public var attachments: CoreMedia.CMAttachmentBearerAttachments {
+    get
+    _modify
+  }
+  public func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
 }
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension CoreMedia.CMAttachmentBearerAttachments.Mode : Swift.Equatable {}

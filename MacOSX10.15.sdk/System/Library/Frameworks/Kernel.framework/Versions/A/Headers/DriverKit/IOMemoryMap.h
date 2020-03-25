@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOMemoryMap.iig */
+/* iig(DriverKit-73.100.4) generated from IOMemoryMap.iig */
 
-/* IOMemoryMap.iig:1-57 */
+/* IOMemoryMap.iig:1-46 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -38,12 +38,17 @@
 
 #include <DriverKit/OSObject.h>  /* .iig include */
 
-struct IOMemoryMapPrivateState {
+struct _IOMemoryMapPrivateState {
 	uint64_t length;
 	uint64_t offset;
 	uint64_t options;
 	uint64_t address;
 };
+
+/* source class IOMemoryMap IOMemoryMap.iig:47-87 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
 
 /*!
  * @class IOMemoryMap
@@ -56,12 +61,47 @@ struct IOMemoryMapPrivateState {
  * Methods in this class are used for memory that was supplied as a parameter.
  */
 
-/* class IOMemoryMap IOMemoryMap.iig:58-87 */
+class KERNEL IOMemoryMap : public OSObject
+{
+public:
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+	
+    /*!
+     * @brief       Obtain the address of the memory mapping.
+     * @return      Address.
+     */
+	uint64_t
+	GetAddress() LOCALONLY;
+
+    /*!
+     * @brief       Obtain the length of the memory mapping.
+     * @return      Length.
+     */
+	uint64_t
+	GetLength() LOCALONLY;
+
+    /*!
+     * @brief       Obtain the offset of the memory mapping.
+     * @return      Offset.
+     */
+	uint64_t
+	GetOffset() LOCALONLY;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOMemoryMap IOMemoryMap.iig:47-87 */
 
 #define IOMemoryMap__CopyState_ID            0xfc92b3d7f2d48ec7ULL
 
 #define IOMemoryMap__CopyState_Args \
-        IOMemoryMapPrivateState * state
+        _IOMemoryMapPrivateState * state
 
 #define IOMemoryMap_Methods \
 \
@@ -75,7 +115,7 @@ public:\
 \
     kern_return_t\
     _CopyState(\
-        IOMemoryMapPrivateState * state,\
+        _IOMemoryMapPrivateState * state,\
         OSDispatchMethod supermethod = NULL);\
 \
     uint64_t\
@@ -131,6 +171,9 @@ public:\
 
 
 
+
+
+#endif /* !__DOCUMENTATION__ */
 
 
 /* IOMemoryMap.iig:96- */

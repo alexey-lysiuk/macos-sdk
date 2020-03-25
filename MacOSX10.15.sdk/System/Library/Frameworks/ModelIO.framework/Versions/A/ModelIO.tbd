@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 527E6C8D-DF2E-3412-B13C-35BA458353D9', 'x86_64: 527E6C8D-DF2E-3412-B13C-35BA458353D9' ]
+uuids:           [ 'x86_64: 78A833E0-22C1-3F0E-BBA6-ECA7668C673C', 'x86_64: 78A833E0-22C1-3F0E-BBA6-ECA7668C673C' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ModelIO.framework/Versions/A/ModelIO'
-current-version: 217
+current-version: 217.42
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MDLAssetLoadingOptionAssetAtTime, _MDLAssetLoadingOptionBufferAllocator, 

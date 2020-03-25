@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4375E9DB-AF8A-37C2-BB64-CA926751C2D1' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/AutomaticAssessmentConfiguration.framework/Versions/A/AutomaticAssessmentConfiguration'
+swift-abi-version: 7
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AEAssessmentErrorDomain, _AEError, _AEErrorUnderlyingError, 
+                       _AEErrorUserInfo ]
+    objc-classes:    [ AEAssessmentConfiguration, AEAssessmentSession ]
+...

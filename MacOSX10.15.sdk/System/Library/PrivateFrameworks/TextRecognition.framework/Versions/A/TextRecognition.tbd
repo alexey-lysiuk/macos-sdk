@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0E83B8AF-5568-3606-9185-3CE3C3234673', 'x86_64: 0E83B8AF-5568-3606-9185-3CE3C3234673' ]
+uuids:           [ 'x86_64: 86CAA6AE-1450-39FA-8D2D-8FB5E32A43A0', 'x86_64: 86CAA6AE-1450-39FA-8D2D-8FB5E32A43A0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/TextRecognition.framework/Versions/A/TextRecognition'
 current-version: 157
@@ -287,8 +287,8 @@ exports:
                        _calculateGradient, _cannyEdgeFilter, _checkCardCode, _checkCodePrefix, 
                        _checkPartialCodePrefix, _closestNameInContacts, _computeReferenceDateFromString, 
                        _correctHistogram, _createBitmapFromImage, _createCachedContact, 
-                       _extractBestDateString, _extractCardCode, _extractCardCodeHK, 
-                       _extractCardNumberResults, _extractCardholderNameResults, 
+                       _enrichedNumbersListHK, _extractBestDateString, _extractCardCode, 
+                       _extractCardCodeHK, _extractCardNumberResults, _extractCardholderNameResults, 
                        _extractExpirationDateResults, _extractValidDateStrings, _filterGreyPixels, 
                        _findCenterOfGravity, _find_homography, _gaussianBlur, _gaussianFilter5x5, 
                        _gaussianFilter9x9, _generateIntegralImage, _histogramEqualizeBitmap, 

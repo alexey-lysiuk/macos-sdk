@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 261CDFD3-BEFF-3BE8-9322-8A0F5282D4B9', 'x86_64: 261CDFD3-BEFF-3BE8-9322-8A0F5282D4B9' ]
+uuids:           [ 'x86_64: C34C8FCE-54DE-3884-8074-057B06807D22', 'x86_64: C34C8FCE-54DE-3884-8074-057B06807D22' ]
 platform:        zippered
 install-name:    '/usr/lib/libAudioToolboxUtility.dylib'
 exports:         
@@ -70,11 +70,7 @@ exports:
                        __ZN12CASerializerC1EP8__CFData, __ZN12CASerializerC2EP8__CFData, 
                        __ZN12CASerializerD1Ev, __ZN12CASerializerD2Ev, __ZN12KaiserWindowC1Ejd, 
                        __ZN12KaiserWindowC2Ejd, __ZN12KaiserWindowD1Ev, __ZN12KaiserWindowD2Ev, 
-                       __ZN12MemAllocator10InitializeEm, __ZN12MemAllocator15sMemoryResourceE, 
-                       __ZN12MemAllocator15sReferenceCountE, __ZN12MemAllocator19sBaseMemoryResourceE, 
-                       __ZN12MemAllocator7DestroyEv, __ZN12MemAllocator7FreeMemEPvm, 
-                       __ZN12MemAllocator7ReleaseEv, __ZN12MemAllocator8AllocMemEm, 
-                       __ZN12MemAllocator9ReferenceEv, __ZN12MemoryStream11GetPositionEv, 
+                       __ZN12MemAllocator8ResourceEv, __ZN12MemoryStream11GetPositionEv, 
                        __ZN12MemoryStream4ReadEPvm, __ZN12MemoryStream4SeekEx, __ZN12MemoryStream4SkipEx, 
                        __ZN12MemoryStream5WriteEPvm, __ZN12MemoryStream7GetDataEv, 
                        __ZN12MemoryStreamC1EPK8__CFData, __ZN12MemoryStreamC1ERK7TStreami, 
@@ -135,8 +131,8 @@ exports:
                        __ZN15OpaqueObjectMgr6removeEj, __ZN15OpaqueObjectMgr9sInstanceE, 
                        __ZN15OpaqueObjectMgrC1Ev, __ZN15OpaqueObjectMgrC2Ev, __ZN15XBasicMIGServer22SetServerDispatchQueueERKN10applesauce8dispatch2v15queueE, 
                        __ZN16BaseOpaqueObject16ResolveOpaqueRefERKNS_4RTTIENS_3RefE, 
-                       __ZN16BaseOpaqueObject16destroyOpaqueRefEv, __ZN16BaseOpaqueObject5sRTTIE, 
-                       __ZN16BaseOpaqueObject9checkRTTIERKNS_4RTTIE, __ZN16BaseOpaqueObjectC2Ev, 
+                       __ZN16BaseOpaqueObject16destroyOpaqueRefEv, __ZN16BaseOpaqueObject9checkRTTIERKNS_4RTTIE, 
+                       __ZN16BaseOpaqueObject9sBaseRTTIE, __ZN16BaseOpaqueObjectC2Ev, 
                        __ZN16BaseOpaqueObjectD0Ev, __ZN16BaseOpaqueObjectD1Ev, __ZN16BaseOpaqueObjectD2Ev, 
                        __ZN16CAAppWorkArounds10CSCheckFixEPK10__CFString, __ZN16CAAppWorkArounds16PrimeWorkaroundsEv, 
                        __ZN16CAAppWorkArounds18CheckFixForOlderSTEv, __ZN16CAAppWorkArounds18PrimeUIWorkaroundsEv, 

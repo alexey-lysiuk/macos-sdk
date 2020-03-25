@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
     AVCaptureDepthDataOutput is a concrete subclass of AVCaptureOutput that can be used to process depth data in a streaming fashion.
  
  @discussion
-    Instances of AVCaptureDepthDataOutput capture AVDepthData objects expressing disparity/depth. Applications can access the frames with the captureOutput:didOutputDepthData:fromConnection: delegate method.
+    Instances of AVCaptureDepthDataOutput capture AVDepthData objects expressing disparity/depth. Applications can access the frames with the depthDataOutput:didOutputDepthData:fromConnection: delegate method.
  
     AVCaptureDepthDataOutput always provides depth data in the format expressed by its source's -[AVCaptureDevice activeDepthDataFormat] property. If you wish to receive depth data in another format, you may choose from the -[AVCaptureDevice activeFormat]'s -[AVCaptureDeviceFormat supportedDepthDataFormats], and set it using -[AVCaptureDevice setActiveDepthDataFormat:].
  */
@@ -64,7 +64,7 @@ API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROH
     The receiver's delegate.
  
  @discussion
-    The value of this property is an object conforming to the AVCaptureDepthDataOutputDelegate protocol that receives depth data as it is captured. The delegate is set using the setDelegate:queue: method.
+    The value of this property is an object conforming to the AVCaptureDepthDataOutputDelegate protocol that receives depth data as it is captured. The delegate is set using the setDelegate:callbackQueue: method.
  */
 @property(nonatomic, readonly, nullable) id<AVCaptureDepthDataOutputDelegate> delegate;
 
@@ -84,7 +84,7 @@ API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROH
     Specifies whether the receiver should always discard any depth data that is not processed before the next depth data is captured.
  
  @discussion
-    When the value of this property is YES, the receiver will immediately discard depth data that are captured while the depthDataCallbackQueue is blocked. When the value of this property is NO, delegates will be allowed more time to process old depth data before new depth data are discarded, but application memory usage may increase as a result. The default value is YES.
+    When the value of this property is YES, the receiver will immediately discard depth data that are captured while the delegateCallbackQueue is blocked. When the value of this property is NO, delegates will be allowed more time to process old depth data before new depth data are discarded, but application memory usage may increase as a result. The default value is YES.
  */
 @property(nonatomic) BOOL alwaysDiscardsLateDepthData;
 

@@ -27,7 +27,7 @@ __BEGIN_DECLS
 OS_EXPORT
 API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios, tvos, watchos)
 es_return_t
-es_subscribe(es_client_t * _Nonnull client, es_event_type_t * _Nonnull events, uint32_t event_count);
+es_subscribe(es_client_t * _Nonnull client, const es_event_type_t * _Nonnull events, uint32_t event_count);
 
 /**
  * Unsubscribe from some set of events
@@ -40,7 +40,7 @@ es_subscribe(es_client_t * _Nonnull client, es_event_type_t * _Nonnull events, u
 OS_EXPORT
 API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios, tvos, watchos)
 es_return_t
-es_unsubscribe(es_client_t * _Nonnull client, es_event_type_t * _Nonnull events, uint32_t event_count);
+es_unsubscribe(es_client_t * _Nonnull client, const es_event_type_t * _Nonnull events, uint32_t event_count);
 
 /**
  * Unsubscribe from all events
@@ -213,7 +213,7 @@ es_new_client(es_client_t * _Nullable * _Nonnull client, es_handler_block_t _Non
 OS_EXPORT
 API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios, tvos, watchos)
 es_return_t
-es_delete_client(es_client_t * _Nonnull client);
+es_delete_client(es_client_t * _Nullable client);
 
 __END_DECLS;
 

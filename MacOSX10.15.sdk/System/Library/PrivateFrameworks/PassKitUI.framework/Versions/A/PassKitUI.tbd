@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F6403D6-3495-383E-ADD1-C5E95E43B5BF' ]
+uuids:           [ 'x86_64: 3A5B83D6-1A17-3AB1-B1BD-F499FD5AFED2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PassKitUI.framework/Versions/A/PassKitUI'
 exports:         
@@ -9,17 +9,17 @@ exports:
                        _PKEaseInOutFunction, _PKEaseInOutOverFunction, _PKFlyUpEastFunction, 
                        _PKHardEaseOutFunction, _PKIsGenericKeyValueField, _PKPaymentCardIneligibleReasonForEligibilityStatus, 
                        _PKPaymentCardIneligibleReasonForRequirementsStatus, _PKPaymentFieldGenericKeyValueFieldKey, 
-                       _PKSoftEaseOutFunction, _PKStringByAppendingColon, _PKUIOpenWalletPref, 
-                       _PassKitUIVersionNumber, _PassKitUIVersionString, __CreateBitmapContext, 
-                       __PKPaymentAuthorizationPreferenceViewWidth, __PKPaymentPassThumbnailHeight, 
-                       __PKPaymentPassThumbnailWidth, __PKPreferenceViewCardAndTextMargin, 
-                       __PKPreferenceViewHorizontalMargin, __PKPreferenceViewPrimaryFirstBaselineMargin1, 
-                       __PKPreferenceViewPrimaryFirstBaselineMargin2, __PKPreferenceViewPrimaryLastBaselineMargin1, 
-                       __PKPreferenceViewPrimaryLastBaselineMargin2, __PKPreferenceViewPrimaryLastBaselineMargin3, 
-                       __PKPreferenceViewPrimaryLastBaselineMargin4, __PKPreferenceViewSecondaryFirstBaselineMargin1, 
-                       __PKPreferenceViewSecondaryFirstBaselineMargin2, __PKPreferenceViewSecondaryLastBaselineMargin1, 
-                       __PKPreferenceViewSecondaryLastBaselineMargin2, _isCurrentQueueMain, 
-                       _kPaymentSheetErrorDisplaySeconds, _markMainQueue, _objectFromDictionary ]
+                       _PKSoftEaseOutFunction, _PKStringByAppendingColon, _PassKitUIVersionNumber, 
+                       _PassKitUIVersionString, __CreateBitmapContext, __PKPaymentAuthorizationPreferenceViewWidth, 
+                       __PKPaymentPassThumbnailHeight, __PKPaymentPassThumbnailWidth, 
+                       __PKPreferenceViewCardAndTextMargin, __PKPreferenceViewHorizontalMargin, 
+                       __PKPreferenceViewPrimaryFirstBaselineMargin1, __PKPreferenceViewPrimaryFirstBaselineMargin2, 
+                       __PKPreferenceViewPrimaryLastBaselineMargin1, __PKPreferenceViewPrimaryLastBaselineMargin2, 
+                       __PKPreferenceViewPrimaryLastBaselineMargin3, __PKPreferenceViewPrimaryLastBaselineMargin4, 
+                       __PKPreferenceViewSecondaryFirstBaselineMargin1, __PKPreferenceViewSecondaryFirstBaselineMargin2, 
+                       __PKPreferenceViewSecondaryLastBaselineMargin1, __PKPreferenceViewSecondaryLastBaselineMargin2, 
+                       _isCurrentQueueMain, _kPaymentSheetErrorDisplaySeconds, _markMainQueue, 
+                       _objectFromDictionary ]
     objc-classes:    [ OnlyIntegerValueFormatter, PKAddressSearchResults, PKAutocompleteRowCache, 
                        PKAutocompleteTableCellView, PKAutocompleteTableView, PKAutocompleteTextField, 
                        PKAutocompleteViewController, PKAutocompleteWindow, PKBackFieldTableCellView, 

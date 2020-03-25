@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-macos10.15 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -module-name SwiftUI
 import AppKit
 import Combine
@@ -35,13 +35,6 @@ public struct DefaultToggleStyle : SwiftUI.ToggleStyle {
   public func makeBody(configuration: SwiftUI.DefaultToggleStyle.Configuration) -> some SwiftUI.View
   
   public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI18DefaultToggleStyleV8makeBody13configurationQrAA0dE13ConfigurationV_tF", 0) 🦸
-}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, *)
-@available(watchOS, unavailable)
-extension View {
-  @available(watchOS, unavailable)
-  public func tabItem<V>(@SwiftUI.ViewBuilder _ label: () -> V) -> some SwiftUI.View where V : SwiftUI.View
-  
 }
 @usableFromInline
 internal struct OnDeleteTraitKey : SwiftUI._ViewTraitKey {
@@ -211,23 +204,8 @@ open class NSHostingController<Content> : AppKit.NSViewController where Content 
   public func sizeThatFits(in size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
   public func _render(seconds: Swift.Double)
   public func _forEachIdentifiedView(body: (SwiftUI._IdentifiedViewProxy) -> Swift.Void)
-  @objc override dynamic public init(nibName nibNameOrNil: AppKit.NSNib.Name?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc deinit
-}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, *)
-@available(watchOS, unavailable)
-public struct TabView<SelectionValue, Content> : SwiftUI.View where SelectionValue : Swift.Hashable, Content : SwiftUI.View {
-  public init(selection: SwiftUI.Binding<SelectionValue>?, @SwiftUI.ViewBuilder content: () -> Content)
-  public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI7TabViewV4bodyQrvp", 0) 🦸<SelectionValue, Content>
-}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, *)
-@available(watchOS, unavailable)
-extension TabView where SelectionValue == Swift.Int {
-  @available(watchOS, unavailable)
-  public init(@SwiftUI.ViewBuilder content: () -> Content)
+  @objc override dynamic public init(nibName nibNameOrNil: AppKit.NSNib.Name?, bundle nibBundleOrNil: Foundation.Bundle?)
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Animation {
@@ -372,7 +350,7 @@ extension EdgeInsets : SwiftUI.Animatable, SwiftUI._VectorMath {
   }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct TupleView<T> {
+@frozen public struct TupleView<T> : SwiftUI.View {
   public var value: T
   @inlinable public init(_ value: T) { self.value = value }
   public static func _makeView(view: SwiftUI._GraphValue<SwiftUI.TupleView<T>>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs
@@ -464,41 +442,54 @@ public struct NSViewRepresentableContext<View> where View : SwiftUI.NSViewRepres
   public let coordinator: View.Coordinator
   public var transaction: SwiftUI.Transaction {
     get
-    }
+  }
   public var environment: SwiftUI.EnvironmentValues {
     get
-    }
+  }
 }
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.0, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
-@frozen public struct _HoverRegionModifier : SwiftUI.ViewModifier {
-  public let callback: (Swift.Bool) -> Swift.Void
-  @inlinable public init(_ callback: @escaping (Swift.Bool) -> Swift.Void) {
-        var currentValue = false
-        // Wrap the callback to avoid redundant updates
-        self.callback = { newValue in
-            guard newValue != currentValue else { return }
-            currentValue = newValue
-            callback(newValue)
-        }
-    }
-  public static func _makeView(modifier: SwiftUI._GraphValue<SwiftUI._HoverRegionModifier>, inputs: SwiftUI._ViewInputs, body: @escaping (SwiftUI._Graph, SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs) -> SwiftUI._ViewOutputs
-  public typealias Body = Swift.Never
+public struct Stepper<Label> : SwiftUI.View where Label : SwiftUI.View {
+  public init(onIncrement: (() -> Swift.Void)?, onDecrement: (() -> Swift.Void)?, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }, @SwiftUI.ViewBuilder label: () -> Label)
+  public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI7StepperV4bodyQrvp", 0) 🦸<Label>
 }
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.0, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
-extension View {
-  @available(iOS, unavailable)
+extension Stepper {
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
-  @inlinable public func onHover(perform action: @escaping (Swift.Bool) -> Swift.Void) -> some SwiftUI.View {
-        return modifier(_HoverRegionModifier(action))
-    }
-  
+  public init<V>(value: SwiftUI.Binding<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }, @SwiftUI.ViewBuilder label: () -> Label) where V : Swift.Strideable
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public init<V>(value: SwiftUI.Binding<V>, in bounds: Swift.ClosedRange<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }, @SwiftUI.ViewBuilder label: () -> Label) where V : Swift.Strideable
+}
+@available(iOS 13.0, OSX 10.15, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension Stepper where Label == SwiftUI.Text {
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public init(_ titleKey: SwiftUI.LocalizedStringKey, onIncrement: (() -> Swift.Void)?, onDecrement: (() -> Swift.Void)?, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in })
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @_disfavoredOverload public init<S>(_ title: S, onIncrement: (() -> Swift.Void)?, onDecrement: (() -> Swift.Void)?, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }) where S : Swift.StringProtocol
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public init<V>(_ titleKey: SwiftUI.LocalizedStringKey, value: SwiftUI.Binding<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }) where V : Swift.Strideable
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @_disfavoredOverload public init<S, V>(_ title: S, value: SwiftUI.Binding<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }) where S : Swift.StringProtocol, V : Swift.Strideable
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public init<V>(_ titleKey: SwiftUI.LocalizedStringKey, value: SwiftUI.Binding<V>, in bounds: Swift.ClosedRange<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }) where V : Swift.Strideable
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @_disfavoredOverload public init<S, V>(_ title: S, value: SwiftUI.Binding<V>, in bounds: Swift.ClosedRange<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }) where S : Swift.StringProtocol, V : Swift.Strideable
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, *)
 @available(watchOS, unavailable)
@@ -509,7 +500,7 @@ public protocol NavigationViewStyle {
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, *)
 @available(watchOS, unavailable)
 public struct _NavigationViewStyleConfiguration {
-  public struct Content {
+  public struct Content : SwiftUI.View {
     public typealias Body = Swift.Never
   }
   public let content: SwiftUI._NavigationViewStyleConfiguration.Content
@@ -635,7 +626,7 @@ extension _Velocity : Swift.AdditiveArithmetic where Value : Swift.AdditiveArith
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension _Velocity : SwiftUI.VectorArithmetic where Value : SwiftUI.VectorArithmetic {
-  @inlinable mutating public func scale(by rhs: Swift.Double) {
+  @inlinable public mutating func scale(by rhs: Swift.Double) {
         valuePerSecond.scale(by: rhs)
     }
   @inlinable public var magnitudeSquared: Swift.Double {
@@ -665,14 +656,14 @@ public struct MagnificationGesture : SwiftUI.Gesture {
   }
 }
 extension PropertyList {
-  @usableFromInline
+  @_hasMissingDesignatedInitializers @usableFromInline
   internal class Tracker {
     @objc @usableFromInline
     deinit
   }
 }
 extension PropertyList {
-  @usableFromInline
+  @_hasMissingDesignatedInitializers @usableFromInline
   internal class Element : Swift.CustomStringConvertible {
     @usableFromInline
     internal var description: Swift.String {
@@ -706,23 +697,23 @@ public protocol VectorArithmetic : Swift.AdditiveArithmetic {
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Float : SwiftUI.VectorArithmetic {
-  @_transparent mutating public func scale(by rhs: Swift.Double) { self *= Float(rhs) }
+  @_transparent public mutating func scale(by rhs: Swift.Double) { self *= Float(rhs) }
   @_transparent public var magnitudeSquared: Swift.Double {
-    get { return Double(self * self) }
+    @_transparent get { return Double(self * self) }
   }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Double : SwiftUI.VectorArithmetic {
-  @_transparent mutating public func scale(by rhs: Swift.Double) { self *= rhs }
+  @_transparent public mutating func scale(by rhs: Swift.Double) { self *= rhs }
   @_transparent public var magnitudeSquared: Swift.Double {
-    get { return self * self }
+    @_transparent get { return self * self }
   }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension CGFloat : SwiftUI.VectorArithmetic {
-  @_transparent mutating public func scale(by rhs: Swift.Double) { self *= CGFloat(rhs) }
+  @_transparent public mutating func scale(by rhs: Swift.Double) { self *= CGFloat(rhs) }
   @_transparent public var magnitudeSquared: Swift.Double {
-    get { return Double(self * self) }
+    @_transparent get { return Double(self * self) }
   }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -887,7 +878,7 @@ public struct Divider : SwiftUI.View {
 }
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, *)
 @available(tvOS, unavailable)
-public struct TapGesture {
+public struct TapGesture : SwiftUI.Gesture {
   public var count: Swift.Int
   public init(count: Swift.Int = 1)
   public static func _makeGesture(gesture: SwiftUI._GraphValue<SwiftUI.TapGesture>, inputs: SwiftUI._GestureInputs) -> SwiftUI._GestureOutputs<Swift.Void>
@@ -942,10 +933,10 @@ public struct NSViewControllerRepresentableContext<ViewController> where ViewCon
   public let coordinator: ViewController.Coordinator
   public var transaction: SwiftUI.Transaction {
     get
-    }
+  }
   public var environment: SwiftUI.EnvironmentValues {
     get
-    }
+  }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Font {
@@ -1120,7 +1111,7 @@ public struct _Preview {
     get
   }
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnyFontBox {
   @objc @usableFromInline
   deinit
@@ -1139,11 +1130,15 @@ public enum ContentSizeCategory : Swift.Hashable, Swift.CaseIterable {
   case accessibilityExtraLarge
   case accessibilityExtraExtraLarge
   case accessibilityExtraExtraExtraLarge
+  @available(iOS 13.4, OSX 10.15.4, tvOS 13.4, watchOS 6.2, *)
+  public var isAccessibilityCategory: Swift.Bool {
+    get
+  }
+  public static func == (a: SwiftUI.ContentSizeCategory, b: SwiftUI.ContentSizeCategory) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: SwiftUI.ContentSizeCategory, b: SwiftUI.ContentSizeCategory) -> Swift.Bool
   public typealias AllCases = [SwiftUI.ContentSizeCategory]
   public static var allCases: [SwiftUI.ContentSizeCategory] {
     get
@@ -1253,7 +1248,7 @@ public struct EditButton : SwiftUI.View {
   public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI10EditButtonV4bodyQrvp", 0) 🦸
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct EmptyView {
+@frozen public struct EmptyView : SwiftUI.View {
   @inlinable public init() {}
   public static func _makeView(view: SwiftUI._GraphValue<SwiftUI.EmptyView>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs
   public static func _makeViewList(view: SwiftUI._GraphValue<SwiftUI.EmptyView>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs
@@ -1276,9 +1271,9 @@ public struct FetchedResults<Result> : Swift.RandomAccessCollection where Result
   }
   public typealias Element = Result
   public typealias Index = Swift.Int
+  public typealias Iterator = Swift.IndexingIterator<SwiftUI.FetchedResults<Result>>
   public typealias SubSequence = Swift.Slice<SwiftUI.FetchedResults<Result>>
   public typealias Indices = Swift.Range<Swift.Int>
-  public typealias Iterator = Swift.IndexingIterator<SwiftUI.FetchedResults<Result>>
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 @propertyWrapper public struct FetchRequest<Result> : SwiftUI.DynamicProperty where Result : CoreData.NSFetchRequestResult {
@@ -1288,7 +1283,7 @@ public struct FetchedResults<Result> : Swift.RandomAccessCollection where Result
   public init(entity: CoreData.NSEntityDescription, sortDescriptors: [Foundation.NSSortDescriptor], predicate: Foundation.NSPredicate? = nil, animation: SwiftUI.Animation? = nil)
   public init(fetchRequest: CoreData.NSFetchRequest<Result>, animation: SwiftUI.Animation? = nil)
   public init(fetchRequest: CoreData.NSFetchRequest<Result>, transaction: SwiftUI.Transaction)
-  mutating public func update()
+  public mutating func update()
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension FetchRequest where Result : CoreData.NSManagedObject {
@@ -1336,19 +1331,16 @@ public protocol EnvironmentKey {
   associatedtype Value
   static var defaultValue: Self.Value { get }
 }
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension View {
-  @available(iOS, unavailable)
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
   public func onDrag(_ data: @escaping () -> Foundation.NSItemProvider) -> some SwiftUI.View
   
 }
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 public struct _DraggingModifier : SwiftUI.ViewModifier {
@@ -1565,14 +1557,14 @@ extension AlignmentID {
   public static func _combineExplicit(childValue: CoreGraphics.CGFloat, _ n: Swift.Int, into parentValue: inout CoreGraphics.CGFloat?)
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct HorizontalAlignment {
+@frozen public struct HorizontalAlignment : Swift.Equatable {
   public init(_ id: SwiftUI.AlignmentID.Type)
   @usableFromInline
   internal let key: SwiftUI.AlignmentKey
   public static func == (a: SwiftUI.HorizontalAlignment, b: SwiftUI.HorizontalAlignment) -> Swift.Bool
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct VerticalAlignment {
+@frozen public struct VerticalAlignment : Swift.Equatable {
   public init(_ id: SwiftUI.AlignmentID.Type)
   @usableFromInline
   internal let key: SwiftUI.AlignmentKey
@@ -1598,14 +1590,14 @@ extension VerticalAlignment {
   @usableFromInline
   internal static func < (lhs: SwiftUI.AlignmentKey, rhs: SwiftUI.AlignmentKey) -> Swift.Bool
   @usableFromInline
-  internal static func == (a: SwiftUI.AlignmentKey, b: SwiftUI.AlignmentKey) -> Swift.Bool
-  @usableFromInline
   internal var hashValue: Swift.Int {
     @usableFromInline
     get
   }
   @usableFromInline
   internal func hash(into hasher: inout Swift.Hasher)
+  @usableFromInline
+  internal static func == (a: SwiftUI.AlignmentKey, b: SwiftUI.AlignmentKey) -> Swift.Bool
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension View {
@@ -1630,7 +1622,7 @@ public struct RotationGesture : SwiftUI.Gesture {
   public typealias Body = Swift.Never
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-public struct AccessibilityAttachmentModifier {
+public struct AccessibilityAttachmentModifier : SwiftUI.ViewModifier {
   public typealias Body = Swift.Never
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -1722,13 +1714,13 @@ extension _LayoutTraits : Swift.CustomStringConvertible {
   }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct AnyGesture<Value> {
+@frozen public struct AnyGesture<Value> : SwiftUI.Gesture {
   fileprivate var storage: SwiftUI.AnyGestureStorageBase<Value>
   public init<T>(_ gesture: T) where Value == T.Value, T : SwiftUI.Gesture
   public static func _makeGesture(gesture: SwiftUI._GraphValue<SwiftUI.AnyGesture<Value>>, inputs: SwiftUI._GestureInputs) -> SwiftUI._GestureOutputs<Value>
   public typealias Body = Swift.Never
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnyGestureStorageBase<Value> {
   @objc @usableFromInline
   deinit
@@ -1737,11 +1729,11 @@ internal class AnyGestureStorageBase<Value> {
 public enum LayoutDirection : Swift.Hashable, Swift.CaseIterable {
   case leftToRight
   case rightToLeft
+  public static func == (a: SwiftUI.LayoutDirection, b: SwiftUI.LayoutDirection) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: SwiftUI.LayoutDirection, b: SwiftUI.LayoutDirection) -> Swift.Bool
   public typealias AllCases = [SwiftUI.LayoutDirection]
   public static var allCases: [SwiftUI.LayoutDirection] {
     get
@@ -1795,7 +1787,7 @@ extension ViewModifier where Self : SwiftUI._GraphInputsModifier, Self.Body == S
   public static func _makeViewList(modifier: SwiftUI._GraphValue<Self>, inputs: SwiftUI._ViewListInputs, body: @escaping (SwiftUI._Graph, SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs) -> SwiftUI._ViewListOutputs
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct EmptyModifier {
+@frozen public struct EmptyModifier : SwiftUI.ViewModifier {
   public static let identity: SwiftUI.EmptyModifier
   @inlinable public init() {}
   public static func _makeView(modifier: SwiftUI._GraphValue<SwiftUI.EmptyModifier>, inputs: SwiftUI._ViewInputs, body: @escaping (SwiftUI._Graph, SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs) -> SwiftUI._ViewOutputs
@@ -1869,50 +1861,6 @@ extension View {
     }
   
 }
-@available(iOS 13.0, OSX 10.15, *)
-@available(tvOS, unavailable)
-@available(watchOS, unavailable)
-public struct Stepper<Label> : SwiftUI.View where Label : SwiftUI.View {
-  public init(onIncrement: (() -> Swift.Void)?, onDecrement: (() -> Swift.Void)?, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }, @SwiftUI.ViewBuilder label: () -> Label)
-  public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI7StepperV4bodyQrvp", 0) 🦸<Label>
-}
-@available(iOS 13.0, OSX 10.15, *)
-@available(tvOS, unavailable)
-@available(watchOS, unavailable)
-extension Stepper {
-  @available(tvOS, unavailable)
-  @available(watchOS, unavailable)
-  public init<V>(value: SwiftUI.Binding<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }, @SwiftUI.ViewBuilder label: () -> Label) where V : Swift.Strideable
-  @available(tvOS, unavailable)
-  @available(watchOS, unavailable)
-  public init<V>(value: SwiftUI.Binding<V>, in bounds: Swift.ClosedRange<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }, @SwiftUI.ViewBuilder label: () -> Label) where V : Swift.Strideable
-}
-@available(iOS 13.0, OSX 10.15, *)
-@available(tvOS, unavailable)
-@available(watchOS, unavailable)
-extension Stepper where Label == SwiftUI.Text {
-  @available(tvOS, unavailable)
-  @available(watchOS, unavailable)
-  public init(_ titleKey: SwiftUI.LocalizedStringKey, onIncrement: (() -> Swift.Void)?, onDecrement: (() -> Swift.Void)?, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in })
-  @available(tvOS, unavailable)
-  @available(watchOS, unavailable)
-  @_disfavoredOverload public init<S>(_ title: S, onIncrement: (() -> Swift.Void)?, onDecrement: (() -> Swift.Void)?, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }) where S : Swift.StringProtocol
-  @available(tvOS, unavailable)
-  @available(watchOS, unavailable)
-  public init<V>(_ titleKey: SwiftUI.LocalizedStringKey, value: SwiftUI.Binding<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }) where V : Swift.Strideable
-  @available(tvOS, unavailable)
-  @available(watchOS, unavailable)
-  @_disfavoredOverload public init<S, V>(_ title: S, value: SwiftUI.Binding<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }) where S : Swift.StringProtocol, V : Swift.Strideable
-  @available(tvOS, unavailable)
-  @available(watchOS, unavailable)
-  public init<V>(_ titleKey: SwiftUI.LocalizedStringKey, value: SwiftUI.Binding<V>, in bounds: Swift.ClosedRange<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }) where V : Swift.Strideable
-  @available(tvOS, unavailable)
-  @available(watchOS, unavailable)
-  @_disfavoredOverload public init<S, V>(_ title: S, value: SwiftUI.Binding<V>, in bounds: Swift.ClosedRange<V>, step: V.Stride = 1, onEditingChanged: @escaping (Swift.Bool) -> Swift.Void = { _ in }) where S : Swift.StringProtocol, V : Swift.Strideable
-}
 @usableFromInline
 internal struct OnMoveTraitKey : SwiftUI._ViewTraitKey {
   @inlinable internal static var defaultValue: Swift.Optional<(Foundation.IndexSet, Swift.Int) -> Swift.Void> {
@@ -1953,39 +1901,32 @@ public struct _CircleLayout {
 @available(OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 @available(iOS, unavailable)
 extension View {
-  @available(iOS, unavailable)
   public func focusable(_ isFocusable: Swift.Bool = true, onFocusChange: @escaping (Swift.Bool) -> Swift.Void = { _ in }) -> some SwiftUI.View
   
 }
-@available(OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct _FocusableModifier : SwiftUI.ViewModifier {
   public static func _makeView(modifier: SwiftUI._GraphValue<SwiftUI._FocusableModifier>, inputs: SwiftUI._ViewInputs, body: @escaping (SwiftUI._Graph, SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs) -> SwiftUI._ViewOutputs
   public typealias Body = Swift.Never
 }
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension View {
-  @available(iOS, unavailable)
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
   public func onDrop(of supportedTypes: [Swift.String], isTargeted: SwiftUI.Binding<Swift.Bool>?, perform action: @escaping ([Foundation.NSItemProvider]) -> Swift.Bool) -> some SwiftUI.View
   
-  @available(iOS, unavailable)
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
   public func onDrop(of supportedTypes: [Swift.String], isTargeted: SwiftUI.Binding<Swift.Bool>?, perform action: @escaping ([Foundation.NSItemProvider], CoreGraphics.CGPoint) -> Swift.Bool) -> some SwiftUI.View
   
-  @available(iOS, unavailable)
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
   public func onDrop(of supportedTypes: [Swift.String], delegate: SwiftUI.DropDelegate) -> some SwiftUI.View
   
 }
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 public struct DropInfo {
@@ -1995,8 +1936,7 @@ public struct DropInfo {
   public func hasItemsConforming(to types: [Swift.String]) -> Swift.Bool
   public func itemProviders(for types: [Swift.String]) -> [Foundation.NSItemProvider]
 }
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 public protocol DropDelegate {
@@ -2006,8 +1946,7 @@ public protocol DropDelegate {
   func dropUpdated(info: SwiftUI.DropInfo) -> SwiftUI.DropProposal?
   func dropExited(info: SwiftUI.DropInfo)
 }
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension DropDelegate {
@@ -2016,8 +1955,7 @@ extension DropDelegate {
   public func dropUpdated(info: SwiftUI.DropInfo) -> SwiftUI.DropProposal?
   public func dropExited(info: SwiftUI.DropInfo)
 }
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 public enum DropOperation {
@@ -2031,8 +1969,7 @@ public enum DropOperation {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 public struct DropProposal {
@@ -2291,13 +2228,33 @@ extension AnyTransition {
   public static func == (lhs: SwiftUI.Image, rhs: SwiftUI.Image) -> Swift.Bool
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension Image {
+extension Image : SwiftUI.View {
   public typealias Body = Swift.Never
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnyImageProviderBox {
   @objc @usableFromInline
   deinit
+}
+@available(iOS 13.4, OSX 10.15, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension View {
+  @inlinable public func onHover(perform action: @escaping (Swift.Bool) -> Swift.Void) -> some SwiftUI.View {
+        return modifier(_HoverRegionModifier(action))
+    }
+  
+}
+@available(iOS 13.4, OSX 10.15, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@frozen public struct _HoverRegionModifier : SwiftUI.ViewModifier {
+  public let callback: (Swift.Bool) -> Swift.Void
+  @inlinable public init(_ callback: @escaping (Swift.Bool) -> Swift.Void) {
+        self.callback = callback
+    }
+  public static func _makeView(modifier: SwiftUI._GraphValue<SwiftUI._HoverRegionModifier>, inputs: SwiftUI._ViewInputs, body: @escaping (SwiftUI._Graph, SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs) -> SwiftUI._ViewOutputs
+  public typealias Body = Swift.Never
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension EnvironmentValues {
@@ -2454,16 +2411,6 @@ extension View {
         return modifier(_HiddenModifier())
     }
   
-}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension _ScrollableContentProvider {
-  public func root(scrollView: SwiftUI._ScrollView<Self>.Main) -> SwiftUI._ScrollViewRoot<Self>
-}
-public struct _ScrollViewRoot<P> : SwiftUI.View where P : SwiftUI._ScrollableContentProvider {
-  public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI15_ScrollViewRootV4bodyQrvp", 0) 🦸<P>
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 @frozen public struct _BlurEffect : Swift.Equatable {
@@ -2666,10 +2613,10 @@ extension EnvironmentValues {
   }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension Color {
+extension Color : SwiftUI.View {
   public typealias Body = Swift.Never
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnyColorBox {
   @objc @usableFromInline
   deinit
@@ -2916,12 +2863,12 @@ extension View {
     private var box: SwiftUI.AnchorBoxBase<Value>
   }
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnchorBoxBase<T> {
   @objc @usableFromInline
   deinit
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnchorValueBoxBase<T> {
   @objc @usableFromInline
   deinit
@@ -3224,17 +3171,45 @@ extension View {
     }
   
 }
+@available(iOS 13.4, *)
+@available(OSX, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension View {
+  @available(iOS 13.4, *)
+  @available(OSX, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func hoverEffect(_ effect: SwiftUI.HoverEffect = .automatic) -> some SwiftUI.View
+  
+}
+@available(iOS 13.4, *)
+@available(OSX, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct HoverEffect {
+  public static var automatic: SwiftUI.HoverEffect
+  public static var highlight: SwiftUI.HoverEffect
+  public static var lift: SwiftUI.HoverEffect
+}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension _ViewTest {
   public typealias Touch = (location: CoreGraphics.CGPoint, globalLocation: CoreGraphics.CGPoint?, timestamp: Foundation.Date)
   public func sendTouchSequence(_ touches: [Self.Touch])
   public func measureTouchSequence(host: SwiftUI._BenchmarkHost, _ touches: [Self.Touch]) -> [Swift.Double]
 }
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, *)
+@available(watchOS, unavailable)
+extension View {
+  @available(watchOS, unavailable)
+  public func tabItem<V>(@SwiftUI.ViewBuilder _ label: () -> V) -> some SwiftUI.View where V : SwiftUI.View
+  
+}
 extension RangeReplaceableCollection where Self : Swift.MutableCollection {
-  mutating public func remove(atOffsets offsets: Foundation.IndexSet)
+  public mutating func remove(atOffsets offsets: Foundation.IndexSet)
 }
 extension MutableCollection {
-  mutating public func move(fromOffsets source: Foundation.IndexSet, toOffset destination: Swift.Int)
+  public mutating func move(fromOffsets source: Foundation.IndexSet, toOffset destination: Swift.Int)
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 @frozen public struct _BlendModeEffect : Swift.Equatable {
@@ -3300,6 +3275,7 @@ public struct ToggleStyleConfiguration {
   @SwiftUI.Binding @_projectedValueProperty($isOn) public var isOn: Swift.Bool {
     get
     nonmutating set
+    nonmutating _modify
   }
   public var $isOn: SwiftUI.Binding<Swift.Bool> {
     get
@@ -3508,7 +3484,7 @@ extension _VectorMath {
         return animatableData.magnitudeSquared.squareRoot()
     }
   }
-  @inlinable mutating public func negate() {
+  @inlinable public mutating func negate() {
         animatableData = .zero - animatableData
     }
   @inlinable prefix public static func - (operand: Self) -> Self {
@@ -3550,7 +3526,7 @@ extension _VectorMath {
     }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct SubscriptionView<PublisherType, Content> where PublisherType : Combine.Publisher, Content : SwiftUI.View, PublisherType.Failure == Swift.Never {
+@frozen public struct SubscriptionView<PublisherType, Content> : SwiftUI.View where PublisherType : Combine.Publisher, Content : SwiftUI.View, PublisherType.Failure == Swift.Never {
   public var content: Content
   public var publisher: PublisherType
   public var action: (PublisherType.Output) -> Swift.Void
@@ -3796,11 +3772,11 @@ public enum UserInterfaceSizeClass {
 public enum ColorScheme : Swift.CaseIterable {
   case light
   case dark
+  public static func == (a: SwiftUI.ColorScheme, b: SwiftUI.ColorScheme) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: SwiftUI.ColorScheme, b: SwiftUI.ColorScheme) -> Swift.Bool
   public typealias AllCases = [SwiftUI.ColorScheme]
   public static var allCases: [SwiftUI.ColorScheme] {
     get
@@ -3810,11 +3786,11 @@ public enum ColorScheme : Swift.CaseIterable {
 public enum ColorSchemeContrast : Swift.CaseIterable {
   case standard
   case increased
+  public static func == (a: SwiftUI.ColorSchemeContrast, b: SwiftUI.ColorSchemeContrast) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: SwiftUI.ColorSchemeContrast, b: SwiftUI.ColorSchemeContrast) -> Swift.Bool
   public typealias AllCases = [SwiftUI.ColorSchemeContrast]
   public static var allCases: [SwiftUI.ColorSchemeContrast] {
     get
@@ -3827,11 +3803,11 @@ public enum ControlActiveState : Swift.Equatable, Swift.CaseIterable {
   case key
   case active
   case inactive
+  public static func == (a: SwiftUI.ControlActiveState, b: SwiftUI.ControlActiveState) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: SwiftUI.ControlActiveState, b: SwiftUI.ControlActiveState) -> Swift.Bool
   public typealias AllCases = [SwiftUI.ControlActiveState]
   public static var allCases: [SwiftUI.ControlActiveState] {
     get
@@ -3856,11 +3832,11 @@ public enum _DeviceVariant : Swift.Equatable {
 public enum LegibilityWeight : Swift.Hashable {
   case regular
   case bold
+  public static func == (a: SwiftUI.LegibilityWeight, b: SwiftUI.LegibilityWeight) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: SwiftUI.LegibilityWeight, b: SwiftUI.LegibilityWeight) -> Swift.Bool
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension View {
@@ -3974,7 +3950,7 @@ public protocol DynamicProperty {
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension DynamicProperty {
   public static func _makeProperty<V>(in buffer: inout SwiftUI._DynamicPropertyBuffer, container: SwiftUI._GraphValue<V>, fieldOffset: Swift.Int, inputs: inout SwiftUI._GraphInputs)
-  mutating public func update()
+  public mutating func update()
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct AccessibilityActionKind : Swift.Equatable {
@@ -4169,7 +4145,7 @@ extension AnyTransition {
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 @frozen public struct Path : Swift.Equatable, Swift.LosslessStringConvertible {
-  @usableFromInline
+  @_hasMissingDesignatedInitializers @usableFromInline
   final internal class PathBox : Swift.Equatable {
     @usableFromInline
     internal static func == (lhs: SwiftUI.Path.PathBox, rhs: SwiftUI.Path.PathBox) -> Swift.Bool
@@ -4243,20 +4219,20 @@ internal struct TrimmedPath : Swift.Equatable {
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Path {
-  mutating public func move(to p: CoreGraphics.CGPoint)
-  mutating public func addLine(to p: CoreGraphics.CGPoint)
-  mutating public func addQuadCurve(to p: CoreGraphics.CGPoint, control cp: CoreGraphics.CGPoint)
-  mutating public func addCurve(to p: CoreGraphics.CGPoint, control1 cp1: CoreGraphics.CGPoint, control2 cp2: CoreGraphics.CGPoint)
-  mutating public func closeSubpath()
-  mutating public func addRect(_ rect: CoreGraphics.CGRect, transform: CoreGraphics.CGAffineTransform = .identity)
-  mutating public func addRoundedRect(in rect: CoreGraphics.CGRect, cornerSize: CoreGraphics.CGSize, style: SwiftUI.RoundedCornerStyle = .circular, transform: CoreGraphics.CGAffineTransform = .identity)
-  mutating public func addEllipse(in rect: CoreGraphics.CGRect, transform: CoreGraphics.CGAffineTransform = .identity)
-  mutating public func addRects(_ rects: [CoreGraphics.CGRect], transform: CoreGraphics.CGAffineTransform = .identity)
-  mutating public func addLines(_ lines: [CoreGraphics.CGPoint])
-  mutating public func addRelativeArc(center: CoreGraphics.CGPoint, radius: CoreGraphics.CGFloat, startAngle: SwiftUI.Angle, delta: SwiftUI.Angle, transform: CoreGraphics.CGAffineTransform = .identity)
-  mutating public func addArc(center: CoreGraphics.CGPoint, radius: CoreGraphics.CGFloat, startAngle: SwiftUI.Angle, endAngle: SwiftUI.Angle, clockwise: Swift.Bool, transform: CoreGraphics.CGAffineTransform = .identity)
-  mutating public func addArc(tangent1End p1: CoreGraphics.CGPoint, tangent2End p2: CoreGraphics.CGPoint, radius: CoreGraphics.CGFloat, transform: CoreGraphics.CGAffineTransform = .identity)
-  mutating public func addPath(_ path: SwiftUI.Path, transform: CoreGraphics.CGAffineTransform = .identity)
+  public mutating func move(to p: CoreGraphics.CGPoint)
+  public mutating func addLine(to p: CoreGraphics.CGPoint)
+  public mutating func addQuadCurve(to p: CoreGraphics.CGPoint, control cp: CoreGraphics.CGPoint)
+  public mutating func addCurve(to p: CoreGraphics.CGPoint, control1 cp1: CoreGraphics.CGPoint, control2 cp2: CoreGraphics.CGPoint)
+  public mutating func closeSubpath()
+  public mutating func addRect(_ rect: CoreGraphics.CGRect, transform: CoreGraphics.CGAffineTransform = .identity)
+  public mutating func addRoundedRect(in rect: CoreGraphics.CGRect, cornerSize: CoreGraphics.CGSize, style: SwiftUI.RoundedCornerStyle = .circular, transform: CoreGraphics.CGAffineTransform = .identity)
+  public mutating func addEllipse(in rect: CoreGraphics.CGRect, transform: CoreGraphics.CGAffineTransform = .identity)
+  public mutating func addRects(_ rects: [CoreGraphics.CGRect], transform: CoreGraphics.CGAffineTransform = .identity)
+  public mutating func addLines(_ lines: [CoreGraphics.CGPoint])
+  public mutating func addRelativeArc(center: CoreGraphics.CGPoint, radius: CoreGraphics.CGFloat, startAngle: SwiftUI.Angle, delta: SwiftUI.Angle, transform: CoreGraphics.CGAffineTransform = .identity)
+  public mutating func addArc(center: CoreGraphics.CGPoint, radius: CoreGraphics.CGFloat, startAngle: SwiftUI.Angle, endAngle: SwiftUI.Angle, clockwise: Swift.Bool, transform: CoreGraphics.CGAffineTransform = .identity)
+  public mutating func addArc(tangent1End p1: CoreGraphics.CGPoint, tangent2End p2: CoreGraphics.CGPoint, radius: CoreGraphics.CGFloat, transform: CoreGraphics.CGAffineTransform = .identity)
+  public mutating func addPath(_ path: SwiftUI.Path, transform: CoreGraphics.CGAffineTransform = .identity)
   public var currentPoint: CoreGraphics.CGPoint? {
     get
   }
@@ -4738,7 +4714,7 @@ extension ViewModifier {
         return m13 == 0 && m23 == 0 && m33 == 1
     }
   }
-  mutating public func invert() -> Swift.Bool
+  public mutating func invert() -> Swift.Bool
   public func inverted() -> SwiftUI.ProjectionTransform
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -4774,7 +4750,7 @@ extension CGPoint {
   public static func _makeViewList(view: SwiftUI._GraphValue<SwiftUI.AnyView>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs
   public typealias Body = Swift.Never
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnyViewStorageBase {
   @objc @usableFromInline
   deinit
@@ -4887,12 +4863,12 @@ internal struct IsSectionFooterTraitKey : SwiftUI._ViewTraitKey {
   public init(_ key: SwiftUI.LocalizedStringKey, tableName: Swift.String? = nil, bundle: Foundation.Bundle? = nil, comment: Swift.StaticString? = nil)
   public static func == (a: SwiftUI.Text, b: SwiftUI.Text) -> Swift.Bool
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnyTextStorage {
   @objc @usableFromInline
   deinit
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnyTextModifier {
   @objc @usableFromInline
   deinit
@@ -4912,12 +4888,12 @@ internal class AnyTextModifier {
   }
   public struct StringInterpolation : Swift.StringInterpolationProtocol {
     public init(literalCapacity: Swift.Int, interpolationCount: Swift.Int)
-    mutating public func appendLiteral(_ literal: Swift.String)
-    mutating public func appendInterpolation(_ string: Swift.String)
-    mutating public func appendInterpolation<Subject>(_ subject: Subject, formatter: Foundation.Formatter? = nil) where Subject : Foundation.ReferenceConvertible
-    mutating public func appendInterpolation<Subject>(_ subject: Subject, formatter: Foundation.Formatter? = nil) where Subject : ObjectiveC.NSObject
-    mutating public func appendInterpolation<T>(_ value: T) where T : SwiftUI._FormatSpecifiable
-    mutating public func appendInterpolation<T>(_ value: T, specifier: Swift.String) where T : SwiftUI._FormatSpecifiable
+    public mutating func appendLiteral(_ literal: Swift.String)
+    public mutating func appendInterpolation(_ string: Swift.String)
+    public mutating func appendInterpolation<Subject>(_ subject: Subject, formatter: Foundation.Formatter? = nil) where Subject : Foundation.ReferenceConvertible
+    public mutating func appendInterpolation<Subject>(_ subject: Subject, formatter: Foundation.Formatter? = nil) where Subject : ObjectiveC.NSObject
+    public mutating func appendInterpolation<T>(_ value: T) where T : SwiftUI._FormatSpecifiable
+    public mutating func appendInterpolation<T>(_ value: T, specifier: Swift.String) where T : SwiftUI._FormatSpecifiable
     public typealias StringLiteralType = Swift.String
   }
   public typealias StringLiteralType = Swift.String
@@ -5192,7 +5168,7 @@ public protocol Gesture {
   var body: Self.Body { get }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension Never {
+extension Never : SwiftUI.Gesture {
   public typealias Value = Swift.Never
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -5372,7 +5348,7 @@ extension Color {
 }
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, *)
 @available(tvOS, unavailable)
-public struct LongPressGesture {
+public struct LongPressGesture : SwiftUI.Gesture {
   public var minimumDuration: Swift.Double
   public var maximumDistance: CoreGraphics.CGFloat
   public init(minimumDuration: Swift.Double = 0.5, maximumDistance: CoreGraphics.CGFloat = 10)
@@ -5385,6 +5361,16 @@ public struct LongPressGesture {
 extension View {
   public func onLongPressGesture(minimumDuration: Swift.Double = 0.5, maximumDistance: CoreGraphics.CGFloat = 10, pressing: ((Swift.Bool) -> Swift.Void)? = nil, perform action: @escaping () -> Swift.Void) -> some SwiftUI.View
   
+}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension _ScrollableContentProvider {
+  public func root(scrollView: SwiftUI._ScrollView<Self>.Main) -> SwiftUI._ScrollViewRoot<Self>
+}
+public struct _ScrollViewRoot<P> : SwiftUI.View where P : SwiftUI._ScrollableContentProvider {
+  public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI15_ScrollViewRootV4bodyQrvp", 0) 🦸<P>
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct SecureField<Label> : SwiftUI.View where Label : SwiftUI.View {
@@ -5474,7 +5460,7 @@ extension Animatable {
   @inlinable public static func - (lhs: SwiftUI.EmptyAnimatableData, rhs: SwiftUI.EmptyAnimatableData) -> SwiftUI.EmptyAnimatableData {
         return .zero
     }
-  @inlinable mutating public func scale(by rhs: Swift.Double) {}
+  @inlinable public mutating func scale(by rhs: Swift.Double) {}
   @inlinable public var magnitudeSquared: Swift.Double {
     get { return 0 }
   }
@@ -5544,6 +5530,16 @@ public struct Form<Content> : SwiftUI.View where Content : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI4FormV4bodyQrvp", 0) 🦸<Content>
 }
+@available(macCatalyst 13.4, OSX 10.15.4, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct CompactDatePickerStyle : SwiftUI.DatePickerStyle {
+  public init()
+  public func _body(configuration: SwiftUI.DatePicker<SwiftUI.CompactDatePickerStyle._Label>) -> some SwiftUI.View
+  
+  public typealias _Body = @_opaqueReturnTypeOf("$s7SwiftUI22CompactDatePickerStyleV5_body13configurationQrAA0dE0VyAA01_deF5LabelVG_tF", 0) 🦸
+}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension View {
   public func accessibilityScrollAction(_ handler: @escaping (SwiftUI.Edge) -> Swift.Void) -> SwiftUI.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>
@@ -5593,7 +5589,7 @@ extension Gesture {
     }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct SimultaneousGesture<First, Second> where First : SwiftUI.Gesture, Second : SwiftUI.Gesture {
+@frozen public struct SimultaneousGesture<First, Second> : SwiftUI.Gesture where First : SwiftUI.Gesture, Second : SwiftUI.Gesture {
   @frozen public struct Value {
     public var first: First.Value?
     public var second: Second.Value?
@@ -5703,7 +5699,7 @@ extension Gesture {
     }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct ExclusiveGesture<First, Second> where First : SwiftUI.Gesture, Second : SwiftUI.Gesture {
+@frozen public struct ExclusiveGesture<First, Second> : SwiftUI.Gesture where First : SwiftUI.Gesture, Second : SwiftUI.Gesture {
   @frozen public enum Value {
     case first(First.Value)
     case second(Second.Value)
@@ -5938,12 +5934,12 @@ public struct __BedtimeTickLabelsLayout {
   public typealias AnimatableData = SwiftUI.EmptyAnimatableData
   public typealias Body = Swift.Never
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnyLocationBase {
   @objc @usableFromInline
   deinit
 }
-@usableFromInline
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @usableFromInline
 internal class AnyLocation<Value> : SwiftUI.AnyLocationBase {
   @objc @usableFromInline
   deinit
@@ -6071,10 +6067,10 @@ public struct _ScrollableLayoutProxy : Swift.RandomAccessCollection {
   public subscript(index: Swift.Int) -> Swift.AnyHashable {
     get
   }
-  mutating public func size(of identifier: Swift.AnyHashable, in size: CoreGraphics.CGSize, validatingContent: Swift.Bool = true) -> CoreGraphics.CGSize
-  mutating public func size(at index: Swift.Int, in size: CoreGraphics.CGSize, validatingContent: Swift.Bool = true) -> CoreGraphics.CGSize
-  mutating public func removeSize(of identifier: Swift.AnyHashable)
-  mutating public func removeAllSizes()
+  public mutating func size(of identifier: Swift.AnyHashable, in size: CoreGraphics.CGSize, validatingContent: Swift.Bool = true) -> CoreGraphics.CGSize
+  public mutating func size(at index: Swift.Int, in size: CoreGraphics.CGSize, validatingContent: Swift.Bool = true) -> CoreGraphics.CGSize
+  public mutating func removeSize(of identifier: Swift.AnyHashable)
+  public mutating func removeAllSizes()
   public typealias Element = Swift.AnyHashable
   public typealias Index = Swift.Int
   public typealias Iterator = Swift.IndexingIterator<SwiftUI._ScrollableLayoutProxy>
@@ -6216,8 +6212,6 @@ extension View {
     }
   
 }
-extension NSView : QuartzCore.CALayerDelegate {
-}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct _OverlayLayout {
   public init(contentIndex: Swift.Int? = nil)
@@ -6239,7 +6233,7 @@ extension Gesture {
     }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct SequenceGesture<First, Second> where First : SwiftUI.Gesture, Second : SwiftUI.Gesture {
+@frozen public struct SequenceGesture<First, Second> : SwiftUI.Gesture where First : SwiftUI.Gesture, Second : SwiftUI.Gesture {
   @frozen public enum Value {
     case first(First.Value)
     case second(First.Value, Second.Value?)
@@ -6315,11 +6309,11 @@ extension GeometryEffect {
 public struct __Random : Swift.Equatable {
   public var seed: Swift.UInt32
   public init(seed: Swift.UInt32 = 0)
-  mutating public func next() -> Swift.Double
-  mutating public func next(_ mean: Swift.Double, range: Swift.Double) -> Swift.Double
-  mutating public func normal() -> Swift.Double
-  mutating public func normal(_ mean: Swift.Double, range: Swift.Double) -> Swift.Double
-  mutating public func nextColor(mean: Swift.Double = 0.75, range: Swift.Double = 0.5) -> SwiftUI.Color
+  public mutating func next() -> Swift.Double
+  public mutating func next(_ mean: Swift.Double, range: Swift.Double) -> Swift.Double
+  public mutating func normal() -> Swift.Double
+  public mutating func normal(_ mean: Swift.Double, range: Swift.Double) -> Swift.Double
+  public mutating func nextColor(mean: Swift.Double = 0.75, range: Swift.Double = 0.5) -> SwiftUI.Color
   public static func == (a: SwiftUI.__Random, b: SwiftUI.__Random) -> Swift.Bool
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -6460,8 +6454,8 @@ extension Animation {
     public static let horizontal: SwiftUI.Edge.Set
     public static let vertical: SwiftUI.Edge.Set
     public init(_ e: SwiftUI.Edge)
-    public typealias RawValue = Swift.Int8
     public typealias ArrayLiteralElement = SwiftUI.Edge.Set.Element
+    public typealias RawValue = Swift.Int8
   }
   public typealias RawValue = Swift.Int8
   public init?(rawValue: Swift.Int8)
@@ -6575,11 +6569,11 @@ extension Font {
     public static let bold: SwiftUI.Font.Weight
     public static let heavy: SwiftUI.Font.Weight
     public static let black: SwiftUI.Font.Weight
+    public static func == (a: SwiftUI.Font.Weight, b: SwiftUI.Font.Weight) -> Swift.Bool
     public var hashValue: Swift.Int {
       get
     }
     public func hash(into hasher: inout Swift.Hasher)
-    public static func == (a: SwiftUI.Font.Weight, b: SwiftUI.Font.Weight) -> Swift.Bool
   }
   public enum _StylisticAlternative : Swift.Int, Swift.Hashable {
     case one
@@ -6636,7 +6630,7 @@ internal struct CanTransitionTraitKey : SwiftUI._ViewTraitKey {
 @frozen public struct AnyTransition {
   fileprivate let box: SwiftUI.AnyTransitionBox
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnyTransitionBox {
   @objc @usableFromInline
   deinit
@@ -6766,8 +6760,8 @@ extension View {
 public struct PresentationMode {
   public var isPresented: Swift.Bool {
     get
-    }
-  mutating public func dismiss()
+  }
+  public mutating func dismiss()
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension EnvironmentValues {
@@ -6857,11 +6851,11 @@ public enum ControlSize : Swift.CaseIterable {
   case regular
   case small
   case mini
+  public static func == (a: SwiftUI.ControlSize, b: SwiftUI.ControlSize) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: SwiftUI.ControlSize, b: SwiftUI.ControlSize) -> Swift.Bool
   public typealias AllCases = [SwiftUI.ControlSize]
   public static var allCases: [SwiftUI.ControlSize] {
     get
@@ -7223,7 +7217,7 @@ extension View {
   public static func _makeProperty<V>(in buffer: inout SwiftUI._DynamicPropertyBuffer, container: SwiftUI._GraphValue<V>, fieldOffset: Swift.Int, inputs: inout SwiftUI._GraphInputs)
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-public struct _ButtonGesture {
+public struct _ButtonGesture : SwiftUI.Gesture {
   public var action: () -> Swift.Void
   public var pressingAction: ((Swift.Bool) -> Swift.Void)?
   public init(action: @escaping () -> Swift.Void, pressing: ((Swift.Bool) -> Swift.Void)? = nil)
@@ -7394,7 +7388,7 @@ public struct _SystemShapeStyle : SwiftUI.ShapeStyle {
 }
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, *)
 @available(tvOS, unavailable)
-public struct DragGesture {
+public struct DragGesture : SwiftUI.Gesture {
   public struct Value : Swift.Equatable {
     public var time: Foundation.Date
     public var location: CoreGraphics.CGPoint
@@ -7563,8 +7557,8 @@ extension View {
         self.alignment = alignment
         self.spacing = spacing
     }
-  public typealias Body = Swift.Never
   public typealias AnimatableData = SwiftUI.EmptyAnimatableData
+  public typealias Body = Swift.Never
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension View {
@@ -7721,7 +7715,7 @@ extension CGRect : SwiftUI.Animatable {
   }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-@frozen public struct Animation {
+@frozen public struct Animation : Swift.Equatable {
   internal var box: SwiftUI.AnimationBoxBase
   public static func == (lhs: SwiftUI.Animation, rhs: SwiftUI.Animation) -> Swift.Bool
 }
@@ -7737,7 +7731,7 @@ extension Animation : Swift.CustomStringConvertible, Swift.CustomDebugStringConv
     get
   }
 }
-@usableFromInline
+@_hasMissingDesignatedInitializers @usableFromInline
 internal class AnimationBoxBase {
   @objc @usableFromInline
   deinit
@@ -7812,6 +7806,21 @@ extension View {
         return modifier(_CoordinateSpaceModifier(name: name))
     }
   
+}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, *)
+@available(watchOS, unavailable)
+public struct TabView<SelectionValue, Content> : SwiftUI.View where SelectionValue : Swift.Hashable, Content : SwiftUI.View {
+  public init(selection: SwiftUI.Binding<SelectionValue>?, @SwiftUI.ViewBuilder content: () -> Content)
+  public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI7TabViewV4bodyQrvp", 0) 🦸<SelectionValue, Content>
+}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, *)
+@available(watchOS, unavailable)
+extension TabView where SelectionValue == Swift.Int {
+  @available(watchOS, unavailable)
+  public init(@SwiftUI.ViewBuilder content: () -> Content)
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public protocol InsettableShape : SwiftUI.Shape {
@@ -8218,7 +8227,7 @@ public struct __SimpleColumnLayout {
     set { (first, second) = newValue }
   }
   @_transparent public static var zero: SwiftUI.AnimatablePair<First, Second> {
-    get {
+    @_transparent get {
         return .init(First.zero, Second.zero)
     }
   }
@@ -8236,12 +8245,12 @@ public struct __SimpleColumnLayout {
   @_transparent public static func - (lhs: SwiftUI.AnimatablePair<First, Second>, rhs: SwiftUI.AnimatablePair<First, Second>) -> SwiftUI.AnimatablePair<First, Second> {
         return .init(lhs.first - rhs.first, lhs.second - rhs.second)
     }
-  @_transparent mutating public func scale(by rhs: Swift.Double) {
+  @_transparent public mutating func scale(by rhs: Swift.Double) {
         first.scale(by: rhs)
         second.scale(by: rhs)
     }
   @_transparent public var magnitudeSquared: Swift.Double {
-    get {
+    @_transparent get {
         return first.magnitudeSquared + second.magnitudeSquared
     }
   }
@@ -8409,16 +8418,16 @@ public struct AccessibilityTraits : Swift.SetAlgebra {
   public static let causesPageTurn: SwiftUI.AccessibilityTraits
   public static let isModal: SwiftUI.AccessibilityTraits
   public init()
-  mutating public func formUnion(_ other: SwiftUI.AccessibilityTraits)
+  public mutating func formUnion(_ other: SwiftUI.AccessibilityTraits)
   public func intersection(_ other: SwiftUI.AccessibilityTraits) -> SwiftUI.AccessibilityTraits
-  mutating public func formIntersection(_ other: SwiftUI.AccessibilityTraits)
+  public mutating func formIntersection(_ other: SwiftUI.AccessibilityTraits)
   public func symmetricDifference(_ other: SwiftUI.AccessibilityTraits) -> SwiftUI.AccessibilityTraits
-  mutating public func formSymmetricDifference(_ other: SwiftUI.AccessibilityTraits)
+  public mutating func formSymmetricDifference(_ other: SwiftUI.AccessibilityTraits)
   public func contains(_ member: SwiftUI.AccessibilityTraits) -> Swift.Bool
   public func union(_ other: SwiftUI.AccessibilityTraits) -> SwiftUI.AccessibilityTraits
-  mutating public func remove(_ member: SwiftUI.AccessibilityTraits) -> SwiftUI.AccessibilityTraits?
-  mutating public func insert(_ newMember: SwiftUI.AccessibilityTraits) -> (inserted: Swift.Bool, memberAfterInsert: SwiftUI.AccessibilityTraits)
-  mutating public func update(with newMember: SwiftUI.AccessibilityTraits) -> SwiftUI.AccessibilityTraits?
+  public mutating func remove(_ member: SwiftUI.AccessibilityTraits) -> SwiftUI.AccessibilityTraits?
+  public mutating func insert(_ newMember: SwiftUI.AccessibilityTraits) -> (inserted: Swift.Bool, memberAfterInsert: SwiftUI.AccessibilityTraits)
+  public mutating func update(with newMember: SwiftUI.AccessibilityTraits) -> SwiftUI.AccessibilityTraits?
   public typealias Element = SwiftUI.AccessibilityTraits
   public typealias ArrayLiteralElement = SwiftUI.AccessibilityTraits
   public static func == (a: SwiftUI.AccessibilityTraits, b: SwiftUI.AccessibilityTraits) -> Swift.Bool
@@ -8478,20 +8487,9 @@ extension ViewBuilder {
     }
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.Animation : Swift.Equatable {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.TupleView : SwiftUI.View {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, *)
-@available(watchOS, unavailable)
-extension SwiftUI._NavigationViewStyleConfiguration.Content : SwiftUI.View {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.__ViewRemovalLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.__ViewRemovalLayout : SwiftUI.Animatable {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.Image : SwiftUI.View {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.Color : SwiftUI.View {}
 @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 @available(OSX, unavailable)
 extension SwiftUI.Image.Scale : Swift.Equatable {}
@@ -8508,9 +8506,6 @@ extension SwiftUI.__SpiralLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 extension SwiftUI.__SpiralLayout : SwiftUI.Animatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._ViewDebug.Property : Swift.RawRepresentable {}
-@available(iOS 13.0, OSX 10.15, watchOS 6.0, *)
-@available(tvOS, unavailable)
-extension SwiftUI.TapGesture : SwiftUI.Gesture {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Font.TextStyle : Swift.Equatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -8523,8 +8518,6 @@ extension SwiftUI.PreviewPlatform : Swift.Hashable {}
 extension SwiftUI.__ResizableImagesExampleLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.__ResizableImagesExampleLayout : SwiftUI.Animatable {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.EmptyView : SwiftUI.View {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.__FluidSpringTestLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -8540,16 +8533,6 @@ extension SwiftUI._CrownHapticsConfiguration.Notch.Strength : Swift.Equatable {}
 @available(tvOS, unavailable)
 extension SwiftUI._CrownHapticsConfiguration.Notch.Strength : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.HorizontalAlignment : Swift.Equatable {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.VerticalAlignment : Swift.Equatable {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.AccessibilityAttachmentModifier : SwiftUI.ViewModifier {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.AnyGesture : SwiftUI.Gesture {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.EmptyModifier : SwiftUI.ViewModifier {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._CircleLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._CircleLayout : SwiftUI.Animatable {}
@@ -8563,13 +8546,11 @@ extension SwiftUI.ControlSize : Swift.Equatable {}
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension SwiftUI.ControlSize : Swift.Hashable {}
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension SwiftUI.DropOperation : Swift.Equatable {}
-@available(OSX 10.15, *)
-@available(iOS, unavailable)
+@available(iOS 13.4, OSX 10.15, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension SwiftUI.DropOperation : Swift.Hashable {}
@@ -8663,6 +8644,8 @@ extension SwiftUI.__IconLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.__IconLayout : SwiftUI.Animatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension SwiftUI.ColorRenderingMode : Swift.Equatable {}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.ColorRenderingMode : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._CompositingGroupEffect : SwiftUI.Animatable {}
@@ -8672,8 +8655,6 @@ extension SwiftUI._CompositingGroupEffect : SwiftUI.ViewModifier {}
 extension SwiftUI._ShadowEffect._Resolved : SwiftUI.Animatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._ShadowEffect._Resolved : SwiftUI.ViewModifier {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.SubscriptionView : SwiftUI.View {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.__GridLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -8690,6 +8671,8 @@ extension SwiftUI._AligningContentProvider.AligningContentProviderLayout : Swift
 extension SwiftUI._PagingViewConfig.Direction : Swift.Equatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._PagingViewConfig.Direction : Swift.Hashable {}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension SwiftUI.Image.TemplateRenderingMode : Swift.Equatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Image.TemplateRenderingMode : Swift.Hashable {}
 @available(iOS 13.0, *)
@@ -8720,13 +8703,19 @@ extension SwiftUI.ControlActiveState : Swift.Hashable {}
 @available(tvOS, unavailable)
 extension SwiftUI._DeviceVariant : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension SwiftUI.RoundedCornerStyle : Swift.Equatable {}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.RoundedCornerStyle : Swift.Hashable {}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension SwiftUI.BlendMode : Swift.Equatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.BlendMode : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.__RadialLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.__RadialLayout : SwiftUI.Animatable {}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension SwiftUI.Image.Interpolation : Swift.Equatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Image.Interpolation : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -8752,22 +8741,17 @@ extension SwiftUI._ScrollViewAnimationMode : Swift.Equatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._ScrollViewAnimationMode : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension Swift.Never : SwiftUI.Gesture {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._IdentifiedViewsKey : SwiftUI.PreferenceKey {}
-@available(iOS 13.0, OSX 10.15, watchOS 6.0, *)
-@available(tvOS, unavailable)
-extension SwiftUI.LongPressGesture : SwiftUI.Gesture {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._EndedGesture : SwiftUI.Gesture {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._ChangedGesture : SwiftUI.Gesture {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension SwiftUI.Axis : Swift.Equatable {}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Axis : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Axis : Swift.RawRepresentable {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.SimultaneousGesture : SwiftUI.Gesture {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._MapGesture : SwiftUI.Gesture {}
 @available(watchOS 6.0, *)
@@ -8780,8 +8764,6 @@ extension SwiftUI.DigitalCrownRotationalSensitivity : Swift.Equatable {}
 @available(OSX, unavailable)
 @available(tvOS, unavailable)
 extension SwiftUI.DigitalCrownRotationalSensitivity : Swift.Hashable {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.ExclusiveGesture : SwiftUI.Gesture {}
 @available(watchOS 6.0, *)
 @available(iOS, unavailable)
 @available(OSX, unavailable)
@@ -8799,7 +8781,13 @@ extension SwiftUI.__BedtimeTickLabelsLayout : SwiftUI.Animatable {}
 @available(iOS 13.0, tvOS 13.0, *)
 @available(OSX, unavailable)
 @available(watchOS, unavailable)
+extension SwiftUI.EditMode : Swift.Equatable {}
+@available(iOS 13.0, tvOS 13.0, *)
+@available(OSX, unavailable)
+@available(watchOS, unavailable)
 extension SwiftUI.EditMode : Swift.Hashable {}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension SwiftUI.Edge : Swift.Equatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Edge : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -8815,8 +8803,6 @@ extension SwiftUI._OverlayLayout : SwiftUI.Animatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._OverlayLayout : SwiftUI._VariadicView_ViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI.SequenceGesture : SwiftUI.Gesture {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Font._StylisticAlternative : Swift.RawRepresentable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._SafeAreaIgnoringLayout : SwiftUI.Animatable {}
@@ -8827,16 +8813,13 @@ extension SwiftUI._ClipEffect : SwiftUI.Animatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._ClipEffect : SwiftUI.ViewModifier {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension SwiftUI._ButtonGesture : SwiftUI.Gesture {}
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Text.TruncationMode : Swift.Equatable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Text.TruncationMode : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension SwiftUI.Image.ResizingMode : Swift.Equatable {}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Image.ResizingMode : Swift.Hashable {}
-@available(iOS 13.0, OSX 10.15, watchOS 6.0, *)
-@available(tvOS, unavailable)
-extension SwiftUI.DragGesture : SwiftUI.Gesture {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._VStackLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)

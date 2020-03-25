@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCloudKit -swift-version 5 -O -enforce-exclusivity=unchecked -module-name CloudKit
 @_exported import CloudKit
 import Foundation
@@ -225,7 +225,7 @@ extension CKError {
 }
 @available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
 public struct CKRecordKeyValueIterator : Swift.IteratorProtocol {
-  mutating public func next() -> (CloudKit.CKRecord.FieldKey, CloudKit.CKRecordValueProtocol)?
+  public mutating func next() -> (CloudKit.CKRecord.FieldKey, CloudKit.CKRecordValueProtocol)?
   public typealias Element = (Swift.String, CloudKit.CKRecordValueProtocol)
 }
 @available(OSX 10.10, iOS 8.0, watchOS 3.0, *)

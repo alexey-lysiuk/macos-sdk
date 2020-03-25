@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F1B42AF0-28D6-30BD-8DBD-34274BB4EC41', 'x86_64: F1B42AF0-28D6-30BD-8DBD-34274BB4EC41' ]
+uuids:           [ 'x86_64: 37642E5D-B54B-310A-A302-77F796415F00', 'x86_64: 37642E5D-B54B-310A-A302-77F796415F00' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst'
-current-version: 6
+current-version: 6.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CATAssertIsNotQueue, _CATAssertIsQueue, _CATErrorDomain, 

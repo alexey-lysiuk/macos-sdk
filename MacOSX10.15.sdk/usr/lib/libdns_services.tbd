@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CB69F438-6374-36F6-B0ED-91C1C1721897', 'x86_64: CB69F438-6374-36F6-B0ED-91C1C1721897' ]
+uuids:           [ 'x86_64: 519CC6F4-F27E-3728-8D10-0D0C21E43EC1', 'x86_64: 519CC6F4-F27E-3728-8D10-0D0C21E43EC1' ]
 platform:        zippered
 install-name:    '/usr/lib/libdns_services.dylib'
 exports:         

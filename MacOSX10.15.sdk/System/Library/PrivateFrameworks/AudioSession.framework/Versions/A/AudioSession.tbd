@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 95ED0F4C-FE5E-3401-82CC-3ADC19120CE8', 'x86_64: 95ED0F4C-FE5E-3401-82CC-3ADC19120CE8' ]
+uuids:           [ 'x86_64: 133B2FAF-097E-35FF-ACFD-D2D4078C7553', 'x86_64: 133B2FAF-097E-35FF-ACFD-D2D4078C7553' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AudioSession.framework/Versions/A/AudioSession'
 exports:         

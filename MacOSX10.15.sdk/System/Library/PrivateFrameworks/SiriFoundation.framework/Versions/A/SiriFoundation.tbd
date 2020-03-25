@@ -1,15 +1,16 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8AA302F0-F87D-318D-892E-5C27C6E635C3' ]
+uuids:           [ 'x86_64: A19BB53F-BA7A-399F-992D-BDB7B099B91D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SiriFoundation.framework/Versions/A/SiriFoundation'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _SRFBugReporterSubtypeConfigurationGuide, _SRFBugReporterSubtypeFault, 
-                       _SRFBugReporterSubtypeInvocationSuppression, _SRFBugReporterSubtypePerformance, 
-                       _SRFBugReporterSubtypeServerImproperResponse, _SRFBugReporterSubtypeTesting, 
-                       _SRFBugReporterSubtypeViewHierarchyMissingSuperview, _SRFBugReporterTypeAssertion, 
-                       _SRFBugReporterTypeAudio, _SRFBugReporterTypeConfiguration, 
+    symbols:         [ _SRFBugReporterSubtypeConfigurationGuide, _SRFBugReporterSubtypeDismissalUnexpected, 
+                       _SRFBugReporterSubtypeFault, _SRFBugReporterSubtypeInvocationSuppression, 
+                       _SRFBugReporterSubtypePerformance, _SRFBugReporterSubtypeServerImproperResponse, 
+                       _SRFBugReporterSubtypeTesting, _SRFBugReporterSubtypeViewHierarchyMissingSuperview, 
+                       _SRFBugReporterTypeAssertion, _SRFBugReporterTypeAudio, _SRFBugReporterTypeBuddy, 
+                       _SRFBugReporterTypeConfiguration, _SRFBugReporterTypeDismissal, 
                        _SRFBugReporterTypeInvocation, _SRFBugReporterTypeServer, 
                        _SRFBugReporterTypeTesting, _SRFBugReporterTypeViewHierachy, 
                        _SRFClamshellStateNotifierDidCloseDeviceLid, _SRFClamshellStateNotifierDidOpenDeviceLid, 
@@ -18,9 +19,10 @@ exports:
                        _SRFPinningConversationInfoKey, _SRFPinningExpectedSnippetKindKey, 
                        _SRFPinningIsFirstRunKey, _SRFPinningPendingDataStoreKey, 
                        _SRFPinningPinnedSnippetsKey, _SRFPinningShouldShowAllKey, 
-                       _SiriKeyboardShortcutDidChangeNotificationName, _SiriLockscreenEnabledDidChangeNotificationName, 
-                       _SiriStatusMenuVisibilityDidChangeNotificationName, _SiriUIAccessibilityPressNotification, 
-                       _SiriUIAppleMikeyActivateNotification, _SiriUIBluetoothATBVRAActivateNotification, 
+                       _SiriInvocationNoLongerSuppressedNotification, _SiriKeyboardShortcutDidChangeNotificationName, 
+                       _SiriLockscreenEnabledDidChangeNotificationName, _SiriStatusMenuVisibilityDidChangeNotificationName, 
+                       _SiriUIAccessibilityPressNotification, _SiriUIAppleMikeyActivateNotification, 
+                       _SiriUIAppleMikeyDeactivateNotification, _SiriUIBluetoothATBVRAActivateNotification, 
                        _SiriUIBluetoothATBVRADeactivateNotification, _SiriUIDidActivateNotification, 
                        _SiriUIDidAppearNotification, _SiriUIDidDisappearNotification, 
                        _SiriUIGenericDeactivateNotification, _SiriUIHotkeyPressBeganNotification, 
@@ -36,8 +38,8 @@ exports:
                        _SiriUITouchBarPressBeganNotification, _SiriUITouchBarPressEndedNotification, 
                        _SiriUIVoiceTriggerActivateNotification, _SiriUserDidSwitchOnVoiceTriggerNotification, 
                        _SiriVoiceTriggerNoLongerSuppressedNotification, __SRFAssertionFailed ]
-    objc-classes:    [ SRFBugReporter, SRFClamshellStateNotifier, SRFLauncher, SRFLockStateNotifier, 
-                       SRFLoggingDefaults, SRFPreferences, SRFProcessInfo, SRFSignpostLog, 
-                       SRFStateNotifier, SRFUserDefaultsController, SRFUtilities, 
-                       SRFVoiceTriggerDevices, SRFVoiceTriggerSuppressor ]
+    objc-classes:    [ SRFBugReporter, SRFClamshellStateNotifier, SRFInvocationSuppressor, 
+                       SRFLauncher, SRFLockStateNotifier, SRFLoggingDefaults, SRFPreferences, 
+                       SRFProcessInfo, SRFSignpostLog, SRFStateNotifier, SRFUserDefaultsController, 
+                       SRFUtilities, SRFVoiceTriggerDevices ]
 ...

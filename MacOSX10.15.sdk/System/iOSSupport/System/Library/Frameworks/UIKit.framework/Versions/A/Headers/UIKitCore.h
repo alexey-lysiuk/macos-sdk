@@ -19,7 +19,7 @@
 #import <UIKit/UIAccessibilityContentSizeCategoryImageAdjusting.h>
 #endif
 
-#if TARGET_OS_MACCATALYST
+#if __has_include(<UIKit/NSToolbar+UIKitAdditions.h>)
 #import <UIKit/NSToolbar+UIKitAdditions.h>
 #import <UIKit/NSTouchBar+UIKitAdditions.h>
 #endif
@@ -56,6 +56,11 @@
 #if __has_include(<UIKit/UICommand.h>)
 #import <UIKit/UICommand.h>
 #import <UIKit/UIKeyCommand.h>
+#endif
+
+#if __has_include(<UIKit/UIKey.h>)
+#import <UIKit/UIKey.h>
+#import <UIKit/UIKeyConstants.h>
 #endif
 
 #if __has_include(<UIKit/UIContentSizeCategoryAdjusting.h>)
@@ -451,4 +456,10 @@
 
 #if __has_include(<UIKit/UITextFormattingCoordinator.h>)
 #import <UIKit/UITextFormattingCoordinator.h>
+#endif
+
+#if __has_include(<UIKit/UIPointerInteraction.h>)
+#import <UIKit/UIPointerInteraction.h>
+#import <UIKit/UIPointerStyle.h>
+#import <UIKit/UIPointerRegion.h>
 #endif

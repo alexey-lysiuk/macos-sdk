@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2657CBEB-F32E-32F8-AECF-F898A7CEDF5E' ]
+uuids:           [ 'x86_64: 0546AB81-0C8D-387C-AC0E-E1EC0F28A96C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AMPSharing.framework/Versions/A/AMPSharing'
 exports:         

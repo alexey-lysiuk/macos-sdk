@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6B202B22-8CDA-3D26-882B-FFF577C06C92', 'x86_64: 6B202B22-8CDA-3D26-882B-FFF577C06C92' ]
+uuids:           [ 'x86_64: 1981CD5A-E49A-3F9D-8CDB-F91C3B4D3494', 'x86_64: 1981CD5A-E49A-3F9D-8CDB-F91C3B4D3494' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftsimd.dylib'
 current-version: 0

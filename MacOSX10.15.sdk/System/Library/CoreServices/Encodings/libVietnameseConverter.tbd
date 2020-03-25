@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 60D3A365-1C03-36E8-9915-DBE15C3D0C05', 'x86_64: 60D3A365-1C03-36E8-9915-DBE15C3D0C05' ]
+uuids:           [ 'x86_64: 55B75112-3B15-3447-A205-256ED4D175F2', 'x86_64: 55B75112-3B15-3447-A205-256ED4D175F2' ]
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libVietnameseConverter.dylib'
 current-version: 76

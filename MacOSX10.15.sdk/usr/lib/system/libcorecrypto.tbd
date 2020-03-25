@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AE25C9EE-5D63-3E49-B3AA-D482D35C085A', 'x86_64: AE25C9EE-5D63-3E49-B3AA-D482D35C085A' ]
+uuids:           [ 'x86_64: FCDEC0D1-8C30-3989-BDD1-996BBC715C29', 'x86_64: FCDEC0D1-8C30-3989-BDD1-996BBC715C29' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcorecrypto.dylib'
-current-version: 866.40.8
+current-version: 866.100.30
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -151,7 +151,7 @@ exports:
                        _ccrng_ecfips_test_init, _ccrng_pbkdf2_prng_init, _ccrng_rsafips_test_init, 
                        _ccrng_rsafips_test_set_next, _ccrng_sequence_init, _ccrng_system_done, 
                        _ccrng_system_init, _ccrng_test_done, _ccrng_test_init, _ccrng_uniform, 
-                       _ccrsa_crt_makekey, _ccrsa_decrypt_eme_pkcs1v15, _ccrsa_decrypt_eme_pkcs1v15_blinded, 
+                       _ccrsa_decrypt_eme_pkcs1v15, _ccrsa_decrypt_eme_pkcs1v15_blinded, 
                        _ccrsa_decrypt_oaep, _ccrsa_decrypt_oaep_blinded, _ccrsa_dump_full_key, 
                        _ccrsa_dump_public_key, _ccrsa_eme_pkcs1v15_decode, _ccrsa_eme_pkcs1v15_encode, 
                        _ccrsa_emsa_pkcs1v15_encode, _ccrsa_emsa_pkcs1v15_verify, 
@@ -184,21 +184,27 @@ exports:
                        _ccsrp_gp_rfc5054_3072, _ccsrp_gp_rfc5054_4096, _ccsrp_gp_rfc5054_8192, 
                        _ccsrp_server_compute_session, _ccsrp_server_generate_public_key, 
                        _ccsrp_server_start_authentication, _ccsrp_server_verify_session, 
-                       _ccsrp_test_calculations, _ccvrf_derive_public_key, _ccvrf_factory_irtfdraft03, 
-                       _ccvrf_factory_irtfdraft03_default, _ccvrf_proof_to_hash, 
-                       _ccvrf_prove, _ccvrf_sizeof_hash, _ccvrf_sizeof_proof, _ccvrf_sizeof_public_key, 
-                       _ccvrf_sizeof_secret_key, _ccvrf_verify, _ccwrap_auth_decrypt, 
-                       _ccwrap_auth_decrypt_withiv, _ccwrap_auth_encrypt, _ccwrap_auth_encrypt_withiv, 
-                       _ccwrap_unwrapped_size, _ccwrap_wrapped_size, _ccxts_one_shot, 
-                       _ccz_add, _ccz_addi, _ccz_bit, _ccz_bitlen, _ccz_cmp, _ccz_cmpi, 
-                       _ccz_divmod, _ccz_expmod, _ccz_free, _ccz_gcd, _ccz_init, 
-                       _ccz_invmod, _ccz_is_negative, _ccz_is_one, _ccz_is_prime, 
-                       _ccz_is_zero, _ccz_lcm, _ccz_lprint, _ccz_lsl, _ccz_lsr, _ccz_mod, 
-                       _ccz_mul, _ccz_muli, _ccz_mulmod, _ccz_neg, _ccz_print, _ccz_random_bits, 
-                       _ccz_read_radix, _ccz_read_uint, _ccz_set, _ccz_set_bit, _ccz_seti, 
-                       _ccz_size, _ccz_sqr, _ccz_sqrmod, _ccz_sub, _ccz_subi, _ccz_trailing_zeros, 
-                       _ccz_write_int, _ccz_write_int_size, _ccz_write_radix, _ccz_write_radix_size, 
+                       _ccsrp_test_calculations, _ccss_shamir_parameters_init, _ccss_shamir_parameters_maximum_secret_length, 
+                       _ccss_shamir_share_bag_add_share, _ccss_shamir_share_bag_init, 
+                       _ccss_shamir_share_bag_recover_secret, _ccss_shamir_share_export, 
+                       _ccss_shamir_share_generator_generate_share, _ccss_shamir_share_generator_init, 
+                       _ccss_shamir_share_import, _ccss_shamir_share_init, _ccss_shamir_share_sizeof_y, 
+                       _ccvrf_derive_public_key, _ccvrf_factory_irtfdraft03, _ccvrf_factory_irtfdraft03_default, 
+                       _ccvrf_proof_to_hash, _ccvrf_prove, _ccvrf_sizeof_hash, _ccvrf_sizeof_proof, 
+                       _ccvrf_sizeof_public_key, _ccvrf_sizeof_secret_key, _ccvrf_verify, 
+                       _ccwrap_auth_decrypt, _ccwrap_auth_decrypt_withiv, _ccwrap_auth_encrypt, 
+                       _ccwrap_auth_encrypt_withiv, _ccwrap_unwrapped_size, _ccwrap_wrapped_size, 
+                       _ccxts_one_shot, _ccz_add, _ccz_addi, _ccz_bit, _ccz_bitlen, 
+                       _ccz_cmp, _ccz_cmpi, _ccz_divmod, _ccz_expmod, _ccz_free, 
+                       _ccz_gcd, _ccz_init, _ccz_invmod, _ccz_is_negative, _ccz_is_one, 
+                       _ccz_is_prime, _ccz_is_zero, _ccz_lcm, _ccz_lprint, _ccz_lsl, 
+                       _ccz_lsr, _ccz_mod, _ccz_mul, _ccz_muli, _ccz_mulmod, _ccz_neg, 
+                       _ccz_print, _ccz_random_bits, _ccz_read_radix, _ccz_read_uint, 
+                       _ccz_set, _ccz_set_bit, _ccz_seti, _ccz_size, _ccz_sqr, _ccz_sqrmod, 
+                       _ccz_sub, _ccz_subi, _ccz_trailing_zeros, _ccz_write_int, 
+                       _ccz_write_int_size, _ccz_write_radix, _ccz_write_radix_size, 
                        _ccz_write_uint, _ccz_write_uint_size, _ccz_zero, _cczp_init, 
                        _cczp_init_with_recip, _cczp_inv, _cczp_power, _cczp_power_fast, 
-                       _fipspost_post, _fipspost_trace_vtable ]
+                       _csss_shamir_share_bag_can_recover_secret, _fipspost_post, 
+                       _fipspost_trace_vtable ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B94C0052-B75A-3169-80AA-5F480588AF6E', 'x86_64: B94C0052-B75A-3169-80AA-5F480588AF6E' ]
+uuids:           [ 'x86_64: 415D83EF-084C-3485-B757-53001870EA94', 'x86_64: 415D83EF-084C-3485-B757-53001870EA94' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_featureflags.dylib'
 current-version: 17

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D5D50BCE-287B-3C95-8F7E-B85182D64A97', 'x86_64: D5D50BCE-287B-3C95-8F7E-B85182D64A97' ]
+uuids:           [ 'x86_64: B57DF935-DF2D-362A-8F93-759EC9E85A50', 'x86_64: B57DF935-DF2D-362A-8F93-759EC9E85A50' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SpotlightIndex.framework/Versions/A/SpotlightIndex'
-current-version: 2074.4
+current-version: 2076.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _RLEOIDArrayAddOid, _RLEOIDArrayAddOid_locked, _RLEOIDArrayAddOids, 
@@ -26,9 +26,9 @@ exports:
                        _SIGetAttributes, _SIGetCSAttributes, _SIGetExceptionPort, 
                        _SIGetLargestOid, _SIGetMaxTransactionID, _SIGetPermCacheStatistics, 
                        _SIGetStoreCookie, _SIHasPersistentStoreCookie, _SIHealthCheckFiles, 
-                       _SIIndexInactive, _SIIndexIsLowLatency, _SIIndexingFullyCaughtUp, 
-                       _SIInitialIndexingEnded, _SIInitialIndexingStarted, _SIMatch, 
-                       _SIMatchWithFuzzyIndicies, _SIMatcherCreate, _SIMatcherDispose, 
+                       _SIIndexInactive, _SIIndexIsInPlayback, _SIIndexIsLowLatency, 
+                       _SIIndexingFullyCaughtUp, _SIInitialIndexingEnded, _SIInitialIndexingStarted, 
+                       _SIMatch, _SIMatchWithFuzzyIndicies, _SIMatcherCreate, _SIMatcherDispose, 
                        _SIMigrateIndex, _SIMoveDirectories, _SIMoveFiles, _SINotePermChange, 
                        _SIOpenIndex, _SIOpenIndexAtPathWithCallbacks, _SIOutstandingPSIDCalls, 
                        _SIPathFilterCreate, _SIPathFilterEvaluate, _SIPathFilterFilter, 

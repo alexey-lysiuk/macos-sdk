@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 44D9F114-0D09-331E-8CD2-3A191E5AE8E1' ]
+uuids:           [ 'x86_64: 82777143-A900-33D0-BCFA-2511C89C9EAD' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv'
 current-version: 0
@@ -94,7 +94,7 @@ exports:
                        _NodeGetStatus, _NodeGetVRefNum, _NodeHasChildNew, _NodeHasCustomIcon, 
                        _NodeInlineProgressCancel, _NodeIs, _NodeIsAlias, _NodeIsApplication, 
                        _NodeIsClientNodeRef, _NodeIsClipping, _NodeIsComputer, _NodeIsContainer, 
-                       _NodeIsDesktop, _NodeIsDiagnosticLoggingEnabled, _NodeIsDiagnosticLoggingSupported, 
+                       _NodeIsDiagnosticLoggingEnabled, _NodeIsDiagnosticLoggingSupported, 
                        _NodeIsFontFile, _NodeIsFullyFormed, _NodeIsLocation, _NodeIsOnReadOnlySystemVolume, 
                        _NodeIsOnSSD, _NodeIsPackage, _NodeIsQuery, _NodeIsQueryHit, 
                        _NodeIsQueryHitsContainer, _NodeIsSavedQuery, _NodeIsSymLink, 

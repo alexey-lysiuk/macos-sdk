@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 61A2BDF8-E3AC-3714-A967-92404AC52389', 'x86_64: 61A2BDF8-E3AC-3714-A967-92404AC52389' ]
+uuids:           [ 'x86_64: 9003721F-8543-3A21-BF11-2A981614F481', 'x86_64: 9003721F-8543-3A21-BF11-2A981614F481' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth'
 exports:         

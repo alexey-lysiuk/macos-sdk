@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AF25B3C4-5A19-3726-9984-C6D94C3DCD28', 'x86_64: AF25B3C4-5A19-3726-9984-C6D94C3DCD28' ]
+uuids:           [ 'x86_64: 0B8F99DD-BD57-3603-A493-FE7977DC16BA', 'x86_64: 0B8F99DD-BD57-3603-A493-FE7977DC16BA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/snatmap.framework/Versions/A/snatmap'
 exports:         

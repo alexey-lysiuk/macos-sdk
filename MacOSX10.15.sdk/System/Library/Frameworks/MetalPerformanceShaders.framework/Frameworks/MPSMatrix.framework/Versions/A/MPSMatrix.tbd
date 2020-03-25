@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8665FDF1-210F-3A8C-9D5D-FA0C49FD8C8C', 'x86_64: 8665FDF1-210F-3A8C-9D5D-FA0C49FD8C8C' ]
+uuids:           [ 'x86_64: 1E4FE6EF-6D42-3439-835C-F4F20B05E0F5', 'x86_64: 1E4FE6EF-6D42-3439-835C-F4F20B05E0F5' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix'
-current-version: 122.2
+current-version: 122.5.6
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSNeuralNetwork, MetalPerformanceShaders ]

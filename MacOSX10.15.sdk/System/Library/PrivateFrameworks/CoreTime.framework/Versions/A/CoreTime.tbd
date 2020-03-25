@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 226F16F5-6F11-3F6E-AEEA-51ED1F9593B0', 'x86_64: 226F16F5-6F11-3F6E-AEEA-51ED1F9593B0' ]
+uuids:           [ 'x86_64: A777E743-15DF-3E25-884C-BEF6A09AB1F5', 'x86_64: A777E743-15DF-3E25-884C-BEF6A09AB1F5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreTime.framework/Versions/A/CoreTime'
-current-version: 266
+current-version: 266.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _TMBBTimeActiveNotification, _TMConfirmTimeZone, _TMConvertTicksToSeconds, 

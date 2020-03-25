@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 36EB7D45-4E72-31B9-BEF7-E446A5C803BB', 'x86_64: 36EB7D45-4E72-31B9-BEF7-E446A5C803BB' ]
+uuids:           [ 'x86_64: 87D77C55-8176-3288-B0AF-6DFD2BD99C8C', 'x86_64: 87D77C55-8176-3288-B0AF-6DFD2BD99C8C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Montreal.framework/Versions/A/Montreal'
-current-version: 120.1
+current-version: 121.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MLPModelGenerateFormatCompact, _MLPModelGenerateFormatJSON, 
@@ -49,6 +49,7 @@ exports:
                        _MRLNeuralNetworkEvaluateOutputLabelKey, _MRLNeuralNetworkGetNodeParams, 
                        _MRLNeuralNetworkGetOutput, _MRLNeuralNetworkGetOutputDimension, 
                        _MRLNeuralNetworkPredict, _MRLNeuralNetworkSave, _MRLNeuralNetworkSetInput, 
+                       _MRLNeuralNetworkSetPartialOutputIndices, _MRLNeuralNetworkSetPartialOutputRange, 
                        _kMRLModelBeta1Key, _kMRLModelBeta2Key, _kMRLModelDataKey, 
                        _kMRLModelEmbeddingLocationKey, _kMRLModelErrorCountKey, _kMRLModelErrorRateKey, 
                        _kMRLModelEstimatorTypeKey, _kMRLModelFileLocationKey, _kMRLModelHiddenNodesKey, 

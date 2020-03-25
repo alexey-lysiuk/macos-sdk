@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0EAC823B-0A4F-3FFC-89B0-EF5B19B1E339', 'x86_64: 0EAC823B-0A4F-3FFC-89B0-EF5B19B1E339' ]
+uuids:           [ 'x86_64: 644ABE7E-FA65-3B84-A92A-D00154B9FE2E', 'x86_64: 644ABE7E-FA65-3B84-A92A-D00154B9FE2E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/Versions/A/SafariSafeBrowsing'
 current-version: 0
@@ -13,5 +13,5 @@ exports:
                        __ZN12SafeBrowsing7Service4mainEv ]
     objc-classes:    [ SSBAvailability, SSBDatabaseUpdaterStatus, SSBLookupContext, 
                        SSBLookupResult, SSBServiceLookupResult, _SSBDatabaseStatus, 
-                       _SSBSafeHashCache, _SSBServiceStatus ]
+                       _SSBServiceStatus ]
 ...

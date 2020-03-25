@@ -67,5 +67,5 @@ typedef NSString *NSFileProviderItemDecorationIdentifier NS_TYPED_EXTENSIBLE_ENU
  To adopt this protocol, implement the -decorations method on your NSFileProviderItem to return valid decoration identifiers
  from your Info.plist.
  */
- @property (nonatomic, nullable, readonly, strong) NSArray <NSFileProviderItemDecorationIdentifier> *decorations API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
+ @property (nonatomic, nullable, readonly, strong) NSArray <NSFileProviderItemDecorationIdentifier> *decorations FILEPROVIDER_API_AVAILABILITY_FPFS_NEXT;
 @end

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9032BB3-4A50-3C0B-9B0C-079865EFE1AD' ]
+uuids:           [ 'x86_64: 9F7522AB-457C-3338-B54A-E2FB2D451E6E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WeatherFoundation.framework/Versions/A/WeatherFoundation'
 exports:         
@@ -115,9 +115,10 @@ exports:
                        _WDS_V1_WX_SEVERITY, _WFAPIVersionBucketHash, _WFAPIVersionFallbackKey, 
                        _WFAPIVersionKey, _WFAPIVersionV1, _WFAPIVersionV2, _WFAPIVersionV3, 
                        _WFAQIEnabled, _WFAQIEnabledCountriesKey, _WFAggregateCommonRequestSupportedForecastTypes, 
-                       _WFAirQualityRequestAttachRawAPIOptionsKey, _WFAppSettingsRefreshRateKey, 
-                       _WFAttributionUnlocalizedDescriptionSourceString, _WFAttributionUnlocalizedSourceString, 
-                       _WFCacheKeyForForecastType, _WFClearConfigCacheOnLaunch, _WFConditionCodeFromLegacyWeatherConditionCode, 
+                       _WFAirQualityRequestAttachRawAPIOptionsKey, _WFAppAnalyticsEnvKey, 
+                       _WFAppSettingsRefreshRateKey, _WFAttributionUnlocalizedDescriptionSourceString, 
+                       _WFAttributionUnlocalizedSourceString, _WFCacheKeyForForecastType, 
+                       _WFCachedAppConfig, _WFClearConfigCacheOnLaunch, _WFConditionCodeFromLegacyWeatherConditionCode, 
                        _WFConvertTemperature, _WFExecutingReverseGeoNotification, 
                        _WFFetchRemoteSettings, _WFForecastRequestAttachRawAPIOptionsKey, 
                        _WFForecastTypeForDateComponents, _WFForecastTypeIsRequestedInTypes, 
@@ -137,11 +138,11 @@ exports:
                        _WFURLComponentLocationName, _WFURLComponentLongitude, _WFURLComponentPlatform, 
                        _WFUnknownTemperatureString, _WFUseInternalSettings, _WFUseNonInternalBundleID, 
                        _WFWDSAPI, _WFWDSAPIEnvDev, _WFWDSAPIEnvKey, _WFWDSAPIEnvProd, 
-                       _WFWDSAPIEnvProdOrigin, _WFWDSAPIEnvStaging, _WFWDSAPIVersionV1, 
-                       _WFWeatherConditionComponent, _WFWeatherDewpointComponent, 
-                       _WFWeatherDewpointTemperatureComponent, _WFWeatherFeelsLikeTemperatureComponent, 
-                       _WFWeatherForecastExpirationTimeComponent, _WFWeatherForecastTimeComponent, 
-                       _WFWeatherForecastedPrecipitationAmountMeasurementComponent, 
+                       _WFWDSAPIEnvProdOrigin, _WFWDSAPIEnvQA, _WFWDSAPIEnvStaging, 
+                       _WFWDSAPIEnvTest, _WFWDSAPIVersionV1, _WFWeatherConditionComponent, 
+                       _WFWeatherDewpointComponent, _WFWeatherDewpointTemperatureComponent, 
+                       _WFWeatherFeelsLikeTemperatureComponent, _WFWeatherForecastExpirationTimeComponent, 
+                       _WFWeatherForecastTimeComponent, _WFWeatherForecastedPrecipitationAmountMeasurementComponent, 
                        _WFWeatherHighTemperatureComponent, _WFWeatherHumidityComponent, 
                        _WFWeatherIOSLinkComponent, _WFWeatherLowTemperatureComponent, 
                        _WFWeatherMobileLinkComponent, _WFWeatherPrecipitationAmountComponent, 

@@ -313,6 +313,8 @@ struct vnode_fsparam {
 #define VNODE_ATTR_va_fsid64            (1LL<<41)       /* 20000000000 */
 #define VNODE_ATTR_va_write_gencount    (1LL<<42)       /* 40000000000 */
 #define VNODE_ATTR_va_private_size      (1LL<<43)       /* 80000000000 */
+#define VNODE_ATTR_va_clone_id          (1LL<<44)       /* 100000000000 */
+#define VNODE_ATTR_va_extflags          (1LL<<45)       /* 200000000000 */
 
 #define VNODE_ATTR_BIT(n)       (VNODE_ATTR_ ## n)
 
@@ -362,7 +364,9 @@ struct vnode_fsparam {
 	                        VNODE_ATTR_BIT(va_rsrc_alloc) |         \
 	                        VNODE_ATTR_BIT(va_fsid64) |             \
 	                        VNODE_ATTR_BIT(va_write_gencount) |     \
-	                        VNODE_ATTR_BIT(va_private_size))
+	                        VNODE_ATTR_BIT(va_private_size) |       \
+	                        VNODE_ATTR_BIT(va_clone_id) |           \
+	                        VNODE_ATTR_BIT(va_extflags))
 
 /*
  * Read-only attributes.
@@ -391,8 +395,11 @@ struct vnode_fsparam {
 	                        VNODE_ATTR_BIT(va_rsrc_length) |        \
 	                        VNODE_ATTR_BIT(va_rsrc_alloc) |         \
 	                        VNODE_ATTR_BIT(va_fsid64) |             \
-	                        VNODE_ATTR_BIT(va_write_gencount) |             \
-	                        VNODE_ATTR_BIT(va_private_size))
+	                        VNODE_ATTR_BIT(va_write_gencount) |     \
+	                        VNODE_ATTR_BIT(va_private_size) |       \
+	                        VNODE_ATTR_BIT(va_clone_id) |           \
+	                        VNODE_ATTR_BIT(va_extflags))
+
 /*
  * Attributes that can be applied to a new file object.
  */
@@ -492,6 +499,8 @@ struct vnode_attr {
 	uint32_t va_write_gencount;     /* counter that increments each time the file changes */
 
 	uint64_t va_private_size; /* If the file were deleted, how many bytes would be freed immediately */
+	uint64_t va_clone_id;     /* If a file is cloned this is a unique id shared by all "perfect" clones */
+	uint64_t va_extflags;     /* extended file/directory flags */
 
 	/* add new fields here only */
 };

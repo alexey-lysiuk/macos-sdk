@@ -2,7 +2,7 @@
 //  INSetMessageAttributeIntent.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntent.h>
@@ -15,7 +15,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(10.0))
-API_UNAVAILABLE(watchos, macosx)
+API_UNAVAILABLE(macos, watchos, tvos)
 @interface INSetMessageAttributeIntent : INIntent
 
 - (instancetype)initWithIdentifiers:(nullable NSArray<NSString *> *)identifiers
@@ -35,7 +35,7 @@ API_UNAVAILABLE(watchos, macosx)
  */
 
 API_AVAILABLE(ios(10.0))
-API_UNAVAILABLE(watchos, macosx)
+API_UNAVAILABLE(macos, watchos, tvos)
 @protocol INSetMessageAttributeIntentHandling <NSObject>
 
 @required

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9C5597A5-38D2-35A5-95C5-07DFAD722BFF' ]
+uuids:           [ 'x86_64: D1A3C2DC-4A73-3BCB-8DF6-362CE27937A1' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CalendarDraw.framework/Versions/A/CalendarDraw'
 current-version: 2380.2.1

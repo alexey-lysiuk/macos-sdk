@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 50920C97-4794-3C9E-974F-465999345C25' ]
+uuids:           [ 'x86_64: 3AE5323E-C4DD-35B1-8879-5B0CA84A2E5B' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/HIDDriverKit.framework/Versions/A/HIDDriverKit_development'
 exports:         
@@ -18,20 +18,21 @@ exports:
                        __ZN10IOHIDEvent15setIntegerValueEjy, __ZN10IOHIDEvent18vendorDefinedEventEyjjjPhjj, 
                        __ZN10IOHIDEvent4freeEv, __ZN10IOHIDEvent7getTypeEv, __ZN10IOHIDEvent8withTypeEjyjj, 
                        __ZN10IOHIDEvent9getLengthEPj, __ZN10IOHIDEvent9getLengthEv, 
-                       __ZN10IOHIDEvent9readBytesEPvj, __ZN11IOHIDDevice11KernelStartEP9IOServicePFiP15OSMetaClassBase5IORPCE, 
-                       __ZN11IOHIDDevice11setPropertyEP8OSObjectS1_, __ZN11IOHIDDevice12_SetPropertyEP24IOBufferMemoryDescriptorPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN10IOHIDEvent9readBytesEPvj, __ZN11IOHIDDevice11setPropertyEP8OSObjectS1_, 
+                       __ZN11IOHIDDevice12_SetPropertyEP24IOBufferMemoryDescriptorPFiP15OSMetaClassBase5IORPCE, 
                        __ZN11IOHIDDevice12handleReportEyP18IOMemoryDescriptorj15IOHIDReportTypej, 
                        __ZN11IOHIDDevice13_HandleReportEyP18IOMemoryDescriptorj15IOHIDReportTypejPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN11IOHIDDevice13_Start_InvokeE5IORPCP15OSMetaClassBasePFiS2_P9IOServiceE, 
                        __ZN11IOHIDDevice14CompleteReportEP8OSActionijPFiP15OSMetaClassBase5IORPCE, 
                        __ZN11IOHIDDevice14_ProcessReportE20HIDReportCommandTypeP18IOMemoryDescriptor15IOHIDReportTypejjP8OSActionPFiP15OSMetaClassBase5IORPCE, 
                        __ZN11IOHIDDevice17_SetProperty_ImplEP24IOBufferMemoryDescriptor, 
-                       __ZN11IOHIDDevice18KernelStart_InvokeE5IORPCP15OSMetaClassBasePFiS2_P9IOServiceE, 
                        __ZN11IOHIDDevice19_ProcessReport_ImplE20HIDReportCommandTypeP18IOMemoryDescriptor15IOHIDReportTypejjP8OSAction, 
                        __ZN11IOHIDDevice19_SetProperty_InvokeE5IORPCP15OSMetaClassBasePFvS2_P24IOBufferMemoryDescriptorE, 
                        __ZN11IOHIDDevice20_HandleReport_InvokeE5IORPCP15OSMetaClassBasePFiS2_yP18IOMemoryDescriptorj15IOHIDReportTypejE, 
                        __ZN11IOHIDDevice21CompleteReport_InvokeE5IORPCP15OSMetaClassBasePFvS2_P8OSActionijE, 
                        __ZN11IOHIDDevice21_ProcessReport_InvokeE5IORPCP15OSMetaClassBasePFvS2_20HIDReportCommandTypeP18IOMemoryDescriptor15IOHIDReportTypejjP8OSActionE, 
-                       __ZN11IOHIDDevice32CreateActionKernelCompleteReportEmPP8OSAction, 
+                       __ZN11IOHIDDevice27CreateAction_CompleteReportEmPP8OSAction, 
+                       __ZN11IOHIDDevice6_StartEP9IOServicePFiP15OSMetaClassBase5IORPCE, 
                        __ZN11IOHIDDevice8DispatchE5IORPC, __ZN11IOHIDDevice9_DispatchEPS_5IORPC, 
                        __ZN11IOHIDDevice9getReportEP18IOMemoryDescriptor15IOHIDReportTypejjP8OSAction, 
                        __ZN11IOHIDDevice9setReportEP18IOMemoryDescriptor15IOHIDReportTypejjP8OSAction, 
@@ -60,11 +61,11 @@ exports:
                        __ZN14IOHIDInterface9_DispatchEPS_5IORPC, __ZN15IOUserHIDDevice10Start_ImplEP9IOService, 
                        __ZN15IOUserHIDDevice11handleStartEP9IOService, __ZN15IOUserHIDDevice19newReportDescriptorEv, 
                        __ZN15IOUserHIDDevice20newDeviceDescriptionEv, __ZN15IOUserHIDDevice8DispatchE5IORPC, 
-                       __ZN15IOUserHIDDevice9_DispatchEPS_5IORPC, __ZN17IOHIDEventService11KernelStartEP9IOServicePFiP15OSMetaClassBase5IORPCE, 
-                       __ZN17IOHIDEventService11SetLED_ImplEjb, __ZN17IOHIDEventService13SetLED_InvokeE5IORPCP15OSMetaClassBasePFvS2_jbE, 
+                       __ZN15IOUserHIDDevice9_DispatchEPS_5IORPC, __ZN17IOHIDEventService11SetLED_ImplEjb, 
+                       __ZN17IOHIDEventService13SetLED_InvokeE5IORPCP15OSMetaClassBasePFvS2_jbE, 
+                       __ZN17IOHIDEventService13_Start_InvokeE5IORPCP15OSMetaClassBasePFiS2_P9IOServiceE, 
                        __ZN17IOHIDEventService13dispatchEventEP10IOHIDEvent, __ZN17IOHIDEventService14EventAvailableEjPFiP15OSMetaClassBase5IORPCE, 
                        __ZN17IOHIDEventService14SetEventMemoryEP24IOBufferMemoryDescriptorPFiP15OSMetaClassBase5IORPCE, 
-                       __ZN17IOHIDEventService18KernelStart_InvokeE5IORPCP15OSMetaClassBasePFiS2_P9IOServiceE, 
                        __ZN17IOHIDEventService21EventAvailable_InvokeE5IORPCP15OSMetaClassBasePFiS2_jE, 
                        __ZN17IOHIDEventService21SetEventMemory_InvokeE5IORPCP15OSMetaClassBasePFiS2_P24IOBufferMemoryDescriptorE, 
                        __ZN17IOHIDEventService21dispatchKeyboardEventEyjjjjb, __ZN17IOHIDEventService22_DispatchKeyboardEventEyjjjjbPFiP15OSMetaClassBase5IORPCE, 
@@ -81,6 +82,7 @@ exports:
                        __ZN17IOHIDEventService36_DispatchRelativePointerEvent_InvokeE5IORPCP15OSMetaClassBasePFiS2_yiijjbE, 
                        __ZN17IOHIDEventService40_DispatchRelativeScrollWheelEvent_InvokeE5IORPCP15OSMetaClassBasePFiS2_yiiijbE, 
                        __ZN17IOHIDEventService6SetLEDEjbPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN17IOHIDEventService6_StartEP9IOServicePFiP15OSMetaClassBase5IORPCE, 
                        __ZN17IOHIDEventService8DispatchE5IORPC, __ZN17IOHIDEventService9_DispatchEPS_5IORPC, 
                        __ZN19IOHIDElementPrivate11getByteSizeEv, __ZN19IOHIDElementPrivate11getReportIDEv, 
                        __ZN19IOHIDElementPrivate11nullElementEP21IOHIDElementContainerjPS_, 

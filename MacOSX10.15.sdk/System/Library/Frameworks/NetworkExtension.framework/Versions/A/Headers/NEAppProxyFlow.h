@@ -1,11 +1,13 @@
 /*
- * Copyright (c) 2015, 2017-2018 Apple Inc.
+ * Copyright (c) 2015, 2017-2018, 2020 Apple Inc.
  * All rights reserved.
  */
 
 #ifndef __NE_INDIRECT__
 #error "Please import the NetworkExtension module instead of this file directly."
 #endif
+
+#import <Network/Network.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -87,10 +89,31 @@ API_AVAILABLE(macos(10.11), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
 - (void)closeWriteWithError:(nullable NSError *)error API_AVAILABLE(macos(10.11), ios(9.0)) API_UNAVAILABLE(watchos, tvos);
 
 /*!
+ * @method setMetadata:
+ * @discussion Set the flow's NEFlowMetaData object in an nw_parameters_t object. The nw_parameters_t object can then be used to create a connection that transparently proxies the flow's
+ *     data, and provides accurate source app information to any subsequent NEAppProxyProvider instances that transparently proxy the flow.
+ * @param parameters An nw_parameters_t object.
+ */
+- (void)setMetadata:(nw_parameters_t)parameters API_AVAILABLE(macos(10.15.4)) API_UNAVAILABLE(ios, watchos, tvos);
+
+/*!
  * @property metaData
  * @discussion An NEFlowMetaData object containing meta data for the flow.
  */
 @property (readonly) NEFlowMetaData *metaData API_AVAILABLE(macos(10.11), ios(9.0)) API_UNAVAILABLE(watchos, tvos);
+
+#if OS_OBJECT_USE_OBJC
+#define NECOPYNULLABLE (copy, nullable)
+#else
+#define NECOPYNULLABLE (nullable)
+#endif
+
+/*!
+ * @property networkInterface
+ * @discussion An nw_interface_t containing information about the network interface used by the flow. If the flow's data is transported using a different interface, this property
+ *    should be set to that interface.
+ */
+@property NECOPYNULLABLE nw_interface_t networkInterface API_AVAILABLE(macos(10.15.4), ios(13.4)) API_UNAVAILABLE(watchos, tvos);
 
 @end
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 94910CCB-C386-3912-84A2-1A730BB6EF62', 'x86_64: 94910CCB-C386-3912-84A2-1A730BB6EF62' ]
+uuids:           [ 'x86_64: 212D02CE-11BC-3C7F-BDFD-DF1A0C4017EE', 'x86_64: 212D02CE-11BC-3C7F-BDFD-DF1A0C4017EE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Lexicon.framework/Versions/A/Lexicon'
 current-version: 72

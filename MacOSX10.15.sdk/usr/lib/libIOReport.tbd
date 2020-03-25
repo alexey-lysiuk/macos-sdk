@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EC75DB3B-CFC4-3235-8C2F-CE3C29CA8CFE', 'x86_64: EC75DB3B-CFC4-3235-8C2F-CE3C29CA8CFE' ]
+uuids:           [ 'x86_64: FA47D01E-E02C-3178-9C10-DF4E7F6351B0', 'x86_64: FA47D01E-E02C-3178-9C10-DF4E7F6351B0' ]
 platform:        zippered
 install-name:    '/usr/lib/libIOReport.dylib'
 exports:         

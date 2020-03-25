@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E501918F-F9F8-34FD-9444-995B239EB3B3' ]
+uuids:           [ 'x86_64: E499A000-F28A-37D5-BCBC-BD702D47ACB8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/ManagedEvent.framework/Versions/A/ManagedEvent'
-current-version: 1238.40.4
+current-version: 1238.100.26
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _kManagedEventKeyBackgroundCombinedFlowProperties, _kManagedEventKeyBackgroundSpecificFlowClassifications, 

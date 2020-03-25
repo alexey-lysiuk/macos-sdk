@@ -8,10 +8,10 @@
 #import <Foundation/Foundation.h>
 #import <SafariServices/SFFoundation.h>
 
-SF_EXTERN NSString * const SFErrorDomain API_AVAILABLE(ios(10.0));
+SF_EXTERN NSString * const SFErrorDomain API_AVAILABLE(ios(10.0), macCatalyst(13.4));
 
 typedef NS_ENUM(NSInteger, SFErrorCode) {
     SFErrorNoExtensionFound = 1,
     SFErrorNoAttachmentFound = 2,
     SFErrorLoadingInterrupted = 3,
-} API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(macCatalyst);
+} API_AVAILABLE(ios(10.0), macCatalyst(13.4));

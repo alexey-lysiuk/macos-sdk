@@ -13,18 +13,18 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol SKRequestDelegate;
 
 // Base class used to fetch data from the store.  Should not be used directly.
-SK_EXTERN_CLASS API_AVAILABLE(ios(3.0), macos(10.7)) @interface SKRequest : NSObject {
+SK_EXTERN_CLASS API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2)) @interface SKRequest : NSObject {
 @private
     id _requestInternal;
 }
 
-@property(nonatomic, weak, nullable) id <SKRequestDelegate> delegate API_AVAILABLE(ios(3.0), macos(10.7));
+@property(nonatomic, weak, nullable) id <SKRequestDelegate> delegate API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
 
 // Cancel the request if it has started.
-- (void)cancel API_AVAILABLE(ios(3.0), macos(10.7));
+- (void)cancel API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
 
 // Start the request if it has not already been started.
-- (void)start API_AVAILABLE(ios(3.0), macos(10.7));
+- (void)start API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
 
 @end
 
@@ -32,8 +32,8 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(3.0), macos(10.7)) @interface SKRequest : NSOb
 @protocol SKRequestDelegate <NSObject>
 
 @optional
-- (void)requestDidFinish:(SKRequest *)request API_AVAILABLE(ios(3.0), macos(10.7));
-- (void)request:(SKRequest *)request didFailWithError:(NSError *)error API_AVAILABLE(ios(3.0), macos(10.7));
+- (void)requestDidFinish:(SKRequest *)request API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
+- (void)request:(SKRequest *)request didFailWithError:(NSError *)error API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
 
 @end
 

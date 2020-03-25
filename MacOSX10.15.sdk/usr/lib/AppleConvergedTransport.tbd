@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 919AEAA1-E30E-3852-9525-073761ECF993' ]
+uuids:           [ 'x86_64: DC007BE9-A869-3C97-B30A-FE8B4482E5A0' ]
 platform:        macosx
 install-name:    '/usr/lib/AppleConvergedTransport.dylib'
 exports:         

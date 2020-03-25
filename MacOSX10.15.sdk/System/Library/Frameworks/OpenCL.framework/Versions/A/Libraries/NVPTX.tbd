@@ -1,8 +1,8 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8A7F0075-FFD9-384F-9B4D-3C9E9F1E701A' ]
+uuids:           [ 'x86_64: 844DE6CE-80CE-30C2-83B5-0D5DAAB519A4' ]
 platform:        macosx
-install-name:    '/BuildRoot/Library/Caches/com.apple.xbs/Binaries/GPUDriversNvidia/install/TempContent/Root/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/NVPTX.dylib'
+install-name:    '/AppleInternal/BuildRoot/Library/Caches/com.apple.xbs/Binaries/GPUDriversNvidia/install/TempContent/Root/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/NVPTX.dylib'
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LLVMInitializeNVPTXAsmPrinter, _LLVMInitializeNVPTXBackendAsmPrinter, 

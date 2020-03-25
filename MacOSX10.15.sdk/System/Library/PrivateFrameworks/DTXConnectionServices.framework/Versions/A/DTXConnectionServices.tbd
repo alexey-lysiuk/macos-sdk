@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 59D2F54E-F900-3223-996E-D4A264E911A3', 'x86_64: 59D2F54E-F900-3223-996E-D4A264E911A3' ]
+uuids:           [ 'x86_64: 6237A620-13EA-319F-8A2D-CDD84FE75F4B', 'x86_64: 6237A620-13EA-319F-8A2D-CDD84FE75F4B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DTXConnectionServices.framework/Versions/A/DTXConnectionServices'
-current-version: 64523.185.1
+current-version: 64535.41
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CFArrayCreateWithDTXPrimitiveArray, _CFDictionaryCreateWithDTXPrimitiveDictionary, 
@@ -29,8 +29,10 @@ exports:
                        DTXTransport, _DTXProxy ]
     objc-eh-types:   [ DTXDecompressionException ]
     objc-ivars:      [ DTXBlockCompressorLibCompression._lz4ScratchBuffer, DTXBlockCompressorLibCompression._lzfseScratchBuffer, 
-                       DTXResourceTracker._acqSem, DTXResourceTracker._acquireNum, 
-                       DTXResourceTracker._log, DTXResourceTracker._maxChunk, DTXResourceTracker._parentTracker, 
-                       DTXResourceTracker._queue, DTXResourceTracker._suspendCount, 
-                       DTXResourceTracker._total, DTXResourceTracker._used, DTXResourceTracker._waiting ]
+                       DTXSendAndWaitStats._compressionTotalDataCompressed, DTXSendAndWaitStats._compressionTotalDataUncompressed, 
+                       DTXSendAndWaitStats._compressionTotalNanosToCompress, DTXSendAndWaitStats._compressionTypeSet, 
+                       DTXSendAndWaitStats._lastStatTime, DTXSendAndWaitStats._microsecondsPerUnit, 
+                       DTXSendAndWaitStats._previousSendBytes, DTXSendAndWaitStats._statsQueue, 
+                       DTXSendAndWaitStats._timeBaseInfo, DTXSendAndWaitStats._totalSendBytes, 
+                       _DTXProxy._proxyChannel ]
 ...

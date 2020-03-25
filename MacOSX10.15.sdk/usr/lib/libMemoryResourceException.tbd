@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F85A3B00-3C1C-3331-83CF-4B1444E4EC63' ]
+uuids:           [ 'x86_64: 2CD75869-7CBD-3181-9183-F84965B4BA7E' ]
 platform:        macosx
 install-name:    '/usr/lib/libMemoryResourceException.dylib'
 exports:         

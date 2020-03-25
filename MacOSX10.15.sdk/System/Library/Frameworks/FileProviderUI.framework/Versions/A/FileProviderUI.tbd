@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 98BA6EBC-4353-3FCC-9167-131F6831699C' ]
+uuids:           [ 'x86_64: E2232120-8B22-30BC-9B4B-B0ABBCC49F04' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/FileProviderUI.framework/Versions/A/FileProviderUI'
-current-version: 27
+current-version: 29
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _FPUIActionIdentifierAuthenticate, _FPUIActionViewControllerErrorDomain, 

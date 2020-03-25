@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 10105300-7B8D-3E1B-956E-76094E14FF9A', 'x86_64: 10105300-7B8D-3E1B-956E-76094E14FF9A' ]
+uuids:           [ 'x86_64: FE49259C-9B6D-3A7C-82E3-2E95C9EA6424', 'x86_64: FE49259C-9B6D-3A7C-82E3-2E95C9EA6424' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/VideoProcessing.framework/Versions/A/VideoProcessing'
 exports:         
@@ -151,13 +151,14 @@ exports:
                        _VCPFaceRectangleKey, _VCPFaceRollKey, _VCPJunkLabelFromSceneClassificationID, 
                        _VCPLogToOSLogType, _VCPMAFullAnalysisTypesImage, _VCPMAFullAnalysisTypesLivePhoto, 
                        _VCPMAFullAnalysisTypesMovie, _VCPMAFullAnalysisTypesThumbnail, 
-                       _VCPParseConfigurationRecordAndCreateParameterSets, _VCPParseParameterSetsAndCreateConfigurationRecord, 
-                       _VCPPerformance_RecordMeasurement, _VCPPerformance_ReportSummary, 
-                       _VCPPhotoLibrariesDefaultsKey, _VCPPhotosMediaAnalysisTaskID, 
-                       _VCPPhotosSceneAnalysisTaskID, _VCPPhotosSceneProcessingVersion, 
-                       _VCPPriorityScoreKey, _VCPProcessingStatusDescription, _VCPProcessingStatusShortDescription, 
-                       _VCPReadCodecConfigParams, _VCPReadDecMaxFrameFormat, _VCPReadEncMaxFrameFormat, 
-                       _VCPReadFrameSliceHeader, _VCPReadHEVCSliceHeader, _VCPSceneProcessing_ForceFullScanKey, 
+                       _VCPMediaAnalysisService_InProcessOption, _VCPParseConfigurationRecordAndCreateParameterSets, 
+                       _VCPParseParameterSetsAndCreateConfigurationRecord, _VCPPerformance_RecordMeasurement, 
+                       _VCPPerformance_ReportSummary, _VCPPhotoLibrariesDefaultsKey, 
+                       _VCPPhotosMediaAnalysisTaskID, _VCPPhotosSceneAnalysisTaskID, 
+                       _VCPPhotosSceneProcessingVersion, _VCPPriorityScoreKey, _VCPProcessingStatusDescription, 
+                       _VCPProcessingStatusShortDescription, _VCPReadCodecConfigParams, 
+                       _VCPReadDecMaxFrameFormat, _VCPReadEncMaxFrameFormat, _VCPReadFrameSliceHeader, 
+                       _VCPReadHEVCSliceHeader, _VCPSceneProcessing_ForceFullScanKey, 
                        _VCPSessionCopyProperty, _VCPSessionCreate, _VCPSessionCreateDefaultBufferProperties, 
                        _VCPSessionExecute, _VCPSessionGetTypeID, _VCPSessionSetProperty, 
                        _VCPSignPostLog, _VCPTaskIDDescription, _VCPTurboProcessing_QualityOfServiceKey, 
@@ -169,8 +170,9 @@ exports:
                        VCPInterAssetAnalyzer, VCPInternetReachability, VCPLogManager, 
                        VCPMediaAnalysisService, VCPMediaAnalyzer, VCPMetaTrackDecoder, 
                        VCPMovieAnalyzer, VCPMovieCurationResults, VCPMovieHighlightResult, 
-                       VCPPhotoAnalyzer, VCPPhotosAsset, VCPPreAnalyzer, VCPPriorityAnalysis, 
-                       VCPProtoAssetAnalysis, VCPProtoLivePhotoEffectsRecipe, VCPRealTimeAnalysisService, 
+                       VCPPhotoAnalyzer, VCPPhotosAsset, VCPPhotosSceneprintAssetProcessingTask, 
+                       VCPPreAnalyzer, VCPPriorityAnalysis, VCPProtoAssetAnalysis, 
+                       VCPProtoLivePhotoEffectsRecipe, VCPRealTimeAnalysisService, 
                        VCPSceneTaxonomy, VCPTimeMeasurement, VCPURLAsset, VCPVideoChatAnalysis, 
                        VCPVideoKeyFrameResult ]
 ...

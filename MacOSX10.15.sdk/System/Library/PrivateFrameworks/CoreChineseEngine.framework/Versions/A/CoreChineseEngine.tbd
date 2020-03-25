@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F6BA0584-BC3F-3888-8995-E857828F8FA0' ]
+uuids:           [ 'x86_64: FF7B4173-6D20-3AEF-AE8E-78385FEB91BA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreChineseEngine.framework/Versions/A/CoreChineseEngine'
 current-version: 449

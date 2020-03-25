@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 410227D3-ED7D-39E7-91BC-A06F783AF647' ]
+uuids:           [ 'x86_64: 5407B296-7F81-3676-B468-AF9047FE8325' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreWLANKit.framework/Versions/A/CoreWLANKit'
 exports:         

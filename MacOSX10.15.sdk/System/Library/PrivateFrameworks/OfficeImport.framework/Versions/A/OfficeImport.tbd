@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B5BF8692-F5A4-3CEC-B437-C275E539663A' ]
+uuids:           [ 'x86_64: A1BD36BF-D753-3A18-9E6D-9EB3FF237E6A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OfficeImport.framework/Versions/A/OfficeImport'
-current-version: 275
+current-version: 276
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _HTMLError, _HTMLHeight, _HTMLMainContent, _HTMLPageCount, 

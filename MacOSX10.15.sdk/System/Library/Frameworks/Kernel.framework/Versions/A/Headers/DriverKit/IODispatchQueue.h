@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IODispatchQueue.iig */
+/* iig(DriverKit-73.100.4) generated from IODispatchQueue.iig */
 
-/* IODispatchQueue.iig:1-52 */
+/* IODispatchQueue.iig:1-41 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -42,6 +42,11 @@ typedef void (*IODispatchFunction)(void * context);
 typedef void (^IODispatchQueueCancelHandler)(void);
 
 
+/* source class IODispatchQueue IODispatchQueue.iig:42-134 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class IODispatchQueue
  *
@@ -53,7 +58,94 @@ typedef void (^IODispatchQueueCancelHandler)(void);
  * By default the queue is serial and will execute one block at a time.
  */
 
-/* class IODispatchQueue IODispatchQueue.iig:53-134 */
+class NATIVE KERNEL IODispatchQueue : public OSObject
+{
+public:
+    /*!
+     * @brief       Creates a new dispatch queue object.
+     * @discussion  Creates a new dispatch queue object. All queues are currently serial, executing one block at time
+     *              FIFO order. The new object has retain count 1 and should be released by the caller.
+     * @param       options No options are currently defined, pass zero.
+     * @param       priority No priorities are currently defined, pass zero.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	static kern_return_t
+	Create(
+		const IODispatchQueueName name,
+		uint64_t                  options,
+		uint64_t                  priority,
+		IODispatchQueue        ** queue) LOCAL;
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+    /*!
+     * @brief       Determines if the current thread is running on the queue.
+     * @discussion  Determines if the current thread is running on the queue, including if the queue invoked a
+     *              second queue (ie. OnQueue can return true for more than one queue in a given context.)
+     * @return      bool true if current thread is running on this queue.
+     */
+	bool
+	OnQueue() LOCALONLY;
+
+    /*!
+     * @brief       Return the name the queue was created with.
+     * @discussion  Returns a pointer to the queues name. Only valid while the queue is retained.
+     * @return      C-string pointer in the queues internal storage.
+     */
+	const char *
+	GetName() LOCALONLY;
+
+    /*!
+     * @brief       Stop the queue from executing futher work.
+     * @discussion  Stops the queue from dequeuing work, and on completion of any block currently being executed,
+     *              invokes a callback block. Canceling is asynchronous.
+     * @param       handler Block that will executed when the queue has completed any inflight work 
+     *              and will not execute further work.
+     * @return      C-string pointer in the queues internal storage.
+     */
+	kern_return_t
+	Cancel(IODispatchQueueCancelHandler handler) LOCALONLY;
+
+    /*!
+     * @brief       Schedule a block to be executed on the queue asynchronously.
+     * @discussion  Schedules work to be done on the queue without waiting for it to complete. The queue will be
+     *              retained until the block completes.
+     * @param       block Block that will executed on the queue, not in the context of the caller.
+     */
+	void
+	DispatchAsync(IODispatchBlock block) LOCALONLY;
+
+    /*!
+     * @brief       C-function callback version of DispatchAsync.
+	 */
+	void
+	DispatchAsync_f(void * context, IODispatchFunction function) LOCALONLY;
+
+	void
+	DispatchSync(IODispatchBlock block) LOCALONLY;
+
+    /*!
+     * @brief       C-function callback version of DispatchSync.
+	 */
+	void
+	DispatchSync_f(void * context, IODispatchFunction function) LOCALONLY;
+
+    /*!
+     * @brief       Log the current execution context with respect to any queues the current thread holds.
+     * @param       output printf like output function. The address of IOLog is suitable to be used.
+	 */
+	static void
+	Log(const char * message, IODispatchLogFunction output) LOCALONLY;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IODispatchQueue IODispatchQueue.iig:42-134 */
 
 #define IODispatchQueue_SetPort_ID            0xc437e970b5609767ULL
 #define IODispatchQueue_Create_ID            0xac000428df2a91d0ULL
@@ -201,6 +293,9 @@ public:
 
     IODispatchQueue_VirtualMethods
 };
+
+#endif /* !__DOCUMENTATION__ */
+
 /* IODispatchQueue.iig:136-137 */
 
 #if DRIVERKIT_PRIVATE

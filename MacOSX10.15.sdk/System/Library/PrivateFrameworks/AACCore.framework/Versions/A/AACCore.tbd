@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: DEFE2798-7704-3585-BE50-0F8F05C675B1', 'x86_64: DEFE2798-7704-3585-BE50-0F8F05C675B1' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/AACCore.framework/Versions/A/AACCore'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AEAssessmentStateDidChangeNotificationName, _AEAssessmentStatePublisherRegisteringMachServiceName, 
+                       _AECoreError, _AECoreErrorDomain, _AECoreErrorUserInfo, _AELocalizedStringFromTableInBundle, 
+                       _AEPolicySessionFailedToActivateSubsystemsKey, _AEPolicySessionFailedToDeactivateSubsystemsKey ]
+    objc-classes:    [ AEActivePolicySession, AEAssessmentModeGestalt, AEAssessmentState, 
+                       AEAssessmentStatePublishingProxy, AEAssessmentStatePublishingXPCInterfaceFactory, 
+                       AEAssessmentStateSourceRegisteringProxy, AEAssessmentStateSourceRegisteringXPCInterfaceFactory, 
+                       AEFileSystem, AELifetimeProvidingProxy, AELifetimeProvidingXPCInterfaceFactory, 
+                       AELocalizedErrorDescriptions, AEOSGestalt, AEPerformancePrimitivesProvider, 
+                       AEPolicyBundle, AEPreferencesProvider, AERScreenPrimitivesProvider, 
+                       AERWindowPrimitivesProvider, AERWindowSpacePrimitivesProvider ]
+...

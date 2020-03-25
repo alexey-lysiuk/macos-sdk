@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EE7E5134-B5DC-3E58-9D01-72080E66C36A', 'x86_64: EE7E5134-B5DC-3E58-9D01-72080E66C36A' ]
+uuids:           [ 'x86_64: 41F61BDE-CEF5-3A4D-A0D1-F8A3D9BE39AF', 'x86_64: 41F61BDE-CEF5-3A4D-A0D1-F8A3D9BE39AF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FeatureFlagsSupport.framework/Versions/A/FeatureFlagsSupport'
 current-version: 17

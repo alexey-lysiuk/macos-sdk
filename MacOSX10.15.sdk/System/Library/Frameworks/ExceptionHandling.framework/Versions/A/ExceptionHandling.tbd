@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5A4331C9-AE65-3547-9DBF-1E4D51BBFAB2' ]
+uuids:           [ 'x86_64: 988B7AAE-677F-307B-BCF1-1BF2D11176E7' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ExceptionHandling.framework/Versions/A/ExceptionHandling'
 current-version: 13

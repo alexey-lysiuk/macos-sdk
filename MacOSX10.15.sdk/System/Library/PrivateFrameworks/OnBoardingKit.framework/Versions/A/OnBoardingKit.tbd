@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7FCA5A11-5ACB-3B99-ACDE-733E76E570BB' ]
+uuids:           [ 'x86_64: 629470B1-4678-38E1-8800-E1B8AEB161F9' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OnBoardingKit.framework/Versions/A/OnBoardingKit'
 exports:         

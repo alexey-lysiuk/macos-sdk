@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5E2B9000-49D6-3BFA-97F1-3B47A8A7418D', 'x86_64: 5E2B9000-49D6-3BFA-97F1-3B47A8A7418D' ]
+uuids:           [ 'x86_64: 2088BC70-5329-3390-A851-C4ECF654047C', 'x86_64: 2088BC70-5329-3390-A851-C4ECF654047C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Versions/A/BackgroundTaskManagement'
 current-version: 104

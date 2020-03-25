@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C8F86BE7-AAED-30A6-BBC2-550446137E7C', 'x86_64: C8F86BE7-AAED-30A6-BBC2-550446137E7C' ]
+uuids:           [ 'x86_64: 888FE7B9-CE6C-3C7C-BA33-63364462228A', 'x86_64: 888FE7B9-CE6C-3C7C-BA33-63364462228A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices'
-current-version: 1069.11
+current-version: 1069.22
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork', 
@@ -27,10 +27,10 @@ exports:
                        _nextafterf, _remquo, '_remquo$fenv_access_off' ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3301AF1B-D178-306A-9641-B57AA03FB1BE', 'x86_64: 3301AF1B-D178-306A-9641-B57AA03FB1BE' ]
+uuids:           [ 'x86_64: 2BAB1B88-C198-3D20-8DA3-056E66510E7A', 'x86_64: 2BAB1B88-C198-3D20-8DA3-056E66510E7A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE'
-current-version: 838
+current-version: 838.1
 compatibility-version: 0
 parent-umbrella: CoreServices
 exports:         
@@ -106,7 +106,7 @@ exports:
                        _vAEBuildAppleEvent, _vAEBuildDesc, _vAEBuildParameters ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FAA1467B-6D39-3EBE-9810-A4DF49478F10' ]
+uuids:           [ 'x86_64: D0FECC17-7E16-308F-98EA-AF311CB77FE6' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore'
 current-version: 1217
@@ -749,10 +749,10 @@ exports:
                        _scPrefsSetString, _str2dec, _x80tod, _x80told ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C1798F09-36D3-3C8E-AF72-A3DE63962AF1', 'x86_64: C1798F09-36D3-3C8E-AF72-A3DE63962AF1' ]
+uuids:           [ 'x86_64: 11513ED9-8B4B-39BB-A6B2-AA6AA0A2DF72', 'x86_64: 11513ED9-8B4B-39BB-A6B2-AA6AA0A2DF72' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices'
-current-version: 323
+current-version: 323.7
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -816,10 +816,10 @@ exports:
                        _kIDXSearchPrefixMatch, _kIDXSearchWildcardMatch ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9BB76885-7CD7-3369-B759-33F7E5DA5392', 'x86_64: 9BB76885-7CD7-3369-B759-33F7E5DA5392' ]
+uuids:           [ 'x86_64: CE3D8B13-2583-3527-8532-D5DDAAD7D56B', 'x86_64: CE3D8B13-2583-3527-8532-D5DDAAD7D56B' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents'
-current-version: 1268.40.5
+current-version: 1268.100.1
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -835,10 +835,10 @@ exports:
                        _FSEventsPurgeEventsForDeviceUpToEventId ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 88F59BD5-412A-35EE-AD45-E6BF80B24891', 'x86_64: 88F59BD5-412A-35EE-AD45-E6BF80B24891' ]
+uuids:           [ 'x86_64: E51EE658-608C-3034-9635-4FDF1E241E62', 'x86_64: E51EE658-608C-3034-9635-4FDF1E241E62' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices'
-current-version: 1069.11
+current-version: 1069.22
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -1215,10 +1215,10 @@ exports:
                        _LSURLOverride, _UTType, _UTTypeQuery ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 028AC15A-35B7-3E1F-BCDC-470C8EA0CA09', 'x86_64: 028AC15A-35B7-3E1F-BCDC-470C8EA0CA09' ]
+uuids:           [ 'x86_64: EE42CCA1-FEC2-3F1C-9B62-2E73EFB05FCC', 'x86_64: EE42CCA1-FEC2-3F1C-9B62-2E73EFB05FCC' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata'
-current-version: 2074.4
+current-version: 2076.3
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -1659,10 +1659,10 @@ exports:
                        _MDPlistBytes, _MDServiceConnection ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A667F007-A599-3869-99F7-1F8460011015', 'x86_64: A667F007-A599-3869-99F7-1F8460011015' ]
+uuids:           [ 'x86_64: A0654B4E-3194-3066-911F-FF1FBEE1D2C2', 'x86_64: A0654B4E-3194-3066-911F-FF1FBEE1D2C2' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices'
-current-version: 1069.11
+current-version: 1069.22
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -1796,7 +1796,7 @@ exports:
                        _kcgetkeychainname, _wsCFDateToISO8601String, _wsCreateDateFromISO8601 ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F0A931E4-0C31-36BA-8DD7-01FDF9813FB7', 'x86_64: F0A931E4-0C31-36BA-8DD7-01FDF9813FB7' ]
+uuids:           [ 'x86_64: D4F82BC9-FD9B-3E04-B78E-D9E2A73B0BD7', 'x86_64: D4F82BC9-FD9B-3E04-B78E-D9E2A73B0BD7' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit'
 current-version: 417.1
@@ -1919,10 +1919,10 @@ exports:
                        _kSKSubstitutions, _kSKTermChars ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 62C3066A-3991-313F-AE2D-75B2B5934D52', 'x86_64: 62C3066A-3991-313F-AE2D-75B2B5934D52' ]
+uuids:           [ 'x86_64: AEB4E42C-F5A2-3F63-80B0-4226483AD4F5', 'x86_64: AEB4E42C-F5A2-3F63-80B0-4226483AD4F5' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList'
-current-version: 131
+current-version: 131.4
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -1943,8 +1943,9 @@ exports:
                        _LSSharedFileListSetProperty, _SFLListChangeNotification, 
                        _SFLListLaunchNotification, _SFLServiceName, __LSSharedFileListCopyListType, 
                        __LSSharedFileListIsURLSharePoint, __LSSharedFileListItemCopyBinding, 
-                       __LSSharedFileListItemCopyURL, __LSSharedFileListItemSetBookmarkData, 
-                       __LSSharedFileListItemSetURL, __LSSharedFileListUpgrade, __LSSharedFileListVolumeIsVisibleInSidebar, 
+                       __LSSharedFileListItemCopyURL, __LSSharedFileListItemOpen, 
+                       __LSSharedFileListItemSetBookmarkData, __LSSharedFileListItemSetURL, 
+                       __LSSharedFileListUpgrade, __LSSharedFileListVolumeIsVisibleInSidebar, 
                        __SFLCreateSnapshot, __SFLGetRestrictedCustomFileList, __SFLIsFolderShareable, 
                        __SFLRelease, __SFLReleaseSnapshot, __kLSSharedFileListFavoriteItems, 
                        __kLSSharedFileListFavoriteVolumes, __kLSSharedFileListGlobalLoginItems, 

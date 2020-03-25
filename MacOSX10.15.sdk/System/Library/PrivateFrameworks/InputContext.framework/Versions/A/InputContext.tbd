@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1580D847-2BCC-3F6F-8C95-23B30D250690', 'x86_64: 1580D847-2BCC-3F6F-8C95-23B30D250690' ]
+uuids:           [ 'x86_64: 55D95303-5EBA-3620-BA08-B374819DF3C7', 'x86_64: 55D95303-5EBA-3620-BA08-B374819DF3C7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/InputContext.framework/InputContext'
 exports:         

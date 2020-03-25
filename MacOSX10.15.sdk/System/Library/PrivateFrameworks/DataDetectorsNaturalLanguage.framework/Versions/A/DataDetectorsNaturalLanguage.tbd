@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26B072AC-8F8D-356D-A743-233A841AE7C4', 'x86_64: 26B072AC-8F8D-356D-A743-233A841AE7C4' ]
+uuids:           [ 'x86_64: C6112805-8B29-34E9-866E-05ECE6AEFC15', 'x86_64: C6112805-8B29-34E9-866E-05ECE6AEFC15' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DataDetectorsNaturalLanguage.framework/Versions/A/DataDetectorsNaturalLanguage'
 exports:         

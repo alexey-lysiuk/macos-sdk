@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 22D01D48-270F-3CD2-8DE8-AFDF6331C6AC', 'x86_64: 22D01D48-270F-3CD2-8DE8-AFDF6331C6AC' ]
+uuids:           [ 'x86_64: 43509397-6A54-3A67-80D2-5415DD3A7306', 'x86_64: 43509397-6A54-3A67-80D2-5415DD3A7306' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FamilyCircle.framework/Versions/A/FamilyCircle'
 exports:         

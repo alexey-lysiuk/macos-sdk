@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9B25EBD9-3A4B-384B-B687-60F59850871E' ]
+uuids:           [ 'x86_64: AF876426-AC01-3593-B45A-011432C32E81' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit'
-current-version: 25.35
+current-version: 25.37
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SKComponentRGBABlack, _SKComponentRGBABlue, _SKComponentRGBAClear, 

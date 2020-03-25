@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from OSNumber.iig */
+/* iig(DriverKit-73.100.4) generated from OSNumber.iig */
 
-/* OSNumber.iig:1-48 */
+/* OSNumber.iig:1-36 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -37,6 +37,11 @@
 class OSNumber;
 typedef OSNumber * OSNumberPtr;
 
+/* source class OSNumber OSNumber.iig:37-137 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class OSNumber
  *
@@ -49,7 +54,101 @@ typedef OSNumber * OSNumberPtr;
  * OSNumber objects are immutable.
  */
 
-/* class OSNumber OSNumber.iig:49-137 */
+class LOCALONLY OSNumber : public OSContainer
+{
+public:
+
+	// OSObject
+
+	virtual void
+	free() override;
+
+    /*!
+     * @brief       Compares the string with an OSObject
+     * @discussion  If the object is of class OSNumber, the result of isEqualTo(const OSNumber * aDataObj) is returned.
+     *              Otherwise false is returned.
+     * @param       anObject The object to compare with.
+     * @result      true iff the object is of class OSNumber isEqualTo() returns true.
+     */
+	bool
+	isEqualTo(const OSMetaClassBase * anObject) const override;
+
+	// OSNumber
+
+    /*!
+     * @brief       Allocates an OSNumber object with value and size.
+     * @discussion  Allocates an OSNumber object with value and size.
+     * @param       value Value the OSNumber holds.
+     * @param       numberOfBits Size of the value. Only 8, 16, 32, or 64 are valid sizes.
+     * @return      NULL on failure, otherwise the allocated OSNumber with reference count 1 to be released by the caller.
+     */
+	static OSNumberPtr
+	withNumber(
+		uint64_t value,
+		size_t   numberOfBits);
+
+    /*!
+     * @brief       Allocates an OSNumber object with value from a c-string and size.
+     * @discussion  Allocates an OSNumber object with value from a c-string and size.
+     * @param       valueString A c-string which will be parsed with strtoll(,,0).
+     * @param       numberOfBits Size of the value. Only 8, 16, 32, or 64 are valid sizes.
+     * @return      NULL on failure, otherwise the allocated OSNumber with reference count 1 to be released by the caller.
+     */
+	static OSNumberPtr
+	withNumber(
+		const char   * valueString,
+		size_t         numberOfBits);
+
+    /*!
+     * @brief       Returns the number of bits the OSNumber was created with.
+     * @return      Returns the number of bits the OSNumber was created with.
+     */
+	size_t
+	numberOfBits() const;
+
+    /*!
+     * @brief       Returns the value of the OSNumber as a uint8_t value.
+     * @return      Returns the value of the OSNumber as a uint8_t value.
+     */
+	uint8_t
+	unsigned8BitValue() const;
+
+    /*!
+     * @brief       Returns the value of the OSNumber as a uint16_t value.
+     * @return      Returns the value of the OSNumber as a uint16_t value.
+     */
+	uint16_t
+	unsigned16BitValue() const;
+
+    /*!
+     * @brief       Returns the value of the OSNumber as a uint32_t value.
+     * @return      Returns the value of the OSNumber as a uint32_t value.
+     */
+	uint32_t
+	unsigned32BitValue() const;
+
+    /*!
+     * @brief       Returns the value of the OSNumber as a uint64_t value.
+     * @return      Returns the value of the OSNumber as a uint64_t value.
+     */
+	uint64_t
+	unsigned64BitValue() const;
+
+    /*!
+     * @brief       Compares the number with an OSNumber.
+     * @discussion  If the passed OSNumber object has the same value, regardless of size, true is returned.
+     *              Otherwise false is returned.
+     * @param       aNumber The OSNumber to compare with.
+     * @result      true iff the two numbers have the same value.
+     */
+	bool
+	isEqualTo(const OSNumber * aNumber) const;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class OSNumber OSNumber.iig:37-137 */
 
 
 #define OSNumber_Methods \
@@ -169,6 +268,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* OSNumber.iig:139- */
 

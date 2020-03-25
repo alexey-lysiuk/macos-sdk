@@ -364,8 +364,15 @@ enum
 	This is used to support multiple paths to a logical unit
 	by creating a IOSCSIMultipathedLogicalUnit object.
 	*/
-	kSCSIProtocolFeature_MultiPathing						= 16
-	
+	kSCSIProtocolFeature_MultiPathing						= 16,
+
+    /*!
+    kSCSIProtocolFeature_ProtocolSpecificLinkRetrain:
+    If the SCSI Protocol Services layer supports link retrain, then the protocol
+    services layer should report true.
+    */
+    kSCSIProtocolFeature_ProtocolSpecificLinkRetrain        = 17
+
 };
 
 

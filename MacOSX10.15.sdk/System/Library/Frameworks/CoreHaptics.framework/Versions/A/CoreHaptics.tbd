@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FBF118A2-BEBC-3322-BC02-90937B598FA7', 'x86_64: FBF118A2-BEBC-3322-BC02-90937B598FA7' ]
+uuids:           [ 'x86_64: E438C7BB-BE33-31F5-AC40-A64BCA449287', 'x86_64: E438C7BB-BE33-31F5-AC40-A64BCA449287' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics'
 exports:         

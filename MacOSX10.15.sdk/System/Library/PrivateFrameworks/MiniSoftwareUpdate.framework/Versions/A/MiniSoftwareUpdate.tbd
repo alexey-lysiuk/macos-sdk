@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7782A585-DD77-32D3-9686-26F7B6A04F40' ]
+uuids:           [ 'x86_64: 555E948B-5123-3F61-B5F5-F675DC9B6789' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MiniSoftwareUpdate.framework/Versions/A/MiniSoftwareUpdate'
 exports:         

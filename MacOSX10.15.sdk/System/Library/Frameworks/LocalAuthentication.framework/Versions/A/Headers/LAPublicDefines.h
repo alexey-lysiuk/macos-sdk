@@ -16,6 +16,7 @@
 
 // Credential types
 #define kLACredentialTypeApplicationPassword                0
+#define kLACredentialSmartCardPIN                          -3
 
 // Error codes
 #define kLAErrorAuthenticationFailed                       -1

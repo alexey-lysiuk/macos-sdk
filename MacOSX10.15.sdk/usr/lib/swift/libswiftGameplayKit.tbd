@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9B99F004-8803-306A-8C4B-76F4F9CE38B1' ]
+uuids:           [ 'x86_64: D4A5D82C-E477-3E8B-A417-C81E8337F260' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftGameplayKit.dylib'
 current-version: 0

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7A482B37-F89C-3112-8B78-7DE06FB5BFD6', 'x86_64: 7A482B37-F89C-3112-8B78-7DE06FB5BFD6' ]
+uuids:           [ 'x86_64: EDCC7025-CD95-3D16-B196-4DA42063761B', 'x86_64: EDCC7025-CD95-3D16-B196-4DA42063761B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmailAddressing.framework/Versions/A/EmailAddressing'
-current-version: 3601.0.10
+current-version: 3608.80.23
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EAAddressComment ]

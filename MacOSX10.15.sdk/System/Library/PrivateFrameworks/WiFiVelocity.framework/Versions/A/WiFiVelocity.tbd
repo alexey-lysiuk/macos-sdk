@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 41D09DEA-A868-33D2-82A8-9148693D1341', 'x86_64: 41D09DEA-A868-33D2-82A8-9148693D1341' ]
+uuids:           [ 'x86_64: 4723862E-F9BF-3683-9DB6-9C575F11DECC', 'x86_64: 4723862E-F9BF-3683-9DB6-9C575F11DECC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WiFiVelocity.framework/Versions/A/WiFiVelocity'
 exports:         

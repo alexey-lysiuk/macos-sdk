@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger, UITouchPhase) {
     UITouchPhaseStationary,        // whenever a finger is touching the surface but hasn't moved since the previous event.
     UITouchPhaseEnded,             // whenever a finger leaves the surface.
     UITouchPhaseCancelled,         // whenever a touch doesn't end but we need to stop tracking (e.g. putting device to face)
+    UITouchPhaseRegionEntered   API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos),  // whenever a touch is entering the region of a user interface
+    UITouchPhaseRegionMoved     API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos),  // when a touch is inside the region of a user interface, but hasn’t yet made contact or left the region
+    UITouchPhaseRegionExited    API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos),  // when a touch is exiting the region of a user interface
 };
 
 typedef NS_ENUM(NSInteger, UIForceTouchCapability) {
@@ -33,6 +36,7 @@ typedef NS_ENUM(NSInteger, UITouchType) {
     UITouchTypeIndirect,                     // An indirect touch (not a screen)
     UITouchTypePencil API_AVAILABLE(ios(9.1)), // Add pencil name variant
     UITouchTypeStylus API_AVAILABLE(ios(9.1)) = UITouchTypePencil, // A touch from a stylus (deprecated name, use pencil)
+    UITouchTypeIndirectPointer API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos), // A touch representing a button-based, indirect input device describing the input sequence from button press to button release
 } API_AVAILABLE(ios(9.0));
 
 typedef NS_OPTIONS(NSInteger, UITouchProperties) {

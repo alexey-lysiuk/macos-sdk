@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E4517BF4-E942-3538-AC2A-3DBB02094223' ]
+uuids:           [ 'x86_64: 77D39630-528F-32E0-A38C-03F85DA44F89' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/ReplayKit.framework/Versions/A/ReplayKit'
 exports:         

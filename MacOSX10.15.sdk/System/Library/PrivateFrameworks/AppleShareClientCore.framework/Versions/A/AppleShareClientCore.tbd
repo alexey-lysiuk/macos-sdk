@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E31D0A55-11C9-3542-BE66-51C9A273A9F9' ]
+uuids:           [ 'x86_64: 3E92B2F7-DACD-3D4E-923C-3CD055884648' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleShareClientCore.framework/Versions/A/AppleShareClientCore'
 exports:         

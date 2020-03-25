@@ -11,11 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXPORT NSErrorDomain const NSFileProviderErrorDomain API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
+FOUNDATION_EXPORT NSErrorDomain const NSFileProviderErrorDomain FILEPROVIDER_API_AVAILABILITY_V2;
 
 FOUNDATION_EXPORT NSString * const NSFileProviderErrorCollidingItemKey API_DEPRECATED("NSFileProviderErrorItemKey", ios(8.0, 13.0)) API_UNAVAILABLE(macos, tvos, watchos);
-FOUNDATION_EXPORT NSString * const NSFileProviderErrorItemKey API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
-FOUNDATION_EXPORT NSString * const NSFileProviderErrorNonExistentItemIdentifierKey API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
+FOUNDATION_EXPORT NSString * const NSFileProviderErrorItemKey FILEPROVIDER_API_AVAILABILITY_V3;
+FOUNDATION_EXPORT NSString * const NSFileProviderErrorNonExistentItemIdentifierKey FILEPROVIDER_API_AVAILABILITY_V2;
 
 typedef NS_ERROR_ENUM(NSFileProviderErrorDomain, NSFileProviderErrorCode) {
     /** The user credentials cannot be verified */
@@ -52,18 +52,28 @@ typedef NS_ERROR_ENUM(NSFileProviderErrorDomain, NSFileProviderErrorCode) {
      \note Please use -[NSError (NSFileProviderError) fileProviderErrorForOutOfDateItem:] to build an error with this code.
      \see -[NSError (NSFileProviderError) fileProviderErrorForOutOfDateItem:]
      */
-    NSFileProviderErrorVersionOutOfDate API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst) = -1006,
+    NSFileProviderErrorVersionOutOfDate FILEPROVIDER_API_AVAILABILITY_FPFS_CORE = -1006,
 
     /** We're trying to non-recursively delete a non-empty directory
      */
-    NSFileProviderErrorDirectoryNotEmpty API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst) = -1007,
+    NSFileProviderErrorDirectoryNotEmpty FILEPROVIDER_API_AVAILABILITY_FPFS_CORE = -1007,
 
-} API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
+
+    /**
+     Returned by NSFileProviderManager if no provider could be found in the application
+     */
+    NSFileProviderErrorProviderNotFound FILEPROVIDER_API_AVAILABILITY_FPFS_CORE = -2001,
+
+    /**
+     Returned by NSFileProviderManager if the application's provider has been disabled due to app translocation
+     */
+    NSFileProviderErrorProviderTranslocated FILEPROVIDER_API_AVAILABILITY_FPFS_CORE = -2002,
+} FILEPROVIDER_API_AVAILABILITY_V2;
 
 @interface NSError (NSFileProviderError)
-+ (instancetype)fileProviderErrorForCollisionWithItem:(NSFileProviderItem)existingItem API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
-+ (instancetype)fileProviderErrorForNonExistentItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
-+ (instancetype)fileProviderErrorForOutOfDateItem:(NSFileProviderItem)updatedVersion NS_SWIFT_NAME(fileProviderErrorForOutOfDateItem(_:)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
++ (instancetype)fileProviderErrorForCollisionWithItem:(NSFileProviderItem)existingItem FILEPROVIDER_API_AVAILABILITY_V2;
++ (instancetype)fileProviderErrorForNonExistentItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier FILEPROVIDER_API_AVAILABILITY_V2;
++ (instancetype)fileProviderErrorForOutOfDateItem:(NSFileProviderItem)updatedVersion NS_SWIFT_NAME(fileProviderErrorForOutOfDateItem(_:)) FILEPROVIDER_API_AVAILABILITY_FPFS_CORE;
 
 @end
 

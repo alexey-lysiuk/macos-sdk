@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8AC2FA9A-071A-3E7A-A9CA-80B23BF5AC1D' ]
+uuids:           [ 'x86_64: E12D2AD0-E16F-3496-9364-8432A3518F19' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftPencilKit.dylib'
 current-version: 0

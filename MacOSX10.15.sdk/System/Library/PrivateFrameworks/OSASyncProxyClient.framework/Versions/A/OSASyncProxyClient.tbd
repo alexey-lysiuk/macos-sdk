@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BEAA0B95-E3D0-359E-BDF7-6695ED3C14B4', 'x86_64: BEAA0B95-E3D0-359E-BDF7-6695ED3C14B4' ]
+uuids:           [ 'x86_64: BDB0ECD3-0B29-3C31-B9E8-A29A83FF5188', 'x86_64: BDB0ECD3-0B29-3C31-B9E8-A29A83FF5188' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/OSASyncProxyClient.framework/Versions/A/OSASyncProxyClient'
 exports:         

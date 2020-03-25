@@ -1,8 +1,8 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 02145A6F-63CA-3199-AE0E-18C51CD82AD2' ]
+uuids:           [ 'x86_64: 62CB388D-82E5-3D40-878E-17A4BEC6817D' ]
 platform:        macosx
-install-name:    '//System/Library/Frameworks/NetworkingDriverKit.framework/Versions/A/NetworkingDriverKit'
+install-name:    '/System/Library/Frameworks/NetworkingDriverKit.framework/Versions/A/NetworkingDriverKit'
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IOUserNetworkEthernet_Class, _IOUserNetworkPacketBufferPool_Class, 
@@ -16,9 +16,13 @@ exports:
                        __ZN19IOUserNetworkPacket19SetLinkHeaderLengthEh, __ZN19IOUserNetworkPacket20_SetPacketBufferPoolEP29IOUserNetworkPacketBufferPool, 
                        __ZN19IOUserNetworkPacket4freeEv, __ZN19IOUserNetworkPacket4initEv, 
                        __ZN19IOUserNetworkPacket8DispatchE5IORPC, __ZN19IOUserNetworkPacket9_DispatchEPS_5IORPC, 
+                       __ZN21IOUserNetworkEthernet13SetMTU_InvokeE5IORPCP15OSMetaClassBasePFiS2_jE, 
                        __ZN21IOUserNetworkEthernet15SelectMediaTypeEjPFiP15OSMetaClassBase5IORPCE, 
                        __ZN21IOUserNetworkEthernet16ReportLinkStatusEjjPFiP15OSMetaClassBase5IORPCE, 
                        __ZN21IOUserNetworkEthernet17ReportLinkQualityEjPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN21IOUserNetworkEthernet18GetHardwareAssistsEPjPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN21IOUserNetworkEthernet18GetMaxTransferUnitEPjPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN21IOUserNetworkEthernet18SetHardwareAssistsEjPFiP15OSMetaClassBase5IORPCE, 
                        __ZN21IOUserNetworkEthernet18SetInterfaceEnableEbPFiP15OSMetaClassBase5IORPCE, 
                        __ZN21IOUserNetworkEthernet19SetTxPacketHeadroomEt, __ZN21IOUserNetworkEthernet19SetTxPacketTailroomEt, 
                        __ZN21IOUserNetworkEthernet20ReportDataBandwidthsEyyyyPFiP15OSMetaClassBase5IORPCE, 
@@ -28,9 +32,12 @@ exports:
                        __ZN21IOUserNetworkEthernet23ReportLinkStatus_InvokeE5IORPCP15OSMetaClassBasePFiS2_jjE, 
                        __ZN21IOUserNetworkEthernet24ReportLinkQuality_InvokeE5IORPCP15OSMetaClassBasePFiS2_jE, 
                        __ZN21IOUserNetworkEthernet24SetPromiscuousModeEnableEbPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN21IOUserNetworkEthernet25GetHardwareAssists_InvokeE5IORPCP15OSMetaClassBasePFiS2_PjE, 
+                       __ZN21IOUserNetworkEthernet25GetMaxTransferUnit_InvokeE5IORPCP15OSMetaClassBasePFiS2_PjE, 
                        __ZN21IOUserNetworkEthernet25RegisterEthernetInterfaceE23IOUserNetworkMACAddressP29IOUserNetworkPacketBufferPoolPP24IOUserNetworkPacketQueuej, 
                        __ZN21IOUserNetworkEthernet25ReportAvailableMediaTypesEPKjj, 
                        __ZN21IOUserNetworkEthernet25SetAllMulticastModeEnableEbPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN21IOUserNetworkEthernet25SetHardwareAssists_InvokeE5IORPCP15OSMetaClassBasePFiS2_jE, 
                        __ZN21IOUserNetworkEthernet25SetInterfaceEnable_InvokeE5IORPCP15OSMetaClassBasePFiS2_bE, 
                        __ZN21IOUserNetworkEthernet26CreateAction_DataAvailableEmPP8OSAction, 
                        __ZN21IOUserNetworkEthernet26SetWakeOnMagicPacketEnableEbPFiP15OSMetaClassBase5IORPCE, 
@@ -47,6 +54,7 @@ exports:
                        __ZN21IOUserNetworkEthernet33_RegisterEthernetInterface_InvokeE5IORPCP15OSMetaClassBasePFiS2_41_IOUserNetworkEthernetInterfaceDescriptorP29IOUserNetworkPacketBufferPoolP24IOUserNetworkPacketQueueS7_S7_S7_E, 
                        __ZN21IOUserNetworkEthernet33_ReportAvailableMediaTypes_InvokeE5IORPCP15OSMetaClassBasePFiS2_PKjjE, 
                        __ZN21IOUserNetworkEthernet4freeEv, __ZN21IOUserNetworkEthernet4initEv, 
+                       __ZN21IOUserNetworkEthernet6SetMTUEjPFiP15OSMetaClassBase5IORPCE, 
                        __ZN21IOUserNetworkEthernet8DispatchE5IORPC, __ZN21IOUserNetworkEthernet9_DispatchEPS_5IORPC, 
                        __ZN24IOUserNetworkPacketQueue12SetDataQueueEP25IODataQueueDispatchSourcePFiP15OSMetaClassBase5IORPCE, 
                        __ZN24IOUserNetworkPacketQueue13CopyDataQueueEPP25IODataQueueDispatchSource, 
@@ -117,22 +125,6 @@ exports:
                        __ZNK19IOUserNetworkPacket13GetDataOffsetEPt, __ZNK19IOUserNetworkPacket15_GetPacketIndexEPj, 
                        __ZNK19IOUserNetworkPacket19GetLinkHeaderLengthEPh, __ZNK19IOUserNetworkPacket19GetPacketBufferPoolEPP29IOUserNetworkPacketBufferPool, 
                        __ZNK19IOUserNetworkPacket22GetMemorySegmentOffsetEPy, __ZNK19IOUserNetworkPacket6_PrintEy, 
-                       __ZTI19IOUserNetworkPacket, __ZTI21IOUserNetworkEthernet, 
-                       __ZTI24IOUserNetworkPacketQueue, __ZTI28IOUserNetworkPacketMetaClass, 
-                       __ZTI29IOUserNetworkPacketBufferPool, __ZTI30IOUserNetworkEthernetMetaClass, 
-                       __ZTI30IOUserNetworkRxCompletionQueue, __ZTI30IOUserNetworkRxSubmissionQueue, 
-                       __ZTI30IOUserNetworkTxCompletionQueue, __ZTI30IOUserNetworkTxSubmissionQueue, 
-                       __ZTI33IOUserNetworkPacketQueueMetaClass, __ZTI38IOUserNetworkPacketBufferPoolMetaClass, 
-                       __ZTI39IOUserNetworkRxCompletionQueueMetaClass, __ZTI39IOUserNetworkRxSubmissionQueueMetaClass, 
-                       __ZTI39IOUserNetworkTxCompletionQueueMetaClass, __ZTI39IOUserNetworkTxSubmissionQueueMetaClass, 
-                       __ZTS19IOUserNetworkPacket, __ZTS21IOUserNetworkEthernet, 
-                       __ZTS24IOUserNetworkPacketQueue, __ZTS28IOUserNetworkPacketMetaClass, 
-                       __ZTS29IOUserNetworkPacketBufferPool, __ZTS30IOUserNetworkEthernetMetaClass, 
-                       __ZTS30IOUserNetworkRxCompletionQueue, __ZTS30IOUserNetworkRxSubmissionQueue, 
-                       __ZTS30IOUserNetworkTxCompletionQueue, __ZTS30IOUserNetworkTxSubmissionQueue, 
-                       __ZTS33IOUserNetworkPacketQueueMetaClass, __ZTS38IOUserNetworkPacketBufferPoolMetaClass, 
-                       __ZTS39IOUserNetworkRxCompletionQueueMetaClass, __ZTS39IOUserNetworkRxSubmissionQueueMetaClass, 
-                       __ZTS39IOUserNetworkTxCompletionQueueMetaClass, __ZTS39IOUserNetworkTxSubmissionQueueMetaClass, 
                        __ZTV19IOUserNetworkPacket, __ZTV21IOUserNetworkEthernet, 
                        __ZTV24IOUserNetworkPacketQueue, __ZTV28IOUserNetworkPacketMetaClass, 
                        __ZTV29IOUserNetworkPacketBufferPool, __ZTV30IOUserNetworkEthernetMetaClass, 

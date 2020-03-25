@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1AEB0984-C283-3E95-AFEB-3385AC243973' ]
+uuids:           [ 'x86_64: EA64DB19-F479-3EC1-AC8B-9C85D86B6CF4' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterCommandDrivers.dylib'
 exports:         
@@ -373,7 +373,7 @@ exports:
                        __ZN4rest26kDefaultDataAttachedStatesE, __ZN4rest27kDefaultImsPreferenceStatesE, 
                        __ZN4rest27kDefaultNetworkAttachStatesE, __ZN4rest28kDefaultRegistrationStatusesE, 
                        __ZN4rest31kDefaultRadioAccessTechnologiesE, __ZN4rest32kDefaultTrackingAreaUpdateTimersE, 
-                       __ZN4rest35kDefaultEffectiveDataRoamingSettingE, __ZN4resteqERKNS_14ServingNetworkES2_, 
+                       __ZN4rest36kDefaultEffectiveDataRoamingSettingsE, __ZN4resteqERKNS_14ServingNetworkES2_, 
                        __ZN4resteqERKNS_18ImsPreferenceStateES2_, __ZN4resteqERKNS_8DataModeES2_, 
                        __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE13RoamingResultNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
                        __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE21RadioAccessTechnologyNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
@@ -429,8 +429,8 @@ exports:
                        __ZNK12entitlements32TransferSIMViaWebServiceResponseeqERKS0_, 
                        __ZNK12entitlements42TransferAuthorizationViaWebServiceResponseeqERKS0_, 
                        __ZNK13CCPreferences9copyValueEPK10__CFStringS2_S2_S2_, __ZNK15ATCommandDriver7getNameEv, 
-                       __ZNK16DMSCommandDriver7getNameEv, __ZNK17CallCommandDriver16isOTASPSupportedEv, 
-                       __ZNK17CallCommandDriver34carrierSupportsCallingTimewithFWIMEN10subscriber7SimSlotE, 
+                       __ZNK16DMSCommandDriver7getNameEv, __ZNK17CallCommandDriver12isSimRoamingEN10subscriber7SimSlotE, 
+                       __ZNK17CallCommandDriver16isOTASPSupportedEv, __ZNK17CallCommandDriver34carrierSupportsCallingTimewithFWIMEN10subscriber7SimSlotE, 
                        __ZNK17CallCommandDriver7getNameEv, __ZNK17CallCommandDriver9dumpStateEv, 
                        __ZNK18VinylCommandDriver10flush_syncEv, __ZNK18VinylCommandDriver22sendReadyCallback_syncE16VinylDriverReadyN5boost8optionalIN10subscriber7SimSlotEEE, 
                        __ZNK18VinylCommandDriver9dumpStateEv, __ZNK19CSISMSCommandDriver20handleSmsSendTimeoutENSt3__110shared_ptrIN3sms5ModelEEE, 

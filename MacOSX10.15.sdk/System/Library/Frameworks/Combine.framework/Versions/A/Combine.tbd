@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7BA8E241-82BF-336F-9C4A-70B8BAA07E53', 'x86_64: 7BA8E241-82BF-336F-9C4A-70B8BAA07E53' ]
+uuids:           [ 'x86_64: F5EDABC9-4E0D-3D1E-8794-032C38C12786', 'x86_64: F5EDABC9-4E0D-3D1E-8794-032C38C12786' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Combine.framework/Versions/A/Combine'
-current-version: 132.10
+current-version: 134.102
 compatibility-version: 0
 swift-abi-version: 7
 exports:         
@@ -952,7 +952,6 @@ exports:
                        '_$s7Combine14AnyCancellableC4hash4intoys6HasherVz_tF', '_$s7Combine14AnyCancellableC5store2inyShyACGz_tF', 
                        '_$s7Combine14AnyCancellableC5store2inyxz_tSmRzAC7ElementRtzlF', 
                        '_$s7Combine14AnyCancellableC6cancelyyF', '_$s7Combine14AnyCancellableC9hashValueSivg', 
-                       '_$s7Combine14AnyCancellableC9hashValueSivgTj', '_$s7Combine14AnyCancellableC9hashValueSivgTq', 
                        '_$s7Combine14AnyCancellableC9hashValueSivpMV', '_$s7Combine14AnyCancellableCAA0C0AAMc', 
                        '_$s7Combine14AnyCancellableCAA0C0AAWP', '_$s7Combine14AnyCancellableCMa', 
                        '_$s7Combine14AnyCancellableCMm', '_$s7Combine14AnyCancellableCMn', 

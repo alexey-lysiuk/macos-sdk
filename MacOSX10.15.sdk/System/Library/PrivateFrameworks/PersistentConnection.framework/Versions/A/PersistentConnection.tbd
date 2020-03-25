@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E6842FE3-D767-3540-95D3-39A213B45BD7', 'x86_64: E6842FE3-D767-3540-95D3-39A213B45BD7' ]
+uuids:           [ 'x86_64: F16D4768-61F2-3298-8E37-0EAF612A55C0', 'x86_64: F16D4768-61F2-3298-8E37-0EAF612A55C0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PersistentConnection.framework/Versions/A/PersistentConnection'
 exports:         

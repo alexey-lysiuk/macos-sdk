@@ -2,7 +2,7 @@
 //  INNoteContentTypeResolutionResult.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntentResolutionResult.h>
@@ -12,7 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_DEPRECATED("This resolution result is no longer used", ios(11.0, 13.0), watchos(4.0, 6.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos)
+API_UNAVAILABLE(tvos)
 @interface INNoteContentTypeResolutionResult : INIntentResolutionResult
 
 // This resolution result is for when the app extension wants to tell Siri to proceed, with a given INNoteContentType. The resolvedValue can be different than the original INNoteContentType. This allows app extensions to apply business logic constraints.

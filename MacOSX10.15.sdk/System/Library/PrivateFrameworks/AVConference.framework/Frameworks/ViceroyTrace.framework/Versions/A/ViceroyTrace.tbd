@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9B41D7FA-2CA0-3FE5-8B54-CF42AA42E437', 'x86_64: 9B41D7FA-2CA0-3FE5-8B54-CF42AA42E437' ]
+uuids:           [ 'x86_64: EEB32387-D702-3677-8741-B6F441939BCA', 'x86_64: EEB32387-D702-3677-8741-B6F441939BCA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ViceroyTrace.framework/Versions/A/ViceroyTrace'
 exports:         
@@ -51,6 +51,7 @@ exports:
                        CallSegment._REDErasureCompensationRate, CallSegment._REDMaxDelay, 
                        CallSegment._REDNumPayloadsUsed, CallSegment._REDReceivedCount, 
                        CallSegment._RTT, CallSegment._SBR, CallSegment._TBR, CallSegment._VPLR, 
+                       CallSegment._abnormalBPL, CallSegment._abnormalPLR, CallSegment._abnormalRTT, 
                        CallSegment._accessToken, CallSegment._activeConnectionRegistry, 
                        CallSegment._adjustedDuration, CallSegment._audioErasures, 
                        CallSegment._audioFlushPacketCount, CallSegment._audioFlushPercent, 
@@ -72,7 +73,8 @@ exports:
                        CallSegment._maxAudioStallInterval, CallSegment._maxBWE, CallSegment._maxMediaStallTime, 
                        CallSegment._maxNoRemotePacketsInterval, CallSegment._maxVideoStallInterval, 
                        CallSegment._mediaStall, CallSegment._mediaStallCount, CallSegment._minBWE, 
-                       CallSegment._negotiatedSwitches, CallSegment._poorConnection, 
+                       CallSegment._negotiatedSwitches, CallSegment._overUtilizedBandwidth, 
+                       CallSegment._overshootSendBitrate, CallSegment._poorConnection, 
                        CallSegment._poorConnectionFrequency, CallSegment._poorConnectionMaxLength, 
                        CallSegment._poorConnectionTotalLength, CallSegment._previousSegmentName, 
                        CallSegment._relayServer, CallSegment._relayType, CallSegment._remoteFaceTimeSwitchesAvailable, 
@@ -87,6 +89,7 @@ exports:
                        CallSegment._totalUsedCellBudgetRxDataBytes, CallSegment._totalUsedCellBudgetTxDataBytes, 
                        CallSegment._totalVideoPacketsExpected, CallSegment._totalVideoStallTime, 
                        CallSegment._totalWifiRxDataBytes, CallSegment._totalWifiTxDataBytes, 
+                       CallSegment._underUtilizedBandwidth, CallSegment._undershootSendBitrate, 
                        CallSegment._videoEncodingBitrate, CallSegment._videoFlushPacketCount, 
                        CallSegment._videoFlushPercent, CallSegment._videoFrameDecodedButSkippedCounter, 
                        CallSegment._videoFrameExpectedCounter, CallSegment._videoFrameImcompleteNextTSCounter, 

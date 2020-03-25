@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3962F3A9-0F3C-306A-9F92-47913FFE5D80' ]
+uuids:           [ 'x86_64: 5ED57A46-3691-36D0-9670-D519D54540A6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LimitAdTracking.framework/Versions/A/LimitAdTracking'
 exports:         

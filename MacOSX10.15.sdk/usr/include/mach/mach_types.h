@@ -137,8 +137,9 @@ typedef mach_port_t             ledger_t;
 typedef mach_port_t             alarm_t;
 typedef mach_port_t             clock_serv_t;
 typedef mach_port_t             clock_ctrl_t;
-
 typedef mach_port_t             arcade_register_t;
+typedef mach_port_t             suid_cred_t;
+
 
 /*
  * These aren't really unique types.  They are just called
@@ -206,6 +207,8 @@ typedef exception_handler_t     exception_port_t;
 typedef exception_handler_array_t exception_port_arrary_t;
 typedef char vfs_path_t[4096];
 typedef char nspace_path_t[1024]; /* 1024 == PATH_MAX */
+typedef char suid_cred_path_t[1024];
+typedef uint32_t suid_cred_uid_t;
 
 #define TASK_NULL               ((task_t) 0)
 #define TASK_NAME_NULL          ((task_name_t) 0)
@@ -229,6 +232,7 @@ typedef char nspace_path_t[1024]; /* 1024 == PATH_MAX */
 #define CLOCK_NULL              ((clock_t) 0)
 #define UND_SERVER_NULL         ((UNDServerRef) 0)
 #define ARCADE_REG_NULL         ((arcade_register_t) 0)
+#define SUID_CRED_NULL         ((suid_cred_t) 0)
 
 /* DEPRECATED */
 typedef natural_t       ledger_item_t;

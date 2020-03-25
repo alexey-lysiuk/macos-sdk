@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2725B6AE-AFDB-349F-B66E-5CA492B56CF8' ]
+uuids:           [ 'x86_64: CB8815B3-F895-3661-A9F4-D4C9A63EFF81' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SearchUI.framework/Versions/A/SearchUI'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 53C46076-C482-3084-9923-843E9415DDE7', 'x86_64: 53C46076-C482-3084-9923-843E9415DDE7' ]
+uuids:           [ 'x86_64: B6EE1E11-8D08-39E0-AA01-5AF8DD9A008A', 'x86_64: B6EE1E11-8D08-39E0-AA01-5AF8DD9A008A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/QuickLookUIIosmac.framework/Versions/A/QuickLookUIIosmac'
 current-version: 0

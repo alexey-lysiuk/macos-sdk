@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 80E35E54-6CF1-3BB2-BA1E-A17A3E6786CC', 'x86_64: 80E35E54-6CF1-3BB2-BA1E-A17A3E6786CC' ]
+uuids:           [ 'x86_64: 2A458B23-A3D3-3868-AAE0-E33316AB9C57', 'x86_64: 2A458B23-A3D3-3868-AAE0-E33316AB9C57' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftIOKit.dylib'
 current-version: 0

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A553A8EE-0561-3E77-B9D2-6B2FBA29E0CB' ]
+uuids:           [ 'x86_64: 42919843-7C68-39A3-997E-1F28AE723E63' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FilesActionsUI.framework/Versions/A/FilesActionsUI'
-current-version: 27
+current-version: 29
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _FAUICreatePDFFromDocumentURLs, _FAUICreateTempFileURLInTemporaryDirectory, 

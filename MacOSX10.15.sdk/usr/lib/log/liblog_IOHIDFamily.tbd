@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 63C21075-7C4F-386D-9480-B232490A5A1E' ]
+uuids:           [ 'x86_64: 21524CA2-7CFE-328A-9EDE-AFA5AC194A90' ]
 platform:        macosx
 install-name:    '/usr/lib/log/liblog_IOHIDFamily.dylib'
 exports:         

@@ -1,28 +1,44 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 91FC4200-C28C-3135-AFF4-63991AC9835C', 'x86_64: 91FC4200-C28C-3135-AFF4-63991AC9835C' ]
+uuids:           [ 'x86_64: 1B082DC6-55BB-3039-A821-982A593F571E', 'x86_64: 1B082DC6-55BB-3039-A821-982A593F571E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RemoteManagement.framework/Versions/A/RemoteManagement'
 current-version: 2
 exports:         
   - archs:           [ x86_64 ]
-    allowable-clients: [ AccountMailExtension, AppManagementExtension, DeviceLockScreenMessageExtension, 
-                         DeviceNameExtension, ManagementTestExtension, NetworkWiFiExtension, 
-                         PasscodeSettingsExtension, RemoteManagementAccountsNotificationPlugin, 
-                         RemoteManagementTests, SystemCameraExtension, WebClipExtension, 
-                         remotemanagementd, rmdctl, rmdsimctl ]
-    symbols:         [ _RMAssetTypeAppStoreApp, _RMAssetTypeEnterpriseApp, _RMAssetTypeImage, 
+    allowable-clients: [ AccountExtension, AppManagementExtension, CloudMDMAppListTestApp, 
+                         LegacyProfilesExtension, ManagementTestExtension, MiniLauncher, 
+                         PasscodeSettingsExtension, RemoteManagementAccountSettings, 
+                         RemoteManagementAccountSettings-macOS, RemoteManagementAccountsNotificationPlugin, 
+                         RemoteManagementAgent, RemoteManagementTests, SettingsSharedSupport, 
+                         Setup, Setup Assistant, SetupTests, exampled, remotemanagementd, 
+                         rmdctl, rmdinspect ]
+    symbols:         [ _RMAccountAdditionalInfoKeyManagedByOlympus, _RMAccountPropertyKeyAdditionalInfo, 
+                       _RMAccountPropertyKeyAltDSID, _RMAccountPropertyKeyDSID, _RMAccountPropertyKeyEnrollmentToken, 
+                       _RMAccountPropertyKeyManagementSourceIdentifier, _RMAssetTypeImage, 
+                       _RMAssetTypeUserIdentity, _RMAssetTypeVPPOnDemand, _RMAuthenticationSchemeMAID, 
+                       _RMAuthenticationSchemeMAIDFieldAltDSID, _RMAuthenticationSchemeMAIDFieldDSID, 
+                       _RMAuthenticationSchemeMAIDFieldLongLivedToken, _RMAuthenticationSchemeMAIDFieldShortLivedToken, 
+                       _RMAuthenticationSchemeMAIDFieldUsername, _RMAuthenticationSchemeTest, 
+                       _RMAuthenticationSchemeTestFieldToken, _RMAuthenticationSchemeTestFieldUsername, 
+                       _RMConfigurationTypeAccountCalDAV, _RMConfigurationTypeAccountCardDAV, 
+                       _RMConfigurationTypeAccountExchange, _RMConfigurationTypeAccountGoogle, 
                        _RMConfigurationTypeAccountMail, _RMConfigurationTypeApplicationManagement, 
-                       _RMConfigurationTypeDeviceLockScreenMessage, _RMConfigurationTypeDeviceName, 
-                       _RMConfigurationTypeManagementTest, _RMConfigurationTypeNetworkWiFi, 
-                       _RMConfigurationTypePasscodeSettings, _RMConfigurationTypeSystemCamera, 
-                       _RMConfigurationTypeWebClip, _RMErrorDomain, _RMHTTPStatusCodeKey, 
-                       _RMStatusTypeDeviceName, _RMXPCMachServiceName ]
-    objc-classes:    [ RMAsset, RMAssetResolver, RMBundle, RMConfiguration, RMConfigurationAccount, 
-                       RMConfigurationRepository, RMConfigurationSubscription, RMErrorUtilities, 
+                       _RMConfigurationTypeLegacyProfiles, _RMConfigurationTypeManagementStatusSubscription, 
+                       _RMConfigurationTypeManagementTest, _RMConfigurationTypePasscodeSettings, 
+                       _RMErrorDomain, _RMErrorUserInfoKeyDescriptionKey, _RMHTTPStatusCodeKey, 
+                       _RMMobileKeyBagErrorCodeKey, _RMPersonaRestorationFailedException, 
+                       _RMStatusFileKeyIdentifier, _RMStatusFileKeyReasons, _RMStatusFileKeyServerToken, 
+                       _RMStatusFileKeyValid, _RMXPCAgentMachServiceName, _RMXPCDaemonMachServiceName ]
+    objc-classes:    [ RMAppInstallerController, RMAsset, RMAssetResolver, RMAuthenticationCredential, 
+                       RMBundle, RMConfiguration, RMConfigurationEventStreamSubscriber, 
+                       RMConfigurationStatusUpdater, RMConfigurationSubscriberClient, 
+                       RMConfigurationSubscriberDescription, RMDeviceAuthenticationCredential, 
+                       RMEnrollmentController, RMErrorUtilities, RMEventDescription, 
                        RMExtensionConfigurationSubscriber, RMExtensionContext, RMExtensionRequestHandler, 
-                       RMExtensionStatusPublisher, RMLog, RMPolicy, RMPolicyStore, 
-                       RMResolvedAsset, RMResolvedDataAsset, RMResolvedFileAsset, 
-                       RMUnresolvedDataAsset, RMUnresolvedFileAsset, RMXPCProxy, 
-                       RemoteManagement_Subsystem ]
+                       RMExtensionStatusPublisher, RMGenericAuthenticationCredential, 
+                       RMHTTPLog, RMLocations, RMLog, RMManagementChannel, RMPersonaHelper, 
+                       RMPolicy, RMPolicyStore, RMResolvedAsset, RMResolvedDataAsset, 
+                       RMResolvedFileAsset, RMStatusPublisherDescription, RMUnresolvedDataAsset, 
+                       RMUnresolvedFileAsset, RMXPCProxy, RemoteManagement_Subsystem ]
 ...

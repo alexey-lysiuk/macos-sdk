@@ -33,6 +33,9 @@ typedef NS_ENUM(NSInteger, UIButtonType) {
     UIButtonTypeRoundedRect = UIButtonTypeSystem   // Deprecated, use UIButtonTypeSystem instead
 };
 
+@class UIButton, UIPointerStyle, UIPointerEffect, UIPointerShape;
+typedef UIPointerStyle *_Nullable(^UIButtonPointerStyleProvider)(UIButton *button, UIPointerEffect *proposedEffect, UIPointerShape *proposedShape) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos);
+
 UIKIT_EXTERN API_AVAILABLE(ios(2.0)) @interface UIButton : UIControl <NSCoding>
 
 + (instancetype)buttonWithType:(UIButtonType)buttonType;
@@ -47,6 +50,18 @@ UIKIT_EXTERN API_AVAILABLE(ios(2.0)) @interface UIButton : UIControl <NSCoding>
 @property(nonatomic)          BOOL         showsTouchWhenHighlighted API_UNAVAILABLE(tvos);      // default is NO. if YES, show a simple feedback (currently a glow) while highlighted
 @property(null_resettable, nonatomic,strong)   UIColor     *tintColor API_AVAILABLE(ios(5.0)); // The tintColor is inherited through the superview hierarchy. See UIView for more information.
 @property(nonatomic,readonly) UIButtonType buttonType;
+
+
+/// Enables this button's built-in pointer interaction.
+@property (nonatomic, readwrite, assign, getter = isPointerInteractionEnabled) BOOL pointerInteractionEnabled API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos);
+
+/*!
+ * @abstract Called when the system pointer hovers over this button if its pointer interaction is enabled. The
+ *           system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
+ *           a customized version of the system provided style or return an entirely custom one.
+ */
+@property (nonatomic, readwrite, copy, nullable) UIButtonPointerStyleProvider pointerStyleProvider API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos) NS_REFINED_FOR_SWIFT;
+
 
 // you can set the image, title color, title shadow color, and background image to use for each state. you can specify data
 // for a combined state by using the flags added together. in general, you should specify a value for the normal state to be used

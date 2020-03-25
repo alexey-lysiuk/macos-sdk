@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 01FD5D41-2630-3E06-B819-8CB8FB032040' ]
+uuids:           [ 'x86_64: C8028AF5-4488-3028-BAF8-E2018F80C9BB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OpenDirectoryConfig.framework/Versions/A/OpenDirectoryConfig'
 exports:         

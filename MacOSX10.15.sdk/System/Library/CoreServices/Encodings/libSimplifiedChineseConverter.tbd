@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D25428B0-07E7-33DA-8939-5ED3C50D3154', 'x86_64: D25428B0-07E7-33DA-8939-5ED3C50D3154' ]
+uuids:           [ 'x86_64: 3A38C5A2-0D75-34F2-A30C-22E346092611', 'x86_64: 3A38C5A2-0D75-34F2-A30C-22E346092611' ]
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libSimplifiedChineseConverter.dylib'
 current-version: 76

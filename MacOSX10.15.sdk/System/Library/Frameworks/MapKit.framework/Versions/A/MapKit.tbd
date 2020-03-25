@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A6D7699E-784C-3264-9E69-B6DC08BE1177' ]
+uuids:           [ 'x86_64: 6DE77321-1144-3733-BDF3-E965F7AFEC67' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/MapKit.framework/Versions/A/MapKit'
 current-version: 0
@@ -133,10 +133,12 @@ exports:
                        _MapKitConfig_MinimumMapViewSizeToShowAppleLogoHeight, _MapKitConfig_MinimumMapViewSizeToShowControlsHeight, 
                        _MapKitConfig_MinimumMapViewSizeToShowControlsWidth, _MapKitConfig_MinimumSnapshotSizeToShowAppleLogoHeight, 
                        _MapKitConfig_MinimumSnapshotSizeToShowAppleLogoWidth, _MapKitConfig_PlaceCardCustomLayout, 
-                       _MapKitConfig_PlaceLayoutDebugEnabled, _MapKitConfig_PlaceLayoutLogEnabled, 
-                       _MapKitConfig_PlaceShowGEOID, _MapKitConfig_RAPForceOverrideServerConfig, 
-                       _MapKitConfig_RAPForceShowSuggestAnEditButton, _MapKitConfig_ReportAProblemIsDisabled, 
-                       _MapKitConfig_RideBookingExtensionsAppBundleIdentifiers, _MapKitConfig_RideBookingShouldAutomaticallyEnableExtensions, 
+                       _MapKitConfig_PlaceCardShouldHideMuninForParsec, _MapKitConfig_PlaceCardShouldShowPhotoGalleryInParsec, 
+                       _MapKitConfig_PlaceCardShouldShowPhotoGalleryInSiri, _MapKitConfig_PlaceLayoutDebugEnabled, 
+                       _MapKitConfig_PlaceLayoutLogEnabled, _MapKitConfig_PlaceShowGEOID, 
+                       _MapKitConfig_RAPForceOverrideServerConfig, _MapKitConfig_RAPForceShowSuggestAnEditButton, 
+                       _MapKitConfig_ReportAProblemIsDisabled, _MapKitConfig_RideBookingExtensionsAppBundleIdentifiers, 
+                       _MapKitConfig_RideBookingShouldAutomaticallyEnableExtensions, 
                        _MapKitConfig_SearchCompleteReplaceInterval, _MapKitConfig_SearchCompleteRequestInterval, 
                        _MapKitConfig_SearchCompleteRequestIntervalCellular, _MapKitConfig_SnapshotServiceEnabled, 
                        _MapKitConfig_SnapshotServiceQueueWidth, _MapKitConfig_SnapshotterNumberOfRequestsAllowedPerThrottle, 

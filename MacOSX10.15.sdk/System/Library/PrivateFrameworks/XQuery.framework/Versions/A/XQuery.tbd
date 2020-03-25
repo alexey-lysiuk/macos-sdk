@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A31D61D1-3A5D-3202-8508-4092F3A34689' ]
+uuids:           [ 'x86_64: FF96B0A1-CD24-3E2C-A0B7-B22FA1C4D3A8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/XQuery.framework/Versions/A/XQuery'
 exports:         

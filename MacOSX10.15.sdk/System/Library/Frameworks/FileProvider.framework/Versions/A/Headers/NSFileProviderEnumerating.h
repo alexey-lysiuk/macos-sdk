@@ -31,9 +31,9 @@ typedef NSData *NSFileProviderSyncAnchor NS_TYPED_EXTENSIBLE_ENUM;
  */
 typedef NSData *NSFileProviderPage NS_TYPED_EXTENSIBLE_ENUM;
 
-FOUNDATION_EXPORT API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
+FOUNDATION_EXPORT FILEPROVIDER_API_AVAILABILITY_V2
 NSFileProviderPage const NSFileProviderInitialPageSortedByDate;
-FOUNDATION_EXPORT API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
+FOUNDATION_EXPORT FILEPROVIDER_API_AVAILABILITY_V2
 NSFileProviderPage const NSFileProviderInitialPageSortedByName;
 
 @protocol NSFileProviderEnumerationObserver <NSObject>
@@ -223,7 +223,7 @@ NSFileProviderPage const NSFileProviderInitialPageSortedByName;
  If returning nil, you must set the error out parameter.
  */
 - (nullable id<NSFileProviderEnumerator>)enumeratorForSearchQuery:(NSFileProviderSearchQuery *)searchQuery
-                                                            error:(NSError **)error API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
+                                                            error:(NSError **)error FILEPROVIDER_API_AVAILABILITY_V3;
 
 @end
 

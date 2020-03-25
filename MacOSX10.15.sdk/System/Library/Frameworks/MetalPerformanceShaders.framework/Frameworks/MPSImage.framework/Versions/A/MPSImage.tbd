@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C0E349E7-ADE3-3353-8CFF-3DAD653F810E', 'x86_64: C0E349E7-ADE3-3353-8CFF-3DAD653F810E' ]
+uuids:           [ 'x86_64: CDC36001-66DA-3BBD-A9AA-2470B634B9C9', 'x86_64: CDC36001-66DA-3BBD-A9AA-2470B634B9C9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/Versions/A/MPSImage'
-current-version: 122.2
+current-version: 122.5.6
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSNeuralNetwork, MetalPerformanceShaders ]
@@ -11,17 +11,17 @@ exports:
     objc-classes:    [ MPSBinaryImageKernel, MPSImageAdd, MPSImageAreaMax, MPSImageAreaMin, 
                        MPSImageArithmetic, MPSImageBilinearScale, MPSImageBox, MPSImageBox3D, 
                        MPSImageConversion, MPSImageConvolution, MPSImageCopyToMatrix, 
-                       MPSImageDilate, MPSImageDivide, MPSImageErode, MPSImageEuclideanDistanceTransform, 
-                       MPSImageFindKeypoints, MPSImageGaussianBlur, MPSImageGaussianPyramid, 
-                       MPSImageGuidedFilter, MPSImageHistogram, MPSImageHistogramEqualization, 
-                       MPSImageHistogramSpecification, MPSImageIntegral, MPSImageIntegralOfSquares, 
-                       MPSImageLanczosScale, MPSImageLaplacian, MPSImageLaplacianPyramid, 
-                       MPSImageLaplacianPyramidAdd, MPSImageLaplacianPyramidSubtract, 
-                       MPSImageMedian, MPSImageMultiply, MPSImageNormalizedHistogram, 
-                       MPSImageReduceColumnMax, MPSImageReduceColumnMean, MPSImageReduceColumnMin, 
-                       MPSImageReduceColumnSum, MPSImageReduceRowMax, MPSImageReduceRowMean, 
-                       MPSImageReduceRowMin, MPSImageReduceRowSum, MPSImageSobel, 
-                       MPSImageSpatioTemporalGuidedFilter, MPSImageSpatioTemporalGuidedFilterDescriptor, 
+                       MPSImageDilate, MPSImageDivide, MPSImageEDLines, MPSImageErode, 
+                       MPSImageEuclideanDistanceTransform, MPSImageFindKeypoints, 
+                       MPSImageGaussianBlur, MPSImageGaussianPyramid, MPSImageGuidedFilter, 
+                       MPSImageHistogram, MPSImageHistogramEqualization, MPSImageHistogramSpecification, 
+                       MPSImageIntegral, MPSImageIntegralOfSquares, MPSImageLanczosScale, 
+                       MPSImageLaplacian, MPSImageLaplacianPyramid, MPSImageLaplacianPyramidAdd, 
+                       MPSImageLaplacianPyramidSubtract, MPSImageMedian, MPSImageMultiply, 
+                       MPSImageNormalizedHistogram, MPSImageReduceColumnMax, MPSImageReduceColumnMean, 
+                       MPSImageReduceColumnMin, MPSImageReduceColumnSum, MPSImageReduceRowMax, 
+                       MPSImageReduceRowMean, MPSImageReduceRowMin, MPSImageReduceRowSum, 
+                       MPSImageSobel, MPSImageSpatioTemporalGuidedFilter, MPSImageSpatioTemporalGuidedFilterDescriptor, 
                        MPSImageStatisticsMean, MPSImageStatisticsMeanAndVariance, 
                        MPSImageStatisticsMinAndMax, MPSImageSubtract, MPSImageTent, 
                        MPSImageThresholdBinary, MPSImageThresholdBinaryInverse, MPSImageThresholdToZero, 

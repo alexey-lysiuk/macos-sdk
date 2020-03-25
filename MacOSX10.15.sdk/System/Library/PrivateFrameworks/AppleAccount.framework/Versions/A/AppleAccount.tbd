@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7877817-D10B-303F-823A-16628EAD69A3', 'x86_64: C7877817-D10B-303F-823A-16628EAD69A3' ]
+uuids:           [ 'x86_64: D9EE7C63-15DB-3A8A-9957-94F25369F0D0', 'x86_64: D9EE7C63-15DB-3A8A-9957-94F25369F0D0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleAccount.framework/Versions/A/AppleAccount'
 exports:         

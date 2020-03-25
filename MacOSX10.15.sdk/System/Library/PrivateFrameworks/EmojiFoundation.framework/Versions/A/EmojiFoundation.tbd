@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D145A0F-A089-3BBA-B906-AD0AE1C24246', 'x86_64: 4D145A0F-A089-3BBA-B906-AD0AE1C24246' ]
+uuids:           [ 'x86_64: E1E0E937-AC3B-3E7D-9F53-D0995C736C84', 'x86_64: E1E0E937-AC3B-3E7D-9F53-D0995C736C84' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmojiFoundation.framework/Versions/A/EmojiFoundation'
 exports:         

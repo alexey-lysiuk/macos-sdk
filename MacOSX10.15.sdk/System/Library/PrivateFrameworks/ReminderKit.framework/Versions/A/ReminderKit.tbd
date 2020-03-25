@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3746EF8D-FE12-345D-AF5A-CF50E32F8707', 'x86_64: 3746EF8D-FE12-345D-AF5A-CF50E32F8707' ]
+uuids:           [ 'x86_64: F7EB6321-0DA3-3B4E-AD1F-94B0C4C8CD5D', 'x86_64: F7EB6321-0DA3-3B4E-AD1F-94B0C4C8CD5D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit'
 exports:         
@@ -22,8 +22,9 @@ exports:
                        _REMDaemonAPSNamedDelegatePort, _REMDaemonBundleIdentifier, 
                        _REMDaemonCoreSpotlightIndexName, _REMDaemonExecutableName, 
                        _REMDaemonMachServiceName, _REMDaemonMachServiceName_userInteractive, 
+                       _REMDistributedEvaluationCollectionOptionsReminderTitleCategoryEmbeddingFilenameKey, 
                        _REMDynamicCast, _REMErrorDomain, _REMErrorObjectIDEntityNameKey, 
-                       _REMErrorObjectIDUUIDKey, _REMGetRealUIDFromRecurrenceUID, 
+                       _REMErrorObjectIDUUIDKey, _REMErrorRetryAfterKey, _REMGetRealUIDFromRecurrenceUID, 
                        _REMGetRecurrenceUIDFromRealUID, _REMICSExportingEventKitSync, 
                        _REMInvalidICSAlarmDateComponents, _REMIsInvalidICSAlarmDateComponents, 
                        _REMListBadgeEmblemBookmarks1, _REMListBadgeEmblemBookmarks2, 
@@ -1044,7 +1045,8 @@ exports:
                        REMDAChangeTrackingHelper, REMDAShareeTombstone, REMDaemonUserDefaults, 
                        REMDataAccessBehaviorManager, REMDatabaseMigrationAccountInfo, 
                        REMDatabaseMigrationContext, REMDispatchQueue, REMDisplayDate, 
-                       REMDisplayNameUtils, REMEnableObjectiveCpp, REMError, REMEventKitBridgingDataView, 
+                       REMDisplayNameUtils, REMDistributedEvaluationCollectionOptions, 
+                       REMEnableObjectiveCpp, REMError, REMEventKitBridgingDataView, 
                        REMEventKitBridgingDataViewInvocation_fetchCompletedRemindersWithCompletionDate, 
                        REMEventKitBridgingDataViewInvocation_fetchIncompleteRemindersWithDueDate, 
                        REMEventKitBridgingDataViewInvocation_fetchLists, REMEventKitBridgingDataViewInvocation_fetchReminders, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 90DECB43-ABEE-3F81-AA3A-F495FF904FD7', 'x86_64: 90DECB43-ABEE-3F81-AA3A-F495FF904FD7' ]
+uuids:           [ 'x86_64: 886E981A-0E1B-3810-BB8A-16FDA50FD631', 'x86_64: 886E981A-0E1B-3810-BB8A-16FDA50FD631' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ResponseKit.framework/Versions/A/ResponseKit'
-current-version: 148
+current-version: 148.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSSubtractRange, _RKAggdScalarPrefixKey, _RKAggdStatisticsActionSelected, 

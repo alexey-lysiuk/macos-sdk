@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D759EEF2-5BBB-3B31-954F-D151F9156FD2' ]
+uuids:           [ 'x86_64: 518E1B20-F53C-3C65-A117-4BC5F8FA7B0E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PIP.framework/Versions/A/PIP'
 current-version: 109

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 39D3EDC0-00B1-303E-9FED-A84DE25F1CF3', 'x86_64: 39D3EDC0-00B1-303E-9FED-A84DE25F1CF3' ]
+uuids:           [ 'x86_64: BDDDC7CC-F281-366E-A99D-2F4E122C2734', 'x86_64: BDDDC7CC-F281-366E-A99D-2F4E122C2734' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/NeutrinoCore.framework/Versions/A/NeutrinoCore'
-current-version: 111.16.180
+current-version: 141.19.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CGAffineTransformDeterminant, _CGAffineTransformDot, _CGAffineTransformFixedPoint, 

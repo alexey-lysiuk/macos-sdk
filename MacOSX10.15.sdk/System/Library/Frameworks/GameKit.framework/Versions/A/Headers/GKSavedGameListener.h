@@ -2,7 +2,7 @@
 //  GKSavedGameListener.h
 //  Game Center
 //
-//  Copyright 2010-2019 Apple Inc. All rights reserved.
+//  Copyright 2010-2020 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/NSObjCRuntime.h> // NS_ASSUME_NONNULL_BEGIN

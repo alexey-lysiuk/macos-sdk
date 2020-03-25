@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOMemoryDescriptor.iig */
+/* iig(DriverKit-73.100.4) generated from IOMemoryDescriptor.iig */
 
-/* IOMemoryDescriptor.iig:1-87 */
+/* IOMemoryDescriptor.iig:1-71 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -64,10 +64,15 @@ struct IOAddressSegment {
 	uint64_t length;
 };
 
-struct IOMDPrivateState {
+struct _IOMDPrivateState {
 	uint64_t length;
 	uint64_t options;
 };
+
+/* source class IOMemoryDescriptor IOMemoryDescriptor.iig:72-155 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
 
 /*!
  * @class IOMemoryDescriptor
@@ -80,19 +85,89 @@ struct IOMDPrivateState {
  * Methods in this class are used for memory that was supplied as a parameter.
  *
 
-@iig implementation
-#include <DriverKit/IOService.h>
-@iig end
 */
 
-/* class IOMemoryDescriptor IOMemoryDescriptor.iig:88-155 */
+class KERNEL IOMemoryDescriptor : public OSObject
+{
+public:
+
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+    /*!
+     * @brief       Obtain the length of the memory described.
+     * @param       returnLength Returned length.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	kern_return_t
+	GetLength(
+		uint64_t * returnLength) LOCALONLY;
+
+    /*!
+     * @brief       Create a mapping of the memory in the callers address space.
+     * @param       options
+	 *              kIOMemoryMapFixedAddress map at the address requested
+	 *              kIOMemoryMapReadOnly create a read only mapping
+	 *              kIOMemoryMapCacheModeDefault default cache mode
+	 *              kIOMemoryMapCacheModeInhibit inhibited cache mode
+	 *              kIOMemoryMapCacheModeCopyback copyback cache mode
+	 *              kIOMemoryMapCacheModeWriteThrough write through cache mode
+	 * @param       address Requested address if kIOMemoryMapFixedAddress was passed
+	 * @param       offset Start offset of the mapping in the descriptor.
+	 * @param       length Pass zero to map the entire memory, or a value <= the length of the descriptor.
+	 * @param       alignment of the memory virtual mapping. Only zero for no alignment is supported.
+	 * @param       map Returned IOMemoryMap object with +1 retain count. 
+	 *              It should be retained until the map is no longer required.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	CreateMapping(
+		uint64_t options,
+		uint64_t address,
+		uint64_t offset,
+		uint64_t length,
+		uint64_t alignment,
+		IOMemoryMap ** map);
+
+private:
+	virtual kern_return_t
+	PrepareForDMA(
+		uint64_t options,
+		IOService * device,
+		uint64_t offset,
+		uint64_t length,
+
+		uint64_t * flags,
+		uint64_t * returnLength,
+		uint32_t * segmentsCount,
+		IOAddressSegment segments[32]);
+
+	kern_return_t
+	Map(
+		uint64_t options,
+		uint64_t address,
+		uint64_t length,
+		uint64_t alignment,
+
+		uint64_t * returnAddress,
+		uint64_t * returnLength) LOCALONLY;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOMemoryDescriptor IOMemoryDescriptor.iig:72-155 */
 
 #define IOMemoryDescriptor__CopyState_ID            0xa2c0861d4118ce5eULL
 #define IOMemoryDescriptor_CreateMapping_ID            0xc5e69b0414ff6ee5ULL
 #define IOMemoryDescriptor_PrepareForDMA_ID            0xfd78519a57b70575ULL
 
 #define IOMemoryDescriptor__CopyState_Args \
-        IOMDPrivateState * state
+        _IOMDPrivateState * state
 
 #define IOMemoryDescriptor_CreateMapping_Args \
         uint64_t options, \
@@ -124,7 +199,7 @@ public:\
 \
     kern_return_t\
     _CopyState(\
-        IOMDPrivateState * state,\
+        _IOMDPrivateState * state,\
         OSDispatchMethod supermethod = NULL);\
 \
     kern_return_t\
@@ -260,6 +335,9 @@ public:
     IOMemoryDescriptor_VirtualMethods
 
 };
+
+
+#endif /* !__DOCUMENTATION__ */
 
 
 /* IOMemoryDescriptor.iig:164- */

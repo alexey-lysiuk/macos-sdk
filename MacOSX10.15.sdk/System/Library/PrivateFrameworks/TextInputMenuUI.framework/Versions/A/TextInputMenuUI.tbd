@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 670681BF-FA5A-39E3-B5AB-F1B3E6F96D87' ]
+uuids:           [ 'x86_64: CBF34020-7A85-3E73-B28B-974EF6D8A7A7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TextInputMenuUI.framework/Versions/A/TextInputMenuUI'
-current-version: 249
+current-version: 249.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AmTargetProcess, _CarbonModifiersToAppkitModifiers, _CreateClassFromKey, 

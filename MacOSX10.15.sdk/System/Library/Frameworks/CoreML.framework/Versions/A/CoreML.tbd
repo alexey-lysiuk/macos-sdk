@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0B25AECE-A5F7-3483-9296-24791531F0F3', 'x86_64: 0B25AECE-A5F7-3483-9296-24791531F0F3' ]
+uuids:           [ 'x86_64: D21E403C-E85E-30E0-9465-38C804CEC405', 'x86_64: D21E403C-E85E-30E0-9465-38C804CEC405' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreML.framework/Versions/A/CoreML'
 exports:         

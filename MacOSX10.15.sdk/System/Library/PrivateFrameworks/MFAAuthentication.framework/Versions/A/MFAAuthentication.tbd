@@ -1,11 +1,16 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6A39AB8F-EBA1-3568-90DF-38293F847C30', 'x86_64: 6A39AB8F-EBA1-3568-90DF-38293F847C30' ]
+uuids:           [ 'x86_64: B1EC1C5A-C000-3271-8210-91871665E43D', 'x86_64: B1EC1C5A-C000-3271-8210-91871665E43D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MFAAuthentication.framework/Versions/A/MFAAuthentication'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _MFAAAddCertDataEntryToCache, _MFAACanChargeHighVoltage, _MFAACanChargeInductive, 
+    symbols:         [ _DERDecodeItem, _DERDecodeItemPartialBuffer, _DERDecodeItemPartialBufferGetLength, 
+                       _DERDecodeSeqContentInit, _DERDecodeSeqInit, _DERDecodeSeqNext, 
+                       _DERDecodeSequenceContentWithBlock, _DERDecodeSequenceWithBlock, 
+                       _DERParseBitString, _DERParseBoolean, _DERParseBooleanWithDefault, 
+                       _DERParseInteger, _DERParseInteger64, _DERParseSequence, _DERParseSequenceContent, 
+                       _MFAAAddCertDataEntryToCache, _MFAACanChargeHighVoltage, _MFAACanChargeInductive, 
                        _MFAACanUseAccPwrLoV, _MFAACanUseAccPwrUHPM, _MFAACertificateAuthV2Class, 
                        _MFAACertificateAuthVersionNumber, _MFAACertificateManagerErrorDomain, 
                        _MFAACreateAnchorCertificateAuthorityArray, _MFAACreateCapsFromAuthCert, 
@@ -30,9 +35,9 @@ exports:
                        _MFAAUserDefaultsKey_ForceNetworkFailure, _MFAAUserDefaultsKey_ForceTokenActivationFailure, 
                        _MFAAUserDefaultsKey_ForceTokenConfirmationFailure, _MFAAUserDefaultsKey_PairingTable, 
                        _MFAAUserDefaultsKey_PairingTableVersion, _MFAAUserDefaultsKey_PairingTable_Timestamp, 
-                       _MFAAUserDefaultsKey_Server, _MFAAUserDefaultsKey_SpoofCertificateStatus, 
-                       _MFAAUserDefaultsKey_SpoofPPIDMetadata, _MFAAUserDefaultsKey_SpoofTokenActivation, 
-                       _MFAAUserDefaultsKey_StaticContentServer, _MFAAUserDefaultsNotification, 
+                       _MFAAUserDefaultsKey_PairingTokenExpirationS, _MFAAUserDefaultsKey_Server, 
+                       _MFAAUserDefaultsKey_SpoofCertificateStatus, _MFAAUserDefaultsKey_SpoofPPIDMetadata, 
+                       _MFAAUserDefaultsKey_SpoofTokenActivation, _MFAAUserDefaultsNotification, 
                        _MFAAUserDefaultsValue_Server_Custom, _MFAAUserDefaultsValue_Server_IT, 
                        _MFAAUserDefaultsValue_Server_Maint, _MFAAUserDefaultsValue_Server_Prod, 
                        _MFAAUserDefaultsValue_Server_UT, _MFAAUserDefaultsValue_SpoofCertificateStatus_Default, 

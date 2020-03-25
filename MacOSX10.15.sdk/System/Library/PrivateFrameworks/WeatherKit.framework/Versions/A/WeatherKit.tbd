@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5EFED7BD-919B-336B-8EE0-76584142AD34' ]
+uuids:           [ 'x86_64: 05912325-9B18-339F-8B39-7EAF08503972' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WeatherKit.framework/Versions/A/WeatherKit'
-current-version: 670.2.1
+current-version: 670.4.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _WMLocationCodingCity, _WMLocationCodingCountry, _WMLocationCodingCountryAbbreviation, 

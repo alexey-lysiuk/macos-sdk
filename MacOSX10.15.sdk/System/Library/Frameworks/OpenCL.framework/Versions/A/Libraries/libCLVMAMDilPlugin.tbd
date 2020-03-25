@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DE2C0170-BCB8-39BB-A5C4-6403FE768309' ]
+uuids:           [ 'x86_64: 3D0ED4BD-1669-362B-9C28-C0D294B8084A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libCLVMAMDilPlugin.dylib'
 exports:         

@@ -44,7 +44,7 @@ class IOUSBHostPipe;
  * @brief       The OSObject representing an individual stream within a USB endpoint
  * @discussion  This class provides functionality to transfer data across USB.  Function drivers should not subclass IOUSBHostStream.
  */
-class IOUSBHostStream : public IOUSBHostIOSource
+class __IOUSBHOSTFAMILY_DEPRECATED IOUSBHostStream : public IOUSBHostIOSource
 {
     OSDeclareDefaultStructors(IOUSBHostStream)
 

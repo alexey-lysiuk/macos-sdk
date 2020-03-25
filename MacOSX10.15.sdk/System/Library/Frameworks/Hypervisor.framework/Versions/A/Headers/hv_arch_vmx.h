@@ -8,6 +8,9 @@
 #ifndef __HYPERVISOR_HV_ARCH_VMX__
 #define __HYPERVISOR_HV_ARCH_VMX__
 
+#define	__VMCS_HOST_RSP	0x00006c14
+
+#ifndef __ASSEMBLER__
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -166,7 +169,7 @@ enum {
 	VMCS_HOST_IDTR_BASE					= 0x00006c0e,
 	VMCS_HOST_IA32_SYSENTER_ESP			= 0x00006c10,
 	VMCS_HOST_IA32_SYSENTER_EIP			= 0x00006c12,
-	VMCS_HOST_RSP						= 0x00006c14,
+	VMCS_HOST_RSP						= __VMCS_HOST_RSP,
 	VMCS_HOST_RIP						= 0x00006c16,
 	VMCS_MAX							= 0x00006c18
 };
@@ -323,5 +326,6 @@ enum {
 #ifdef __cplusplus
 }
 #endif
+#endif	/* ifndef __ASSEMBLER__ */
 
 #endif /* __HYPERVISOR_HV_ARCH_VMX__ */

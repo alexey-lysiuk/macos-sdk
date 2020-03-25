@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 75B5B307-1905-3CC8-99F3-57808328A6EE' ]
+uuids:           [ 'x86_64: CC5BEEBF-F592-3950-85D6-ABD7899BB466' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMDPersistence.framework/Versions/A/IMDPersistence'
 current-version: 800
@@ -74,16 +74,16 @@ exports:
                        _IMDChatRecordRemoveHandle, _IMDChatRecordRemoveMessage, _IMDChatRecordRepairDuplicateChats, 
                        _IMDChatRecordSetIsArchived, _IMDChatRecordSetIsBlackholed, 
                        _IMDChatRecordSetIsFiltered, _IMDChatRemapChatsWithLastAddressedSIMIDToNewLastAddressedIDs, 
-                       _IMDChatRowIDsMostRecentByLastMessageWithLimit, _IMDCleanseBrowserSnapshots, 
-                       _IMDCleanseOrphanedAttachments, _IMDCleanseOrphanedStickerAttachments, 
-                       _IMDConfirmIndexesCreatedAsExpected, _IMDConfirmTablesCreatedAsExpected, 
-                       _IMDCopyAttachmentPersistentPath, _IMDCopyGUIDForImportedChat, 
-                       _IMDCopyGUIDForImportedOneToOneChat, _IMDCoreSpotlightAddMessageGUID, 
-                       _IMDCoreSpotlightBalloonPluginIndexer_TestDescription, _IMDCoreSpotlightDeleteChatGUID, 
-                       _IMDCoreSpotlightDeleteCoreRecentsWithHandles, _IMDCoreSpotlightDeleteMessageGUIDS, 
-                       _IMDCoreSpotlightGetPerChatHistoryLimit, _IMDCoreSpotlightIndexNextMessageBatchIfNeeded, 
-                       _IMDCoreSpotlightIndexQueue, _IMDCoreSpotlightMarkAttachment, 
-                       _IMDCoreSpotlightMessageAttachmentIndexer_TestAttachmentPath, 
+                       _IMDChatRemapMessagesWithErrorCodeToErrorCode, _IMDChatRowIDsMostRecentByLastMessageWithLimit, 
+                       _IMDCleanseBrowserSnapshots, _IMDCleanseOrphanedAttachments, 
+                       _IMDCleanseOrphanedStickerAttachments, _IMDConfirmIndexesCreatedAsExpected, 
+                       _IMDConfirmTablesCreatedAsExpected, _IMDCopyAttachmentPersistentPath, 
+                       _IMDCopyGUIDForImportedChat, _IMDCopyGUIDForImportedOneToOneChat, 
+                       _IMDCoreSpotlightAddMessageGUID, _IMDCoreSpotlightBalloonPluginIndexer_TestDescription, 
+                       _IMDCoreSpotlightDeleteChatGUID, _IMDCoreSpotlightDeleteCoreRecentsWithHandles, 
+                       _IMDCoreSpotlightDeleteMessageGUIDS, _IMDCoreSpotlightGetPerChatHistoryLimit, 
+                       _IMDCoreSpotlightIndexNextMessageBatchIfNeeded, _IMDCoreSpotlightIndexQueue, 
+                       _IMDCoreSpotlightMarkAttachment, _IMDCoreSpotlightMessageAttachmentIndexer_TestAttachmentPath, 
                        _IMDCoreSpotlightMessageAttachmentIndexer_TestAttachmentRecord, 
                        _IMDCoreSpotlightMessageAttachmentIndexer_TestAttachments, 
                        _IMDCoreSpotlightMessageAttachmentIndexer_TestOverrideIsSticker, 
@@ -139,8 +139,8 @@ exports:
                        _IMDMessageRecordCopyAttachments, _IMDMessageRecordCopyAttachmentsForIDWithLock, 
                        _IMDMessageRecordCopyChats, _IMDMessageRecordCopyChatsForMessageIdentifier, 
                        _IMDMessageRecordCopyExpiringOrExpiredMessages, _IMDMessageRecordCopyFrequentRepliesForChatIdentifiersOnServicesUpToLimit, 
-                       _IMDMessageRecordCopyGUID, _IMDMessageRecordCopyGUIDUnlocked, 
-                       _IMDMessageRecordCopyGUIDsForMessagesWithChatIdentifiersOnServices, 
+                       _IMDMessageRecordCopyGUID, _IMDMessageRecordCopyGUIDForMessage, 
+                       _IMDMessageRecordCopyGUIDUnlocked, _IMDMessageRecordCopyGUIDsForMessagesWithChatIdentifiersOnServices, 
                        _IMDMessageRecordCopyGUIDsMarkingMessagesAsReadWithChatIdentifiersOnServicesUpToGUIDFromMe, 
                        _IMDMessageRecordCopyGUIDsMarkingMessagesAsReadWithHandlesOnServicesUpToGUIDFromMe, 
                        _IMDMessageRecordCopyGUIDsMarkingMessagesAsReadWithRoomnamesOnServicesUpToGUIDFromMe, 

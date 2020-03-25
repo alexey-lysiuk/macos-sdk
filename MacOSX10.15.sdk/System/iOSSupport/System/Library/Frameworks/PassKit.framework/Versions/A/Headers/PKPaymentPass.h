@@ -8,7 +8,7 @@
 #ifndef __PKPAYMENTPASS_H
 #define __PKPAYMENTPASS_H
 
-#import <PassKit/PKPass.h>
+#import <PassKit/PKSecureElementPass.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,17 +18,12 @@ typedef NS_ENUM(NSUInteger, PKPaymentPassActivationState) {
     PKPaymentPassActivationStateActivating,
     PKPaymentPassActivationStateSuspended,
     PKPaymentPassActivationStateDeactivated
-} API_AVAILABLE(ios(8.0), watchos(3.0));
-
+} API_DEPRECATED("Use PKSecureElementPassActivationState instead", macos(10.12, API_TO_BE_DEPRECATED), ios(8.0, API_TO_BE_DEPRECATED), watchos(3.0, API_TO_BE_DEPRECATED));
 
 API_AVAILABLE(ios(8.0), watchos(3.0))
-@interface PKPaymentPass : PKPass
+@interface PKPaymentPass : PKSecureElementPass
 
-@property (nonatomic, copy, readonly) NSString *primaryAccountIdentifier;
-@property (nonatomic, copy, readonly) NSString *primaryAccountNumberSuffix;
-@property (weak, readonly) NSString *deviceAccountIdentifier;
-@property (weak, readonly) NSString *deviceAccountNumberSuffix;
-@property (nonatomic, readonly) PKPaymentPassActivationState activationState;
+@property (nonatomic, readonly) PKPaymentPassActivationState activationState API_DEPRECATED("Use [PKSecureElementPass passActivationState] instead", macos(10.12, API_TO_BE_DEPRECATED), ios(8.0, API_TO_BE_DEPRECATED), watchos(3.0, API_TO_BE_DEPRECATED));
 
 @end
 NS_ASSUME_NONNULL_END

@@ -1,8 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F17C0A5A-70A5-385E-B4AB-F126F07A87FA', 'x86_64: F17C0A5A-70A5-385E-B4AB-F126F07A87FA' ]
+uuids:           [ 'x86_64: B7277A35-127C-38EA-B545-EF929ED2F3DD', 'x86_64: B7277A35-127C-38EA-B545-EF929ED2F3DD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IntentsServices.framework/Versions/A/IntentsServices'
+swift-abi-version: 7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _INSAssistantErrorDomain, _INSExtensionServiceTraceCompletionHandlerWithCode, 

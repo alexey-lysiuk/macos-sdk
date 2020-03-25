@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B48583C0-DF79-3EC0-A7F3-43C90FF87986', 'x86_64: B48583C0-DF79-3EC0-A7F3-43C90FF87986' ]
+uuids:           [ 'x86_64: B7F1310F-D207-34CD-86FB-0DEC1796D2E2', 'x86_64: B7F1310F-D207-34CD-86FB-0DEC1796D2E2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CalDAV.framework/Versions/A/CalDAV'
-current-version: 790.2.2
+current-version: 790.4.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CalDAVComplianceClass_AutoSchedule, _CalDAVComplianceClass_CalendarAudit, 

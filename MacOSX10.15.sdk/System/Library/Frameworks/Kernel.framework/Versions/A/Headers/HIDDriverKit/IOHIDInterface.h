@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOHIDInterface.iig */
+/* iig(DriverKit-73.100.4) generated from IOHIDInterface.iig */
 
-/* IOHIDInterface.iig:1-51 */
+/* IOHIDInterface.iig:1-52 */
 /*
  * Copyright (c) 2018-2019 Apple Inc. All rights reserved.
  *
@@ -52,7 +52,257 @@ typedef struct IOHIDElementValueHeader {
     uint32_t value[0];
 } IOHIDElementValueHeader;
 
-/* class IOHIDInterface IOHIDInterface.iig:52-273 */
+
+/* source class IOHIDInterface IOHIDInterface.iig:53-291 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
+/*!
+ *   @class IOHIDInterface
+ *   @abstract Abstract interface to HID device functionality
+ *   @discussion Following object properties can be used to identify/match interface and its characteristics (see  IOHIDDeviceKeys.h )
+ *    kIOHIDReportIntervalKey
+ *    kIOHIDVendorIDKey
+ *    kIOHIDProductIDKey
+ *    kIOHIDTransportKey
+ *    kIOHIDVersionNumberKey
+ *    kIOHIDCountryCodeKey
+ *    kIOHIDLocationIDKey
+ *    kIOHIDManufacturerKey
+ *    kIOHIDProductKey
+ *    kIOHIDSerialNumberKey
+ *    kIOHIDRequestTimeoutKey
+*/
+
+class KERNEL IOHIDInterface : public IOService
+{
+public:
+    /*!
+     * @function init
+     *
+     * @abstract
+     * Initializes IOHIDInterface object.
+     *
+     * @return
+     * true on success.
+     */
+    virtual bool init() override;
+    
+    /*!
+     * @function free
+     *
+     * @abstract
+     * frees the IOHIDInterface object.
+     */
+    virtual void free() override;
+    
+    /*!
+     * @function ReportAvailable
+     *
+     * @abstract
+     * Callback invoked when an input report is received from the device.
+     *
+     * @param timestamp
+     * The timestamp of the report.
+     *
+     * @param reportID
+     * The report ID.
+     *
+     * @param reportLength
+     * The length of the report.
+     *
+     * @param type
+     * The report type.
+     *
+     * @param report
+     * A memory descriptor that describes the report.
+     *
+     * @param action
+     * The OSAction object that will handle the asynchronous report callback.
+     */
+    virtual void ReportAvailable(uint64_t timestamp,
+                                 uint32_t reportID,
+                                 uint32_t reportLength,
+                                 IOHIDReportType type,
+                                 IOMemoryDescriptor *report,
+                                 OSAction *action TARGET) LOCAL = 0;
+    
+    /*!
+     * @function AddReportToPool
+     *
+     * @abstract
+     * Adds a memory descriptor to the report pool.
+     *
+     * @param report
+     * A memory descriptor large enough to hold input reports.
+     *
+     * @return
+     * Returns kIOReturnSuccess on success.
+     */
+    virtual kern_return_t AddReportToPool(IOBufferMemoryDescriptor *report);
+    
+    /*!
+     * @function Open
+     *
+     * @abstract
+     * Opens the interface in order to receive input reports.
+     *
+     * @param forClient
+     * The client opening the IOHIDInterface.
+     *
+     * @param options
+     * Options to pass to the interface.
+     *
+     * @param action
+     * The OSAction object that will handle the asynchronous report callback.
+     *
+     * @return
+     * Returns kIOReturnSuccess on success.
+     */
+    virtual kern_return_t Open(IOService *forClient,
+                               IOOptionBits options,
+                               OSAction *action TYPE(ReportAvailable));
+    
+    /*!
+     * @function Close
+     *
+     * @abstract
+     * Closes the IOHIDInterface, stopping invocation of report callbacks.
+     *
+     * @param forClient
+     * The client closing the IOHIDInterface.
+     *
+     * @param options
+     * Options to pass to the interface.
+     *
+     * @return
+     * Returns kIOReturnSuccess on success.
+     */
+    virtual kern_return_t Close(IOService *forClient,
+                                IOOptionBits options);
+    
+    /*!
+     * @function SetReport
+     *
+     * @abstract
+     * Send a report to the HID device.
+     *
+     * @param report
+     * A memory descriptor that describes the report to send
+     * to the HID device.
+     *
+     * @param reportType
+     * The report type.
+     *
+     * @param reportID
+     * the report ID.
+     *
+     * @param options
+     * The lower 8 bits will represent the Report ID. The other 24 bits are
+     * options to specify the request.
+     *
+     * @return
+     * Returns kIOReturnSuccess on success.
+     */
+    virtual kern_return_t SetReport (IOMemoryDescriptor *        report,
+                                     IOHIDReportType             reportType,
+                                     uint32_t                    reportID            = 0,
+                                     IOOptionBits                options             = 0);
+    
+    /*!
+     * @function GetReport
+     *
+     * @abstract
+     * Get a report from the HID device.
+     *
+     * @param report
+     * A memory descriptor that describes the memory to store the report read
+     * from the HID device.
+     *
+     * @param reportType
+     * The report type.
+     *
+     * @param reportID
+     * The report ID.
+     *
+     * @param options
+     * The lower 8 bits will represent the Report ID. The other 24 bits are
+     * options to specify the request.
+     *
+     * @return
+     * Returns kIOReturnSuccess on success.
+     */
+    virtual kern_return_t GetReport (IOMemoryDescriptor *        report,
+                                     IOHIDReportType             reportType,
+                                     uint32_t                    reportID            = 0,
+                                     IOOptionBits                options             = 0);
+    
+    /*!
+     * @function processReport
+     *
+     * @abstract
+     * Processes the report received from the HandleReportCallback function.
+     * Will update all element values (returned from the getElements function)
+     * from the new report data.
+     *
+     * @param timestamp
+     * The timestamp of the report.
+     *
+     * @param report
+     * Bytes that describes the report.
+     *
+     * @param reportLength
+     * The length of the report.
+     *
+     * @param type
+     * The report type.
+     *
+     * @param reportID
+     * The report ID.
+     */
+    virtual void processReport(uint64_t timestamp,
+                               uint8_t *report,
+                               uint32_t reportLength,
+                               IOHIDReportType type,
+                               uint32_t reportID) LOCALONLY;
+    
+    /*!
+     * @function getElements
+     *
+     * @abstract
+     * Returns an array of IOHIDElement objects. The element values will be
+     * updates on calls to the processReport() function.
+     *
+     * @return
+     * Returns an array of IOHIDElement objects.
+     */
+    virtual OSArray *getElements() LOCALONLY;
+    
+    /*!
+     * @function commitElements
+     *
+     * @abstract
+     * Commits an array of IOHIDElements to/from the device.
+     *
+     * @param elements
+     * An array of IOHIDElement objects. 
+     *
+     * @param direction
+     * The direction to commit the elements. Directions are defined in the
+     * IOHIDElementCommitDirection enumerator in <IOKit/hid/IOHIDKeys.h>.
+     *
+     * @result
+     * Returns kIOReturnSuccess on success.
+     */
+    virtual kern_return_t commitElements(OSArray *elements,
+                                         IOHIDElementCommitDirection direction) LOCALONLY;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOHIDInterface IOHIDInterface.iig:53-291 */
 
 #define IOHIDInterface_GetElementValues_ID            0xc4a89d6fd6fd065cULL
 #define IOHIDInterface_SetElementValues_ID            0xf964ed7a299eb3a5ULL
@@ -388,6 +638,9 @@ public:
 #endif /* !KERNEL */
 
 
-/* IOHIDInterface.iig:290- */
+#endif /* !__DOCUMENTATION__ */
+
+
+/* IOHIDInterface.iig:308- */
 
 #endif /* ! _HIDDRIVERKIT_IOHIDINTERFACE_H */

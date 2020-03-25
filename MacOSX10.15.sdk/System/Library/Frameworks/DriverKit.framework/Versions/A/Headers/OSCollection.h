@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from OSCollection.iig */
+/* iig(DriverKit-73.100.4) generated from OSCollection.iig */
 
-/* OSCollection.iig:1-49 */
+/* OSCollection.iig:1-42 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -43,6 +43,11 @@ class OSDictionary;
 
 typedef bool (^OSCollectionIterateObjectsBlock)(OSObject * object);
 
+/* source class OSCollection OSCollection.iig:43-70 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class OSCollection
  *
@@ -50,7 +55,33 @@ typedef bool (^OSCollectionIterateObjectsBlock)(OSObject * object);
  * Base class for DriverKit collection objects.
  */
 
-/* class OSCollection OSCollection.iig:50-70 */
+class LOCALONLY OSCollection : public OSContainer
+{
+public:
+
+	virtual uint32_t
+	getCount() const = 0;
+
+	virtual uint32_t
+	getCapacity() const = 0;
+
+	virtual uint32_t
+	ensureCapacity(uint32_t newCapacity) = 0;
+
+	virtual void
+	flushCollection() = 0;
+
+	virtual bool
+	iterateObjects(OSCollectionIterateObjectsBlock block) const;
+
+	virtual
+	OSCollectionPtr copyCollection(OSDictionary * cycleDict) const;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class OSCollection OSCollection.iig:43-70 */
 
 
 #define OSCollection_Methods \
@@ -154,6 +185,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* OSCollection.iig:72- */
 

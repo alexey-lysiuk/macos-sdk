@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F0FE2B41-C715-32FE-A50A-C683024C8CC9', 'x86_64: F0FE2B41-C715-32FE-A50A-C683024C8CC9' ]
+uuids:           [ 'x86_64: F0CFC110-8DBA-39F6-99DF-5D323B18C106', 'x86_64: F0CFC110-8DBA-39F6-99DF-5D323B18C106' ]
 platform:        zippered
 install-name:    '/usr/lib/libCTGreenTeaLogger.dylib'
 exports:         

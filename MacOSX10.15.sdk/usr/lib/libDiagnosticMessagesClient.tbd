@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 83F42398-DB41-3BB2-B8A1-10D78C4B5778', 'x86_64: 83F42398-DB41-3BB2-B8A1-10D78C4B5778' ]
+uuids:           [ 'x86_64: BE749883-9400-334A-8FBF-F3321CF205F5', 'x86_64: BE749883-9400-334A-8FBF-F3321CF205F5' ]
 platform:        zippered
 install-name:    '/usr/lib/libDiagnosticMessagesClient.dylib'
 current-version: 112

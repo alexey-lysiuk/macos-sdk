@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0E0A41EA-F99A-3E96-BF4B-4DDFAE4209AC', 'x86_64: 0E0A41EA-F99A-3E96-BF4B-4DDFAE4209AC' ]
+uuids:           [ 'x86_64: 6A885911-1932-3FC9-BAEA-4BD35A77EEC8', 'x86_64: 6A885911-1932-3FC9-BAEA-4BD35A77EEC8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/vCard.framework/Versions/A/vCard'
 current-version: 0
@@ -19,6 +19,7 @@ exports:
                        _CNVCardAlternateBirthdayComponentsKey, _CNVCardBirthdayComponentsKey, 
                        _CNVCardCalendarURIsKey, _CNVCardCardDAVUIDKey, _CNVCardDepartmentNameKey, 
                        _CNVCardEmailKey, _CNVCardFirstNameKey, _CNVCardFormattedNameKey, 
+                       _CNVCardGuardianWhitelistAuthorizationAllowed, _CNVCardGuardianWhitelistAuthorizationDisallowed, 
                        _CNVCardGuardianWhitelistedKey, _CNVCardHomeLabel, _CNVCardInstantMessageBundleIdentifiersKey, 
                        _CNVCardInstantMessageKey, _CNVCardInstantMessageServiceAIM, 
                        _CNVCardInstantMessageServiceFacebook, _CNVCardInstantMessageServiceGaduGadu, 
@@ -41,10 +42,12 @@ exports:
                        _CNVCardPhoneticOrganizationNameKey, _CNVCardPostalAddressKey, 
                        _CNVCardPreferredApplePersonaIDKey, _CNVCardPreferredLikenessSourceKey, 
                        _CNVCardPronunciationFirstNameKey, _CNVCardPronunciationLastNameKey, 
+                       _CNVCardPropertyLineGuardianWhitelistedFalse, _CNVCardPropertyLineGuardianWhitelistedTrue, 
                        _CNVCardPropertyNameEmailAddress, _CNVCardPropertyNameFormattedName, 
-                       _CNVCardPropertyNameNameComponents, _CNVCardPropertyNameOrganizationName, 
-                       _CNVCardPropertyNamePhoto, _CNVCardPropertyNameTelephoneNumber, 
-                       _CNVCardPropertyNameXABShowAs, _CNVCardRelatedNamesKey, _CNVCardSocialProfileBundleIdentifiersKey, 
+                       _CNVCardPropertyNameGuardianWhitelisted, _CNVCardPropertyNameNameComponents, 
+                       _CNVCardPropertyNameOrganizationName, _CNVCardPropertyNamePhoto, 
+                       _CNVCardPropertyNameTelephoneNumber, _CNVCardPropertyNameXABShowAs, 
+                       _CNVCardRelatedNamesKey, _CNVCardSocialProfileBundleIdentifiersKey, 
                        _CNVCardSocialProfileDisplayNameKey, _CNVCardSocialProfileKey, 
                        _CNVCardSocialProfileServiceFacebook, _CNVCardSocialProfileServiceFlickr, 
                        _CNVCardSocialProfileServiceKey, _CNVCardSocialProfileServiceLinkedIn, 
@@ -138,7 +141,7 @@ exports:
                        CNVCardParser._unknowns, CNVCardParser._urls, CNVCardPerson._activityAlerts, 
                        CNVCardPerson._alternateBirthdayComponents, CNVCardPerson._birthdayComponents, 
                        CNVCardPerson._calendarURIs, CNVCardPerson._cardDAVUID, CNVCardPerson._department, 
-                       CNVCardPerson._downtimeWhitelist, CNVCardPerson._emailAddresses, 
+                       CNVCardPerson._downtimeWhitelistAuthorization, CNVCardPerson._emailAddresses, 
                        CNVCardPerson._firstName, CNVCardPerson._imageCropRects, CNVCardPerson._imageData, 
                        CNVCardPerson._imageReferences, CNVCardPerson._instantMessagingAddresses, 
                        CNVCardPerson._isCompany, CNVCardPerson._isMe, CNVCardPerson._jobTitle, 

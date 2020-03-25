@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F9138D1F-8953-3F86-B59C-2583705ABEFC', 'x86_64: F9138D1F-8953-3F86-B59C-2583705ABEFC' ]
+uuids:           [ 'x86_64: ED6545B8-9FFD-3C7E-81B7-229AB7E9B28F', 'x86_64: ED6545B8-9FFD-3C7E-81B7-229AB7E9B28F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AXCoreUtilities.framework/Versions/A/AXCoreUtilities'
 exports:         

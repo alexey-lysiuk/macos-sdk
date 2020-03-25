@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C920556E-E092-3E0D-AB0D-4B8075C94254' ]
+uuids:           [ 'x86_64: C1CB65F9-8CED-3964-9D04-AF9013B8961D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/InputMethodKit.framework/Versions/A/InputMethodKit'
 current-version: 429
@@ -9,6 +9,8 @@ exports:
     symbols:         [ _IMKButtonCallbackKey, _IMKButtonCallbackObjectKey, _IMKCandidateControllerFunctionViewPadding, 
                        _IMKCandidateControllerPopoverCloseButtonWidth, _IMKCandidateControllerSingleRowMaxWidth, 
                        _IMKCandidateControllerSingleRowPressAndHoldMaxWidth, _IMKCandidateControllerSingleRowTrackpadCandidatesMaxWidth, 
+                       _IMKCandidateControllerSingleRowTrackpadCandidatesMediumWidth, 
+                       _IMKCandidateControllerSingleRowTrackpadCandidatesMinimumWidth, 
                        _IMKCandidateControllerTouchPadChevronWidth, _IMKCandidateControllerUITypeIsWindowBacked, 
                        _IMKCandidateDefinitionUnitAnnotationKey, _IMKCandidateDefinitionUnitTextKey, 
                        _IMKCandidateRightEdgeScalingFactor, _IMKCandidateUnitViewClicked, 
@@ -57,6 +59,7 @@ exports:
                        _IMKUICandidateSortingBarExtraPadding, _IMKUICandidateSortingBarHeight, 
                        _IMKUICandidateSortingBarViewPadding, _IMKUICandidateSortingButtonHoveringColor, 
                        _IMKUICandidateSortingButtonOnColor, _IMKUICandidateSteppingWindowControllerCandidateRightEdge, 
+                       _IMKUICandidateSurfaceLargeWidth, _IMKUICandidateSurfaceMinimumWidth, 
                        _IMKUICandidateTouchBarControllerMaxWidth, _IMKUICandidateTouchBarHandwritingHorizontalPosition, 
                        _IMKUICandidateTouchBarItemChevronWidth, _IMKUICandidateTouchBarItemControllerHeight, 
                        _IMKUICandidateTouchBarViewItemKey, _IMKUICandidateVerticalDefaultWidthValue, 
@@ -65,9 +68,10 @@ exports:
                        _IMKUIExpandedLayoutName, _IMKUILocationHintString, _IMKUIOppositeLocationHint, 
                        _IMKUIPanelCornerRadius, _IMKUIPanelTypeIsScrubber, _IMKUIPanelTypeIsTouchBar, 
                        _IMKUIPanelTypeToString, _IMKUIPressAndHoldCandidateSelectionPadding, 
-                       _IMKUIQuickTypeBarWidth, _IMKUISpeechBalloonMaskCornerRadius, 
-                       _IMKUITouchBarFunctionKeyBarLength, _IMKUITouchBarFunctionKeySpacing, 
-                       _IMKUITouchBarFunctionKeyWidth, _IMKUITouchBarStandardLength, 
+                       _IMKUIQuickTypeBarMaximumWidth, _IMKUIQuickTypeBarMinimumWidth, 
+                       _IMKUISpeechBalloonMaskCornerRadius, _IMKUITouchBarFunctionKeyBarLength, 
+                       _IMKUITouchBarFunctionKeySpacing, _IMKUITouchBarFunctionKeyWidth, 
+                       _IMKUITouchBarMaximumWidth, _IMKUITouchBarStandardLength, 
                        _IMKUITouchBarTrackpadStandardLength, _IMKUTF32StringEncoding, 
                        _IMKUnsignedSubtract, _IMKWindowCategoryFromType, _InputMethodServerControllerClass, 
                        _InputMethodServerDelegateClass, _InputMethodServerModeDictionary, 

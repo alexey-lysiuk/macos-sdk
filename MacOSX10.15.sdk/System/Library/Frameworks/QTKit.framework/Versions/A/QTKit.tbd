@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4DF85D83-D9DF-3975-8967-8AD7625BD7A7' ]
+uuids:           [ 'x86_64: FE5B697A-F7DA-3946-B0EC-0BD1DE338A65' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/QTKit.framework/Versions/A/QTKit'
 exports:         

@@ -2,7 +2,7 @@
 //  INDeleteTasksIntent.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntent.h>
@@ -18,7 +18,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INDeleteTasksIntent : INIntent
 
 - (instancetype)initWithTaskList:(nullable INTaskList *)taskList
@@ -41,7 +41,7 @@ API_UNAVAILABLE(macosx)
  */
 
 API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @protocol INDeleteTasksIntentHandling <NSObject>
 
 @required

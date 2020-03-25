@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 565D418D-36F2-31F1-92F9-22F5C322238C' ]
+uuids:           [ 'x86_64: 76DB2910-C3C9-3AEA-AA22-142CD5B91CDE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Sentry.framework/Versions/A/Sentry'
 exports:         

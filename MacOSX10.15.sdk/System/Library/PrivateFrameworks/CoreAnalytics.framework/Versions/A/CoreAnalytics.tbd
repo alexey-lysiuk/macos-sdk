@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CFAD97DE-F4F0-3A1B-B6FE-855164CC68CC', 'x86_64: CFAD97DE-F4F0-3A1B-B6FE-855164CC68CC' ]
+uuids:           [ 'x86_64: F33987F5-A14A-3A55-8D26-FDE9A57B9269', 'x86_64: F33987F5-A14A-3A55-8D26-FDE9A57B9269' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreAnalytics.framework/Versions/A/CoreAnalytics'
 exports:         
@@ -18,7 +18,7 @@ exports:
                        __Z32analytics_tool_transform_persistNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __Z33analytics_tool_config_set_taskingNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __Z33analytics_tool_get_queried_eventsv, __Z37analytics_tool_is_event_used_check_dbNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                       __Z40analytics_tool_config_set_tasking_ndjsonN10applesauce3xpc6objectE, 
+                       __Z38analytics_tool_config_set_reboot_clearb, __Z40analytics_tool_config_set_tasking_ndjsonN10applesauce3xpc6objectE, 
                        __ZN13CoreAnalytics13EventObserverD0Ev, __ZN13CoreAnalytics13EventObserverD1Ev, 
                        __ZN13CoreAnalytics13EventObserverD2Ev, __ZN13CoreAnalytics21ConfigurationObserverD0Ev, 
                        __ZN13CoreAnalytics21ConfigurationObserverD1Ev, __ZN13CoreAnalytics21ConfigurationObserverD2Ev, 

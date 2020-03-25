@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 31460C4F-FFF1-3F8F-95BA-18BC646DF739', 'x86_64: 31460C4F-FFF1-3F8F-95BA-18BC646DF739' ]
+uuids:           [ 'x86_64: 274CA5D9-9BFA-3C99-85B2-51DBF5208A18', 'x86_64: 274CA5D9-9BFA-3C99-85B2-51DBF5208A18' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CacheDelete.framework/Versions/A/CacheDelete'
 exports:         
@@ -38,10 +38,10 @@ exports:
                        _flattenedAssetDescription, _fsPurgeableTypeForService, _fsPurgeableTypeToServiceMap, 
                        _gTimebaseConversion, _getAllVolumes, _getCacheDeleteXattr, 
                        _getFunc, _getLocalVolumes, _getRootVolume, _getbacktrace, 
-                       _humanReadableNumber, _is_first_boot, _lowSpaceVolumes, _mapVolume, 
-                       _markNotifiedVolume, _normalizePath, _paddingForVolume, _pruneFile, 
-                       _removeBreadcrumb, _sentinelDir, _serviceForFSPurgeableType, 
-                       _set_first_boot_work_completed, _stringForFSPurgeableType, 
+                       _getbacktrace_short, _humanReadableNumber, _is_first_boot, 
+                       _lowSpaceVolumes, _mapVolume, _markNotifiedVolume, _normalizePath, 
+                       _paddingForVolume, _pruneFile, _removeBreadcrumb, _sentinelDir, 
+                       _serviceForFSPurgeableType, _set_first_boot_work_completed, 
                        _tallyDict, _thresholdsForMountPoint, _timeStamp, _traverse_dir_with_state, 
                        _traverse_directory, _validateTimestamp, _volumeForUUID, _writeToCacheFile ]
     objc-classes:    [ CacheDeleteHostExtensionContext, CacheDeleteListener, CacheDeleteRemoteExtensionContext, 

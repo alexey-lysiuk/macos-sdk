@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 87BE8D5C-5D35-3434-8BDF-1615349C7A21', 'x86_64: 87BE8D5C-5D35-3434-8BDF-1615349C7A21' ]
+uuids:           [ 'x86_64: AEE98D6E-03FD-3C80-90AC-5B45B4AE7A2E', 'x86_64: AEE98D6E-03FD-3C80-90AC-5B45B4AE7A2E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC'
 exports:         

@@ -57,6 +57,13 @@ typedef NS_OPTIONS(NSUInteger, UIRectCorner) {
     UIRectCornerAllCorners  = ~0UL
 };
 
+typedef NS_OPTIONS(NSUInteger, UIAxis) {
+    UIAxisNeither    = 0,
+    UIAxisHorizontal = 1 << 0,
+    UIAxisVertical   = 1 << 1,
+    UIAxisBoth       = (UIAxisHorizontal | UIAxisVertical),
+} API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+
 #ifdef FOUNDATION_HAS_DIRECTIONAL_GEOMETRY
 
 typedef NSDirectionalRectEdge UIDirectionalRectEdge;

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5BAA0CB4-4DDF-3688-B72C-F8BF0570315F' ]
+uuids:           [ 'x86_64: 29A0553F-B840-3281-95BA-AEF951411488' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/SecItemShim.dylib'
-current-version: 608.3.10
+current-version: 609.1.20
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _WebKitSecItemShimInitialize ]

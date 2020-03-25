@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 010D2AAB-3265-3ED4-B79E-E83571CF0647', 'x86_64: 010D2AAB-3265-3ED4-B79E-E83571CF0647' ]
+uuids:           [ 'x86_64: 5B6A802A-B147-3259-A7ED-254CB5697A92', 'x86_64: 5B6A802A-B147-3259-A7ED-254CB5697A92' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IDSFoundation.framework/Versions/A/IDSFoundation'
 current-version: 800
@@ -292,9 +292,10 @@ exports:
                        _IDSRegistrationPropertySupportsFullScreenMomentsV3, _IDSRegistrationPropertySupportsImpactEffectsV1, 
                        _IDSRegistrationPropertySupportsIncomingFindMyV1, _IDSRegistrationPropertySupportsInlineAttachments, 
                        _IDSRegistrationPropertySupportsInvisibleInkV1, _IDSRegistrationPropertySupportsKeepReceipts, 
-                       _IDSRegistrationPropertySupportsLiveDelivery, _IDSRegistrationPropertySupportsLocationSharing, 
-                       _IDSRegistrationPropertySupportsMediaV2, _IDSRegistrationPropertySupportsOriginalTimestampOrderingV1, 
-                       _IDSRegistrationPropertySupportsPhotosExtensionV1, _IDSRegistrationPropertySupportsProtobufPayloadDataV1, 
+                       _IDSRegistrationPropertySupportsKeySharing, _IDSRegistrationPropertySupportsLiveDelivery, 
+                       _IDSRegistrationPropertySupportsLocationSharing, _IDSRegistrationPropertySupportsMediaV2, 
+                       _IDSRegistrationPropertySupportsOriginalTimestampOrderingV1, 
+                       _IDSRegistrationPropertySupportsPhotosExtensionV1, _IDSRegistrationPropertySupportsProtobufPayloadDataV2, 
                        _IDSRegistrationPropertySupportsScreenTimeV2, _IDSRegistrationPropertySupportsStickersV1, 
                        _IDSRegistrationPropertySupportsUpdateAttachmentsV1, _IDSRegistrationServiceTypeCalling, 
                        _IDSRegistrationServiceTypeCloudMessaging, _IDSRegistrationServiceTypeFaceTime, 
@@ -688,9 +689,10 @@ exports:
                        IDSEndpointCapabilities._supportsFullScreenMomentsV2, IDSEndpointCapabilities._supportsFullScreenMomentsV3, 
                        IDSEndpointCapabilities._supportsImpactEffectsV1, IDSEndpointCapabilities._supportsIncomingFindMyV1, 
                        IDSEndpointCapabilities._supportsInlineAttachments, IDSEndpointCapabilities._supportsInvisibleInkV1, 
-                       IDSEndpointCapabilities._supportsKeepReceipts, IDSEndpointCapabilities._supportsLocationSharing, 
-                       IDSEndpointCapabilities._supportsMediaV2, IDSEndpointCapabilities._supportsOriginalTimestampOrderingV1, 
-                       IDSEndpointCapabilities._supportsPhotosExtensionV1, IDSEndpointCapabilities._supportsProtobufPayloadDataV1, 
+                       IDSEndpointCapabilities._supportsKeepReceipts, IDSEndpointCapabilities._supportsKeySharing, 
+                       IDSEndpointCapabilities._supportsLocationSharing, IDSEndpointCapabilities._supportsMediaV2, 
+                       IDSEndpointCapabilities._supportsOriginalTimestampOrderingV1, 
+                       IDSEndpointCapabilities._supportsPhotosExtensionV1, IDSEndpointCapabilities._supportsProtobufPayloadDataV2, 
                        IDSEndpointCapabilities._supportsScreenTimeV2, IDSEndpointCapabilities._supportsStickersV1, 
                        IDSEndpointCapabilities._supportsUpdateAttachmentsV1, IDSGLSessionManager._connFd, 
                        IDSGLSessionManager._delegate, IDSGLSessionManager._isServer, 

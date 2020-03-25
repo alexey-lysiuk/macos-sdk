@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6C5102F7-85BE-34E0-BFC7-0569FCAE2755', 'x86_64: 6C5102F7-85BE-34E0-BFC7-0569FCAE2755' ]
+uuids:           [ 'x86_64: 2D639331-43CF-331F-98F4-CDF41990A468', 'x86_64: 2D639331-43CF-331F-98F4-CDF41990A468' ]
 platform:        zippered
 install-name:    '/usr/lib/libheimdal-asn1.dylib'
 exports:         

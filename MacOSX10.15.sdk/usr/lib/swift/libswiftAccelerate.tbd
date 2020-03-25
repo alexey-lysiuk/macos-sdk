@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F9EEFE3E-367D-3622-B540-64F8718747C0', 'x86_64: F9EEFE3E-367D-3622-B540-64F8718747C0' ]
+uuids:           [ 'x86_64: 9F17D8A7-323F-36F3-ABBC-9232D8D93F5C', 'x86_64: 9F17D8A7-323F-36F3-ABBC-9232D8D93F5C' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftAccelerate.dylib'
 current-version: 0
@@ -844,7 +844,7 @@ exports:
                        '_$sSo13vImage_BufferV10AccelerateE02cgA06format5flagsABSo10CGImageRefa_So01va1_G6FormatVAC01vA0O7OptionsVtKcfC', 
                        '_$sSo13vImage_BufferV10AccelerateE13createCGImage6format5flagsSo0E3RefaSo01va1_E6FormatV_AC01vA0O7OptionsVtKF', 
                        '_$sSo13vImage_BufferV10AccelerateE29preferredAlignmentAndRowBytes5width6height12bitsPerPixelSi9alignment_Si03rowH0tSi_Sis6UInt32VtKFZ', 
-                       '_$sSo13vImage_BufferV10AccelerateE4copy011destinationB05flagsyABz_AC01vA0O7OptionsVtKF', 
+                       '_$sSo13vImage_BufferV10AccelerateE4copy011destinationB09pixelSize5flagsyABz_SiAC01vA0O7OptionsVtKF', 
                        '_$sSo13vImage_BufferV10AccelerateE4freeyyF', '_$sSo13vImage_BufferV10AccelerateE4sizeSo6CGSizeVvg', 
                        '_$sSo13vImage_BufferV10AccelerateE4sizeSo6CGSizeVvpMV', '_$sSo13vImage_BufferV10AccelerateE5width6height12bitsPerPixelABSi_Sis6UInt32VtKcfC', 
                        '_$sSo14BNNSActivationa10AccelerateE21integerLinearSaturate5scale6offset5shiftABs5Int32V_A2ItFZ', 

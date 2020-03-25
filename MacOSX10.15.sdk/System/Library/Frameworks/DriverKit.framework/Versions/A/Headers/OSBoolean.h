@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from OSBoolean.iig */
+/* iig(DriverKit-73.100.4) generated from OSBoolean.iig */
 
-/* OSBoolean.iig:1-74 */
+/* OSBoolean.iig:1-64 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -65,6 +65,11 @@ extern OSBooleanPtr kOSBooleanTrue;
  */
 extern OSBooleanPtr kOSBooleanFalse;
 
+/* source class OSBoolean OSBoolean.iig:65-89 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class OSBoolean
  *
@@ -75,7 +80,27 @@ extern OSBooleanPtr kOSBooleanFalse;
  * Only two static immutable instances of OSBoolean exist, kOSBooleanFalse & kOSBooleanTrue.
  */
 
-/* class OSBoolean OSBoolean.iig:75-89 */
+class LOCALONLY OSBoolean : public OSContainer
+{
+public:
+	// OSObject
+
+    virtual void
+    free() override;
+
+    virtual void
+    retain() const override;
+
+    virtual void
+    release() const override;
+
+	// OSBoolean
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class OSBoolean OSBoolean.iig:65-89 */
 
 
 #define OSBoolean_Methods \
@@ -165,6 +190,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* OSBoolean.iig:91- */
 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E8639D27-CD0D-323C-9810-4E604ECF4EB5' ]
+uuids:           [ 'x86_64: 9D85717F-4E3B-3675-81C8-F60360CBFD18' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ConfigurationEngineModel.framework/Versions/A/ConfigurationEngineModel'
-current-version: 30.86
+current-version: 32.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CEMAccountLDAPDeclaration_LDAPSearchSettingsItem_LDAPSearchSettingScope_ldapSearchSettingScopeBase, 

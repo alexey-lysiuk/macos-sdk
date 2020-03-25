@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D41F0652-3E96-3E92-AA2F-00733DE9E924' ]
+uuids:           [ 'x86_64: 736F6FB6-F054-39D0-830B-A2199DBFB361' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ReminderMigration.framework/Versions/A/ReminderMigration'
 exports:         

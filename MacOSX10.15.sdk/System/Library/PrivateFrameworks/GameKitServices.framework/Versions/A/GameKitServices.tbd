@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9C4EF00C-B7D4-3623-9652-68D45BC0B411', 'x86_64: 9C4EF00C-B7D4-3623-9652-68D45BC0B411' ]
+uuids:           [ 'x86_64: FB68E817-683B-36D6-9946-B28CAC22844D', 'x86_64: FB68E817-683B-36D6-9946-B28CAC22844D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameKitServices.framework/Versions/A/GameKitServices'
 exports:         
@@ -13,17 +13,17 @@ exports:
                        _BWEUpdateFilterType, _BWEstCheckIfLargeFrameNeeded, _CDXClientDidUpdatePreblobNotification, 
                        _CDXClientErrorNotification, _CDXGetPreblobLength, _CDXVendorCreate, 
                        _CDXVendorCreateTicket, _CDXVendorCreateWithSingleKey, _CDXVendorRelease, 
-                       _CDXVerifyPreblob, _GCKGameConnectivityKitBundle, _GCKSessionBroadcast, 
-                       _GCKSessionCancelConnectToLocalService, _GCKSessionConnectToLocalService, 
-                       _GCKSessionCreate, _GCKSessionCreateUniqueID, _GCKSessionDecodeChannelStatistics, 
-                       _GCKSessionDisposeAllConnections, _GCKSessionDisposeConnection, 
-                       _GCKSessionEstablishConnection, _GCKSessionEstablishConnectionWithRelayInfo, 
-                       _GCKSessionGetLocalServicePort, _GCKSessionInitiateRelay, 
-                       _GCKSessionIsParticipantConnected, _GCKSessionPrepareConnection, 
-                       _GCKSessionPrepareConnectionWithRelayInfo, _GCKSessionReceiveDOOB, 
-                       _GCKSessionRegisterReliableTransportCallback, _GCKSessionRelease, 
-                       _GCKSessionRespondToInvitation, _GCKSessionSendAudioTo, _GCKSessionSendTo, 
-                       _GCKSessionSetDisconnectTimeout, _GCKSessionSetEventCallback, 
+                       _CDXVerifyPreblob, _CalcChecksum, _GCKGameConnectivityKitBundle, 
+                       _GCKSessionBroadcast, _GCKSessionCancelConnectToLocalService, 
+                       _GCKSessionConnectToLocalService, _GCKSessionCreate, _GCKSessionCreateUniqueID, 
+                       _GCKSessionDecodeChannelStatistics, _GCKSessionDisposeAllConnections, 
+                       _GCKSessionDisposeConnection, _GCKSessionEstablishConnection, 
+                       _GCKSessionEstablishConnectionWithRelayInfo, _GCKSessionGetLocalServicePort, 
+                       _GCKSessionInitiateRelay, _GCKSessionIsParticipantConnected, 
+                       _GCKSessionPrepareConnection, _GCKSessionPrepareConnectionWithRelayInfo, 
+                       _GCKSessionReceiveDOOB, _GCKSessionRegisterReliableTransportCallback, 
+                       _GCKSessionRelease, _GCKSessionRespondToInvitation, _GCKSessionSendAudioTo, 
+                       _GCKSessionSendTo, _GCKSessionSetDisconnectTimeout, _GCKSessionSetEventCallback, 
                        _GCKSessionSetHeartbeatDuration, _GCKSessionSetLocalName, 
                        _GCKSessionSetReportingAgent, _GCKSessionSetWifiEnabled, _GCKSessionStartEventCallbacks, 
                        _GCKSessionUpdateRelay, _GCK_BWE_CalcRxEstimate, _GCK_BWE_CloseHandle, 
@@ -39,11 +39,12 @@ exports:
                        _GKSSessionTokenData, _GameKitServicesVersionNumber, _GameKitServicesVersionString, 
                        _OSPFAddDynamicOptions, _OSPFGetLength, _OSPFMakeAudio, _OSPFMakeDD, 
                        _OSPFMakeData, _OSPFMakeHeartbeat, _OSPFMakeHello, _OSPFMakeLSA, 
-                       _OSPFMakeLSAACK, _OSPFParse, _OSPFProcessDynamicOption, _OSPFReadTimeval, 
-                       _OSPFWriteTimeval, _PostEventCallback, _ServiceWaitEventCallbacks, 
-                       _StartEventCallbackThread, _StopEventCallbackThread, _TimingLog, 
-                       _UpdateRTO, _UpdateRxEstimate, _WaitEventCallback, __Z15checkSendingSetPKvPv, 
-                       __Z17monitorSendingSetPKvPv, __Z18AGPSessionRecvFromP4CAGPjP15GCKSessionEvent, 
+                       _OSPFMakeLSAACK, _OSPFParse, _OSPFParse_ParsePacketHeader, 
+                       _OSPFProcessDynamicOption, _OSPFReadTimeval, _OSPFWriteTimeval, 
+                       _PostEventCallback, _ServiceWaitEventCallbacks, _StartEventCallbackThread, 
+                       _StopEventCallbackThread, _TimingLog, _UpdateRTO, _UpdateRxEstimate, 
+                       _WaitEventCallback, __OSPFParse_ParseDecompress, __OSPFParse_ParseExtractOptions, 
+                       __Z15checkSendingSetPKvPv, __Z17monitorSendingSetPKvPv, __Z18AGPSessionRecvFromP4CAGPjP15GCKSessionEvent, 
                        __Z20AGPTransportCallbackPvPjiPhiS1_ihhh, __Z26associationSetElementEqualPKvS0_, 
                        __Z27retainAssociationSetElementPK13__CFAllocatorPKv, __Z28releaseAssociationSetElementPK13__CFAllocatorPKv, 
                        __Z29associationSetElementHashCodePKv, __Z3kdfPvPA4_A4_hhi, 
@@ -163,7 +164,7 @@ exports:
                         __ZTS20AGPSendingSetElement, __ZTS24AGPAssociationSetElement ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B44CD962-4BCC-33E3-A4BA-D9A3850B322B', 'x86_64: B44CD962-4BCC-33E3-A4BA-D9A3850B322B' ]
+uuids:           [ 'x86_64: 9F569D0E-1272-313D-B44C-A842F41D9F3C', 'x86_64: 9F569D0E-1272-313D-B44C-A842F41D9F3C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/LegacyHandle.framework/Versions/A/LegacyHandle'
 exports:         
@@ -172,7 +173,7 @@ exports:
                        _CreateHandle, _FindHandle, _GetNumHandles ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AF25B3C4-5A19-3726-9984-C6D94C3DCD28', 'x86_64: AF25B3C4-5A19-3726-9984-C6D94C3DCD28' ]
+uuids:           [ 'x86_64: 0B8F99DD-BD57-3603-A493-FE7977DC16BA', 'x86_64: 0B8F99DD-BD57-3603-A493-FE7977DC16BA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/snatmap.framework/Versions/A/snatmap'
 exports:         
@@ -181,7 +182,7 @@ exports:
                        _SNATMAP_IsEqualNonce, _SNATMAP_MakeRequest ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E916D1BA-7646-30C7-8CF8-99B8CC968C07', 'x86_64: E916D1BA-7646-30C7-8CF8-99B8CC968C07' ]
+uuids:           [ 'x86_64: 779D76FA-D763-3310-9426-1B57F97C92EC', 'x86_64: 779D76FA-D763-3310-9426-1B57F97C92EC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Versions/A/AVConference'
 exports:         

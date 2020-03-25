@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2CA97B6F-BBA6-3356-AABA-580D4FDEC70A' ]
+uuids:           [ 'x86_64: 846F2FA1-B5ED-30D7-9BB3-2DA2A2261732' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FinderSyncPriv.framework/Versions/A/FinderSyncPriv'
-current-version: 1298.1.2
+current-version: 1298.4.19
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ FIFinderSyncExtensionHost ]

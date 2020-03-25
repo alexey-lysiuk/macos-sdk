@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4E29C1A6-71BE-30C0-BB57-0EC519A6CAD9', 'x86_64: 4E29C1A6-71BE-30C0-BB57-0EC519A6CAD9' ]
+uuids:           [ 'x86_64: 48A23116-3A1A-3106-A398-AECA4BEB14E3', 'x86_64: 48A23116-3A1A-3106-A398-AECA4BEB14E3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ExchangeWebServices.framework/Versions/A/ExchangeWebServices'
 current-version: 281
@@ -53,12 +53,14 @@ exports:
                        _EWSServerVersion2007SP1, _EWSServerVersion2010, _EWSServerVersion2010SP1, 
                        _EWSServerVersion2010SP2, _EWSServerVersion2013, _EWSServerVersion2013SP1, 
                        _EWSTypesNamespaceURI, _ExchangeWebServicesVersionNumber, 
-                       _ExchangeWebServicesVersionString, _SOAPErrorFaultCodeKey, 
+                       _ExchangeWebServicesVersionString, _JWTClockSkew, _SOAPErrorFaultCodeKey, 
                        _SOAPErrorFaultStringKey, _SOAPErrorHTTPStatusKey, _SOAPErrorSOAPHeaderKey, 
                        _SOAPFaultKey, _SOAPNamespaceURI, _SOAPWebServicesErrorDomain, 
                        _autodiscoverKillSwitchURL, _kAutodiscoverProtocolActiveSync, 
-                       _kAutodiscoverProtocolEWS, _kExchangeOAuthSupportedKey, _kExchangeTokenRequestURI, 
-                       _kExchangeWebSignInURI, _sMapping ]
+                       _kAutodiscoverProtocolEWS, _kExchangeJWKSData, _kExchangeJWKSURI, 
+                       _kExchangeOAuthSupportedKey, _kExchangeOAuthVersion, _kExchangeTokenIssuer, 
+                       _kExchangeTokenRequestURI, _kExchangeWebSignInURI, _kExchangeWebSignInV2URI, 
+                       _sMapping ]
     objc-classes:    [ EWSAbsoluteMonthlyRecurrencePatternType, EWSAbsoluteYearlyRecurrencePatternType, 
                        EWSAcceptItemType, EWSActiveDirectoryLookup, EWSAddDelegateResponseMessageType, 
                        EWSAddDelegateType, EWSAffectedTaskOccurrencesTypeDefinition, 
@@ -223,13 +225,13 @@ exports:
                        EWSYearlyRegeneratingPatternType, ExchangeAutodiscovererV2, 
                        ExchangeOAuthClient, ExchangeOAuthRequest, ExchangeOAuthTokenRefreshResponse, 
                        ExchangeOAuthTokenRequest, ExchangeOAuthTokenResponse, ExchangeOpenIDMetadataRequest, 
-                       ExchangeOpenIDMetadataResponse, SOAPBaseDocument, SOAPBody, 
-                       SOAPCode, SOAPDocument, SOAPEnvelope, SOAPFault, SOAPFaultDetail, 
-                       SOAPHeader, SOAPParser, SOAPReason, SOAPText, XSBase64BinaryDefinition, 
-                       XSBooleanDefinition, XSChoiceDefinition, XSComplexTypeDefinition, 
-                       XSDateDefinition, XSDateFormatterFactory, XSDateTimeDefinition, 
-                       XSDefinition, XSDefinitions, XSDoubleDefinition, XSDurationDefinition, 
-                       XSElement, XSIntegerDefinition, XSNamespaces, XSNullDefinition, 
-                       XSSimpleTypeDefinition, XSStringDefinition, XSTimeDefinition, 
-                       _EWSKerberosPrincipals, _SOAPParserFrame ]
+                       ExchangeOpenIDMetadataResponse, JWTValidator, SOAPBaseDocument, 
+                       SOAPBody, SOAPCode, SOAPDocument, SOAPEnvelope, SOAPFault, 
+                       SOAPFaultDetail, SOAPHeader, SOAPParser, SOAPReason, SOAPText, 
+                       XSBase64BinaryDefinition, XSBooleanDefinition, XSChoiceDefinition, 
+                       XSComplexTypeDefinition, XSDateDefinition, XSDateFormatterFactory, 
+                       XSDateTimeDefinition, XSDefinition, XSDefinitions, XSDoubleDefinition, 
+                       XSDurationDefinition, XSElement, XSIntegerDefinition, XSNamespaces, 
+                       XSNullDefinition, XSSimpleTypeDefinition, XSStringDefinition, 
+                       XSTimeDefinition, _EWSKerberosPrincipals, _SOAPParserFrame ]
 ...

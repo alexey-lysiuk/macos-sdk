@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB2DC9D2-6A2A-3EB0-8ED9-8053CFEEC0A9' ]
+uuids:           [ 'x86_64: C03A48FC-1A02-320D-9147-F4687A1BBC6F' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox'
-current-version: 993.4
+current-version: 994.6
 parent-umbrella: Carbon
 exports:         
   - archs:           [ x86_64 ]
@@ -380,22 +380,22 @@ exports:
                        __SetWindowZOrderingEnabled, __SimulateMenuClosed, __SimulateMenuOpening, 
                        __SimulateMenuSelection, __SimulateMenuSelectionU, __StartSystemUIModeMenuBarAnimation, 
                        __SyncWindowWithCGAfterMove, __TISCopyParentInputMethodForInputSource, 
-                       __TISRestrictToReadOnlyMachinePrefs, __TSMCopySelectableInputSourcesInUIOrder, 
-                       __TSMInvalidateDocumentClient, __TSMIsRemoteViewAccessoryView, 
-                       __TSMIsRemoteViewKeyEquivalentHandling, __TSMParentInputMethodInputSourceForInputModeCreate, 
-                       __TSMRegisterRemoteViewClient, __TSMRemoteViewActivationIsOn, 
-                       __TSMSetRemoteViewActivation, __TSMSetRemoteViewIsAccessoryView, 
-                       __TSMSetRemoteViewKeyEquivalentHandling, __TSMWouldEventBeProcessedByPressAndHold, 
-                       ___CDCreateScreenFramesDictionaryRepresentation, ___CoreDragAnimateOrderOut, 
-                       ___CoreDragAutoScaleSourceDragComponents, ___CoreDragBeginDropAnimationTransaction, 
-                       ___CoreDragBeginFlockingAnimation, ___CoreDragBeginSlideBackAnimation, 
-                       ___CoreDragBeginUnflockingAnimation, ___CoreDragCancelDropAnimationTransaction, 
-                       ___CoreDragCancelOutstandingFlockingAnimation, ___CoreDragClearAllImageOverrides, 
-                       ___CoreDragCommitDropAnimationTransaction, ___CoreDragCreateCFStringFromCGEvent, 
-                       ___CoreDragCreateDictionaryRepOfLayerTree, ___CoreDragCreateImageData, 
-                       ___CoreDragCreateImageDataFromCFDictionary, ___CoreDragCreateImageDataWithComponentsBlock, 
-                       ___CoreDragCreateImageDataWithImage, ___CoreDragGetValueForKey, 
-                       ___CoreDragHasImageOverrides, ___CoreDragImageDataCreateDictionaryRepresentation, 
+                       __TISGetPhysicalKeyboardLanguage, __TISRestrictToReadOnlyMachinePrefs, 
+                       __TSMCopySelectableInputSourcesInUIOrder, __TSMInvalidateDocumentClient, 
+                       __TSMIsRemoteViewAccessoryView, __TSMIsRemoteViewKeyEquivalentHandling, 
+                       __TSMParentInputMethodInputSourceForInputModeCreate, __TSMRegisterRemoteViewClient, 
+                       __TSMRemoteViewActivationIsOn, __TSMSetRemoteViewActivation, 
+                       __TSMSetRemoteViewIsAccessoryView, __TSMSetRemoteViewKeyEquivalentHandling, 
+                       __TSMWouldEventBeProcessedByPressAndHold, ___CDCreateScreenFramesDictionaryRepresentation, 
+                       ___CoreDragAnimateOrderOut, ___CoreDragAutoScaleSourceDragComponents, 
+                       ___CoreDragBeginDropAnimationTransaction, ___CoreDragBeginFlockingAnimation, 
+                       ___CoreDragBeginSlideBackAnimation, ___CoreDragBeginUnflockingAnimation, 
+                       ___CoreDragCancelDropAnimationTransaction, ___CoreDragCancelOutstandingFlockingAnimation, 
+                       ___CoreDragClearAllImageOverrides, ___CoreDragCommitDropAnimationTransaction, 
+                       ___CoreDragCreateCFStringFromCGEvent, ___CoreDragCreateDictionaryRepOfLayerTree, 
+                       ___CoreDragCreateImageData, ___CoreDragCreateImageDataFromCFDictionary, 
+                       ___CoreDragCreateImageDataWithComponentsBlock, ___CoreDragCreateImageDataWithImage, 
+                       ___CoreDragGetValueForKey, ___CoreDragHasImageOverrides, ___CoreDragImageDataCreateDictionaryRepresentation, 
                        ___CoreDragImageDataDeleteSlotForCAContext, ___CoreDragImageDataGetComponentsBlock, 
                        ___CoreDragImageDataGetItemRef, ___CoreDragImageDataSet, ___CoreDragItemGetImageComponents, 
                        ___CoreDragItemGetImageData, ___CoreDragItemGetScreenFrame, 

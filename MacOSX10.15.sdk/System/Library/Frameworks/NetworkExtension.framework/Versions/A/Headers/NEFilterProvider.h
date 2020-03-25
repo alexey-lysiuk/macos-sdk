@@ -92,6 +92,21 @@ API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
 @end
 
 /*!
+ * @typedef NEFilterReportFrequency
+ * @abstract A NEFilterReportFrequency controls the frequency of periodic reports.
+ */
+typedef NS_ENUM(NSInteger, NEFilterReportFrequency){
+	/*! @const NEFilterReportFrequencyNone No frequency */
+	NEFilterReportFrequencyNone,
+	/*! @const NEFilterReportFrequencyLow Low frequency, approximately 5 seconds */
+	NEFilterReportFrequencyLow,
+	/*! @const NEFilterReportFrequencyMedium Medium frequency, approximately 1 second */
+	NEFilterReportFrequencyMedium,
+	/*! @const NEFilterReportFrequencyHigh High frequency, approximately half a second */
+	NEFilterReportFrequencyHigh,
+} NS_SWIFT_NAME(NEFilterReport.Frequency) API_AVAILABLE(macos(10.15.4)) API_UNAVAILABLE(ios, watchos, tvos);
+
+/*!
  * @interface NEFilterVerdict
  * @discussion The NEFilterVerdict class declares the programmatic interface for an object that is the verdict for a
  * flow of network data.
@@ -125,6 +140,13 @@ API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
  */
 API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
 @interface NEFilterNewFlowVerdict : NEFilterVerdict <NSSecureCoding,NSCopying>
+
+/*!
+ * @property statisticsReportFrequency
+ * @discussion The frequency at which the data provider's -[NEFilterProvider handleReport:] method is called with a NEFilterReport instance with an event of NEFilterReportEventFlowStatistics.
+ *     The default value is NEFilterReportFrequencyNone, so by default no statistics are reported.
+ */
+@property NEFilterReportFrequency statisticsReportFrequency API_AVAILABLE(macos(10.15.4)) API_UNAVAILABLE(ios, watchos, tvos);
 
 /*!
  * @method needRulesVerdict
@@ -262,6 +284,8 @@ typedef NS_ENUM(NSInteger, NEFilterReportEvent) {
 	NEFilterReportEventDataDecision = 2,
 	/*! @const NEFilterReportEventFlowClosed The report is reporting that a flow has been closed */
 	NEFilterReportEventFlowClosed = 3,
+	/*! @const NEFilterReportEventStatistics The report is reporting the latest statistics of the flow */
+	NEFilterReportEventStatistics API_AVAILABLE(macos(10.15.4)) API_UNAVAILABLE(ios, watchos, tvos) = 4,
 } NS_SWIFT_NAME(NEFilterReport.Event) API_AVAILABLE(macos(10.15), ios(13.0)) API_UNAVAILABLE(watchos, tvos);
 
 /*!
@@ -294,13 +318,13 @@ API_AVAILABLE(macos(10.15), ios(11.0)) API_UNAVAILABLE(watchos, tvos)
 
 /*!
  * @property bytesInboundCount
- * @discussion The number of inbound bytes received from the flow. This property is only non-zero when the report event is NEFilterReportEventFlowClosed.
+ * @discussion The number of inbound bytes received from the flow. This property is only non-zero when the report event is NEFilterReportEventFlowClosed or NEFilterReportEventFlowStatistics.
  */
 @property (readonly) NSUInteger bytesInboundCount API_AVAILABLE(macos(10.15), ios(13.0)) API_UNAVAILABLE(watchos, tvos);
 
 /*!
  * @property bytesOutboundCount
- * @discussion The number of outbound bytes sent on the flow. This property is only non-zero when the report event is NEFilterReportEventFlowClosed.
+ * @discussion The number of outbound bytes sent on the flow. This property is only non-zero when the report event is NEFilterReportEventFlowClosed or NEFilterReportEventFlowStatistics.
  */
 @property (readonly) NSUInteger bytesOutboundCount API_AVAILABLE(macos(10.15), ios(13.0)) API_UNAVAILABLE(watchos, tvos);
 

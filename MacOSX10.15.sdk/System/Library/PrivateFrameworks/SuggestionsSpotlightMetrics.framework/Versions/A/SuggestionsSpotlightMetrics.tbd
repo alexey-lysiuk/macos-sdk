@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BFA5ABCF-4A98-3DC0-8EED-27F43CEE7E54', 'x86_64: BFA5ABCF-4A98-3DC0-8EED-27F43CEE7E54' ]
+uuids:           [ 'x86_64: F49E86C7-2865-3614-937E-66CF72E8DDBD', 'x86_64: F49E86C7-2865-3614-937E-66CF72E8DDBD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SuggestionsSpotlightMetrics.framework/Versions/A/SuggestionsSpotlightMetrics'
-current-version: 1052.14
+current-version: 1052.33
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SGSM2ContactOpportunityInSpotlightReadFrom, _SGSM2ContactResultInSpotlightReadFrom, 

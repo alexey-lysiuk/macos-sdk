@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F1E9DC68-DCAF-3654-86AD-BC13C946ACCD' ]
+uuids:           [ 'x86_64: 49A38048-7A1A-31E7-BFD5-27E3E6BE1CF9' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SystemUIPlugin.framework/Versions/A/SystemUIPlugin'
 current-version: 38

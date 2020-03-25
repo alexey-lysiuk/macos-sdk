@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IODispatchSource.iig */
+/* iig(DriverKit-73.100.4) generated from IODispatchSource.iig */
 
-/* IODispatchSource.iig:1-43 */
+/* IODispatchSource.iig:1-36 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -37,6 +37,11 @@
 
 typedef void (^IODispatchSourceCancelHandler)(void);
 
+/* source class IODispatchSource IODispatchSource.iig:37-66 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class IODispatchSource
 
@@ -44,7 +49,35 @@ typedef void (^IODispatchSourceCancelHandler)(void);
  * IODispatchSource common base class for dispatch sources.
  */
 
-/* class IODispatchSource IODispatchSource.iig:44-66 */
+class NATIVE KERNEL IODispatchSource : public OSObject
+{
+public:
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+	virtual kern_return_t
+	Cancel(IODispatchSourceCancelHandler handler) = 0;
+
+	virtual kern_return_t
+	SetEnableWithCompletion(
+		bool enable,
+		IODispatchSourceCancelHandler handler) = 0;
+
+	virtual kern_return_t
+	CheckForWork(bool synchronous) INVOKEREPLY = 0;
+
+	virtual kern_return_t
+	SetEnable(bool enable) LOCAL;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IODispatchSource IODispatchSource.iig:37-66 */
 
 #define IODispatchSource_Cancel_ID            0xd963bb196f70bb93ULL
 #define IODispatchSource_SetEnableWithCompletion_ID            0xbb42c489fe4dee8eULL
@@ -180,6 +213,9 @@ public:
 
     IODispatchSource_VirtualMethods
 };
+
+#endif /* !__DOCUMENTATION__ */
+
 /* IODispatchSource.iig:68- */
 
 #endif /* ! _IOKIT_UIODISPATCHSOURCE_H */

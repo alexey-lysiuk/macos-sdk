@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED833F91-1AB4-354D-A798-CE23DEE1C4C9' ]
+uuids:           [ 'x86_64: B169A7C4-3916-3642-978B-92F6A3C2966F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudKitCodeProtobuf.framework/Versions/A/CloudKitCodeProtobuf'
 swift-abi-version: 7
@@ -9,11 +9,11 @@ exports:
     allowable-clients: [ CloudKitCode, CloudKitCodeProtobufTests, CloudKitIntegrationTests, 
                          CloudKitSerialIntegrationTests, CloudKitTestSupport, CloudKitUnitTests, 
                          CloudPhotoLibraryTests, DPSubmissionService, DeviceSimulator, 
-                         Fitness, OctagonTests, SessionTrackerApp, SeymourClient, 
-                         SeymourCore, SeymourServerProtocol, SeymourServices, SeymourTestApp, 
-                         SeymourUI, SeymourViewService, TrustedPeersHelper, TrustedPeersHelperUnitTests, 
-                         UnitTests, cloudphotod, cplctl, seymourcatalogd, seymoursessiond, 
-                         smctl ]
+                         DistributedEvaluation, Fitness, OctagonTests, SessionTrackerApp, 
+                         SeymourClient, SeymourCore, SeymourServerProtocol, SeymourServices, 
+                         SeymourTestApp, SeymourUI, SeymourViewService, TrustedPeersHelper, 
+                         TrustedPeersHelperUnitTests, UnitTests, cloudphotod, cplctl, 
+                         seymourcatalogd, seymoursessiond, smctl ]
     symbols:         [ '_$s20CloudKitCodeProtobuf01_D10MessageMapVMa', '_$s20CloudKitCodeProtobuf01_D10MessageMapVMn', 
                        '_$s20CloudKitCodeProtobuf01_D3MapVMa', '_$s20CloudKitCodeProtobuf01_D3MapVMn', 
                        '_$s20CloudKitCodeProtobuf01_D7EnumMapVMa', '_$s20CloudKitCodeProtobuf01_D7EnumMapVMn', 

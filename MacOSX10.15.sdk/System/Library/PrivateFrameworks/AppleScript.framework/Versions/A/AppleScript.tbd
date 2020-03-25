@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 451DFF57-3B34-302A-BDC8-402D040785D5' ]
+uuids:           [ 'x86_64: 3A3D5DE9-61C1-3633-8DA6-7F3FBC8D7F8F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleScript.framework/Versions/A/AppleScript'
 exports:         

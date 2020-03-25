@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4AFC923E-6985-3604-8645-D1F77E46E3BB', 'x86_64: 4AFC923E-6985-3604-8645-D1F77E46E3BB' ]
+uuids:           [ 'x86_64: 29D3760B-2AB2-3D38-9FA5-6EFFC7F51EBC', 'x86_64: 29D3760B-2AB2-3D38-9FA5-6EFFC7F51EBC' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Contacts.framework/Versions/A/Contacts'
 current-version: 0
@@ -64,15 +64,16 @@ exports:
                        _CNErrorUserInfoKeyPathsKey, _CNErrorUserInfoValidationErrorsKey, 
                        _CNFavoritesEntryIdentityChangedNotification, _CNGroupCreationDateKey, 
                        _CNGroupExternalIdentifierKey, _CNGroupExternalModificationTagKey, 
-                       _CNGroupExternalRepresentationKey, _CNGroupExternalUUIDKey, 
-                       _CNGroupIdentifierKey, _CNGroupModificationDateKey, _CNGroupNameKey, 
-                       _CNGroupSnapshotKey, _CNHomeLabel, _CNHomePageLabel, _CNInstantMessageAddressBundleIdentifiersKey, 
-                       _CNInstantMessageAddressServiceKey, _CNInstantMessageAddressTeamIdentifierKey, 
-                       _CNInstantMessageAddressUserIdentifierKey, _CNInstantMessageAddressUsernameKey, 
-                       _CNInstantMessageServiceAIM, _CNInstantMessageServiceFacebook, 
-                       _CNInstantMessageServiceGaduGadu, _CNInstantMessageServiceGoogleTalk, 
-                       _CNInstantMessageServiceICQ, _CNInstantMessageServiceJabber, 
-                       _CNInstantMessageServiceMSN, _CNInstantMessageServiceQQ, _CNInstantMessageServiceSkype, 
+                       _CNGroupExternalRepresentationKey, _CNGroupExternalURIKey, 
+                       _CNGroupExternalUUIDKey, _CNGroupIdentifierKey, _CNGroupModificationDateKey, 
+                       _CNGroupNameKey, _CNGroupSnapshotKey, _CNHomeLabel, _CNHomePageLabel, 
+                       _CNInstantMessageAddressBundleIdentifiersKey, _CNInstantMessageAddressServiceKey, 
+                       _CNInstantMessageAddressTeamIdentifierKey, _CNInstantMessageAddressUserIdentifierKey, 
+                       _CNInstantMessageAddressUsernameKey, _CNInstantMessageServiceAIM, 
+                       _CNInstantMessageServiceFacebook, _CNInstantMessageServiceGaduGadu, 
+                       _CNInstantMessageServiceGoogleTalk, _CNInstantMessageServiceICQ, 
+                       _CNInstantMessageServiceJabber, _CNInstantMessageServiceMSN, 
+                       _CNInstantMessageServiceQQ, _CNInstantMessageServiceSkype, 
                        _CNInstantMessageServiceYahoo, _CNLabelContactRelationAssistant, 
                        _CNLabelContactRelationAunt, _CNLabelContactRelationAuntFathersBrothersWife, 
                        _CNLabelContactRelationAuntFathersElderBrothersWife, _CNLabelContactRelationAuntFathersElderSister, 
@@ -226,7 +227,8 @@ exports:
                        CNChangeHistoryAnchor, CNChangeHistoryClearRequest, CNChangeHistoryContactChange, 
                        CNChangeHistoryDeleteContactEvent, CNChangeHistoryDeleteGroupEvent, 
                        CNChangeHistoryDropEverythingEvent, CNChangeHistoryEvent, 
-                       CNChangeHistoryFetchRequest, CNChangeHistoryGroupChange, CNChangeHistoryLabeledValueChange, 
+                       CNChangeHistoryEventFactory, CNChangeHistoryFetchRequest, 
+                       CNChangeHistoryGroupChange, CNChangeHistoryLabeledValueChange, 
                        CNChangeHistoryRemoveMemberFromGroupEvent, CNChangeHistoryRemoveSubgroupFromGroupEvent, 
                        CNChangeHistoryUpdateContactEvent, CNChangeHistoryUpdateGroupEvent, 
                        CNChangesNotifier, CNCompoundMultiValuePropertyDescription, 

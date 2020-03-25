@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3810F65F-FA5C-3710-8F2D-5282DDC71636', 'x86_64: 3810F65F-FA5C-3710-8F2D-5282DDC71636' ]
+uuids:           [ 'x86_64: 8502740F-167A-3864-8F4C-CB1916CE6458', 'x86_64: 8502740F-167A-3864-8F4C-CB1916CE6458' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EAP8021X.framework/Versions/A/EAP8021X'
 exports:         

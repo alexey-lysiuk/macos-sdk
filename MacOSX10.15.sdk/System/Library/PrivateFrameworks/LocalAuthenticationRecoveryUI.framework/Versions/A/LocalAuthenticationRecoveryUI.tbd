@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 709E9F64-DEBB-3268-A40C-F63923AEFAF1' ]
+uuids:           [ 'x86_64: E72280E0-183D-3995-BE3E-EBF7EBE52938' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LocalAuthenticationRecoveryUI.framework/Versions/A/LocalAuthenticationRecoveryUI'
-current-version: 693.40.8
+current-version: 693.100.21
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ LARUIAuthenticationDialog ]

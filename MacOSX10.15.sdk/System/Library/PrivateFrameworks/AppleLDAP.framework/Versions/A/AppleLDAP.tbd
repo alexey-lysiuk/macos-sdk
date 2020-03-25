@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0515DEF9-5365-3C7E-970B-068EC4894EA5', 'x86_64: 0515DEF9-5365-3C7E-970B-068EC4894EA5' ]
+uuids:           [ 'x86_64: CF4F9D84-DA43-36BE-9058-995B59E91CA3', 'x86_64: CF4F9D84-DA43-36BE-9058-995B59E91CA3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleLDAP.framework/Versions/A/AppleLDAP'
 current-version: 52

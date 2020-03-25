@@ -1,31 +1,33 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4AC9EF38-9CA7-3363-B926-D9EFE4BABE98', 'x86_64: 4AC9EF38-9CA7-3363-B926-D9EFE4BABE98' ]
+uuids:           [ 'x86_64: CF70409E-5A62-371F-B0E5-CEBE37EB8DAB', 'x86_64: CF70409E-5A62-371F-B0E5-CEBE37EB8DAB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DistributedEvaluation.framework/Versions/A/DistributedEvaluation'
+swift-abi-version: 7
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _AddErrorToDictionary, _DESAggregatorLogEvaluation, _DESAggregatorLogRecording, 
-                       _DESAmendedRecordInfo, _DESApplyAsynchronousEnumerator, _DESApplyAsynchronousEnumeratorWithCompletion, 
+    symbols:         [ _DESAggregatorLogEvaluation, _DESAggregatorLogRecording, _DESAmendedRecordInfo, 
+                       _DESApplyAsynchronousEnumerator, _DESApplyAsynchronousEnumeratorWithCompletion, 
                        _DESDiagnosticsSubmissionAllowed, _DESEncryptedDataReadFrom, 
                        _DESGetDeviceClass, _DESGetDeviceID, _DESGetDeviceType, _DESGetOSVersion, 
                        _DESIsInternalInstall, _DESPFLNoisableReadFrom, _DESPathHasFileVault, 
-                       _DESRecipeResponseLocalOnlyPrefix, _DESRecipeResponseURLPartHost, 
-                       _DESRecipeResponseURLPartPath, _DESRecipeResponseURLPartQueryItemKeyAttachmentPrefix, 
-                       _DESRecipeResponseURLPartQueryItemKeyBaseURL, _DESRecipeResponseURLPartQueryItemKeyCoreDuetEvents, 
-                       _DESRecipeResponseURLPartQueryItemKeyDeadline, _DESRecipeResponseURLPartQueryItemKeyDeferralDate, 
-                       _DESRecipeResponseURLPartQueryItemKeyLocaleIdentifier, _DESRecipeResponseURLPartQueryItemKeyRecipeId, 
-                       _DESRecipeResponseURLPartQueryItemKeyRecipePath, _DESRecipeResponseURLPartQueryItemKeyRecipeType, 
-                       _DESRecipeResponseURLPartScheme, _DESServiceAvailable, _DESServiceGetXPCInterface, 
-                       _DESSubmissionLogDirectoryURL, _DESSubmissionLogFileURLs, 
-                       _DESSubmissionLogGarbageCollect, _DESSubmissionLogSetHandler, 
-                       _DESWriteSubmissionLog, _DESWriteSubmissionLogData, _DistributedEvaluationVersionNumber, 
-                       _DistributedEvaluationVersionString, _FSCopyFormatNameForFSType, 
-                       _GetDiskImageEncryptionStatus, _GetFSEncryptionStatus, __DESIsHorseman, 
-                       __FSCopyLocalizedNameForVolumeFormatAtNode, __FSCopyLocalizedNameForVolumeFormatAtURL, 
-                       __FSCopyNameForVolumeFormatAtNode, __FSCopyNameForVolumeFormatAtURL, 
-                       __FSGetMediaEncryptionStatus, __FSGetMediaEncryptionStatusAtPath, 
-                       _getfstype, _is_apfs, _is_hfs, _is_msdos, _kDESDistributedEvaluationErrorDomain, 
+                       _DESRandomGaussianInt32, _DESRecipeResponseLocalOnlyPrefix, 
+                       _DESRecipeResponseURLPartHost, _DESRecipeResponseURLPartPath, 
+                       _DESRecipeResponseURLPartQueryItemKeyAttachmentPrefix, _DESRecipeResponseURLPartQueryItemKeyBaseURL, 
+                       _DESRecipeResponseURLPartQueryItemKeyCoreDuetEvents, _DESRecipeResponseURLPartQueryItemKeyDeadline, 
+                       _DESRecipeResponseURLPartQueryItemKeyDeferralDate, _DESRecipeResponseURLPartQueryItemKeyLocaleIdentifier, 
+                       _DESRecipeResponseURLPartQueryItemKeyRecipeId, _DESRecipeResponseURLPartQueryItemKeyRecipePath, 
+                       _DESRecipeResponseURLPartQueryItemKeyRecipeType, _DESRecipeResponseURLPartScheme, 
+                       _DESServiceAvailable, _DESServiceGetXPCInterface, _DESSubmissionLogDirectoryURL, 
+                       _DESSubmissionLogFileURLs, _DESSubmissionLogGarbageCollect, 
+                       _DESSubmissionLogSetHandler, _DESWriteSubmissionLog, _DESWriteSubmissionLogData, 
+                       _DistributedEvaluationVersionNumber, _DistributedEvaluationVersionString, 
+                       _FSCopyFormatNameForFSType, _GetDiskImageEncryptionStatus, 
+                       _GetFSEncryptionStatus, __DESIsHorseman, __FSCopyLocalizedNameForVolumeFormatAtNode, 
+                       __FSCopyLocalizedNameForVolumeFormatAtURL, __FSCopyNameForVolumeFormatAtNode, 
+                       __FSCopyNameForVolumeFormatAtURL, __FSGetMediaEncryptionStatus, 
+                       __FSGetMediaEncryptionStatusAtPath, _getfstype, _is_apfs, 
+                       _is_hfs, _is_msdos, _kDESDistributedEvaluationErrorDomain, 
                        _readdisk ]
     objc-classes:    [ DESBundleRegistry, DESDeviceIdentifierStore, DESEncryptedData, 
                        DESEvaluationSession, DESExceptionCatchingEvaluator, DESJSONPredicate, 

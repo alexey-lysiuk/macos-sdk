@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 74C59535-88EE-3008-BADD-5CAD05D6E02B', 'x86_64: 74C59535-88EE-3008-BADD-5CAD05D6E02B' ]
+uuids:           [ 'x86_64: A53F70BC-6E8B-3DC2-AED1-6C0BDE408ED9', 'x86_64: A53F70BC-6E8B-3DC2-AED1-6C0BDE408ED9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/Versions/A/SharedUtils'
-current-version: 693.40.8
+current-version: 693.100.21
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ACMContextAddCredential, _ACMContextAddCredentialWithScope, 
@@ -35,7 +35,9 @@ exports:
                        _GetSerializedProcessAclSize, _GetSerializedRemoveCredentialSize, 
                        _GetSerializedReplacePassphraseCredentialSize, _GetSerializedRequirementSize, 
                        _GetSerializedVerifyAclConstraintSize, _GetSerializedVerifyPolicySize, 
-                       _LAErrorDomain, _LAErrorSubcodeKey, _LibCall_ACMContexAddCredentialWithScope, 
+                       _LAErrorDomain, _LAErrorSubcodeKey, _LALogCategoryForOptions, 
+                       _LALogCategoryForPolicy, _LALogForCategory, _LALogForPolicy, 
+                       _LALogSetProcessCategory, _LibCall_ACMContexAddCredentialWithScope, 
                        _LibCall_ACMContexRemoveCredentialsByTypeAndScope, _LibCall_ACMContextCreate, 
                        _LibCall_ACMContextCreateWithExternalForm, _LibCall_ACMContextCredentialGetProperty, 
                        _LibCall_ACMContextDelete, _LibCall_ACMContextVerifyPolicyAndCopyRequirementEx, 

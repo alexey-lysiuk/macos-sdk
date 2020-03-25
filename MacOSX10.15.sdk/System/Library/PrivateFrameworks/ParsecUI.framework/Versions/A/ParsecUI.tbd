@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F2FAC704-D834-3EA1-B38F-CCB30220F0D8' ]
+uuids:           [ 'x86_64: 486585C8-EFA0-39F1-977E-06D559BC5757' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ParsecUI.framework/Versions/A/ParsecUI'
 current-version: 0

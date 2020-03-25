@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 34FE699C-7258-366E-BF75-D2CE96329309' ]
+uuids:           [ 'x86_64: F5D85280-9814-3F29-AC3F-BF9A9655651B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3802/Libraries/libmetal_timestamp.dylib'
 current-version: 802.6

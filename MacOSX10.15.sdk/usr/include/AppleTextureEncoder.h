@@ -56,9 +56,12 @@
  *          Improvements to ASTC 8x8 block image quality
  *          Fix giant values in macOS/iOS/tvOS availability macros
  *          no new API, so still AT_AVAILABILITY_v1. See at_encoder_get_version() to identify these improvements.
- *      version 2a (AT_AVAILABILITY_v2): MacOS X.15, iOS 13, tvOS 13    (library version 2.0.x)
+ *      version 2a (AT_AVAILABILITY_v2): MacOS X.15, iOS 13, tvOS 13  watchOS 6   (library version 2.0.x)
  *          DirectX BCn support
  *          No longer supports garbage collection.  Use ARC or manual retain/release.
+ *      version 3  (AT_AVAILABILITY_v3): MacOS X.15.4, iOS 13.4, tvOS 13.4, watchOS 6.4  (library version 3.0.x)
+ *          Added at_block_get_features to help determine what at_texel_format_t to use for decoder
+ *
  *
  *  The major field of the at_encoder_get_version build version corresponds with
  *  the availability version (e.g. AT_AVAILABILITY_v1) here.
@@ -66,12 +69,20 @@
 
 #   define AT_AVAILABILITY_v1       __API_AVAILABLE(macos(10.12), ios(10.0), tvos(10.0), watchos(5.0))
 #   define AT_ENUM_AVAILABILITY_v1  __API_AVAILABLE(macos(10.12), ios(10.0), tvos(10.0), watchos(5.0))
+#   define AT_AVAILABILITY_v2       __API_AVAILABLE(macos(10.15), ios(13.0), tvos(13.0), watchos(6.0))
 #   define AT_ENUM_AVAILABILITY_v2  __API_AVAILABLE(macos(10.15), ios(13.0), tvos(13.0), watchos(6.0))
+#   define AT_AVAILABILITY_v3       __API_AVAILABLE(macos(10.15.4), ios(13.2.2), tvos(13.2.2), watchos(6.2))
+#   define AT_ENUM_AVAILABILITY_v3  __API_AVAILABLE(macos(10.15.4), ios(13.2.2), tvos(13.2.2), watchos(6.2))
+#   define AT_AVAILABLE_STARTING_BUT_DEPRECATED(...)          __API_DEPRECATED_WITH_REPLACEMENT(__VA_ARGS__)
 
 #else   /* AT_LINK_STATIC */
 #   define      AT_ENUM_AVAILABILITY_v1
 #   define      AT_ENUM_AVAILABILITY_v2
+#   define      AT_ENUM_AVAILABILITY_v3
 #   define      AT_AVAILABILITY_v1
+#   define      AT_AVAILABILITY_v2
+#   define      AT_AVAILABILITY_v3
+#   define      AT_AVAILABLE_STARTING_BUT_DEPRECATED
 #endif  /* AT_LINK_STATIC */
 
 #ifdef __cplusplus
@@ -318,12 +329,6 @@ OS_ENUM( at_block_format, unsigned long,
 );
 #endif
 
-/*!
- *  @abstract Convert a at_block_format to a MTLPixelFormat
- *  @return  A MTLPixelFormat as a unsigned int
- */
-uint32_t at_block_format_to_MTLPixelFormat(at_block_format_t);
-        
 /*! @enum       at_flags_t
  *  @abstract   Flags to influence the operation of the ASTC encoder
  *  @constant   at_flags_default  Default operation
@@ -364,6 +369,22 @@ OS_ENUM( at_flags, uint64_t,
     /* other bits are reserved */
 );
 #endif
+/*!
+ *  @abstract Convert a at_block_format to a MTLPixelFormat
+ *  @param   The block format to convert from
+ *  @return  A MTLPixelFormat as a unsigned int
+ */
+uint32_t at_block_format_to_MTLPixelFormat(at_block_format_t blockFormat);
+ //   AT_AVAILABLE_STARTING_BUT_DEPRECATED( "Please use at_block_format_convert_to_MTLPixelFormat instead", macOS(10.12, 10.15.4), iOS(10.0, 13.4), tvOS(10.0, 13.4), watchOS(6.0, 6.4));
+
+/*!
+ *  @abstract Convert a at_block_format to a MTLPixelFormat
+ *  @param   blockFormat   the format of the ATE block
+ *  @param   flags   flags that may influence the decoding, most notably at_flags_srgb_linear_texels
+ *  @return  A MTLPixelFormat as a unsigned int
+ */
+uint32_t at_block_format_convert_to_MTLPixelFormat(at_block_format_t blockFormat, at_flags_t flags) AT_AVAILABILITY_v3;
+        
         
 /*! @enum       at_error_t
  *  @abstract   Error codes for at_encoder_t
@@ -438,7 +459,60 @@ typedef struct at_block_buffer_t
     size_t                  sliceBytes; /**< The number of bytes from the start of one slice to the next. Must be a multiple of the block size. */
 }at_block_buffer_t;
 
+typedef union at_block_features_t
+{
+    uint64_t                bits;
+    struct {
+        uint64_t            numColorChannels        :   5;  /**< Maximum number of color channels needed to represent image. Does not include alpha. */
+        uint64_t            log2BlockBytes          :   5;  /**< The size of each block is given by (1UL << log2BlockBytes) */
+        uint64_t            blockWidth              :   12; /**< The width of one block in texels */
+        uint64_t            blockHeight             :   12; /**< The height of one block in texels */
+        uint64_t            isHDR                   :   1;  /**< True if decode color channel values may be outside of [0, 1].  ([-1,1] for formats with chroma, such as YCbCr.)*/
+        uint64_t            hasAlpha                :   1;  /**< True if some portions of the image are not fully opaque. */
+        uint64_t            _reserved               :   28; /**< Must be 0 */
+    };
+}at_block_features_t;
 
+/*! @abstract   examine a 3D array of blocks for representational requirements
+ *  @discussion It may not always be the case that a compressed image encodes in its metadata what sorts of
+ *              texel format features are needed to correctly represent the content. For example, a ASTC image may only
+ *              encode luminace information and so could be efficiently be represented as greyscale content when
+ *              decoded, or perhaps the image is fully opaque so no alpha channel is needed.   This method will
+ *              scan the list of blocks provided to determine what features are needed to receive the content
+ *              as part of a call like at_encoder_decompress_texels().
+ *
+ *              Since this may trigger a full pass over the data for some formats, it may be preferable to simply store
+ *              such information in the file metadata.
+ *
+ *              Note: for some formats, invalid blocks are defined to have a color such as magenta and if present,
+ *              may force the numColorChannels to at least 3.
+ *
+ *  @param      blockType               The block format used by the blocks pointed to by src.
+ *                              For ASTC, the HDR/LDR aspect of the blockType is ignored.
+ *                              (e.g. at_block_format_astc_4x4_ldr may return a result with isHDR = true. This
+ *                              denotes that HDR blocks are present in the src array and a half float or float32 texel
+ *                              type should be used, along with the _hdr suffix on the block format type when the
+ *                              encoder is created.)
+ *  @param      src                             An array containing the list of blocks to examine. If null, the library will return a
+ *                              conservative guess based on the blockType, without looking at the blocks. If
+ *                              rowBytes or sliceBytes is zero, it will be inferred from the blockType and validSize,
+ *                              and src->rowBytes and src->sliceBytes will be updated accordingly.
+ *  @param      validSize               The number of valid texels in the image in each dimension
+ *  @param      size                          The maximum number of bytes to consume.
+ *  @param      outSize                    If not NULL, the number of bytes that were needed is written here. If this value is larger
+ *                              than size, it is likely the file is truncated.
+ *  @param      flags                         Flags to control operation of the scan
+ *  @return     A summary of texture features needed to fully represented the image content.
+ *              This information may be used to make an intelligent choice of which at_texel_format_t to use for
+ *              at_encoder_t creation to receive the data.
+ */
+at_block_features_t at_block_get_features( at_block_format_t blockType,
+                                           at_block_buffer_t * __nullable src,
+                                           at_size_t validSize,
+                                           size_t size,
+                                           size_t * __nullable outSize,
+                                           at_flags_t flags ) /* AT_AVAILABILITY_v3 */;
+    
 /*!
  *  @class      at_encoder_t
  *  @abstract   An encoder for compressing and decompressing textures into formats such as ASTC.
@@ -493,8 +567,10 @@ typedef struct at_encoder *  at_encoder_t;
  *              knowledge of the alpha in the image, particularly if it is at_alpha_opaque,
  *              can help improve compression speed and image fidelity.
  *
- *  @param    texelType         The encoding of the uncompressed texel data, described by a at_texel_region_t.
- *                              See description for supported types.
+ *  @param    texelType                    The encoding of the uncompressed texel data, described by a at_texel_region_t.
+ *                              See description for supported types. Please see at_block_get_features()
+ *                              for help determining what storage features are needed to fully represent the
+ *                              content when decoding.
  *  @param    texelAlphaType    The encoding of the alpha infomation in the uncompressed texel data
  *  @param    blockType         The format of the compressed blocks. Indicates block size. See description for supported types.
  *  @param    blockAlphaType    The encoding of the alpha in the compressed blocks.

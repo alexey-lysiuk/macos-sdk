@@ -1,10 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AE5815F2-B70D-36A8-8F8C-A86240FAD1F8', 'x86_64: AE5815F2-B70D-36A8-8F8C-A86240FAD1F8' ]
+uuids:           [ 'x86_64: EA15EE1F-89DE-35FB-8040-2B3C434F3D05', 'x86_64: EA15EE1F-89DE-35FB-8040-2B3C434F3D05' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AdPlatforms.framework/Versions/A/AdPlatforms'
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AdPlatformsVersionNumber, _AdPlatformsVersionString ]
-    objc-classes:    [ ADAttribution, ADStatusConditions, ADStatusConditionsImpl ]
+    objc-classes:    [ ADAttribution, ADStatusConditionRateLimitedObject, ADStatusConditions, 
+                       ADStatusConditionsImpl ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BA041624-2AA2-309F-BCCA-8A3D42DB94B5', 'x86_64: BA041624-2AA2-309F-BCCA-8A3D42DB94B5' ]
+uuids:           [ 'x86_64: 1D17DBB7-02D1-38A7-B9F2-3AABC89054DF', 'x86_64: 1D17DBB7-02D1-38A7-B9F2-3AABC89054DF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BiometricKit.framework/Versions/A/BiometricKit'
 exports:         

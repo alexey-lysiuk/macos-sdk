@@ -1,9 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F968CCD4-4C5C-35A2-8137-7660B2AACD50', 'x86_64: F968CCD4-4C5C-35A2-8137-7660B2AACD50' ]
+uuids:           [ 'x86_64: 4238F666-B485-386F-A4CF-5750CE7A9E57', 'x86_64: 4238F666-B485-386F-A4CF-5750CE7A9E57' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveML.framework/Versions/A/ProactiveML'
-current-version: 1052.14
+current-version: 1052.33
+swift-abi-version: 7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AWDProactiveModelFittingAvailableSessionsReadFrom, _AWDProactiveModelFittingEvalMetricsReadFrom, 
@@ -35,13 +36,14 @@ exports:
                        PMLChunkFileUtilities, PMLClassificationEvaluationMetrics, 
                        PMLDataChunk, PMLDataChunkDenseDoubleVector, PMLDataChunkDenseFloatVector, 
                        PMLDataChunkPlist, PMLDataChunkRaw, PMLDenseMatrix, PMLDenseVector, 
-                       PMLDiffPrivacyNoiseStrategy, PMLFidesTracker, PMLGaussianSampler, 
-                       PMLGradientSolver, PMLHashingVectorizer, PMLImmutableLogisticRegressionModel, 
-                       PMLInMemoryCachedStore, PMLLabelLimitRowId, PMLLaplaceSampler, 
-                       PMLLinRegTrainingPlan, PMLLinearRegressionModel, PMLLogRegEvaluationPlan, 
-                       PMLLogRegTrainingPlan, PMLLogisticRegressionModel, PMLMockPlan, 
-                       PMLModelDescriptor, PMLModelFullyConnectedLayer, PMLModelLearningRates, 
-                       PMLModelRegressor, PMLModelWeights, PMLMultiLabelLogisticRegressionModel, 
+                       PMLDiffPrivacyNoiseStrategy, PMLFastTextVectorizer, PMLFidesTracker, 
+                       PMLGaussianSampler, PMLGradientSolver, PMLHashingVectorizer, 
+                       PMLImmutableLogisticRegressionModel, PMLInMemoryCachedStore, 
+                       PMLLabelLimitRowId, PMLLaplaceSampler, PMLLexicon, PMLLinRegTrainingPlan, 
+                       PMLLinearRegressionModel, PMLLogRegEvaluationPlan, PMLLogRegTrainingPlan, 
+                       PMLLogisticRegressionModel, PMLMockPlan, PMLModelDescriptor, 
+                       PMLModelFullyConnectedLayer, PMLModelLearningRates, PMLModelRegressor, 
+                       PMLModelWeights, PMLMultiLabelEspressoClassifier, PMLMultiLabelLogisticRegressionModel, 
                        PMLMultiLabelRegressionEvaluationPlan, PMLMutableDenseVector, 
                        PMLNaiveBayesEvaluationPlan, PMLNaiveBayesModel, PMLNaiveBayesSolver, 
                        PMLNoNoiseStrategy, PMLPassThroughTracker, PMLPlanDescriptor, 

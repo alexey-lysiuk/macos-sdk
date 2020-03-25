@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 06DA0938-146E-3A25-8F4E-4919FF6BA1B7', 'x86_64: 06DA0938-146E-3A25-8F4E-4919FF6BA1B7' ]
+uuids:           [ 'x86_64: 8FA7E2A4-A708-3A7E-A792-241B5F7D7B78', 'x86_64: 8FA7E2A4-A708-3A7E-A792-241B5F7D7B78' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLVMPlugin3902.dylib'
 exports:         

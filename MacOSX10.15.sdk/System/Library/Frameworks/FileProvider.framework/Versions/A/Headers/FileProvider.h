@@ -12,6 +12,7 @@
    and storage services to provide files to file browsers and applications.
  */
 
+#import <FileProvider/NSFileProviderDefines.h>
 #import <FileProvider/NSFileProviderDomain.h>
 #import <FileProvider/NSFileProviderExtension.h>
 #import <FileProvider/NSFileProviderEnumerating.h>
@@ -21,6 +22,4 @@
 #import <FileProvider/NSFileProviderActions.h>
 #import <FileProvider/NSFileProviderService.h>
 #import <FileProvider/NSFileProviderThumbnailing.h>
-#import <FileProvider/NSFileProviderMaterializedSet.h>
-#import <FileProvider/NSFileProviderRequest.h>
 #import <FileProvider/NSFileProviderItemDecoration.h>

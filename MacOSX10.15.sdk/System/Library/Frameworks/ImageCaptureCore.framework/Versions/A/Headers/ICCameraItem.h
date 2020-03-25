@@ -27,10 +27,32 @@ CF_ASSUME_NONNULL_BEGIN
 typedef NSString* ICCameraItemMetadataOption NS_TYPED_ENUM IC_AVAILABLE(macos(10.15), ios(13.0));
 typedef NSString* ICCameraItemThumbnailOption NS_TYPED_ENUM IC_AVAILABLE(macos(10.15), ios(13.0));
 
+/*!
+  @const ICCameraItemThumbnailOption
+ 
+  @enum ICImageSourceShouldCache
+ 
+    Use of this key will override any custom thumbnail size requested, ignoring the ICImageSourceThumbnailMaxPixelSize
+    option entirely.
+ 
+  @enum ICImageSourceThumbnailMaxPixelSize
+ 
+    Use of this key will be ignored if ICImageSourceShouldCache has also been passed in.  Custom thumbnail requests will never be
+    cached.
+ 
+  @discussion Only the embedded EXIF thumbnail, or a created thumbnail of EXIF standard size (160x120) will
+    be cached. Use of the ICImageSourceShouldCache flag is discouraged, as the framework shall not act as a
+    backing store out of convienence.
+ 
+    If use of this flag is required, it is highly recommeded to only keep the image cached within the framework temporarily,
+    using the method -[ICCameraItem flushThumbnailCache] to evict the thumbnail.
+    
+    Multiple calls to both cache the EXIF thumbnail, and subsequently retrieve a larger thumbnail will work as defined.
+ */
 IMAGECAPTURE_EXTERN ICCameraItemThumbnailOption const ICImageSourceThumbnailMaxPixelSize IC_AVAILABLE(macos(10.15), ios(13.0));
 IMAGECAPTURE_EXTERN ICCameraItemThumbnailOption const ICImageSourceShouldCache IC_AVAILABLE(macos(10.15), ios(13.0));
 
-typedef NSString* ICDownloadOption NS_TYPED_ENUM IC_AVAILABLE(macos(10.15), ios(13.0));
+typedef NSString* ICDownloadOption NS_TYPED_ENUM IC_AVAILABLE(macos(10.4), ios(13.0));
 
 //------------------------------------------------------------------------------------------------------------------------------
 // Allowed keys in the options dictionary used when downloading a file from the camera

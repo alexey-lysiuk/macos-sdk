@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOUserClient.iig */
+/* iig(DriverKit-73.100.4) generated from IOUserClient.iig */
 
-/* IOUserClient.iig:1-172 */
+/* IOUserClient.iig:1-154 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -153,6 +153,11 @@ struct IOUserClientMethodDispatch {
 	uint32_t			       checkStructureOutputSize;
 };
 
+/* source class IOUserClient IOUserClient.iig:155-268 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class IOUserClient
  *
@@ -166,12 +171,110 @@ struct IOUserClientMethodDispatch {
  * As an IOService subclass, IOUserClient receives the normal Start()/Stop() lifecyle calls.
  *
 
-@iig implementation
-#include <DriverKit/IOBufferMemoryDescriptor.h>
-@iig end
 */
 
-/* class IOUserClient IOUserClient.iig:173-268 */
+class KERNEL IOUserClient : public IOService
+{
+public:
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+	/*!
+	 * @brief       Receive arguments from IOKit.framework IOConnectMethod calls.
+	 * @discussion  IOConnectMethod calls from the owner of the connection come here.
+	 *              Any argument may be passed as NULL if not passed by the caller.
+	 * @param       selector Selector argument to IOConnectMethod.
+	 * @param       scalarInput Array of scalars from caller.
+	 * @param       scalarInputCount Count of valid scalars in scalarInput.
+	 * @param       structureInput OSData object containing structure input from IOConnectMethod.
+	 * @param       structureInputDescriptor IOMemoryDescriptor containing structure input from IOConnectMethod.
+	 *				This parameter is only set for large structures, and if set structureInput will be NULL.
+	 * @param       scalarOutput Array of scalars to return to the caller.
+	 * @param       scalarOutputCount Count of scalars to return to the caller in scalarOutput.
+	 * @param       structureOutput An OSData to be returned to the caller as structureOutput.
+	 *				A reference will be consumed by the caller.
+	 * @param       structureOutputDescriptor An IOMemoryDescriptor to be returned to the caller as structureOutput.
+	 * 				A reference will be consumed by the caller.
+	 *				Only one of structureOutput and structureOutputDescriptor may set.
+	 * @param       completion For IOConnectAsyncMethod, an OSAction used to deliver async data to the caller.
+	 *              It should be passed to the AsyncCompletion() method and released.
+	 * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+	 */
+
+	virtual kern_return_t
+	ExternalMethod(
+		uint64_t                            selector,
+	    IOUserClientMethodArguments       * arguments,
+	    const IOUserClientMethodDispatch  * dispatch,
+	    OSObject                          * target,
+	    void                              * reference) LOCALONLY;
+
+
+    /*!
+     * @brief       Send asynchronous arguments to a completion supplied by ExternalMethod().
+     * @discussion  IOConnectAsyncMethod calls from the owner of the connection come will pass an OSAction instance.
+     *              To deliver the asynchronous results the driver calls AsyncCompletion().
+     * @param       action OSAction passed to IOExternalMethod().
+     * @param       status An IOReturn status value to be sent.
+     * @param       asyncData An array of scalar data to be sent.
+     * @param       asyncDataCount Count of valid data in asyncData.
+     */
+    virtual void
+    AsyncCompletion(
+        OSAction                            * action TARGET,
+        IOReturn                              status,
+        const IOUserClientAsyncArgumentsArray asyncData,
+		uint32_t                              asyncDataCount) = 0;
+
+    /*!
+     * @brief       Return an IOMemoryDescriptor to be mapped into the client task.
+     * @discussion  IOConnectMapMemory()/UnmapMemory() will result in a call to this method to obtain
+     *              an IOMemoryDescriptor instance for shared memory. For a given IOUserClient instance, calling
+     *              CopyClientMemoryForType() with a given type, should return the same IOMemoryDescriptor instance.
+     * @param       type Type parameter IOConnectMapMemory()/UnmapMemory().
+     * @param       options Set kIOUserClientMemoryReadOnly for memory to be mapped read only in the client.
+     * @param       memory An instance of IOMemoryDescriptor on success. One reference will be consumed by the caller
+     *              of this method.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	CopyClientMemoryForType(
+		uint64_t                              type,
+	    uint64_t                            * options,
+	    IOMemoryDescriptor                 ** memory) = 0;
+
+private:
+	virtual kern_return_t
+	_ExternalMethod(
+		uint64_t                              selector,
+		const IOUserClientScalarArray		  scalarInput,
+		uint32_t							  scalarInputCount,
+		OSData 							    * structureInput,
+		IOMemoryDescriptor                  * structureInputDescriptor,
+		IOUserClientScalarArray               scalarOutput,
+		uint32_t                            * scalarOutputCount,
+		uint64_t                              structureOutputMaximumSize,
+		OSData                             ** structureOutput,
+		IOMemoryDescriptor                  * structureOutputDescriptor,
+        OSAction                            * completion TYPE(IOUserClient::AsyncCompletion)) LOCAL;
+
+    virtual void
+    KernelCompletion(
+        OSAction                            * action TARGET,
+        IOReturn                              status,
+        const IOUserClientAsyncArgumentsArray asyncData,
+		uint32_t                              asyncDataCount)
+        KERNEL
+        TYPE(IOUserClient::AsyncCompletion);
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOUserClient IOUserClient.iig:155-268 */
 
 #define IOUserClient_AsyncCompletion_ID            0xdbc5b2e5d2b446f4ULL
 #define IOUserClient_CopyClientMemoryForType_ID            0x8399bdb3d0b4f474ULL
@@ -315,6 +418,9 @@ public:\
 
 
 
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* IOUserClient.iig:270- */
 

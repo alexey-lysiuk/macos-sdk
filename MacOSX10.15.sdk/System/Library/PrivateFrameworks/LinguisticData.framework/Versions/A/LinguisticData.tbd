@@ -1,16 +1,17 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 23AF4473-4FDB-39D9-8862-7D23276606A9', 'x86_64: 23AF4473-4FDB-39D9-8862-7D23276606A9' ]
+uuids:           [ 'x86_64: BA3869B7-9C39-32DA-A4BA-12F1BC4B04CF', 'x86_64: BA3869B7-9C39-32DA-A4BA-12F1BC4B04CF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData'
-current-version: 353
+current-version: 353.18
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _LDCreateSystemLexiconCompatibilityVersion, _LDEnumerateAssetDataItems, 
-                       _kLDAssetTypeCharacterLanguageModel, _kLDAssetTypeContinuousPathModel, 
-                       _kLDAssetTypeDeltaLexicon, _kLDAssetTypeEventDetectionModel, 
-                       _kLDAssetTypeIntentDetectionModel, _kLDAssetTypeLanguageIdentificationModel, 
-                       _kLDAssetTypeLanguageModel, _kLDAssetTypeLexicon, _kLDAssetTypeMorphologicalAnalyzer, 
+    symbols:         [ _LDCreateMobileAssetType, _LDCreateSystemLexiconCompatibilityVersion, 
+                       _LDEnumerateAssetDataItems, _kLDAssetTypeCharacterLanguageModel, 
+                       _kLDAssetTypeContinuousPathModel, _kLDAssetTypeDeltaLexicon, 
+                       _kLDAssetTypeEventDetectionModel, _kLDAssetTypeIntentDetectionModel, 
+                       _kLDAssetTypeLanguageIdentificationModel, _kLDAssetTypeLanguageModel, 
+                       _kLDAssetTypeLexicon, _kLDAssetTypeMorphologicalAnalyzer, 
                        _kLDAssetTypeMultilingualModel, _kLDAssetTypeNaturalLanguageSearchModel, 
                        _kLDAssetTypePOSTaggingModel, _kLDAssetTypePolarityModel, 
                        _kLDAssetTypeProactiveGrammar, _kLDAssetTypeSpellcheckerData, 

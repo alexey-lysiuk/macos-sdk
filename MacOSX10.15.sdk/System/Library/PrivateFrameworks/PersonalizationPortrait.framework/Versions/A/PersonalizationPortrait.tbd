@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 09B0EFE7-06AC-3659-84EC-B437E59DC2A2', 'x86_64: 09B0EFE7-06AC-3659-84EC-B437E59DC2A2' ]
+uuids:           [ 'x86_64: D6614E22-B15C-3EE5-85EF-E640639D12B3', 'x86_64: D6614E22-B15C-3EE5-85EF-E640639D12B3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PersonalizationPortrait.framework/Versions/A/PersonalizationPortrait'
-current-version: 1052.14
+current-version: 1052.33
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PETPortraitFeatureId, _PPCollapseWhitespaceAndStrip, _PPCreateCalendarColorWithDecoder, 
@@ -80,6 +80,7 @@ exports:
                        PPNamedEntityRecord._source, PPNamedEntityWithRecord._mostRelevantRecord, 
                        PPNotificationManagerGuardedData._cnStore, PPNotificationManagerGuardedData._contactsHandler, 
                        PPNotificationManagerGuardedData._contactsToken, PPNotificationManagerGuardedData._ekStore, 
+                       PPNotificationManagerGuardedData._eventKitChangeTrackingToken, 
                        PPNotificationManagerGuardedData._eventKitHandler, PPNotificationManagerGuardedData._eventKitToken, 
                        PPNotificationManagerGuardedData._meCardDonationToken, PPNotificationManagerGuardedData._meCardHandler, 
                        PPNotificationManagerGuardedData._meCardToken, PPNotificationManagerGuardedData._portraitChangeHandler, 

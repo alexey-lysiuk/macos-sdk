@@ -49,6 +49,27 @@ typedef struct {
  * - Clients should take caution when processing events where `is_es_client` is true. If multiple ES
  *   clients exist, actions taken by one client could trigger additional actions by the other client,
  *   causing a potentially infinite cycle.
+ * - Fields related to code signing in the target `es_process_t` reflect the state of the process
+ *   at the time the message is generated.  In the specific case of exec, this is after the exec
+ *   completed in the kernel, but before any code in the process has started executing.  At that
+ *   point, XNU has validated the signature itself and has verified that the CDHash is correct in
+ *   that the hash of all the individual page hashes in the Code Directory matches the signed CDHash,
+ *   essentially verifying the signature was not tampered with.  However, individual page hashes are
+ *   not verified by XNU until the corresponding pages are paged in once they are accessed while the
+ *   binary executes.  It is not until the individual pages are mapped that XNU determines if a
+ *   binary has been tampered with and will update the code signing flags accordingly.
+ *   EndpointSecurity provides clients the current state of the CS flags in the `codesigning_flags`
+ *   member of the `es_process_t` struct.  The CS_VALID bit in the `codesigning_flags` means that
+ *   everything the kernel has validated up to that point in time was valid, but not that there has
+ *   been a full validation of all the pages in the executable file.  If page content has been
+ *   tampered with in the executable, we won't know until that page is paged in.  At that time, the
+ *   process will have its CS_VALID bit removed and, if CS_KILL is set, the process will be killed,
+ *   preventing any tampered code to be executed.  CS_KILL is generally set for platform binaries and
+ *   for binaries having opted into the hardened runtime.  An ES client wishing to detect tampered
+ *   code before it is paged in, for example already at exec time, can use the Security framework to
+ *   do so, but should be cautious of the potentially significant performance cost of doing so.  The
+ *   EndpointSecurity subsystem itself has no role in verifying the validity of code signatures.
+ * - The `tty` member will be NULL if the process does not have an associated TTY.
  */
 typedef struct {
 	audit_token_t audit_token;
@@ -58,11 +79,12 @@ typedef struct {
 	pid_t session_id;
 	uint32_t codesigning_flags; //Note: The values for these flags can be found in the include file `cs_blobs.h` (`#include <kern/cs_blobs.h>`)
 	bool is_platform_binary;
-	bool is_es_client; //indicates this process is connected to the ES subsystem.
+	bool is_es_client; //indicates this process has the Endpoint Security entitlement
 	uint8_t cdhash[CS_CDHASH_LEN];
 	es_string_token_t signing_id;
 	es_string_token_t team_id;
-	es_file_t * _Nullable executable;
+	es_file_t * _Nonnull executable;
+	es_file_t * _Nullable tty; /* field available iff message version >= 2. Note:  */
 } es_process_t;
 
 
@@ -80,15 +102,40 @@ typedef struct {
  *
  * @field target The new process that is being executed
  * @field args Contains the executable and environment arguments (see note)
+ * @field script Script being executed by interpreter. This field is only valid if a script was
+ *        executed directly and not as an argument to the interpreter (e.g. `./foo.sh` not `/bin/sh ./foo.sh`)
+ *        Field available only iff message version >= 2.
  *
  * @note Process arguments and environment variables are packed, use the following
  * API functions to operate on this field:
  * `es_exec_env`, `es_exec_arg`, `es_exec_env_count`, and `es_exec_arg_count`
+ *
+ * @note Fields related to code signing in `target` represent kernel state for the process at the
+ * point in time the exec has completed, but the binary has not started running yet.  Because code
+ * pages are not validated until they are paged in, this means that modifications to code pages
+ * would not have been detected yet at this point.  For a more thorough explanation, please see the
+ * documentation for `es_process_t`.
+ *
+ * @note There are two `es_process_t` fields that are represented in an `es_message_t` that contains
+ * an `es_event_exec_t`. The `es_process_t` within the `es_message_t` struct (named "process")
+ * contains information about the program that calls execve(2) (or posix_spawn(2)). This information
+ * is gathered prior to the program being replaced. The other `es_process_t`, within the
+ * `es_event_exec_t` struct (named "target"), contains information about the program after the image
+ * has been replaced by execve(2) (or posix_spawn(2)). This means that both `es_process_t` structs
+ * refer to the same process, but not necessarily the same program. Also, note that the
+ * `audit_token_t` structs contained in the two different `es_process_t` structs will not be
+ * identical: the pidversion field will be updated, and the UID/GID values may be different if the
+ * new program had setuid/setgid permission bits set.
  */
 typedef struct {
-	es_process_t * _Nullable target;
+	es_process_t * _Nonnull target;
 	es_token_t args;
-	uint8_t reserved[64];
+	union {
+		uint8_t reserved[64];
+		struct {
+			es_file_t * _Nullable script; /* field available iff message version >= 2 */
+		};
+	};
 } es_event_exec_t;
 
 /**
@@ -106,7 +153,7 @@ typedef struct {
  */
 typedef struct {
 	int32_t fflag;
-	es_file_t * _Nullable file;
+	es_file_t * _Nonnull file;
 	uint8_t reserved[64];
 } es_event_open_t;
 
@@ -137,8 +184,8 @@ typedef struct {
  * @field parent_dir The parent directory of the `target` file system object
  */
 typedef struct {
-	es_file_t * _Nullable target;
-	es_file_t * _Nullable parent_dir;
+	es_file_t * _Nonnull target;
+	es_file_t * _Nonnull parent_dir;
 	uint8_t reserved[64];
 } es_event_unlink_t;
 
@@ -156,7 +203,7 @@ typedef struct {
 	int32_t max_protection;
 	int32_t flags;
 	uint64_t file_pos;
-	es_file_t * _Nullable source;
+	es_file_t * _Nonnull source;
 	uint8_t reserved[64];
 } es_event_mmap_t;
 
@@ -168,8 +215,8 @@ typedef struct {
  * @field target_filename The name of the new object linked to `source`
  */
 typedef struct {
-	es_file_t * _Nullable source;
-	es_file_t * _Nullable target_dir;
+	es_file_t * _Nonnull source;
+	es_file_t * _Nonnull target_dir;
 	es_string_token_t target_filename;
 	uint8_t reserved[64];
 } es_event_link_t;
@@ -180,7 +227,7 @@ typedef struct {
  * @field statfs The file system stats for the file system being mounted
  */
 typedef struct {
-	es_statfs_t * _Nullable statfs;
+	es_statfs_t * _Nonnull statfs;
 	uint8_t reserved[64];
 } es_event_mount_t;
 
@@ -190,7 +237,7 @@ typedef struct {
  * @field statfs The file system stats for the file system being unmounted
  */
 typedef struct {
-	es_statfs_t * _Nullable statfs;
+	es_statfs_t * _Nonnull statfs;
 	uint8_t reserved[64];
 } es_event_unmount_t;
 
@@ -200,7 +247,7 @@ typedef struct {
  * @field child The child process that was created
  */
 typedef struct {
-	es_process_t * _Nullable child;
+	es_process_t * _Nonnull child;
 	uint8_t reserved[64];
 } es_event_fork_t;
 
@@ -228,7 +275,7 @@ typedef struct {
  */
 typedef struct {
 	int sig;
-	es_process_t * _Nullable target;
+	es_process_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_signal_t;
 
@@ -253,12 +300,12 @@ typedef enum {
  * `ES_DESTINATION_TYPE_NEW_PATH` means that the `new_path` struct should be used.
  */
 typedef struct {
-	es_file_t * _Nullable source;
+	es_file_t * _Nonnull source;
 	es_destination_type_t destination_type;
 	union {
-		es_file_t * _Nullable existing_file;
+		es_file_t * _Nonnull existing_file;
 		struct {
-			es_file_t * _Nullable dir;
+			es_file_t * _Nonnull dir;
 			es_string_token_t filename;
 		} new_path;
 	} destination;
@@ -272,7 +319,7 @@ typedef struct {
  * @field extattr The extended attribute which will be set
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	es_string_token_t extattr;
 	uint8_t reserved[64];
 } es_event_setextattr_t;
@@ -284,7 +331,7 @@ typedef struct {
  * @field extattr The extended attribute which will be retrieved
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	es_string_token_t extattr;
 	uint8_t reserved[64];
 } es_event_getextattr_t;
@@ -296,7 +343,7 @@ typedef struct {
  * @field extattr The extended attribute which will be deleted
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	es_string_token_t extattr;
 	uint8_t reserved[64];
 } es_event_deleteextattr_t;
@@ -312,7 +359,7 @@ typedef struct {
  */
 typedef struct {
 	mode_t mode;
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_setmode_t;
 
@@ -327,7 +374,7 @@ typedef struct {
  */
 typedef struct {
 	uint32_t flags;
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_setflags_t;
 
@@ -344,7 +391,7 @@ typedef struct {
 typedef struct {
 	uid_t uid;
 	gid_t gid;
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_setowner_t;
 
@@ -356,7 +403,7 @@ typedef struct {
  */
 typedef struct {
 	bool modified;
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_close_t;
 
@@ -368,6 +415,9 @@ typedef struct {
  * @field existing_file The file system object that was created
  * @field dir The directory in which the new file system object will be created
  * @field filename The name of the new file system object to create
+ * @field acl The ACL that the new file system object got or gets created with.
+ *        May be NULL if the file system object gets created without ACL.
+ *        Field available only iff message version >= 2.
  *
  * @note If an object is being created but has not yet been created, the
  * `destination_type` will be `ES_DESTINATION_TYPE_NEW_PATH`.
@@ -381,14 +431,20 @@ typedef struct {
 typedef struct {
 	es_destination_type_t destination_type;
 	union {
-		es_file_t * _Nullable existing_file;
+		es_file_t * _Nonnull existing_file;
 		struct {
-			es_file_t * _Nullable dir;
+			es_file_t * _Nonnull dir;
 			es_string_token_t filename;
 			mode_t mode;
 		} new_path;
 	} destination;
-	uint8_t reserved[64];
+	uint8_t reserved2[16];
+	union {
+		uint8_t reserved[48];
+		struct {
+			acl_t _Nullable acl; /* field available iff message version >= 2 */
+		};
+	};
 } es_event_create_t;
 
 /**
@@ -408,8 +464,8 @@ typedef struct {
  * @field file2 The second file to be exchanged
  */
 typedef struct {
-	es_file_t * _Nullable file1;
-	es_file_t * _Nullable file2;
+	es_file_t * _Nonnull file1;
+	es_file_t * _Nonnull file2;
 	uint8_t reserved[64];
 } es_event_exchangedata_t;
 
@@ -419,7 +475,7 @@ typedef struct {
  * @field target The file being written to
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_write_t;
 
@@ -429,7 +485,7 @@ typedef struct {
  * @field target The file that is being truncated
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_truncate_t;
 
@@ -439,7 +495,7 @@ typedef struct {
  * @field target The desired new current working directory
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_chdir_t;
 
@@ -449,7 +505,7 @@ typedef struct {
  * @field target The file for which stat information will be retrieved
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_stat_t;
 
@@ -459,7 +515,7 @@ typedef struct {
  * @field target The directory which will be the new root
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_chroot_t;
 
@@ -469,7 +525,7 @@ typedef struct {
  * @field target The file for which extended attributes are being retrieved
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_listextattr_t;
 
@@ -491,7 +547,7 @@ typedef struct {
  * @field target The process for which the task port will be retrieved
  */
 typedef struct {
-	es_process_t * _Nullable target;
+	es_process_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_get_task_t;
 
@@ -503,7 +559,7 @@ typedef struct {
  */
 typedef struct {
 	struct attrlist attrlist;
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_getattrlist_t;
 
@@ -515,7 +571,7 @@ typedef struct {
  */
 typedef struct {
 	struct attrlist attrlist;
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_setattrlist_t;
 
@@ -526,7 +582,7 @@ typedef struct {
  * @field target_path The destination that the staged `source` file will be moved to
  */
 typedef struct {
-	es_file_t * _Nullable source;
+	es_file_t * _Nonnull source;
 	es_string_token_t target_path;
 	uint8_t reserved[64];
 } es_event_file_provider_update_t;
@@ -538,9 +594,9 @@ typedef struct {
  * @field target The destination of the staged `source` file
  */
 typedef struct {
-	es_process_t * _Nullable instigator;
-	es_file_t * _Nullable source;
-	es_file_t * _Nullable target;
+	es_process_t * _Nonnull instigator;
+	es_file_t * _Nonnull source;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_file_provider_materialize_t;
 
@@ -553,7 +609,7 @@ typedef struct {
  * can also cause this event to be fired.
  */
 typedef struct {
-	es_file_t * _Nullable source;
+	es_file_t * _Nonnull source;
 	uint8_t reserved[64];
 } es_event_readlink_t;
 
@@ -566,7 +622,7 @@ typedef struct {
  * @note The `relative_target` data may contain untrusted user input.
  */
 typedef struct {
-	es_file_t * _Nullable source_dir;
+	es_file_t * _Nonnull source_dir;
 	es_string_token_t relative_target;
 	uint8_t reserved[64];
 } es_event_lookup_t;
@@ -579,7 +635,7 @@ typedef struct {
  */
 typedef struct {
 	int32_t mode;
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_access_t;
 
@@ -591,7 +647,7 @@ typedef struct {
  * @field mtime The desired new modification time
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	struct timespec atime;
 	struct timespec mtime;
 	uint8_t reserved[64];
@@ -605,8 +661,8 @@ typedef struct {
  * @field target_name The name of the new file to which `source` will be cloned
  */
 typedef struct {
-	es_file_t * _Nullable source;
-	es_file_t * _Nullable target_dir;
+	es_file_t * _Nonnull source;
+	es_file_t * _Nonnull target_dir;
 	es_string_token_t target_name;
 	uint8_t reserved[64];
 } es_event_clone_t;
@@ -618,7 +674,7 @@ typedef struct {
  * @field cmd The `cmd` argument given to fcntl(2)
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	int32_t cmd;
 	uint8_t reserved[64];
 } es_event_fcntl_t;
@@ -629,7 +685,7 @@ typedef struct {
  * @field target The directory whose contents will be read
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_readdir_t;
 
@@ -639,7 +695,7 @@ typedef struct {
  * @field target Describes the file system path that will be retrieved
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_fsgetpath_t;
 
@@ -661,7 +717,7 @@ typedef struct {
  * @field target Describes the file the duplicated file descriptor points to
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	uint8_t reserved[64];
 } es_event_dup_t;
 
@@ -673,7 +729,7 @@ typedef struct {
  * @field mode The mode of the socket file.
  */
 typedef struct {
-	es_file_t * _Nullable dir;
+	es_file_t * _Nonnull dir;
 	es_string_token_t filename;
 	mode_t mode;
 	uint8_t reserved[64];
@@ -688,7 +744,7 @@ typedef struct {
  * @field protocol The protocol of the socket (see socket(2)).
  */
 typedef struct {
-	es_file_t * _Nullable file;
+	es_file_t * _Nonnull file;
 	int domain;
 	int type;
 	int protocol;
@@ -704,13 +760,63 @@ typedef struct {
  * @field target Describes the file whose ACL is being set.
  */
 typedef struct {
-	es_file_t * _Nullable target;
+	es_file_t * _Nonnull target;
 	es_set_or_clear_t set_or_clear;
 	union {
-		acl_t _Nullable set;
+		acl_t _Nonnull set;
 	} acl;
 	uint8_t reserved[64];
 } es_event_setacl_t;
+
+/**
+ * @brief Fired when a pty slave is granted
+ *
+ * @field dev Major and minor numbers of device
+ */
+typedef struct {
+	dev_t dev;
+	uint8_t reserved[64];
+} es_event_pty_grant_t;
+
+/**
+ * @brief Fired when a pty slave is closed
+ *
+ * @field dev Major and minor numbers of device
+ */
+typedef struct {
+	dev_t dev;
+	uint8_t reserved[64];
+} es_event_pty_close_t;
+
+/**
+ * @brief This enum describes the type of the es_event_proc_check_t event that are currently used
+ */
+typedef enum {
+	ES_PROC_CHECK_TYPE_LISTPIDS = 0x1,
+	ES_PROC_CHECK_TYPE_PIDINFO = 0x2,
+	ES_PROC_CHECK_TYPE_PIDFDINFO = 0x3,
+	ES_PROC_CHECK_TYPE_KERNMSGBUF = 0x4,
+	ES_PROC_CHECK_TYPE_SETCONTROL = 0x5,
+	ES_PROC_CHECK_TYPE_PIDFILEPORTINFO = 0x6,
+	ES_PROC_CHECK_TYPE_TERMINATE = 0x7,
+	ES_PROC_CHECK_TYPE_DIRTYCONTROL = 0x8,
+	ES_PROC_CHECK_TYPE_PIDRUSAGE = 0x9,
+	ES_PROC_CHECK_TYPE_UDATA_INFO = 0xe,
+} es_proc_check_type_t;
+
+/**
+ * @brief Access control check for retrieving process information.
+ *
+ * @field target The process for which the access will be checked
+ * @field type The type of call number used to check the access on the target process
+ * @field flavor The flavor used to check the access on the target process
+ */
+typedef struct {
+	es_process_t * _Nullable target;
+	es_proc_check_type_t type;
+	int flavor;
+	uint8_t reserved[64];
+} es_event_proc_check_t;
 
 /**
  * Union of all possible events that can appear in an es_message_t
@@ -764,6 +870,9 @@ typedef union {
 	es_event_dup_t dup;
 	es_event_uipc_bind_t uipc_bind;
 	es_event_uipc_connect_t uipc_connect;
+	es_event_pty_grant_t pty_grant;
+	es_event_pty_close_t pty_close;
+	es_event_proc_check_t proc_check;
 } es_events_t;
 
 /**
@@ -780,21 +889,59 @@ typedef struct {
 } es_result_t;
 
 /**
- * es_message_t is the top level datatype that encodes information sent from the ES subsystem to its clients
- * Each security event being processed by the ES subsystem will be encoded in an es_message_t
- * A message can be an authorization request or a notification of an event that has already taken place
- * The action_type indicates if the action field is an auth or notify action
- * The event_type indicates which event struct is defined in the event union.
- * For events that can be authorized there are unique NOTIFY and AUTH event types for the same event data
- * eg: event.exec is the correct union label for both ES_EVENT_TYPE_AUTH_EXEC and ES_EVENT_TYPE_NOTIFY_EXEC event types
+ * @brief es_message_t is the top level datatype that encodes information sent
+ * from the ES subsystem to its clients.  Each security event being processed
+ * by the ES subsystem will be encoded in an es_message_t.  A message can be an
+ * authorization request or a notification of an event that has already taken
+ * place.
+ *
+ * @field version Indicates the message version; some fields are not available
+ *        and must not be accessed unless the message version is equal to or
+ *        higher than the message version at which the field was introduced.
+ * @field time The time at which the event was generated.
+ * @field mach_time The Mach time at which the event was generated.
+ * @field deadline The Mach time before which an auth event must be responded to.
+ *        If a client fails to respond to auth events prior to the `deadline`, the client will be killed.
+ * @field process Describes the process that took the action.
+ * @field seq_num Per-client, per-event-type sequence number that can be
+ *        inspected to detect whether the kernel had to drop events for this
+ *        client.  When no events are dropped for this client, seq_num
+ *        increments by 1 for every message of that event type.  When events
+ *        have been dropped, the difference between the last seen sequence
+ *        number of that event type plus 1 and seq_num of the received message
+ *        indicates the number of events that had to be dropped.
+ *        Dropped events generally indicate that more events were generated in
+ *        the kernel than the client was able to handle.
+ *        Field available only iff message version >= 2.
+ * @field action_type Indicates if the action field is an auth or notify action.
+ * @field action For auth events, contains the opaque auth ID that must be
+ *        supplied when responding to the event.  For notify events, describes
+ *        the result of the action.
+ * @field event_type Indicates which event struct is defined in the event union.
+ * @field event Contains data specific to the event type.
+ * @field opaque Opaque data that must not be accessed directly.
+ *
+ * @note For events that can be authorized there are unique NOTIFY and AUTH
+ * event types for the same event data, eg: event.exec is the correct union
+ * label for both ES_EVENT_TYPE_AUTH_EXEC and ES_EVENT_TYPE_NOTIFY_EXEC event
+ * types.
+ *
+ * @note For fields marked only available in specific message versions, all
+ * access must be guarded at runtime by checking the value of the message
+ * version field, e.g.
+ * ```
+ * if (msg->version >= 2) {
+ *     acl = msg->event.create.acl;
+ * }
+ * ```
  */
 typedef struct {
 	uint32_t version;
 	struct timespec time;
 	uint64_t mach_time;
 	uint64_t deadline;
-	es_process_t * _Nullable process;
-	uint8_t reserved[8];
+	es_process_t * _Nonnull process;
+	uint64_t seq_num; /* field available iff message version >= 2 */
 	es_action_type_t action_type;
 	union {
 		es_event_id_t auth;
@@ -840,7 +987,7 @@ es_free_message(es_message_t * _Nonnull msg);
 
 /**
  * Get the number of arguments in a message containing an es_event_exec_t
- * @param event The es_exec_event_t being inspected
+ * @param event The es_event_exec_t being inspected
  * @return The number of arguments
  */
 OS_EXPORT
@@ -850,7 +997,7 @@ es_exec_arg_count(const es_event_exec_t * _Nonnull event);
 
 /**
  * Get the number of environment variables in a message containing an es_event_exec_t
- * @param event The es_exec_event_t being inspected
+ * @param event The es_event_exec_t being inspected
  * @return The number of environment variables
  */
 OS_EXPORT
@@ -860,7 +1007,7 @@ es_exec_env_count(const es_event_exec_t * _Nonnull event);
 
 /**
  * Get the argument at the specified position in the message containing an es_event_exec_t
- * @param event The es_exec_event_t being inspected
+ * @param event The es_event_exec_t being inspected
  * @param index Index of the argument to retrieve (starts from 0)
  * @return  es_string_token_t containing a pointer to the argument and its length.
  *          This is a zero-allocation operation. The returned pointer must not outlive exec_event.
@@ -873,7 +1020,7 @@ es_exec_arg(const es_event_exec_t * _Nonnull event, uint32_t index);
 
 /**
  * Get the environment variable at the specified position in the message containing an es_event_exec_t
- * @param event The es_exec_event_t being inspected
+ * @param event The es_event_exec_t being inspected
  * @param index Index of the environment variable to retrieve (starts from 0)
  * @return  es_string_token_t containing a pointer to the environment variable and its length.
  *          This is zero-allocation operation. The returned pointer must not outlive exec_event.

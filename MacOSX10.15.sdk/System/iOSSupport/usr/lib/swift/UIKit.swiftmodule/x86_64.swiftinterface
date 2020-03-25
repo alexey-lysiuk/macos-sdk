@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftUIKit -swift-version 5 -O -enforce-exclusivity=unchecked -module-name UIKit
 import Foundation
 import Swift
@@ -204,21 +204,21 @@ public struct NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifier
   public func sectionIdentifier(containingItem identifier: ItemIdentifierType) -> SectionIdentifierType?
   public func indexOfItem(_ identifier: ItemIdentifierType) -> Swift.Int?
   public func indexOfSection(_ identifier: SectionIdentifierType) -> Swift.Int?
-  mutating public func appendItems(_ identifiers: [ItemIdentifierType], toSection sectionIdentifier: SectionIdentifierType? = nil)
-  mutating public func insertItems(_ identifiers: [ItemIdentifierType], beforeItem beforeIdentifier: ItemIdentifierType)
-  mutating public func insertItems(_ identifiers: [ItemIdentifierType], afterItem afterIdentifier: ItemIdentifierType)
-  mutating public func deleteItems(_ identifiers: [ItemIdentifierType])
-  mutating public func deleteAllItems()
-  mutating public func moveItem(_ identifier: ItemIdentifierType, beforeItem toIdentifier: ItemIdentifierType)
-  mutating public func moveItem(_ identifier: ItemIdentifierType, afterItem toIdentifier: ItemIdentifierType)
-  mutating public func reloadItems(_ identifiers: [ItemIdentifierType])
-  mutating public func appendSections(_ identifiers: [SectionIdentifierType])
-  mutating public func insertSections(_ identifiers: [SectionIdentifierType], beforeSection toIdentifier: SectionIdentifierType)
-  mutating public func insertSections(_ identifiers: [SectionIdentifierType], afterSection toIdentifier: SectionIdentifierType)
-  mutating public func deleteSections(_ identifiers: [SectionIdentifierType])
-  mutating public func moveSection(_ identifier: SectionIdentifierType, beforeSection toIdentifier: SectionIdentifierType)
-  mutating public func moveSection(_ identifier: SectionIdentifierType, afterSection toIdentifier: SectionIdentifierType)
-  mutating public func reloadSections(_ identifiers: [SectionIdentifierType])
+  public mutating func appendItems(_ identifiers: [ItemIdentifierType], toSection sectionIdentifier: SectionIdentifierType? = nil)
+  public mutating func insertItems(_ identifiers: [ItemIdentifierType], beforeItem beforeIdentifier: ItemIdentifierType)
+  public mutating func insertItems(_ identifiers: [ItemIdentifierType], afterItem afterIdentifier: ItemIdentifierType)
+  public mutating func deleteItems(_ identifiers: [ItemIdentifierType])
+  public mutating func deleteAllItems()
+  public mutating func moveItem(_ identifier: ItemIdentifierType, beforeItem toIdentifier: ItemIdentifierType)
+  public mutating func moveItem(_ identifier: ItemIdentifierType, afterItem toIdentifier: ItemIdentifierType)
+  public mutating func reloadItems(_ identifiers: [ItemIdentifierType])
+  public mutating func appendSections(_ identifiers: [SectionIdentifierType])
+  public mutating func insertSections(_ identifiers: [SectionIdentifierType], beforeSection toIdentifier: SectionIdentifierType)
+  public mutating func insertSections(_ identifiers: [SectionIdentifierType], afterSection toIdentifier: SectionIdentifierType)
+  public mutating func deleteSections(_ identifiers: [SectionIdentifierType])
+  public mutating func moveSection(_ identifier: SectionIdentifierType, beforeSection toIdentifier: SectionIdentifierType)
+  public mutating func moveSection(_ identifier: SectionIdentifierType, afterSection toIdentifier: SectionIdentifierType)
+  public mutating func reloadSections(_ identifiers: [SectionIdentifierType])
 }
 @available(iOS 13.0, tvOS 13.0, *)
 extension NSDiffableDataSourceSnapshot : Swift._ObjectiveCBridgeable {
@@ -250,8 +250,8 @@ open class UICollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentif
   @objc open func indexTitles(for collectionView: UIKit.UICollectionView) -> [Swift.String]?
   @objc open func collectionView(_ collectionView: UIKit.UICollectionView, indexPathForIndexTitle title: Swift.String, at index: Swift.Int) -> Foundation.IndexPath
   public func description() -> Swift.String
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @available(iOS 13.0, tvOS 13.0, *)
 open class UITableViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType> : ObjectiveC.NSObject, UIKit.UITableViewDataSource where SectionIdentifierType : Swift.Hashable, ItemIdentifierType : Swift.Hashable {
@@ -277,8 +277,8 @@ open class UITableViewDiffableDataSource<SectionIdentifierType, ItemIdentifierTy
   @objc open func sectionIndexTitles(for tableView: UIKit.UITableView) -> [Swift.String]?
   @objc open func tableView(_ tableView: UIKit.UITableView, sectionForSectionIndexTitle title: Swift.String, at index: Swift.Int) -> Swift.Int
   public func description() -> Swift.String
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @available(iOS 13.0, *)
 extension UICommand {
@@ -289,10 +289,6 @@ extension UIKeyCommand {
   convenience public init(title: Swift.String, image: UIKit.UIImage? = nil, action: ObjectiveC.Selector, input: Swift.String, modifierFlags: UIKit.UIKeyModifierFlags = [], propertyList: Any? = nil, alternates: [UIKit.UICommandAlternate] = [], discoverabilityTitle: Swift.String? = nil, attributes: UIKit.UIMenuElement.Attributes = [], state: UIKit.UIMenuElement.State = .off)
 }
 @available(iOS 13.0, *)
-extension UIMenuBuilder {
-  public func command(for action: ObjectiveC.Selector, propertyList: Any? = nil) -> UIKit.UICommand?
-}
-@available(iOS 13.0, *)
 extension UIAction {
   convenience public init(title: Swift.String, image: UIKit.UIImage? = nil, identifier: UIKit.UIAction.Identifier? = nil, discoverabilityTitle: Swift.String? = nil, attributes: UIKit.UIMenuElement.Attributes = [], state: UIKit.UIMenuElement.State = .off, handler: @escaping UIKit.UIActionHandler)
 }
@@ -300,11 +296,77 @@ extension UIAction {
 extension UIMenu {
   convenience public init(title: Swift.String, image: UIKit.UIImage? = nil, identifier: UIKit.UIMenu.Identifier? = nil, options: UIKit.UIMenu.Options = [], children: [UIKit.UIMenuElement] = [])
 }
+@available(iOS 13.0, *)
+extension UIMenuBuilder {
+  public func command(for action: ObjectiveC.Selector, propertyList: Any? = nil) -> UIKit.UICommand?
+}
 @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension UIImage {
   public var baselineOffsetFromBottom: CoreGraphics.CGFloat? {
     get
   }
+}
+@available(iOS 13.4, *)
+public enum UIPointerShape {
+  case path(_: UIKit.UIBezierPath)
+  case roundedRect(_: CoreGraphics.CGRect, radius: CoreGraphics.CGFloat = UIPointerShape.defaultCornerRadius)
+  case verticalBeam(length: CoreGraphics.CGFloat)
+  case horizontalBeam(length: CoreGraphics.CGFloat)
+  public static let defaultCornerRadius: CoreGraphics.CGFloat
+}
+@available(iOS 13.4, *)
+public enum UIPointerEffect {
+  public enum TintMode {
+    case none, overlay, underlay
+    public static func == (a: UIKit.UIPointerEffect.TintMode, b: UIKit.UIPointerEffect.TintMode) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  case automatic(_: UIKit.UITargetedPreview)
+  case highlight(_: UIKit.UITargetedPreview)
+  case lift(_: UIKit.UITargetedPreview)
+  case hover(_: UIKit.UITargetedPreview, preferredTintMode: UIKit.UIPointerEffect.TintMode = .overlay, prefersShadow: Swift.Bool = false, prefersScaledContent: Swift.Bool = true)
+  public var preview: UIKit.UITargetedPreview {
+    get
+  }
+}
+@available(iOS 13.4, *)
+extension UIPointerStyle {
+  convenience public init(effect: UIKit.UIPointerEffect, shape: UIKit.UIPointerShape? = nil)
+  convenience public init(shape: UIKit.UIPointerShape, constrainedAxes: UIKit.UIAxis = [])
+}
+@available(iOS 13.4, *)
+extension UIPointerRegion {
+  convenience public init(rect: CoreGraphics.CGRect, identifier: Swift.AnyHashable? = nil)
+  public var identifier: Swift.AnyHashable? {
+    get
+  }
+}
+@available(iOS 13.4, *)
+extension UIButton {
+  public typealias PointerStyleProvider = (UIKit.UIButton, UIKit.UIPointerEffect, UIKit.UIPointerShape) -> UIKit.UIPointerStyle?
+  public var pointerStyleProvider: UIKit.UIButton.PointerStyleProvider? {
+    get
+    set
+  }
+}
+@available(iOS 13.4, *)
+extension UIPointerEffect : Swift._ObjectiveCBridgeable {
+  @_semantics("convertToObjectiveC") public func _bridgeToObjectiveC() -> UIKit.__UIPointerEffect
+  public static func _forceBridgeFromObjectiveC(_ input: UIKit.__UIPointerEffect, result: inout UIKit.UIPointerEffect?)
+  public static func _conditionallyBridgeFromObjectiveC(_ input: UIKit.__UIPointerEffect, result: inout UIKit.UIPointerEffect?) -> Swift.Bool
+  @_effects(readonly) public static func _unconditionallyBridgeFromObjectiveC(_ internalEffect: UIKit.__UIPointerEffect?) -> UIKit.UIPointerEffect
+  public typealias _ObjectiveCType = UIKit.__UIPointerEffect
+}
+@available(iOS 13.4, *)
+extension UIPointerShape : Swift._ObjectiveCBridgeable {
+  @_semantics("convertToObjectiveC") public func _bridgeToObjectiveC() -> UIKit.__UIPointerShape
+  public static func _forceBridgeFromObjectiveC(_ input: UIKit.__UIPointerShape, result: inout UIKit.UIPointerShape?)
+  public static func _conditionallyBridgeFromObjectiveC(_ input: UIKit.__UIPointerShape, result: inout UIKit.UIPointerShape?) -> Swift.Bool
+  @_effects(readonly) public static func _unconditionallyBridgeFromObjectiveC(_ _effect: UIKit.__UIPointerShape?) -> UIKit.UIPointerShape
+  public typealias _ObjectiveCType = UIKit.__UIPointerShape
 }
 extension IndexPath {
   public init(row: Swift.Int, section: Swift.Int)
@@ -352,3 +414,7 @@ extension UIOffset : Swift._ObjectiveCBridgeable {
   public static func _unconditionallyBridgeFromObjectiveC(_ source: Foundation.NSValue?) -> UIKit.UIOffset
   public typealias _ObjectiveCType = Foundation.NSValue
 }
+@available(iOS 13.4, *)
+extension UIKit.UIPointerEffect.TintMode : Swift.Equatable {}
+@available(iOS 13.4, *)
+extension UIKit.UIPointerEffect.TintMode : Swift.Hashable {}

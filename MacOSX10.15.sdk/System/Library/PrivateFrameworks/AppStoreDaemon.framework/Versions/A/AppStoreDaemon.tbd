@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7FA925C8-BE9B-343B-9517-58577F121B94', 'x86_64: 7FA925C8-BE9B-343B-9517-58577F121B94' ]
+uuids:           [ 'x86_64: 52AB372F-F8E9-38D5-86AF-E0D2902E91C0', 'x86_64: 52AB372F-F8E9-38D5-86AF-E0D2902E91C0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppStoreDaemon.framework/Versions/A/AppStoreDaemon'
 exports:         
@@ -36,19 +36,20 @@ exports:
                        _ASDSoftwareUpdateRequirementNetwork, _ASDSoftwareUpdateRequirementPower, 
                        _ASDSoftwareUpdateRequirementWiFi, _ASDSoftwareUpdatesStoreDidChangeNotification, 
                        _ASDStoreItemMetadataPropertyBundleIdentifier, _ASDStoreItemMetadataPropertyItemIdentifier, 
-                       _ASDStoreKitKeyAllowBoostrapCellularData, _ASDStoreKitKeyApplicationUsername, 
-                       _ASDStoreKitKeyArgument, _ASDStoreKitKeyBundleIdentifier, 
-                       _ASDStoreKitKeyBundleVersion, _ASDStoreKitKeyDescription, 
-                       _ASDStoreKitKeyDiscountIdentifier, _ASDStoreKitKeyDiscountKeyIdentifier, 
-                       _ASDStoreKitKeyDiscountNonceString, _ASDStoreKitKeyDiscountSignature, 
-                       _ASDStoreKitKeyDiscountTimestamp, _ASDStoreKitKeyDiscounts, 
-                       _ASDStoreKitKeyDownload, _ASDStoreKitKeyDownloadStatus, _ASDStoreKitKeyError, 
-                       _ASDStoreKitKeyExternalVersion, _ASDStoreKitKeyHideDialogs, 
+                       _ASDStoreKitDefaultKeyEnableAppStoreDaemon, _ASDStoreKitEntitlementDeveloperRequestData, 
+                       _ASDStoreKitEntitlementRequestData, _ASDStoreKitKeyAllowBoostrapCellularData, 
+                       _ASDStoreKitKeyApplicationUsername, _ASDStoreKitKeyArgument, 
+                       _ASDStoreKitKeyBundleIdentifier, _ASDStoreKitKeyBundleVersion, 
+                       _ASDStoreKitKeyDescription, _ASDStoreKitKeyDiscountIdentifier, 
+                       _ASDStoreKitKeyDiscountKeyIdentifier, _ASDStoreKitKeyDiscountNonceString, 
+                       _ASDStoreKitKeyDiscountSignature, _ASDStoreKitKeyDiscountTimestamp, 
+                       _ASDStoreKitKeyDiscounts, _ASDStoreKitKeyDownload, _ASDStoreKitKeyDownloadStatus, 
+                       _ASDStoreKitKeyError, _ASDStoreKitKeyExternalVersion, _ASDStoreKitKeyHideDialogs, 
                        _ASDStoreKitKeyHosted, _ASDStoreKitKeyHostedAssets, _ASDStoreKitKeyHostedContentLength, 
                        _ASDStoreKitKeyHostedIdentifier, _ASDStoreKitKeyHostedInstallPath, 
                        _ASDStoreKitKeyHostedVersion, _ASDStoreKitKeyIdentifier, _ASDStoreKitKeyIgnoreRestrictions, 
                        _ASDStoreKitKeyInvalidIdentifiers, _ASDStoreKitKeyLocaleIdentifier, 
-                       _ASDStoreKitKeyModeType, _ASDStoreKitKeyOriginalPurchaseDate, 
+                       _ASDStoreKitKeyModeType, _ASDStoreKitKeyOfferName, _ASDStoreKitKeyOriginalPurchaseDate, 
                        _ASDStoreKitKeyOriginalTransactionIdentifier, _ASDStoreKitKeyPeriodCount, 
                        _ASDStoreKitKeyPrice, _ASDStoreKitKeyProducts, _ASDStoreKitKeyPurchaseDate, 
                        _ASDStoreKitKeyQuantity, _ASDStoreKitKeyQueueIdentifier, _ASDStoreKitKeyReceipt, 

@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// Describes the level of access to content.
 typedef NS_ENUM(NSInteger, VSSubscriptionAccessLevel)
 {
-    VSSubscriptionAccessLevelUnknown,/// The default access level.
+    VSSubscriptionAccessLevelUnknown, /// The default access level. Setting a subscription with this level will raise an exception.
     VSSubscriptionAccessLevelFreeWithAccount, /// The customer has access to content that is offered for free to users with a valid account.  This value corresponds content in your availability feed with the "account" offering type.
     VSSubscriptionAccessLevelPaid, /// The customer also has access to content that is offered as part of a paid subscription.  The value corresponds content in your availability feed with the "subscription" offering type.
 }

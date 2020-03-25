@@ -10,22 +10,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSString * HKFHIRResourceType NS_TYPED_ENUM API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
+typedef NSString * HKFHIRResourceType NS_TYPED_ENUM API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
 
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeAllergyIntolerance API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeCondition API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeImmunization API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationDispense API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationOrder API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationStatement API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeObservation API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeProcedure API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeAllergyIntolerance API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeCondition API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeImmunization API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationDispense API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationOrder API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationStatement API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeObservation API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeProcedure API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
 
 /*!
  @class         HKFHIRResource
  @abstract      The HKFHIRResource class encapsulates a FHIR (Fast Healthcare Interoperability Resources) resource.
  */
-HK_EXTERN API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED
+HK_EXTERN API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos)
 @interface HKFHIRResource : NSObject <NSSecureCoding, NSCopying>
 
 /*!

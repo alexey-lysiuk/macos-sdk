@@ -12,6 +12,7 @@
 
 @class CNContact;
 @class PKPaymentPass;
+@class PKSecureElementPass;
 
 NS_ASSUME_NONNULL_BEGIN
 API_AVAILABLE(ios(9.0), watchos(3.0))
@@ -37,7 +38,8 @@ typedef NS_ENUM(NSUInteger, PKPaymentMethodType) {
 @property (nonatomic, readonly) PKPaymentMethodType type;
 
 // The payment pass - will only be provided if your app is entitled to view the pass in question
-@property (nonatomic, copy, readonly, nullable) PKPaymentPass *paymentPass;
+@property (nonatomic, copy, readonly, nullable) PKPaymentPass *paymentPass API_DEPRECATED("Use -[PKPass secureElementPass] instead", macos(10.12, API_TO_BE_DEPRECATED), ios(8.0, API_TO_BE_DEPRECATED), watchos(3.0, API_TO_BE_DEPRECATED));
+@property (nonatomic, copy, readonly, nullable) PKSecureElementPass *secureElementPass API_AVAILABLE(ios(13.4), macos(10.15.4), watchos(6.2));
 
 // A partially redacted billing address. Only available if no shipping address info was requested.
 @property (nonatomic, copy, readonly, nullable) CNContact *billingAddress API_AVAILABLE(ios(13.0), watchos(6.0));

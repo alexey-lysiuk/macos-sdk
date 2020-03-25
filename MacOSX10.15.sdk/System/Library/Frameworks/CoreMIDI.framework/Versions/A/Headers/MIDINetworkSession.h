@@ -19,7 +19,7 @@
 #import <CoreMIDI/MIDIServices.h>
 #import <Foundation/Foundation.h>
 
-#define MIDINETWORKSESSION_AVAILABLE API_AVAILABLE(macos(15.0), ios(4.2)) API_UNAVAILABLE(watchos, tvos)
+#define MIDINETWORKSESSION_AVAILABLE API_AVAILABLE(macos(10.15), ios(4.2)) API_UNAVAILABLE(watchos, tvos)
 
 NS_ASSUME_NONNULL_BEGIN
 

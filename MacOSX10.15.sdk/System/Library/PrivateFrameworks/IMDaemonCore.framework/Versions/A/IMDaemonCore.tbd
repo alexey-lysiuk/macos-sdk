@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FFA6C95D-0DC3-344C-9958-76F74F49E78D' ]
+uuids:           [ 'x86_64: 0483EBEC-248D-351B-B633-A83FBD5C1B97' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMDaemonCore.framework/Versions/A/IMDaemonCore'
 current-version: 800
@@ -36,10 +36,11 @@ exports:
                        _IMBackupDisabledSuccessfullKeyrollNotification, _IMBackupDisabledTestToggledKeyroll, 
                        _IMBackupDisabledUserToggledKeyroll, _IMCrashDuringFirstSync, 
                        _IMCreateIMDChatFromIMDChatRecordRef, _IMCreateIMDChatRecordRefWithIMDChat, 
-                       _IMDAttachmentRecordRefFromIMFileTransfer, _IMDCKAttachmentSyncErrorDomain, 
-                       _IMDCKCacheDeleteAutoCaptureSubtype, _IMDCKChatSyncControllerErrorDomain, 
-                       _IMDCKMessageSyncControllerErrorDomain, _IMDCKUtilitiesABCSubtype, 
-                       _IMDCKUtilitiesErrorDomain, _IMDCreateIMMessageItemFromIMDMessageRecordLoadAttachmentIfNeededRef, 
+                       _IMDAttachmentRecordRefFromIMFileTransfer, _IMDCKAllAliases, 
+                       _IMDCKAttachmentSyncErrorDomain, _IMDCKCacheDeleteAutoCaptureSubtype, 
+                       _IMDCKChatSyncControllerErrorDomain, _IMDCKMessageSyncControllerErrorDomain, 
+                       _IMDCKSelectedAliases, _IMDCKUtilitiesABCSubtype, _IMDCKUtilitiesErrorDomain, 
+                       _IMDCreateIMMessageItemFromIMDMessageRecordLoadAttachmentIfNeededRef, 
                        _IMDCreateIMMessageItemFromIMDMessageRecordRef, _IMDFileTransferAcceptedNotification, 
                        _IMDFileTransferArchiveFailedNotification, _IMDFileTransferArchiveSucceededNotification, 
                        _IMDFileTransferCreatedNotification, _IMDFileTransferHighQualityDownloadCompletedFileURLKey, 
@@ -89,9 +90,9 @@ exports:
                        _MessageDictionaryPendingNicknameUpdatesHandlesKey, _MessageDictionaryPendingNicknameUpdatesVersionKey, 
                        _MessageDictionaryPersonalNicknameDecryptKeyKey, _MessageDictionaryPersonalNicknameRecordIDKey, 
                        _NSStringFromAKAppleIDSecurityLevel, _NSStringFromIMDCKAccountStatus, 
-                       __IMDHashParticipants, __IMDShouldSaveAttachment, _kIMDCKAnalyticBagKey, 
-                       _kIMDCKAnalyticDetailsBagKey, _kIMDCKClientVersion, _kIMDCKMetricBagKey, 
-                       _kMaxCloudKitRetries ]
+                       __IMDHashParticipants, __IMDShouldSaveAttachment, _kIMDAliasesPropertyKey, 
+                       _kIMDCKAnalyticBagKey, _kIMDCKAnalyticDetailsBagKey, _kIMDCKClientVersion, 
+                       _kIMDCKMetricBagKey, _kMaxCloudKitRetries ]
     objc-classes:    [ CKRecordUtilities, IMDAccount, IMDAccountController, IMDAppleServiceSession, 
                        IMDAttachmentStore, IMDBadgeUtilities, IMDCKAbstractSyncController, 
                        IMDCKAttachmentSyncCKOperationFactory, IMDCKAttachmentSyncController, 
@@ -110,10 +111,9 @@ exports:
                        IMDMessageStore, IMDNicknameController, IMDNotificationResponseUtilities, 
                        IMDOneTimeCodeManager, IMDQuickSwitchController, IMDRecordZoneManager, 
                        IMDReplayController, IMDReplayStorageController, IMDReplayStorageIterationContext, 
-                       IMDScreenTimeEnablementController, IMDService, IMDServiceController, 
-                       IMDServiceSession, IMDSoundUtilities, IMDSpamController, IMDSpamMessageCreator, 
-                       IMDSpotlightIndexDelegate, IMDStickerRegistry, IMDXPCEventStreamHandler, 
-                       IMTunesController ]
+                       IMDService, IMDServiceController, IMDServiceSession, IMDSoundUtilities, 
+                       IMDSpamController, IMDSpamMessageCreator, IMDSpotlightIndexDelegate, 
+                       IMDStickerRegistry, IMDXPCEventStreamHandler, IMTunesController ]
     objc-ivars:      [ IMDChatStore._lastModificationStamp, IMDLocationSharingController._session, 
                        IMDMessageStore._cachedLastFailedMessageDate, IMDMessageStore._cachedUnreadMessageCount, 
                        IMDMessageStore._modificationStamp, IMDMessageStore._pendingDBUpdatePost, 

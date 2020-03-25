@@ -24,6 +24,8 @@ UIKIT_EXTERN API_AVAILABLE(ios(3.2)) @interface UITapGestureRecognizer : UIGestu
 @property (nonatomic) NSUInteger  numberOfTapsRequired;       // Default is 1. The number of taps required to match
 @property (nonatomic) NSUInteger  numberOfTouchesRequired API_UNAVAILABLE(tvos);    // Default is 1. The number of fingers required to match
 
+@property (nonatomic) UIEventButtonMask buttonMaskRequired API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, watchos);  // Default is UIEventButtonMaskPrimary and cannot be 0. This property is only evaluated on indirect input devices and is the mask of pressed buttons to required to match.
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 063C8525-2EBB-3B47-8671-87041D84E34B', 'x86_64: 063C8525-2EBB-3B47-8671-87041D84E34B' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/ShazamKit.framework/Versions/A/ShazamKit'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SHErrorDomain, _SHMediaKeyAdamID, _SHMediaKeyAppleMusicURL, 
+                       _SHMediaKeyArtist, _SHMediaKeyArtworkURL, _SHMediaKeyExplicitContent, 
+                       _SHMediaKeyFrequencySkew, _SHMediaKeyID, _SHMediaKeyLyricsSnippet, 
+                       _SHMediaKeyOffset, _SHMediaKeySubtitle, _SHMediaKeySyncedLyricsSnippet, 
+                       _SHMediaKeyTimeSkew, _SHMediaKeyTitle, _SHMediaKeyVideoURL, 
+                       _SHMediaKeyWebURL, _SHPartnerAPIHost_Beta, _SHPartnerAPIHost_Prod ]
+    objc-classes:    [ SHConfiguration, SHLocalConfiguration, SHMatch, SHMediaItem, 
+                       SHMutableSignature, SHPartnerConfiguration, SHRecognitionSession, 
+                       SHSignature, SHTokenizedEndpoint ]
+    weak-def-symbols: [ __ZTINSt3__113basic_filebufIcNS_11char_traitsIcEEEE, __ZTINSt3__113basic_fstreamIcNS_11char_traitsIcEEEE, 
+                        __ZTINSt3__114basic_ifstreamIcNS_11char_traitsIcEEEE, __ZTINSt3__114basic_ofstreamIcNS_11char_traitsIcEEEE, 
+                        __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__117bad_function_callE, __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__113basic_filebufIcNS_11char_traitsIcEEEE, __ZTSNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE, 
+                        __ZTSNSt3__114basic_ifstreamIcNS_11char_traitsIcEEEE, __ZTSNSt3__114basic_ofstreamIcNS_11char_traitsIcEEEE, 
+                        __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__117bad_function_callE, __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+...

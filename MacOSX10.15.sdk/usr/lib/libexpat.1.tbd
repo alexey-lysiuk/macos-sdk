@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E209623A-A410-3749-AD6D-2850241CB873', 'x86_64: E209623A-A410-3749-AD6D-2850241CB873' ]
+uuids:           [ 'x86_64: 1ED53818-578C-3D17-8761-68792CCAD685', 'x86_64: 1ED53818-578C-3D17-8761-68792CCAD685' ]
 platform:        zippered
 install-name:    '/usr/lib/libexpat.1.dylib'
 current-version: 8

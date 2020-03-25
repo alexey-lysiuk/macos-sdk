@@ -2,7 +2,7 @@
 //  GKAchievementDescription.h
 //  Game Center
 //
-//  Copyright 2010-2019 Apple Inc. All rights reserved.
+//  Copyright 2010-2020 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

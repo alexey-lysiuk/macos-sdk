@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E3AACF97-C85A-3720-90F0-61CAEF721F3D', 'x86_64: E3AACF97-C85A-3720-90F0-61CAEF721F3D' ]
+uuids:           [ 'x86_64: 2FE66352-4CF9-3F79-944D-053E2AD451D6', 'x86_64: 2FE66352-4CF9-3F79-944D-053E2AD451D6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment'
-current-version: 47.6
+current-version: 47.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IOPresentmentBegin, _IOPresentmentBindIOAccelSurfaceToResource, 
@@ -18,20 +18,20 @@ exports:
                        _IOPresentmentCursorAnimationRemoveFrame, _IOPresentmentCursorAnimationUpdateFrame, 
                        _IOPresentmentDestroy, _IOPresentmentDestroyResource, _IOPresentmentEnableGPUWranglerEvents, 
                        _IOPresentmentEnd, _IOPresentmentEndWithReplacement, _IOPresentmentGetDirtyRect, 
-                       _IOPresentmentGetIOSurface, _IOPresentmentGetInsetRect, _IOPresentmentGetMap, 
-                       _IOPresentmentGetOption, _IOPresentmentInitialize, _IOPresentmentIsActive, 
-                       _IOPresentmentIsComplete, _IOPresentmentIsIOPresentmentGPUWranglerRefValid, 
-                       _IOPresentmentIsIOPresentmentRefValid, _IOPresentmentIsIOPresentmentResourceRefValid, 
-                       _IOPresentmentNotifyPresentment, _IOPresentmentQueryTransactionState, 
-                       _IOPresentmentReleaseMap, _IOPresentmentSetCursorAnimation, 
-                       _IOPresentmentSetDirtyRect, _IOPresentmentSetInsetRect, _IOPresentmentSetOption, 
-                       _IOPresentmentSetPipeCLUT, _IOPresentmentSetPipeColorMatrix, 
-                       _IOPresentmentSetPipeFilter, _IOPresentmentSetPipeGammaTable, 
-                       _IOPresentmentSetPipeRefreshTime, _IOPresentmentSetPipeRotation, 
-                       _IOPresentmentSetPipeScaler, _IOPresentmentSetPlaneBlendType, 
-                       _IOPresentmentSetPlaneGammaTable, _IOPresentmentSetPlaneLinearizationTable, 
-                       _IOPresentmentSetPlaneScaler, _IOPresentmentSetPlaneState, 
-                       _IOPresentmentTerminate, _IOPresentmentTransactionBindResource, 
+                       _IOPresentmentGetIOAccelDisplayPipeTriageString, _IOPresentmentGetIOSurface, 
+                       _IOPresentmentGetInsetRect, _IOPresentmentGetMap, _IOPresentmentGetOption, 
+                       _IOPresentmentInitialize, _IOPresentmentIsActive, _IOPresentmentIsComplete, 
+                       _IOPresentmentIsIOPresentmentGPUWranglerRefValid, _IOPresentmentIsIOPresentmentRefValid, 
+                       _IOPresentmentIsIOPresentmentResourceRefValid, _IOPresentmentNotifyPresentment, 
+                       _IOPresentmentQueryTransactionState, _IOPresentmentReleaseMap, 
+                       _IOPresentmentSetCursorAnimation, _IOPresentmentSetDirtyRect, 
+                       _IOPresentmentSetInsetRect, _IOPresentmentSetOption, _IOPresentmentSetPipeCLUT, 
+                       _IOPresentmentSetPipeColorMatrix, _IOPresentmentSetPipeFilter, 
+                       _IOPresentmentSetPipeGammaTable, _IOPresentmentSetPipeRefreshTime, 
+                       _IOPresentmentSetPipeRotation, _IOPresentmentSetPipeScaler, 
+                       _IOPresentmentSetPlaneBlendType, _IOPresentmentSetPlaneGammaTable, 
+                       _IOPresentmentSetPlaneLinearizationTable, _IOPresentmentSetPlaneScaler, 
+                       _IOPresentmentSetPlaneState, _IOPresentmentTerminate, _IOPresentmentTransactionBindResource, 
                        _IOPresentmentTransactionGet, _IOPresentmentTransactionRelease, 
                        _IOPresentmentTransactionSet, _IOPresentmentUpdateSubmitTimestamp, 
                        _IOPresentmentVersionNumber, _IOPresentmentVersionString, 
@@ -108,6 +108,7 @@ exports:
                        __ZN13IOPresentment41IOPresentmentBindIOSurfaceToResourcePlaneEP23__IOPresentmentResourceP11__IOSurfacejP18sIOPresentmentRect, 
                        __ZN13IOPresentment42IOPresentmentCreateGPUWranglerEventHandlerEPFvPvPK10__CFString25sIOPresentmentDeviceStateES0_, 
                        __ZN13IOPresentment43IOPresentmentCursorAnimationRemoveAllFramesEP30__IOPresentmentCursorAnimation, 
+                       __ZN13IOPresentment46IOPresentmentGetIOAccelDisplayPipeTriageStringEv, 
                        __ZN13IOPresentment48IOPresentmentCapabilitiesStructureFromDictionaryEPKvP19sPipelineDictionary, 
                        __ZN13IOPresentment50IOPresentmentBindIOSurfaceToResourcePlaneDirtyRectEP23__IOPresentmentResourceP11__IOSurfacejP18sIOPresentmentRectS5_, 
                        __ZN18IOPresentmentError30IOPresentmentErrorSetErrorCodeEj, 
@@ -152,6 +153,7 @@ exports:
                        __ZN24IOPresentmentDisplayPipe40IOPresentmentDisplayPipeCopyCapabilitiesEP20__IOAccelDisplayPipe, 
                        __ZN24IOPresentmentDisplayPipe41IOPresentmentBindIOAccelSurfaceToResourceEP23__IOPresentmentResourcej18sIOPresentmentRect, 
                        __ZN24IOPresentmentDisplayPipe41IOPresentmentBindIOSurfaceToResourcePlaneEP23__IOPresentmentResourceP11__IOSurfacejP18sIOPresentmentRect, 
+                       __ZN24IOPresentmentDisplayPipe46IOPresentmentGetIOAccelDisplayPipeTriageStringEv, 
                        __ZN24IOPresentmentDisplayPipe54IOPresentmentBindIOSurfaceToResourcePlaneWithDirtyRectEP23__IOPresentmentResourceP11__IOSurfacejP18sIOPresentmentRectS5_, 
                        __ZN24IOPresentmentTransaction11EnablePlaneEj, __ZN24IOPresentmentTransaction12DisablePlaneEj, 
                        __ZN24IOPresentmentTransaction14IsPlaneEnabledEj, __ZN24IOPresentmentTransaction18SetCursorAnimationEP30__IOPresentmentCursorAnimationP18sIOPresentmentRectP19sIOPresentmentPoint, 

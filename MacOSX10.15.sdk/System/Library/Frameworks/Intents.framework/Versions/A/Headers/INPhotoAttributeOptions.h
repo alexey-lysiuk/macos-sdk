@@ -2,7 +2,7 @@
 //  INPhotoAttributeOptions.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #ifndef INPhotoAttributeOptions_h
@@ -36,11 +36,11 @@ typedef NS_OPTIONS(NSUInteger, INPhotoAttributeOptions) {
     INPhotoAttributeOptionMonoFilter = (1UL << 21),
     INPhotoAttributeOptionFadeFilter = (1UL << 22),
     INPhotoAttributeOptionProcessFilter = (1UL << 23),
-    INPhotoAttributeOptionPortraitPhoto API_AVAILABLE(ios(12.0), watchos(5.0), macosx(10.14)) = (1UL << 24),
-    INPhotoAttributeOptionLivePhoto API_AVAILABLE(ios(12.0), watchos(5.0), macosx(10.14)) = (1UL << 25),
-    INPhotoAttributeOptionLoopPhoto API_AVAILABLE(ios(12.0), watchos(5.0), macosx(10.14)) = (1UL << 26),
-    INPhotoAttributeOptionBouncePhoto API_AVAILABLE(ios(12.0), watchos(5.0), macosx(10.14)) = (1UL << 27),
-    INPhotoAttributeOptionLongExposurePhoto API_AVAILABLE(ios(12.0), watchos(5.0), macosx(10.14)) = (1UL << 28),
-} API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macosx);
+    INPhotoAttributeOptionPortraitPhoto API_AVAILABLE(ios(12.0), macos(10.14), watchos(5.0)) = (1UL << 24),
+    INPhotoAttributeOptionLivePhoto API_AVAILABLE(ios(12.0), macos(10.14), watchos(5.0)) = (1UL << 25),
+    INPhotoAttributeOptionLoopPhoto API_AVAILABLE(ios(12.0), macos(10.14), watchos(5.0)) = (1UL << 26),
+    INPhotoAttributeOptionBouncePhoto API_AVAILABLE(ios(12.0), macos(10.14), watchos(5.0)) = (1UL << 27),
+    INPhotoAttributeOptionLongExposurePhoto API_AVAILABLE(ios(12.0), macos(10.14), watchos(5.0)) = (1UL << 28),
+} API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macos, tvos);
 
 #endif // INPhotoAttributeOptions_h

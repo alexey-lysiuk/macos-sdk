@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C8BEDFCA-E54D-36B2-9CAC-EA1086A8A344' ]
+uuids:           [ 'x86_64: 7E35D482-CE40-3151-A8C9-4C4EE9882C0A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CDDataAccess.framework/Versions/A/CDDataAccess'
 exports:         

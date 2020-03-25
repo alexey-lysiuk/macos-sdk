@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E4E96CDA-DFC4-3096-BCFC-994DB61D3E4D', 'x86_64: E4E96CDA-DFC4-3096-BCFC-994DB61D3E4D' ]
+uuids:           [ 'x86_64: 8AB4A416-A174-386B-8A96-5F16EAA3FCDE', 'x86_64: 8AB4A416-A174-386B-8A96-5F16EAA3FCDE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport'
-current-version: 15011
+current-version: 15016
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/usr/lib/libDiagnosticMessagesClient.dylib' ]

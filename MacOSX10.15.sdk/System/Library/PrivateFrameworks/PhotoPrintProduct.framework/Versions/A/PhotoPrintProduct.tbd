@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F8F616B7-0415-33C9-AD35-A2CF21F72888' ]
+uuids:           [ 'x86_64: F4047563-B209-3833-ADDD-31DE1496F530' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotoPrintProduct.framework/Versions/A/PhotoPrintProduct'
 current-version: 685

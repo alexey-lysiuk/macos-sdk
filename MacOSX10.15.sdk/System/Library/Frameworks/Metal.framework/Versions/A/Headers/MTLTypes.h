@@ -86,3 +86,19 @@ MTL_INLINE MTLSamplePosition MTLSamplePositionMake(float x, float y) API_AVAILAB
     return position;
 }
 
+/*!
+ @typedef MTLCoordinate2D
+ @abstract A floating point coordinate in an abstract 2D space.
+ Refer to location of use for concrete information on the space in which the coordinate exists.
+ */
+typedef MTLSamplePosition MTLCoordinate2D;
+
+/*!
+ @function MTLCoordinate2DMake
+ @abstract Convenience function to create a 2D coordinate from 2 values.
+ */
+MTL_INLINE MTLCoordinate2D MTLCoordinate2DMake(float x, float y)
+{
+    MTLCoordinate2D result = {x, y};
+    return result;
+} 

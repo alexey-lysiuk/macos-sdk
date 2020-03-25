@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7FD8DC8-781E-37CB-92CD-B1491B4E6BC2' ]
+uuids:           [ 'x86_64: 6BB2630B-56F3-316B-A6E4-11AE9DE6E2AE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/StoreFoundation.framework/Versions/A/StoreFoundation'
 current-version: 379

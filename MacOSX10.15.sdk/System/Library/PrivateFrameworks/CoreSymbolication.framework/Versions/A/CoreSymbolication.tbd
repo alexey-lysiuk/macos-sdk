@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F0A1415B-068A-3CE6-9AB3-B11EF978B58A', 'x86_64: F0A1415B-068A-3CE6-9AB3-B11EF978B58A' ]
+uuids:           [ 'x86_64: DCA00787-D285-3944-AAFA-CAF78775B8D3', 'x86_64: DCA00787-D285-3944-AAFA-CAF78775B8D3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication'
-current-version: 64509.98.1
+current-version: 64535.33.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CSAddressSetAdd, _CSAddressSetCreate, _CSArchitectureGetArchitectureForName, 
@@ -23,19 +23,20 @@ exports:
                        _CSSourceInfoGetColumn, _CSSourceInfoGetFilename, _CSSourceInfoGetLineNumber, 
                        _CSSourceInfoGetPath, _CSSourceInfoGetRange, _CSSourceInfoGetRegion, 
                        _CSSourceInfoGetSymbol, _CSSourceInfoGetSymbolOwner, _CSSourceInfoGetSymbolicator, 
-                       _CSSymbolCopyDescriptionWithIndent, _CSSymbolForeachSourceInfo, 
+                       _CSSymbolCopyDescriptionWithIndent, _CSSymbolForeachInlineRange, 
+                       _CSSymbolForeachInlineRangeAtDepth, _CSSymbolForeachSourceInfo, 
                        _CSSymbolGetFlags, _CSSymbolGetInstructionData, _CSSymbolGetMangledName, 
                        _CSSymbolGetName, _CSSymbolGetRange, _CSSymbolGetRegion, _CSSymbolGetSection, 
                        _CSSymbolGetSegment, _CSSymbolGetSymbolOwner, _CSSymbolGetSymbolicator, 
-                       _CSSymbolIsArm, _CSSymbolIsDebugMap, _CSSymbolIsDwarf, _CSSymbolIsDyldStub, 
-                       _CSSymbolIsExternal, _CSSymbolIsFunction, _CSSymbolIsFunctionStarts, 
-                       _CSSymbolIsKnownLength, _CSSymbolIsMangledNameSourceDwarf, 
-                       _CSSymbolIsMangledNameSourceDwarfMIPSLinkage, _CSSymbolIsMangledNameSourceNList, 
-                       _CSSymbolIsMerged, _CSSymbolIsNList, _CSSymbolIsNameSourceDwarf, 
-                       _CSSymbolIsNameSourceDwarfMIPSLinkage, _CSSymbolIsNameSourceNList, 
-                       _CSSymbolIsObjcMethod, _CSSymbolIsOmitFramePointer, _CSSymbolIsPrivateExternal, 
-                       _CSSymbolIsThumb, _CSSymbolIsUnnamed, _CSSymbolOwnerAddInContext, 
-                       _CSSymbolOwnerCacheFlush, _CSSymbolOwnerCacheGetEntryCount, 
+                       _CSSymbolHasInlinedSourceInfo, _CSSymbolIsArm, _CSSymbolIsDebugMap, 
+                       _CSSymbolIsDwarf, _CSSymbolIsDyldStub, _CSSymbolIsExternal, 
+                       _CSSymbolIsFunction, _CSSymbolIsFunctionStarts, _CSSymbolIsKnownLength, 
+                       _CSSymbolIsMangledNameSourceDwarf, _CSSymbolIsMangledNameSourceDwarfMIPSLinkage, 
+                       _CSSymbolIsMangledNameSourceNList, _CSSymbolIsMerged, _CSSymbolIsNList, 
+                       _CSSymbolIsNameSourceDwarf, _CSSymbolIsNameSourceDwarfMIPSLinkage, 
+                       _CSSymbolIsNameSourceNList, _CSSymbolIsObjcMethod, _CSSymbolIsOmitFramePointer, 
+                       _CSSymbolIsPrivateExternal, _CSSymbolIsThumb, _CSSymbolIsUnnamed, 
+                       _CSSymbolOwnerAddInContext, _CSSymbolOwnerCacheFlush, _CSSymbolOwnerCacheGetEntryCount, 
                        _CSSymbolOwnerCacheGetFlags, _CSSymbolOwnerCacheGetMemoryLimit, 
                        _CSSymbolOwnerCacheGetMemoryUsed, _CSSymbolOwnerCachePrintEntries, 
                        _CSSymbolOwnerCachePrintStats, _CSSymbolOwnerCacheResetStats, 
@@ -73,7 +74,7 @@ exports:
                        _CSSymbolOwnerSetLoadTimestamp, _CSSymbolOwnerSetPath, _CSSymbolOwnerSetPathForSymbolication, 
                        _CSSymbolOwnerSetRelocationCount, _CSSymbolOwnerSetTransientUserData, 
                        _CSSymbolOwnerSetUnloadTimestamp, _CSSymbolOwnerUsesCPlusPlus, 
-                       _CSSymbolicatorAddSymbolOwner, _CSSymbolicatorApplyMutableContextBlock, 
+                       _CSSymbolReleaseMemory, _CSSymbolicatorAddSymbolOwner, _CSSymbolicatorApplyMutableContextBlock, 
                        _CSSymbolicatorCopyDescriptionWithIndent, _CSSymbolicatorCreateForTaskSharedCache, 
                        _CSSymbolicatorCreateForTaskSharedCacheWithFlagsAndNotification, 
                        _CSSymbolicatorCreateSignature, _CSSymbolicatorCreateSignatureElidingSomeSymbolOwners, 
@@ -123,12 +124,12 @@ exports:
                        _create_sampling_context_for_task, _create_sampling_context_for_task_and_pid, 
                        _create_sampling_context_for_task_pid_symbolicator, _demangle, 
                        _destroy_mapped_memory_cache, _destroy_sampling_context, _dispatch_queue_name_for_serial_number, 
-                       _find_node, _get_remote_thread_dispatch_queue, _kCSRegionMachHeaderName, 
-                       _kCSTypeDictionaryKeyCallBacks, _kCSTypeDictionaryValueCallBacks, 
-                       _kCSTypeDictionaryWeakKeyCallBacks, _kCSTypeDictionaryWeakValueCallBacks, 
-                       _kCSTypeSetCallBacks, _kCSTypeSetWeakCallBacks, _map_new_node, 
-                       _mapped_memory_read, _mapped_memory_read_pointer, _next_node, 
-                       _release_mapped_memory_cache, _retain_mapped_memory_cache, 
-                       _sample_remote_thread, _sample_remote_thread_with_dispatch_queue, 
+                       _enumerate_mapped_memory_cache, _find_node, _get_remote_thread_dispatch_queue, 
+                       _kCSRegionMachHeaderName, _kCSTypeDictionaryKeyCallBacks, 
+                       _kCSTypeDictionaryValueCallBacks, _kCSTypeDictionaryWeakKeyCallBacks, 
+                       _kCSTypeDictionaryWeakValueCallBacks, _kCSTypeSetCallBacks, 
+                       _kCSTypeSetWeakCallBacks, _map_new_node, _mapped_memory_read, 
+                       _mapped_memory_read_pointer, _next_node, _release_mapped_memory_cache, 
+                       _retain_mapped_memory_cache, _sample_remote_thread, _sample_remote_thread_with_dispatch_queue, 
                        _sampling_context_clear_cache, _task_is_64bit, _thread_name_for_thread_port ]
 ...

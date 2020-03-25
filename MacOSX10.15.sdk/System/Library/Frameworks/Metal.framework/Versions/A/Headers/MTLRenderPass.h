@@ -10,6 +10,7 @@
 
 
 
+@protocol MTLRasterizationRateMap;
 
 #import <Metal/MTLTypes.h>
 
@@ -292,6 +293,12 @@ MTL_EXPORT API_AVAILABLE(macos(10.11), ios(8.0))
 - (NSUInteger)getSamplePositions:(MTLSamplePosition * _Nullable)positions count:(NSUInteger)count API_AVAILABLE(macos(10.13), ios(11.0));
 
 
+/*!
+ @property rasterizationRateMap
+ @abstract The variable rasterization rate map to use when rendering this pass, or nil to not use variable rasterization rate.
+ @discussion The default value is nil. Enabling variable rasterization rate allows for decreasing the rasterization rate in unimportant regions of screen space.
+ */
+@property (nullable, nonatomic, strong) id<MTLRasterizationRateMap> rasterizationRateMap API_AVAILABLE(macos(10.15.4), ios(13.0), macCatalyst(13.4));
 
 
 @end

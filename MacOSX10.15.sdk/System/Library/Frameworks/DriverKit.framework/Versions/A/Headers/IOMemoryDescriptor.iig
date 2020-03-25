@@ -61,7 +61,7 @@ struct IOAddressSegment {
 	uint64_t length;
 };
 
-struct IOMDPrivateState {
+struct _IOMDPrivateState {
 	uint64_t length;
 	uint64_t options;
 };
@@ -156,7 +156,7 @@ class EXTENDS (IOMemoryDescriptor) IOMemoryDescriptorPrivate
 {
 	virtual kern_return_t
 	_CopyState(
-		IOMDPrivateState * state);
+		_IOMDPrivateState * state);
 };
 
 

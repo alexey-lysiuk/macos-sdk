@@ -18,7 +18,7 @@
 */
 
 API_UNAVAILABLE(ios, watchos, tvos)
-@interface IOBluetoothSDPUUID : NSData {
+@interface IOBluetoothSDPUUID : NSData <NSCoding, NSSecureCoding> {
     NSData	*mUUIDData;
     
     void	*_mReserved;

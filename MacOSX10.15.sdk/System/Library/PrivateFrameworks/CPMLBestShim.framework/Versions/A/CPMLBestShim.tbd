@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 80FAF5A7-142D-363A-8415-D36E5DBEBA3B', 'x86_64: 80FAF5A7-142D-363A-8415-D36E5DBEBA3B' ]
+uuids:           [ 'x86_64: 50F8687B-CA69-33AA-9490-94B2018B5C56', 'x86_64: 50F8687B-CA69-33AA-9490-94B2018B5C56' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CPMLBestShim.framework/Versions/A/CPMLBestShim'
 exports:         

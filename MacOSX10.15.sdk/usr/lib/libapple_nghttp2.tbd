@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9B990E6A-D9EB-3F2C-B7CA-085A47D4BC62', 'x86_64: 9B990E6A-D9EB-3F2C-B7CA-085A47D4BC62' ]
+uuids:           [ 'x86_64: 268F4E3E-95DC-35FB-82DC-5B0D1855A676', 'x86_64: 268F4E3E-95DC-35FB-82DC-5B0D1855A676' ]
 platform:        zippered
 install-name:    '/usr/lib/libapple_nghttp2.dylib'
 current-version: 1.39.2

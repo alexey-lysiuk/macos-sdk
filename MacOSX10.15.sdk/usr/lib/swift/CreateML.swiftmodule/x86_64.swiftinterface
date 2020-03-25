@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-macos10.15 -enable-objc-interop -enable-library-evolution -module-link-name swiftCreateML -swift-version 5 -enforce-exclusivity=checked -O -module-name CreateML
 import AVFoundation
 import CoreGraphics
@@ -1562,11 +1562,11 @@ public struct MLDataTable {
   public subscript<R>(slice: R) -> CreateML.MLDataTable where R : Swift.RangeExpression, R.Bound == Swift.Int {
     get
   }
-  mutating public func addColumn(_ newColumn: CreateML.MLUntypedColumn, named: Swift.String)
-  mutating public func addColumn<Element>(_ newColumn: CreateML.MLDataColumn<Element>, named: Swift.String) where Element : CreateML.MLDataValueConvertible
-  mutating public func removeColumn(named: Swift.String)
-  mutating public func renameColumn(named: Swift.String, to: Swift.String)
-  mutating public func append(contentsOf newTable: CreateML.MLDataTable)
+  public mutating func addColumn(_ newColumn: CreateML.MLUntypedColumn, named: Swift.String)
+  public mutating func addColumn<Element>(_ newColumn: CreateML.MLDataColumn<Element>, named: Swift.String) where Element : CreateML.MLDataValueConvertible
+  public mutating func removeColumn(named: Swift.String)
+  public mutating func renameColumn(named: Swift.String, to: Swift.String)
+  public mutating func append(contentsOf newTable: CreateML.MLDataTable)
   public func randomSplit(by proportion: Swift.Double, seed: Swift.Int = 1) -> (CreateML.MLDataTable, CreateML.MLDataTable)
   public func stratifiedSplit(proportions: [Swift.Double], on column: Swift.String, seed: Swift.Int = timestampSeed()) throws -> CreateML.MLDataTable
   public func stratifiedSplit<RNG>(proportions: [Swift.Double], on column: Swift.String, generator: inout RNG) throws -> CreateML.MLDataTable where RNG : Swift.RandomNumberGenerator
@@ -1677,9 +1677,9 @@ extension MLDataTable.Row {
     }
     public typealias Element = CreateML.MLDataValue
     public typealias Index = Swift.Int
+    public typealias Iterator = Swift.IndexingIterator<CreateML.MLDataTable.Row.Values>
     public typealias SubSequence = Swift.Slice<CreateML.MLDataTable.Row.Values>
     public typealias Indices = Swift.Range<Swift.Int>
-    public typealias Iterator = Swift.IndexingIterator<CreateML.MLDataTable.Row.Values>
   }
 }
 @available(OSX 10.14, *)
@@ -1761,9 +1761,9 @@ extension MLDataTable {
     }
     public typealias Element = Swift.String
     public typealias Index = Swift.Int
+    public typealias Iterator = Swift.IndexingIterator<CreateML.MLDataTable.ColumnNames>
     public typealias SubSequence = Swift.Slice<CreateML.MLDataTable.ColumnNames>
     public typealias Indices = Swift.Range<Swift.Int>
-    public typealias Iterator = Swift.IndexingIterator<CreateML.MLDataTable.ColumnNames>
   }
   public var columnNames: CreateML.MLDataTable.ColumnNames {
     get
@@ -1840,7 +1840,7 @@ public struct MLDataColumn<Element> where Element : CreateML.MLDataValueConverti
   public init(repeating repeatedValue: CreateML.MLDataValue, count: Swift.Int)
   public init(repeating repeatedValue: Element, count: Swift.Int)
   public init()
-  mutating public func append(contentsOf newColumn: CreateML.MLDataColumn<Element>)
+  public mutating func append(contentsOf newColumn: CreateML.MLDataColumn<Element>)
 }
 @available(OSX 10.14, *)
 extension MLDataColumn {
@@ -2046,7 +2046,7 @@ public struct MLUntypedColumn {
   public init(_ range: Swift.Range<Swift.Int>)
   public init(_ range: Swift.ClosedRange<Swift.Int>)
   public init()
-  mutating public func append(contentsOf newColumn: CreateML.MLUntypedColumn)
+  public mutating func append(contentsOf newColumn: CreateML.MLUntypedColumn)
 }
 @available(OSX 10.14, *)
 extension MLUntypedColumn {
@@ -2642,6 +2642,8 @@ extension CreateML.MLDataTable.JoinType : Swift.Hashable {}
 extension CreateML.MLDataTable.PackType : Swift.Equatable {}
 @available(OSX 10.14, *)
 extension CreateML.MLDataTable.PackType : Swift.Hashable {}
+@available(OSX 10.14, *)
+extension CreateML.MLDataValue.ValueType : Swift.Equatable {}
 @available(OSX 10.14, *)
 extension CreateML.MLDataValue.ValueType : Swift.Hashable {}
 @available(OSX 10.15, *)

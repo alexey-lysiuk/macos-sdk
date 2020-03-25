@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from OSString.iig */
+/* iig(DriverKit-73.100.4) generated from OSString.iig */
 
-/* OSString.iig:1-59 */
+/* OSString.iig:1-40 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -41,6 +41,11 @@ typedef OSString OSSymbol;
 class OSData;
 
 
+/* source class OSString OSString.iig:41-161 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class OSString
  *
@@ -60,7 +65,114 @@ class OSData;
  * OSString is immutable.
  */
 
-/* class OSString OSString.iig:60-161 */
+class LOCALONLY OSString : public OSContainer
+{
+public:
+
+	// OSObject
+
+	virtual void
+	free() override;
+
+    /*!
+     * @brief       Compares the string with an OSObject
+     * @discussion  If the object is of class OSString, the result of isEqualTo(const OSString * aDataObj) is returned.
+     *              If the object is of class OSData, the result of isEqualTo(const OSData * aDataObj) is returned.
+     *              Otherwise false is returned.
+     * @param       anObject The object to compare with.
+     * @result      true iff the object is of class OSData or OSString and isEqualTo() returns true.
+     */
+	bool
+	isEqualTo(const OSMetaClassBase * anObject) const override;
+
+	// OSString
+
+    /*!
+     * @brief       Allocates an OSString object with a copy of a c-string.
+     * @param       cString Pointer to null terminated c-string. The string will be copied at the time of the call.
+     * @return      NULL on failure, otherwise the allocated OSString with reference count 1 to be released by the caller.
+     */
+	static OSStringPtr
+	withCString(const char * cString);
+
+    /*!
+     * @brief       Allocates an OSString object with a copy of a c-string, up to a given length.
+     * @param       cString Pointer to null terminated c-string. The string will be copied at the time of the call.
+     * @param       length Maximum length of the string to copy.
+     * @return      NULL on failure, otherwise the allocated OSString with reference count 1 to be released by the caller.
+     */
+	static OSStringPtr
+	withCString(const char * cString, size_t length);
+
+    /*!
+     * @brief       Allocates an OSString object with a copy of a c-string.
+     * @discussion  Allocates an OSString object with a copy of a c-string. A synonym for OSString::withCString() for compatibility with kernel code.
+     * @param       cString Pointer to null terminated c-string. The string will be copied at the time of the call.
+     * @return      NULL on failure, otherwise the allocated OSString with reference count 1 to be released by the caller.
+     */
+	static OSStringPtr
+	withCStringNoCopy(const char * cString);
+
+    /*!
+     * @brief       Allocates an OSString object with a copy of an OString object.
+     * @discussion  Allocates an OSString object with a copy of an OString object.
+     * @param       aString OSString object to copy from. The string will be copied at the time of the call.
+     * @return      NULL on failure, otherwise the allocated OSString with reference count 1 to be released by the caller.
+     */
+	static OSStringPtr
+	withString(const OSString * aString);
+
+    /*!
+     * @brief       Returns length of string not including null terminator.
+     * @return      length of data present.
+     */
+	size_t
+	getLength() const;
+
+    /*!
+     * @brief       Returns a pointer to the OSString object's internal data buffer.
+     * @return      A pointer to the string or NULL if the OSString has zero length. The string will be null terminated.
+     */
+	const char *
+	getCStringNoCopy() const;
+
+    /*!
+     * @brief       Compares the string with an OSString.
+     * @discussion  If the passed OSString object has the same length and all characters are identical, true is returned.
+     *              Otherwise false is returned.
+     * @param       aString The OSString to compare with.
+     * @result      true iff the two strings have the same length and characters.
+     */
+	bool
+	isEqualTo(const OSString * aString) const;
+
+    /*!
+     * @brief       Compares the string with a c-string.
+     * @discussion  If the passed c-string has the same length and all characters are identical to those in the OSString, true is returned.
+     *              Otherwise false is returned.
+     * @param       cString The c-string to compare with.
+     * @result      true iff the two strings have the same length and characters.
+     */
+	bool
+	isEqualTo(const char * cString) const;
+
+    /*!
+     * @brief       Compares the string with an OSData.
+     * @discussion  If the passed OSData object has the same length and all bytes are identical, true is returned.
+     *              If the passed OSData object has a length one byte greater than the OSString, all bytes are identical, and the last byte of the OSData is zero, true is returned.
+     *              Otherwise false is returned.
+     * @param       aDataObject The OSData to compare with.
+     * @result      true if the OSData and OSString contain the same c-string.
+     */
+	bool
+	isEqualTo(const OSData * aDataObject) const;
+
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class OSString OSString.iig:41-161 */
 
 
 #define OSString_Methods \
@@ -183,6 +295,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* OSString.iig:163- */
 

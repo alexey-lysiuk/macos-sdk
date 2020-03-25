@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from OSSerialization.iig */
+/* iig(DriverKit-73.100.4) generated from OSSerialization.iig */
 
-/* OSSerialization.iig:1-53 */
+/* OSSerialization.iig:1-38 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -39,6 +39,11 @@ typedef OSSerialization * OSSerializationPtr;
 
 typedef void (^OSSerializationFreeBufferHandler)(const void * buffer, size_t length);
 
+/* source class OSSerialization OSSerialization.iig:39-101 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class OSSerialization
  *
@@ -54,7 +59,60 @@ typedef void (^OSSerializationFreeBufferHandler)(const void * buffer, size_t len
  * it's up to the usage context to provide any protection necessary.
  */
 
-/* class OSSerialization OSSerialization.iig:54-101 */
+class LOCALONLY OSSerialization : public OSContainer
+{
+public:
+
+	// OSObject
+
+	virtual void
+	free() override;
+
+	// OSSerialization
+
+    /*!
+     * @brief       Allocates an OSSerialization object with the serialized data of an object.
+     * @discussion  Allocates an OSSerialization object with the serialized data of an object.
+     * @param       object Object to serialize. Only certain DriverKit classes may be serialized:
+	 *              OSData, OSString, OSNumber, OSBoolean, OSArray, OSDictionary.
+     * @return      NULL on failure, otherwise the allocated OSSerialization with reference count 1 to be released by the caller.
+     */
+	static OSSerializationPtr
+	createFromObject(const OSObjectPtr object);
+
+    /*!
+     * @brief       Allocates an OSSerialization object from the serialized data of a previous serialization.
+     * @discussion  Allocates an OSSerialization object from the serialized data of a previous serialization.
+     * @param       bytes The serialized data from a previous call to OSSerialization::finalizeBuffer().
+     * @param       length The length of the serialized data from a previous call to OSSerialization::finalizeBuffer().
+     * @param       freeBuffer A required block to be called when the OSSerialization is freed and the serialized data will no longer be accessed. Note that unserialized objects may retain the OSSerialization they were created from, so the OSSerialization will retain the data until they have been freed.
+     * @return      NULL on failure, otherwise the allocated OSSerialization with reference count 1 to be released by the caller.
+     */
+	static OSSerializationPtr
+	createFromBytes(const void * bytes, size_t length, OSSerializationFreeBufferHandler freeBuffer);
+
+    /*!
+     * @brief       Obtain the result of the deserialization performed by createFromBytes().
+     * @discussion  Obtain the result of the deserialization performed by createFromBytes().
+     * @return      NULL on failure, otherwise the allocated OSObject with reference count 1 to be released by the caller.
+     */
+	OSObjectPtr
+	copyObject();
+
+    /*!
+     * @brief       Obtain the result of the serialization performed by createFromObject().
+     * @discussion  Obtain the result of the serialization performed by createFromObject().
+     * @param       length The length of the serialization data.
+     * @return      NULL on failure, otherwise a pointer to the serialization data. It is valid only while the OSSerialization object is retained.
+     */
+	const void *
+	finalizeBuffer(size_t * length);
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class OSSerialization OSSerialization.iig:39-101 */
 
 
 #define OSSerialization_Methods \
@@ -154,6 +212,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* OSSerialization.iig:103- */
 

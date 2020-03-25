@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 928F575A-19A1-3E21-A1AD-7A24534EA777' ]
+uuids:           [ 'x86_64: B60D7E51-1EE9-3673-B957-0ABEB451A1D7' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftDemangle.dylib'
-current-version: 1100.8.255
+current-version: 1103.8.25
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __ZN5swift6Mangle10isNonAsciiEN4llvm9StringRefE, __ZN5swift6Mangle17translateOperatorEN4llvm9StringRefE, 
@@ -37,8 +37,8 @@ exports:
                        __ZN5swift8Demangle23nodeConsumesGenericArgsEPNS0_4NodeE, 
                        __ZN5swift8Demangle25isOldFunctionTypeManglingEN4llvm9StringRefE, 
                        __ZN5swift8Demangle32makeSymbolicMangledNameStringRefEPKc, 
-                       __ZN5swift8Demangle4Node13removeChildAtEjRNS0_11NodeFactoryE, 
-                       __ZN5swift8Demangle4Node15reverseChildrenEm, __ZN5swift8Demangle4Node8addChildEPS1_RNS0_11NodeFactoryE, 
+                       __ZN5swift8Demangle4Node13removeChildAtEj, __ZN5swift8Demangle4Node15reverseChildrenEm, 
+                       __ZN5swift8Demangle4Node8addChildEPS1_RNS0_11NodeFactoryE, 
                        __ZN5swift8Demangle6isEnumEN4llvm9StringRefE, __ZN5swift8Demangle7Context13getModuleNameEN4llvm9StringRefE, 
                        __ZN5swift8Demangle7Context13isThunkSymbolEN4llvm9StringRefE, 
                        __ZN5swift8Demangle7Context14getThunkTargetEN4llvm9StringRefE, 
@@ -54,15 +54,15 @@ exports:
                        __ZN5swift8Demangle9Demangler10changeKindEPNS0_4NodeENS2_4KindE, 
                        __ZN5swift8Demangle9Demangler10createTypeEPNS0_4NodeE, __ZN5swift8Demangle9Demangler10popContextEv, 
                        __ZN5swift8Demangle9Demangler11popProtocolEv, __ZN5swift8Demangle9Demangler11popTypeListEv, 
-                       __ZN5swift8Demangle9Demangler12demangleTypeEN4llvm9StringRefE, 
+                       __ZN5swift8Demangle9Demangler12demangleTypeEN4llvm9StringRefENSt3__18functionIFPNS0_4NodeENS0_21SymbolicReferenceKindENS0_10DirectnessEiPKvEEE, 
                        __ZN5swift8Demangle9Demangler13demangleIndexEv, __ZN5swift8Demangle9Demangler14demangleEntityENS0_4Node4KindE, 
-                       __ZN5swift8Demangle9Demangler14demangleSymbolEN4llvm9StringRefE, 
+                       __ZN5swift8Demangle9Demangler14demangleSymbolEN4llvm9StringRefENSt3__18functionIFPNS0_4NodeENS0_21SymbolicReferenceKindENS0_10DirectnessEiPKvEEE, 
                        __ZN5swift8Demangle9Demangler15createSwiftTypeENS0_4Node4KindEPKc, 
                        __ZN5swift8Demangle9Demangler15createWithChildENS0_4Node4KindEPS2_, 
                        __ZN5swift8Demangle9Demangler15demangleNaturalEv, __ZN5swift8Demangle9Demangler15demangleWitnessEv, 
                        __ZN5swift8Demangle9Demangler15popFunctionTypeENS0_4Node4KindE, 
-                       __ZN5swift8Demangle9Demangler16DemangleInitRAIIC1ERS1_N4llvm9StringRefE, 
-                       __ZN5swift8Demangle9Demangler16DemangleInitRAIIC2ERS1_N4llvm9StringRefE, 
+                       __ZN5swift8Demangle9Demangler16DemangleInitRAIIC1ERS1_N4llvm9StringRefENSt3__18functionIFPNS0_4NodeENS0_21SymbolicReferenceKindENS0_10DirectnessEiPKvEEE, 
+                       __ZN5swift8Demangle9Demangler16DemangleInitRAIIC2ERS1_N4llvm9StringRefENSt3__18functionIFPNS0_4NodeENS0_21SymbolicReferenceKindENS0_10DirectnessEiPKvEEE, 
                        __ZN5swift8Demangle9Demangler16DemangleInitRAIID1Ev, __ZN5swift8Demangle9Demangler16DemangleInitRAIID2Ev, 
                        __ZN5swift8Demangle9Demangler16demangleAccessorEPNS0_4NodeE, 
                        __ZN5swift8Demangle9Demangler16demangleMetatypeEv, __ZN5swift8Demangle9Demangler16demangleOperatorEv, 

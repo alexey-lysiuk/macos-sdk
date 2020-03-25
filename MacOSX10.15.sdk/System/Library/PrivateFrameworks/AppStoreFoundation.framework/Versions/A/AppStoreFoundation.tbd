@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6A28574B-4626-3C30-AC0F-1BC7423BD6AD', 'x86_64: 6A28574B-4626-3C30-AC0F-1BC7423BD6AD' ]
+uuids:           [ 'x86_64: F80BBF91-BF2A-3FE9-82EB-28AF0AC771AA', 'x86_64: F80BBF91-BF2A-3FE9-82EB-28AF0AC771AA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppStoreFoundation.framework/Versions/A/AppStoreFoundation'
 exports:         

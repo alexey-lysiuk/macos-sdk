@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EE0E3C4E-E2B9-33CF-8880-8C0B4F764147' ]
+uuids:           [ 'x86_64: 183B6654-A032-3CAA-9F41-A03A010EC473' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI'
 current-version: 415
@@ -233,10 +233,10 @@ exports:
                        iCloudAccountResponse, iCloudAccountsDetailsGeneral, iCloudAddFamilyInvitee, 
                        iCloudAddFamilyMember, iCloudFMIPAuthenticateRequest, iCloudFMIPAuthenticateResponse, 
                        iCloudFollowUpActionHandler, iCloudFollowUpSuggestion, iCloudHandleFLUI, 
-                       iCloudHomeService, iCloudLinkButton, iCloudLocHelper, iCloudMessagesService, 
-                       iCloudNameFormatter, iCloudNewsService, iCloudPurchaseStorageController, 
-                       iCloudRequester, iCloudSignInFlowController, iCloudSiriService, 
-                       iCloudStocksService, iCloudTouchBarController, iCloudUtilities ]
+                       iCloudHomeService, iCloudLinkButton, iCloudLocHelper, iCloudNameFormatter, 
+                       iCloudNewsService, iCloudPurchaseStorageController, iCloudRequester, 
+                       iCloudSignInFlowController, iCloudSiriService, iCloudStocksService, 
+                       iCloudTouchBarController, iCloudUtilities ]
     objc-ivars:      [ CastlePlugin._accountDetailsController, CastlePlugin._accountDetailsControllerNew, 
                        CastlePlugin._accountList, CastlePlugin._authenticationResults, 
                        CastlePlugin._mainWindow, CastlePlugin._notifyToken, CastlePlugin._provisionalAccount, 

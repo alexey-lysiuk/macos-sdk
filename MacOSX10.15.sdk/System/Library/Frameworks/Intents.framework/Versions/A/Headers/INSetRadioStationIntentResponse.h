@@ -2,7 +2,7 @@
 //  INSetRadioStationIntentResponse.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntentResponse.h>
@@ -15,12 +15,13 @@ typedef NS_ENUM(NSInteger, INSetRadioStationIntentResponseCode) {
     INSetRadioStationIntentResponseCodeFailure,
     INSetRadioStationIntentResponseCodeFailureRequiringAppLaunch,
     INSetRadioStationIntentResponseCodeFailureNotSubscribed,
-} API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos, macosx);
+} API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(macos, tvos) API_UNAVAILABLE(watchos);
 
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(10.0))
-API_UNAVAILABLE(watchos, macosx)
+API_UNAVAILABLE(macos, tvos)
+API_UNAVAILABLE(watchos)
 @interface INSetRadioStationIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;

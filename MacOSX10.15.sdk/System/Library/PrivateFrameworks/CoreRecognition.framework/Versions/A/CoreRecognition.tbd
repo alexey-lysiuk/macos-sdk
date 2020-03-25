@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 20434E08-FBA2-3FE6-A317-6F0A7AD1EB77' ]
+uuids:           [ 'x86_64: 9A06475D-9681-3887-BA93-91899AE04B1D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreRecognition.framework/Versions/A/CoreRecognition'
 current-version: 157

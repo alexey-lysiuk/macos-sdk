@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7BA6BC0A-C34B-30DF-85A6-739E9DB67838', 'x86_64: 7BA6BC0A-C34B-30DF-85A6-739E9DB67838' ]
+uuids:           [ 'x86_64: 373BD3A3-3308-366D-AF8A-A31B315ABD86', 'x86_64: 373BD3A3-3308-366D-AF8A-A31B315ABD86' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PersonalizationPortraitInternals.framework/Versions/A/PersonalizationPortraitInternals'
-current-version: 1052.14
+current-version: 1052.33
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PPCityNamesForContact, _PPCompactStringArrayAppendString, 
@@ -52,13 +52,14 @@ exports:
                        _PPMPortraitFeedbackTypeEngagedExplicit, _PPMPortraitFeedbackTypeEngagedImplicit, 
                        _PPMPortraitFeedbackTypeInvalid, _PPMPortraitFeedbackTypeOffered, 
                        _PPMPortraitFeedbackTypeRejectedExplicit, _PPMPortraitFeedbackTypeRejectedImplicit, 
-                       _PPMTopicAlgorithmContextKit, _PPMTopicAlgorithmHighLevelTopicExtraction, 
-                       _PPMTopicAlgorithmLookupHint, _PPMTopicAlgorithmNamedEntity, 
-                       _PPMTopicAlgorithmParsecDonation, _PPMTopicAlgorithmPhotosKnowledgeGraph, 
-                       _PPMTopicAlgorithmPodcastsInteraction, _PPMTopicAlgorithmSiriDonation, 
-                       _PPMTopicAlgorithmUnknown, _PPMTopicDonationErrorReasonContext, 
-                       _PPMTopicDonationErrorReasonDelete, _PPMTopicDonationErrorReasonDeleteBlacklist, 
-                       _PPMTopicDonationErrorReasonDonation, _PPMTopicDonationErrorReasonHTML, 
+                       _PPMTopicAlgorithmContextKit, _PPMTopicAlgorithmHealthKitImport, 
+                       _PPMTopicAlgorithmHighLevelTopicExtraction, _PPMTopicAlgorithmLookupHint, 
+                       _PPMTopicAlgorithmNamedEntity, _PPMTopicAlgorithmParsecDonation, 
+                       _PPMTopicAlgorithmPhotosKnowledgeGraph, _PPMTopicAlgorithmPodcastsInteraction, 
+                       _PPMTopicAlgorithmSiriDonation, _PPMTopicAlgorithmUnknown, 
+                       _PPMTopicDonationErrorReasonContext, _PPMTopicDonationErrorReasonDelete, 
+                       _PPMTopicDonationErrorReasonDeleteBlacklist, _PPMTopicDonationErrorReasonDonation, 
+                       _PPMTopicDonationErrorReasonHTML, _PPMTopicDonationErrorReasonUnknown, 
                        _PPMTopicDonationErrorReasonZeroSafariHTML, _PPMTopicDonationErrorReasonZeroSafariReader, 
                        _PPMTopicDonationErrorReasonZeroTopic, _PPMTopicDonationSourceMail, 
                        _PPMTopicDonationSourceNews, _PPMTopicDonationSourceSafari, 
@@ -253,8 +254,9 @@ exports:
                        PPM2TopicsScored._timeLimited, PPM2TopicsScored._timeSpec, 
                        PPM2TopicsScoredForMapping._bundleId, PPM2TopicsScoredForMapping._error, 
                        PPM2TopicsScoredForMapping._exclusionSpec, PPM2TopicsScoredForMapping._has, 
-                       PPM2TopicsScoredForMapping._mappingId, PPM2TopicsScoredForMapping._resultSizeLog10, 
-                       PPM2TopicsScoredForMapping._timeLimited, PPMeCardData.meContact, 
+                       PPM2TopicsScoredForMapping._limitHit, PPM2TopicsScoredForMapping._mappingId, 
+                       PPM2TopicsScoredForMapping._resultSizeLog10, PPM2TopicsScoredForMapping._timeLimited, 
+                       PPM2TopicsScoredForMapping._timeSpec, PPMeCardData.meContact, 
                        PPMockLocationGuardedData._locations, PPMutableFeaturedItem._countForAlgorithm, 
                        PPMutableFeaturedItem._rankCount, PPNamedEntityBlacklistGuardedData.caseInsensitiveExactMatchesLowercase, 
                        PPNamedEntityBlacklistGuardedData.caseSensitiveExactMatches, 

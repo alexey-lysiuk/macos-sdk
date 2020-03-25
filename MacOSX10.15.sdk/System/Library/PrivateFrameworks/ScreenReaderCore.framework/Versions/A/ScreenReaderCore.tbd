@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A3F2E39-9D9B-3D83-AD09-CC75061F1E32', 'x86_64: 1A3F2E39-9D9B-3D83-AD09-CC75061F1E32' ]
+uuids:           [ 'x86_64: DE6D442E-B10E-3CD6-89D3-4DB1F9097D86', 'x86_64: DE6D442E-B10E-3CD6-89D3-4DB1F9097D86' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ScreenReaderCore.framework/Versions/A/ScreenReaderCore'
 current-version: 390
@@ -16,12 +16,12 @@ exports:
                        _SCRCLinkRelationshipStringForType, _SCRCLogGestures, _SCRCLogInitializeWithKeys, 
                        _SCRCLogMaskAppleScript, _SCRCLogMaskBraille, _SCRCLogMaskBrailleAnnounce, 
                        _SCRCLogMaskBrailleVariant, _SCRCLogMaskBusySignal, _SCRCLogMaskConfiguration, 
-                       _SCRCLogMaskElement, _SCRCLogMaskElementHistory, _SCRCLogMaskError, 
-                       _SCRCLogMaskEvent, _SCRCLogMaskFindText, _SCRCLogMaskForKey, 
-                       _SCRCLogMaskGuide, _SCRCLogMaskHotSpot, _SCRCLogMaskInvalidElements, 
-                       _SCRCLogMaskKeyEcho, _SCRCLogMaskKeyNames, _SCRCLogMaskKeyboard, 
-                       _SCRCLogMaskKeyboardFocus, _SCRCLogMaskLocalization, _SCRCLogMaskMenu, 
-                       _SCRCLogMaskObserverDispatches, _SCRCLogMaskObserverRegistrations, 
+                       _SCRCLogMaskElement, _SCRCLogMaskElementHistory, _SCRCLogMaskElementRestoration, 
+                       _SCRCLogMaskError, _SCRCLogMaskEvent, _SCRCLogMaskFindText, 
+                       _SCRCLogMaskForKey, _SCRCLogMaskGuide, _SCRCLogMaskHotSpot, 
+                       _SCRCLogMaskInvalidElements, _SCRCLogMaskKeyEcho, _SCRCLogMaskKeyNames, 
+                       _SCRCLogMaskKeyboard, _SCRCLogMaskKeyboardFocus, _SCRCLogMaskLocalization, 
+                       _SCRCLogMaskMenu, _SCRCLogMaskObserverDispatches, _SCRCLogMaskObserverRegistrations, 
                        _SCRCLogMaskOutput, _SCRCLogMaskOutputCompact, _SCRCLogMaskOutputCompactWithBraille, 
                        _SCRCLogMaskOutputRequest, _SCRCLogMaskSpeechArbitration, 
                        _SCRCLogMaskSpeechMessages, _SCRCLogMaskSpeechSynthesisDaemonStatus, 

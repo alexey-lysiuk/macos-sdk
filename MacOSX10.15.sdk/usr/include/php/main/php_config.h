@@ -2296,7 +2296,7 @@
 /* #undef PHPDBG_DEBUG */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2019-09-11"
+#define PHP_BUILD_DATE "2020-02-29"
 
 /* Define if your system has fork/vfork/CreateProcess */
 #define PHP_CAN_SUPPORT_PROC_OPEN 1
@@ -2407,7 +2407,7 @@
 #define PHP_SIGCHILD 0
 
 /* uname -a output */
-#define PHP_UNAME "Darwin osx391.sd.apple.com 19.0 Darwin Kernel Version 18.0.0: Tue Jul 9 11:12:08 PDT 2019; root:xnu-4903.201.2.100.7~1/RELEASE_X86_64 x86_64"
+#define PHP_UNAME "Darwin osx310.apple.com 19.0 Darwin Kernel Version 18.0.0: Tue Jul 9 11:12:08 PDT 2019; root:xnu-4903.201.2.100.7~1/RELEASE_X86_64 x86_64"
 
 /* Whether PHP has to use its own crypt_r for blowfish, des and ext des */
 #define PHP_USE_PHP_CRYPT_R 1

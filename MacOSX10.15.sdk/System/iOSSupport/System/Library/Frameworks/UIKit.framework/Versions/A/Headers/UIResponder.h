@@ -151,6 +151,23 @@ UIKIT_EXTERN NSString *const UIKeyInputDownArrow       API_AVAILABLE(ios(7.0));
 UIKIT_EXTERN NSString *const UIKeyInputLeftArrow       API_AVAILABLE(ios(7.0));
 UIKIT_EXTERN NSString *const UIKeyInputRightArrow      API_AVAILABLE(ios(7.0));
 UIKIT_EXTERN NSString *const UIKeyInputEscape          API_AVAILABLE(ios(7.0));
+UIKIT_EXTERN NSString *const UIKeyInputPageUp          API_AVAILABLE(ios(8.0));
+UIKIT_EXTERN NSString *const UIKeyInputPageDown        API_AVAILABLE(ios(8.0));
+UIKIT_EXTERN NSString *const UIKeyInputHome            API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputEnd             API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF1              API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF1              API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF2              API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF3              API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF4              API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF5              API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF6              API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF7              API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF8              API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF9              API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF10             API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF11             API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+UIKIT_EXTERN NSString *const UIKeyInputF12             API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
 
 @interface UIResponder (ActivityContinuation) <UIUserActivityRestoring>
 @property (nullable, nonatomic, strong) NSUserActivity *userActivity API_AVAILABLE(ios(8.0));

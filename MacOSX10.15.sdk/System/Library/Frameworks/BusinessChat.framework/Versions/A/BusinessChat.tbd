@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9FFF3670-367F-34E6-AD8C-01B74081B6ED' ]
+uuids:           [ 'x86_64: 7400E4E1-CC66-3349-8C5A-8FA1B637A5C0' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/BusinessChat.framework/Versions/A/BusinessChat'
 exports:         

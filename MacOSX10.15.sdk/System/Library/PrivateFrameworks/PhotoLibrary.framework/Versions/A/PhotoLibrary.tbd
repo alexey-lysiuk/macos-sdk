@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 996F490A-6587-3A70-9072-650AA4E9AEF0' ]
+uuids:           [ 'x86_64: 253B3AF7-4F26-33A7-A37A-DADB114BABA3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotoLibrary.framework/Versions/A/PhotoLibrary'
-current-version: 111.16.180
+current-version: 141.19.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PHLIngestAssetMetadataPropertyKey, _PHLIngestAssetURLDataKey, 

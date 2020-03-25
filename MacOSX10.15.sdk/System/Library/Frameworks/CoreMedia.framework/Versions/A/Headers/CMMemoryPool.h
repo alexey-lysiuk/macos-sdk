@@ -51,6 +51,22 @@ CF_IMPLICIT_BRIDGING_ENABLED
 
 typedef struct CM_BRIDGED_TYPE(id) OpaqueCMMemoryPool *CMMemoryPoolRef API_AVAILABLE(macos(10.8), ios(6.0), tvos(9.0), watchos(6.0)); // a CF type; use CFRetain and CFRelease.
 
+/*!
+	@enum CMMemoryPool Errors
+	@discussion The errors returned from the CMMemoryPool APIs
+	@constant	kCMMemoryPoolError_AllocationFailed Returned when allocation of an internal data structure fails.
+	@constant	kCMMemoryPoolError_InvalidParameter Returned when an API parameter was NULL or otherwise invalid.
+*/
+#if COREMEDIA_USE_DERIVED_ENUMS_FOR_CONSTANTS
+enum : OSStatus
+#else
+enum
+#endif
+{
+	kCMMemoryPoolError_AllocationFailed		= -15490,
+	kCMMemoryPoolError_InvalidParameter		= -15491,
+} API_AVAILABLE(macos(10.8), ios(6.0), tvos(9.0), watchos(6.0));
+
 CM_EXPORT CFTypeID CMMemoryPoolGetTypeID(void)
 						API_AVAILABLE(macos(10.8), ios(6.0), tvos(9.0), watchos(6.0));
 

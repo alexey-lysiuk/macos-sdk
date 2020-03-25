@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8F140CD8-C7C8-3A88-AB8B-DC045E5D9A2E', 'x86_64: 8F140CD8-C7C8-3A88-AB8B-DC045E5D9A2E' ]
+uuids:           [ 'x86_64: A9153007-C6F7-3109-B1A9-482E8056DFCC', 'x86_64: A9153007-C6F7-3109-B1A9-482E8056DFCC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AXRuntime.framework/Versions/A/AXRuntime'
 exports:         
@@ -28,11 +28,12 @@ exports:
                        _AXObserverCreate, _AXObserverGetRunLoopSource, _AXObserverGetTypeID, 
                        _AXObserverRemoveNotification, _AXOverrideRequestingClientType, 
                        _AXPidSuspend, _AXPidUnsuspend, _AXPushNotificationToSystemForBroadcast, 
-                       _AXRequestingClient, _AXRuntimeIsAppleTV, _AXSerializeCFType, 
-                       _AXSerializeCFType3, _AXSerializeWrapper, _AXSetCurrentSerializationStyle, 
-                       _AXSetPipPid, _AXStringFromAXAttributedString, _AXTentativePidSuspend, 
-                       _AXUIAccessibilitySpeechAttributeLanguage, _AXUIAccessibilitySpeechAttributePhonemeSubstitution, 
-                       _AXUIAccessibilitySpeechAttributePitch, _AXUIAccessibilitySpeechAttributePoorMansPronunciationHelp, 
+                       _AXReadAllUtilitiesElementsToCombineForReadAll, _AXRequestingClient, 
+                       _AXRuntimeIsAppleTV, _AXSerializeCFType, _AXSerializeCFType3, 
+                       _AXSerializeWrapper, _AXSetCurrentSerializationStyle, _AXSetPipPid, 
+                       _AXStringFromAXAttributedString, _AXTentativePidSuspend, _AXUIAccessibilitySpeechAttributeLanguage, 
+                       _AXUIAccessibilitySpeechAttributePhonemeSubstitution, _AXUIAccessibilitySpeechAttributePitch, 
+                       _AXUIAccessibilitySpeechAttributePoorMansPronunciationHelp, 
                        _AXUIAccessibilitySpeechAttributePoorMansPronunciationHelpForMacintalk, 
                        _AXUIAccessibilitySpeechAttributePoorMansPronunciationHelpForNashville, 
                        _AXUIAccessibilitySpeechAttributePunctuation, _AXUIAccessibilitySpeechAttributeQueueAnnouncement, 
@@ -141,8 +142,8 @@ exports:
                        __AXXMIGRemoveNotification, __AXXMIGSetAttributeValue, __UIAXElementForAXUIElementRef, 
                        ___AXCreateAXUIElementWithElement, ___AXRuntimeApplicationElement, 
                        ___AXStringForVariables, ___AXStringForVariablesWithVariadics, 
-                       _gAXObserverLock, _gAXPortLock, _gAXSuspendedPidsLock, _gAXTimeoutProbationPidsLock, 
-                       _gSerializeBufferKey, _gSystemWideServerBroadcastRelayerCallback, 
+                       __doesElementFrame, _gAXObserverLock, _gAXPortLock, _gAXSuspendedPidsLock, 
+                       _gAXTimeoutProbationPidsLock, _gSerializeBufferKey, _gSystemWideServerBroadcastRelayerCallback, 
                        _gSystemWideServerBroadcastRelayerCallbackInfo, _kAXAccessibilityLoaded, 
                        _kAXAdjustableTrait, _kAXAlertTrait, _kAXAllowsDirectInteractionTrait, 
                        _kAXAllowsLayoutChangeInStatusBarTrait, _kAXAllowsNativeSlidingTrait, 
@@ -165,12 +166,11 @@ exports:
                        _kAXBookContentTrait, _kAXBundleIDKey, _kAXButtonTrait, _kAXCACCustomCommandDictionaryKey, 
                        _kAXCACCustomCommandIdentifierKey, _kAXCaptionsDisplayedTextRuns, 
                        _kAXCausesPageTurnTrait, _kAXContainedByFieldsetTrait, _kAXContainedByLandmarkTrait, 
-                       _kAXContainedByListTrait, _kAXContainedByTableTrait, _kAXCustomActionKeyIdentifier, 
-                       _kAXDeleteKeyTrait, _kAXDidFinishSpeakingAssistantNotification, 
-                       _kAXDraggableTrait, _kAXElementKey, _kAXFolderIconTrait, _kAXFooterTrait, 
-                       _kAXForceUpdateChangeToken, _kAXGesturePracticeRegionTrait, 
-                       _kAXHeaderTrait, _kAXIgnoreItemChooserTrait, _kAXImageTrait, 
-                       _kAXInactiveTrait, _kAXInsertTextActionKeyCreatesUndoableAction, 
+                       _kAXContainedByListTrait, _kAXContainedByTableTrait, _kAXDeleteKeyTrait, 
+                       _kAXDidFinishSpeakingAssistantNotification, _kAXDraggableTrait, 
+                       _kAXElementKey, _kAXFolderIconTrait, _kAXFooterTrait, _kAXForceUpdateChangeToken, 
+                       _kAXGesturePracticeRegionTrait, _kAXHeaderTrait, _kAXIgnoreItemChooserTrait, 
+                       _kAXImageTrait, _kAXInactiveTrait, _kAXInsertTextActionKeyCreatesUndoableAction, 
                        _kAXInsertTextActionKeySource, _kAXInsertTextActionKeyText, 
                        _kAXIsEditingTrait, _kAXKeyboardKeyTrait, _kAXLaunchIconTrait, 
                        _kAXLinkTrait, _kAXLookingGlassUID, _kAXMapTrait, _kAXMathEquationTrait, 

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreMIDI -swift-version 5 -O -enforce-exclusivity=unchecked -module-name CoreMIDI
 @_exported import CoreMIDI
 import Foundation
@@ -50,7 +50,7 @@ extension MIDIPacket {
     }
     public struct Iterator : Swift.IteratorProtocol {
       public init(_ s: CoreMIDI.MIDIPacket.ByteSequence)
-      mutating public func next() -> Swift.UInt8?
+      public mutating func next() -> Swift.UInt8?
       public typealias Element = Swift.UInt8
     }
     public typealias Element = Swift.UInt8
@@ -94,7 +94,7 @@ extension MIDIPacket {
   public class Builder {
     public var capacity: Swift.Int {
       get
-      }
+    }
     public init(maximumNumberMIDIBytes: Swift.Int)
     @objc deinit
     public var count: Swift.Int {
@@ -124,7 +124,7 @@ extension MIDIPacketList {
     }
     public struct Iterator : Swift.IteratorProtocol {
       public init(_ s: CoreMIDI.MIDIPacketList.UnsafeSequence)
-      mutating public func next() -> Swift.UnsafePointer<CoreMIDI.MIDIPacket>?
+      public mutating func next() -> Swift.UnsafePointer<CoreMIDI.MIDIPacket>?
       public typealias Element = Swift.UnsafePointer<CoreMIDI.MIDIPacket>
     }
     public typealias Element = Swift.UnsafePointer<CoreMIDI.MIDIPacket>
@@ -134,18 +134,18 @@ extension MIDIPacketList {
 public struct UnsafeMutableMIDIPacketListPointer : Swift.Sequence {
   public var listSizeInBytes: Swift.Int {
     get
-    }
+  }
   public var lastPacket: Swift.UnsafeMutablePointer<CoreMIDI.MIDIPacket>? {
     get
-    }
+  }
   public init(_ p: Swift.UnsafeMutablePointer<CoreMIDI.MIDIPacketList>, byteSize: Swift.Int)
   public init?(_ p: Swift.UnsafeMutablePointer<CoreMIDI.MIDIPacketList>?, byteSize: Swift.Int)
   public var count: Swift.Int {
     get
   }
-  mutating public func clear()
+  public mutating func clear()
   @discardableResult
-  mutating public func append(timestamp: CoreMIDI.MIDITimeStamp, data: [Swift.UInt8]) -> Swift.UnsafePointer<CoreMIDI.MIDIPacket>?
+  public mutating func append(timestamp: CoreMIDI.MIDITimeStamp, data: [Swift.UInt8]) -> Swift.UnsafePointer<CoreMIDI.MIDIPacket>?
   public func makeIterator() -> CoreMIDI.MIDIPacketList.UnsafeSequence.Iterator
   public typealias Element = Swift.UnsafePointer<CoreMIDI.MIDIPacket>
   public typealias Iterator = CoreMIDI.MIDIPacketList.UnsafeSequence.Iterator

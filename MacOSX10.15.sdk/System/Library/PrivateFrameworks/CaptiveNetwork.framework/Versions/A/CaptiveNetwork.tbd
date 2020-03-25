@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B269D416-A6B6-3865-A478-68EEB4A0FEE1', 'x86_64: B269D416-A6B6-3865-A478-68EEB4A0FEE1' ]
+uuids:           [ 'x86_64: 732B4EF4-1617-3099-88C6-4C676D29751B', 'x86_64: 732B4EF4-1617-3099-88C6-4C676D29751B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CaptiveNetwork.framework/Versions/A/CaptiveNetwork'
 exports:         

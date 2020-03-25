@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftAppKit -swift-version 5 -O -enforce-exclusivity=unchecked -module-name AppKit
 @_exported import AppKit
 import Foundation
@@ -99,21 +99,21 @@ public struct NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifier
   public func sectionIdentifier(containingItem identifier: ItemIdentifierType) -> SectionIdentifierType?
   public func indexOfItem(_ identifier: ItemIdentifierType) -> Swift.Int?
   public func indexOfSection(_ identifier: SectionIdentifierType) -> Swift.Int?
-  mutating public func appendItems(_ identifiers: [ItemIdentifierType], toSection sectionIdentifier: SectionIdentifierType? = nil)
-  mutating public func insertItems(_ identifiers: [ItemIdentifierType], beforeItem beforeIdentifier: ItemIdentifierType)
-  mutating public func insertItems(_ identifiers: [ItemIdentifierType], afterItem afterIdentifier: ItemIdentifierType)
-  mutating public func deleteItems(_ identifiers: [ItemIdentifierType])
-  mutating public func deleteAllItems()
-  mutating public func moveItem(_ identifier: ItemIdentifierType, beforeItem toIdentifier: ItemIdentifierType)
-  mutating public func moveItem(_ identifier: ItemIdentifierType, afterItem toIdentifier: ItemIdentifierType)
-  mutating public func reloadItems(_ identifiers: [ItemIdentifierType])
-  mutating public func appendSections(_ identifiers: [SectionIdentifierType])
-  mutating public func insertSections(_ identifiers: [SectionIdentifierType], beforeSection toIdentifier: SectionIdentifierType)
-  mutating public func insertSections(_ identifiers: [SectionIdentifierType], afterSection toIdentifier: SectionIdentifierType)
-  mutating public func deleteSections(_ identifiers: [SectionIdentifierType])
-  mutating public func moveSection(_ identifier: SectionIdentifierType, beforeSection toIdentifier: SectionIdentifierType)
-  mutating public func moveSection(_ identifier: SectionIdentifierType, afterSection toIdentifier: SectionIdentifierType)
-  mutating public func reloadSections(_ identifiers: [SectionIdentifierType])
+  public mutating func appendItems(_ identifiers: [ItemIdentifierType], toSection sectionIdentifier: SectionIdentifierType? = nil)
+  public mutating func insertItems(_ identifiers: [ItemIdentifierType], beforeItem beforeIdentifier: ItemIdentifierType)
+  public mutating func insertItems(_ identifiers: [ItemIdentifierType], afterItem afterIdentifier: ItemIdentifierType)
+  public mutating func deleteItems(_ identifiers: [ItemIdentifierType])
+  public mutating func deleteAllItems()
+  public mutating func moveItem(_ identifier: ItemIdentifierType, beforeItem toIdentifier: ItemIdentifierType)
+  public mutating func moveItem(_ identifier: ItemIdentifierType, afterItem toIdentifier: ItemIdentifierType)
+  public mutating func reloadItems(_ identifiers: [ItemIdentifierType])
+  public mutating func appendSections(_ identifiers: [SectionIdentifierType])
+  public mutating func insertSections(_ identifiers: [SectionIdentifierType], beforeSection toIdentifier: SectionIdentifierType)
+  public mutating func insertSections(_ identifiers: [SectionIdentifierType], afterSection toIdentifier: SectionIdentifierType)
+  public mutating func deleteSections(_ identifiers: [SectionIdentifierType])
+  public mutating func moveSection(_ identifier: SectionIdentifierType, beforeSection toIdentifier: SectionIdentifierType)
+  public mutating func moveSection(_ identifier: SectionIdentifierType, afterSection toIdentifier: SectionIdentifierType)
+  public mutating func reloadSections(_ identifiers: [SectionIdentifierType])
 }
 @available(OSX 10.15.1, *)
 extension NSDiffableDataSourceSnapshot : Swift._ObjectiveCBridgeable {
@@ -141,8 +141,8 @@ open class NSCollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentif
   @objc open func collectionView(_ collectionView: AppKit.NSCollectionView, itemForRepresentedObjectAt indexPath: Foundation.IndexPath) -> AppKit.NSCollectionViewItem
   @objc open func collectionView(_ collectionView: AppKit.NSCollectionView, viewForSupplementaryElementOfKind kind: AppKit.NSCollectionView.SupplementaryElementKind, at indexPath: Foundation.IndexPath) -> AppKit.NSView
   public func description() -> Swift.String
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 extension IndexPath {
   public init(item: Swift.Int, section: Swift.Int)

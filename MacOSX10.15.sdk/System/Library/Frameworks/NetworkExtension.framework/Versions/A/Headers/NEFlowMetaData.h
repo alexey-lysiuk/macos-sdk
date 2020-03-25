@@ -34,6 +34,12 @@ API_AVAILABLE(macos(10.11), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
  */
 @property (readonly, nullable) NSData *sourceAppAuditToken API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios, watchos, tvos);
 
+/*!
+ * @property filterFlowIdentifier
+ * @discussion The identifier of the content filter flow corresponding to this flow.
+ */
+@property (readonly, nullable) NSUUID *filterFlowIdentifier API_AVAILABLE(macos(10.15.4)) API_UNAVAILABLE(ios, watchos, tvos);
+
 @end
 
 NS_ASSUME_NONNULL_END

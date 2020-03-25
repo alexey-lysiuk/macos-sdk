@@ -58,6 +58,10 @@ API_UNAVAILABLE_BEGIN(ios)
 
 @property (nullable, copy) NSDate *maxDate;
 
+#pragma mark *** Calender Overlay Support ***
+
+@property BOOL presentsCalendarOverlay API_AVAILABLE(macos(10.15.4));
+
 #pragma mark *** Delegate ***
 
 @property (nullable, weak) id<NSDatePickerCellDelegate> delegate;

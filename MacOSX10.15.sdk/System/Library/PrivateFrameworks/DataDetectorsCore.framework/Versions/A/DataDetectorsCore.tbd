@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0E160ECD-98B5-3D9E-B155-0942A4B009A5', 'x86_64: 0E160ECD-98B5-3D9E-B155-0942A4B009A5' ]
+uuids:           [ 'x86_64: F7BA8B28-FD51-34A7-A423-63878638D00E', 'x86_64: F7BA8B28-FD51-34A7-A423-63878638D00E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore'
 current-version: 659

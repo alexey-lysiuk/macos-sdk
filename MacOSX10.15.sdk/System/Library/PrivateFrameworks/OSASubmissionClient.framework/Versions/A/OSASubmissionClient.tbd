@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 03D5EC52-4E5E-3F77-A65E-0E221875E240', 'x86_64: 03D5EC52-4E5E-3F77-A65E-0E221875E240' ]
+uuids:           [ 'x86_64: 61F10E49-508F-3359-BAD9-210D9FAD2FCB', 'x86_64: 61F10E49-508F-3359-BAD9-210D9FAD2FCB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/OSASubmissionClient.framework/Versions/A/OSASubmissionClient'
 exports:         

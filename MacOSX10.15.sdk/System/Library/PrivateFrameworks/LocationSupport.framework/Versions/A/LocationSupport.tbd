@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 088A87C4-E61C-37C0-A030-D104940F043B', 'x86_64: 088A87C4-E61C-37C0-A030-D104940F043B' ]
+uuids:           [ 'x86_64: F396B85A-34DB-3A32-9E88-28C2F3FCFCF1', 'x86_64: F396B85A-34DB-3A32-9E88-28C2F3FCFCF1' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/LocationSupport.framework/Versions/A/LocationSupport'
-current-version: 2388.0.21
+current-version: 2394.0.22
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CLISP_ME_TOKEN, _CLProfilingIdentify, _CLProfilingIdentifySiloInvocation, 

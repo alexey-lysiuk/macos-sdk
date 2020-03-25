@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CBC92F21-9CA6-38B3-B938-74DAD9F89676' ]
+uuids:           [ 'x86_64: 4D598C99-4249-3879-829C-4E0B374EE09B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AirPlayReceiver.framework/Versions/A/AirPlayReceiver'
 exports:         
@@ -121,6 +121,7 @@ exports:
                        _kAPReceiverUIControllerProperty_StatsCollector, _kAPReceiverUIControllerProperty_Volume, 
                        _kAirPlayReceiverServerOption_CheckDeviceActivation, _kAirPlayReceiverServerOption_DeviceID, 
                        _kAirPlayReceiverServerOption_DeviceName, _kAirPlayReceiverServerOption_DisplaySize, 
+                       _kAirPlayReceiverServerOption_ForcedDisabledFeaturesMask, 
                        _kAirPlayReceiverServerOption_SBufConsumer, _kAirPlayReceiverServerOption_UIControllerFunc, 
                        _kAirPlayReceiverServerOption_UseDynamicPort ]
     objc-classes:    [ AirPlayControllerServer ]

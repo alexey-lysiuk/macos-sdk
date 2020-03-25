@@ -2,17 +2,19 @@
 //  INDomainHandling.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntents.h>
 
 #if !TARGET_OS_WATCH
-API_DEPRECATED("Please conform to INStartAudioCallIntentHandling, INStartVideoCallIntentHandling and INSearchCallHistoryIntentHandling instead", ios(11.0, 13.0)) API_UNAVAILABLE(macosx)
+API_DEPRECATED("Please conform to INStartAudioCallIntentHandling, INStartVideoCallIntentHandling and INSearchCallHistoryIntentHandling instead", ios(11.0, 13.0))
+API_UNAVAILABLE(macos)
 @protocol INCallsDomainHandling <INStartAudioCallIntentHandling, INStartVideoCallIntentHandling, INSearchCallHistoryIntentHandling>
 @end
 #else
-API_DEPRECATED("Please conform to INStartAudioCallIntentHandling and INSearchCallHistoryIntentHandling instead", ios(10.0, 13.0), watchos(3.2, 6.0)) API_UNAVAILABLE(macosx)
+API_DEPRECATED("Please conform to INStartAudioCallIntentHandling and INSearchCallHistoryIntentHandling instead", ios(10.0, 13.0), watchos(3.2, 6.0))
+API_UNAVAILABLE(macos)
 @protocol INCallsDomainHandling <INStartAudioCallIntentHandling, INSearchCallHistoryIntentHandling>
 @end
 #endif

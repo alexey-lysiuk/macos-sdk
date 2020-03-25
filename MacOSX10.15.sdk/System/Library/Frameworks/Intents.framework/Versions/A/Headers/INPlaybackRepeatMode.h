@@ -2,7 +2,7 @@
 //  INPlaybackRepeatMode.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #ifndef INPlaybackRepeatMode_h
@@ -16,6 +16,6 @@ typedef NS_ENUM(NSInteger, INPlaybackRepeatMode) {
     INPlaybackRepeatModeNone,
     INPlaybackRepeatModeAll,
     INPlaybackRepeatModeOne,
-} API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macosx);
+} API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macos, tvos);
 
 #endif // INPlaybackRepeatMode_h

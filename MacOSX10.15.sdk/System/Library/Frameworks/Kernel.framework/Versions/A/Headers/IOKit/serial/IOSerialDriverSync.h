@@ -36,7 +36,11 @@
 
 #include <IOKit/IOService.h>
 
+#if defined(KERNEL) && !defined(KERNEL_PRIVATE)
+class __deprecated_msg("Use DriverKit") IOSerialDriverSync : public IOService
+#else
 class IOSerialDriverSync : public IOService
+#endif
 {
     OSDeclareAbstractStructors(IOSerialDriverSync);
 

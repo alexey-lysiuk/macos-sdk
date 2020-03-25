@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AD51E6E6-0601-3F72-84FF-6FD73F606E54', 'x86_64: AD51E6E6-0601-3F72-84FF-6FD73F606E54' ]
+uuids:           [ 'x86_64: 821F9BDA-991A-3B55-A7B4-9443163B6B71', 'x86_64: 821F9BDA-991A-3B55-A7B4-9443163B6B71' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsFoundation.framework/Versions/A/ContactsFoundation'
 exports:         
@@ -17,15 +17,15 @@ exports:
                        _CNDebugLog, _CNDefaultsCountryCodeKey, _CNDefaultsFilteredAccountsAndContainersKey, 
                        _CNDefaultsNewContactNameOrderFamilyNameFirst, _CNDefaultsNewContactNameOrderGivenNameFirst, 
                        _CNDefaultsNewContactNameOrderKey, _CNDefaultsSortingFormatKey, 
-                       _CNDispatchSemaphoreWait, _CNEitherIsLeft, _CNEitherIsRight, 
-                       _CNEitherLeft, _CNEitherRight, _CNEmailAddressExpandAliasedDomains, 
-                       _CNEmailAddressNormalize, _CNEmailAddressSafeUserVisible, 
-                       _CNEmptyStringIfNil, _CNFAAgeKey, _CNFAAltDSIDKey, _CNFAAppleIdKey, 
-                       _CNFADSIDKey, _CNFAFirstNameKey, _CNFAHasAskToBuyEnabledKey, 
-                       _CNFAHasLinkedITunesAccountKey, _CNFAHasParentalControlsEnabledKey, 
-                       _CNFAHashedDSIDKey, _CNFAITunesAccountDSIDKey, _CNFAITunesAccountUsernameKey, 
-                       _CNFAInviteEmailKey, _CNFAIsChildAccountKey, _CNFAIsMeKey, 
-                       _CNFAIsOrganizerKey, _CNFAIsParentKey, _CNFAJoinedDateKey, 
+                       _CNDispatchSemaphoreWait, _CNDowntimeWhitelistAllowed, _CNDowntimeWhitelistDisallowed, 
+                       _CNEitherIsLeft, _CNEitherIsRight, _CNEitherLeft, _CNEitherRight, 
+                       _CNEmailAddressExpandAliasedDomains, _CNEmailAddressNormalize, 
+                       _CNEmailAddressSafeUserVisible, _CNEmailAddressSanitize, _CNEmptyStringIfNil, 
+                       _CNFAAgeKey, _CNFAAltDSIDKey, _CNFAAppleIdKey, _CNFADSIDKey, 
+                       _CNFAFirstNameKey, _CNFAHasAskToBuyEnabledKey, _CNFAHasLinkedITunesAccountKey, 
+                       _CNFAHasParentalControlsEnabledKey, _CNFAHashedDSIDKey, _CNFAITunesAccountDSIDKey, 
+                       _CNFAITunesAccountUsernameKey, _CNFAInviteEmailKey, _CNFAIsChildAccountKey, 
+                       _CNFAIsMeKey, _CNFAIsOrganizerKey, _CNFAIsParentKey, _CNFAJoinedDateKey, 
                        _CNFALastNameKey, _CNFAMemberTypeAdult, _CNFAMemberTypeChild, 
                        _CNFAMemberTypeDisplayStringKey, _CNFAMemberTypeStringKey, 
                        _CNFAMemberTypeTeen, _CNFAMemberTypeUnknown, _CNFAStatusStringKey, 
@@ -94,10 +94,10 @@ exports:
                        CNDelaySubscriptionCancelationToken, CNDelegateInfo, CNDematerializeCancelationToken, 
                        CNDescriptionBuilder, CNDeviceFirstUnlock, CNDeviceFirstUnlockFuture, 
                        CNDictionaryPrimitiveUserDefaults, CNDispatchSource, CNEither, 
-                       CNEmailAddressScanner, CNEmailAddressUtilities, CNEntitlementVerifier, 
-                       CNEnumerateObjectsUsingBlockCancelationToken, CNEnvironment, 
-                       CNEqualsBuilder, CNFAccessAuthorization, CNFAuditToken, CNFamilyCircle, 
-                       CNFamilyCircleAccountSource, CNFamilyCircleConfigurationUpdateTask, 
+                       CNEmailAddressSanitizationTask, CNEmailAddressScanner, CNEmailAddressUtilities, 
+                       CNEntitlementVerifier, CNEnumerateObjectsUsingBlockCancelationToken, 
+                       CNEnvironment, CNEqualsBuilder, CNFAccessAuthorization, CNFAuditToken, 
+                       CNFamilyCircle, CNFamilyCircleAccountSource, CNFamilyCircleConfigurationUpdateTask, 
                        CNFamilyMember, CNFileManager, CNFileServices, CNFileUtilities, 
                        CNFlatMapSubscribeCancelationToken, CNFlatMapSubscribeInnerObservableCancelationToken, 
                        CNFoundationError, CNFoundationSocialProfile, CNFoundationUserDefaults, 

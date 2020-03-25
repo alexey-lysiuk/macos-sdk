@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 74BD32C1-7278-32B0-8AF8-EA5749EE5A6F' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/AudioTransportCommon.framework/Versions/A/AudioTransportCommon'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AudioTransportCommonVersionNumber, _AudioTransportCommonVersionString ]
+    objc-classes:    [ ATCIOA2Device, ATCIOA2Stream, ATCIOA2StreamFormat ]
+...

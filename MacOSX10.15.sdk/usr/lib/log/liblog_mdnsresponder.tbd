@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A05FBA99-73DD-3D2C-BCC9-AA9E13169D0B' ]
+uuids:           [ 'x86_64: 39EF66DA-D940-3A5B-A076-CC9FFD4DCB03' ]
 platform:        macosx
 install-name:    '/usr/lib/log/liblog_mdnsresponder.dylib'
 exports:         

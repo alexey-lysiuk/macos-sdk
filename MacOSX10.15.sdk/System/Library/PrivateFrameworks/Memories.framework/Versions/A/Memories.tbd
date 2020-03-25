@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D5E58768-311C-36A6-B189-C4CD6EFEE69E' ]
+uuids:           [ 'x86_64: DEA45A6D-911D-392B-B398-4C1B92A97403' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Memories.framework/Versions/A/Memories'
 exports:         

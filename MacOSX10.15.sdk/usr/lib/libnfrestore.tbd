@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 18CEA47C-5049-3143-A6E9-C1D25B64EFB1' ]
+uuids:           [ 'x86_64: DAC42BF2-4626-33A4-BFAC-7436F6982997' ]
 platform:        macosx
 install-name:    '/usr/lib/libnfrestore.dylib'
 exports:         

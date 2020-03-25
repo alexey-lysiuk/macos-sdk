@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A3A6ACF-0B82-3A5D-8D0C-CEBA233A88DB', 'x86_64: 1A3A6ACF-0B82-3A5D-8D0C-CEBA233A88DB' ]
+uuids:           [ 'x86_64: 21063E0E-58AA-3C59-8167-61349D5D3CFF', 'x86_64: 21063E0E-58AA-3C59-8167-61349D5D3CFF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SPFinder.framework/Versions/A/SPFinder'
 exports:         

@@ -33,7 +33,9 @@ API_AVAILABLE(ios(12.0))
 API_UNAVAILABLE(watchos, macosx, tvos)
 IB_DESIGNABLE @interface INUIAddVoiceShortcutButton : UIButton
 
-- (instancetype)initWithStyle:(INUIAddVoiceShortcutButtonStyle)style API_UNAVAILABLE(macCatalyst);
+- (instancetype)initWithStyle:(INUIAddVoiceShortcutButtonStyle)style NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
 @property (nonatomic, readonly) INUIAddVoiceShortcutButtonStyle style;
 

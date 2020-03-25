@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 415AAD69-0A45-3B21-9698-D8798A48E5A2', 'x86_64: 415AAD69-0A45-3B21-9698-D8798A48E5A2' ]
+uuids:           [ 'x86_64: 7289AEE6-C577-3D89-A99E-98551218EB7D', 'x86_64: 7289AEE6-C577-3D89-A99E-98551218EB7D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GraphVisualizer.framework/Versions/A/GraphVisualizer'
 current-version: 0

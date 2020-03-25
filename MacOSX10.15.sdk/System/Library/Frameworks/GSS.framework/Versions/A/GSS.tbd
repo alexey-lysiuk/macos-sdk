@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A149061D-5893-35B5-AE7F-BA889DFEADB2', 'x86_64: A149061D-5893-35B5-AE7F-BA889DFEADB2' ]
+uuids:           [ 'x86_64: 16DE732E-4A48-3C8A-BD61-8AF810F3A48C', 'x86_64: 16DE732E-4A48-3C8A-BD61-8AF810F3A48C' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/GSS.framework/Versions/A/GSS'
 exports:         

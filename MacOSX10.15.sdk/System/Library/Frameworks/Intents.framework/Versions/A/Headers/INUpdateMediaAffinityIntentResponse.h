@@ -2,7 +2,7 @@
 //  INUpdateMediaAffinityIntentResponse.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntentResponse.h>
@@ -14,12 +14,12 @@ typedef NS_ENUM(NSInteger, INUpdateMediaAffinityIntentResponseCode) {
     INUpdateMediaAffinityIntentResponseCodeSuccess,
     INUpdateMediaAffinityIntentResponseCodeFailure,
     INUpdateMediaAffinityIntentResponseCodeFailureRequiringAppLaunch,
-} API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+} API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macos, tvos);
 
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INUpdateMediaAffinityIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;

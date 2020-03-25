@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5FB17928-EB0D-3C46-B078-7B9621261385', 'x86_64: 5FB17928-EB0D-3C46-B078-7B9621261385' ]
+uuids:           [ 'x86_64: 55EACF17-86EA-3F6E-A2CF-AF2F08C5F295', 'x86_64: 55EACF17-86EA-3F6E-A2CF-AF2F08C5F295' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI'
-current-version: 607
+current-version: 609.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CSIEqualMetrics, _CSIIllegalMetrics, _CUIBlendModeDescriptionFromCGBlendMode, 
@@ -27,12 +27,13 @@ exports:
                        _CUIEdgeInsetsMake, _CUIEdgeInsetsOutsetRect, _CUIEdgeInsetsToCGRect, 
                        _CUIEdgeInsetsValid, _CUIEdgeInsetsZero, _CUIEffectBevelStyleDescription, 
                        _CUIEffectBlendModeDescription, _CUIEqualRenditionKeys, _CUIEqualRenditionKeysIgnoringAttribute, 
-                       _CUIExists, _CUIFillCARKeyArrayForRenditionKey, _CUIFillRenditionKeyForCARKeyArray, 
-                       _CUIGetChannelDataForImage, _CUIGetCustomFontSize, _CUIGetDebugValue, 
-                       _CUIGetDeviceArtworkDisplayGamut, _CUIGetFormatForFeatureSetAndPixelFormat, 
-                       _CUIGetRGBAImageBuffer, _CUIHitTest, _CUIImageCompressedWithColorQuantization, 
-                       _CUIImageIsMonochrome, _CUIImageIsWideGamut, _CUIKeyFormatToArrayString, 
-                       _CUILogLogToStderr, _CUIMaxDimensionForVectorGlyph, _CUIMaxScaleForTargetPlatform, 
+                       _CUIExists, _CUIFillCARKeyArrayForRenditionKey, _CUIFillCARKeyArrayForRenditionKey2, 
+                       _CUIFillRenditionKeyForCARKeyArray, _CUIGetChannelDataForImage, 
+                       _CUIGetCustomFontSize, _CUIGetDebugValue, _CUIGetDeviceArtworkDisplayGamut, 
+                       _CUIGetFormatForFeatureSetAndPixelFormat, _CUIGetRGBAImageBuffer, 
+                       _CUIHitTest, _CUIImageCompressedWithColorQuantization, _CUIImageIsMonochrome, 
+                       _CUIImageIsWideGamut, _CUIKeyFormatToArrayString, _CUILogLogToStderr, 
+                       _CUIMaxDimensionForVectorGlyph, _CUIMaxScaleForTargetPlatform, 
                        _CUIMinDimensionForVectorGlyph, _CUIMinScaleForTargetPlatform, 
                        _CUIParseDeploymentTarget, _CUIPlaceHolderRendition, _CUIPlatformNameForPlatform, 
                        _CUIPointSizeForDimensionForVectorGlyph, _CUIRendererCopyProperties, 

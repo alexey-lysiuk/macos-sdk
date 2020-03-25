@@ -9,9 +9,9 @@
 # information.
 #
 
-VERSION="2.3.0"
+VERSION="2.3.1"
 APIVERSION="2.3"
-BUILD="cups-483"
+BUILD="cups-483.6"
 
 prefix=/
 exec_prefix=/usr

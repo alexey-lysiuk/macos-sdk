@@ -321,7 +321,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  
  @param         resourceType    The FHIR resource type.
  */
-+ (NSPredicate *)predicateForClinicalRecordsWithFHIRResourceType:(HKFHIRResourceType)resourceType API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
++ (NSPredicate *)predicateForClinicalRecordsWithFHIRResourceType:(HKFHIRResourceType)resourceType API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
 
 /*!
  @method        predicateForClinicalRecordsFromSource:withFHIRResourceType:identifier:
@@ -334,7 +334,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  */
 + (NSPredicate *)predicateForClinicalRecordsFromSource:(HKSource *)source
                                       FHIRResourceType:(HKFHIRResourceType)resourceType
-                                            identifier:(NSString *)identifier API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
+                                            identifier:(NSString *)identifier API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
 
 @end
 

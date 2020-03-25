@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D3478ED9-A757-355F-A4A0-464E133182D6', 'x86_64: D3478ED9-A757-355F-A4A0-464E133182D6' ]
+uuids:           [ 'x86_64: 3FAF1700-F7D4-3F92-88AA-A3920702B8BB', 'x86_64: 3FAF1700-F7D4-3F92-88AA-A3920702B8BB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/LanguageModeling.framework/Versions/A/LanguageModeling'
-current-version: 215
+current-version: 215.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LMCreateMontrealIDsFromLMTokenIDSequence, _LMEnumerateAssetDataItems, 

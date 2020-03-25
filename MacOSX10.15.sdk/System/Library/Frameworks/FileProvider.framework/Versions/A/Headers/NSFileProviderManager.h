@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  The class also provides methods to manage provider domains. Each domain has a
  corresponding manager.
  */
-API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
+FILEPROVIDER_API_AVAILABILITY_V2
 @interface NSFileProviderManager : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -78,24 +78,6 @@ Return the manager responsible for the default domain.
  */
 - (void)registerURLSessionTask:(NSURLSessionTask *)task forItemWithIdentifier:(NSFileProviderItemIdentifier)identifier completionHandler:(void (^)(NSError * __nullable error))completion;
 
-/**
- Return the user visible URL for an item identifier.
-
- Calling this method marks the calling process in such a way that accessing
- files will not trigger materialization; instead, accesses to unmd
- files will fail with EDEADLK.
- */
-- (void)getUserVisibleURLForItemIdentifier:(NSFileProviderItemIdentifier)itemIdentifier completionHandler:(void (^)(NSURL * __nullable userVisibleFile, NSError * __nullable error))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst) NS_SWIFT_NAME(getUserVisibleURL(for:completionHandler:));
-
-
-/**
- Return the identifier and domain for a user visible URL.
-
- This method returns the identifier and domain of a user visible URL if
- applicable. Calling this method on a file which doesn't reside in your
- provider/domain will return the Cocoa error NSFileNoSuchFileError.
- */
-+ (void)getIdentifierForUserVisibleFileAtURL:(NSURL *)url completionHandler:(void (^)(NSFileProviderItemIdentifier __nullable itemIdentifier, NSFileProviderDomainIdentifier __nullable domainIdentifier, NSError * __nullable error))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 
 
@@ -167,132 +149,6 @@ Return the manager responsible for the default domain.
  Remove all registered domains.
  */
 + (void)removeAllDomainsWithCompletionHandler:(void(^)(NSError *_Nullable error))completionHandler;
-
-@end
-
-@interface NSFileProviderManager (Import)
-
-/** Request the creation of a new domain that will take ownership of on-disk data that
- were previously managed without a file provider.
-
- You can use this method in order to migrate from a software that managed a file hierarchy
- on disk to a NSFileProviderExtension without having to redownload the data that was
- already on disk.
-
- The URL is expected to point to a directory. That directory will be moved away, its
- ownership being taken by the system. From this point, your extension's
- createItemFromTemplate method will be called for every item found in the directory
- with the special NSFileProviderCreateItemOptionsItemMayAlreadyExist option.
-
- In case a domain with the same name already exists in the file provider manager, the
- call will fail with the code NSFileWriteFileExistsError. The URL will remain untouched.
- In case the system does not allow the extension to request a migration, the call will
- fail with NSFeatureUnsupportedError.
-
- In case of success, the URL will become invalid and the domain will be created. The
- completion handler is called as soon as the domain is created. Your provider will
- receive calls to createItemBasedOnTemplate afterward.
-
- When the import of the file hierarchy is finished, the system calls
- -[NSFileProviderExtension signalDidFinishImportingItemsFromDiskWithCompletionHandler:].
- In case -[NSFileProviderManager reimportItemsBelowItemWithIdentifier:completionHandler:]
- is called before the end of the import, a single call to importDidFinishWithCompletionHandler
- will be received for both the import and the scan.
- */
-+ (void)importDomain:(NSFileProviderDomain *)domain fromDirectoryAtURL:(NSURL *)url completionHandler:(void(^)(NSError * _Nullable error))completionHandler
-API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
-
-/** Notify the system that the itemIdentifiers known by the system are not valid anymore.
-
- This can be called by an extension in case it has lost track of its synchronisation state
- and as a consequence is not able to guarantee the stability of the itemIdentifiers anymore.
- In that case, the system will trigger a scan of any data that is cached on disk and call
- createItemBasedOnTemplate with the special NSFileProviderCreateItemOptionsItemMayAlreadyExist
- option so that the extension can specify the new itemIdentifier for those items. The provided
- item identifier is inclusive, meaning the specified item will be re-import as well as any
- children in case it is a container.
-
- In case the extension has lost its synchronisation state but is still able to guarantee the
- stability of the itemIdentifiers, it should make sure that querying the working set
- enumerator with an anchor that predates the synchronisation loss will cause a
- NSFileProviderErrorSyncAnchorExpired error.
-
- In case the extension has lost its synchronisation state and is not interested in preserving
- the data cached on disk, it can remove and re-add the affected domain.
-
- The completion handler is called immediately and does not reflect the end of the import.
- When the import of the file hierarchy is finished, the system calls
- -[NSFileProviderExtension importDidFinishWithCompletionHandler:].
-
- If this method succeeds, the system will reimport at least the requested sub-tree, but may
- import more.
-
- If the requested item has no on-disk representation, the completion handler will be called with
- a NSFileProviderErrorNoSuchItem error.
- */
-- (void)reimportItemsBelowItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
-                           completionHandler:(void (^)(NSError * _Nullable error))completionHandler
-    NS_SWIFT_NAME(reimportItems(below:completionHandler:))
-    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
-
-@end
-
-/**
- Policy regarding download and caching of an item by the system.
- */
-typedef NS_ENUM(NSUInteger, NSFileProviderDownloadPolicy) {
-    /**
-     By default, files are downloaded on demand (e.g. when explicitely open by
-     the user) and may be evicted when needed (e.g. on low disk pressure.)
-     */
-    NSFileProviderDownloadPolicyDefault = 0,
-
-    /**
-     Download this item when appropriate, minding shared resources like
-     available disk space.
-
-     Set this policy on files that are likely to be needed by the user in the
-     near future.
-     */
-    NSFileProviderDownloadPolicySpeculative = 1,
-
-    /**
-     Download this item and keep it downloaded forever.
-
-     This policy applies recursively to all the items in a directory.
-     Set this policy only on files that the user must keep locally available for
-     offline use; abusing this policy causes shared resources like availabe disk
-     space to run out.
-     */
-    NSFileProviderDownloadPolicyKeepDownloaded = 2,
-} API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
-
-@interface NSFileProviderManager (DownloadAndEviction)
-
-/**
- Trigger a download or change the download policy.
- See the documentation on the download policies for details.
-
- The completion handler is called to acknowledge the change of policy: the
- actual downloads are scheduled asynchronously when appropriate.
- */
-- (void)setDownloadPolicy:(NSFileProviderDownloadPolicy)downloadPolicy
-    forItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
-        completionHandler:(void (^)(NSError * _Nullable))completionHandler
-    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
-
-/**
- Request that the system removes an item from its cache.
-
- This removes the contents of a file, or the metadata and contents of all the
- files in a directory.  It resets the download policies of all the evicted
- items back to the default policy.
-
- The completion handler is called when the item has been evicted from disk.
- */
-- (void)evictItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
-              completionHandler:(void (^)(NSError * _Nullable))completionHandler
-    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 

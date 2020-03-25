@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BA79ECC-9589-32F9-9B13-51458A7DCCBB' ]
+uuids:           [ 'x86_64: 8D9C6E42-482E-34B5-9942-C37B04F4ED6F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPURawCounter.framework/Versions/A/GPURawCounter'
 current-version: 12.1

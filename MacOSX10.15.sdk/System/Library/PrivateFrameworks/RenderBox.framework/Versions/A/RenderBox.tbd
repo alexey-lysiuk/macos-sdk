@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9E9694E7-D565-3181-8E86-C80513E78FFB', 'x86_64: 9E9694E7-D565-3181-8E86-C80513E78FFB' ]
+uuids:           [ 'x86_64: 4D7922D5-31F4-36EA-B3CB-C1A00B7EF2BD', 'x86_64: 4D7922D5-31F4-36EA-B3CB-C1A00B7EF2BD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RenderBox.framework/Versions/A/RenderBox'
 exports:         
@@ -9,8 +9,8 @@ exports:
                        _RBColorFromLinear, _RBColorMake, _RBColorMakeLinear, _RBColorToLinear, 
                        _RBColorWhite, _RBImageMakeCGImage, _RBImageMakeIOSurface, 
                        _RBImageMakeRBSurface, _RBImageSimpleTransform, _RBImageTransform, 
-                       _RBStrokeBoundingRect, _RBTiledImageTransform, _RBXMLParserLinearColors, 
-                       _RBXMLRecorderStart, _RBXMLRecorderStop ]
+                       _RBStrokeBoundingRect, _RBTiledImageTransform, _RBXMLParserErrorDomain, 
+                       _RBXMLParserLinearColors, _RBXMLRecorderStart, _RBXMLRecorderStop ]
     objc-classes:    [ RBDevice, RBDisplayList, RBDrawable, RBFill, RBLayer, RBShape, 
                        RBStrokeAccumulator, RBSurface, RBXMLParser ]
     objc-ivars:      [ RBFill._data ]

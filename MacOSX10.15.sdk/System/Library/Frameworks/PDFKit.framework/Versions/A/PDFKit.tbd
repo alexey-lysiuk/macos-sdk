@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 871F915A-FC4C-3681-86BE-4CB3FEB43321' ]
+uuids:           [ 'x86_64: 8C1A9D1F-8563-3563-A44B-2168F1BBC73B' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/PDFKit.framework/Versions/A/PDFKit'
 exports:         

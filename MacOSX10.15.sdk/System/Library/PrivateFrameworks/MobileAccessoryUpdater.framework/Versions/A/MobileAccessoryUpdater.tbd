@@ -1,8 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1C274DE8-0155-3442-9FC0-AAAE7CB000D7' ]
+uuids:           [ 'x86_64: AE9AFDF5-7C95-302A-930B-DFA6EC5E6938' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/Versions/A/MobileAccessoryUpdater'
+current-version: 0
+compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _FUDError, _FudLog, _FudLogCopyMessages, _FudLogInit, _FudLogSetMode, 
@@ -14,13 +16,13 @@ exports:
                        _kMAU_STEP_END, _kMAU_STEP_FIND, _kMAU_STEP_FINISH, _kMAU_STEP_PREPARE, 
                        _metadataTLVGetNext, _objectFinalizer, _objectFromXpcDictionary, 
                        _parseSuperBinaryAndPayloadHeaders, _parseSuperBinaryHeader, 
-                       _parseUInt16, _parseUInt32, _printSuperBinaryHeader, _sendMessageToExternalClient, 
-                       _sendMessageToInternalClient, _sendReplyMessageToClient, _sendReplyMessageToExternalClient, 
+                       _printSuperBinaryHeader, _sendMessageToExternalClient, _sendMessageToInternalClient, 
+                       _sendReplyMessageToClient, _sendReplyMessageToExternalClient, 
                        _sendReplyMessageToInternalClient, _unarchivedKeyedObject, 
                        _updateSuperBinaryPayload ]
-    objc-classes:    [ AUDAccessory, FudInternalConnection, FudPersonalizationObjectInfo, 
-                       FudPersonalizationRequest, FudProgressWeights, FudXPCConnection, 
-                       MobileAccessoryUpdater ]
+    objc-classes:    [ AUDAccessory, AUServiceAdapter, AUServiceManager, FudInternalConnection, 
+                       FudPersonalizationObjectInfo, FudPersonalizationRequest, FudProgressWeights, 
+                       FudXPCConnection, MobileAccessoryUpdater, ServiceDelegate ]
     objc-ivars:      [ FudInternalConnection.clientIdentifier, FudInternalConnection.didStop, 
                        FudInternalConnection.handlerQueue, FudInternalConnection.messageHandler, 
                        FudInternalConnection.pendingRequests, FudProgressWeights.applyWeight, 

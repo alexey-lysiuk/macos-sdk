@@ -362,7 +362,7 @@ __WATCHOS_PROHIBITED
 __TVOS_PROHIBITED
 kern_return_t host_set_atm_diagnostic_flag
 (
-	host_priv_t host_priv,
+	host_t host,
 	uint32_t diagnostic_flag
 );
 

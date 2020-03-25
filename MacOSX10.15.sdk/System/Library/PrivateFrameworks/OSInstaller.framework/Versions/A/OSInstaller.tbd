@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EA268CE4-1D76-3568-9D11-7A3FB03FD92B' ]
+uuids:           [ 'x86_64: 36064F32-5717-389B-AA52-9902B316A7D0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OSInstaller.framework/Versions/A/OSInstaller'
 current-version: 660

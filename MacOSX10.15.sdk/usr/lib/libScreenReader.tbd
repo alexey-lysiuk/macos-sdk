@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 959C097C-73C6-34DE-9CE4-70E1D4255F8D' ]
+uuids:           [ 'x86_64: 31A0D56A-9CE7-3310-A7E9-CAC7C560826D' ]
 platform:        macosx
 install-name:    '/usr/lib/libScreenReader.dylib'
 exports:         

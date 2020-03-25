@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C146C9B4-24A0-3E83-A113-49C5A52FFBAB', 'x86_64: C146C9B4-24A0-3E83-A113-49C5A52FFBAB' ]
+uuids:           [ 'x86_64: D0BBF165-5E27-32CF-8851-471F4E9D332A', 'x86_64: D0BBF165-5E27-32CF-8851-471F4E9D332A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PodcastServices.framework/Versions/A/PodcastServices'
 exports:         

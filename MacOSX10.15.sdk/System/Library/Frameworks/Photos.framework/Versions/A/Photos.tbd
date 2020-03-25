@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 00525EF1-0B59-3E13-AB25-C8F9136B4648', 'x86_64: 00525EF1-0B59-3E13-AB25-C8F9136B4648' ]
+uuids:           [ 'x86_64: AFF99674-06C7-3B99-8CEA-CDAEB94FDC16', 'x86_64: AFF99674-06C7-3B99-8CEA-CDAEB94FDC16' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Photos.framework/Versions/A/Photos'
-current-version: 111.16.180
+current-version: 141.19.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromPHErrorCode, _PHAdjustmentBaseVersionDescription, 
@@ -16,12 +16,12 @@ exports:
                        _PHAssetCollectionReferenceType, _PHAssetDeferredProcessingNeededDescription, 
                        _PHAssetExportRequestAdjustmentBaseFullSizePhotoURLKey, _PHAssetExportRequestAdjustmentBasePairedVideoURLKey, 
                        _PHAssetExportRequestAdjustmentBaseVideoURLKey, _PHAssetExportRequestAdjustmentDataFileURLKey, 
-                       _PHAssetExportRequestAlternatePhotoURLKey, _PHAssetExportRequestCopyFileURL, 
-                       _PHAssetExportRequestCreateOutputDirectory, _PHAssetExportRequestCustomAccessibilityLabelForAsset, 
-                       _PHAssetExportRequestCustomDateForAssetWithOptions, _PHAssetExportRequestError, 
-                       _PHAssetExportRequestErrorDomain, _PHAssetExportRequestFilenameForAsset, 
-                       _PHAssetExportRequestFullSizePhotoURLKey, _PHAssetExportRequestFullSizeVideoURLKey, 
-                       _PHAssetExportRequestLocationMetadataOperationForAssetWithOptions, 
+                       _PHAssetExportRequestAlternatePhotoURLKey, _PHAssetExportRequestAssetAvailabilityDescription, 
+                       _PHAssetExportRequestCopyFileURL, _PHAssetExportRequestCreateOutputDirectory, 
+                       _PHAssetExportRequestCustomAccessibilityLabelForAsset, _PHAssetExportRequestCustomDateForAssetWithOptions, 
+                       _PHAssetExportRequestError, _PHAssetExportRequestErrorDomain, 
+                       _PHAssetExportRequestFilenameForAsset, _PHAssetExportRequestFullSizePhotoURLKey, 
+                       _PHAssetExportRequestFullSizeVideoURLKey, _PHAssetExportRequestLocationMetadataOperationForAssetWithOptions, 
                        _PHAssetExportRequestMediaFormatConversionManager, _PHAssetExportRequestNeedsColorSpaceConversionForAssetWithOptions, 
                        _PHAssetExportRequestNeedsCustomAccessibilityLabelBakedInForAssetWithOptions, 
                        _PHAssetExportRequestOriginalAdjustmentDataFileURLKey, _PHAssetExportRequestPerformMediaConversion, 
@@ -51,6 +51,8 @@ exports:
                        _PHBatchFetchingArrayFetchedObjectClassOptionKey, _PHBatchFetchingArrayPropertyHintOptionKey, 
                        _PHChooserListContinueEnumerating, _PHChooserListMoveFirst, 
                        _PHChooserListSetSortDescriptor, _PHChoosingPolicyName, _PHCollectionListReferenceType, 
+                       _PHCollectionPresentationHintsStringFromQualityCategory, _PHCollectionPresentationHintsStringFromTemporalRange, 
+                       _PHCollectionPresentationHintsStringFromTripType, _PHCollectionPresentationHintsStringsFromSocialRelationships, 
                        _PHCollectionReferenceType, _PHContentEditingInputCancelledKey, 
                        _PHContentEditingInputErrorKey, _PHContentEditingInputResultIsInCloudKey, 
                        _PHCopyUniformTypeIdentifierFromFileURL, _PHCopyUniformTypeIdentifierFromFilename, 
@@ -67,12 +69,13 @@ exports:
                        _PHFetchTypeKeyword, _PHFetchTypeMemory, _PHFetchTypeMoment, 
                        _PHFetchTypeMomentList, _PHFetchTypeMomentShare, _PHFetchTypeMomentShareParticipant, 
                        _PHFetchTypePerson, _PHFetchTypePhotoMaster, _PHFetchTypePhotoRepresentation, 
-                       _PHFetchTypePhotosHighlight, _PHFetchTypeProject, _PHFetchTypeSmartAlbum, 
-                       _PHFetchTypeSuggestion, _PHFullScreenSizeForScreen, _PHGenerateCropRectGivenNormalizedCropRect, 
-                       _PHImageCancelledKey, _PHImageErrorKey, _PHImageFileDataKey, 
-                       _PHImageFileOrientationKey, _PHImageFileSandboxExtensionTokenKey, 
-                       _PHImageFileURLKey, _PHImageFileUTIKey, _PHImageManagerMaximumSize, 
-                       _PHImageManagerRecordEnabled, _PHImagePropertiesKey, _PHImageResultDeliveredImageFormatKey, 
+                       _PHFetchTypePhotosHighlight, _PHFetchTypeProject, _PHFetchTypeQuestion, 
+                       _PHFetchTypeSmartAlbum, _PHFetchTypeSuggestion, _PHFullScreenSizeForScreen, 
+                       _PHGenerateCropRectGivenNormalizedCropRect, _PHImageCancelledKey, 
+                       _PHImageErrorKey, _PHImageFileDataKey, _PHImageFileOrientationKey, 
+                       _PHImageFileSandboxExtensionTokenKey, _PHImageFileURLKey, 
+                       _PHImageFileUTIKey, _PHImageManagerMaximumSize, _PHImageManagerRecordEnabled, 
+                       _PHImagePropertiesKey, _PHImageResultDeliveredImageFormatKey, 
                        _PHImageResultIsDegradedKey, _PHImageResultIsInCloudKey, _PHImageResultIsPlaceholderKey, 
                        _PHImageResultRequestIDKey, _PHImportErrorDomain, _PHImportErrorUserInfoMoreSpaceRequiredKey, 
                        _PHInsertedLocalIdentifiersKey, _PHIsImageAssetResourceType, 
@@ -171,15 +174,15 @@ exports:
                        PHPersonResetManager, PHPersonSuggestion, PHPhotoLibrary, 
                        PHPhotoLibraryAppPrivateData, PHPhotosHighlight, PHPhotosHighlightChangeRequest, 
                        PHPlaceholderImageHelper, PHProject, PHProjectChangeRequest, 
-                       PHQuery, PHRecyclableObjectVendor, PHRelatedCollection, PHRelatedFetchOptions, 
-                       PHRelationshipChangeRequestHelper, PHResourceAvailabilityChangeRequest, 
-                       PHResourceAvailabilityJob, PHResourceAvailabilityRequest, 
-                       PHResourceChooserList, PHResourceDownloadRequest, PHResourceDownloadRequestOptions, 
-                       PHResourceRepairRequest, PHSceneClassification, PHSmartAlbumChangeRequest, 
-                       PHSuggestion, PHSuggestionChangeRequest, PHSuggestionDeleteRequest, 
-                       PHSuggestionMessageContext, PHTextFeature, PHThumbnailAsset, 
-                       PHValidator, PHVideoChoosingAndAvailabilityRequest, PHVideoRequestBehaviorSpec, 
-                       PHVideoRequestOptions, PHVisionAnalysisUtilities ]
+                       PHQuery, PHQuestion, PHQuestionChangeRequest, PHRecyclableObjectVendor, 
+                       PHRelatedCollection, PHRelatedFetchOptions, PHRelationshipChangeRequestHelper, 
+                       PHResourceAvailabilityChangeRequest, PHResourceAvailabilityJob, 
+                       PHResourceAvailabilityRequest, PHResourceChooserList, PHResourceDownloadRequest, 
+                       PHResourceDownloadRequestOptions, PHResourceRepairRequest, 
+                       PHSceneClassification, PHSmartAlbumChangeRequest, PHSuggestion, 
+                       PHSuggestionChangeRequest, PHSuggestionDeleteRequest, PHSuggestionMessageContext, 
+                       PHTextFeature, PHThumbnailAsset, PHValidator, PHVideoChoosingAndAvailabilityRequest, 
+                       PHVideoRequestBehaviorSpec, PHVideoRequestOptions, PHVisionAnalysisUtilities ]
     objc-ivars:      [ PHAssetPropertySet._asset, PHChangeRequest._helper, PHImportAsset._source, 
                        PHImportAsset._strongSource, PHImportDeviceAsset._cameraFile, 
                        PHResourceChooserList._asset, PHResourceChooserList._endOfListHandler, 

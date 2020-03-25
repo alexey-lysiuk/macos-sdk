@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1D42387D-206A-3F06-9B5F-705B83EAC295', 'x86_64: 1D42387D-206A-3F06-9B5F-705B83EAC295' ]
+uuids:           [ 'x86_64: 08199809-33CA-321E-9B9D-FD5B2BC64580', 'x86_64: 08199809-33CA-321E-9B9D-FD5B2BC64580' ]
 platform:        zippered
 install-name:    '/usr/lib/libc++.1.dylib'
-current-version: 800.7
+current-version: 902.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __ZNKSt10bad_typeid4whatEv, __ZNKSt11logic_error4whatEv, __ZNKSt12bad_any_cast4whatEv, 
@@ -1240,10 +1240,10 @@ exports:
                        ___cxa_free_exception, ___cxa_get_exception_ptr, ___cxa_get_globals, 
                        ___cxa_get_globals_fast, ___cxa_guard_abort, ___cxa_guard_acquire, 
                        ___cxa_guard_release, ___cxa_pure_virtual, ___cxa_rethrow, 
-                       ___cxa_throw, ___cxa_vec_cctor, ___cxa_vec_cleanup, ___cxa_vec_ctor, 
-                       ___cxa_vec_delete, ___cxa_vec_delete2, ___cxa_vec_delete3, 
-                       ___cxa_vec_dtor, ___cxa_vec_new, ___cxa_vec_new2, ___cxa_vec_new3, 
-                       ___dynamic_cast, ___gxx_personality_v0 ]
+                       ___cxa_throw, ___cxa_throw_bad_array_new_length, ___cxa_uncaught_exceptions, 
+                       ___cxa_vec_cctor, ___cxa_vec_cleanup, ___cxa_vec_ctor, ___cxa_vec_delete, 
+                       ___cxa_vec_delete2, ___cxa_vec_delete3, ___cxa_vec_dtor, ___cxa_vec_new, 
+                       ___cxa_vec_new2, ___cxa_vec_new3, ___dynamic_cast, ___gxx_personality_v0 ]
     weak-def-symbols: [ __ZTISt11range_error, __ZTISt12domain_error, __ZTISt12length_error, 
                         __ZTISt12out_of_range, __ZTISt14overflow_error, __ZTISt15underflow_error, 
                         __ZTISt16invalid_argument, __ZTISt16nested_exception, __ZdaPv, 

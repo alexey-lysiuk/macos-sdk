@@ -1648,6 +1648,38 @@ Globals:
   SwiftName: UIKeyCommand.inputRightArrow
 - Name: UIKeyInputEscape
   SwiftName: UIKeyCommand.inputEscape
+- Name: UIKeyInputPageUp
+  SwiftName: UIKeyCommand.inputPageUp
+- Name: UIKeyInputPageDown
+  SwiftName: UIKeyCommand.inputPageDown
+- Name: UIKeyInputHome
+  SwiftName: UIKeyCommand.inputHome
+- Name: UIKeyInputEnd
+  SwiftName: UIKeyCommand.inputEnd
+- Name: UIKeyInputF1
+  SwiftName: UIKeyCommand.f1
+- Name: UIKeyInputF2
+  SwiftName: UIKeyCommand.f2
+- Name: UIKeyInputF3
+  SwiftName: UIKeyCommand.f3
+- Name: UIKeyInputF4
+  SwiftName: UIKeyCommand.f4
+- Name: UIKeyInputF5
+  SwiftName: UIKeyCommand.f5
+- Name: UIKeyInputF6
+  SwiftName: UIKeyCommand.f6
+- Name: UIKeyInputF7
+  SwiftName: UIKeyCommand.f7
+- Name: UIKeyInputF8
+  SwiftName: UIKeyCommand.f8
+- Name: UIKeyInputF9
+  SwiftName: UIKeyCommand.f9
+- Name: UIKeyInputF10
+  SwiftName: UIKeyCommand.f10
+- Name: UIKeyInputF11
+  SwiftName: UIKeyCommand.f11
+- Name: UIKeyInputF12
+  SwiftName: UIKeyCommand.f12
 - Name: NSUserActivityDocumentURLKey
   SwiftName: UIDocument.userActivityURLKey
 - Name: UIViewControllerHierarchyInconsistencyException

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FA651213-92ED-30EB-B2FA-F2971F3033E5' ]
+uuids:           [ 'x86_64: E9AEAFDF-73F1-3164-9586-5C1AF81D4188' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/IOBluetoothUI.framework/Versions/A/IOBluetoothUI'
 exports:         

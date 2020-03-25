@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7D2522C8-8CBE-32C9-8743-A8F598602F4C', 'x86_64: 7D2522C8-8CBE-32C9-8743-A8F598602F4C' ]
+uuids:           [ 'x86_64: 0AA1EB11-A433-327E-B8DB-7395CFF06554', 'x86_64: 0AA1EB11-A433-327E-B8DB-7395CFF06554' ]
 platform:        zippered
 install-name:    '/usr/lib/liblzma.5.dylib'
 current-version: 6.3

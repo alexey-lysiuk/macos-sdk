@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 269E5287-AFE6-3F30-88DD-CBD3C72EF9AC', 'x86_64: 269E5287-AFE6-3F30-88DD-CBD3C72EF9AC' ]
+uuids:           [ 'x86_64: A5CEF842-369A-32B9-BFA6-96E6F4D7D3C6', 'x86_64: A5CEF842-369A-32B9-BFA6-96E6F4D7D3C6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotoImaging.framework/Versions/A/PhotoImaging'
-current-version: 111.16.180
+current-version: 141.19.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GUInvertMatrix, _GUMatrixVector, _PIAdjustment_AutoEnhance_Identifier, 
@@ -151,7 +151,7 @@ exports:
                        PICompositionExporter, PICompositionExporterAuxiliaryOptions, 
                        PICompositionExporterImageOptions, PICompositionExporterOptions, 
                        PICompositionExporterVideoOptions, PICompositionFinalizer, 
-                       PICompositionFinalizerResult, PICompositionSerializationResult, 
+                       PICompositionFinalizerResult, PICompositionNoOpRemoval, PICompositionSerializationResult, 
                        PICompositionSerializer, PICompositionSerializerConstants, 
                        PICompositionSerializerFormatVersion, PICompositionSerializerMetadata, 
                        PICropAdjustmentController, PICropAutoCalculator, PICurveControlPoint, 

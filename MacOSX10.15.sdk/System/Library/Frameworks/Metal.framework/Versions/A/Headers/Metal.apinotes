@@ -362,6 +362,37 @@ Classes:
   - Selector: 'getSamplePositions:count:'
     MethodKind: Instance
     SwiftPrivate: true
+- Name: MTLRasterizationRateMapDescriptor
+  Methods:
+  - Selector: 'rasterizationRateMapDescriptorWithScreenSize:layerCount:layers:'
+    MethodKind: Class
+    SwiftPrivate: true
+  - Selector: 'rasterizationRateMapDescriptorWithScreenSize:layer:'
+    MethodKind: Class
+    SwiftPrivate: true
+  - Selector: 'rasterizationRateMapDescriptorWithScreenSize:'
+    MethodKind: Class
+    SwiftPrivate: true
+- Name: MTLRasterizationRateLayerDescriptor
+  Methods:
+  - Selector: 'initWithSampleCount:horizontal:vertical:'
+    MethodKind: Instance
+    SwiftPrivate: true
+  Properties:
+  - Name: 'horizontalSampleStorage'
+    PropertyKind: Instance
+    SwiftPrivate: true
+  - Name: 'verticalSampleStorage'
+    PropertyKind: Instance
+    SwiftPrivate: true
+- Name: MTLRasterizationRateSampleArray
+  Methods:
+  - Selector: 'objectAtIndexedSubscript:'
+    MethodKind: Instance
+    SwiftPrivate: true
+  - Selector: 'setObject:atIndexedSubscript:'
+    MethodKind: Instance
+    SwiftPrivate: true
 Protocols:
 - Name: MTLBlitCommandEncoder
   Methods:
@@ -643,6 +674,12 @@ Protocols:
   - Selector: 'newIndirectCommandBufferWithDescriptor:maxCommandCount:options:'
     SwiftName: makeIndirectCommandBuffer(descriptor:maxCommandCount:options:)
     MethodKind: Instance
+  - Selector: 'newRasterizationRateMapWithDescriptor:'
+    MethodKind: Instance
+    SwiftName: makeRasterizationRateMap(descriptor:)
+  - Selector: 'supportsRasterizationRateMapWithLayerCount:'
+    MethodKind: Instance
+    SwiftName: supportsRasterizationRateMap(layerCount:)
   - Selector: 'newCounterSampleBufferWithDescriptor:error:'
     SwiftName: makeCounterSampleBuffer(descriptor:)
     MethodKind: Instance
@@ -750,6 +787,24 @@ Protocols:
   - Selector: 'setColorStoreActionOptions:atIndex:'
     SwiftName: setColorStoreActionOptions(_:index:)
     MethodKind: Instance
+- Name: MTLRasterizationRateMap
+  Properties:
+  - Name: 'parameterBufferSizeAndAlign'
+    PropertyKind: Instance
+    SwiftName: parameterDataSizeAndAlign
+  Methods:
+  - Selector: 'copyParameterDataToBuffer:offset:'
+    MethodKind: Instance
+    SwiftName: copyParameterData(buffer:offset:)
+  - Selector: 'physicalSizeForLayer:'
+    MethodKind: Instance
+    SwiftName: physicalSize(layer:)
+  - Selector: 'mapScreenToPhysicalCoordinates:forLayer:'
+    MethodKind: Instance
+    SwiftName: physicalCoordinates(screenCoordinates:layer:)
+  - Selector: 'mapPhysicalToScreenCoordinates:forLayer:'
+    MethodKind: Instance
+    SwiftName: screenCoordinates(physicalCoordinates:layer:)
 - Name: MTLRenderCommandEncoder
   Methods:
   - Selector: 'setViewports:count:'

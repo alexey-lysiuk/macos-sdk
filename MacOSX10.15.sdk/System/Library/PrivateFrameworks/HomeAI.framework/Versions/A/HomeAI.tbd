@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 961F695D-1A91-3E5D-B80F-5D3F4682C7E6' ]
+uuids:           [ 'x86_64: 94E5B6A7-0DD0-31E7-962B-2D284E5E2F70' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HomeAI.framework/Versions/A/HomeAI'
 ...

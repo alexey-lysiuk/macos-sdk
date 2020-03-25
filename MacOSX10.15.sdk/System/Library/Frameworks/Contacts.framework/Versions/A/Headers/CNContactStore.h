@@ -216,7 +216,7 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
  *
  *  @discussion Retrieve the current history token. If you are fetching contacts or change history events, you should use the token on the @c CNFetchResult instead.
  */
-@property (nonatomic, readonly, copy) NSData * currentHistoryToken API_AVAILABLE(macos(10.15), ios(13.0), watchos(6.0));
+@property (nonatomic, readonly, copy, nullable) NSData * currentHistoryToken API_AVAILABLE(macos(10.15), ios(13.0), watchos(6.0));
 
 /*!
  *  @abstract The identifier of the default container.

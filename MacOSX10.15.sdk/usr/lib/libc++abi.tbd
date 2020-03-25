@@ -1,15 +1,12 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D89ABFBF-3754-35AB-BAEE-FBF14857F79B', 'x86_64: D89ABFBF-3754-35AB-BAEE-FBF14857F79B' ]
+uuids:           [ 'x86_64: 1C880020-396D-3F91-BE27-5A09A9239F68', 'x86_64: 1C880020-396D-3F91-BE27-5A09A9239F68' ]
 platform:        zippered
 install-name:    '/usr/lib/libc++abi.dylib'
-current-version: 800.7
+current-version: 902
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ __ZN10__cxxabiv119__getExceptionClassEPK17_Unwind_Exception, 
-                       __ZN10__cxxabiv119__setExceptionClassEP17_Unwind_Exceptiony, 
-                       __ZN10__cxxabiv121__isOurExceptionClassEPK17_Unwind_Exception, 
-                       __ZNKSt10bad_typeid4whatEv, __ZNKSt11logic_error4whatEv, __ZNKSt13bad_exception4whatEv, 
+    symbols:         [ __ZNKSt10bad_typeid4whatEv, __ZNKSt11logic_error4whatEv, __ZNKSt13bad_exception4whatEv, 
                        __ZNKSt13runtime_error4whatEv, __ZNKSt20bad_array_new_length4whatEv, 
                        __ZNKSt8bad_cast4whatEv, __ZNKSt9bad_alloc4whatEv, __ZNKSt9exception4whatEv, 
                        __ZNSt10bad_typeidC1Ev, __ZNSt10bad_typeidC2Ev, __ZNSt10bad_typeidD0Ev, 

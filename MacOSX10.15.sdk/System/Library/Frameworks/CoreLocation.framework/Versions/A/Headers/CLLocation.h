@@ -38,6 +38,15 @@ typedef double CLLocationAccuracy;
 typedef double CLLocationSpeed;
 
 /*
+ *  CLLocationSpeedAccuracy
+ *
+ *  Discussion:
+ *    Type used to represent a speed accuracy level in meters/second.  The lower the value the more
+ *    precise the speed is.  A negative accuracy value indicates an invalid speed.
+ */
+typedef double CLLocationSpeedAccuracy;
+
+/*
  *  CLLocationDirection
  *  
  *  Discussion:
@@ -45,6 +54,15 @@ typedef double CLLocationSpeed;
  *    invalid direction.
  */
 typedef double CLLocationDirection;
+
+/*
+ *  CLLocationDirectionAccuracy
+ *
+ *  Discussion:
+ *    Type used to represent a direction accuracy in degrees.  The lower the value the more precise the
+ *    direction is.  A negative accuracy value indicates an invalid direction.
+ */
+typedef double CLLocationDirectionAccuracy;
 
 /*
  *  CLLocationCoordinate2D
@@ -223,6 +241,22 @@ API_AVAILABLE(macos(10.6), ios(2.0))
     timestamp:(NSDate *)timestamp API_AVAILABLE(ios(4.2), macos(10.7));
 
 /*
+ *  initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:
+ *
+ *  Discussion:
+ *    Initialize with the specified parameters.
+ */
+- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate
+    altitude:(CLLocationDistance)altitude
+    horizontalAccuracy:(CLLocationAccuracy)hAccuracy
+    verticalAccuracy:(CLLocationAccuracy)vAccuracy
+    course:(CLLocationDirection)course
+    courseAccuracy:(CLLocationDirectionAccuracy)courseAccuracy
+    speed:(CLLocationSpeed)speed
+    speedAccuracy:(CLLocationSpeedAccuracy)speedAccuracy
+    timestamp:(NSDate *)timestamp API_AVAILABLE(ios(13.4), macos(10.15.4), watchos(6.2), tvos(13.4));
+
+/*
  *  coordinate
  *  
  *  Discussion:
@@ -266,12 +300,28 @@ API_AVAILABLE(macos(10.6), ios(2.0))
 @property(readonly, nonatomic) CLLocationDirection course API_AVAILABLE(ios(2.2), macos(10.7));
 
 /*
+ *  courseAccuracy
+ *
+ *  Discussion:
+ *    Returns the course accuracy of the location in degrees.  Returns negative if course is invalid.
+ */
+@property(readonly, nonatomic) CLLocationDirectionAccuracy courseAccuracy API_AVAILABLE(ios(13.4), macos(10.15.4), watchos(6.2), tvos(13.4));
+
+/*
  *  speed
  *  
  *  Discussion:
  *    Returns the speed of the location in m/s. Negative if speed is invalid.
  */
 @property(readonly, nonatomic) CLLocationSpeed speed API_AVAILABLE(ios(2.2), macos(10.7));
+
+/*
+ *  speedAccuracy
+ *
+ *  Discussion:
+ *    Returns the speed accuracy of the location in m/s. Returns -1 if invalid.
+ */
+@property(readonly, nonatomic) CLLocationSpeedAccuracy speedAccuracy API_AVAILABLE(macos(10.15), ios(10.0), watchos(3.0), tvos(10.0));
 
 /*
  *  timestamp

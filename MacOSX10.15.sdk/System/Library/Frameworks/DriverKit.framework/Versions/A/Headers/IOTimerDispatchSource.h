@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOTimerDispatchSource.iig */
+/* iig(DriverKit-73.100.4) generated from IOTimerDispatchSource.iig */
 
-/* IOTimerDispatchSource.iig:1-80 */
+/* IOTimerDispatchSource.iig:1-69 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -70,6 +70,11 @@ enum {
 	kIOTimerClockMachContinuousTime = 0xC4ull,
 };
 
+/* source class IOTimerDispatchSource IOTimerDispatchSource.iig:70-158 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class IOTimerDispatchSource
  *
@@ -81,7 +86,90 @@ enum {
  * most commonly used is kIOTimerClockMachAbsoluteTime.
  */
 
-/* class IOTimerDispatchSource IOTimerDispatchSource.iig:81-158 */
+class LOCAL IOTimerDispatchSource : public IODispatchSource
+{
+public:
+
+    /*!
+     * @brief       Create an IOTimerDispatchSource for a timer.
+     * @param       queue Target queue to run the handler block.
+     * @param       source Created source with +1 retain count to be released by the caller.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	static kern_return_t
+	Create(
+		IODispatchQueue * queue,
+		IOTimerDispatchSource ** source);
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+    /*!
+     * @brief       Set the handler block to run when the timer fires.
+     * @param       action OSAction instance specifying the callback method. The OSAction object will be retained
+     *              until SetHandler is called again or the event source is cancelled.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	    SetHandler(
+		OSAction * action TYPE(TimerOccurred));
+
+    /*!
+     * @brief       Control the enable state of the timer.
+     * @param       enable Pass true to enable the source or false to disable.
+     * @param       handler Optional block to be executed after the timer has been disabled and any pending
+     *              handlers completed.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SetEnableWithCompletion(
+		bool enable,
+		IODispatchSourceCancelHandler handler) override;
+
+    /*!
+     * @brief       Cancel all callbacks from the event source.
+     * @discussion  After cancellation, the source can only be freed. It cannot be reactivated.
+     * @param       handler Handler block to be invoked after any callbacks have completed.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	Cancel(IODispatchSourceCancelHandler handler) override;
+
+    /*!
+     * @brief       Schedule a callback from the timer.
+     * @discussion  Schedule a callback from the timer given a time in a timebase. This should be called
+     *              on the queue the timer will be delivered on. If a timer was already scheduled but not fired
+     *              it will not fire and be replaced by the new deadline.
+     * @param       options Pass one of the kIOTimerClock* options to specify the timebase for the
+     *              deadline and leeway arguments.
+     * @param       deadline Pass the time the timer should fire.
+     * @param       leeway The leeway argument allows the system to defer the timer if advantageous for power cost,
+     *              at most by the leeway specified time.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	WakeAtTime(
+		uint64_t options,
+		uint64_t deadline,
+		uint64_t leeway);
+
+private:
+	virtual kern_return_t
+	CheckForWork(bool synchronous) override;
+
+	virtual void
+	TimerOccurred(
+		OSAction      * action TARGET,
+		uint64_t        time) REPLY LOCAL;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOTimerDispatchSource IOTimerDispatchSource.iig:70-158 */
 
 #define IOTimerDispatchSource_Create_ID            0x5703101ba090eaf0ULL
 #define IOTimerDispatchSource_SetHandler_ID            0x487f4f13f1a0a074ULL
@@ -274,6 +362,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* IOTimerDispatchSource.iig:160- */
 

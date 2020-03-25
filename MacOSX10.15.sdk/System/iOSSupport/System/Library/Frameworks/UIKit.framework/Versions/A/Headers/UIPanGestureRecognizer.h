@@ -16,6 +16,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, UIScrollType) {
+    UIScrollTypeDiscrete,   // Discrete scrolls originate from devices like a scroll wheel mouse
+    UIScrollTypeContinuous, // Continuous scrolls originate from devices like trackpads
+} API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, watchos);
+
+typedef NS_OPTIONS(NSInteger, UIScrollTypeMask) {
+    UIScrollTypeMaskDiscrete    = 1 << UIScrollTypeDiscrete,
+    UIScrollTypeMaskContinuous  = 1 << UIScrollTypeContinuous,
+    UIScrollTypeMaskAll         = UIScrollTypeMaskDiscrete | UIScrollTypeMaskContinuous,
+} API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, watchos);
+
 UIKIT_EXTERN API_AVAILABLE(ios(3.2)) @interface UIPanGestureRecognizer : UIGestureRecognizer 
 
 @property (nonatomic)          NSUInteger minimumNumberOfTouches API_UNAVAILABLE(tvos);   // default is 1. the minimum number of touches required to match
@@ -25,6 +36,8 @@ UIKIT_EXTERN API_AVAILABLE(ios(3.2)) @interface UIPanGestureRecognizer : UIGestu
 - (void)setTranslation:(CGPoint)translation inView:(nullable UIView *)view;
 
 - (CGPoint)velocityInView:(nullable UIView *)view;                           // velocity of the pan in points/second in the coordinate system of the specified view
+
+@property(nonatomic)           UIScrollTypeMask allowedScrollTypesMask API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, watchos);
 
 @end
 

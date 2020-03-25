@@ -1,5 +1,5 @@
 //
-//  ASCredentialListProviderViewController.h
+//  ASCredentialProviderViewController.h
 //  AuthenticationServices Framework
 //
 //  Copyright © 2018 Apple Inc. All rights reserved.
@@ -10,7 +10,6 @@
 #import <AuthenticationServices/ASFoundation.h>
 #import <AuthenticationServices/ASPasswordCredentialIdentity.h>
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

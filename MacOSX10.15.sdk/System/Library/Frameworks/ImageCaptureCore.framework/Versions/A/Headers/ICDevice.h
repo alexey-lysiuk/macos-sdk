@@ -80,7 +80,7 @@ typedef NS_ENUM( NSUInteger, ICDeviceLocationTypeMask )
 
 CF_ASSUME_NONNULL_BEGIN
 
-typedef NSString* ICDeviceTransport NS_TYPED_ENUM IC_AVAILABLE(macos(10.15), ios(13.0));
+typedef NSString* ICDeviceTransport NS_TYPED_ENUM IC_AVAILABLE(macos(10.4), ios(13.0));
 
 //------------------------------------------------------------------------------------------------------------------------------
 // Constants used to identify the transport type used by a device.
@@ -435,7 +435,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @discussion This message completes the process initiated by the message "requestCloseSession" sent to the device object. This message is also sent if the device module in control of the device ceases to control the device.
  @note Execution of the delegate callback will occur on the main thread.
  */
-- (void)device:(ICDevice*)device didCloseSessionWithError:(NSError*)error IC_AVAILABLE(macos(10.4),ios(13.0));
+- (void)device:(ICDevice*)device didCloseSessionWithError:(NSError* _Nullable)error IC_AVAILABLE(macos(10.4),ios(13.0));
 
 /*!
  @method didRemoveDevice:

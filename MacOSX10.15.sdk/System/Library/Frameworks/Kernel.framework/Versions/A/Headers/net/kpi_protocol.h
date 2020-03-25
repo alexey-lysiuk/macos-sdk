@@ -39,6 +39,9 @@
 #include <sys/kernel_types.h>
 #include <net/kpi_interface.h>
 
+#include <Availability.h>
+#define __NKE_API_DEPRECATED __API_DEPRECATED("Network Kernel Extension KPI is deprecated", macos(10.4, 10.15.4))
+
 __BEGIN_DECLS
 
 /******************************************************************************/
@@ -55,7 +58,8 @@ __BEGIN_DECLS
  *       @result A errno error on failure. Unless proto_input returns zero,
  *               the caller is responsible for freeing the mbuf.
  */
-extern errno_t proto_input(protocol_family_t protocol, mbuf_t packet);
+extern errno_t proto_input(protocol_family_t protocol, mbuf_t packet)
+__NKE_API_DEPRECATED;
 
 /*!
  *       @function proto_inject
@@ -67,7 +71,8 @@ extern errno_t proto_input(protocol_family_t protocol, mbuf_t packet);
  *       @result A errno error on failure. Unless proto_inject returns zero,
  *               the caller is responsible for freeing the mbuf.
  */
-extern errno_t proto_inject(protocol_family_t protocol, mbuf_t packet);
+extern errno_t proto_inject(protocol_family_t protocol, mbuf_t packet)
+__NKE_API_DEPRECATED;
 
 
 /******************************************************************************/
@@ -116,7 +121,8 @@ typedef void (*proto_unplumb_handler)(ifnet_t ifp, protocol_family_t protocol);
  */
 extern errno_t proto_register_plumber(protocol_family_t proto_fam,
     ifnet_family_t if_fam, proto_plumb_handler plumb,
-    proto_unplumb_handler unplumb);
+    proto_unplumb_handler unplumb)
+__NKE_API_DEPRECATED;
 
 /*!
  *       @function proto_unregister_plumber
@@ -126,7 +132,8 @@ extern errno_t proto_register_plumber(protocol_family_t proto_fam,
  *       @param if_fam The interface family these plumbing functions handle.
  */
 extern void proto_unregister_plumber(protocol_family_t proto_fam,
-    ifnet_family_t if_fam);
+    ifnet_family_t if_fam)
+__NKE_API_DEPRECATED;
 
 __END_DECLS
 

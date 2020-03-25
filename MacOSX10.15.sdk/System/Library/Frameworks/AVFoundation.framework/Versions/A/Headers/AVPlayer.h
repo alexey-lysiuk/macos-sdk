@@ -714,7 +714,7 @@ AVF_EXPORT NSNotificationName const AVPlayerAvailableHDRModesDidChangeNotificati
  @discussion
  This property is YES if an HDR display is available and the device is capable of playing HDR content from an appropriate AVAsset, NO otherwise.  This property does not indicate whether video contains HDR content, whether HDR video is currently playing, or whether video is playing on an HDR display.  This property is not KVO observable.
  */
-@property (class, nonatomic, readonly) BOOL eligibleForHDRPlayback API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios, tvos, watchos);
+@property (class, nonatomic, readonly) BOOL eligibleForHDRPlayback API_AVAILABLE(macos(10.15), ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
 
 /*!
  @constant		eligibleForHDRPlaybackDidChangeNotification
@@ -723,7 +723,7 @@ AVF_EXPORT NSNotificationName const AVPlayerAvailableHDRModesDidChangeNotificati
  @discussion
  This notification fires when eligibleForHDRPlayback changes.  This can be caused by display connection/disconnection or resource changes.
  */
-API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios, tvos, watchos)
+API_AVAILABLE(macos(10.15), ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos)
 AVF_EXPORT NSNotificationName const AVPlayerEligibleForHDRPlaybackDidChangeNotification;
 
 @end
@@ -749,7 +749,7 @@ AVF_EXPORT NSNotificationName const AVPlayerEligibleForHDRPlaybackDidChangeNotif
  @property   preventsDisplaySleepDuringVideoPlayback
  @abstract   Indicates whether video playback prevents display and device sleep.
  @discussion
-	 Default is YES on iOS, tvOS and in Project Catalyst apps.  Default is NO on macOS.
+	 Default is YES on iOS, tvOS and in Mac Catalyst apps.  Default is NO on macOS.
 	 Setting this property to NO does not force the display to sleep, it simply stops preventing display sleep.  Other apps or frameworks within your app may still be preventing display sleep for various reasons.
  */
 @property (nonatomic) BOOL preventsDisplaySleepDuringVideoPlayback API_AVAILABLE(macos(10.14), ios(12.0), tvos(12.0)) API_UNAVAILABLE(watchos);

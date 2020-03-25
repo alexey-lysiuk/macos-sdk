@@ -8,6 +8,7 @@
 #import <PassKit/PKConstants.h>
 #import <PassKit/PKObject.h>
 #import <PassKit/PKPass.h>
+#import <PassKit/PKSecureElementPass.h>
 #import <PassKit/PKPaymentPass.h>
 #import <PassKit/PKError.h>
 #import <PassKit/PKPassLibrary.h>

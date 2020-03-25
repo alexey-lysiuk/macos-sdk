@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2E84458F-5748-3A9B-94F3-CAF3C79E6383', 'x86_64: 2E84458F-5748-3A9B-94F3-CAF3C79E6383' ]
+uuids:           [ 'x86_64: 6AC22857-F528-35CE-94A9-D70F6F766C15', 'x86_64: 6AC22857-F528-35CE-94A9-D70F6F766C15' ]
 platform:        zippered
 install-name:    '/usr/lib/libmecabra.dylib'
-current-version: 883
+current-version: 883.10
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BurstTrieCompile, _EmojiDictionaryCompile, _IndexedSearchDictionaryBuild, 

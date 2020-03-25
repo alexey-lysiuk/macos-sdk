@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 329A9840-CBD8-33A2-A584-2805042284A9', 'x86_64: 329A9840-CBD8-33A2-A584-2805042284A9' ]
+uuids:           [ 'x86_64: 687A4C31-A307-3255-83BE-9B123971FF62', 'x86_64: 687A4C31-A307-3255-83BE-9B123971FF62' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreNLP.framework/Versions/A/CoreNLP'
 current-version: 213

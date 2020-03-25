@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CEA71605-282E-3CA9-AF3C-B97EE8F2C290' ]
+uuids:           [ 'x86_64: 3BB6A9A4-6B63-3F16-B2AE-7F8B62F3AE10' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AMPDevices.framework/Versions/A/AMPDevices'
 exports:         
@@ -9,7 +9,8 @@ exports:
                        _AMPDeviceAskUserCancelButtonTitleKey, _AMPDeviceAskUserCheckboxTitleKey, 
                        _AMPDeviceAskUserCheckboxValueKey, _AMPDeviceAskUserExplanationKey, 
                        _AMPDeviceAskUserMessageKey, _AMPDeviceAskUserOKButtonTitleKey, 
-                       _AMPDeviceAskUserOtherButtonTitleKey, _AMPDeviceAskUserTimeoutExplanationKey, 
+                       _AMPDeviceAskUserOtherButtonShouldDismissKey, _AMPDeviceAskUserOtherButtonTitleKey, 
+                       _AMPDeviceAskUserOtherButtonURLKey, _AMPDeviceAskUserTimeoutExplanationKey, 
                        _AMPDeviceAskUserTimeoutSecondsKey, _AMPDeviceAskUserUUIDKey, 
                        _AMPDeviceAudioCategoryKey, _AMPDeviceBackupBuildVersionKey, 
                        _AMPDeviceBackupContainsAppDataKey, _AMPDeviceBackupDeviceNameKey, 
@@ -64,7 +65,7 @@ exports:
                        _AMPDeviceViewModePodcasts, _AMPDeviceViewModeRecovery, _AMPDeviceViewModeTVShows, 
                        _AMPDeviceViewModeUnpaired, _AMPDeviceViewModeVideo, _GetNSImageForDeviceProperties ]
     objc-classes:    [ AMPDevice, AMPDeviceAccessibilityPrefs, AMPDeviceAutoFillPrefs, 
-                       AMPDeviceBatteryInfo, AMPDeviceInfo, AMPDeviceSoftwareInfo, 
+                       AMPDeviceBatteryInfo, AMPDeviceInfo, AMPDeviceSetupInfo, AMPDeviceSoftwareInfo, 
                        AMPDeviceSyncPrefs, AMPDevicesClient, AMPPhotoSyncPrefs, BluePlaceholderView, 
                        BrownPlaceholderView, DarkGrayPlaceholderView, DeviceCollection, 
                        DeviceErrorReportViewController, DeviceReportViewController, 

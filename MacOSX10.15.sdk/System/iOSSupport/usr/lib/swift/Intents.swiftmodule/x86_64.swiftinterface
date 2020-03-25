@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftIntents -swift-version 5 -O -enforce-exclusivity=unchecked -module-name Intents
 import Foundation
 @_exported import Intents
@@ -89,35 +89,35 @@ extension INIntent : Intents._INIntentSetImageKeyPath {
 extension INNotebookItemTypeResolutionResult {
   @nonobjc public static func disambiguation(with notebookItemTypesToDisambiguate: [Intents.INNotebookItemType]) -> Self
 }
-@available(OSX 10.15, iOS 13.0, watchOS 6.0, *)
+@available(OSX 10.15.4, iOS 13.0, watchOS 6.0, *)
 @available(OSX, unavailable)
 public enum INMediaDestination : Foundation.ReferenceConvertible {
   public typealias ReferenceType = Intents.INMediaDestinationReference
   case library
   case playlist(Swift.String)
 }
-@available(OSX 10.15, iOS 13.0, watchOS 6.0, *)
+@available(OSX 10.15.4, iOS 13.0, watchOS 6.0, *)
 @available(OSX, unavailable)
 extension INMediaDestination {
   public var playlistName: Swift.String? {
     get
   }
 }
-@available(OSX 10.15, iOS 13.0, watchOS 6.0, *)
+@available(OSX 10.15.4, iOS 13.0, watchOS 6.0, *)
 @available(OSX, unavailable)
 extension INMediaDestination : Swift.CustomStringConvertible {
   public var description: Swift.String {
     get
   }
 }
-@available(OSX 10.15, iOS 13.0, watchOS 6.0, *)
+@available(OSX 10.15.4, iOS 13.0, watchOS 6.0, *)
 @available(OSX, unavailable)
 extension INMediaDestination : Swift.CustomDebugStringConvertible {
   public var debugDescription: Swift.String {
     get
   }
 }
-@available(OSX 10.15, iOS 13.0, watchOS 6.0, *)
+@available(OSX 10.15.4, iOS 13.0, watchOS 6.0, *)
 @available(OSX, unavailable)
 extension INMediaDestination : Swift.Hashable {
   public func hash(into hasher: inout Swift.Hasher)
@@ -125,12 +125,12 @@ extension INMediaDestination : Swift.Hashable {
     get
   }
 }
-@available(OSX 10.15, iOS 13.0, watchOS 6.0, *)
+@available(OSX 10.15.4, iOS 13.0, watchOS 6.0, *)
 @available(OSX, unavailable)
 extension INMediaDestination : Swift.Equatable {
   public static func == (a: Intents.INMediaDestination, b: Intents.INMediaDestination) -> Swift.Bool
 }
-@available(OSX 10.15, iOS 13.0, watchOS 6.0, *)
+@available(OSX 10.15.4, iOS 13.0, watchOS 6.0, *)
 @available(OSX, unavailable)
 extension INMediaDestination : Swift._ObjectiveCBridgeable {
   @_semantics("convertToObjectiveC") public func _bridgeToObjectiveC() -> Intents.INMediaDestinationReference
@@ -155,7 +155,7 @@ extension INPlayMediaIntent {
   @available(iOS, introduced: 12.0, obsoleted: 13.0)
   @available(watchOS, introduced: 5.0, obsoleted: 6.0)
   @nonobjc convenience public init(mediaItems: [Intents.INMediaItem]? = nil, mediaContainer: Intents.INMediaItem? = nil, playShuffled: Swift.Bool? = nil, playbackRepeatMode: Intents.INPlaybackRepeatMode = .unknown, resumePlayback: Swift.Bool? = nil)
-  @available(iOS 13.0, watchOS 6.0, *)
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, *)
   @nonobjc convenience public init(mediaItems: [Intents.INMediaItem]? = nil, mediaContainer: Intents.INMediaItem? = nil, playShuffled: Swift.Bool? = nil, playbackRepeatMode: Intents.INPlaybackRepeatMode = .unknown, resumePlayback: Swift.Bool? = nil, playbackQueueLocation: Intents.INPlaybackQueueLocation = .unknown, playbackSpeed: Swift.Double? = nil, mediaSearch: Intents.INMediaSearch? = nil)
   @nonobjc final public var playShuffled: Swift.Bool? {
     get

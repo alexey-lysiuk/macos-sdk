@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6CDA5BB0-65BA-3C9D-896E-B5BC410EEA8C' ]
+uuids:           [ 'x86_64: 648DD30A-3E4C-3AC5-A7F8-9F77EBC8E5AD' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/AmbientDisplay'
 current-version: 110

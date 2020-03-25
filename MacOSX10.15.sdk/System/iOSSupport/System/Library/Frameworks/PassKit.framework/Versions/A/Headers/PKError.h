@@ -48,5 +48,16 @@ typedef NS_ENUM(NSInteger, PKAddPaymentPassError) {
     PKAddPaymentPassErrorSystemCancelled
 } API_AVAILABLE(ios(9.0), watchos(6.0));
 
+extern NSString * const PKAddSecureElementPassErrorDomain API_AVAILABLE(ios(13.4));
+
+typedef NS_ERROR_ENUM(PKAddSecureElementPassErrorDomain, PKAddSecureElementPassErrorCode) {
+    PKAddSecureElementPassUnknownError,
+    PKAddSecureElementPassUserCanceledError,
+    PKAddSecureElementPassUnavailableError,
+    PKAddSecureElementPassInvalidConfigurationError,
+    PKAddSecureElementPassDeviceNotSupportedError,
+    PKAddSecureElementPassDeviceNotReadyError,
+} API_AVAILABLE(ios(13.4));
+
 NS_ASSUME_NONNULL_END
 #endif // __PKERROR_H

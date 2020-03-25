@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BD5B92B-B891-32F4-A6AE-62AF3D121680', 'x86_64: 8BD5B92B-B891-32F4-A6AE-62AF3D121680' ]
+uuids:           [ 'x86_64: D50A8ADF-4AEF-3DA6-874E-AA2337B242DB', 'x86_64: D50A8ADF-4AEF-3DA6-874E-AA2337B242DB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationFeed.framework/Versions/A/SymptomPresentationFeed'
-current-version: 1238.40.4
+current-version: 1238.100.26
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _advisoryToString, _kDarwinNotificationHasAlternateAdvice, 

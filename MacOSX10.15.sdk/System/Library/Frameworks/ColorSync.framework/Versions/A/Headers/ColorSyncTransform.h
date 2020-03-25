@@ -105,7 +105,7 @@ CSEXTERN bool ColorSyncTransformConvert (ColorSyncTransformRef transform, size_t
                                          ColorSyncDataLayout dstLayout, size_t dstBytesPerRow,
                                          const void* src, ColorSyncDataDepth srcDepth,
                                          ColorSyncDataLayout srcLayout, size_t srcBytesPerRow,
-                                         __nullable CFDictionaryRef options) CS_AVAILABLE_BUT_DEPRECATED(10.4, 10.14) CS_UNAVAILABLE_EMBEDDED;
+                                         __nullable CFDictionaryRef options) CS_AVAILABLE_PUBLIC_STARTING(10.4, CS_UNAVAILABLE_PUBLIC_EMBEDDED);
    /*
     *   transform         - transform to be used for converting color
     *   width             - width of the image in pixels
@@ -151,6 +151,8 @@ CSEXTERN CFStringRef kColorSyncTransformTag CS_AVAILABLE_PUBLIC_STARTING(10.4, C
         CSEXTERN CFStringRef kColorSyncTransformGamutCheck CS_AVAILABLE_PUBLIC_STARTING(10.4, CS_UNAVAILABLE_PUBLIC_EMBEDDED);
 
 CSEXTERN CFStringRef kColorSyncBlackPointCompensation CS_AVAILABLE_PUBLIC_STARTING(10.4, CS_UNAVAILABLE_PUBLIC_EMBEDDED);
+CSEXTERN CFStringRef kColorSyncExtendedRange CS_AVAILABLE_PUBLIC_STARTING(10.16, CS_UNAVAILABLE_PUBLIC_EMBEDDED);
+
 
 /* Global transform options */
 CSEXTERN CFStringRef kColorSyncPreferredCMM CS_AVAILABLE_STARTING(10.4) CS_UNAVAILABLE_EMBEDDED; /* ColorSyncCMMRef of the preferred CMM */
@@ -279,6 +281,8 @@ CSEXTERN CFTypeRef ColorSyncCreateCodeFragment(CFArrayRef profileSequence, CFDic
  *               Optional key:
  *               =============
  *                      kColorSyncBlackPointCompensation : CFBooleanRef to enable/disable BPC
+ *                      kColorSyncExtendedRange          : CFBooleanRef to enable/disable extended range; disabling implies floating point conversions
+
  *
  *   options      - dictionary with additional options as in case of creating ColorSyncTransform
  *
@@ -321,6 +325,7 @@ extern "C" {
      *               Optional key:
      *               =============
      *                      kColorSyncBlackPointCompensation : CFBooleanRef to enable/disable BPC
+     *                      kColorSyncExtendedRange          : CFBooleanRef to enable/disable extended range; disabling implies floating point conversions
      *
      *   options      - dictionary with additional public global options (e.g. preferred CMM, quality,
      *                       etc... It can also contain custom options that are CMM specific.
@@ -426,7 +431,8 @@ extern "C" {
     CSEXTERN CFStringRef kColorSyncTransformGamutCheck;
     
     CSEXTERN CFStringRef kColorSyncBlackPointCompensation;
-    
+    CSEXTERN CFStringRef kColorSyncExtendedRange;
+
     /* Global transform options */
     CSEXTERN CFStringRef kColorSyncPreferredCMM;       /* ColorSyncCMMRef of the preferred CMM */
     CSEXTERN CFStringRef kColorSyncConvertQuality;

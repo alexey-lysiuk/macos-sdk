@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2950538C-EFE4-30A5-A32E-1C15ABAAF97A', 'x86_64: 2950538C-EFE4-30A5-A32E-1C15ABAAF97A' ]
+uuids:           [ 'x86_64: CE7D6800-9C02-3485-BC07-C7952D1C3E44', 'x86_64: CE7D6800-9C02-3485-BC07-C7952D1C3E44' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DifferentialPrivacy.framework/Versions/A/DifferentialPrivacy'
 exports:         

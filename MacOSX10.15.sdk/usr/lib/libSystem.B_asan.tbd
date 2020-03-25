@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 600BDAEF-E91D-34CC-B196-57A4EBEDE6A7', 'x86_64: 600BDAEF-E91D-34CC-B196-57A4EBEDE6A7' ]
+uuids:           [ 'x86_64: B8662603-BA73-3172-9EB0-0026A5D9DB3F', 'x86_64: B8662603-BA73-3172-9EB0-0026A5D9DB3F' ]
 platform:        zippered
 install-name:    '/usr/lib/libSystem.B.dylib'
-current-version: 1281
+current-version: 1281.100.1
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/usr/lib/system/libcache.dylib', '/usr/lib/system/libcommonCrypto.dylib', 
@@ -36,7 +36,7 @@ exports:
                        _libSystem_atfork_prepare, _mach_init_routine ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 74F6459D-3606-3ADB-9808-F6B0FE70062D', 'x86_64: 74F6459D-3606-3ADB-9808-F6B0FE70062D' ]
+uuids:           [ 'x86_64: 5F90FFCE-403B-3724-991D-BA32401D99C5', 'x86_64: 5F90FFCE-403B-3724-991D-BA32401D99C5' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcache.dylib'
 current-version: 83
@@ -56,7 +56,7 @@ exports:
                        _cache_value_make_purgeable_cb ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1333752F-5117-3E86-803A-06E166D80C8C', 'x86_64: 1333752F-5117-3E86-803A-06E166D80C8C' ]
+uuids:           [ 'x86_64: C7A5E3F7-1E5A-3785-875A-B6647082B614', 'x86_64: C7A5E3F7-1E5A-3785-875A-B6647082B614' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcommonCrypto.dylib'
 current-version: 60165
@@ -138,7 +138,7 @@ exports:
                        _kCCRandomDefault, _kCCRandomDevRandom ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0437EBEF-8191-3912-A365-D6BB75C7A810' ]
+uuids:           [ 'x86_64: A517E149-2D25-3C04-BCEF-F69149C85B18' ]
 platform:        macosx
 install-name:    '/usr/lib/system/libcompiler_rt.dylib'
 current-version: 101.2
@@ -363,7 +363,7 @@ exports:
                        _atomic_signal_fence, _atomic_thread_fence ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7FAF372E-BAD5-30E6-A8F2-A3D06B91DC80', 'x86_64: 7FAF372E-BAD5-30E6-A8F2-A3D06B91DC80' ]
+uuids:           [ 'x86_64: 1A5270B5-0D97-35DA-9296-4F4A428BC6A2', 'x86_64: 1A5270B5-0D97-35DA-9296-4F4A428BC6A2' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcopyfile.dylib'
 exports:         
@@ -373,10 +373,10 @@ exports:
                        _xattr_name_with_flags, _xattr_name_without_flags, _xattr_preserve_for_intent ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AE25C9EE-5D63-3E49-B3AA-D482D35C085A', 'x86_64: AE25C9EE-5D63-3E49-B3AA-D482D35C085A' ]
+uuids:           [ 'x86_64: FCDEC0D1-8C30-3989-BDD1-996BBC715C29', 'x86_64: FCDEC0D1-8C30-3989-BDD1-996BBC715C29' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcorecrypto.dylib'
-current-version: 866.40.8
+current-version: 866.100.30
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -524,7 +524,7 @@ exports:
                        _ccrng_ecfips_test_init, _ccrng_pbkdf2_prng_init, _ccrng_rsafips_test_init, 
                        _ccrng_rsafips_test_set_next, _ccrng_sequence_init, _ccrng_system_done, 
                        _ccrng_system_init, _ccrng_test_done, _ccrng_test_init, _ccrng_uniform, 
-                       _ccrsa_crt_makekey, _ccrsa_decrypt_eme_pkcs1v15, _ccrsa_decrypt_eme_pkcs1v15_blinded, 
+                       _ccrsa_decrypt_eme_pkcs1v15, _ccrsa_decrypt_eme_pkcs1v15_blinded, 
                        _ccrsa_decrypt_oaep, _ccrsa_decrypt_oaep_blinded, _ccrsa_dump_full_key, 
                        _ccrsa_dump_public_key, _ccrsa_eme_pkcs1v15_decode, _ccrsa_eme_pkcs1v15_encode, 
                        _ccrsa_emsa_pkcs1v15_encode, _ccrsa_emsa_pkcs1v15_verify, 
@@ -557,29 +557,35 @@ exports:
                        _ccsrp_gp_rfc5054_3072, _ccsrp_gp_rfc5054_4096, _ccsrp_gp_rfc5054_8192, 
                        _ccsrp_server_compute_session, _ccsrp_server_generate_public_key, 
                        _ccsrp_server_start_authentication, _ccsrp_server_verify_session, 
-                       _ccsrp_test_calculations, _ccvrf_derive_public_key, _ccvrf_factory_irtfdraft03, 
-                       _ccvrf_factory_irtfdraft03_default, _ccvrf_proof_to_hash, 
-                       _ccvrf_prove, _ccvrf_sizeof_hash, _ccvrf_sizeof_proof, _ccvrf_sizeof_public_key, 
-                       _ccvrf_sizeof_secret_key, _ccvrf_verify, _ccwrap_auth_decrypt, 
-                       _ccwrap_auth_decrypt_withiv, _ccwrap_auth_encrypt, _ccwrap_auth_encrypt_withiv, 
-                       _ccwrap_unwrapped_size, _ccwrap_wrapped_size, _ccxts_one_shot, 
-                       _ccz_add, _ccz_addi, _ccz_bit, _ccz_bitlen, _ccz_cmp, _ccz_cmpi, 
-                       _ccz_divmod, _ccz_expmod, _ccz_free, _ccz_gcd, _ccz_init, 
-                       _ccz_invmod, _ccz_is_negative, _ccz_is_one, _ccz_is_prime, 
-                       _ccz_is_zero, _ccz_lcm, _ccz_lprint, _ccz_lsl, _ccz_lsr, _ccz_mod, 
-                       _ccz_mul, _ccz_muli, _ccz_mulmod, _ccz_neg, _ccz_print, _ccz_random_bits, 
-                       _ccz_read_radix, _ccz_read_uint, _ccz_set, _ccz_set_bit, _ccz_seti, 
-                       _ccz_size, _ccz_sqr, _ccz_sqrmod, _ccz_sub, _ccz_subi, _ccz_trailing_zeros, 
-                       _ccz_write_int, _ccz_write_int_size, _ccz_write_radix, _ccz_write_radix_size, 
+                       _ccsrp_test_calculations, _ccss_shamir_parameters_init, _ccss_shamir_parameters_maximum_secret_length, 
+                       _ccss_shamir_share_bag_add_share, _ccss_shamir_share_bag_init, 
+                       _ccss_shamir_share_bag_recover_secret, _ccss_shamir_share_export, 
+                       _ccss_shamir_share_generator_generate_share, _ccss_shamir_share_generator_init, 
+                       _ccss_shamir_share_import, _ccss_shamir_share_init, _ccss_shamir_share_sizeof_y, 
+                       _ccvrf_derive_public_key, _ccvrf_factory_irtfdraft03, _ccvrf_factory_irtfdraft03_default, 
+                       _ccvrf_proof_to_hash, _ccvrf_prove, _ccvrf_sizeof_hash, _ccvrf_sizeof_proof, 
+                       _ccvrf_sizeof_public_key, _ccvrf_sizeof_secret_key, _ccvrf_verify, 
+                       _ccwrap_auth_decrypt, _ccwrap_auth_decrypt_withiv, _ccwrap_auth_encrypt, 
+                       _ccwrap_auth_encrypt_withiv, _ccwrap_unwrapped_size, _ccwrap_wrapped_size, 
+                       _ccxts_one_shot, _ccz_add, _ccz_addi, _ccz_bit, _ccz_bitlen, 
+                       _ccz_cmp, _ccz_cmpi, _ccz_divmod, _ccz_expmod, _ccz_free, 
+                       _ccz_gcd, _ccz_init, _ccz_invmod, _ccz_is_negative, _ccz_is_one, 
+                       _ccz_is_prime, _ccz_is_zero, _ccz_lcm, _ccz_lprint, _ccz_lsl, 
+                       _ccz_lsr, _ccz_mod, _ccz_mul, _ccz_muli, _ccz_mulmod, _ccz_neg, 
+                       _ccz_print, _ccz_random_bits, _ccz_read_radix, _ccz_read_uint, 
+                       _ccz_set, _ccz_set_bit, _ccz_seti, _ccz_size, _ccz_sqr, _ccz_sqrmod, 
+                       _ccz_sub, _ccz_subi, _ccz_trailing_zeros, _ccz_write_int, 
+                       _ccz_write_int_size, _ccz_write_radix, _ccz_write_radix_size, 
                        _ccz_write_uint, _ccz_write_uint_size, _ccz_zero, _cczp_init, 
                        _cczp_init_with_recip, _cczp_inv, _cczp_power, _cczp_power_fast, 
-                       _fipspost_post, _fipspost_trace_vtable ]
+                       _csss_shamir_share_bag_can_recover_secret, _fipspost_post, 
+                       _fipspost_trace_vtable ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1FF421B6-4BF0-3B5F-8F56-5ED3B3EFE06F', 'x86_64: 1FF421B6-4BF0-3B5F-8F56-5ED3B3EFE06F' ]
+uuids:           [ 'x86_64: EB592997-B11C-3AB3-85B1-F725F3D0B412', 'x86_64: EB592997-B11C-3AB3-85B1-F725F3D0B412' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libdispatch.dylib'
-current-version: 1173.40.5
+current-version: 1173.100.2
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -709,10 +715,10 @@ exports:
                        OS_dispatch_workloop, OS_object, OS_voucher ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2FA4B359-624B-337C-9207-CDCF841C2E52', 'x86_64: 2FA4B359-624B-337C-9207-CDCF841C2E52' ]
+uuids:           [ 'x86_64: D2A07EF5-A64B-3692-BE13-89DAA2EC5E80', 'x86_64: D2A07EF5-A64B-3692-BE13-89DAA2EC5E80' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libdyld.dylib'
-current-version: 733.6
+current-version: 750.5
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -763,7 +769,7 @@ exports:
                        _dyld_shared_cache_some_image_overridden, _environ, dyld_stub_binder ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7EEF9246-30B4-34DD-8AD6-79679D1A7784', 'x86_64: 7EEF9246-30B4-34DD-8AD6-79679D1A7784' ]
+uuids:           [ 'x86_64: CC5A2B43-770B-3C6C-BA10-AA3A6B4A142D', 'x86_64: CC5A2B43-770B-3C6C-BA10-AA3A6B4A142D' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libkeymgr.dylib'
 current-version: 30
@@ -776,10 +782,10 @@ exports:
                        __keymgr_unlock_processwide_ptr, _keymgrVersionNumber, _keymgrVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CC02D5B3-A95D-3B16-8EE5-D62521CFE899', 'x86_64: CC02D5B3-A95D-3B16-8EE5-D62521CFE899' ]
+uuids:           [ 'x86_64: A7FF7357-600F-3014-8C28-A4F367717E8D', 'x86_64: A7FF7357-600F-3014-8C28-A4F367717E8D' ]
 platform:        zippered
 install-name:    '/usr/lib/system/liblaunch.dylib'
-current-version: 1738.40.10
+current-version: 1738.100.39
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -823,10 +829,10 @@ exports:
                        _vproc_transaction_end, _vprocmgr_lookup_vproc ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6C3E49B2-594D-3B9D-82DB-C4ABEB9788AB', 'x86_64: 6C3E49B2-594D-3B9D-82DB-C4ABEB9788AB' ]
+uuids:           [ 'x86_64: D8FED478-25A2-3844-AE4B-A5C9F9827615', 'x86_64: D8FED478-25A2-3844-AE4B-A5C9F9827615' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libmacho.dylib'
-current-version: 949.0.1
+current-version: 959.0.1
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -868,7 +874,7 @@ exports:
                        _swap_x86_thread_state64 ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A1BCAA32-A194-3DBE-9930-8F49A4AEF284', 'x86_64: A1BCAA32-A194-3DBE-9930-8F49A4AEF284' ]
+uuids:           [ 'x86_64: 51E0304F-AB11-3BF7-99DC-BB916CC9088B', 'x86_64: 51E0304F-AB11-3BF7-99DC-BB916CC9088B' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libquarantine.dylib'
 current-version: 110.40.3
@@ -912,7 +918,7 @@ exports:
                        _responsibility_spawnattrs_getdisclaim, _responsibility_spawnattrs_setdisclaim ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DD7AE862-F179-3C07-A4FC-5775DDD4D3E6', 'x86_64: DD7AE862-F179-3C07-A4FC-5775DDD4D3E6' ]
+uuids:           [ 'x86_64: 078F29AB-26BA-3493-BCAA-E1E75A187521', 'x86_64: 078F29AB-26BA-3493-BCAA-E1E75A187521' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libremovefile.dylib'
 current-version: 48
@@ -924,10 +930,10 @@ exports:
                        _removefile_state_free, _removefile_state_get, _removefile_state_set ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ECE44856-D279-3B5D-A0AA-8BE421D200C4', 'x86_64: ECE44856-D279-3B5D-A0AA-8BE421D200C4' ]
+uuids:           [ 'x86_64: 0F1BAC19-2AE0-3F8E-9B90-AACF819B2BF7', 'x86_64: 0F1BAC19-2AE0-3F8E-9B90-AACF819B2BF7' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_asl.dylib'
-current-version: 377.40.1
+current-version: 377.60.2
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -1001,7 +1007,7 @@ exports:
                        _setlogmask, _syslog, '_syslog$DARWIN_EXTSN', _vsyslog ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DC521115-905A-3A0D-9337-C55FACCEA85F', 'x86_64: DC521115-905A-3A0D-9337-C55FACCEA85F' ]
+uuids:           [ 'x86_64: 32224AFF-C06F-3279-B753-097194EDEF49', 'x86_64: 32224AFF-C06F-3279-B753-097194EDEF49' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_blocks.dylib'
 current-version: 74
@@ -1015,10 +1021,10 @@ exports:
                        __NSConcreteStackBlock, __NSConcreteWeakBlockVariable ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5AD50779-955E-3F56-BCB9-1E14833B3455', 'x86_64: 5AD50779-955E-3F56-BCB9-1E14833B3455' ]
+uuids:           [ 'x86_64: 4F5EED22-4D46-3F04-8C64-C492CDAD70EB', 'x86_64: 4F5EED22-4D46-3F04-8C64-C492CDAD70EB' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_c.dylib'
-current-version: 1353.41.1
+current-version: 1353.100.2
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -1299,10 +1305,10 @@ exports:
                        _xprintf_exec, mcount ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7A2329E0-3C84-3DB7-BC32-E7796C50D621', 'x86_64: 7A2329E0-3C84-3DB7-BC32-E7796C50D621' ]
+uuids:           [ 'x86_64: 2A2C778D-07EB-35C7-A954-8BF8FD74BD75', 'x86_64: 2A2C778D-07EB-35C7-A954-8BF8FD74BD75' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_configuration.dylib'
-current-version: 1061.40.2
+current-version: 1061.101.1
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -1322,7 +1328,7 @@ exports:
                        _nwi_state_get_reachability_flags, _nwi_state_release ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DF341577-A307-3722-BB24-D4AACEAB19B3', 'x86_64: DF341577-A307-3722-BB24-D4AACEAB19B3' ]
+uuids:           [ 'x86_64: FDA41CC4-170A-3D93-85BD-838A563B03C4', 'x86_64: FDA41CC4-170A-3D93-85BD-838A563B03C4' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_coreservices.dylib'
 current-version: 114
@@ -1337,36 +1343,38 @@ exports:
                        _sysdir_start_search_path_enumeration, _sysdir_start_search_path_enumeration_private ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E862B5B1-A367-39CA-8319-B2F9DFADF606', 'x86_64: E862B5B1-A367-39CA-8319-B2F9DFADF606' ]
+uuids:           [ 'x86_64: B567B86D-8818-38A4-A861-03EB83B55867', 'x86_64: B567B86D-8818-38A4-A861-03EB83B55867' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_darwin.dylib'
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ ___libdarwin_init, ___os_temporary_resource_shortage, _crfprintf_np, 
-                       _dirstat_np, _dirstatat_np, _dup_np, _err_np, _errc_np, _fcheck_np, 
-                       _os_assert_mach, _os_assert_mach_port_status, _os_crash_get_reporter_port_array, 
-                       _os_crash_port_array_deallocate, _os_crash_set_reporter_port, 
-                       _os_crash_spawnattr_set_reporter_port, _os_flagset_copy_string, 
-                       _os_localtime_file, _os_mach_msg_copy_description, _os_mach_msg_get_audit_trailer, 
-                       _os_mach_msg_get_context_trailer, _os_mach_msg_get_trailer, 
-                       _os_mach_msg_trailer_copy_description, _os_mach_port_copy_description, 
-                       _os_parse_boot_arg_int, _os_parse_boot_arg_string, _os_simple_hash, 
-                       _os_simple_hash_string, _os_simple_hash_string_with_seed, 
-                       _os_simple_hash_with_seed, _os_subcommand_main, _os_variant_allows_internal_security_policies, 
+    symbols:         [ ___libdarwin_init, ___os_temporary_resource_shortage, _claimfd_np, 
+                       _close_drop_np, _close_drop_optional_np, _crfprintf_np, _dirstat_np, 
+                       _dirstatat_np, _dup_np, _err_np, _errc_np, _fcheck_np, _memdup2_np, 
+                       _memdup_np, _os_assert_mach, _os_assert_mach_port_status, 
+                       _os_crash_get_reporter_port_array, _os_crash_port_array_deallocate, 
+                       _os_crash_set_reporter_port, _os_crash_spawnattr_set_reporter_port, 
+                       _os_flagset_copy_string, _os_localtime_file, _os_mach_msg_copy_description, 
+                       _os_mach_msg_get_audit_trailer, _os_mach_msg_get_context_trailer, 
+                       _os_mach_msg_get_trailer, _os_mach_msg_trailer_copy_description, 
+                       _os_mach_port_copy_description, _os_parse_boot_arg_int, _os_parse_boot_arg_string, 
+                       _os_simple_hash, _os_simple_hash_string, _os_simple_hash_string_with_seed, 
+                       _os_simple_hash_with_seed, _os_subcommand_fprintf, _os_subcommand_main, 
+                       _os_subcommand_vfprintf, _os_variant_allows_internal_security_policies, 
                        _os_variant_check, _os_variant_has_factory_content, _os_variant_has_internal_content, 
                        _os_variant_has_internal_diagnostics, _os_variant_has_internal_ui, 
                        _os_variant_is_darwinos, _os_variant_is_recovery, _os_variant_uses_ephemeral_storage, 
-                       _realpath_np, _strerror_np, _symerror_np, _symexit_np, _sysctl_get_data_np, 
-                       _sysctlbyname_get_data_np, _sysexit_np, _vcrfprintf_np, _verr_np, 
-                       _verrc_np, _vwarn_np, _vwfprintf_np, _warn_np, _wfprintf_np, 
-                       _zsnprintf_np ]
+                       _realpath_np, _strerror_np, _strexit_np, _symerror_np, _symexit_np, 
+                       _sysctl_get_data_np, _sysctlbyname_get_data_np, _sysexit_np, 
+                       _vcrfprintf_np, _verr_np, _verrc_np, _vwarn_np, _vwfprintf_np, 
+                       _warn_np, _wfprintf_np, _xferfd_np, _zsnprintf_np ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2A9C6F3E-427B-332E-BDD3-D4651306F3DE', 'x86_64: 2A9C6F3E-427B-332E-BDD3-D4651306F3DE' ]
+uuids:           [ 'x86_64: 7C690DF5-E119-33FB-85CD-9EFC67A36E40', 'x86_64: 7C690DF5-E119-33FB-85CD-9EFC67A36E40' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_dnssd.dylib'
-current-version: 1096.40.7
+current-version: 1096.100.3
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -1380,14 +1388,14 @@ exports:
                        _DNSServiceRefSockFD, _DNSServiceRegister, _DNSServiceRegisterRecord, 
                        _DNSServiceRemoveRecord, _DNSServiceResolve, _DNSServiceResolverResolve, 
                        _DNSServiceSetDefaultDomainForUser, _DNSServiceSetDispatchQueue, 
-                       _DNSServiceSleepKeepalive, _DNSServiceUpdateRecord, _PeerConnectionRelease, 
-                       _TXTRecordContainsKey, _TXTRecordCreate, _TXTRecordDeallocate, 
-                       _TXTRecordGetBytesPtr, _TXTRecordGetCount, _TXTRecordGetItemAtIndex, 
-                       _TXTRecordGetLength, _TXTRecordGetValuePtr, _TXTRecordRemoveValue, 
-                       _TXTRecordSetValue ]
+                       _DNSServiceSleepKeepalive, _DNSServiceSleepKeepalive_sockaddr, 
+                       _DNSServiceUpdateRecord, _PeerConnectionRelease, _TXTRecordContainsKey, 
+                       _TXTRecordCreate, _TXTRecordDeallocate, _TXTRecordGetBytesPtr, 
+                       _TXTRecordGetCount, _TXTRecordGetItemAtIndex, _TXTRecordGetLength, 
+                       _TXTRecordGetValuePtr, _TXTRecordRemoveValue, _TXTRecordSetValue ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B94C0052-B75A-3169-80AA-5F480588AF6E', 'x86_64: B94C0052-B75A-3169-80AA-5F480588AF6E' ]
+uuids:           [ 'x86_64: 415D83EF-084C-3485-B757-53001870EA94', 'x86_64: 415D83EF-084C-3485-B757-53001870EA94' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_featureflags.dylib'
 current-version: 17
@@ -1397,7 +1405,7 @@ exports:
     symbols:         [ __os_feature_enabled_impl ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 18CC56C5-5325-3375-BF99-FAE7F4F19DDD', 'x86_64: 18CC56C5-5325-3375-BF99-FAE7F4F19DDD' ]
+uuids:           [ 'x86_64: 17049D3F-C798-3651-B391-1551FC699D3E', 'x86_64: 17049D3F-C798-3651-B391-1551FC699D3E' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_info.dylib'
 parent-umbrella: System
@@ -1516,10 +1524,10 @@ exports:
                        _yp_next, _yp_order, _yp_unbind, _yperr_string, _ypprot_err ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 18918E9C-45BC-3D5A-A6B6-3DBC60EEE2E1', 'x86_64: 18918E9C-45BC-3D5A-A6B6-3DBC60EEE2E1' ]
+uuids:           [ 'x86_64: E76440E1-D1E8-3D9A-8B47-D01F554FF1C4', 'x86_64: E76440E1-D1E8-3D9A-8B47-D01F554FF1C4' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_kernel.dylib'
-current-version: 6153.41.3
+current-version: 6153.101.6
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -1531,19 +1539,19 @@ exports:
                        ___channel_get_opt, ___channel_open, ___channel_set_opt, ___channel_sync, 
                        ___chmod, ___chmod_extended, ___close_nocancel, ___coalition, 
                        ___coalition_info, ___coalition_ledger, ___commpage_gettimeofday, 
-                       ___connect, ___connect_nocancel, ___copyfile, ___csrctl, ___delete, 
-                       ___disable_threadsignal, ___error, ___exit, ___fchmod, ___fchmod_extended, 
-                       ___fcntl, ___fcntl_nocancel, ___fork, ___fs_snapshot, ___fstat64_extended, 
-                       ___fstat_extended, ___fsync_nocancel, ___get_remove_counter, 
-                       ___getattrlist, ___getdirentries64, ___gethostuuid, ___getlogin, 
-                       ___getpeername, ___getpid, ___getrlimit, ___getsgroups, ___getsockname, 
-                       ___gettid, ___gettimeofday, ___getwgroups, ___guarded_open_dprotected_np, 
-                       ___guarded_open_np, ___identitysvc, ___inc_remove_counter, 
-                       ___initgroups, ___ioctl, ___iopolicysys, ___kdebug_trace, 
-                       ___kdebug_trace64, ___kdebug_trace_string, ___kdebug_typefilter, 
-                       ___kill, ___kqueue_workloop_ctl, ___lchown, ___libkernel_init, 
-                       ___libkernel_platform_init, ___libkernel_voucher_init, ___listen, 
-                       ___log_data, ___lseek, ___lstat64_extended, ___lstat_extended, 
+                       ___connect, ___connect_nocancel, ___copyfile, ___csrctl, ___darwin_check_fd_set_overflow, 
+                       ___delete, ___disable_threadsignal, ___error, ___exit, ___fchmod, 
+                       ___fchmod_extended, ___fcntl, ___fcntl_nocancel, ___fork, 
+                       ___fs_snapshot, ___fstat64_extended, ___fstat_extended, ___fsync_nocancel, 
+                       ___get_remove_counter, ___getattrlist, ___getdirentries64, 
+                       ___gethostuuid, ___getlogin, ___getpeername, ___getpid, ___getrlimit, 
+                       ___getsgroups, ___getsockname, ___gettid, ___gettimeofday, 
+                       ___getwgroups, ___guarded_open_dprotected_np, ___guarded_open_np, 
+                       ___identitysvc, ___inc_remove_counter, ___initgroups, ___ioctl, 
+                       ___iopolicysys, ___kdebug_trace, ___kdebug_trace64, ___kdebug_trace_string, 
+                       ___kdebug_typefilter, ___kill, ___kqueue_workloop_ctl, ___lchown, 
+                       ___libkernel_init, ___libkernel_platform_init, ___libkernel_voucher_init, 
+                       ___listen, ___log_data, ___lseek, ___lstat64_extended, ___lstat_extended, 
                        ___mac_execve, ___mac_get_fd, ___mac_get_file, ___mac_get_link, 
                        ___mac_get_mount, ___mac_get_pid, ___mac_get_proc, ___mac_getfsstat, 
                        ___mac_mount, ___mac_set_fd, ___mac_set_file, ___mac_set_link, 
@@ -1602,10 +1610,10 @@ exports:
                        __kernelrpc_mach_port_guard_with_flags, __kernelrpc_mach_port_insert_member, 
                        __kernelrpc_mach_port_insert_member_trap, __kernelrpc_mach_port_insert_right, 
                        __kernelrpc_mach_port_insert_right_trap, __kernelrpc_mach_port_kernel_object, 
-                       __kernelrpc_mach_port_kobject, __kernelrpc_mach_port_mod_refs, 
-                       __kernelrpc_mach_port_mod_refs_trap, __kernelrpc_mach_port_move_member, 
-                       __kernelrpc_mach_port_move_member_trap, __kernelrpc_mach_port_names, 
-                       __kernelrpc_mach_port_peek, __kernelrpc_mach_port_rename, 
+                       __kernelrpc_mach_port_kobject, __kernelrpc_mach_port_kobject_description, 
+                       __kernelrpc_mach_port_mod_refs, __kernelrpc_mach_port_mod_refs_trap, 
+                       __kernelrpc_mach_port_move_member, __kernelrpc_mach_port_move_member_trap, 
+                       __kernelrpc_mach_port_names, __kernelrpc_mach_port_peek, __kernelrpc_mach_port_rename, 
                        __kernelrpc_mach_port_request_notification, __kernelrpc_mach_port_request_notification_trap, 
                        __kernelrpc_mach_port_set_attributes, __kernelrpc_mach_port_set_context, 
                        __kernelrpc_mach_port_set_mscount, __kernelrpc_mach_port_set_seqno, 
@@ -1709,14 +1717,15 @@ exports:
                        _mach_port_get_attributes, _mach_port_get_context, _mach_port_get_refs, 
                        _mach_port_get_set_status, _mach_port_get_srights, _mach_port_guard, 
                        _mach_port_guard_with_flags, _mach_port_insert_member, _mach_port_insert_right, 
-                       _mach_port_kernel_object, _mach_port_kobject, _mach_port_mod_refs, 
-                       _mach_port_move_member, _mach_port_names, _mach_port_peek, 
-                       _mach_port_rename, _mach_port_request_notification, _mach_port_set_attributes, 
-                       _mach_port_set_context, _mach_port_set_mscount, _mach_port_set_seqno, 
-                       _mach_port_space_basic_info, _mach_port_space_info, _mach_port_swap_guard, 
-                       _mach_port_type, _mach_port_unguard, _mach_ports_lookup, _mach_ports_register, 
-                       _mach_reply_port, _mach_right_recv_construct, _mach_right_recv_destruct, 
-                       _mach_right_send_create, _mach_right_send_once_consume, _mach_right_send_once_create, 
+                       _mach_port_kernel_object, _mach_port_kobject, _mach_port_kobject_description, 
+                       _mach_port_mod_refs, _mach_port_move_member, _mach_port_names, 
+                       _mach_port_peek, _mach_port_rename, _mach_port_request_notification, 
+                       _mach_port_set_attributes, _mach_port_set_context, _mach_port_set_mscount, 
+                       _mach_port_set_seqno, _mach_port_space_basic_info, _mach_port_space_info, 
+                       _mach_port_swap_guard, _mach_port_type, _mach_port_unguard, 
+                       _mach_ports_lookup, _mach_ports_register, _mach_reply_port, 
+                       _mach_right_recv_construct, _mach_right_recv_destruct, _mach_right_send_create, 
+                       _mach_right_send_once_consume, _mach_right_send_once_create, 
                        _mach_right_send_release, _mach_right_send_retain, _mach_sync_ipc_link_monitoring_start, 
                        _mach_sync_ipc_link_monitoring_stop, _mach_task_self, _mach_task_self_, 
                        _mach_task_special_port_description, _mach_task_special_port_for_id, 
@@ -1823,9 +1832,9 @@ exports:
                        _posix_spawnattr_setmacpolicyinfo_np, _posix_spawnattr_setpcontrol_np, 
                        _posix_spawnattr_setpgroup, _posix_spawnattr_setprocesstype_np, 
                        _posix_spawnattr_setsigdefault, _posix_spawnattr_setsigmask, 
-                       _posix_spawnattr_setspecialport_np, _pread, '_pread$NOCANCEL', 
-                       _proc_clear_cpulimits, _proc_clear_delayidlesleep, _proc_clear_dirty, 
-                       _proc_clear_vmpressure, _proc_denap_assertion_begin_with_msg, 
+                       _posix_spawnattr_setspecialport_np, _posix_spawnattr_setsuidcredport_np, 
+                       _pread, '_pread$NOCANCEL', _proc_clear_cpulimits, _proc_clear_delayidlesleep, 
+                       _proc_clear_dirty, _proc_clear_vmpressure, _proc_denap_assertion_begin_with_msg, 
                        _proc_denap_assertion_complete, _proc_disable_apptype, _proc_disable_cpumon, 
                        _proc_disable_wakemon, _proc_donate_importance_boost, _proc_enable_apptype, 
                        _proc_get_cpumon_params, _proc_get_dirty, _proc_get_wakemon_params, 
@@ -1884,17 +1893,17 @@ exports:
                        _statfs64, _swapon, _swtch, _swtch_pri, _symlink, _symlinkat, 
                        _sync, _syscall, _syscall_thread_switch, _system_get_sfi_window, 
                        _system_override, _system_set_sfi_window, _task_assign, _task_assign_default, 
-                       _task_create, _task_for_pid, _task_generate_corpse, _task_get_assignment, 
-                       _task_get_dyld_image_infos, _task_get_emulation_vector, _task_get_exc_guard_behavior, 
-                       _task_get_exception_ports, _task_get_mach_voucher, _task_get_special_port, 
-                       _task_get_state, _task_info, _task_inspect, _task_map_corpse_info, 
-                       _task_map_corpse_info_64, _task_name_for_pid, _task_policy, 
-                       _task_policy_get, _task_policy_set, _task_purgable_info, _task_register_dyld_get_process_state, 
-                       _task_register_dyld_image_infos, _task_register_dyld_set_dyld_state, 
-                       _task_register_dyld_shared_cache_image_info, _task_restartable_ranges_register, 
-                       _task_restartable_ranges_synchronize, _task_resume, _task_resume2, 
-                       _task_sample, _task_self_, _task_self_trap, _task_set_emulation, 
-                       _task_set_emulation_vector, _task_set_exc_guard_behavior, 
+                       _task_create, _task_create_suid_cred, _task_for_pid, _task_generate_corpse, 
+                       _task_get_assignment, _task_get_dyld_image_infos, _task_get_emulation_vector, 
+                       _task_get_exc_guard_behavior, _task_get_exception_ports, _task_get_mach_voucher, 
+                       _task_get_special_port, _task_get_state, _task_info, _task_inspect, 
+                       _task_map_corpse_info, _task_map_corpse_info_64, _task_name_for_pid, 
+                       _task_policy, _task_policy_get, _task_policy_set, _task_purgable_info, 
+                       _task_register_dyld_get_process_state, _task_register_dyld_image_infos, 
+                       _task_register_dyld_set_dyld_state, _task_register_dyld_shared_cache_image_info, 
+                       _task_restartable_ranges_register, _task_restartable_ranges_synchronize, 
+                       _task_resume, _task_resume2, _task_sample, _task_self_, _task_self_trap, 
+                       _task_set_emulation, _task_set_emulation_vector, _task_set_exc_guard_behavior, 
                        _task_set_exception_ports, _task_set_info, _task_set_mach_voucher, 
                        _task_set_phys_footprint_limit, _task_set_policy, _task_set_port_space, 
                        _task_set_ras_pc, _task_set_special_port, _task_set_state, 
@@ -1935,8 +1944,8 @@ exports:
                        _write, '_write$NOCANCEL', _writev, '_writev$NOCANCEL' ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 895CC10E-5385-37F6-B813-060AD6E6E01C', 'x86_64: 895CC10E-5385-37F6-B813-060AD6E6E01C', 
-                   'x86_64h: 636A1A1C-7AFC-3E82-B86B-0173912A3437', 'x86_64h: 636A1A1C-7AFC-3E82-B86B-0173912A3437' ]
+uuids:           [ 'x86_64: D9099D98-4E16-3EA1-8BF8-2EA3FCC4A282', 'x86_64: D9099D98-4E16-3EA1-8BF8-2EA3FCC4A282', 
+                   'x86_64h: 74741FA8-5C29-3241-9046-4FC91C6A6D4A', 'x86_64h: 74741FA8-5C29-3241-9046-4FC91C6A6D4A' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_m.dylib'
 current-version: 3178
@@ -2146,10 +2155,10 @@ exports:
                        _y0, _y1, _yn ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F82A587B-44A2-3699-A218-9D3ECEE23D5A', 'x86_64: F82A587B-44A2-3699-A218-9D3ECEE23D5A' ]
+uuids:           [ 'x86_64: 641F5F1A-7EB5-3D5A-9BF2-9842BA6056F5', 'x86_64: 641F5F1A-7EB5-3D5A-9BF2-9842BA6056F5' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_malloc.dylib'
-current-version: 283.40.1
+current-version: 283.100.6
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -2191,7 +2200,7 @@ exports:
                        _valloc, _vfree, _zeroify_scalable_zone ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7F206A43-A941-3BAB-AE3A-16169F2FE6AB', 'x86_64: 7F206A43-A941-3BAB-AE3A-16169F2FE6AB' ]
+uuids:           [ 'x86_64: C9E988B2-6A18-35C0-9577-63201E9D6018', 'x86_64: C9E988B2-6A18-35C0-9577-63201E9D6018' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_networkextension.dylib'
 parent-umbrella: System
@@ -2249,10 +2258,10 @@ exports:
                        _nelog_is_info_logging_enabled ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C95CC58E-35E7-3828-AA2A-6EED73C12DE5', 'x86_64: C95CC58E-35E7-3828-AA2A-6EED73C12DE5' ]
+uuids:           [ 'x86_64: E405F84B-BD4F-3874-9755-CB3EC86E18D5', 'x86_64: E405F84B-BD4F-3874-9755-CB3EC86E18D5' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_notify.dylib'
-current-version: 241
+current-version: 241.100.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __notify_fork_child, _notify_cancel, _notify_check, _notify_dump_status, 
@@ -2264,10 +2273,10 @@ exports:
                        _notify_simple_post, _notify_suspend, _notify_suspend_pid ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0CCDD81F-0891-3400-8A97-6CAC3BBBE2F9', 'x86_64: 0CCDD81F-0891-3400-8A97-6CAC3BBBE2F9' ]
+uuids:           [ 'x86_64: 6EF12F34-C33F-36BF-9A9A-2A35EA19EFE0', 'x86_64: 6EF12F34-C33F-36BF-9A9A-2A35EA19EFE0' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_platform.dylib'
-current-version: 220
+current-version: 220.100.1
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -2327,10 +2336,10 @@ exports:
                        _sys_cache_control, _sys_dcache_flush, _sys_icache_invalidate ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 53C65598-9E9E-36FF-BDC2-74F228E58C5C', 'x86_64: 53C65598-9E9E-36FF-BDC2-74F228E58C5C' ]
+uuids:           [ 'x86_64: A8514582-E000-3854-911A-0A73D2C79600', 'x86_64: A8514582-E000-3854-911A-0A73D2C79600' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_pthread.dylib'
-current-version: 416.40.3
+current-version: 416.100.3
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -2408,10 +2417,10 @@ exports:
                        _start_wqthread, _thread_chkstk_darwin, _thread_start ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2183D15E-2CFD-3160-80CE-A948F0529005', 'x86_64: 2183D15E-2CFD-3160-80CE-A948F0529005' ]
+uuids:           [ 'x86_64: E9D78CDE-FB67-32E7-BABC-9EFC23AA0DC6', 'x86_64: E9D78CDE-FB67-32E7-BABC-9EFC23AA0DC6' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_sandbox.dylib'
-current-version: 1217.41.1
+current-version: 1217.101.2
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -2434,16 +2443,16 @@ exports:
                        _rootless_mkdir_datavault, _rootless_mkdir_nounlink, _rootless_mkdir_restricted, 
                        _rootless_preflight, _rootless_protected_volume, _rootless_register_trusted_storage_class, 
                        _rootless_restricted_environment, _rootless_suspend, _rootless_trusted_by_self_token, 
-                       _rootless_verify_trusted_by_self_token, _rootless_whitelist_push, 
-                       _sandbox_check, _sandbox_check_bulk, _sandbox_check_by_audit_token, 
-                       _sandbox_check_by_reference, _sandbox_check_by_uniqueid, _sandbox_consume_extension, 
-                       _sandbox_consume_fs_extension, _sandbox_consume_mach_extension, 
-                       _sandbox_container_path_for_audit_token, _sandbox_container_path_for_pid, 
-                       _sandbox_extension_consume, _sandbox_extension_issue_file, 
-                       _sandbox_extension_issue_file_to_process, _sandbox_extension_issue_file_to_process_by_pid, 
-                       _sandbox_extension_issue_file_to_self, _sandbox_extension_issue_generic, 
-                       _sandbox_extension_issue_generic_to_process, _sandbox_extension_issue_generic_to_process_by_pid, 
-                       _sandbox_extension_issue_iokit_registry_entry_class, _sandbox_extension_issue_iokit_registry_entry_class_to_process, 
+                       _rootless_verify_trusted_by_self_token, _sandbox_check, _sandbox_check_bulk, 
+                       _sandbox_check_by_audit_token, _sandbox_check_by_reference, 
+                       _sandbox_check_by_uniqueid, _sandbox_consume_extension, _sandbox_consume_fs_extension, 
+                       _sandbox_consume_mach_extension, _sandbox_container_path_for_audit_token, 
+                       _sandbox_container_path_for_pid, _sandbox_extension_consume, 
+                       _sandbox_extension_issue_file, _sandbox_extension_issue_file_to_process, 
+                       _sandbox_extension_issue_file_to_process_by_pid, _sandbox_extension_issue_file_to_self, 
+                       _sandbox_extension_issue_generic, _sandbox_extension_issue_generic_to_process, 
+                       _sandbox_extension_issue_generic_to_process_by_pid, _sandbox_extension_issue_iokit_registry_entry_class, 
+                       _sandbox_extension_issue_iokit_registry_entry_class_to_process, 
                        _sandbox_extension_issue_iokit_registry_entry_class_to_process_by_pid, 
                        _sandbox_extension_issue_iokit_user_client_class, _sandbox_extension_issue_mach, 
                        _sandbox_extension_issue_mach_to_process, _sandbox_extension_issue_mach_to_process_by_pid, 
@@ -2464,10 +2473,10 @@ exports:
                        _sandbox_spawnattrs_setprofilename, _sandbox_suspend, _sandbox_unsuspend ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D2782294-ACDC-30FF-A794-B4C1B324526B', 'x86_64: D2782294-ACDC-30FF-A794-B4C1B324526B' ]
+uuids:           [ 'x86_64: AAC639E5-7103-3366-A602-8FC6944E2C13', 'x86_64: AAC639E5-7103-3366-A602-8FC6944E2C13' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_secinit.dylib'
-current-version: 62.40.2
+current-version: 62.100.2
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -2476,7 +2485,7 @@ exports:
                        _libsecinit_fileoperation_symlink ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A44E4405-E22E-32E9-83DE-8C7A82401DA0', 'x86_64: A44E4405-E22E-32E9-83DE-8C7A82401DA0' ]
+uuids:           [ 'x86_64: 487B92DE-45F9-39F9-A478-89BBD478157D', 'x86_64: 487B92DE-45F9-39F9-A478-89BBD478157D' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_symptoms.dylib'
 exports:         
@@ -2488,10 +2497,10 @@ exports:
                        _symptom_set_qualifier ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 376CC435-E656-37D9-A5FF-C49B6E4525E2', 'x86_64: 376CC435-E656-37D9-A5FF-C49B6E4525E2' ]
+uuids:           [ 'x86_64: BB90B1FD-8C09-3DF4-BD8B-9E4AEADFEA2B', 'x86_64: BB90B1FD-8C09-3DF4-BD8B-9E4AEADFEA2B' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_trace.dylib'
-current-version: 1147.40.13
+current-version: 1147.100.8
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -2545,7 +2554,7 @@ exports:
     objc-classes:    [ OS_os_log ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 44448F1F-08E5-3425-ADBA-C38A9E8F90C7', 'x86_64: 44448F1F-08E5-3425-ADBA-C38A9E8F90C7' ]
+uuids:           [ 'x86_64: CC87C836-BE9D-334E-A0E6-0297D52E9D73', 'x86_64: CC87C836-BE9D-334E-A0E6-0297D52E9D73' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libunwind.dylib'
 current-version: 35.4
@@ -2598,10 +2607,10 @@ exports:
                        _unw_regname, _unw_resume, _unw_set_fpreg, _unw_set_reg, _unw_step ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 99CC9436-D653-3762-ADBB-9054EBD1BA2B', 'x86_64: 99CC9436-D653-3762-ADBB-9054EBD1BA2B' ]
+uuids:           [ 'x86_64: 32B0E31E-9DA3-328B-A962-BC9591B93537', 'x86_64: 32B0E31E-9DA3-328B-A962-BC9591B93537' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libxpc.dylib'
-current-version: 1738.40.10
+current-version: 1738.100.39
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -2665,15 +2674,15 @@ exports:
                        __xpc_int64_set_value, __xpc_payload_create_from_mach_msg, 
                        __xpc_pipe_handle_mig, __xpc_runtime_get_entitlements_data, 
                        __xpc_runtime_get_self_entitlements, __xpc_runtime_is_app_sandboxed, 
-                       __xpc_service_last_xref_cancel, __xpc_spawnattr_pack_string, 
-                       __xpc_spawnattr_pack_string_fragment, __xpc_spawnattr_unpack_string, 
-                       __xpc_spawnattr_unpack_strings, __xpc_string_set_value, __xpc_type_activity, 
-                       __xpc_type_array, __xpc_type_base, __xpc_type_bool, __xpc_type_bundle, 
-                       __xpc_type_connection, __xpc_type_data, __xpc_type_date, __xpc_type_dictionary, 
-                       __xpc_type_double, __xpc_type_endpoint, __xpc_type_error, 
-                       __xpc_type_fd, __xpc_type_file_transfer, __xpc_type_int64, 
-                       __xpc_type_mach_recv, __xpc_type_mach_send, __xpc_type_null, 
-                       __xpc_type_pipe, __xpc_type_pointer, __xpc_type_serializer, 
+                       __xpc_service_last_xref_cancel, __xpc_shmem_get_mach_port, 
+                       __xpc_spawnattr_pack_string, __xpc_spawnattr_pack_string_fragment, 
+                       __xpc_spawnattr_unpack_string, __xpc_spawnattr_unpack_strings, 
+                       __xpc_string_set_value, __xpc_type_activity, __xpc_type_array, 
+                       __xpc_type_base, __xpc_type_bool, __xpc_type_bundle, __xpc_type_connection, 
+                       __xpc_type_data, __xpc_type_date, __xpc_type_dictionary, __xpc_type_double, 
+                       __xpc_type_endpoint, __xpc_type_error, __xpc_type_fd, __xpc_type_file_transfer, 
+                       __xpc_type_int64, __xpc_type_mach_recv, __xpc_type_mach_send, 
+                       __xpc_type_null, __xpc_type_pipe, __xpc_type_pointer, __xpc_type_serializer, 
                        __xpc_type_service, __xpc_type_service_instance, __xpc_type_shmem, 
                        __xpc_type_string, __xpc_type_uint64, __xpc_type_uuid, _bootstrap_check_in, 
                        _bootstrap_check_in2, _bootstrap_check_in3, _bootstrap_create_server, 
@@ -2745,10 +2754,11 @@ exports:
                        _xpc_atfork_prepare, _xpc_bool_create, _xpc_bool_get_value, 
                        _xpc_bundle_copy_info_dictionary, _xpc_bundle_copy_resource_path, 
                        _xpc_bundle_copy_services, _xpc_bundle_create, _xpc_bundle_create_from_origin, 
-                       _xpc_bundle_create_main, _xpc_bundle_get_executable_path, 
+                       _xpc_bundle_create_main, _xpc_bundle_get_error, _xpc_bundle_get_executable_path, 
                        _xpc_bundle_get_info_dictionary, _xpc_bundle_get_path, _xpc_bundle_get_property, 
                        _xpc_bundle_get_xpcservice_dictionary, _xpc_bundle_populate, 
-                       _xpc_bundle_resolve, _xpc_coalition_copy_info, _xpc_coalition_history_pipe_async, 
+                       _xpc_bundle_resolve, _xpc_bundle_resolve_on_queue, _xpc_bundle_resolve_sync, 
+                       _xpc_coalition_copy_info, _xpc_coalition_history_pipe_async, 
                        _xpc_connection_activate, _xpc_connection_cancel, _xpc_connection_copy_bundle_id, 
                        _xpc_connection_copy_entitlement_value, _xpc_connection_create, 
                        _xpc_connection_create_from_endpoint, _xpc_connection_create_listener, 
@@ -2829,15 +2839,16 @@ exports:
                        _xpc_pipe_routine_reply, _xpc_pipe_routine_with_flags, _xpc_pipe_simpleroutine, 
                        _xpc_pipe_try_receive, _xpc_pointer_create, _xpc_pointer_get_value, 
                        _xpc_receive_mach_msg, _xpc_receive_remote_msg, _xpc_release, 
-                       _xpc_retain, _xpc_service_create, _xpc_service_get_rendezvous_token, 
-                       _xpc_service_instance_dup2, _xpc_service_instance_get_context, 
-                       _xpc_service_instance_get_host_pid, _xpc_service_instance_get_pid, 
-                       _xpc_service_instance_get_type, _xpc_service_instance_is_configurable, 
-                       _xpc_service_instance_run, _xpc_service_instance_set_binpref, 
-                       _xpc_service_instance_set_context, _xpc_service_instance_set_cwd, 
-                       _xpc_service_instance_set_endpoint, _xpc_service_instance_set_environment, 
-                       _xpc_service_instance_set_finalizer_f, _xpc_service_instance_set_jetsam_properties, 
-                       _xpc_service_instance_set_path, _xpc_service_instance_set_start_suspended, 
+                       _xpc_retain, _xpc_service_attach, _xpc_service_create, _xpc_service_create_from_specifier, 
+                       _xpc_service_get_rendezvous_token, _xpc_service_instance_dup2, 
+                       _xpc_service_instance_get_context, _xpc_service_instance_get_host_pid, 
+                       _xpc_service_instance_get_pid, _xpc_service_instance_get_type, 
+                       _xpc_service_instance_is_configurable, _xpc_service_instance_run, 
+                       _xpc_service_instance_set_binpref, _xpc_service_instance_set_context, 
+                       _xpc_service_instance_set_cwd, _xpc_service_instance_set_endpoint, 
+                       _xpc_service_instance_set_environment, _xpc_service_instance_set_finalizer_f, 
+                       _xpc_service_instance_set_jetsam_properties, _xpc_service_instance_set_path, 
+                       _xpc_service_instance_set_start_suspended, _xpc_service_kickstart, 
                        _xpc_service_set_attach_handler, _xpc_set_event, _xpc_set_event_state, 
                        _xpc_set_event_stream_handler, _xpc_set_event_with_flags, 
                        _xpc_set_idle_handler, _xpc_shmem_create, _xpc_shmem_create_readonly, 

@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOUserNetworkEthernet.iig */
+/* iig(DriverKit-73.100.4) generated from IOUserNetworkEthernet.iig */
 
-/* IOUserNetworkEthernet.iig:1-24 */
+/* IOUserNetworkEthernet.iig:1-14 */
 #ifndef _IOUSERNETWORKETHERNET_IIG
 #define _IOUSERNETWORKETHERNET_IIG
 
@@ -15,17 +15,99 @@
 
 struct _IOUserNetworkEthernetInterfaceDescriptor;
 
+/* source class IOUserNetworkEthernet IOUserNetworkEthernet.iig:15-103 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
-@iig implementation
-#if KERNEL
-#include <NetworkingDriverKit/IOUserNetworkPacketBufferPool_kext.h>
-#include <NetworkingDriverKit/IOUserNetworkPacketQueue_kext.h>
-#include <NetworkingDriverKit/IOUserNetworkEthernet_kext.h>
-#endif
-@iig end
 */
 
-/* class IOUserNetworkEthernet IOUserNetworkEthernet.iig:25-91 */
+class KERNEL IOUserNetworkEthernet : public IOService
+{
+public:
+    virtual bool
+    init() override;
+
+    virtual void
+    free() override;
+
+    kern_return_t
+    SetTxPacketHeadroom(uint16_t numBytes) LOCALONLY;
+
+    kern_return_t
+    SetTxPacketTailroom(uint16_t numBytes) LOCALONLY;
+
+    kern_return_t
+    SetWakeOnMagicPacketSupport(bool isSupported) LOCALONLY;
+
+    kern_return_t
+    SetSoftwareVlanSupport(bool isSupported) LOCALONLY;
+
+    virtual kern_return_t
+    RegisterEthernetInterface(
+        IOUserNetworkMACAddress macAddress,
+        IOUserNetworkPacketBufferPool * pool,
+        IOUserNetworkPacketQueue ** queues,
+        uint32_t queueCount) LOCALONLY;
+
+    virtual kern_return_t
+    ReportLinkStatus(
+        IOUserNetworkLinkStatus linkStatus,
+        IOUserNetworkMediaType  activeMediaType);
+
+    virtual kern_return_t
+    ReportLinkQuality(IOUserNetworkLinkQuality linkQuality);
+
+    virtual kern_return_t
+    ReportDataBandwidths(
+        uint64_t    maxInputBandwidth,
+        uint64_t    maxOutputBandwidth,
+        uint64_t    effectiveInputBandwidth,
+        uint64_t    effectiveOutputBandwidth);
+
+    virtual kern_return_t
+    SetInterfaceEnable(bool isEnable) = 0;
+
+    virtual kern_return_t
+    SetPromiscuousModeEnable(bool enable) = 0;
+
+    virtual kern_return_t
+    SetMulticastAddresses(
+        const IOUserNetworkMACAddress * addresses,
+        uint32_t count) = 0;
+
+    virtual kern_return_t
+    SetAllMulticastModeEnable(bool enable) = 0;
+
+    virtual kern_return_t
+    ReportAvailableMediaTypes(
+        const IOUserNetworkMediaType * mediaTypes,
+        uint32_t count) LOCALONLY;
+
+    virtual kern_return_t
+    SelectMediaType(IOUserNetworkMediaType mediaType) = 0;
+
+    virtual kern_return_t
+    SetWakeOnMagicPacketEnable(bool enable) = 0;
+
+    virtual kern_return_t
+    SetMTU( uint32_t mtu ) LOCAL = 0;
+
+    virtual kern_return_t
+    GetMaxTransferUnit( uint32_t *mtu ) LOCAL = 0;
+    
+    virtual kern_return_t
+    SetHardwareAssists( uint32_t hardwareAssists ) LOCAL = 0;
+
+    virtual kern_return_t
+    GetHardwareAssists( uint32_t *hardwareAssists ) LOCAL = 0;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOUserNetworkEthernet IOUserNetworkEthernet.iig:15-103 */
 
 #define IOUserNetworkEthernet__DataAvailable_ID            0xf1fe93bc0f089f02ULL
 #define IOUserNetworkEthernet__ReportAvailableMediaTypes_ID            0xb48b4ba3f53fbc2aULL
@@ -40,6 +122,10 @@ struct _IOUserNetworkEthernetInterfaceDescriptor;
 #define IOUserNetworkEthernet_SetAllMulticastModeEnable_ID            0xe042a87972611225ULL
 #define IOUserNetworkEthernet_SelectMediaType_ID            0xc3e63ac546ebd1feULL
 #define IOUserNetworkEthernet_SetWakeOnMagicPacketEnable_ID            0xb23ee0228705fb95ULL
+#define IOUserNetworkEthernet_SetMTU_ID            0xed7ce2ca0df8ed0eULL
+#define IOUserNetworkEthernet_GetMaxTransferUnit_ID            0xa49568f23ee8efd5ULL
+#define IOUserNetworkEthernet_SetHardwareAssists_ID            0xe397b741b15a61d6ULL
+#define IOUserNetworkEthernet_GetHardwareAssists_ID            0xe77a9aa5db9c706cULL
 
 #define IOUserNetworkEthernet__DataAvailable_Args \
         OSAction * action
@@ -90,6 +176,18 @@ struct _IOUserNetworkEthernetInterfaceDescriptor;
 
 #define IOUserNetworkEthernet_SetWakeOnMagicPacketEnable_Args \
         bool enable
+
+#define IOUserNetworkEthernet_SetMTU_Args \
+        uint32_t mtu
+
+#define IOUserNetworkEthernet_GetMaxTransferUnit_Args \
+        uint32_t * mtu
+
+#define IOUserNetworkEthernet_SetHardwareAssists_Args \
+        uint32_t hardwareAssists
+
+#define IOUserNetworkEthernet_GetHardwareAssists_Args \
+        uint32_t * hardwareAssists
 
 #define IOUserNetworkEthernet_Methods \
 \
@@ -191,6 +289,26 @@ public:\
         bool enable,\
         OSDispatchMethod supermethod = NULL);\
 \
+    kern_return_t\
+    SetMTU(\
+        uint32_t mtu,\
+        OSDispatchMethod supermethod = NULL);\
+\
+    kern_return_t\
+    GetMaxTransferUnit(\
+        uint32_t * mtu,\
+        OSDispatchMethod supermethod = NULL);\
+\
+    kern_return_t\
+    SetHardwareAssists(\
+        uint32_t hardwareAssists,\
+        OSDispatchMethod supermethod = NULL);\
+\
+    kern_return_t\
+    GetHardwareAssists(\
+        uint32_t * hardwareAssists,\
+        OSDispatchMethod supermethod = NULL);\
+\
 \
 protected:\
     /* _Impl methods */\
@@ -273,6 +391,30 @@ public:\
     SetWakeOnMagicPacketEnable_Invoke(const IORPC rpc,\
         OSMetaClassBase * target,\
         SetWakeOnMagicPacketEnable_Handler func);\
+\
+    typedef kern_return_t (*SetMTU_Handler)(OSMetaClassBase * target, IOUserNetworkEthernet_SetMTU_Args);\
+    static kern_return_t\
+    SetMTU_Invoke(const IORPC rpc,\
+        OSMetaClassBase * target,\
+        SetMTU_Handler func);\
+\
+    typedef kern_return_t (*GetMaxTransferUnit_Handler)(OSMetaClassBase * target, IOUserNetworkEthernet_GetMaxTransferUnit_Args);\
+    static kern_return_t\
+    GetMaxTransferUnit_Invoke(const IORPC rpc,\
+        OSMetaClassBase * target,\
+        GetMaxTransferUnit_Handler func);\
+\
+    typedef kern_return_t (*SetHardwareAssists_Handler)(OSMetaClassBase * target, IOUserNetworkEthernet_SetHardwareAssists_Args);\
+    static kern_return_t\
+    SetHardwareAssists_Invoke(const IORPC rpc,\
+        OSMetaClassBase * target,\
+        SetHardwareAssists_Handler func);\
+\
+    typedef kern_return_t (*GetHardwareAssists_Handler)(OSMetaClassBase * target, IOUserNetworkEthernet_GetHardwareAssists_Args);\
+    static kern_return_t\
+    GetHardwareAssists_Invoke(const IORPC rpc,\
+        OSMetaClassBase * target,\
+        GetHardwareAssists_Handler func);\
 \
 
 
@@ -389,7 +531,10 @@ public:
 #endif /* !KERNEL */
 
 
-/* IOUserNetworkEthernet.iig:116- */
+#endif /* !__DOCUMENTATION__ */
+
+
+/* IOUserNetworkEthernet.iig:128- */
 
 enum {
     kIOUserNetworkFeatureFlagWOMP = 0x01,

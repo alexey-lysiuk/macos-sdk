@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1064F804-550E-3FE3-A091-9884A1849E1D', 'x86_64: 1064F804-550E-3FE3-A091-9884A1849E1D' ]
+uuids:           [ 'x86_64: 2B1044CD-9BC6-3C57-BAC1-E200FFEF15DF', 'x86_64: 2B1044CD-9BC6-3C57-BAC1-E200FFEF15DF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IAP.framework/Versions/A/IAP'
 exports:         

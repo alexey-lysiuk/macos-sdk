@@ -188,6 +188,7 @@ enum tIOUSBHostPortStatus
 #define kUSBHostPropertyUserClientEnableReset                   "kUSBLegacyForceReEnumerate"    // TODO: Rename this
 #define kUSBHostPropertyUserClientOwningTaskName                "UsbUserClientOwningTaskName"
 #define kUSBHostPropertyForcePower                              "UsbForcePower"
+#define kUSBHostPropertyForcceLinkSpeed                         "UsbLinkSpeed"
 
 #define kUSBHostDevicePropertyVendorString                      "kUSBVendorString"
 #define kUSBHostDevicePropertySerialNumberString                "kUSBSerialNumberString"

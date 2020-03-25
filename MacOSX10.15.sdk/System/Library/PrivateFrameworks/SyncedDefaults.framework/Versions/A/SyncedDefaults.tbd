@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 18E8207B-70E0-3CD3-B63B-7C6F723D05E8', 'x86_64: 18E8207B-70E0-3CD3-B63B-7C6F723D05E8' ]
+uuids:           [ 'x86_64: E7C26F21-85E0-3432-BF60-AAC6217D01F5', 'x86_64: E7C26F21-85E0-3432-BF60-AAC6217D01F5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults'
 exports:         

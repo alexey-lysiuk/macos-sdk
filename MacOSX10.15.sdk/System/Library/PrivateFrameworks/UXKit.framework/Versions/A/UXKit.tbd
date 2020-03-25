@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8B9802AD-B463-3CBD-81A6-C1347B69ECA1' ]
+uuids:           [ 'x86_64: 3BEA64FC-FF22-386D-93A6-84C83ECF1B5E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UXKit.framework/Versions/A/UXKit'
-current-version: 111.16.180
+current-version: 141.19.150
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AssetsLibraryServices, DCIMServices, Mondrian, PhotoPrintProduct, 

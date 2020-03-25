@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EEAA0051-8FBD-33F6-BAA4-E2F36312B632' ]
+uuids:           [ 'x86_64: 4047DEF1-5AF3-3061-BF36-E17B2AA51DC8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreCDPUI.framework/Versions/A/CoreCDPUI'
 exports:         
@@ -11,6 +11,10 @@ exports:
     objc-classes:    [ CDPEnrollViewController, CDPOption, CDPPrintBorderView, CDPRecoveryKeyPrintController, 
                        CDPRecoveryKeySheetBaseController, CDPRecoveryKeySheetController, 
                        CDPStateBaseUIController, CDPStateUIController, CDPStateiCloudPrefUIController, 
-                       CDPTrustedDeviceViewItem, CDPUIDeviceToDeviceEncryptionHelper, 
-                       CDPiCloudPrefRecoveryKeyController, iCDPEnrollDevice ]
+                       CDPTrustedDeviceViewItem, CDPUIDeviceToDeviceEncryptionCancelCreateViewModel, 
+                       CDPUIDeviceToDeviceEncryptionFlowContext, CDPUIDeviceToDeviceEncryptionHelper, 
+                       CDPUIDeviceToDeviceEncryptionIneligibilityAlertViewModel, 
+                       CDPUIDeviceToDeviceEncryptionMessagingViewModel, CDPUIDeviceToDeviceEncryptionUIProviderImp, 
+                       CDPUIDeviceToDeviceEncryptionUpgradeMessageViewModel, CDPiCloudPrefRecoveryKeyController, 
+                       iCDPEnrollDevice ]
 ...

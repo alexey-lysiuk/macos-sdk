@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5081E8B3-9695-306B-B95A-ADCCDEA07909', 'x86_64: 5081E8B3-9695-306B-B95A-ADCCDEA07909' ]
+uuids:           [ 'x86_64: C0606B98-E3FC-3CAF-AC89-5CA79B786104', 'x86_64: C0606B98-E3FC-3CAF-AC89-5CA79B786104' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory'
 exports:         

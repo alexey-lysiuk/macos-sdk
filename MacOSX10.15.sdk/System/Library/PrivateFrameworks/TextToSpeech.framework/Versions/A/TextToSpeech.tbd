@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E5904879-CB47-396B-AEF5-E942D69FC4C5', 'x86_64: E5904879-CB47-396B-AEF5-E942D69FC4C5' ]
+uuids:           [ 'x86_64: 274C23F9-BBC5-3A60-BA56-D877518181F5', 'x86_64: 274C23F9-BBC5-3A60-BA56-D877518181F5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/TextToSpeech.framework/Versions/A/TextToSpeech'
 exports:         
@@ -49,9 +49,10 @@ exports:
                        _TTSVocalizerCopyPathForCommonResources, _TTSVocalizerCopyPathForLocalizedResources, 
                        _TTSVocalizerCopyPathForResources, _TTSVocalizerCopyPathForTones, 
                        _TTSVocalizerCopyURLForFallbackResource, _TTSVocalizerCopyVoiceEngineFormatVersionForLanguage, 
-                       _TTSWatchSupportsSiriSpeaks, __GetScheduledPriority, __TTSBundleCopyResourceURL, 
-                       __TTSCopyAvailableLanguageIdentifiers, __TTSCopyAvailableOutputLanguageIdentifiers, 
-                       __TTSCopyFallbackLanguageIdentifierExplicitForLocale, __TTSCopyFallbackLanguageIdentifierForLanguageIdentifier, 
+                       _TTSVoiceIsGryphonAssetType, _TTSWatchSupportsSiriSpeaks, 
+                       __GetScheduledPriority, __TTSBundleCopyResourceURL, __TTSCopyAvailableLanguageIdentifiers, 
+                       __TTSCopyAvailableOutputLanguageIdentifiers, __TTSCopyFallbackLanguageIdentifierExplicitForLocale, 
+                       __TTSCopyFallbackLanguageIdentifierForLanguageIdentifier, 
                        __TTSCopyFallbackLanguageIdentifierForLocale, __TTSCopyLanguageArrayForLanguageIdentifier, 
                        __TTSCopyLanguageCodeFromLanguageIdentifier, __TTSCopyLanguageIdentifierForLocale, 
                        __TTSCopyLocalizedString, __TTSCopyLocationCodeFromLanguageIdentifier, 
@@ -64,11 +65,12 @@ exports:
                        __VocalizerGenderForSpeechGender, _kTTSAlternativeAssetBrokerHeaderFileName, 
                        _kTTSErrorDomain, _kTTSFrameworkTTSPath, _kTTSFrameworkVoiceServicesPath, 
                        _kTTSGryphonVoiceIdentifierPrefix, _kTTSMacinTalkVoiceIdentifierPrefix, 
-                       _kTTSOriginalAssetBrokerHeaderFileName, _kTTSPreferencesSpokenLanguageChangedNotification, 
-                       _kTTSSiriVoiceIdentifierPrefix, _kTTSSpeechTextClassAttribute, 
-                       _kTTSSpeechTextClassName, _kTTSSpeechTextClassTitle, _kTTSSystemVoiceIdentifierPrefix, 
-                       _kTTSVocalizerLanguageKey, _kTTSVocalizerResourceAssetInstalledNotification, 
-                       _kTTSVocalizerVoiceFormatKey, _kTTSVocalizerVoiceNameKey ]
+                       _kTTSNeuralVoiceIdentifierPrefix, _kTTSOriginalAssetBrokerHeaderFileName, 
+                       _kTTSPreferencesSpokenLanguageChangedNotification, _kTTSSiriVoiceIdentifierPrefix, 
+                       _kTTSSpeechTextClassAttribute, _kTTSSpeechTextClassName, _kTTSSpeechTextClassTitle, 
+                       _kTTSSystemVoiceIdentifierPrefix, _kTTSVocalizerLanguageKey, 
+                       _kTTSVocalizerResourceAssetInstalledNotification, _kTTSVocalizerVoiceFormatKey, 
+                       _kTTSVocalizerVoiceNameKey ]
     objc-classes:    [ TTSAssetBase, TTSAudioSession, TTSAudioSessionChannel, TTSFormatArgument, 
                        TTSSpeechChannel, TTSSpeechRequest, TTSSpeechRequestOwner, 
                        TTSSpeechSynthesizer, TTSSpeechVoice, TTSSubstitution, TTSVoiceAsset, 

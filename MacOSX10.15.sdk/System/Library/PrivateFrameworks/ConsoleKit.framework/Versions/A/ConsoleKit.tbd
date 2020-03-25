@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F71F8F16-DB25-3A0D-9970-E76E0597DD47' ]
+uuids:           [ 'x86_64: 1CEA27B6-35B9-3D75-B7AB-09F8A7B2F750' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ConsoleKit.framework/Versions/A/ConsoleKit'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 702DAB35-ED5E-335C-86D9-C2512BD89C16', 'x86_64: 702DAB35-ED5E-335C-86D9-C2512BD89C16' ]
+uuids:           [ 'x86_64: F05E5BA0-6741-39B0-9893-0DA6B723ACBB', 'x86_64: F05E5BA0-6741-39B0-9893-0DA6B723ACBB' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreSpotlight.framework/Versions/A/CoreSpotlight'
 exports:         

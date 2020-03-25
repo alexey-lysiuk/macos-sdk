@@ -2,7 +2,7 @@
 //  INSetTaskAttributeIntent.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntent.h>
@@ -26,7 +26,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(11.0), watchos(4.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INSetTaskAttributeIntent : INIntent
 
 - (instancetype)initWithTargetTask:(nullable INTask *)targetTask
@@ -38,11 +38,11 @@ API_UNAVAILABLE(macosx)
 
 @property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) INTask *targetTask;
 
-@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) INSpeakableString *taskTitle API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) INSpeakableString *taskTitle API_AVAILABLE(ios(13.0), watchos(6.0));
 
 @property (readonly, assign, NS_NONATOMIC_IOSONLY) INTaskStatus status;
 
-@property (readonly, assign, NS_NONATOMIC_IOSONLY) INTaskPriority priority API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+@property (readonly, assign, NS_NONATOMIC_IOSONLY) INTaskPriority priority API_AVAILABLE(ios(13.0), watchos(6.0));
 
 @property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) INSpatialEventTrigger *spatialEventTrigger;
 
@@ -58,7 +58,7 @@ API_UNAVAILABLE(macosx)
  */
 
 API_AVAILABLE(ios(11.0), watchos(4.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @protocol INSetTaskAttributeIntentHandling <NSObject>
 
 @required
@@ -105,13 +105,13 @@ API_UNAVAILABLE(macosx)
                     withCompletion:(void (^)(INTaskResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveTargetTask(for:with:));
 
 - (void)resolveTaskTitleForSetTaskAttribute:(INSetTaskAttributeIntent *)intent
-                    withCompletion:(void (^)(INSpeakableStringResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveTaskTitle(for:with:)) API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+                    withCompletion:(void (^)(INSpeakableStringResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveTaskTitle(for:with:)) API_AVAILABLE(ios(13.0), watchos(6.0));
 
 - (void)resolveStatusForSetTaskAttribute:(INSetTaskAttributeIntent *)intent
                     withCompletion:(void (^)(INTaskStatusResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveStatus(for:with:));
 
 - (void)resolvePriorityForSetTaskAttribute:(INSetTaskAttributeIntent *)intent
-                    withCompletion:(void (^)(INTaskPriorityResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolvePriority(for:with:)) API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+                    withCompletion:(void (^)(INTaskPriorityResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolvePriority(for:with:)) API_AVAILABLE(ios(13.0), watchos(6.0));
 
 - (void)resolveSpatialEventTriggerForSetTaskAttribute:(INSetTaskAttributeIntent *)intent
                     withCompletion:(void (^)(INSpatialEventTriggerResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveSpatialEventTrigger(for:with:));

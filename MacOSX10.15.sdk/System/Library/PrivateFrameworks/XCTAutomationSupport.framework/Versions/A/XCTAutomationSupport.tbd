@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9ECBEC6A-E45B-39A7-AA09-F7126BA5237F', 'x86_64: 9ECBEC6A-E45B-39A7-AA09-F7126BA5237F' ]
+uuids:           [ 'x86_64: 46E6614E-49A0-39F6-A392-92A5610F7599', 'x86_64: 46E6614E-49A0-39F6-A392-92A5610F7599' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/XCTAutomationSupport.framework/Versions/A/XCTAutomationSupport'
 exports:         
@@ -21,17 +21,24 @@ exports:
                        _XCSafeAttributeValue, _XCStringFromRect, _XCTASDebugLogger, 
                        _XCTASDefaultLog, _XCTASDispatchAssertQueue, _XCTASDispatchAssertQueueNot, 
                        _XCTASSetDebugLogger, _XCTAccessibilityErrorKey, _XCTAccessibilityFrameworkAssertThreadRequirement, 
-                       _XCTAccessibilityFrameworkCanAccessElement, _XCTApplicationStateFromBKSApplicationState, 
                        _XCTAutomationSupportErrorDomain, _XCTCapabilityAcceptRemoteConnection, 
                        _XCTCapabilityElementIndexingTransformer, _XCTCapabilityElementIndexingTransformer_VersionWithCorrectOrdering, 
+                       _XCTCapabilityElementIndexingTransformer_VersionWithCorrectOrderingForFirstMatch, 
                        _XCTCapabilityElementIndexingTransformer_VersionWithRelatedElements, 
                        _XCTCapabilityEvaluateQuery, _XCTCapabilityFetchAXAttributes, 
-                       _XCTCapabilityNotifyAnimationsIdle, _XCTCapabilityNotifyMainRunLoopIdle, 
-                       _XCTDefaultIdentifierFromSubrole, _XCTElementTypeFromAXAutomationType, 
-                       _XCTElementTypeFromClassAndTraits, _XCTElementTypeFromRole, 
-                       _XCTInvalidExpressionsKey, _XCTMakeSubcapability, _XCTPerformOnMainRunLoop, 
+                       _XCTCapabilityIsMacCatalyst, _XCTCapabilityNotifyAnimationsIdle, 
+                       _XCTCapabilityNotifyMainRunLoopIdle, _XCTDefaultIdentifierFromSubrole, 
+                       _XCTElementTypeFromAXAutomationType, _XCTElementTypeFromClassAndTraits, 
+                       _XCTElementTypeFromRole, _XCTInvalidExpressionsKey, _XCTMakeSubcapability, 
+                       _XCTPerformOnMainRunLoop, _XCTProtectedResourceBluetoothIdentifier, 
+                       _XCTProtectedResourceCalendarIdentifier, _XCTProtectedResourceCameraIdentifier, 
+                       _XCTProtectedResourceContactsIdentifier, _XCTProtectedResourceHomeKitIdentifier, 
+                       _XCTProtectedResourceKeyboardNetworkIdentifier, _XCTProtectedResourceLocationIdentifier, 
+                       _XCTProtectedResourceMediaLibraryIdentifier, _XCTProtectedResourceMicrophoneIdentifier, 
+                       _XCTProtectedResourcePhotosIdentifier, _XCTProtectedResourceRemindersIdentifier, 
+                       _XCTProtectedResourceSystemRootDirectoryIdentifier, _XCTProtectedResourceUserDesktopDirectoryIdentifier, 
+                       _XCTProtectedResourceUserDocumentsDirectoryIdentifier, _XCTProtectedResourceUserDownloadsDirectoryIdentifier, 
                        _XCTRuntimeIssueClasses, _XCTRuntimeIssueEncodingClasses, 
-                       _XCTSetSharedAccessibilityFramework, _XCTSharedAccessibilityFramework, 
                        _XCTStringFromAXError, _XCTStringFromAXNotification, _XCValueIsAXError, 
                        _XC_kAXXCAttributeAbsoluteValue, _XC_kAXXCAttributeActiveKeyboard, 
                        _XC_kAXXCAttributeApplication, _XC_kAXXCAttributeApplicationOrientation, 
@@ -80,17 +87,14 @@ exports:
                        _XC_kAXXCParameterizedAttributeUserTestingSnapshotParameterized, 
                        __XCTASLog, __XCUIStringFromElementType ]
     objc-classes:    [ XCAXCycleDetector, XCAccessibilityElement, XCDeviceEvent, 
-                       XCElementSnapshot, XCTAccessibilityFramework, XCTAccessibilityInterface, 
-                       XCTAnimationsIdleNotifier, XCTApplicationStateSnapshot, XCTAutomationSession, 
-                       XCTAutomationTypeMismatchIssue, XCTCapabilities, XCTCapabilitiesBuilder, 
-                       XCTElementBlockFilteringTransformer, XCTElementBlockSortingTransformer, 
-                       XCTElementContainingTransformer, XCTElementDisclosedChildRowsTransformer, 
-                       XCTElementFilteringTransformer, XCTElementIndexingTransformer, 
-                       XCTElementQuery, XCTElementQueryProcessor, XCTElementQueryResults, 
-                       XCTElementSetCodableTransformer, XCTElementSnapshotRequest, 
+                       XCElementSnapshot, XCTAccessibilityFramework, XCTAnimationsIdleNotifier, 
+                       XCTApplicationStateSnapshot, XCTAutomationSession, XCTAutomationTypeMismatchIssue, 
+                       XCTCapabilities, XCTCapabilitiesBuilder, XCTElementBlockFilteringTransformer, 
+                       XCTElementBlockSortingTransformer, XCTElementContainingTransformer, 
+                       XCTElementDisclosedChildRowsTransformer, XCTElementFilteringTransformer, 
+                       XCTElementIndexingTransformer, XCTElementQuery, XCTElementQueryProcessor, 
+                       XCTElementQueryResults, XCTElementSetCodableTransformer, XCTElementSnapshotRequest, 
                        XCTElementSortingTransformer, XCTLogArchiveRequest, XCTMainRunLoopIdleNotifier, 
                        XCTMatchingElementIterator, XCTRuntimeIssueContext, XCTSerializedTransportWrapper2, 
                        XCTSpindumpRequestSpecification, XCTTimeoutControls, XCUIElementSnapshotRequestResult ]
-    objc-ivars:      [ XCDeviceEvent._duration, XCDeviceEvent._eventPage, XCDeviceEvent._rotation, 
-                       XCDeviceEvent._type, XCDeviceEvent._usage ]
 ...

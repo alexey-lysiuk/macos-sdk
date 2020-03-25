@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 302B9234-6200-3CCA-B7D1-8C3D5A1EFECE' ]
+uuids:           [ 'x86_64: 4211DAFF-7050-32C9-90A7-3135A90BE00D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ExpansionSlotSupport.framework/Versions/A/ExpansionSlotSupport'
 exports:         

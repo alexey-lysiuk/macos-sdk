@@ -160,7 +160,7 @@ struct tPacketFilterMetadata
  * @brief       The base class for objects that perform USB IO.
  * @discussion  This class provides functionality to transfer data across USB.  Function drivers should not subclass IOUSBHostIOSource.
  */
-class IOUSBHostIOSource : public OSObject
+class __IOUSBHOSTFAMILY_DEPRECATED IOUSBHostIOSource : public OSObject
 {
     friend class AppleUSBIORequest;
     friend class IOUSBHostInterface;

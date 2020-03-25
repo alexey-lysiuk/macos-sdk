@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5D32A526-0796-36AF-8853-1AE522F00243' ]
+uuids:           [ 'x86_64: 729FE792-C86A-3C18-A8F2-4698D683919D' ]
 platform:        macosx
 install-name:    '/usr/lib/log/liblog_location.dylib'
-current-version: 2388.0.21
+current-version: 2394.0.22
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogCopyFormattedString, _OSStateCreateStringWithData, _liblog_locationVersionNumber, 

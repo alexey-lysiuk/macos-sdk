@@ -1,27 +1,29 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CE5E9F07-EA5B-3FD7-A609-A5B250D47ED5' ]
+uuids:           [ 'x86_64: 26FC3C65-60FD-3B87-ACB1-6F45423CD333' ]
 platform:        macosx
 install-name:    '/usr/lib/PN548_HAL.dylib'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _NFCalibrationGetData, _NFHardwareDebug, _NFHardwareGPIOClose, 
-                       _NFHardwareGPIOOpen, _NFHardwareGPIOSetDeviceWake, _NFHardwareGPIOSetDownloadRequest, 
-                       _NFHardwareGPIOSetIcefallDownloadRequest, _NFHardwareGPIOSetPMUStandbyPowerEnabled, 
-                       _NFHardwareGPIOSetPower, _NFHardwareGPIOSetVBAT, _NFHardwareGetCalibration, 
+    symbols:         [ _NFCalibrationGetData, _NFCalibrationGetRFConfigTLVs, _NFHardwareDebug, 
+                       _NFHardwareGPIOClose, _NFHardwareGPIOOpen, _NFHardwareGPIOSetDeviceWake, 
+                       _NFHardwareGPIOSetDownloadRequest, _NFHardwareGPIOSetIcefallDownloadRequest, 
+                       _NFHardwareGPIOSetPMUStandbyPowerEnabled, _NFHardwareGPIOSetPower, 
+                       _NFHardwareGPIOSetVBAT, _NFHardwareGetCalibration, _NFHardwareGetRFConfigTLVs, 
                        _NFHardwareGetUARTLogEnabled, _NFHardwareInterfaceClose, _NFHardwareInterfaceFlush, 
                        _NFHardwareInterfaceGetFlowControl, _NFHardwareInterfaceIsSupported, 
                        _NFHardwareInterfaceOpen, _NFHardwareInterfaceRead, _NFHardwareInterfaceReadAbort, 
                        _NFHardwareInterfaceSetBaudRate, _NFHardwareInterfaceSetDeviceWake, 
                        _NFHardwareInterfaceSetDownloadRequest, _NFHardwareInterfaceSetIcefallDownloadRequest, 
-                       _NFHardwareInterfaceSetLogFunction, _NFHardwareInterfaceSetPMUStandbyPowerEnabled, 
-                       _NFHardwareInterfaceSetPower, _NFHardwareInterfaceSetVBAT, 
-                       _NFHardwareInterfaceWrite, _NFHardwareLoad, _NFHardwareRelayClose, 
-                       _NFHardwareRelayGPIOClose, _NFHardwareRelayGPIOOpen, _NFHardwareRelayGPIOSetDeviceWake, 
-                       _NFHardwareRelayGPIOSetDownloadRequest, _NFHardwareRelayGPIOSetIcefallDownloadRequest, 
-                       _NFHardwareRelayGPIOSetPMUStandbyPowerEnabled, _NFHardwareRelayGPIOSetPower, 
-                       _NFHardwareRelayIsSupported, _NFHardwareRelayOpen, _NFHardwareRelayRPC, 
-                       _NFHardwareRelayRead, _NFHardwareRelayReadAbort, _NFHardwareRelayReceiveMessage, 
+                       _NFHardwareInterfaceSetLogFunction, _NFHardwareInterfaceSetPMUStandbyEnabled, 
+                       _NFHardwareInterfaceSetPMUStandbyPowerEnabled, _NFHardwareInterfaceSetPower, 
+                       _NFHardwareInterfaceSetVBAT, _NFHardwareInterfaceWrite, _NFHardwareLoad, 
+                       _NFHardwareRelayClose, _NFHardwareRelayGPIOClose, _NFHardwareRelayGPIOOpen, 
+                       _NFHardwareRelayGPIOSetDeviceWake, _NFHardwareRelayGPIOSetDownloadRequest, 
+                       _NFHardwareRelayGPIOSetIcefallDownloadRequest, _NFHardwareRelayGPIOSetPMUStandbyPowerEnabled, 
+                       _NFHardwareRelayGPIOSetPower, _NFHardwareRelayIsSupported, 
+                       _NFHardwareRelayOpen, _NFHardwareRelayRPC, _NFHardwareRelayRead, 
+                       _NFHardwareRelayReadAbort, _NFHardwareRelayReceiveMessage, 
                        _NFHardwareRelaySendMessage, _NFHardwareRelaySendMessageWithReply, 
                        _NFHardwareRelayUARTClose, _NFHardwareRelayUARTFlush, _NFHardwareRelayUARTOpen, 
                        _NFHardwareRelayUARTRead, _NFHardwareRelayUARTReadAbort, _NFHardwareRelayUARTSetBaudRate, 

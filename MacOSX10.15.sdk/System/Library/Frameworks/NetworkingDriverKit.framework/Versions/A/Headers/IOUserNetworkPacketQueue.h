@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOUserNetworkPacketQueue.iig */
+/* iig(DriverKit-73.100.4) generated from IOUserNetworkPacketQueue.iig */
 
-/* IOUserNetworkPacketQueue.iig:1-16 */
+/* IOUserNetworkPacketQueue.iig:1-7 */
 #ifndef _IOUSERNETWORKPACKETQUEUE_IIG
 #define _IOUSERNETWORKPACKETQUEUE_IIG
 
@@ -8,16 +8,65 @@
 #include <NetworkingDriverKit/IOUserNetworkPacket.h>  /* .iig include */
 #include <DriverKit/IODataQueueDispatchSource.h>  /* .iig include */
 
+/* source class IOUserNetworkPacketQueue IOUserNetworkPacketQueue.iig:8-61 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
-@iig implementation
-#if KERNEL
-#include <IOSkywalkFamily/IOSkywalkPacketQueue.h>
-#include <NetworkingDriverKit/IOUserNetworkPacketQueue_kext.h>
-#endif
-@iig end
 */
 
-/* class IOUserNetworkPacketQueue IOUserNetworkPacketQueue.iig:17-61 */
+class KERNEL IOUserNetworkPacketQueue : public OSObject
+{
+public:
+    virtual bool
+    init() override;
+
+    virtual void
+    free() override;
+
+    virtual kern_return_t
+    SetEnable(bool isEnable) = 0;
+
+    virtual kern_return_t
+    SetPacketBufferPool(
+        IOUserNetworkPacketBufferPool * pool) LOCALONLY;
+
+    virtual kern_return_t
+    SetPacketDirection(
+        IOUserNetworkPacketDirection    direction) LOCALONLY;
+
+    virtual kern_return_t
+    CopyDataQueue(
+        IODataQueueDispatchSource ** dataQueue) LOCALONLY;
+
+    virtual kern_return_t
+    SetDataQueue(
+        IODataQueueDispatchSource * dataQueue) LOCAL;
+
+    virtual kern_return_t
+    EnqueuePacket(
+        IOUserNetworkPacket *    packet) LOCALONLY;
+
+    virtual uint32_t
+    EnqueuePackets(
+        IOUserNetworkPacket **   packets,
+        uint32_t                    packetCount) LOCALONLY;
+
+    virtual kern_return_t
+    DequeuePacket(
+        IOUserNetworkPacket **   packet) LOCALONLY;
+
+    virtual uint32_t
+    DequeuePackets(
+        IOUserNetworkPacket **   packets,
+        uint32_t                    maxDequeueCount) LOCALONLY;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOUserNetworkPacketQueue IOUserNetworkPacketQueue.iig:8-61 */
 
 #define IOUserNetworkPacketQueue_SetEnable_ID            0x8c7770e11b5d2d74ULL
 #define IOUserNetworkPacketQueue_SetDataQueue_ID            0xc42e9c678d3ba3ebULL
@@ -197,6 +246,9 @@ public:
 
 };
 #endif /* !KERNEL */
+
+
+#endif /* !__DOCUMENTATION__ */
 
 /* IOUserNetworkPacketQueue.iig:63- */
 

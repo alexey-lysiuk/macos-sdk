@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 99948950-CD13-3B18-A6C9-129E0E7832E2', 'x86_64: 99948950-CD13-3B18-A6C9-129E0E7832E2' ]
+uuids:           [ 'x86_64: 9F4667D2-9710-310E-832F-9AC9BB2CCB7A', 'x86_64: 9F4667D2-9710-310E-832F-9AC9BB2CCB7A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MTLSimImplementation.framework/Versions/A/MTLSimImplementation'
 exports:         

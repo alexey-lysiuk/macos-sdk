@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 241617D0-E5E7-3E36-971E-E278D15990A9', 'x86_64: 241617D0-E5E7-3E36-971E-E278D15990A9' ]
+uuids:           [ 'x86_64: 07F3B58C-F362-35F2-9A79-F38015A78DDA', 'x86_64: 07F3B58C-F362-35F2-9A79-F38015A78DDA' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders'
-current-version: 122.2
+current-version: 122.5.6
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore', 
@@ -16,10 +16,10 @@ exports:
                        _MPSSetHeapCacheDuration, _MPSSupportsMTLDevice ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FB95B500-E5A3-3FAD-882E-D12FD9CA0964', 'x86_64: FB95B500-E5A3-3FAD-882E-D12FD9CA0964' ]
+uuids:           [ 'x86_64: 5DF84B7A-9DD0-36DB-8686-D669CDA93D59', 'x86_64: 5DF84B7A-9DD0-36DB-8686-D669CDA93D59' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore'
-current-version: 122.2
+current-version: 122.5.6
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSImage, MPSMatrix, MPSNDArray, MPSNeuralNetwork, MPSParallelPrimitives, 
@@ -106,10 +106,10 @@ exports:
                        MPSTemporaryImage._readCount, MPSVector._buffer, MPSVector._offset ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C0E349E7-ADE3-3353-8CFF-3DAD653F810E', 'x86_64: C0E349E7-ADE3-3353-8CFF-3DAD653F810E' ]
+uuids:           [ 'x86_64: CDC36001-66DA-3BBD-A9AA-2470B634B9C9', 'x86_64: CDC36001-66DA-3BBD-A9AA-2470B634B9C9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/Versions/A/MPSImage'
-current-version: 122.2
+current-version: 122.5.6
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSNeuralNetwork, MetalPerformanceShaders ]
@@ -117,17 +117,17 @@ exports:
     objc-classes:    [ MPSBinaryImageKernel, MPSImageAdd, MPSImageAreaMax, MPSImageAreaMin, 
                        MPSImageArithmetic, MPSImageBilinearScale, MPSImageBox, MPSImageBox3D, 
                        MPSImageConversion, MPSImageConvolution, MPSImageCopyToMatrix, 
-                       MPSImageDilate, MPSImageDivide, MPSImageErode, MPSImageEuclideanDistanceTransform, 
-                       MPSImageFindKeypoints, MPSImageGaussianBlur, MPSImageGaussianPyramid, 
-                       MPSImageGuidedFilter, MPSImageHistogram, MPSImageHistogramEqualization, 
-                       MPSImageHistogramSpecification, MPSImageIntegral, MPSImageIntegralOfSquares, 
-                       MPSImageLanczosScale, MPSImageLaplacian, MPSImageLaplacianPyramid, 
-                       MPSImageLaplacianPyramidAdd, MPSImageLaplacianPyramidSubtract, 
-                       MPSImageMedian, MPSImageMultiply, MPSImageNormalizedHistogram, 
-                       MPSImageReduceColumnMax, MPSImageReduceColumnMean, MPSImageReduceColumnMin, 
-                       MPSImageReduceColumnSum, MPSImageReduceRowMax, MPSImageReduceRowMean, 
-                       MPSImageReduceRowMin, MPSImageReduceRowSum, MPSImageSobel, 
-                       MPSImageSpatioTemporalGuidedFilter, MPSImageSpatioTemporalGuidedFilterDescriptor, 
+                       MPSImageDilate, MPSImageDivide, MPSImageEDLines, MPSImageErode, 
+                       MPSImageEuclideanDistanceTransform, MPSImageFindKeypoints, 
+                       MPSImageGaussianBlur, MPSImageGaussianPyramid, MPSImageGuidedFilter, 
+                       MPSImageHistogram, MPSImageHistogramEqualization, MPSImageHistogramSpecification, 
+                       MPSImageIntegral, MPSImageIntegralOfSquares, MPSImageLanczosScale, 
+                       MPSImageLaplacian, MPSImageLaplacianPyramid, MPSImageLaplacianPyramidAdd, 
+                       MPSImageLaplacianPyramidSubtract, MPSImageMedian, MPSImageMultiply, 
+                       MPSImageNormalizedHistogram, MPSImageReduceColumnMax, MPSImageReduceColumnMean, 
+                       MPSImageReduceColumnMin, MPSImageReduceColumnSum, MPSImageReduceRowMax, 
+                       MPSImageReduceRowMean, MPSImageReduceRowMin, MPSImageReduceRowSum, 
+                       MPSImageSobel, MPSImageSpatioTemporalGuidedFilter, MPSImageSpatioTemporalGuidedFilterDescriptor, 
                        MPSImageStatisticsMean, MPSImageStatisticsMeanAndVariance, 
                        MPSImageStatisticsMinAndMax, MPSImageSubtract, MPSImageTent, 
                        MPSImageThresholdBinary, MPSImageThresholdBinaryInverse, MPSImageThresholdToZero, 
@@ -138,10 +138,10 @@ exports:
                        MPSUnaryImageKernel._getPreferredTileSize ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8665FDF1-210F-3A8C-9D5D-FA0C49FD8C8C', 'x86_64: 8665FDF1-210F-3A8C-9D5D-FA0C49FD8C8C' ]
+uuids:           [ 'x86_64: 1E4FE6EF-6D42-3439-835C-F4F20B05E0F5', 'x86_64: 1E4FE6EF-6D42-3439-835C-F4F20B05E0F5' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix'
-current-version: 122.2
+current-version: 122.5.6
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSNeuralNetwork, MetalPerformanceShaders ]
@@ -155,7 +155,7 @@ exports:
                        MPSMatrixSolveTriangular, MPSMatrixUnaryKernel, MPSMatrixVectorMultiplication ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EE7CF802-BF7F-3EEC-9EC2-26A3B3432275', 'x86_64: EE7CF802-BF7F-3EEC-9EC2-26A3B3432275' ]
+uuids:           [ 'x86_64: 8F8F0C2E-C4EC-3418-A06A-42B8280DDC9D', 'x86_64: 8F8F0C2E-C4EC-3418-A06A-42B8280DDC9D' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/Versions/A/MPSNDArray'
 exports:         
@@ -226,10 +226,10 @@ exports:
     objc-ivars:      [ MPSNDArrayGatherGradientState._axis ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 46C9BDBB-1FB9-3E1A-A02C-818D16E472D9', 'x86_64: 46C9BDBB-1FB9-3E1A-A02C-818D16E472D9' ]
+uuids:           [ 'x86_64: 6BEFB262-2538-3A12-9E9F-A7CF94D2B68A', 'x86_64: 6BEFB262-2538-3A12-9E9F-A7CF94D2B68A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork'
-current-version: 122.2
+current-version: 122.5.6
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ MetalPerformanceShaders ]
@@ -332,10 +332,10 @@ exports:
                        MPSRNNRecurrentImageState, MPSRNNRecurrentMatrixState, MPSRNNSingleGateDescriptor ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7CFEE008-E1AD-30FE-B0B7-9A7459701234', 'x86_64: 7CFEE008-E1AD-30FE-B0B7-9A7459701234' ]
+uuids:           [ 'x86_64: 4D352B8E-97D8-34FA-B2AF-3AB4E3149E2E', 'x86_64: 4D352B8E-97D8-34FA-B2AF-3AB4E3149E2E' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector'
-current-version: 122.2
+current-version: 122.5.6
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ MetalPerformanceShaders ]

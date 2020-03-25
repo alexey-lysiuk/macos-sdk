@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 76EB4086-CA3D-3448-8CE0-9812F9A94F3A', 'x86_64: 76EB4086-CA3D-3448-8CE0-9812F9A94F3A' ]
+uuids:           [ 'x86_64: D28326AA-CE67-3126-BF8A-DF450FCC42B2', 'x86_64: D28326AA-CE67-3126-BF8A-DF450FCC42B2' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit'
-current-version: 1894.10.126
+current-version: 1894.40.150
 compatibility-version: 45
 exports:         
   - archs:           [ x86_64 ]
@@ -1110,7 +1110,8 @@ exports:
                        _NS1DVelocityFilter, _NS2DVelocityFilter, _NSBorderlessLayerTreeProjectionWindow, 
                        _NSBrowserColumnView, _NSBrowserColumnsContainerView, _NSBrowserScrollView, 
                        _NSBrowserTableColumnViewController, _NSCloudSharingParticipantDetails, 
-                       _NSConstraintBasedLayoutHostingView, _NSDatePickerCellSubfield, 
+                       _NSConstraintBasedLayoutHostingView, _NSDatePickerCalendarOverlay, 
+                       _NSDatePickerCellSubfield, _NSDatePickerFieldElementData, 
                        _NSDisplayOperationStack, _NSInputAlignmentControllerSession, 
                        _NSInputAlignmentGuide, _NSInputAlignmentItem, _NSInputAlignmentMatch, 
                        _NSKeyboardFocusClipView, _NSMenuContext, _NSMenuServicesView, 
@@ -1260,21 +1261,21 @@ exports:
                        NSPressureConfiguration._reserved1, NSResponder._nextResponder, 
                        NSRulerMarker._image, NSRulerMarker._imageOrigin, NSRulerMarker._location, 
                        NSRulerMarker._rFlags, NSRulerMarker._representedObject, NSRulerMarker._ruler, 
-                       NSSavePanel._nameField, NSSavePanel._newFolderButton, NSSavePanel._okButton, 
-                       NSSavePanel._spFlags, NSScrollView._contentView, NSScrollView._cornerView, 
-                       NSScrollView._extraIvars, NSScrollView._hScroller, NSScrollView._headerClipView, 
-                       NSScrollView._horizontalRuler, NSScrollView._ruler, NSScrollView._sFlags, 
-                       NSScrollView._vScroller, NSScrollView._verticalRuler, NSScroller._curValue, 
-                       NSScroller._knobSize, NSScroller._percent, NSScroller._reserved, 
-                       NSScroller._reserved2, NSScroller._sFlags2, NSScroller.sFlags, 
-                       NSSegmentItem._alternateImage, NSSegmentItem._flags, NSSegmentItem._fullWidth, 
-                       NSSegmentItem._image, NSSegmentItem._imageRect, NSSegmentItem._label, 
-                       NSSegmentItem._labelRect, NSSegmentItem._menu, NSSegmentItem._menuIndRect, 
-                       NSSegmentItem._shrinkage, NSSegmentItem._tag, NSSegmentItem._toolTip, 
-                       NSSegmentItem._toolTipTag, NSSegmentItem._width, NSSliderCell._altIncValue, 
-                       NSSliderCell._knobOffset, NSSliderCell._maxValue, NSSliderCell._minValue, 
-                       NSSliderCell._numberOfTickMarks, NSSliderCell._previousValue, 
-                       NSSliderCell._scFlags, NSSliderCell._sliderCellPrivateData, 
+                       NSSavePanel._cancelButton, NSSavePanel._nameField, NSSavePanel._newFolderButton, 
+                       NSSavePanel._okButton, NSSavePanel._spFlags, NSScrollView._contentView, 
+                       NSScrollView._cornerView, NSScrollView._extraIvars, NSScrollView._hScroller, 
+                       NSScrollView._headerClipView, NSScrollView._horizontalRuler, 
+                       NSScrollView._ruler, NSScrollView._sFlags, NSScrollView._vScroller, 
+                       NSScrollView._verticalRuler, NSScroller._curValue, NSScroller._knobSize, 
+                       NSScroller._percent, NSScroller._reserved, NSScroller._reserved2, 
+                       NSScroller._sFlags2, NSScroller.sFlags, NSSegmentItem._alternateImage, 
+                       NSSegmentItem._flags, NSSegmentItem._fullWidth, NSSegmentItem._image, 
+                       NSSegmentItem._imageRect, NSSegmentItem._label, NSSegmentItem._labelRect, 
+                       NSSegmentItem._menu, NSSegmentItem._menuIndRect, NSSegmentItem._shrinkage, 
+                       NSSegmentItem._tag, NSSegmentItem._toolTip, NSSegmentItem._toolTipTag, 
+                       NSSegmentItem._width, NSSliderCell._altIncValue, NSSliderCell._knobOffset, 
+                       NSSliderCell._maxValue, NSSliderCell._minValue, NSSliderCell._numberOfTickMarks, 
+                       NSSliderCell._previousValue, NSSliderCell._scFlags, NSSliderCell._sliderCellPrivateData, 
                        NSSliderCell._trackRect, NSSliderCell._value, NSSystemInfoPanel._optionsDictionary, 
                        NSSystemInfoPanel.copyrightView, NSSystemInfoPanel.infoPanel, 
                        NSTableColumn._cFlags, NSTableColumn._dataCell, NSTableColumn._headerCell, 
@@ -1348,10 +1349,10 @@ exports:
                        _NSToolbarSeparator._inPalette ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 99072103-6A73-3538-944A-5FD2AF709A78', 'x86_64: 99072103-6A73-3538-944A-5FD2AF709A78' ]
+uuids:           [ 'x86_64: 27837A1C-A833-3F99-B8D8-84A583EEA523', 'x86_64: 27837A1C-A833-3F99-B8D8-84A583EEA523' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation'
-current-version: 659.5
+current-version: 661.2
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, UIKitCore ]

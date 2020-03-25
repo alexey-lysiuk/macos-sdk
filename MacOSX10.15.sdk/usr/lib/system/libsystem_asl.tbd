@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ECE44856-D279-3B5D-A0AA-8BE421D200C4', 'x86_64: ECE44856-D279-3B5D-A0AA-8BE421D200C4' ]
+uuids:           [ 'x86_64: 0F1BAC19-2AE0-3F8E-9B90-AACF819B2BF7', 'x86_64: 0F1BAC19-2AE0-3F8E-9B90-AACF819B2BF7' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_asl.dylib'
-current-version: 377.40.1
+current-version: 377.60.2
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]

@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 2DA1C581-D858-37BF-818A-61B5AA91A6CD' ]
+platform:        macosx
+install-name:    '/usr/lib/libSLAMDynamic.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ SLAMObjC ]
+...

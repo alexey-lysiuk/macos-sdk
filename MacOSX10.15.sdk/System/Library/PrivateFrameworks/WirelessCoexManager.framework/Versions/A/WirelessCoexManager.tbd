@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 43205453-D6EB-3F56-BDF5-EEFBC18E365B' ]
+uuids:           [ 'x86_64: 6475B089-CFAF-3676-85D2-4F9D68C55935' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WirelessCoexManager.framework/Versions/A/WirelessCoexManager'
 exports:         

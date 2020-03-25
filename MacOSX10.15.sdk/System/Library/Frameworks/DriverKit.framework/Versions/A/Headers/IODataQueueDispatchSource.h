@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.40.3) generated from IODataQueueDispatchSource.iig */
+/* iig(DriverKit-73.100.4) generated from IODataQueueDispatchSource.iig */
 
 /* IODataQueueDispatchSource.iig:1-37 */
 /*
@@ -38,7 +38,187 @@
 typedef void (^IODataQueueClientEnqueueEntryBlock)(void *data, size_t dataSize);
 typedef void (^IODataQueueClientDequeueEntryBlock)(const void *data, size_t dataSize);
 
-/* class IODataQueueDispatchSource IODataQueueDispatchSource.iig:38-207 */
+/* source class IODataQueueDispatchSource IODataQueueDispatchSource.iig:38-207 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
+class NATIVE KERNEL IODataQueueDispatchSource : public IODispatchSource
+{
+public:
+
+    /*!
+     * @brief       Create an IODataQueueDispatchSource for a shared memory data queue.
+     * @param       queueByteCount The size of the queue in bytes.
+     * @param       queue IODispatchQueue the source is attached to. Note that the DataAvailable
+     *              and DataServiced handlers are invoked on the queue set for the target method
+     *              of the OSAction, not this queue.
+     * @param       source Created source with +1 retain count to be released by the caller.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	static kern_return_t
+	Create(
+		uint64_t queueByteCount,
+	    IODispatchQueue * queue,
+	    IODataQueueDispatchSource ** source);
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+    /*!
+     * @brief       As a consumer, set the handler block to run when the queue becomes non-empty.
+     * @param       action OSAction instance specifying the callback method. The OSAction object will be retained
+     *              until SetHandler is called again or the event source is cancelled.
+     *              The DataAvailable handler is invoked on the queue set for the target method of the OSAction.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SetDataAvailableHandler(
+	OSAction * action TYPE(DataAvailable));
+
+    /*!
+     * @brief       As a producer, set the handler block to run when the queue becomes non-full, after an attempt
+     *              to enqueue data failed.
+     * @param       action OSAction instance specifying the callback method. The OSAction object will be retained
+     *              until SetHandler is called again or the event source is cancelled.
+     *              The DataServiced handler is invoked on the queue set for the target method of the OSAction.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SetDataServicedHandler(
+	OSAction * action TYPE(DataServiced));
+
+    /*!
+     * @brief       Control the enable state of the interrupt source.
+     * @param       enable Pass true to enable the source or false to disable.
+     * @param       handler Optional block to be executed after the interrupt has been disabled and any pending
+     *              interrupt handlers completed.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SetEnableWithCompletion(
+		bool enable,
+		IODispatchSourceCancelHandler handler) override LOCAL;
+
+    /*!
+     * @brief       Cancel all callbacks from the event source.
+     * @discussion  After cancellation, the source can only be freed. It cannot be reactivated.
+     * @param       handler Handler block to be invoked after any callbacks have completed.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	Cancel(IODispatchSourceCancelHandler handler) override LOCAL;
+
+
+    /*!
+     * @brief       As a consumer, check if the data queue is non-empty.
+     * @return      True if the queue is non-empty.
+     */
+	bool
+	IsDataAvailable(void) LOCALONLY;
+
+    /*!
+     * @brief       As a consumer, get access to the next queue entry without dequeuing it.
+     * @param       callback to invoked if the queue is non-empty with the next entry to be dequeued.
+     * @return      kIOReturnSuccess if the callback was invoked.
+     *              kIOReturnUnderrun if the queue was empty.
+     *              kIOReturnError if the queue was corrupt.
+     */
+	kern_return_t
+	Peek(IODataQueueClientDequeueEntryBlock callback) LOCALONLY;
+
+    /*!
+     * @brief       As a consumer, dequeue the next queue entry.
+     * @param       callback invoked if the queue was non-empty with the entry that was dequeued.
+     * @return      kIOReturnSuccess if the callback was invoked.
+     *              kIOReturnUnderrun if the queue was empty.
+     *              kIOReturnError if the queue was corrupt.
+     */
+	kern_return_t
+	Dequeue(IODataQueueClientDequeueEntryBlock callback) LOCALONLY;
+
+    /*!
+     * @brief       As a producer, enqueue a queue entry.
+     * @param       dataSize size of the data to enqueue.
+     * @param       callback invoked if the queue has enough space to enqueue the data.
+     * @return      kIOReturnSuccess if the callback was invoked.
+     *              kIOReturnOverrun if the queue was full.
+     *              kIOReturnError if the queue was corrupt.
+     */
+	kern_return_t
+	Enqueue(uint32_t dataSize, IODataQueueClientEnqueueEntryBlock callback) LOCALONLY;
+
+    /*!
+     * @brief       As a consumer, dequeue the next queue entry, but don't send any DataServiced notification.
+     * @param       sendDataServiced Flag that indicates a DataServiced notification would have sent.
+     *              It should be initialized to false before a series of calls to this method,
+     *              and if true after those calls, the notification sent with SendDataServiced().
+     * @param       callback invoked if the queue was non-empty with the entry that was dequeued.
+     * @return      kIOReturnSuccess if the callback was invoked.
+     *              kIOReturnUnderrun if the queue was empty.
+     *              kIOReturnError if the queue was corrupt.
+     */
+	kern_return_t
+	DequeueWithCoalesce(bool * sendDataServiced, IODataQueueClientDequeueEntryBlock callback) LOCALONLY;
+
+    /*!
+     * @brief       As a producer, enqueue a queue entry, but don't send any DataAvailable notification.
+     * @param       dataSize size of the data to enqueue
+     * @param       sendDataAvailable Flag that indicates a DataAvailable notification would have been sent.
+     *              It should be initialized to false before a series of calls to this method,
+     *              and if true after those calls, the notification sent with SendDataAvailable().
+     * @param       callback invoked if the queue has enough space to enqueue the data.
+     * @return      kIOReturnSuccess if the callback was invoked.
+     *              kIOReturnOverrun if the queue was full.
+     *              kIOReturnError if the queue was corrupt.
+     */
+	kern_return_t
+	EnqueueWithCoalesce(uint32_t dataSize,  bool * sendDataAvailable, IODataQueueClientEnqueueEntryBlock callback) LOCALONLY;
+
+    /*!
+     * @brief       As a consumer, send the DataServiced notification indicated by DequeueWithCoalesce.
+	 */
+	void
+	SendDataServiced(void) LOCALONLY;
+
+    /*!
+     * @brief       As a producer, send the DataAvailable notification indicated by EnqueueWithCoalesce.
+	 */
+	void
+	SendDataAvailable(void) LOCALONLY;
+
+private:
+	virtual kern_return_t
+	CopyMemory(
+	IOMemoryDescriptor ** memory);
+
+	virtual kern_return_t
+	CopyDataAvailableHandler(
+	OSAction ** action);
+
+	virtual kern_return_t
+	CopyDataServicedHandler(
+	OSAction ** action);
+
+	virtual kern_return_t
+	CheckForWork(bool synchronous) override LOCAL;
+
+	virtual void
+	DataAvailable(
+		OSAction * action TARGET) LOCAL = 0;
+
+	virtual void
+	DataServiced(
+		OSAction * action TARGET) LOCAL = 0;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IODataQueueDispatchSource IODataQueueDispatchSource.iig:38-207 */
 
 #define IODataQueueDispatchSource_Create_ID            0xe8544306a54d09e0ULL
 #define IODataQueueDispatchSource_SetDataAvailableHandler_ID            0xd2c1d8cc6ec3a591ULL
@@ -320,6 +500,9 @@ public:
 
     IODataQueueDispatchSource_VirtualMethods
 };
+
+#endif /* !__DOCUMENTATION__ */
+
 /* IODataQueueDispatchSource.iig:209- */
 
 #endif /* ! _IOKIT_UIODATAQUEUEDISPATCHSOURCE_H */

@@ -1,8 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7CF95B11-4705-3139-9FEC-2828ED21F75E', 'x86_64: 7CF95B11-4705-3139-9FEC-2828ED21F75E' ]
+uuids:           [ 'x86_64: 7B7A76C3-BFEF-3FD8-A5CF-E67100AD428B', 'x86_64: 7B7A76C3-BFEF-3FD8-A5CF-E67100AD428B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AutoLoop.framework/Versions/A/AutoLoop'
+swift-abi-version: 7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AUTOLOOP_LAR_KEY_ERROR, _AUTOLOOP_LAR_KEY_FRAMETRANSFORM_GAPBRIDGE, 

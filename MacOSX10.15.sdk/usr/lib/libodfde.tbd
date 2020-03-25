@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 104DFC2F-ACCF-321A-974D-734E19056B21' ]
+uuids:           [ 'x86_64: 19038C81-D1E7-360B-8539-34935F0EB91A' ]
 platform:        macosx
 install-name:    '/usr/lib/libodfde.dylib'
 exports:         

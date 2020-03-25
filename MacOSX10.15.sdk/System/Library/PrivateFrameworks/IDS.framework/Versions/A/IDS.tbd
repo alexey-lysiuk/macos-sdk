@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C4FE4844-6A01-3993-A68D-14FA82AD65DC', 'x86_64: C4FE4844-6A01-3993-A68D-14FA82AD65DC' ]
+uuids:           [ 'x86_64: 66E56A39-EF51-3622-9DAF-67CDB76571C4', 'x86_64: 66E56A39-EF51-3622-9DAF-67CDB76571C4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IDS.framework/Versions/A/IDS'
 current-version: 800
@@ -59,19 +59,20 @@ exports:
                        _IDSRefreshUserAccessTokensWithCompletionBlock, _IDSRegistrationControlDisableRegistrationType, 
                        _IDSRegistrationControlEnableRegistrationType, _IDSRegistrationControlGetStateForRegistrationType, 
                        _IDSRepairAccounts, _IDSReportiMessageSpam, _IDSReportiMessageUnknownSender, 
-                       _IDSSecurityKeyRollingRegenerateRegisteredIdentity, _IDSSecurityKeyRollingRollKeys, 
-                       _IDSSendMessageOptionAccessTokenKey, _IDSSendMessageOptionActivityContinuationKey, 
-                       _IDSSendMessageOptionAllowCloudDeliveryKey, _IDSSendMessageOptionAlternateCallbackIdentifierKey, 
-                       _IDSSendMessageOptionAlwaysSkipSelfKey, _IDSSendMessageOptionBypassDuetKey, 
-                       _IDSSendMessageOptionCommandKey, _IDSSendMessageOptionCompressPayloadKey, 
-                       _IDSSendMessageOptionDataToEncryptKey, _IDSSendMessageOptionDeliveryStatusContextKey, 
-                       _IDSSendMessageOptionDisableAliasValidationKey, _IDSSendMessageOptionDropMessageIndicatorKey, 
-                       _IDSSendMessageOptionDuetIdentifiersOverrideKey, _IDSSendMessageOptionDuetKey, 
-                       _IDSSendMessageOptionEncryptPayloadKey, _IDSSendMessageOptionEnforceRemoteTimeoutsKey, 
-                       _IDSSendMessageOptionExpectsPeerResponseKey, _IDSSendMessageOptionFakeMessage, 
-                       _IDSSendMessageOptionFireAndForgetKey, _IDSSendMessageOptionForceEncryptionOffKey, 
-                       _IDSSendMessageOptionForceLocalDeliveryKey, _IDSSendMessageOptionFromIDKey, 
-                       _IDSSendMessageOptionHomeKitMessageKey, _IDSSendMessageOptionInterestingRegistrationPropertiesKey, 
+                       _IDSReportiMessageUnknownSenderWithBlackholeStatus, _IDSSecurityKeyRollingRegenerateRegisteredIdentity, 
+                       _IDSSecurityKeyRollingRollKeys, _IDSSendMessageOptionAccessTokenKey, 
+                       _IDSSendMessageOptionActivityContinuationKey, _IDSSendMessageOptionAllowCloudDeliveryKey, 
+                       _IDSSendMessageOptionAlternateCallbackIdentifierKey, _IDSSendMessageOptionAlwaysSkipSelfKey, 
+                       _IDSSendMessageOptionBypassDuetKey, _IDSSendMessageOptionCommandKey, 
+                       _IDSSendMessageOptionCompressPayloadKey, _IDSSendMessageOptionDataToEncryptKey, 
+                       _IDSSendMessageOptionDeliveryStatusContextKey, _IDSSendMessageOptionDisableAliasValidationKey, 
+                       _IDSSendMessageOptionDropMessageIndicatorKey, _IDSSendMessageOptionDuetIdentifiersOverrideKey, 
+                       _IDSSendMessageOptionDuetKey, _IDSSendMessageOptionEncryptPayloadKey, 
+                       _IDSSendMessageOptionEnforceRemoteTimeoutsKey, _IDSSendMessageOptionExpectsPeerResponseKey, 
+                       _IDSSendMessageOptionFakeMessage, _IDSSendMessageOptionFireAndForgetKey, 
+                       _IDSSendMessageOptionForceEncryptionOffKey, _IDSSendMessageOptionForceLocalDeliveryKey, 
+                       _IDSSendMessageOptionFromIDKey, _IDSSendMessageOptionHomeKitMessageKey, 
+                       _IDSSendMessageOptionInterestingRegistrationPropertiesKey, 
                        _IDSSendMessageOptionLiveMessageDeliveryKey, _IDSSendMessageOptionLocalDeliveryKey, 
                        _IDSSendMessageOptionMapTileKey, _IDSSendMessageOptionMetricReportIdentifierKey, 
                        _IDSSendMessageOptionNSURLSessionKey, _IDSSendMessageOptionNonCloudWakingKey, 
@@ -158,7 +159,7 @@ exports:
                        IDSXPCConnectionRemoteObjectPromise._queue, IDSXPCConnectionRemoteObjectPromise._target ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 010D2AAB-3265-3ED4-B79E-E83571CF0647', 'x86_64: 010D2AAB-3265-3ED4-B79E-E83571CF0647' ]
+uuids:           [ 'x86_64: 5B6A802A-B147-3259-A7ED-254CB5697A92', 'x86_64: 5B6A802A-B147-3259-A7ED-254CB5697A92' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IDSFoundation.framework/Versions/A/IDSFoundation'
 current-version: 800
@@ -450,9 +451,10 @@ exports:
                        _IDSRegistrationPropertySupportsFullScreenMomentsV3, _IDSRegistrationPropertySupportsImpactEffectsV1, 
                        _IDSRegistrationPropertySupportsIncomingFindMyV1, _IDSRegistrationPropertySupportsInlineAttachments, 
                        _IDSRegistrationPropertySupportsInvisibleInkV1, _IDSRegistrationPropertySupportsKeepReceipts, 
-                       _IDSRegistrationPropertySupportsLiveDelivery, _IDSRegistrationPropertySupportsLocationSharing, 
-                       _IDSRegistrationPropertySupportsMediaV2, _IDSRegistrationPropertySupportsOriginalTimestampOrderingV1, 
-                       _IDSRegistrationPropertySupportsPhotosExtensionV1, _IDSRegistrationPropertySupportsProtobufPayloadDataV1, 
+                       _IDSRegistrationPropertySupportsKeySharing, _IDSRegistrationPropertySupportsLiveDelivery, 
+                       _IDSRegistrationPropertySupportsLocationSharing, _IDSRegistrationPropertySupportsMediaV2, 
+                       _IDSRegistrationPropertySupportsOriginalTimestampOrderingV1, 
+                       _IDSRegistrationPropertySupportsPhotosExtensionV1, _IDSRegistrationPropertySupportsProtobufPayloadDataV2, 
                        _IDSRegistrationPropertySupportsScreenTimeV2, _IDSRegistrationPropertySupportsStickersV1, 
                        _IDSRegistrationPropertySupportsUpdateAttachmentsV1, _IDSRegistrationServiceTypeCalling, 
                        _IDSRegistrationServiceTypeCloudMessaging, _IDSRegistrationServiceTypeFaceTime, 
@@ -846,9 +848,10 @@ exports:
                        IDSEndpointCapabilities._supportsFullScreenMomentsV2, IDSEndpointCapabilities._supportsFullScreenMomentsV3, 
                        IDSEndpointCapabilities._supportsImpactEffectsV1, IDSEndpointCapabilities._supportsIncomingFindMyV1, 
                        IDSEndpointCapabilities._supportsInlineAttachments, IDSEndpointCapabilities._supportsInvisibleInkV1, 
-                       IDSEndpointCapabilities._supportsKeepReceipts, IDSEndpointCapabilities._supportsLocationSharing, 
-                       IDSEndpointCapabilities._supportsMediaV2, IDSEndpointCapabilities._supportsOriginalTimestampOrderingV1, 
-                       IDSEndpointCapabilities._supportsPhotosExtensionV1, IDSEndpointCapabilities._supportsProtobufPayloadDataV1, 
+                       IDSEndpointCapabilities._supportsKeepReceipts, IDSEndpointCapabilities._supportsKeySharing, 
+                       IDSEndpointCapabilities._supportsLocationSharing, IDSEndpointCapabilities._supportsMediaV2, 
+                       IDSEndpointCapabilities._supportsOriginalTimestampOrderingV1, 
+                       IDSEndpointCapabilities._supportsPhotosExtensionV1, IDSEndpointCapabilities._supportsProtobufPayloadDataV2, 
                        IDSEndpointCapabilities._supportsScreenTimeV2, IDSEndpointCapabilities._supportsStickersV1, 
                        IDSEndpointCapabilities._supportsUpdateAttachmentsV1, IDSGLSessionManager._connFd, 
                        IDSGLSessionManager._delegate, IDSGLSessionManager._isServer, 

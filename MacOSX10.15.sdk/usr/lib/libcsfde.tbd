@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0A7CE4E1-45F7-3C3E-A092-EAB17818F4A8' ]
+uuids:           [ 'x86_64: A03DD9C3-79A2-33B3-B83D-499B91E20CF4' ]
 platform:        macosx
 install-name:    '/usr/lib/libcsfde.dylib'
 exports:         

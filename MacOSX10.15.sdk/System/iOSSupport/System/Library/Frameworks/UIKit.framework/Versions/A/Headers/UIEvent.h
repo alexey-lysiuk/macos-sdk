@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKitDefines.h>
+#import <UIKit/UICommand.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,6 +20,9 @@ typedef NS_ENUM(NSInteger, UIEventType) {
     UIEventTypeMotion,
     UIEventTypeRemoteControl,
     UIEventTypePresses API_AVAILABLE(ios(9.0)),
+    UIEventTypeScroll      API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos) = 10,
+    UIEventTypeHover       API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos) = 11,
+    UIEventTypeTransform   API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos) = 14,
 };
 
 typedef NS_ENUM(NSInteger, UIEventSubtype) {
@@ -41,6 +45,18 @@ typedef NS_ENUM(NSInteger, UIEventSubtype) {
     UIEventSubtypeRemoteControlEndSeekingForward    = 109,
 };
 
+/// Set of buttons pressed for the current event
+/// Raw format of: 1 << (buttonNumber - 1)
+/// UIEventButtonMaskPrimary = 1 << 0
+typedef NS_OPTIONS(NSInteger, UIEventButtonMask) {
+    UIEventButtonMaskPrimary    = 1 << 0,
+    UIEventButtonMaskSecondary  = 1 << 1
+} NS_SWIFT_NAME(UIEvent.ButtonMask) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, watchos);
+
+/// Convenience initializer for a button mask where `buttonNumber` is a one-based index of the button on the input device
+/// .button(1) == .primary
+/// .button(2) == .secondary
+UIKIT_EXTERN UIEventButtonMask UIEventButtonMaskForButtonNumber(NSInteger buttonNumber) NS_SWIFT_NAME(UIEventButtonMask.button(_:)) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, watchos);
 
 UIKIT_EXTERN API_AVAILABLE(ios(2.0)) @interface UIEvent : NSObject
 
@@ -48,6 +64,9 @@ UIKIT_EXTERN API_AVAILABLE(ios(2.0)) @interface UIEvent : NSObject
 @property(nonatomic,readonly) UIEventSubtype  subtype API_AVAILABLE(ios(3.0));
 
 @property(nonatomic,readonly) NSTimeInterval  timestamp;
+
+@property (nonatomic, readonly) UIKeyModifierFlags modifierFlags API_AVAILABLE(ios(13.4), tvos(13.4)) API_UNAVAILABLE(watchos);
+@property (nonatomic, readonly) UIEventButtonMask buttonMask API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, watchos);
 
 @property(nonatomic, readonly, nullable) NSSet <UITouch *> *allTouches;
 - (nullable NSSet <UITouch *> *)touchesForWindow:(UIWindow *)window;

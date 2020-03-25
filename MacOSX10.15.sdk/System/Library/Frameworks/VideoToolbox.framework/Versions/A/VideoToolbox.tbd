@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D8DDFD1A-003E-399A-9469-E6E55551726D', 'x86_64: D8DDFD1A-003E-399A-9469-E6E55551726D' ]
+uuids:           [ 'x86_64: C488A935-B94F-3F80-88E7-D2743FB1E460', 'x86_64: C488A935-B94F-3F80-88E7-D2743FB1E460' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox'
 exports:         
@@ -89,11 +89,12 @@ exports:
                        _VTRegisterVideoDecoder, _VTRegisterVideoDecoderBundleDirectory, 
                        _VTRegisterVideoDecoderWithInfo, _VTRegisterVideoEncoder, 
                        _VTRegisterVideoEncoderBundleDirectory, _VTRegisterVideoEncoderWithInfo, 
-                       _VTRemoteCompressionServer_ServiceConnectionHandler, _VTRemoteDecompressionServer_ServiceEventHandler, 
-                       _VTSelectAndCreateTemporalFilterInstance, _VTSelectAndCreateVideoDecoderInstance, 
-                       _VTSelectAndCreateVideoEncoderInstance, _VTSessionCopyProperty, 
-                       _VTSessionCopySerializableProperties, _VTSessionCopySupportedPropertyDictionary, 
-                       _VTSessionSetProperties, _VTSessionSetProperty, _VTTemporalFilterPluginGetCMBaseObject, 
+                       _VTRemoteCompressionServer_ServiceConnectionHandler, _VTRemoteDecodeServer_XPCServiceConnectionHandler, 
+                       _VTRemoteDecompressionServer_ServiceEventHandler, _VTSelectAndCreateTemporalFilterInstance, 
+                       _VTSelectAndCreateVideoDecoderInstance, _VTSelectAndCreateVideoEncoderInstance, 
+                       _VTSessionCopyProperty, _VTSessionCopySerializableProperties, 
+                       _VTSessionCopySupportedPropertyDictionary, _VTSessionSetProperties, 
+                       _VTSessionSetProperty, _VTTemporalFilterPluginGetCMBaseObject, 
                        _VTTemporalFilterPluginGetClassID, _VTTemporalFilterPluginGetTypeID, 
                        _VTTemporalFilterPluginSessionConcludeInputFrame, _VTTemporalFilterPluginSessionEmitOutputFrame, 
                        _VTTemporalFilterPluginSessionGetClientInputPixelBufferAttributesHint, 
@@ -179,8 +180,9 @@ exports:
                        _kVTCompressionPropertyKey_VideoResolutionAdaptation, _kVTCompressionPropertyKey_YCbCrMatrix, 
                        _kVTCompressionProperty_MaxQuantizationParameter, _kVTCompressionProperty_SoftMaxQuantizationParameter, 
                        _kVTCompressionProperty_SoftMinH264QuantizationParameter, 
-                       _kVTCompressionProperty_SoftMinQuantizationParameter, _kVTDecompressionPropertyKey_ActiveVideoResolution, 
-                       _kVTDecompressionPropertyKey_CalculateYUVChecksum, _kVTDecompressionPropertyKey_CanvasPixelBufferAttributes, 
+                       _kVTCompressionProperty_SoftMinQuantizationParameter, _kVTDecoderCapability_IsHDRAllowedOnDevice, 
+                       _kVTDecompressionPropertyKey_ActiveVideoResolution, _kVTDecompressionPropertyKey_CalculateYUVChecksum, 
+                       _kVTDecompressionPropertyKey_CanvasPixelBufferAttributes, 
                        _kVTDecompressionPropertyKey_ClientPID, _kVTDecompressionPropertyKey_ColorPrimaries, 
                        _kVTDecompressionPropertyKey_ContentHasInterframeDependencies, 
                        _kVTDecompressionPropertyKey_DeinterlaceMode, _kVTDecompressionPropertyKey_EnableIOFenceDecode, 
@@ -221,11 +223,12 @@ exports:
                        _kVTDecompressionProperty_TemporalLevelLimit, _kVTDecompressionResolutionKey_Height, 
                        _kVTDecompressionResolutionKey_Width, _kVTDecompressionSessionNotification_FrameDecodeCompleted, 
                        _kVTDecompressionSessionOption_AllowClientProcessDecode, _kVTDecompressionSessionOption_ClientPID, 
-                       _kVTDecompressionSessionOption_SharePixelBufferPool, _kVTDownsamplingMode_Average, 
-                       _kVTDownsamplingMode_Decimate, _kVTEncodeFrameOptionKey_AcknowledgedTokens, 
-                       _kVTEncodeFrameOptionKey_AdaptiveResolution, _kVTEncodeFrameOptionKey_AutoExposureState, 
-                       _kVTEncodeFrameOptionKey_AverageBurstyErrorLength, _kVTEncodeFrameOptionKey_AverageTransmissionBitRate, 
-                       _kVTEncodeFrameOptionKey_AverageTransmissionBitRateWindowSize, 
+                       _kVTDecompressionSessionOption_SharePixelBufferPool, _kVTDolbyVisionDecoderCapability_IsHardwareAccelerated, 
+                       _kVTDolbyVisionDecoderCapability_SupportedLevels, _kVTDolbyVisionDecoderCapability_SupportedProfiles, 
+                       _kVTDownsamplingMode_Average, _kVTDownsamplingMode_Decimate, 
+                       _kVTEncodeFrameOptionKey_AcknowledgedTokens, _kVTEncodeFrameOptionKey_AdaptiveResolution, 
+                       _kVTEncodeFrameOptionKey_AutoExposureState, _kVTEncodeFrameOptionKey_AverageBurstyErrorLength, 
+                       _kVTEncodeFrameOptionKey_AverageTransmissionBitRate, _kVTEncodeFrameOptionKey_AverageTransmissionBitRateWindowSize, 
                        _kVTEncodeFrameOptionKey_DirtyRects, _kVTEncodeFrameOptionKey_FECNumBitsAdded, 
                        _kVTEncodeFrameOptionKey_FinalFrame, _kVTEncodeFrameOptionKey_FirstMbInDuplicateSlices, 
                        _kVTEncodeFrameOptionKey_FirstMbInRecvSlices, _kVTEncodeFrameOptionKey_FirstMbInSkipSlices, 

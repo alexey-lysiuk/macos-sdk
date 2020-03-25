@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DD58D092-9AA1-3EE1-9F4A-948C0D6F1CC8', 'x86_64: DD58D092-9AA1-3EE1-9F4A-948C0D6F1CC8' ]
+uuids:           [ 'x86_64: D6EF1F92-D1F2-3298-9DE5-C462489A472B', 'x86_64: D6EF1F92-D1F2-3298-9DE5-C462489A472B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AssetCacheServices.framework/Versions/A/AssetCacheServices'
-current-version: 106.1
+current-version: 111.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ACSImportFileIntoCachingServer, _ACSLocateCachingServer, 

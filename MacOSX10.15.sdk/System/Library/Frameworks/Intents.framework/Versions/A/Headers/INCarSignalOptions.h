@@ -2,7 +2,7 @@
 //  INCarSignalOptions.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #ifndef INCarSignalOptions_h
@@ -14,6 +14,6 @@
 typedef NS_OPTIONS(NSUInteger, INCarSignalOptions) {
     INCarSignalOptionAudible = (1UL << 0),
     INCarSignalOptionVisible = (1UL << 1),
-} API_AVAILABLE(ios(10.3), watchos(3.2)) API_UNAVAILABLE(macosx);
+} API_AVAILABLE(ios(10.3), watchos(3.2)) API_UNAVAILABLE(macos, tvos);
 
 #endif // INCarSignalOptions_h

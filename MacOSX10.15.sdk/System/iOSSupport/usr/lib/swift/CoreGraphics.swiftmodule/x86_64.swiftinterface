@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreGraphics -swift-version 5 -O -enforce-exclusivity=unchecked -module-name CoreGraphics
 @_exported import CoreGraphics
 import Darwin
@@ -250,6 +250,118 @@ extension CGMutablePath {
   public func addArc(tangent1End: CoreGraphics.CGPoint, tangent2End: CoreGraphics.CGPoint, radius: CoreGraphics.CGFloat, transform: CoreGraphics.CGAffineTransform = .identity)
   public func addPath(_ path: CoreGraphics.CGPath, transform: CoreGraphics.CGAffineTransform = .identity)
 }
+@available(*, unavailable, message: "Use == instead")
+public func CGAffineTransformEqualToTransform(_ t1: CoreGraphics.CGAffineTransform, _ t2: CoreGraphics.CGAffineTransform) -> Swift.Bool
+@available(*, unavailable, message: "Use class var white/black/clear instead")
+public func CGColorGetConstantColor(_ colorName: CoreFoundation.CFString?) -> CoreGraphics.CGColor?
+@available(*, unavailable, message: "Use == instead")
+public func CGColorEqualToColor(_ color1: CoreGraphics.CGColor?, _ color2: CoreGraphics.CGColor?) -> Swift.Bool
+@available(*, unavailable, renamed: "getter:CGColor.components(self:)")
+public func CGColorGetComponents(_ color: CoreGraphics.CGColor?) -> Swift.UnsafePointer<CoreGraphics.CGFloat>
+@available(*, unavailable, message: "Use colorTable.count instead")
+public func CGColorSpaceGetColorTableCount(_ space: CoreGraphics.CGColorSpace?) -> Swift.Int
+@available(*, unavailable, renamed: "CGColorSpace.colorTable(self:_:)")
+public func CGColorSpaceGetColorTable(_ space: CoreGraphics.CGColorSpace?, _ table: Swift.UnsafeMutablePointer<Swift.UInt8>)
+@available(*, unavailable, message: "Use setLineDash(self:phase:lengths:)")
+public func CGContextSetLineDash(_ c: CoreGraphics.CGContext?, _ phase: CoreGraphics.CGFloat, _ lengths: Swift.UnsafePointer<CoreGraphics.CGFloat>, _ count: Swift.Int)
+@available(*, unavailable, message: "Use move(to:) instead")
+public func CGContextMoveToPoint(_ c: CoreGraphics.CGContext?, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use addLine(to:) instead")
+public func CGContextAddLineToPoint(_ c: CoreGraphics.CGContext?, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use addCurve(to:control1:control2:) instead")
+public func CGContextAddCurveToPoint(_ c: CoreGraphics.CGContext?, _ cp1x: CoreGraphics.CGFloat, _ cp1y: CoreGraphics.CGFloat, _ cp2x: CoreGraphics.CGFloat, _ cp2y: CoreGraphics.CGFloat, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use addQuadCurve(to:control:)")
+public func CGContextAddQuadCurveToPoint(_ c: CoreGraphics.CGContext?, _ cpx: CoreGraphics.CGFloat, _ cpy: CoreGraphics.CGFloat, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use addRects(_:)")
+public func CGContextAddRects(_ c: CoreGraphics.CGContext?, _ rects: Swift.UnsafePointer<CoreGraphics.CGRect>, _ count: Swift.Int)
+@available(*, unavailable, message: "Use addLines(between:)")
+public func CGContextAddLines(_ c: CoreGraphics.CGContext?, _ points: Swift.UnsafePointer<CoreGraphics.CGPoint>, _ count: Swift.Int)
+@available(*, unavailable, message: "Use addArc(center:radius:startAngle:endAngle:clockwise:)")
+public func CGContextAddArc(_ c: CoreGraphics.CGContext?, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat, _ radius: CoreGraphics.CGFloat, _ startAngle: CoreGraphics.CGFloat, _ endAngle: CoreGraphics.CGFloat, _ clockwise: Swift.Int32)
+@available(*, unavailable, message: "Use addArc(self:x1:y1:x2:y2:radius:)")
+public func CGContextAddArcToPoint(_ c: CoreGraphics.CGContext?, _ x1: CoreGraphics.CGFloat, _ y1: CoreGraphics.CGFloat, _ x2: CoreGraphics.CGFloat, _ y2: CoreGraphics.CGFloat, _ radius: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use fill(self:_:count:)")
+public func CGContextFillRects(_ c: CoreGraphics.CGContext?, _ rects: Swift.UnsafePointer<CoreGraphics.CGRect>, _ count: Swift.Int)
+@available(*, unavailable, message: "Use strokeLineSegments(self:between:count:)")
+public func CGContextStrokeLineSegments(_ c: CoreGraphics.CGContext?, _ points: Swift.UnsafePointer<CoreGraphics.CGPoint>, _ count: Swift.Int)
+@available(*, unavailable, message: "Use clip(to:)")
+public func CGContextClipToRects(_ c: CoreGraphics.CGContext?, _ rects: Swift.UnsafePointer<CoreGraphics.CGRect>, _ count: Swift.Int)
+@available(*, unavailable, message: "Use draw(_:in:)")
+public func CGContextDrawImage(_ c: CoreGraphics.CGContext?, _ rect: CoreGraphics.CGRect, _ image: CoreGraphics.CGImage?)
+@available(*, unavailable, message: "Use draw(_:in:byTiling:)")
+public func CGContextDrawTiledImage(_ c: CoreGraphics.CGContext?, _ rect: CoreGraphics.CGRect, _ image: CoreGraphics.CGImage?)
+@available(*, unavailable, renamed: "getter:CGContext.textPosition(self:)")
+public func CGContextGetTextPosition(_ c: CoreGraphics.CGContext?) -> CoreGraphics.CGPoint
+@available(*, unavailable, message: "Use var textPosition")
+public func CGContextSetTextPosition(_ c: CoreGraphics.CGContext?, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use showGlyphs(_:at:)")
+public func CGContextShowGlyphsAtPositions(_ c: CoreGraphics.CGContext?, _ glyphs: Swift.UnsafePointer<CoreGraphics.CGGlyph>, _ Lpositions: Swift.UnsafePointer<CoreGraphics.CGPoint>, _ count: Swift.Int)
+@available(*, unavailable, renamed: "CGContext.fillPath(self:)")
+public func CGContextFillPath(_ c: CoreGraphics.CGContext?)
+@available(*, unavailable, message: "Use fillPath(using:)")
+public func CGContextEOFillPath(_ c: CoreGraphics.CGContext?)
+@available(*, unavailable, renamed: "CGContext.clip(self:)")
+public func CGContextClip(_ c: CoreGraphics.CGContext?)
+@available(*, unavailable, message: "Use clip(using:)")
+public func CGContextEOClip(_ c: CoreGraphics.CGContext?)
+@available(*, unavailable, renamed: "CGGetLastMouseDelta")
+public func CGGetLastMouseDelta(_ deltaX: Swift.UnsafeMutablePointer<Swift.Int32>?, _ deltaY: Swift.UnsafeMutablePointer<Swift.Int32>?)
+@available(*, unavailable, message: "Use divided(atDistance:from:)")
+public func CGRectDivide(_ rect: CoreGraphics.CGRect, _ slice: Swift.UnsafeMutablePointer<CoreGraphics.CGRect>, _ remainder: Swift.UnsafeMutablePointer<CoreGraphics.CGRect>, _ amount: CoreGraphics.CGFloat, _ edge: CoreGraphics.CGRectEdge)
+@available(*, unavailable, message: "Use CGPoint.init(dictionaryRepresentation:)")
+public func CGPointMakeWithDictionaryRepresentation(_ dict: CoreFoundation.CFDictionary?, _ point: Swift.UnsafeMutablePointer<CoreGraphics.CGPoint>) -> Swift.Bool
+@available(*, unavailable, message: "Use CGSize.init(dictionaryRepresentation:)")
+public func CGSizeMakeWithDictionaryRepresentation(_ dict: CoreFoundation.CFDictionary?, _ size: Swift.UnsafeMutablePointer<CoreGraphics.CGSize>) -> Swift.Bool
+@available(*, unavailable, message: "Use CGRect.init(dictionaryRepresentation:)")
+public func CGRectMakeWithDictionaryRepresentation(_ dict: CoreFoundation.CFDictionary?, _ rect: Swift.UnsafeMutablePointer<CoreGraphics.CGRect>) -> Swift.Bool
+@available(*, unavailable, renamed: "CGImage.copy(self:maskingColorComponents:)")
+public func CGImageCreateWithMaskingColors(_ image: CoreGraphics.CGImage?, _ components: Swift.UnsafePointer<CoreGraphics.CGFloat>) -> CoreGraphics.CGImage?
+@available(*, unavailable, message: "Use draw(_:in:)")
+public func CGContextDrawLayerInRect(_ context: CoreGraphics.CGContext?, _ rect: CoreGraphics.CGRect, _ layer: CoreGraphics.CGLayer?)
+@available(*, unavailable, message: "Use draw(_:at:)")
+public func CGContextDrawLayerAtPoint(_ context: CoreGraphics.CGContext?, _ point: CoreGraphics.CGPoint, _ layer: CoreGraphics.CGLayer?)
+@available(*, unavailable, message: "Use copy(byDashingWithPhase:lengths:transform:)")
+public func CGPathCreateCopyByDashingPath(_ path: CoreGraphics.CGPath?, _ transform: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ phase: CoreGraphics.CGFloat, _ lengths: Swift.UnsafePointer<CoreGraphics.CGFloat>, _ count: Swift.Int) -> CoreGraphics.CGPath?
+@available(*, unavailable, message: "Use copy(byStroking:lineWidth:lineCap:lineJoin:miterLimit:transform:)")
+public func CGPathCreateCopyByStrokingPath(_ path: CoreGraphics.CGPath?, _ transform: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ lineWidth: CoreGraphics.CGFloat, _ lineCap: CoreGraphics.CGLineCap, _ lineJoin: CoreGraphics.CGLineJoin, _ miterLimit: CoreGraphics.CGFloat) -> CoreGraphics.CGPath?
+@available(*, unavailable, message: "Use == instead")
+public func CGPathEqualToPath(_ path1: CoreGraphics.CGPath?, _ path2: CoreGraphics.CGPath?) -> Swift.Bool
+@available(*, unavailable, message: "Use move(to:transform:)")
+public func CGPathMoveToPoint(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use addLine(to:transform:)")
+public func CGPathAddLineToPoint(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use addCurve(to:control1:control2:transform:)")
+public func CGPathAddCurveToPoint(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ cp1x: CoreGraphics.CGFloat, _ cp1y: CoreGraphics.CGFloat, _ cp2x: CoreGraphics.CGFloat, _ cp2y: CoreGraphics.CGFloat, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use addQuadCurve(to:control:transform:)")
+public func CGPathAddQuadCurveToPoint(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ cpx: CoreGraphics.CGFloat, _ cpy: CoreGraphics.CGFloat, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use addRect(_:transform:)")
+public func CGPathAddRect(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ rect: CoreGraphics.CGRect)
+@available(*, unavailable, message: "Use addRects(_:transform:)")
+public func CGPathAddRects(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ rects: Swift.UnsafePointer<CoreGraphics.CGRect>, _ count: Swift.Int)
+@available(*, unavailable, message: "Use addLines(between:transform:)")
+public func CGPathAddLines(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ points: Swift.UnsafePointer<CoreGraphics.CGPoint>, _ count: Swift.Int)
+@available(*, unavailable, message: "Use addEllipse(rect:transform:)")
+public func CGPathAddEllipseInRect(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ rect: CoreGraphics.CGRect)
+@available(*, unavailable, message: "Use addRelativeArc(center:radius:startAngle:delta:transform:)")
+public func CGPathAddRelativeArc(_ path: CoreGraphics.CGMutablePath?, _ matrix: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat, _ radius: CoreGraphics.CGFloat, _ startAngle: CoreGraphics.CGFloat, _ delta: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use addArc(center:radius:startAngle:endAngle:clockwise:transform:)")
+public func CGPathAddArc(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat, _ radius: CoreGraphics.CGFloat, _ startAngle: CoreGraphics.CGFloat, _ endAngle: CoreGraphics.CGFloat, _ clockwise: Swift.Bool)
+@available(*, unavailable, message: "Use addArc(tangent1End:tangent2End:radius:transform:)")
+public func CGPathAddArcToPoint(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ x1: CoreGraphics.CGFloat, _ y1: CoreGraphics.CGFloat, _ x2: CoreGraphics.CGFloat, _ y2: CoreGraphics.CGFloat, _ radius: CoreGraphics.CGFloat)
+@available(*, unavailable, message: "Use addPath(_:transform:)")
+public func CGPathAddPath(_ path1: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ path2: CoreGraphics.CGPath?)
+@available(*, unavailable, message: "Use CGColor.white")
+public var kCGColorWhite: CoreFoundation.CFString {
+  get
+}
+@available(*, unavailable, message: "Use CGColor.black")
+public var kCGColorBlack: CoreFoundation.CFString {
+  get
+}
+@available(*, unavailable, message: "Use CGColor.clear")
+public var kCGColorClear: CoreFoundation.CFString {
+  get
+}
 @frozen public struct CGFloat {
   public typealias NativeType = Swift.Double
   @_transparent public init() {
@@ -275,28 +387,28 @@ extension CGFloat : Swift.SignedNumeric {
     self.native = native
   }
   @_transparent public var magnitude: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(native.magnitude)
   }
   }
-  public typealias Magnitude = CoreGraphics.CGFloat
   public typealias IntegerLiteralType = Swift.Int
+  public typealias Magnitude = CoreGraphics.CGFloat
 }
 extension CGFloat : Swift.BinaryFloatingPoint {
   public typealias RawSignificand = Swift.UInt
   public typealias Exponent = Swift.Int
   @_transparent public static var exponentBitCount: Swift.Int {
-    get {
+    @_transparent get {
     return NativeType.exponentBitCount
   }
   }
   @_transparent public static var significandBitCount: Swift.Int {
-    get {
+    @_transparent get {
     return NativeType.significandBitCount
   }
   }
   @_transparent public var bitPattern: Swift.UInt {
-    get {
+    @_transparent get {
     return UInt(native.bitPattern)
   }
   }
@@ -304,17 +416,17 @@ extension CGFloat : Swift.BinaryFloatingPoint {
     native = NativeType(bitPattern: UInt64(bitPattern))
   }
   @_transparent public var sign: Swift.FloatingPointSign {
-    get {
+    @_transparent get {
     return native.sign
   }
   }
   @_transparent public var exponentBitPattern: Swift.UInt {
-    get {
+    @_transparent get {
     return native.exponentBitPattern
   }
   }
   @_transparent public var significandBitPattern: Swift.UInt {
-    get {
+    @_transparent get {
     return UInt(native.significandBitPattern)
   }
   }
@@ -328,17 +440,17 @@ extension CGFloat : Swift.BinaryFloatingPoint {
                         signaling: signaling)
   }
   @_transparent public static var infinity: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(NativeType.infinity)
   }
   }
   @_transparent public static var nan: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(NativeType.nan)
   }
   }
   @_transparent public static var signalingNaN: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(NativeType.signalingNaN)
   }
   }
@@ -347,37 +459,37 @@ extension CGFloat : Swift.BinaryFloatingPoint {
     get
   }
   @_transparent public static var greatestFiniteMagnitude: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(NativeType.greatestFiniteMagnitude)
   }
   }
   @_transparent public static var pi: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(NativeType.pi)
   }
   }
   @_transparent public var ulp: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(native.ulp)
   }
   }
   @_transparent public static var leastNormalMagnitude: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(NativeType.leastNormalMagnitude)
   }
   }
   @_transparent public static var leastNonzeroMagnitude: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(NativeType.leastNonzeroMagnitude)
   }
   }
   @_transparent public var exponent: Swift.Int {
-    get {
+    @_transparent get {
     return native.exponent
   }
   }
   @_transparent public var significand: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(native.significand)
   }
   }
@@ -385,15 +497,15 @@ extension CGFloat : Swift.BinaryFloatingPoint {
     native = NativeType(sign: sign,
       exponent: exponent, significand: significand.native)
   }
-  @_transparent mutating public func round(_ rule: Swift.FloatingPointRoundingRule) {
+  @_transparent public mutating func round(_ rule: Swift.FloatingPointRoundingRule) {
     native.round(rule)
   }
   @_transparent public var nextUp: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(native.nextUp)
   }
   }
-  @_transparent mutating public func negate() {
+  @_transparent public mutating func negate() {
     native.negate()
   }
   @_transparent public static func += (lhs: inout CoreGraphics.CGFloat, rhs: CoreGraphics.CGFloat) {
@@ -408,16 +520,16 @@ extension CGFloat : Swift.BinaryFloatingPoint {
   @_transparent public static func /= (lhs: inout CoreGraphics.CGFloat, rhs: CoreGraphics.CGFloat) {
     lhs.native /= rhs.native
   }
-  @_transparent mutating public func formTruncatingRemainder(dividingBy other: CoreGraphics.CGFloat) {
+  @_transparent public mutating func formTruncatingRemainder(dividingBy other: CoreGraphics.CGFloat) {
     native.formTruncatingRemainder(dividingBy: other.native)
   }
-  @_transparent mutating public func formRemainder(dividingBy other: CoreGraphics.CGFloat) {
+  @_transparent public mutating func formRemainder(dividingBy other: CoreGraphics.CGFloat) {
     native.formRemainder(dividingBy: other.native)
   }
-  @_transparent mutating public func formSquareRoot() {
+  @_transparent public mutating func formSquareRoot() {
     native.formSquareRoot( )
   }
-  @_transparent mutating public func addProduct(_ lhs: CoreGraphics.CGFloat, _ rhs: CoreGraphics.CGFloat) {
+  @_transparent public mutating func addProduct(_ lhs: CoreGraphics.CGFloat, _ rhs: CoreGraphics.CGFloat) {
     native.addProduct(lhs.native, rhs.native)
   }
   @_transparent public func isEqual(to other: CoreGraphics.CGFloat) -> Swift.Bool {
@@ -430,37 +542,37 @@ extension CGFloat : Swift.BinaryFloatingPoint {
     return self.native.isLessThanOrEqualTo(other.native)
   }
   @_transparent public var isNormal: Swift.Bool {
-    get {
+    @_transparent get {
     return native.isNormal
   }
   }
   @_transparent public var isFinite: Swift.Bool {
-    get {
+    @_transparent get {
     return native.isFinite
   }
   }
   @_transparent public var isZero: Swift.Bool {
-    get {
+    @_transparent get {
     return native.isZero
   }
   }
   @_transparent public var isSubnormal: Swift.Bool {
-    get {
+    @_transparent get {
     return native.isSubnormal
   }
   }
   @_transparent public var isInfinite: Swift.Bool {
-    get {
+    @_transparent get {
     return native.isInfinite
   }
   }
   @_transparent public var isNaN: Swift.Bool {
-    get {
+    @_transparent get {
     return native.isNaN
   }
   }
   @_transparent public var isSignalingNaN: Swift.Bool {
-    get {
+    @_transparent get {
     return native.isSignalingNaN
   }
   }
@@ -469,22 +581,22 @@ extension CGFloat : Swift.BinaryFloatingPoint {
     get
   }
   @_transparent public var isCanonical: Swift.Bool {
-    get {
+    @_transparent get {
     return true
   }
   }
   @_transparent public var floatingPointClass: Swift.FloatingPointClassification {
-    get {
+    @_transparent get {
     return native.floatingPointClass
   }
   }
   @_transparent public var binade: CoreGraphics.CGFloat {
-    get {
+    @_transparent get {
     return CGFloat(native.binade)
   }
   }
   @_transparent public var significandWidth: Swift.Int {
-    get {
+    @_transparent get {
     return native.significandWidth
   }
   }
@@ -522,14 +634,14 @@ extension CGFloat : Swift.CustomReflectable {
 }
 extension CGFloat : Swift.CustomStringConvertible {
   @_transparent public var description: Swift.String {
-    get {
+    @_transparent get {
     return native.description
   }
   }
 }
 extension CGFloat : Swift.Hashable {
   @_transparent public var hashValue: Swift.Int {
-    get {
+    @_transparent get {
     return native.hashValue
   }
   }
@@ -795,12 +907,12 @@ public func signbit(_ value: CoreGraphics.CGFloat) -> Swift.Int
 }
 extension CGFloat : Swift._CVarArgPassedAsDouble, Swift._CVarArgAligned {
   @_transparent public var _cVarArgEncoding: [Swift.Int] {
-    get {
+    @_transparent get {
     return native._cVarArgEncoding
   }
   }
   @_transparent public var _cVarArgAlignment: Swift.Int {
-    get {
+    @_transparent get {
     return native._cVarArgAlignment
   }
   }
@@ -832,118 +944,6 @@ extension CGFloat : Swift.Codable {
     var container = encoder.singleValueContainer()
     try container.encode(self.native)
   }
-}
-@available(*, unavailable, message: "Use == instead")
-public func CGAffineTransformEqualToTransform(_ t1: CoreGraphics.CGAffineTransform, _ t2: CoreGraphics.CGAffineTransform) -> Swift.Bool
-@available(*, unavailable, message: "Use class var white/black/clear instead")
-public func CGColorGetConstantColor(_ colorName: CoreFoundation.CFString?) -> CoreGraphics.CGColor?
-@available(*, unavailable, message: "Use == instead")
-public func CGColorEqualToColor(_ color1: CoreGraphics.CGColor?, _ color2: CoreGraphics.CGColor?) -> Swift.Bool
-@available(*, unavailable, renamed: "getter:CGColor.components(self:)")
-public func CGColorGetComponents(_ color: CoreGraphics.CGColor?) -> Swift.UnsafePointer<CoreGraphics.CGFloat>
-@available(*, unavailable, message: "Use colorTable.count instead")
-public func CGColorSpaceGetColorTableCount(_ space: CoreGraphics.CGColorSpace?) -> Swift.Int
-@available(*, unavailable, renamed: "CGColorSpace.colorTable(self:_:)")
-public func CGColorSpaceGetColorTable(_ space: CoreGraphics.CGColorSpace?, _ table: Swift.UnsafeMutablePointer<Swift.UInt8>)
-@available(*, unavailable, message: "Use setLineDash(self:phase:lengths:)")
-public func CGContextSetLineDash(_ c: CoreGraphics.CGContext?, _ phase: CoreGraphics.CGFloat, _ lengths: Swift.UnsafePointer<CoreGraphics.CGFloat>, _ count: Swift.Int)
-@available(*, unavailable, message: "Use move(to:) instead")
-public func CGContextMoveToPoint(_ c: CoreGraphics.CGContext?, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use addLine(to:) instead")
-public func CGContextAddLineToPoint(_ c: CoreGraphics.CGContext?, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use addCurve(to:control1:control2:) instead")
-public func CGContextAddCurveToPoint(_ c: CoreGraphics.CGContext?, _ cp1x: CoreGraphics.CGFloat, _ cp1y: CoreGraphics.CGFloat, _ cp2x: CoreGraphics.CGFloat, _ cp2y: CoreGraphics.CGFloat, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use addQuadCurve(to:control:)")
-public func CGContextAddQuadCurveToPoint(_ c: CoreGraphics.CGContext?, _ cpx: CoreGraphics.CGFloat, _ cpy: CoreGraphics.CGFloat, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use addRects(_:)")
-public func CGContextAddRects(_ c: CoreGraphics.CGContext?, _ rects: Swift.UnsafePointer<CoreGraphics.CGRect>, _ count: Swift.Int)
-@available(*, unavailable, message: "Use addLines(between:)")
-public func CGContextAddLines(_ c: CoreGraphics.CGContext?, _ points: Swift.UnsafePointer<CoreGraphics.CGPoint>, _ count: Swift.Int)
-@available(*, unavailable, message: "Use addArc(center:radius:startAngle:endAngle:clockwise:)")
-public func CGContextAddArc(_ c: CoreGraphics.CGContext?, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat, _ radius: CoreGraphics.CGFloat, _ startAngle: CoreGraphics.CGFloat, _ endAngle: CoreGraphics.CGFloat, _ clockwise: Swift.Int32)
-@available(*, unavailable, message: "Use addArc(self:x1:y1:x2:y2:radius:)")
-public func CGContextAddArcToPoint(_ c: CoreGraphics.CGContext?, _ x1: CoreGraphics.CGFloat, _ y1: CoreGraphics.CGFloat, _ x2: CoreGraphics.CGFloat, _ y2: CoreGraphics.CGFloat, _ radius: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use fill(self:_:count:)")
-public func CGContextFillRects(_ c: CoreGraphics.CGContext?, _ rects: Swift.UnsafePointer<CoreGraphics.CGRect>, _ count: Swift.Int)
-@available(*, unavailable, message: "Use strokeLineSegments(self:between:count:)")
-public func CGContextStrokeLineSegments(_ c: CoreGraphics.CGContext?, _ points: Swift.UnsafePointer<CoreGraphics.CGPoint>, _ count: Swift.Int)
-@available(*, unavailable, message: "Use clip(to:)")
-public func CGContextClipToRects(_ c: CoreGraphics.CGContext?, _ rects: Swift.UnsafePointer<CoreGraphics.CGRect>, _ count: Swift.Int)
-@available(*, unavailable, message: "Use draw(_:in:)")
-public func CGContextDrawImage(_ c: CoreGraphics.CGContext?, _ rect: CoreGraphics.CGRect, _ image: CoreGraphics.CGImage?)
-@available(*, unavailable, message: "Use draw(_:in:byTiling:)")
-public func CGContextDrawTiledImage(_ c: CoreGraphics.CGContext?, _ rect: CoreGraphics.CGRect, _ image: CoreGraphics.CGImage?)
-@available(*, unavailable, renamed: "getter:CGContext.textPosition(self:)")
-public func CGContextGetTextPosition(_ c: CoreGraphics.CGContext?) -> CoreGraphics.CGPoint
-@available(*, unavailable, message: "Use var textPosition")
-public func CGContextSetTextPosition(_ c: CoreGraphics.CGContext?, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use showGlyphs(_:at:)")
-public func CGContextShowGlyphsAtPositions(_ c: CoreGraphics.CGContext?, _ glyphs: Swift.UnsafePointer<CoreGraphics.CGGlyph>, _ Lpositions: Swift.UnsafePointer<CoreGraphics.CGPoint>, _ count: Swift.Int)
-@available(*, unavailable, renamed: "CGContext.fillPath(self:)")
-public func CGContextFillPath(_ c: CoreGraphics.CGContext?)
-@available(*, unavailable, message: "Use fillPath(using:)")
-public func CGContextEOFillPath(_ c: CoreGraphics.CGContext?)
-@available(*, unavailable, renamed: "CGContext.clip(self:)")
-public func CGContextClip(_ c: CoreGraphics.CGContext?)
-@available(*, unavailable, message: "Use clip(using:)")
-public func CGContextEOClip(_ c: CoreGraphics.CGContext?)
-@available(*, unavailable, renamed: "CGGetLastMouseDelta")
-public func CGGetLastMouseDelta(_ deltaX: Swift.UnsafeMutablePointer<Swift.Int32>?, _ deltaY: Swift.UnsafeMutablePointer<Swift.Int32>?)
-@available(*, unavailable, message: "Use divided(atDistance:from:)")
-public func CGRectDivide(_ rect: CoreGraphics.CGRect, _ slice: Swift.UnsafeMutablePointer<CoreGraphics.CGRect>, _ remainder: Swift.UnsafeMutablePointer<CoreGraphics.CGRect>, _ amount: CoreGraphics.CGFloat, _ edge: CoreGraphics.CGRectEdge)
-@available(*, unavailable, message: "Use CGPoint.init(dictionaryRepresentation:)")
-public func CGPointMakeWithDictionaryRepresentation(_ dict: CoreFoundation.CFDictionary?, _ point: Swift.UnsafeMutablePointer<CoreGraphics.CGPoint>) -> Swift.Bool
-@available(*, unavailable, message: "Use CGSize.init(dictionaryRepresentation:)")
-public func CGSizeMakeWithDictionaryRepresentation(_ dict: CoreFoundation.CFDictionary?, _ size: Swift.UnsafeMutablePointer<CoreGraphics.CGSize>) -> Swift.Bool
-@available(*, unavailable, message: "Use CGRect.init(dictionaryRepresentation:)")
-public func CGRectMakeWithDictionaryRepresentation(_ dict: CoreFoundation.CFDictionary?, _ rect: Swift.UnsafeMutablePointer<CoreGraphics.CGRect>) -> Swift.Bool
-@available(*, unavailable, renamed: "CGImage.copy(self:maskingColorComponents:)")
-public func CGImageCreateWithMaskingColors(_ image: CoreGraphics.CGImage?, _ components: Swift.UnsafePointer<CoreGraphics.CGFloat>) -> CoreGraphics.CGImage?
-@available(*, unavailable, message: "Use draw(_:in:)")
-public func CGContextDrawLayerInRect(_ context: CoreGraphics.CGContext?, _ rect: CoreGraphics.CGRect, _ layer: CoreGraphics.CGLayer?)
-@available(*, unavailable, message: "Use draw(_:at:)")
-public func CGContextDrawLayerAtPoint(_ context: CoreGraphics.CGContext?, _ point: CoreGraphics.CGPoint, _ layer: CoreGraphics.CGLayer?)
-@available(*, unavailable, message: "Use copy(byDashingWithPhase:lengths:transform:)")
-public func CGPathCreateCopyByDashingPath(_ path: CoreGraphics.CGPath?, _ transform: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ phase: CoreGraphics.CGFloat, _ lengths: Swift.UnsafePointer<CoreGraphics.CGFloat>, _ count: Swift.Int) -> CoreGraphics.CGPath?
-@available(*, unavailable, message: "Use copy(byStroking:lineWidth:lineCap:lineJoin:miterLimit:transform:)")
-public func CGPathCreateCopyByStrokingPath(_ path: CoreGraphics.CGPath?, _ transform: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ lineWidth: CoreGraphics.CGFloat, _ lineCap: CoreGraphics.CGLineCap, _ lineJoin: CoreGraphics.CGLineJoin, _ miterLimit: CoreGraphics.CGFloat) -> CoreGraphics.CGPath?
-@available(*, unavailable, message: "Use == instead")
-public func CGPathEqualToPath(_ path1: CoreGraphics.CGPath?, _ path2: CoreGraphics.CGPath?) -> Swift.Bool
-@available(*, unavailable, message: "Use move(to:transform:)")
-public func CGPathMoveToPoint(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use addLine(to:transform:)")
-public func CGPathAddLineToPoint(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use addCurve(to:control1:control2:transform:)")
-public func CGPathAddCurveToPoint(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ cp1x: CoreGraphics.CGFloat, _ cp1y: CoreGraphics.CGFloat, _ cp2x: CoreGraphics.CGFloat, _ cp2y: CoreGraphics.CGFloat, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use addQuadCurve(to:control:transform:)")
-public func CGPathAddQuadCurveToPoint(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ cpx: CoreGraphics.CGFloat, _ cpy: CoreGraphics.CGFloat, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use addRect(_:transform:)")
-public func CGPathAddRect(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ rect: CoreGraphics.CGRect)
-@available(*, unavailable, message: "Use addRects(_:transform:)")
-public func CGPathAddRects(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ rects: Swift.UnsafePointer<CoreGraphics.CGRect>, _ count: Swift.Int)
-@available(*, unavailable, message: "Use addLines(between:transform:)")
-public func CGPathAddLines(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ points: Swift.UnsafePointer<CoreGraphics.CGPoint>, _ count: Swift.Int)
-@available(*, unavailable, message: "Use addEllipse(rect:transform:)")
-public func CGPathAddEllipseInRect(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ rect: CoreGraphics.CGRect)
-@available(*, unavailable, message: "Use addRelativeArc(center:radius:startAngle:delta:transform:)")
-public func CGPathAddRelativeArc(_ path: CoreGraphics.CGMutablePath?, _ matrix: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat, _ radius: CoreGraphics.CGFloat, _ startAngle: CoreGraphics.CGFloat, _ delta: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use addArc(center:radius:startAngle:endAngle:clockwise:transform:)")
-public func CGPathAddArc(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat, _ radius: CoreGraphics.CGFloat, _ startAngle: CoreGraphics.CGFloat, _ endAngle: CoreGraphics.CGFloat, _ clockwise: Swift.Bool)
-@available(*, unavailable, message: "Use addArc(tangent1End:tangent2End:radius:transform:)")
-public func CGPathAddArcToPoint(_ path: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ x1: CoreGraphics.CGFloat, _ y1: CoreGraphics.CGFloat, _ x2: CoreGraphics.CGFloat, _ y2: CoreGraphics.CGFloat, _ radius: CoreGraphics.CGFloat)
-@available(*, unavailable, message: "Use addPath(_:transform:)")
-public func CGPathAddPath(_ path1: CoreGraphics.CGMutablePath?, _ m: Swift.UnsafePointer<CoreGraphics.CGAffineTransform>, _ path2: CoreGraphics.CGPath?)
-@available(*, unavailable, message: "Use CGColor.white")
-public var kCGColorWhite: CoreFoundation.CFString {
-  get
-}
-@available(*, unavailable, message: "Use CGColor.black")
-public var kCGColorBlack: CoreFoundation.CFString {
-  get
-}
-@available(*, unavailable, message: "Use CGColor.clear")
-public var kCGColorClear: CoreFoundation.CFString {
-  get
 }
 extension CoreGraphics.CGPathFillRule : Swift.Equatable {}
 extension CoreGraphics.CGPathFillRule : Swift.Hashable {}

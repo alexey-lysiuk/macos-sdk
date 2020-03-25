@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BEE2FF2-7D15-3B49-842C-C99EB28C7C93' ]
+uuids:           [ 'x86_64: 857274DB-C623-36E9-903C-488DC2A216BF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AudioHistory.framework/Versions/A/AudioHistory'
 exports:         

@@ -2,7 +2,7 @@
 //  INCallRecord.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -15,7 +15,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(11.0), watchos(4.0))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @interface INCallRecord : NSObject <NSCopying, NSSecureCoding>
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -51,7 +51,7 @@ API_UNAVAILABLE(macosx)
 
 @property (readonly, assign, NS_NONATOMIC_IOSONLY) INCallCapability callCapability;
 
-@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSNumber *numberOfCalls NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSNumber *numberOfCalls NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macos);
 
 @end
 

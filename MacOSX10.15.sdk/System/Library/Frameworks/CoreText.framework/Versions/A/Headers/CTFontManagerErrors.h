@@ -88,6 +88,7 @@ typedef CF_ENUM(CFIndex, CTFontManagerError) {
     kCTFontManagerErrorInvalidFontData          = 104,
     kCTFontManagerErrorAlreadyRegistered        = 105,
     kCTFontManagerErrorExceededResourceLimit    = 106,
+    kCTFontManagerErrorAssetNotFound            = 107,
     kCTFontManagerErrorNotRegistered            = 201,
     kCTFontManagerErrorInUse                    = 202,
     kCTFontManagerErrorSystemRequired           = 203,

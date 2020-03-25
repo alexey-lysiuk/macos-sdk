@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2D3D13DB-EEBD-3106-9AEC-3723DD6578BB', 'x86_64: 2D3D13DB-EEBD-3106-9AEC-3723DD6578BB' ]
+uuids:           [ 'x86_64: EE06D266-4E87-3EC3-B93A-2A0222F20A0D', 'x86_64: EE06D266-4E87-3EC3-B93A-2A0222F20A0D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AdAnalytics.framework/Versions/A/AdAnalytics'
 exports:         

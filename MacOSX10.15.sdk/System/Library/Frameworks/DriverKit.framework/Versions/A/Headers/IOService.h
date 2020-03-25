@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.40.3) generated from IOService.iig */
+/* iig(DriverKit-73.100.4) generated from IOService.iig */
 
-/* IOService.iig:1-75 */
+/* IOService.iig:1-60 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -40,6 +40,7 @@
 class IOMemoryDescriptor;
 class IOBufferMemoryDescriptor;
 class IOUserClient;
+class OSAction;
 
 typedef char IOServiceName[128];
 typedef char IOPropertyName[128];
@@ -57,6 +58,11 @@ enum {
 	kIOServicePowerCapabilityLow = 0x00010000,
 };
 
+/* source class IOService IOService.iig:61-325 */
+
+#if __DOCUMENTATION__
+#define KERNEL IIG_KERNEL
+
 /*!
  * @class IOService
  *
@@ -68,12 +74,263 @@ enum {
  * Drivers and devices are represented as subclasses of IOService.
  *
 
-@iig implementation
-#include <DriverKit/IOUserClient.h>
-@iig end
 */
 
-/* class IOService IOService.iig:76-248 */
+class KERNEL IOService : public OSObject
+{
+public:
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+    /*!
+     * @brief       First call made to a matched IOService.
+     * @discussion  During matching IOKit will create an IOService object for successful matches.
+     *              Start is the first call made to the new object.
+     * @param       provider The IOService provider for the match. This should be OSRequiredCast to the expected class.
+     *              The provider is retained by DriverKit for the duration of Start() and on successful Start() until
+     *              IOService::Stop() is called.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	Start(IOService * provider) LOCAL;
+
+    /*!
+     * @brief       Terminate access to provider.
+     * @discussion  During termination IOKit will teardown any IOService objects attached to a terminated provider.
+     *              Stop should quiesce all activity and when complete, pass the call to super. After calling super, the
+     *              provider is no longer valid and this object will likely be freed.
+     * @param       provider The IOService provider for being terminated, one previously passed to Start
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	Stop(IOService * provider) LOCAL;
+
+    /*!
+     * @brief       Obtain IOKit IORegistryEntryID.
+     * @param       registryEntryID IORegistryEntryID for the IOKit object.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	GetRegistryEntryID(uint64_t * registryEntryID) LOCAL;
+
+    /*!
+     * @brief       Set the IORegistryEntry name.
+     * @param       name Name for the IOKit object. The c-string will be copied.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SetName(
+	const IOServiceName name);
+
+    /*!
+     * @brief       Start the matching process on the IOService object.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	RegisterService();
+
+    /*!
+     * @brief       Set the IODispatchQueue for a given name on the IOService.
+     * @param       name Name for the queue. The name may be referenced by methods in the .iig class definition
+     *              with the QUEUENAME() attribute to indicate the method must be invoked on that queue. If a method
+     *              is invoked before the queue is set for the name, the default queue is used. A default queue is
+     *              created by DriverKit for every new IOService object with the name kIOServiceDefaultQueueName.
+     * @param       queue Queue to be associated with the name on this IOService.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SetDispatchQueue(
+		const IODispatchQueueName name,
+		IODispatchQueue         * queue) override LOCAL;
+
+    /*!
+     * @brief       Obtain the IODispatchQueue for a given name on the IOService.
+     * @param       name Name for the queue.
+     * @param       queue Returned, retained queue or NULL. The caller should release this queue.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	CopyDispatchQueue(
+		const IODispatchQueueName name,
+		IODispatchQueue        ** queue) override;
+
+    /*!
+     * @brief       Obtain the IOKit registry properties for the IOService.
+     * @param       properties Returned, retained dictionary of properties or NULL. The caller should release this dictionary.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	CopyProperties(
+		OSDictionary ** properties);
+
+    /*!
+     * @brief       Obtain the an IOKit registry properties from the service or one of its parents.
+     * @param       name Name of the property as a c-string.
+     * @param       plane Name of the registry plane to be searched, if the option kIOServiceSearchPropertyParents
+     *              is used.
+     * @param       options Pass kIOServiceSearchPropertyParents to search for the property in the IOService and all
+     *              its parents in the IOKit registry.
+     * @param       property Returned, retained property object or NULL. The caller should release this property.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SearchProperty(
+		const IOPropertyName name,
+		const IORegistryPlaneName plane,
+		uint64_t options,
+		OSContainer ** property);
+
+    /*!
+     * @brief       Send a dictionary of properties to an IOService.
+     * @discussion  By default the method will fail. A DriverKit subclass or kernel class may implement this method.
+     * @param       properties Dictionary of properties.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SetProperties(
+		OSDictionary * properties);
+
+    /*!
+     * @brief       Notification of change in power state of a provider.
+     * @discussion  DriverKit notifies of changes in power of a provider. The driver should make itself safe for
+     *              the new state before passing the call to super. 
+     * @param       powerFlags The power capabilities of the new state. The values possible are:
+	 *	kIOServicePowerCapabilityOff the system will be entering sleep state
+	 *	kIOServicePowerCapabilityOn  the device and system are fully powered
+	 *  kIOServicePowerCapabilityLow the device is in a reduced power state while the system is running
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	SetPowerState(
+		uint32_t powerFlags) LOCAL;
+
+    /*!
+     * @brief       Allow provider to enter a low power state.
+     * @discussion  A driver may allow a device to enter a lower power state. 
+     * @param       powerFlags The power capabilities of the new state. The values possible are:
+	 *  kIOServicePowerCapabilityLow the device is in a reduced power state while the system is running
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	ChangePowerState(
+		uint32_t powerFlags);
+
+    /*!
+     * @brief       Request create a new user client for a client process.
+     * @discussion  An application may request an IOUserClient be opened with the IOKit framework
+     *              IOServiceOpen() call. The type parameter of that call is passed here. The driver should respond to
+     *              the call by calling IOService::Create() with a plist entry describing the new user client object.
+     * @param       type The type passed to IOServiceOpen().
+     * @param       userClient The object created by IOService::Create()
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	NewUserClient(
+		uint32_t type,
+		IOUserClient ** userClient);
+
+    /*!
+     * @brief       Request to create an IOService object from a plist property.
+     * @discussion  An IOService interface or IOUserClient subclass may be created from a plist property of the driver.
+     *              The plist should contain the following IOKit matching keys:
+     *              IOClass - kernel class of IOUserUserClient
+     *              IOUserClass - DriverKit class to be instantiated
+     *              IOServiceDEXTEntitlements - Array of entitlements to be checked against a user client owning task
+     * @param       provider The provider of the new object.
+     * @param       propertiesKey The name of the properties dictionary in this IOService
+     * @param       result The created object retained, to be released by the caller.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	Create(
+		IOService          * provider,
+		const IOPropertyName propertiesKey,
+		IOService         ** result) LOCAL;
+
+    /*!
+     * @brief       Start an IOService termination.
+     * @discussion  An IOService object created with Create() may be removed by calling Terminate().
+     *              The termination is asynchronous and will later call Stop() on the service.
+     * @param       options No options are currently defined, pass zero.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+	virtual kern_return_t
+	Terminate(
+		uint64_t			 options);
+
+   /*!
+    * @brief       Obtain supportable properties describing the provider chain.
+    * @discussion  Obtain supportable properties describing the provider chain. This will be a subset of registry
+    *              properties the OS considers supportable.
+    *              The array is ordered with a dictionary of properties for each entry in the provider chain from this
+    *              service towards the root.
+    * @param       propertyKeys If only certain property values are need, they may be passed in this array.
+    * @param       properties Returned, retained array of dictionaries of properties or NULL. The caller should release
+    *              this array.
+    * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+    */
+	virtual kern_return_t
+	CopyProviderProperties(
+		OSArray  * propertyKeys,
+		OSArray ** properties);
+
+
+	/*! @function IOCreatePropertyMatchingDictionary
+	 *   @abstract Construct a matching dictionary for property matching.
+	 */
+	static OSDictionary *
+	CreatePropertyMatchingDictionary(const char * key, OSObjectPtr value, OSDictionary * matching) LOCALONLY;
+
+	/*! @function IOCreatePropertyMatchingDictionary
+	 *   @abstract Construct a matching dictionary for property matching.
+	 */
+	static OSDictionary *
+	CreatePropertyMatchingDictionary(const char * key, const char * stringValue, OSDictionary * matching) LOCALONLY;
+
+	/*! @function IOCreateKernelClassMatchingDictionary
+	 *   @abstract Construct a matching dictionary for kernel class matching.
+	 */
+	static OSDictionary *
+	CreateKernelClassMatchingDictionary(OSString * className, OSDictionary * matching) LOCALONLY;
+
+	/*! @function IOCreateKernelClassMatchingDictionary
+	 *   @abstract Construct a matching dictionary for kernel class matching.
+	 */
+	static OSDictionary *
+	CreateKernelClassMatchingDictionary(const char * className, OSDictionary * matching) LOCALONLY;
+
+	/*! @function IOCreateUserClassMatchingDictionary
+	 *   @abstract Construct a matching dictionary for user class matching.
+	 */
+	static OSDictionary *
+	CreateUserClassMatchingDictionary(OSString * className, OSDictionary * matching) LOCALONLY;
+
+	/*! @function IOCreateUserClassMatchingDictionary
+	 *   @abstract Construct a matching dictionary for user class matching.
+	 */
+	static OSDictionary *
+	CreateUserClassMatchingDictionary(const char * className, OSDictionary * matching) LOCALONLY;
+
+	/*! @function IOCreateNameMatchingDictionary
+	 *   @abstract Construct a matching dictionary for IOService name matching.
+	 */
+	static OSDictionary *
+	CreateNameMatchingDictionary(OSString * serviceName, OSDictionary * matching) LOCALONLY;
+
+	/*! @function IOCreateNameMatchingDictionary
+	 *   @abstract Construct a matching dictionary for IOService name matching.
+	 */
+	static OSDictionary *
+	CreateNameMatchingDictionary(const char * serviceName, OSDictionary * matching) LOCALONLY;
+};
+
+#undef KERNEL
+#else /* __DOCUMENTATION__ */
+
+/* generated class IOService IOService.iig:61-325 */
 
 #define IOService_Start_ID            0xab6f76dde6d693f2ULL
 #define IOService_Stop_ID            0x98e715041c459fa5ULL
@@ -87,6 +344,8 @@ enum {
 #define IOService_ChangePowerState_ID            0xdb75cfc3395484a0ULL
 #define IOService_NewUserClient_ID            0xf669efffcb89ed9cULL
 #define IOService_Create_ID            0xe1a46dbd68bbe09cULL
+#define IOService_Terminate_ID            0xf7a595d9927810c8ULL
+#define IOService_CopyProviderProperties_ID            0xc2a554959002c8e7ULL
 
 #define IOService_Start_Args \
         IOService * provider
@@ -137,6 +396,13 @@ enum {
         IOService * provider, \
         const char * propertiesKey, \
         IOService ** result
+
+#define IOService_Terminate_Args \
+        uint64_t options
+
+#define IOService_CopyProviderProperties_Args \
+        OSArray * propertyKeys, \
+        OSArray ** properties
 
 #define IOService_Methods \
 \
@@ -213,6 +479,59 @@ public:\
         IOService ** result,\
         OSDispatchMethod supermethod = NULL);\
 \
+    kern_return_t\
+    Terminate(\
+        uint64_t options,\
+        OSDispatchMethod supermethod = NULL);\
+\
+    kern_return_t\
+    CopyProviderProperties(\
+        OSArray * propertyKeys,\
+        OSArray ** properties,\
+        OSDispatchMethod supermethod = NULL);\
+\
+    static OSDictionary *\
+    CreatePropertyMatchingDictionary(\
+        const char * key,\
+        OSObjectPtr value,\
+        OSDictionary * matching);\
+\
+    static OSDictionary *\
+    CreatePropertyMatchingDictionary(\
+        const char * key,\
+        const char * stringValue,\
+        OSDictionary * matching);\
+\
+    static OSDictionary *\
+    CreateKernelClassMatchingDictionary(\
+        OSString * className,\
+        OSDictionary * matching);\
+\
+    static OSDictionary *\
+    CreateKernelClassMatchingDictionary(\
+        const char * className,\
+        OSDictionary * matching);\
+\
+    static OSDictionary *\
+    CreateUserClassMatchingDictionary(\
+        OSString * className,\
+        OSDictionary * matching);\
+\
+    static OSDictionary *\
+    CreateUserClassMatchingDictionary(\
+        const char * className,\
+        OSDictionary * matching);\
+\
+    static OSDictionary *\
+    CreateNameMatchingDictionary(\
+        OSString * serviceName,\
+        OSDictionary * matching);\
+\
+    static OSDictionary *\
+    CreateNameMatchingDictionary(\
+        const char * serviceName,\
+        OSDictionary * matching);\
+\
 \
 protected:\
     /* _Impl methods */\
@@ -231,6 +550,9 @@ protected:\
 \
     kern_return_t\
     SetPowerState_Impl(IOService_SetPowerState_Args);\
+\
+    kern_return_t\
+    Create_Impl(IOService_Create_Args);\
 \
 \
 public:\
@@ -308,6 +630,18 @@ public:\
         OSMetaClassBase * target,\
         Create_Handler func);\
 \
+    typedef kern_return_t (*Terminate_Handler)(OSMetaClassBase * target, IOService_Terminate_Args);\
+    static kern_return_t\
+    Terminate_Invoke(const IORPC rpc,\
+        OSMetaClassBase * target,\
+        Terminate_Handler func);\
+\
+    typedef kern_return_t (*CopyProviderProperties_Handler)(OSMetaClassBase * target, IOService_CopyProviderProperties_Args);\
+    static kern_return_t\
+    CopyProviderProperties_Invoke(const IORPC rpc,\
+        OSMetaClassBase * target,\
+        CopyProviderProperties_Handler func);\
+\
 
 
 #define IOService_KernelMethods \
@@ -340,7 +674,10 @@ protected:\
     NewUserClient_Impl(IOService_NewUserClient_Args);\
 \
     kern_return_t\
-    Create_Impl(IOService_Create_Args);\
+    Terminate_Impl(IOService_Terminate_Args);\
+\
+    kern_return_t\
+    CopyProviderProperties_Impl(IOService_CopyProviderProperties_Args);\
 \
 
 
@@ -399,6 +736,9 @@ public:
 
 };
 
-/* IOService.iig:250- */
+
+#endif /* !__DOCUMENTATION__ */
+
+/* IOService.iig:327- */
 
 #endif /* ! _IOKIT_UIOSERVICE_H */

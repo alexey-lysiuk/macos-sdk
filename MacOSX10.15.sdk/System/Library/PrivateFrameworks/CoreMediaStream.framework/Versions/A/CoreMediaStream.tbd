@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5C242922-82E5-3CCE-91FC-E448EFB03CB7', 'x86_64: 5C242922-82E5-3CCE-91FC-E448EFB03CB7' ]
+uuids:           [ 'x86_64: 21C4CCE5-E087-3407-A3C1-FC6E3AADBB17', 'x86_64: 21C4CCE5-E087-3407-A3C1-FC6E3AADBB17' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreMediaStream.framework/Versions/A/CoreMediaStream'
-current-version: 111.16.180
+current-version: 141.19.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CoreMediaStreamVersionNumber, _CoreMediaStreamVersionString, 
@@ -71,16 +71,16 @@ exports:
                        _kMSASFileTransferPushTimerDidEndNotification, _kMSASFileTransferPushTimerDidStartNotification, 
                        _kMSASFunctionNameKey, _kMSASInfoEventIsDueToAlbumDeletionKey, 
                        _kMSASInfoEventIsDueToAssetCollectionDeletionKey, _kMSASInfoIsAlbumResetSyncKey, 
-                       _kMSASInfoIsErrorRecoveryKey, _kMSASInfoIsForceUpdateKey, 
-                       _kMSASInfoIsGlobalResetSyncKey, _kMSASInfoIsLocalChangeKey, 
-                       _kMSASInfoKey, _kMSASInfoNotInterestingKey, _kMSASInvitationGUIDKey, 
-                       _kMSASInvitationTokenKey, _kMSASIsInRetryStateFn, _kMSASIsUIForegroundKey, 
-                       _kMSASLastCommentIDKey, _kMSASLastViewedDateKey, _kMSASMBSchemaVersionKey, 
-                       _kMSASModelAcceptInvitationWithGUIDFn, _kMSASModelAcceptInvitationWithTokenFn, 
-                       _kMSASModelAccessControlGUIDsFn, _kMSASModelAccessControlWithGUIDFn, 
-                       _kMSASModelActivityIsThrottledByLackOfDiskSpaceFn, _kMSASModelAddAccessControlsFn, 
-                       _kMSASModelAddAlbumFn, _kMSASModelAddAssetCollectionsFn, _kMSASModelAddCommentsToAssetCollectionWithGUIDFn, 
-                       _kMSASModelAlbumGUIDsFn, _kMSASModelAlbumWithGUIDFn, _kMSASModelAssetCollectionGUIDsFn, 
+                       _kMSASInfoIsErrorRecoveryKey, _kMSASInfoIsGlobalResetSyncKey, 
+                       _kMSASInfoIsLocalChangeKey, _kMSASInfoKey, _kMSASInfoNotInterestingKey, 
+                       _kMSASInvitationGUIDKey, _kMSASInvitationTokenKey, _kMSASIsInRetryStateFn, 
+                       _kMSASIsUIForegroundKey, _kMSASLastCommentIDKey, _kMSASLastViewedDateKey, 
+                       _kMSASMBSchemaVersionKey, _kMSASModelAcceptInvitationWithGUIDFn, 
+                       _kMSASModelAcceptInvitationWithTokenFn, _kMSASModelAccessControlGUIDsFn, 
+                       _kMSASModelAccessControlWithGUIDFn, _kMSASModelActivityIsThrottledByLackOfDiskSpaceFn, 
+                       _kMSASModelAddAccessControlsFn, _kMSASModelAddAlbumFn, _kMSASModelAddAssetCollectionsFn, 
+                       _kMSASModelAddCommentsToAssetCollectionWithGUIDFn, _kMSASModelAlbumGUIDsFn, 
+                       _kMSASModelAlbumWithGUIDFn, _kMSASModelAssetCollectionGUIDsFn, 
                        _kMSASModelAssetCollectionWithGUIDFn, _kMSASModelAssetsInDownloadQueueCountFn, 
                        _kMSASModelCommentGUIDsFn, _kMSASModelCommentWithGUIDFn, _kMSASModelDeleteAlbumWithGUIDFn, 
                        _kMSASModelDeleteAssetCollectionWithGUIDFn, _kMSASModelDeleteAssetCollectionsWithGUIDsFn, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0FEB6B12-6938-3AA2-8F9E-E1A2747BF658', 'x86_64: 0FEB6B12-6938-3AA2-8F9E-E1A2747BF658' ]
+uuids:           [ 'x86_64: E72BECBF-437D-33CE-BDA5-9B5F275BD1F7', 'x86_64: E72BECBF-437D-33CE-BDA5-9B5F275BD1F7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CallHistory.framework/Versions/A/CallHistory'
 current-version: 2
@@ -35,10 +35,11 @@ exports:
                        _kCHTimerOutgoingKey, _kCallDBDirName, _kCallDBMLogDomain, 
                        _kCallDBPropertiesEntity, _kCallDBSharedUtilDomain, _kCallHistoryDBName, 
                        _kCallHistoryDataStoreExtension, _kCallHistoryDatabaseChangedNotification, 
-                       _kCallHistoryDatabaseInitializedKey, _kCallHistoryDatabasePluginUpdateNotification, 
-                       _kCallHistoryDatabaseRemoteUpdateReadNotification, _kCallHistoryObjectModelResourceExtension, 
-                       _kCallHistoryTempDBName, _kCallHistoryTimersChangedNotification, 
-                       _kCallRecordEntity, _kCallUpdatePropertyBytesUsed, _kCallUpdatePropertyCallStatus, 
+                       _kCallHistoryDatabaseChangedTokenKey, _kCallHistoryDatabaseInitializedKey, 
+                       _kCallHistoryDatabasePluginUpdateNotification, _kCallHistoryDatabaseRemoteUpdateReadNotification, 
+                       _kCallHistoryObjectModelResourceExtension, _kCallHistoryTempDBName, 
+                       _kCallHistoryTimersChangedNotification, _kCallRecordEntity, 
+                       _kCallUpdatePropertyBytesUsed, _kCallUpdatePropertyCallStatus, 
                        _kCallUpdatePropertyOutgoingLocalParticipantUUID, _kCallUpdatePropertyRead, 
                        _kCallUpdatePropertyUniqueId, _kMobileUser, _kMoveCallRecordsFromTemporaryStoreNotitification, 
                        _kPluginHelperServiceIdentifier, _kShowsFaceTimeAudioCallsKey, 

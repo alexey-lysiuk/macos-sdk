@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C5853264-5B67-3D44-A530-22FAB5A4831A' ]
+uuids:           [ 'x86_64: 2BBEA10F-07F6-3B4A-9753-D43BE32D1D9E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SharingXPCServices.framework/Versions/A/SharingXPCServices'
-current-version: 1496.4
+current-version: 1526.14
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SharingXPCServicesVersionNumber, _SharingXPCServicesVersionString ]

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 639F392F-A930-3DB5-A3E5-BB367ED22339', 'x86_64: 639F392F-A930-3DB5-A3E5-BB367ED22339' ]
+uuids:           [ 'x86_64: 2AACAE86-FCF4-3613-89A4-5F822BD92AA9', 'x86_64: 2AACAE86-FCF4-3613-89A4-5F822BD92AA9' ]
 platform:        zippered
 install-name:    '/usr/lib/libffi.dylib'
-current-version: 25
+current-version: 26
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ffi_call, _ffi_closure_alloc, _ffi_closure_free, _ffi_find_closure_for_code_np, 

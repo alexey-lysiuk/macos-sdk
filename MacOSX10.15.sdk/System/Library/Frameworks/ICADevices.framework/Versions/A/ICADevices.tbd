@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 371D317D-1D0D-36FD-A17A-73498F24E5DB' ]
+uuids:           [ 'x86_64: 33C6C244-1890-398B-89FF-9BC0D14935E5' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ICADevices.framework/Versions/A/ICADevices'
 exports:         
@@ -76,9 +76,11 @@ exports:
                        _NewUSBDevice, _NewUSBDeviceWithIORegPath, _SendDeviceArrivalNotification, 
                        _SendDeviceLoadFailedNotification, _SendDeviceLoadFailedNotificationWithError, 
                        _SendDeviceRemovedNotification, _SendDeviceResetNotification, 
-                       _USBDeviceSendScanEventNotification, ___ICLogDateString, ___ICLogTypeEnabled, 
-                       ___ICOSLogCreate, ___ICReadPrefs, __gDiskArbSession, __gExecutableArchitecture, 
-                       __gICOSLog, _gArgc, _gArgv, _gFilenamePrefix, _gICDCallbackFunctions, 
+                       _USBDeviceSendScanEventNotification, ___ICAddDecodedErrorToDict, 
+                       ___ICLogDateString, ___ICLogTypeEnabled, ___ICLongValueToErrorString, 
+                       ___ICOSLogCreate, ___ICReadPrefs, ___ICValueToErrorString, 
+                       __gDiskArbSession, __gExecutableArchitecture, __gICOSLog, 
+                       _gArgc, _gArgv, _gFilenamePrefix, _gICDCallbackFunctions, 
                        _gICDScannerCallbackFunctions, _gIsCameraModule, _gModuleSpecificPrefs, 
                        _gNextFilenameCount, _gQuitWhenLastDeviceIsDisconnected, _gTimerCalledCount, 
                        _gTimerValueInSeconds, _kICAActualByteCountKey, _kICAAddMetaDataToFinderCommentKey, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EC5A9FFB-DDA1-391E-8C93-ACA2C3F5F2FB' ]
+uuids:           [ 'x86_64: 8A3BACEA-BCA7-3065-B02F-84E9FC1B80A4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreHAP.framework/Versions/A/CoreHAP'
-current-version: 621.2.37
+current-version: 621.5.29
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CBUUIDCharacteristicValidRange, _HAPAccessoryHasPairings, 
@@ -148,10 +148,11 @@ exports:
                        _HAPServiceUUID_Switch, _HAPServiceUUID_Thermostat, _HAPServiceUUID_TimeInformation, 
                        _HAPServiceUUID_Tunnel, _HAPServiceUUID_Valve, _HAPServiceUUID_VentilationFan, 
                        _HAPServiceUUID_Window, _HAPServiceUUID_WindowCovering, _HAPTXTKey_CategoryID, 
-                       _HAPTXTKey_ConfigNumber, _HAPTXTKey_DeviceID, _HAPTXTKey_FeaturesFlags, 
-                       _HAPTXTKey_LeaderMetrics, _HAPTXTKey_Model, _HAPTXTKey_ProtocolVersion, 
-                       _HAPTXTKey_SetupHash, _HAPTXTKey_SourceVersion, _HAPTXTKey_StateNumber, 
-                       _HAPTXTKey_StatusFlags, _HAPTunnelledAccessoryBTLEMaximumVerificationRetryTimeInterval, 
+                       _HAPTXTKey_CompatibilityFeatures, _HAPTXTKey_ConfigNumber, 
+                       _HAPTXTKey_DeviceID, _HAPTXTKey_FeaturesFlags, _HAPTXTKey_LeaderMetrics, 
+                       _HAPTXTKey_Model, _HAPTXTKey_ProtocolVersion, _HAPTXTKey_SetupHash, 
+                       _HAPTXTKey_SourceVersion, _HAPTXTKey_StateNumber, _HAPTXTKey_StatusFlags, 
+                       _HAPTunnelledAccessoryBTLEMaximumVerificationRetryTimeInterval, 
                        _HAPTunnelledAccessoryBTLEMinimumVerificationRetryTimeInterval, 
                        _HAPTunnelledAccessoryBTLEVerificationRetryFactor, _HAPURLComponent_Accessories, 
                        _HAPURLComponent_Characteristics, _HAPURLComponent_Identify, 

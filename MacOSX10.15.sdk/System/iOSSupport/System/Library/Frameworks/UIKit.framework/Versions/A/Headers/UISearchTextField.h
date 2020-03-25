@@ -111,12 +111,6 @@ UIKIT_CLASS_AVAILABLE_IOS_ONLY(13.0)
 
 @end
 
-@interface UISearchBar (UITokenSearch)
-
-@property (nonatomic, readonly) UISearchTextField *searchTextField;
-
-@end
-
 NS_ASSUME_NONNULL_END
 
 #endif // TARGET_OS_IOS

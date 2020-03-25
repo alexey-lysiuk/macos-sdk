@@ -57,6 +57,7 @@ enum
 	kVTPixelTransferNotPermittedErr			= -12218,
 	kVTColorCorrectionImageRotationFailedErr	= -12219,
 	kVTVideoDecoderRemovedErr				= -17690,
+	kVTSessionMalfunctionErr				= -17691,
 };
 
 /*!

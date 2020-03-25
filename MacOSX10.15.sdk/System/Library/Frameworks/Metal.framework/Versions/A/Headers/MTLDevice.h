@@ -29,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MTLHeap;
 @protocol MTLFence;
 @protocol MTLArgumentEncoder;
+@protocol MTLRasterizationRateMap;
+@class MTLRasterizationRateLayerDescriptor;
+@class MTLRasterizationRateMapDescriptor;
 @class MTLSamplerDescriptor;
 @class MTLRenderPipelineColorAttachmentDescriptor;
 @class MTLDepthStencilDescriptor;
@@ -715,6 +718,21 @@ API_AVAILABLE(macos(10.11), ios(8.0))
 - (nullable id <MTLArgumentEncoder>)newArgumentEncoderWithArguments:(NSArray <MTLArgumentDescriptor *> *)arguments API_AVAILABLE(macos(10.13), ios(11.0));
 
 
+/*!
+ @method supportsRasterizationRateMapWithLayerCount:
+ @abstract Query device for variable rasterization rate support with the given number of layers.
+ @param layerCount The number of layers for which to query device support.
+ @return YES if the device supports creation of rendering using a MTLRasterizationRateMap with the given number of layers.
+ */
+-(BOOL)supportsRasterizationRateMapWithLayerCount:(NSUInteger)layerCount API_AVAILABLE(macos(10.15.4), ios(13.0), macCatalyst(13.4));
+
+/*!
+ @method newRasterizationRateMapWithDescriptor:
+ @abstract Creates a new variable rasterization rate map with the given descriptor.
+ @discussion If '[self supportsRasterizationRateMapWithLayerCount:descriptor.layerCount]' returns NO, or descriptor.screenSize describes an empty region, the result will always be nil.
+ @return A MTLRasterizationRateMap instance that can be used for rendering on this MTLDevice, or nil if the device does not support the combination of parameters stored in the descriptor.
+ */
+-(nullable id<MTLRasterizationRateMap>)newRasterizationRateMapWithDescriptor:(MTLRasterizationRateMapDescriptor*)descriptor API_AVAILABLE(macos(10.15.4), ios(13.0), macCatalyst(13.4));
 
 /*!
  * @method newIndirectCommandBufferWithDescriptor:maxCommandCount:options
@@ -804,6 +822,13 @@ API_AVAILABLE(macos(10.11), ios(8.0))
            gpuTimestamp:(NSUInteger *)gpuTimestamp
     API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios);
 
+/*!
+ @property supportsVertexAmplificationCount:
+ @abstract Query device for vertex amplification support.
+ @param count The amplification count to check
+ @return BOOL value. If YES, the device supports vertex amplification with the given count. If NO, the device does not.
+ */
+- (BOOL)supportsVertexAmplificationCount:(NSUInteger)count API_AVAILABLE(macos(10.15.4), ios(13.0), macCatalyst(13.4));
 
 @end
 NS_ASSUME_NONNULL_END

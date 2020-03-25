@@ -64,13 +64,6 @@ registered names. But they still have discrete sets of services. So when
 printing the user domain's contents, you may see many Mach bootstrap name
 registrations from services that exist in the GUI domain for that user, but you
 will not see the services themselves in that list.
-.It Xo Ar session/<asid>/[service-name]
-.Xc
-Targets the session domain for the given audit session ID or a service within
-that domain. For more information about audit sessions, see
-.Xr auditon 2
-and
-.Xr libbsm 3
 .It Xo Ar pid/<pid>/[service-name]
 .Xc
 Targets the domain for the given PID or a service within that domain. Each

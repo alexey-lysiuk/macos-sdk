@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AF392C16-1F93-369A-8921-6BD20C95727E', 'x86_64: AF392C16-1F93-369A-8921-6BD20C95727E' ]
+uuids:           [ 'x86_64: A390FC7E-E545-3141-8799-2BCFBB164120', 'x86_64: A390FC7E-E545-3141-8799-2BCFBB164120' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProofReader.framework/Versions/A/ProofReader'
-current-version: 492
+current-version: 492.6
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PRCopyAlternativesForPinyinInputString, _PRCopyCorrectionsForPinyinInputString, 
@@ -14,23 +14,22 @@ exports:
                        PRZhuyinModification ]
     objc-ivars:      [ AppleSpell._altBundleURLs, AppleSpell._assetDataBundleSerialQueue, 
                        AppleSpell._assetDataBundleURLDictionary, AppleSpell._automaticTextCompletionCollapsed, 
-                       AppleSpell._automaticTextCompletionEnabled, AppleSpell._dataBundle, 
-                       AppleSpell._databaseConnections, AppleSpell._diagnosticInfo, 
-                       AppleSpell._emojiPredictorDict, AppleSpell._foundNames, AppleSpell._foundNamesLexicon, 
-                       AppleSpell._foundPhrasesLexicon, AppleSpell._foundShortcuts, 
-                       AppleSpell._foundShortcutsDictionary, AppleSpell._globalDictionaryArray, 
-                       AppleSpell._hasUpdatedDataBundleLanguages, AppleSpell._keyboardHistogram, 
-                       AppleSpell._languageCounts, AppleSpell._languageModelDicts, 
-                       AppleSpell._languageModelWordCount, AppleSpell._lastAssetRequest, 
-                       AppleSpell._lastCandidateLanguage, AppleSpell._lastDecayLanguageModels, 
-                       AppleSpell._lastFindNames, AppleSpell._lastKeyEventArray, 
-                       AppleSpell._lastKeyboardHistogramRecording, AppleSpell._lastLanguage, 
-                       AppleSpell._lastLanguageCounts, AppleSpell._lastMaintainLanguageModels, 
-                       AppleSpell._lastReleaseLanguageModels, AppleSpell._lastResetLanguageModels, 
-                       AppleSpell._lastSampleCollected, AppleSpell._lastSampleCollection, 
-                       AppleSpell._lastSampleRecorded, AppleSpell._lastSampleRecording, 
-                       AppleSpell._lastWriteLanguageModels, AppleSpell._learnedResponses, 
-                       AppleSpell._lexiconDict, AppleSpell._localDictionaryArrays, 
+                       AppleSpell._automaticTextCompletionEnabled, AppleSpell._databaseConnections, 
+                       AppleSpell._diagnosticInfo, AppleSpell._emojiPredictorDict, 
+                       AppleSpell._foundNames, AppleSpell._foundNamesLexicon, AppleSpell._foundPhrasesLexicon, 
+                       AppleSpell._foundShortcuts, AppleSpell._foundShortcutsDictionary, 
+                       AppleSpell._globalDictionaryArray, AppleSpell._hasUpdatedDataBundleLanguages, 
+                       AppleSpell._keyboardHistogram, AppleSpell._languageCounts, 
+                       AppleSpell._languageModelDicts, AppleSpell._languageModelWordCount, 
+                       AppleSpell._lastAssetRequest, AppleSpell._lastCandidateLanguage, 
+                       AppleSpell._lastDecayLanguageModels, AppleSpell._lastFindNames, 
+                       AppleSpell._lastKeyEventArray, AppleSpell._lastKeyboardHistogramRecording, 
+                       AppleSpell._lastLanguage, AppleSpell._lastLanguageCounts, 
+                       AppleSpell._lastMaintainLanguageModels, AppleSpell._lastReleaseLanguageModels, 
+                       AppleSpell._lastResetLanguageModels, AppleSpell._lastSampleCollected, 
+                       AppleSpell._lastSampleCollection, AppleSpell._lastSampleRecorded, 
+                       AppleSpell._lastSampleRecording, AppleSpell._lastWriteLanguageModels, 
+                       AppleSpell._learnedResponses, AppleSpell._lexiconDict, AppleSpell._localDictionaryArrays, 
                        AppleSpell._numberOfSamplesCollected, AppleSpell._phraseLexiconDict, 
                        AppleSpell._probationaryInterval, AppleSpell._probationaryLearnedResponseTimes, 
                        AppleSpell._probationaryLearnedResponses, AppleSpell._proofReaderConnection, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1207F80E-B606-352D-BB5B-9ED1A65BFE23', 'x86_64: 1207F80E-B606-352D-BB5B-9ED1A65BFE23' ]
+uuids:           [ 'x86_64: DA662B66-99F6-3CC7-9F7E-F6F92E4E5204', 'x86_64: DA662B66-99F6-3CC7-9F7E-F6F92E4E5204' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/TelephonyUtilities.framework/Versions/A/TelephonyUtilities'
 exports:         
@@ -11,15 +11,15 @@ exports:
                        _TUAudioRouteBluetoothProductIdentifierBeatsSolo, _TUAudioRouteBluetoothProductIdentifierBeatsSoloPro, 
                        _TUAudioRouteBluetoothProductIdentifierBeatsStudio, _TUAudioRouteBluetoothProductIdentifierBeatsStudio2, 
                        _TUAudioRouteBluetoothProductIdentifierBeatsX, _TUAudioRouteBluetoothProductIdentifierPowerbeats, 
-                       _TUAudioRouteBluetoothProductIdentifierPowerbeats2, _TUAudioRouteBluetoothProductIdentifierPowerbeatsPro, 
-                       _TUAudioSystemActiveCategoryVolumeChangedNotification, _TUAudioSystemAudioPickableRoutesChanged, 
-                       _TUAudioSystemDownlinkMuteStatusChangedNotification, _TUAudioSystemTTYChangedNotification, 
-                       _TUAudioSystemUplinkMuteStatusChangedNotification, _TUBinaryGCD, 
-                       _TUBundle, _TUBundleIdentifierCallServicesDaemon, _TUBundleIdentifierFaceTimeApplication, 
-                       _TUBundleIdentifierInCallServiceApplication, _TUBundleIdentifierMessagesApplication, 
-                       _TUBundleIdentifierMobilePhoneApplication, _TUBundleIdentifierNanoPhoneApplication, 
-                       _TUBundleIdentifierTelephonyUtilitiesFramework, _TUBundleIdentifierTinCan, 
-                       _TUCTServerConnection, _TUCallAudioPropertiesChangedNotification, 
+                       _TUAudioRouteBluetoothProductIdentifierPowerbeats2, _TUAudioRouteBluetoothProductIdentifierPowerbeats4, 
+                       _TUAudioRouteBluetoothProductIdentifierPowerbeatsPro, _TUAudioSystemActiveCategoryVolumeChangedNotification, 
+                       _TUAudioSystemAudioPickableRoutesChanged, _TUAudioSystemDownlinkMuteStatusChangedNotification, 
+                       _TUAudioSystemTTYChangedNotification, _TUAudioSystemUplinkMuteStatusChangedNotification, 
+                       _TUBinaryGCD, _TUBundle, _TUBundleIdentifierCallServicesDaemon, 
+                       _TUBundleIdentifierFaceTimeApplication, _TUBundleIdentifierInCallServiceApplication, 
+                       _TUBundleIdentifierMessagesApplication, _TUBundleIdentifierMobilePhoneApplication, 
+                       _TUBundleIdentifierNanoPhoneApplication, _TUBundleIdentifierTelephonyUtilitiesFramework, 
+                       _TUBundleIdentifierTinCan, _TUCTServerConnection, _TUCallAudioPropertiesChangedNotification, 
                        _TUCallCameraTypeChangedNotification, _TUCallCapabilitiesCloudCallingDevicesChangedNotification, 
                        _TUCallCapabilitiesEmergencyCallbackModeChangedNotification, 
                        _TUCallCapabilitiesEmergencyCallbackPossibleChangedNotification, 
@@ -52,9 +52,9 @@ exports:
                        _TUCallDisplayContextChangedNotification, _TUCallDowngradedToAudioNotification, 
                        _TUCallFaceTimeIDStatusChangedNotification, _TUCallFaceTimeRemoteIDSDestinationKey, 
                        _TUCallFaceTimeRemoteMomentsAvailableKey, _TUCallFaceTimeTransportTypeKey, 
-                       _TUCallFilteringPreferencesContactsOnlyKey, _TUCallHandoffActivityType, 
-                       _TUCallHardPauseDigitsStateChangedNotification, _TUCallHistoryControllerDidFinishBoostNotification, 
-                       _TUCallHistoryControllerRecentCallsDidChangeNotification, 
+                       _TUCallFilterUnknownCallerAddress, _TUCallFilteringPreferencesContactsOnlyKey, 
+                       _TUCallHandoffActivityType, _TUCallHardPauseDigitsStateChangedNotification, 
+                       _TUCallHistoryControllerDidFinishBoostNotification, _TUCallHistoryControllerRecentCallsDidChangeNotification, 
                        _TUCallHistoryControllerUnreadAudioCallCountDidChangeNotification, 
                        _TUCallHistoryControllerUnreadCallCountDidChangeNotification, 
                        _TUCallHistoryControllerUnreadVideoCallCountDidChangeNotification, 
@@ -112,7 +112,7 @@ exports:
                        _TUMapItemForPhoneNumberRef, _TUMapItemForPhoneNumberRefSync, 
                        _TUMetadataCacheDidFinishUpdatingNotification, _TUMobilePhoneDomain, 
                        _TUMobilePhoneLogDialAssistKey, _TUMultiwayMaxConcurrentStreams, 
-                       _TUNetworkCountryCode, _TUNotificationCategoryIdentifierNewVoicemail, 
+                       _TUNetworkCountryCode, _TUNormalizedHandleForTUHandle, _TUNotificationCategoryIdentifierNewVoicemail, 
                        _TUNotificationCategoryIdentifierNewVoicemailNoCallerID, _TUNotificationCategoryIdentifierNewVoicemailNoVisualVoicemail, 
                        _TUNotificationFromXPCObject, _TUNumberToDial, _TUNumberToDialOptionsSuppressLocalAssistKey, 
                        _TUNumberWithOldStylePausesTransformed, _TUObjectsAreEqualOrNil, 

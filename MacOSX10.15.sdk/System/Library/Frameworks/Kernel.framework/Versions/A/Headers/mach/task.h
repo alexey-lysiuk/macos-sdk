@@ -49,7 +49,7 @@ typedef function_table_entry   *function_table_t;
 #endif /* AUTOTEST */
 
 #ifndef	task_MSG_COUNT
-#define	task_MSG_COUNT	54
+#define	task_MSG_COUNT	55
 #endif	/* task_MSG_COUNT */
 
 #include <mach/std_types.h>
@@ -788,6 +788,20 @@ kern_return_t task_set_exc_guard_behavior
 	task_exc_guard_behavior_t behavior
 );
 
+/* Routine task_create_suid_cred */
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+kern_return_t task_create_suid_cred
+(
+	task_t task,
+	suid_cred_path_t path,
+	suid_cred_uid_t uid,
+	suid_cred_t *delegation
+);
+
 __END_DECLS
 
 /********************** Caution **************************/
@@ -1511,6 +1525,21 @@ __END_DECLS
 #ifdef  __MigPackStructs
 #pragma pack(pop)
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(push, 4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		mach_msg_type_number_t pathOffset; /* MiG doesn't use it */
+		mach_msg_type_number_t pathCnt;
+		char path[1024];
+		suid_cred_uid_t uid;
+	} __Request__task_create_suid_cred_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack(pop)
+#endif
 #endif /* !__Request__task_subsystem__defined */
 
 /* union of all requests */
@@ -1572,6 +1601,7 @@ union __RequestUnion__task_subsystem {
 	__Request__task_inspect_t Request_task_inspect;
 	__Request__task_get_exc_guard_behavior_t Request_task_get_exc_guard_behavior;
 	__Request__task_set_exc_guard_behavior_t Request_task_set_exc_guard_behavior;
+	__Request__task_create_suid_cred_t Request_task_create_suid_cred;
 };
 #endif /* !__RequestUnion__task_subsystem__defined */
 /* typedefs for all replies */
@@ -2302,6 +2332,20 @@ union __RequestUnion__task_subsystem {
 #ifdef  __MigPackStructs
 #pragma pack(pop)
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(push, 4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		/* start of the kernel processed data */
+		mach_msg_body_t msgh_body;
+		mach_msg_port_descriptor_t delegation;
+		/* end of the kernel processed data */
+	} __Reply__task_create_suid_cred_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack(pop)
+#endif
 #endif /* !__Reply__task_subsystem__defined */
 
 /* union of all replies */
@@ -2363,6 +2407,7 @@ union __ReplyUnion__task_subsystem {
 	__Reply__task_inspect_t Reply_task_inspect;
 	__Reply__task_get_exc_guard_behavior_t Reply_task_get_exc_guard_behavior;
 	__Reply__task_set_exc_guard_behavior_t Reply_task_set_exc_guard_behavior;
+	__Reply__task_create_suid_cred_t Reply_task_create_suid_cred;
 };
 #endif /* !__RequestUnion__task_subsystem__defined */
 
@@ -2421,7 +2466,8 @@ union __ReplyUnion__task_subsystem {
     { "task_map_corpse_info_64", 3450 },\
     { "task_inspect", 3451 },\
     { "task_get_exc_guard_behavior", 3452 },\
-    { "task_set_exc_guard_behavior", 3453 }
+    { "task_set_exc_guard_behavior", 3453 },\
+    { "task_create_suid_cred", 3454 }
 #endif
 
 #ifdef __AfterMigUserHeader

@@ -2,10 +2,12 @@
 //  INStartAudioCallIntentResponse.h
 //  Intents
 //
-//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntentResponse.h>
+
+#import <Intents/INCallAudioRoute.h>
 
 typedef NS_ENUM(NSInteger, INStartAudioCallIntentResponseCode) {
     INStartAudioCallIntentResponseCodeUnspecified = 0,
@@ -16,13 +18,13 @@ typedef NS_ENUM(NSInteger, INStartAudioCallIntentResponseCode) {
     INStartAudioCallIntentResponseCodeFailureAppConfigurationRequired,
     INStartAudioCallIntentResponseCodeFailureCallingServiceNotAvailable,
     INStartAudioCallIntentResponseCodeFailureContactNotSupportedByApp,
-    INStartAudioCallIntentResponseCodeFailureNoValidNumber API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macosx),
-} API_UNAVAILABLE(macosx) API_DEPRECATED("INStartAudioCallIntent is deprecated. Please adopt INStartCallIntent instead", ios(10.0, 13.0), watchos(3.2, 6.0));
+    INStartAudioCallIntentResponseCodeFailureNoValidNumber API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos),
+} API_DEPRECATED("INStartAudioCallIntent is deprecated. Please adopt INStartCallIntent instead", ios(10.0, 13.0), watchos(3.2, 6.0)) API_UNAVAILABLE(macos, tvos);
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_UNAVAILABLE(macosx)
 API_DEPRECATED("INStartAudioCallIntent is deprecated. Please adopt INStartCallIntent instead", ios(10.0, 13.0), watchos(3.2, 6.0))
+API_UNAVAILABLE(macos, tvos)
 @interface INStartAudioCallIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;

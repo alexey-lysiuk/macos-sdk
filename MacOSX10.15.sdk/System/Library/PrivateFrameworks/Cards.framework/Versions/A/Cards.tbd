@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 89DD2521-8F1B-355B-8A50-EF399F1FA033' ]
+uuids:           [ 'x86_64: 90C6798D-A8C1-315A-9B60-0C4A98E206B0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Cards.framework/Versions/A/Cards'
 exports:         

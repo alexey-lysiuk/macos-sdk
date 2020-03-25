@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7F361735-4D07-31FE-860C-0A137B1F0233', 'x86_64: 7F361735-4D07-31FE-860C-0A137B1F0233' ]
+uuids:           [ 'x86_64: A7A7ACC1-313D-31EA-8E6B-C6F76A74315B', 'x86_64: A7A7ACC1-313D-31EA-8E6B-C6F76A74315B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SearchFoundation.framework/Versions/A/SearchFoundation'
 exports:         

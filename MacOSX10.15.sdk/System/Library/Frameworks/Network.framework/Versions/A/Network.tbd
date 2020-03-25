@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 38F65393-1393-3888-9F02-C4087F19CA0D', 'x86_64: 38F65393-1393-3888-9F02-C4087F19CA0D' ]
+uuids:           [ 'x86_64: D1C8FDDE-C822-3C40-BB26-18F24CFC8AE2', 'x86_64: D1C8FDDE-C822-3C40-BB26-18F24CFC8AE2' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Network.framework/Versions/A/Network'
 exports:         
@@ -32,14 +32,15 @@ exports:
                        _NWUtilsCreateNSStringFromSockaddr, _NWUtilsCreateXPCDictionaryFromNSDictionary, 
                        _NWUtilsStringMatchesPattern, __NWConnectionWriteCompletionIdempotent, 
                        _updateOSLogPlistFromLevel ]
-    objc-classes:    [ NWActivityEpilogueStatistics, NWActivityStatistics, NWAddressEndpoint, 
-                       NWAdvertiseDescriptor, NWBonjourBrowseDescriptor, NWBonjourServiceEndpoint, 
-                       NWBrowseDescriptor, NWBrowser, NWConnection, NWConnectionStatistics, 
-                       NWDatagramConnection, NWEndpoint, NWGenericNetworkAgent, NWHostEndpoint, 
-                       NWInboundMessage, NWInterface, NWL2Report, NWMessage, NWMessageConnection, 
-                       NWMonitor, NWNetworkAgentRegistration, NWNetworkDescription, 
-                       NWOutboundMessage, NWParameters, NWPath, NWPathEvaluator, 
-                       NWProtocolTransform, NWRemoteConnectionActor, NWRemoteConnectionDirector, 
-                       NWRemotePacketProxy, NWResolver, NWStreamConnection, NWSystemPathMonitor, 
-                       NWTCPConnection, NWTCPListener, NWUDPListener, NWUDPSession ]
+    objc-classes:    [ NWActivityEmptyTrigger, NWActivityEpilogueStatistics, NWActivityStatistics, 
+                       NWAddressEndpoint, NWAdvertiseDescriptor, NWBonjourBrowseDescriptor, 
+                       NWBonjourServiceEndpoint, NWBrowseDescriptor, NWBrowser, NWConnection, 
+                       NWConnectionStatistics, NWDatagramConnection, NWDeviceReport, 
+                       NWEndpoint, NWGenericNetworkAgent, NWHostEndpoint, NWInboundMessage, 
+                       NWInterface, NWL2Report, NWMessage, NWMessageConnection, NWMonitor, 
+                       NWNetworkAgentRegistration, NWNetworkDescription, NWOutboundMessage, 
+                       NWParameters, NWPath, NWPathEvaluator, NWProtocolTransform, 
+                       NWRemoteConnectionActor, NWRemoteConnectionDirector, NWRemotePacketProxy, 
+                       NWResolver, NWStreamConnection, NWSystemPathMonitor, NWTCPConnection, 
+                       NWTCPListener, NWUDPListener, NWUDPSession ]
 ...

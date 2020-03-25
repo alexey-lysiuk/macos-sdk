@@ -5,22 +5,13 @@
 //  Copyright © 2018 Apple Inc. All rights reserved.
 //
 
+#import <AuthenticationServices/ASExtensionErrors.h>
 #import <AuthenticationServices/ASFoundation.h>
 #import <Foundation/Foundation.h>
 
 @class ASPasswordCredential;
 
 NS_ASSUME_NONNULL_BEGIN
-
-AS_EXTERN API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macCatalyst, macos, tvos, watchos)
-NSErrorDomain const ASExtensionErrorDomain;
-
-typedef NS_ERROR_ENUM(ASExtensionErrorDomain, ASExtensionErrorCode) {
-    ASExtensionErrorCodeFailed = 0,
-    ASExtensionErrorCodeUserCanceled = 1,
-    ASExtensionErrorCodeUserInteractionRequired = 100,
-    ASExtensionErrorCodeCredentialIdentityNotFound = 101,
-} API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macCatalyst, macos, tvos);
 
 AS_EXTERN API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macCatalyst, macos, tvos, watchos)
 @interface ASCredentialProviderExtensionContext : NSExtensionContext

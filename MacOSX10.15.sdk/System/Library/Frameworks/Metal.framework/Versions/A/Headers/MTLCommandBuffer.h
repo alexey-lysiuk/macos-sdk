@@ -202,6 +202,15 @@ API_AVAILABLE(macos(10.11), ios(8.0))
 */
 - (void)presentDrawable:(id <MTLDrawable>)drawable atTime:(CFTimeInterval)presentationTime;
 
+/*!
+ @method presentDrawable:afterMinimumDuration:
+ @abstract Add a drawable present for a specific host time that allows previous frame to be on screen for at least duration time.
+ @param drawable The drawable to be presented
+ @param duration The minimum time that previous frame should be displayed. The time is double preceision floating point in the unit of seconds.
+ @discussion The difference of this API versus presentDrawable:atTime is that this API defers calculation of the presentation time until the previous frame's actual presentation time is known, thus to be able to maintain a more consistent and stable frame time. This also provides an easy way to set frame rate.
+    The submission thread will be lock stepped with present call been serviced by window server 
+ */
+- (void)presentDrawable:(id <MTLDrawable>)drawable afterMinimumDuration:(CFTimeInterval)duration API_AVAILABLE(macos(10.15.4), ios(10.3), macCatalyst(13.4));
 
 /*!
  @method waitUntilScheduled

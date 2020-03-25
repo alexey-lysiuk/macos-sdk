@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 84134004-EE73-32E8-B3DC-C18920742E22', 'x86_64: 84134004-EE73-32E8-B3DC-C18920742E22' ]
+uuids:           [ 'x86_64: 8B56DCBD-93E1-3466-A17D-E6B34205C291', 'x86_64: 8B56DCBD-93E1-3466-A17D-E6B34205C291' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveExperiments.framework/Versions/A/ProactiveExperiments'
-current-version: 1052.14
+current-version: 1052.33
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PREAMEngagedResponseReadFrom, _PREAMResponseItemReadFrom, 
@@ -17,28 +17,31 @@ exports:
     objc-classes:    [ PREAMEngagedResponse, PREAMResponseItem, PREAMResponseListGenerated, 
                        PREQuickTypeClient, PREQuickTypeExperiment, PREResponseItem, 
                        PREResponseTappedEvent, PREResponsesClient, PREResponsesExperiment, 
-                       PREResponsesGeneratedEvent, PREResponsesMetricsPET, PREResponsesTrialSimulator, 
-                       PREUMEngagedResponseList, PREUMMessageMetadata, PREUMResponseItem, 
-                       PREUMResponseList, PREUMTrialExperiment, PREXPCClientHelpers ]
+                       PREResponsesGeneratedEvent, PREResponsesMetricsPET, PREResponsesTrial, 
+                       PREResponsesTrialSimulator, PREUMEngagedResponseList, PREUMMessageMetadata, 
+                       PREUMResponseItem, PREUMResponseList, PREUMTrialExperiment, 
+                       PREXPCClientHelpers ]
     objc-ivars:      [ PREAMEngagedResponse._ageGroup, PREAMEngagedResponse._experimentId, 
                        PREAMEngagedResponse._generationStatus, PREAMEngagedResponse._has, 
                        PREAMEngagedResponse._hasQuestionMark, PREAMEngagedResponse._hostProcess, 
                        PREAMEngagedResponse._inputMethod, PREAMEngagedResponse._isApricotDevice, 
-                       PREAMEngagedResponse._lang, PREAMEngagedResponse._locale, 
-                       PREAMEngagedResponse._modelId, PREAMEngagedResponse._numberOfResponsesGenerated, 
+                       PREAMEngagedResponse._isCustomResponse, PREAMEngagedResponse._lang, 
+                       PREAMEngagedResponse._locale, PREAMEngagedResponse._modelId, 
+                       PREAMEngagedResponse._numberOfCustomResponses, PREAMEngagedResponse._numberOfResponsesGenerated, 
                        PREAMEngagedResponse._position, PREAMEngagedResponse._replyTextId, 
                        PREAMEngagedResponse._responseClassId, PREAMEngagedResponse._treatmentId, 
                        PREAMEngagedResponse._treatmentModelName, PREAMResponseItem._ageGroup, 
                        PREAMResponseItem._experimentId, PREAMResponseItem._has, PREAMResponseItem._hostProcess, 
-                       PREAMResponseItem._isApricotDevice, PREAMResponseItem._lang, 
-                       PREAMResponseItem._locale, PREAMResponseItem._modelId, PREAMResponseItem._position, 
-                       PREAMResponseItem._replyTextId, PREAMResponseItem._responseClassId, 
-                       PREAMResponseItem._treatmentId, PREAMResponseItem._treatmentModelName, 
-                       PREAMResponseListGenerated._ageGroup, PREAMResponseListGenerated._experimentId, 
-                       PREAMResponseListGenerated._generationStatus, PREAMResponseListGenerated._has, 
-                       PREAMResponseListGenerated._hostProcess, PREAMResponseListGenerated._isApricotDevice, 
-                       PREAMResponseListGenerated._isCached, PREAMResponseListGenerated._lang, 
-                       PREAMResponseListGenerated._locale, PREAMResponseListGenerated._numberOfResponsesGenerated, 
+                       PREAMResponseItem._isApricotDevice, PREAMResponseItem._isCustomResponse, 
+                       PREAMResponseItem._lang, PREAMResponseItem._locale, PREAMResponseItem._modelId, 
+                       PREAMResponseItem._position, PREAMResponseItem._replyTextId, 
+                       PREAMResponseItem._responseClassId, PREAMResponseItem._treatmentId, 
+                       PREAMResponseItem._treatmentModelName, PREAMResponseListGenerated._ageGroup, 
+                       PREAMResponseListGenerated._experimentId, PREAMResponseListGenerated._generationStatus, 
+                       PREAMResponseListGenerated._has, PREAMResponseListGenerated._hostProcess, 
+                       PREAMResponseListGenerated._isApricotDevice, PREAMResponseListGenerated._isCached, 
+                       PREAMResponseListGenerated._lang, PREAMResponseListGenerated._locale, 
+                       PREAMResponseListGenerated._numberOfCustomResponses, PREAMResponseListGenerated._numberOfResponsesGenerated, 
                        PREAMResponseListGenerated._treatmentId, PREAMResponseListGenerated._treatmentModelName, 
                        PREUMEngagedResponseList._engagedItem, PREUMEngagedResponseList._experiment, 
                        PREUMEngagedResponseList._generationStatus, PREUMEngagedResponseList._has, 
@@ -48,7 +51,8 @@ exports:
                        PREUMMessageMetadata._has, PREUMMessageMetadata._hasQuestionMark, 
                        PREUMMessageMetadata._hostProcess, PREUMMessageMetadata._isApricotDevice, 
                        PREUMMessageMetadata._lang, PREUMMessageMetadata._locale, 
-                       PREUMResponseItem._has, PREUMResponseItem._modelId, PREUMResponseItem._replyTextId, 
+                       PREUMResponseItem._has, PREUMResponseItem._isCustomResponse, 
+                       PREUMResponseItem._modelId, PREUMResponseItem._replyTextId, 
                        PREUMResponseItem._responseClassId, PREUMResponseList._experiment, 
                        PREUMResponseList._generationStatus, PREUMResponseList._has, 
                        PREUMResponseList._isCached, PREUMResponseList._items, PREUMResponseList._msgMetadata, 

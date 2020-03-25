@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
 // swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftAccelerate -swift-version 5 -O -enforce-exclusivity=unchecked -module-name Accelerate
-@_exported import Accelerate
 @_exported import Accelerate
 @_exported import Accelerate.vecLib.BNNS
 import Swift
@@ -24,211 +23,6 @@ extension vDSP {
   public struct VectorizableDouble {
     public typealias Scalar = Swift.Double
   }
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSDataType {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var float16: Accelerate.BNNSDataType {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var float: Accelerate.BNNSDataType {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var int8: Accelerate.BNNSDataType {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var int16: Accelerate.BNNSDataType {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var int32: Accelerate.BNNSDataType {
-    get
-  }
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
-  public static var uint8: Accelerate.BNNSDataType {
-    get
-  }
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
-  public static var uint16: Accelerate.BNNSDataType {
-    get
-  }
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
-  public static var uint32: Accelerate.BNNSDataType {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var indexed8: Accelerate.BNNSDataType {
-    get
-  }
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSDataType.float16")
-public var BNNSDataTypeFloat16: Accelerate.BNNSDataType
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSDataType.float")
-public var BNNSDataTypeFloat32: Accelerate.BNNSDataType
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSDataType.int8")
-public var BNNSDataTypeInt8: Accelerate.BNNSDataType
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSDataType.int16")
-public var BNNSDataTypeInt16: Accelerate.BNNSDataType
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSDataType.int32")
-public var BNNSDataTypeInt32: Accelerate.BNNSDataType
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSDataType.indexed8")
-public var BNNSDataTypeIndexed8: Accelerate.BNNSDataType
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSPoolingFunction {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var max: Accelerate.BNNSPoolingFunction {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var average: Accelerate.BNNSPoolingFunction {
-    get
-  }
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSPoolingFunction.max")
-public var BNNSPoolingFunctionMax: Accelerate.BNNSPoolingFunction
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSPoolingFunction.average")
-public var BNNSPoolingFunctionAverage: Accelerate.BNNSPoolingFunction
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSActivationFunction {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var identity: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var rectifiedLinear: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var leakyRectifiedLinear: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var sigmoid: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var tanh: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var scaledTanh: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var abs: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
-  public static var linear: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
-  public static var clamp: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
-  public static var integerLinearSaturate: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
-  public static var integerLinearSaturatePerChannel: Accelerate.BNNSActivationFunction {
-    get
-  }
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
-  public static var softmax: Accelerate.BNNSActivationFunction {
-    get
-  }
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSActivationFunction.identity")
-public var BNNSActivationFunctionIdentity: Accelerate.BNNSActivationFunction
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSActivationFunction.rectifiedLinear")
-public var BNNSActivationFunctionRectifiedLinear: Accelerate.BNNSActivationFunction
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSActivationFunction.leakyRectifiedLinear")
-public var BNNSActivationFunctionLeakyRectifiedLinear: Accelerate.BNNSActivationFunction
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSActivationFunction.sigmoid")
-public var BNNSActivationFunctionSigmoid: Accelerate.BNNSActivationFunction
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSActivationFunction.tanh")
-public var BNNSActivationFunctionTanh: Accelerate.BNNSActivationFunction
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSActivationFunction.scaledTanh")
-public var BNNSActivationFunctionScaledTanh: Accelerate.BNNSActivationFunction
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSActivationFunction.abs")
-public var BNNSActivationFunctionAbs: Accelerate.BNNSActivationFunction
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSFlags {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var useClientPointer: Accelerate.BNNSFlags {
-    get
-  }
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-@available(*, deprecated, renamed: "BNNSFlags.useClientPointer")
-public var BNNSFlagsUseClientPtr: Accelerate.BNNSFlags
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSImageStackDescriptor {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public init(width: Swift.Int, height: Swift.Int, channels: Swift.Int, row_stride: Swift.Int, image_stride: Swift.Int, data_type: Accelerate.BNNSDataType)
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSVectorDescriptor {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public init(size: Swift.Int, data_type: Accelerate.BNNSDataType)
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSLayerData {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public init(data: Swift.UnsafeRawPointer?, data_type: Accelerate.BNNSDataType, data_scale: Swift.Float = 1, data_bias: Swift.Float = 0)
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var zero: Accelerate.BNNSLayerData {
-    get
-  }
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static func indexed8(data: Swift.UnsafePointer<Swift.Int8>?, data_table: Swift.UnsafePointer<Swift.Float>) -> Accelerate.BNNSLayerData
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSActivation {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public init(function: Accelerate.BNNSActivationFunction, alpha: Swift.Float = .nan, beta: Swift.Float = .nan)
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public static var identity: Accelerate.BNNSActivation {
-    get
-  }
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
-  public static func integerLinearSaturate(scale: Swift.Int32 = 1, offset: Swift.Int32 = 0, shift: Swift.Int32 = 0) -> Accelerate.BNNSActivation
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
-  public static func integerLinearSaturatePerChannel(scale: Swift.UnsafePointer<Swift.Int32>, offset: Swift.UnsafePointer<Swift.Int32>, shift: Swift.UnsafePointer<Swift.Int32>) -> Accelerate.BNNSActivation
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSConvolutionLayerParameters {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public init(x_stride: Swift.Int, y_stride: Swift.Int, x_padding: Swift.Int, y_padding: Swift.Int, k_width: Swift.Int, k_height: Swift.Int, in_channels: Swift.Int, out_channels: Swift.Int, weights: Accelerate.BNNSLayerData)
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSPoolingLayerParameters {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public init(x_stride: Swift.Int, y_stride: Swift.Int, x_padding: Swift.Int, y_padding: Swift.Int, k_width: Swift.Int, k_height: Swift.Int, in_channels: Swift.Int, out_channels: Swift.Int, pooling_function: Accelerate.BNNSPoolingFunction)
-}
-@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-extension BNNSFullyConnectedLayerParameters {
-  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
-  public init(in_size: Swift.Int, out_size: Swift.Int, weights: Accelerate.BNNSLayerData)
 }
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension vImage {
@@ -301,7 +95,7 @@ extension vImage_Buffer {
   public init(cgImage: CoreGraphics.CGImage, flags options: Accelerate.vImage.Options = .noFlags) throws
   public init(cgImage: CoreGraphics.CGImage, format: Accelerate.vImage_CGImageFormat, flags options: Accelerate.vImage.Options = .noFlags) throws
   public func createCGImage(format: Accelerate.vImage_CGImageFormat, flags options: Accelerate.vImage.Options = .noFlags) throws -> CoreGraphics.CGImage
-  public func copy(destinationBuffer: inout Accelerate.vImage_Buffer, flags options: Accelerate.vImage.Options = .noFlags) throws
+  public func copy(destinationBuffer: inout Accelerate.vImage_Buffer, pixelSize: Swift.Int, flags options: Accelerate.vImage.Options = .noFlags) throws
 }
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension vImageCVImageFormat {
@@ -497,7 +291,7 @@ extension AccelerateBuffer where Self : Swift.Collection {
 }
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension AccelerateMutableBuffer where Self : Swift.MutableCollection {
-  @inlinable mutating public func withUnsafeMutableBufferPointer<R>(_ body: (inout Swift.UnsafeMutableBufferPointer<Self.Element>) throws -> R) rethrows -> R {
+  @inlinable public mutating func withUnsafeMutableBufferPointer<R>(_ body: (inout Swift.UnsafeMutableBufferPointer<Self.Element>) throws -> R) rethrows -> R {
         return try withContiguousMutableStorageIfAvailable(body)!
     }
 }
@@ -2224,8 +2018,8 @@ extension vDSP {
 extension vDSP {
   public struct Biquad<T> where T : Accelerate.vDSP_FloatingPointBiquadFilterable {
     public init?(coefficients: [Swift.Double], channelCount: Accelerate.vDSP_Length, sectionCount: Accelerate.vDSP_Length, ofType: T.Type)
-    mutating public func apply<U>(input: U) -> [T] where T == U.Element, U : Accelerate.AccelerateBuffer
-    mutating public func apply<U, V>(input: U, output: inout V) where T == U.Element, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == V.Element
+    public mutating func apply<U>(input: U) -> [T] where T == U.Element, U : Accelerate.AccelerateBuffer
+    public mutating func apply<U, V>(input: U, output: inout V) where T == U.Element, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == V.Element
   }
 }
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
@@ -4066,8 +3860,8 @@ extension vDSP {
   public class FFT2D<T> : Accelerate.vDSP.FFT<T> where T : Accelerate.vDSP_FourierTransformable {
     required public init?(width: Swift.Int, height: Swift.Int, ofType: T.Type)
     override public func transform<T>(input: T, output: inout T, direction: Accelerate.vDSP.FourierTransformDirection) where T : Accelerate.vDSP_FourierTransformable
-    override public init?(log2n: Accelerate.vDSP_Length, radix: Accelerate.vDSP.Radix, ofType: T.Type)
     @objc deinit
+    override public init?(log2n: Accelerate.vDSP_Length, radix: Accelerate.vDSP.Radix, ofType: T.Type)
   }
 }
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
@@ -8059,6 +7853,211 @@ extension vForce {
                 }
             }
     }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSDataType {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var float16: Accelerate.BNNSDataType {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var float: Accelerate.BNNSDataType {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var int8: Accelerate.BNNSDataType {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var int16: Accelerate.BNNSDataType {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var int32: Accelerate.BNNSDataType {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var uint8: Accelerate.BNNSDataType {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var uint16: Accelerate.BNNSDataType {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var uint32: Accelerate.BNNSDataType {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var indexed8: Accelerate.BNNSDataType {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.float16")
+public var BNNSDataTypeFloat16: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.float")
+public var BNNSDataTypeFloat32: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.int8")
+public var BNNSDataTypeInt8: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.int16")
+public var BNNSDataTypeInt16: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.int32")
+public var BNNSDataTypeInt32: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.indexed8")
+public var BNNSDataTypeIndexed8: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSPoolingFunction {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var max: Accelerate.BNNSPoolingFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var average: Accelerate.BNNSPoolingFunction {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSPoolingFunction.max")
+public var BNNSPoolingFunctionMax: Accelerate.BNNSPoolingFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSPoolingFunction.average")
+public var BNNSPoolingFunctionAverage: Accelerate.BNNSPoolingFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSActivationFunction {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var identity: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var rectifiedLinear: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var leakyRectifiedLinear: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var sigmoid: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var tanh: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var scaledTanh: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var abs: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var linear: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var clamp: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var integerLinearSaturate: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var integerLinearSaturatePerChannel: Accelerate.BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var softmax: Accelerate.BNNSActivationFunction {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.identity")
+public var BNNSActivationFunctionIdentity: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.rectifiedLinear")
+public var BNNSActivationFunctionRectifiedLinear: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.leakyRectifiedLinear")
+public var BNNSActivationFunctionLeakyRectifiedLinear: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.sigmoid")
+public var BNNSActivationFunctionSigmoid: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.tanh")
+public var BNNSActivationFunctionTanh: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.scaledTanh")
+public var BNNSActivationFunctionScaledTanh: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.abs")
+public var BNNSActivationFunctionAbs: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSFlags {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var useClientPointer: Accelerate.BNNSFlags {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSFlags.useClientPointer")
+public var BNNSFlagsUseClientPtr: Accelerate.BNNSFlags
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSImageStackDescriptor {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(width: Swift.Int, height: Swift.Int, channels: Swift.Int, row_stride: Swift.Int, image_stride: Swift.Int, data_type: Accelerate.BNNSDataType)
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSVectorDescriptor {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(size: Swift.Int, data_type: Accelerate.BNNSDataType)
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSLayerData {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(data: Swift.UnsafeRawPointer?, data_type: Accelerate.BNNSDataType, data_scale: Swift.Float = 1, data_bias: Swift.Float = 0)
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var zero: Accelerate.BNNSLayerData {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static func indexed8(data: Swift.UnsafePointer<Swift.Int8>?, data_table: Swift.UnsafePointer<Swift.Float>) -> Accelerate.BNNSLayerData
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSActivation {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(function: Accelerate.BNNSActivationFunction, alpha: Swift.Float = .nan, beta: Swift.Float = .nan)
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var identity: Accelerate.BNNSActivation {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static func integerLinearSaturate(scale: Swift.Int32 = 1, offset: Swift.Int32 = 0, shift: Swift.Int32 = 0) -> Accelerate.BNNSActivation
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static func integerLinearSaturatePerChannel(scale: Swift.UnsafePointer<Swift.Int32>, offset: Swift.UnsafePointer<Swift.Int32>, shift: Swift.UnsafePointer<Swift.Int32>) -> Accelerate.BNNSActivation
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSConvolutionLayerParameters {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(x_stride: Swift.Int, y_stride: Swift.Int, x_padding: Swift.Int, y_padding: Swift.Int, k_width: Swift.Int, k_height: Swift.Int, in_channels: Swift.Int, out_channels: Swift.Int, weights: Accelerate.BNNSLayerData)
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSPoolingLayerParameters {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(x_stride: Swift.Int, y_stride: Swift.Int, x_padding: Swift.Int, y_padding: Swift.Int, k_width: Swift.Int, k_height: Swift.Int, in_channels: Swift.Int, out_channels: Swift.Int, pooling_function: Accelerate.BNNSPoolingFunction)
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSFullyConnectedLayerParameters {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(in_size: Swift.Int, out_size: Swift.Int, weights: Accelerate.BNNSLayerData)
 }
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension Accelerate.vImage.Error : Swift.Equatable {}

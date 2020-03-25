@@ -28,7 +28,7 @@
 #ifndef _FD_SET
 #define _FD_SET
 
-#include <machine/types.h> /* __int32_t */
+#include <machine/types.h> /* __int32_t and uintptr_t */
 
 /*
  * Select uses bit masks of file descriptors in longs.  These macros
@@ -49,17 +49,30 @@ __BEGIN_DECLS
 typedef struct fd_set {
 	__int32_t       fds_bits[__DARWIN_howmany(__DARWIN_FD_SETSIZE, __DARWIN_NFDBITS)];
 } fd_set;
+
 __END_DECLS
 
-/* This inline avoids argument side-effect issues with FD_ISSET() */
-static __inline int
-__darwin_fd_isset(int _n, const struct fd_set *_p)
+
+__header_always_inline int
+__darwin_fd_isset(int _fd, const struct fd_set *_p)
 {
-	return _p->fds_bits[(unsigned long)_n / __DARWIN_NFDBITS] & ((__int32_t)(((unsigned long)1) << ((unsigned long)_n % __DARWIN_NFDBITS)));
+	return _p->fds_bits[(unsigned long)_fd / __DARWIN_NFDBITS] & ((__int32_t)(((unsigned long)1) << ((unsigned long)_fd % __DARWIN_NFDBITS)));
 }
 
-#define __DARWIN_FD_SET(n, p)   do { int __fd = (n); ((p)->fds_bits[(unsigned long)__fd/__DARWIN_NFDBITS] |= ((__int32_t)(((unsigned long)1)<<((unsigned long)__fd % __DARWIN_NFDBITS)))); } while(0)
-#define __DARWIN_FD_CLR(n, p)   do { int __fd = (n); ((p)->fds_bits[(unsigned long)__fd/__DARWIN_NFDBITS] &= ~((__int32_t)(((unsigned long)1)<<((unsigned long)__fd % __DARWIN_NFDBITS)))); } while(0)
+__header_always_inline void
+__darwin_fd_set(int _fd, struct fd_set *const _p)
+{
+	(_p->fds_bits[(unsigned long)_fd / __DARWIN_NFDBITS] |= ((__int32_t)(((unsigned long)1) << ((unsigned long)_fd % __DARWIN_NFDBITS))));
+}
+
+__header_always_inline void
+__darwin_fd_clr(int _fd, struct fd_set *const _p)
+{
+	(_p->fds_bits[(unsigned long)_fd / __DARWIN_NFDBITS] &= ~((__int32_t)(((unsigned long)1) << ((unsigned long)_fd % __DARWIN_NFDBITS))));
+}
+
+#define __DARWIN_FD_SET(n, p)   __darwin_fd_set((n), (p))
+#define __DARWIN_FD_CLR(n, p)   __darwin_fd_clr((n), (p))
 #define __DARWIN_FD_ISSET(n, p) __darwin_fd_isset((n), (p))
 
 #if __GNUC__ > 3 || __GNUC__ == 3 && __GNUC_MINOR__ >= 3

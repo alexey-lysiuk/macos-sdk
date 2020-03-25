@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EE2D1947-1F91-3CCE-9476-83BD77A82A5A' ]
+uuids:           [ 'x86_64: C7B03E6F-2601-3EE7-AACA-B06C791E17B2' ]
 platform:        macosx
 install-name:    '/usr/lib/libapp_launch_measurement.dylib'
 exports:         

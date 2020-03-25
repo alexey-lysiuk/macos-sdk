@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 640DB524-9F1F-3849-9FA3-3CB7A14C81B4' ]
+uuids:           [ 'x86_64: B0A3E861-F2C5-3C07-BC9C-D15B31E14DC9' ]
 platform:        macosx
 install-name:    '/usr/lib/libnfstorage.dylib'
 exports:         

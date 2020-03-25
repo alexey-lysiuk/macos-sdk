@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class CXHandle;
 
-CX_EXTERN API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos)
+CX_EXTERN API_AVAILABLE(ios(10.0), macCatalyst(13.0))  API_UNAVAILABLE(macos, watchos, tvos)
 @interface CXStartCallAction : CXCallAction
 
 - (instancetype)initWithCallUUID:(NSUUID *)callUUID handle:(CXHandle *)handle NS_DESIGNATED_INITIALIZER;

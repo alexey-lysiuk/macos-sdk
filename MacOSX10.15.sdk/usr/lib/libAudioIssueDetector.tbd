@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BF36FE10-7753-3D8C-87A8-2AF9901D6E50', 'x86_64: BF36FE10-7753-3D8C-87A8-2AF9901D6E50' ]
+uuids:           [ 'x86_64: 7613488B-A838-3935-BD7B-A17C5B5E0022', 'x86_64: 7613488B-A838-3935-BD7B-A17C5B5E0022' ]
 platform:        zippered
 install-name:    '/usr/lib/libAudioIssueDetector.dylib'
 exports:         
@@ -16,6 +16,7 @@ exports:
                        _AudioIssueDetectorRemoveNode, _AudioIssueDetectorReset, _AudioIssueDetectorSetDownlinkVolume, 
                        _AudioIssueDetectorSetNodeFormat, _AudioIssueDetectorSetNodeFormatWithDirection, 
                        _AudioIssueDetectorSetRouteSpecificDownlinkGainAdjustment, 
-                       _AudioIssueDetectorSetUplinkMute, _AudioIssueDetectorUpdateReportingSessions, 
-                       _EnvironmentalDosimetryAgentCreate, _EnvironmentalDosimetryAgentDispose ]
+                       _AudioIssueDetectorSetSmartCaseMicMute, _AudioIssueDetectorSetUplinkMute, 
+                       _AudioIssueDetectorUpdateReportingSessions, _EnvironmentalDosimetryAgentCreate, 
+                       _EnvironmentalDosimetryAgentDispose ]
 ...

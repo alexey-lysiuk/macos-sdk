@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BA4C9007-2C3E-33DE-B81C-608918D2FDF1', 'x86_64: BA4C9007-2C3E-33DE-B81C-608918D2FDF1' ]
+uuids:           [ 'x86_64: B40E4B60-2DB5-30ED-A210-3ED708862162', 'x86_64: B40E4B60-2DB5-30ED-A210-3ED708862162' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/XCTTargetBootstrap.framework/Versions/A/XCTTargetBootstrap'
 exports:         

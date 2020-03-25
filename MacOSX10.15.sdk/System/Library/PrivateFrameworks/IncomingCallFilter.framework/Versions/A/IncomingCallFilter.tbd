@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC033119-E375-3A81-822A-C433002DF6A8', 'x86_64: FC033119-E375-3A81-822A-C433002DF6A8' ]
+uuids:           [ 'x86_64: 676E556B-2AA1-3B1D-B94D-5971EEF32A43', 'x86_64: 676E556B-2AA1-3B1D-B94D-5971EEF32A43' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IncomingCallFilter.framework/Versions/A/IncomingCallFilter'
 current-version: 800

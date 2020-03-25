@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FBB4A97B-D7CF-3B8C-932D-672343D63260', 'x86_64: FBB4A97B-D7CF-3B8C-932D-672343D63260' ]
+uuids:           [ 'x86_64: 3D8BA34A-AAF7-3AF2-9B5B-189AC4755404', 'x86_64: 3D8BA34A-AAF7-3AF2-9B5B-189AC4755404' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit'
 current-version: 275
@@ -405,11 +405,11 @@ exports:
                        _OSKextCopyLinkDependencies, _OSKextCopyLoadList, _OSKextCopyLoadListForKexts, 
                        _OSKextCopyLoadedKextInfo, _OSKextCopyLoadedKextInfoByUUID, 
                        _OSKextCopyPersonalitiesArray, _OSKextCopyPersonalitiesOfKexts, 
-                       _OSKextCopyPlugins, _OSKextCopyResource, _OSKextCopyUUIDForAddress, 
-                       _OSKextCopyUUIDForArchitecture, _OSKextCreate, _OSKextCreateKextsFromMkextData, 
-                       _OSKextCreateKextsFromMkextFile, _OSKextCreateKextsFromURL, 
-                       _OSKextCreateKextsFromURLs, _OSKextCreateLoadedKextInfo, _OSKextCreateMkext, 
-                       _OSKextCreatePrelinkedKernel, _OSKextCreateWithIdentifier, 
+                       _OSKextCopyPlugins, _OSKextCopyResource, _OSKextCopySymbolReferences, 
+                       _OSKextCopyUUIDForAddress, _OSKextCopyUUIDForArchitecture, 
+                       _OSKextCreate, _OSKextCreateKextsFromMkextData, _OSKextCreateKextsFromMkextFile, 
+                       _OSKextCreateKextsFromURL, _OSKextCreateKextsFromURLs, _OSKextCreateLoadedKextInfo, 
+                       _OSKextCreateMkext, _OSKextCreatePrelinkedKernel, _OSKextCreateWithIdentifier, 
                        _OSKextDeclaresExecutable, _OSKextDeclaresUserExecutable, 
                        _OSKextDependenciesAreLoadableInSafeBoot, _OSKextDependsOnKext, 
                        _OSKextExecutableVariant, _OSKextFilterRequiredKexts, _OSKextFindLinkDependencies, 
@@ -542,11 +542,11 @@ exports:
                        __IOHIDServiceGetSenderID, __IOHIDServiceHidden, __IOHIDServiceInitVirtual, 
                        __IOHIDServiceIsInactive, __IOHIDServiceIsProtected, __IOHIDServiceOpen, 
                        __IOHIDServiceReleasePrivate, __IOHIDServiceRemoveConnection, 
-                       __IOHIDServiceRemovePropertiesForClient, __IOHIDServiceRemoveVirtual, 
-                       __IOHIDServiceScheduleAsync, __IOHIDServiceSetBatchIntervalForClient, 
-                       __IOHIDServiceSetEventCallback, __IOHIDServiceSetEventDeadlineForClient, 
-                       __IOHIDServiceSetMiscDebugDebugInfo, __IOHIDServiceSetPropertyForClient, 
-                       __IOHIDServiceSetReportIntervalForClient, __IOHIDServiceSupportReportLatency, 
+                       __IOHIDServiceRemovePropertiesForClient, __IOHIDServiceScheduleAsync, 
+                       __IOHIDServiceSetBatchIntervalForClient, __IOHIDServiceSetEventCallback, 
+                       __IOHIDServiceSetEventDeadlineForClient, __IOHIDServiceSetMiscDebugDebugInfo, 
+                       __IOHIDServiceSetPropertyForClient, __IOHIDServiceSetReportIntervalForClient, 
+                       __IOHIDServiceSupportReportLatency, __IOHIDServiceTerminate, 
                        __IOHIDServiceUnscheduleAsync, __IOHIDSessionCreateActivityNotification, 
                        __IOHIDSessionCreatePrivate, __IOHIDSessionDispatchEvent, 
                        __IOHIDSessionGetPropertyForClient, __IOHIDSessionReleasePrivate, 
