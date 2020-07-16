@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 521CD40C-0753-3A0B-BB61-EC59489E8B48', 'x86_64: 521CD40C-0753-3A0B-BB61-EC59489E8B48' ]
+uuids:           [ 'x86_64: E2ADD6ED-1095-3C5D-B414-DEF27A2D3380', 'x86_64: E2ADD6ED-1095-3C5D-B414-DEF27A2D3380' ]
 platform:        zippered
 install-name:    '/usr/lib/system/introspection/libsystem_pthread.dylib'
 current-version: 416.100.3

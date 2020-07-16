@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D266C900-E361-39AE-829A-ACACE709F6F5' ]
+uuids:           [ 'x86_64: 9B2AFA36-F1EF-3E6F-B6B8-3D5A767F9F5B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreUtilsUI.framework/Versions/A/CoreUtilsUI'
 current-version: 0

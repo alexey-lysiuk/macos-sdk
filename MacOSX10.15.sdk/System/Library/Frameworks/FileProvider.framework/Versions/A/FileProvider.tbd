@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B3EB6E66-807E-3F67-951F-88B8484FB8CD', 'x86_64: B3EB6E66-807E-3F67-951F-88B8484FB8CD' ]
+uuids:           [ 'x86_64: 3BC3B7F7-A568-3D99-B654-F5F2379F1560', 'x86_64: 3BC3B7F7-A568-3D99-B654-F5F2379F1560' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/FileProvider.framework/Versions/A/FileProvider'
 exports:         
@@ -57,6 +57,7 @@ exports:
                        _FPInvalidParameterError, _FPInvalidProtocolError, _FPInvalidURLError, 
                        _FPIsFileProviderBookmark, _FPItemDecorationTypeBadge, _FPItemDecorationTypeFolderBadge, 
                        _FPItemDecorationTypeFolderStatus, _FPItemDecorationTypeSharing, 
+                       _FPItemFlattenedPackageExtension, _FPItemFlattenedPackageType, 
                        _FPItemIDFromCrossDeviceItemID, _FPItemNotFoundError, _FPItemNotFoundErrorAtURL, 
                        _FPItemPropertyNamesByURLResourceKey, _FPItemURLForCrossDeviceItemID, 
                        _FPLastUsedDateXattrName, _FPLoc, _FPLocalizedFileSystemTypeName, 
@@ -66,7 +67,9 @@ exports:
                        _FPParseBookmarkableString, _FPPartialErrorsByItemIdentifiers, 
                        _FPPartialErrorsByURL, _FPPluginOperationFailedError, _FPPreflightActionDelete, 
                        _FPPreflightActionExport, _FPPreflightActionImportHere, _FPPreflightActionMove, 
-                       _FPPreflightActionTrash, _FPProviderNotFoundError, _FPProviderNotFoundErrorForURL, 
+                       _FPPreflightActionTrash, _FPProviderNewerVersionFoundError, 
+                       _FPProviderNotFoundError, _FPProviderNotFoundErrorForURL, 
+                       _FPProviderNotRegistered, _FPProviderOlderVersionRunningError, 
                        _FPProxyNotFoundError, _FPPurposeIdentifierEntitlement, _FPQueryCollectionDefaultMountPointIdentifier, 
                        _FPRegisterFileProvidersForFileCoordination, _FPRegisterFileProvidersForUser, 
                        _FPRegisterFileProvidersForUserAtURLs, _FPServerPackageExtensions, 
@@ -114,12 +117,13 @@ exports:
                        FPDaemonConnection, FPDeleteOperation, FPDisconnectDomainOperation, 
                        FPDownloadInfo, FPDownloadOperation, FPEmptyAllTrashedItemsOperation, 
                        FPEnumerationSettings, FPError, FPEvictOperation, FPEvictableItemsQueryDescriptor, 
-                       FPExtensionCollection, FPExtensionDataSource, FPExtensionEnumerationSettings, 
-                       FPFetchPublishingURLOperation, FPFetchThumbnailsOperation, 
-                       FPFrameworkOverridesIterator, FPGracePeriodTimer, FPItem, 
-                       FPItemCollection, FPItemDecoration, FPItemFlags, FPItemHierarchyLookup, 
-                       FPItemID, FPItemManager, FPLocalizableStringLookup, FPLocalization, 
-                       FPModifyFavoritesOperation, FPMoveInfo, FPMoveOperation, FPNonEvictableItemsQueryDescriptor, 
+                       FPExceptionToErrorProxy, FPExtensionCollection, FPExtensionDataSource, 
+                       FPExtensionEnumerationSettings, FPFetchPublishingURLOperation, 
+                       FPFetchThumbnailsOperation, FPFrameworkOverridesIterator, 
+                       FPGracePeriodTimer, FPItem, FPItemCollection, FPItemDecoration, 
+                       FPItemFlags, FPItemHierarchyLookup, FPItemID, FPItemManager, 
+                       FPLocalizableStringLookup, FPLocalization, FPModifyFavoritesOperation, 
+                       FPMoveInfo, FPMoveOperation, FPNonEvictableItemsQueryDescriptor, 
                        FPOperation, FPPacer, FPPersistentStringSet, FPPinOperation, 
                        FPPreflightUserInteraction, FPProgressProxy, FPProvider, FPProviderDomain, 
                        FPProviderMonitor, FPQueryCollection, FPQueryEnumerationSettings, 

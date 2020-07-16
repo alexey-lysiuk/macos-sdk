@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 08199809-33CA-321E-9B9D-FD5B2BC64580', 'x86_64: 08199809-33CA-321E-9B9D-FD5B2BC64580' ]
+uuids:           [ 'x86_64: 59A8239F-C28A-3B59-B8FA-11340DC85EDC', 'x86_64: 59A8239F-C28A-3B59-B8FA-11340DC85EDC' ]
 platform:        zippered
 install-name:    '/usr/lib/libc++.1.dylib'
 current-version: 902.1

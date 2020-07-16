@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A9A117A8-F5FC-3C4A-82D1-7A18F40A68BA' ]
+uuids:           [ 'x86_64: F0798D40-2A7A-3ADD-AE82-AC1A934E7EB7' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Quartz'
 exports:         
@@ -14,7 +14,7 @@ exports:
     symbols:         [ _QuartzVersionNumber, _QuartzVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8E987D0B-D19B-3740-8EAF-865E71F6BD3D' ]
+uuids:           [ 'x86_64: 5F086EE2-5745-3E28-B292-1DE5E0652E36' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit'
 exports:         
@@ -227,7 +227,7 @@ exports:
                        _IKiOSStyleGroupCell._titleSelectionImage ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4F12AAA2-6D2B-378F-A9ED-F86E0C3867CC' ]
+uuids:           [ 'x86_64: 9C10ADF7-94B0-3779-AD44-5AF6394A32AF' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzComposer.framework/Versions/A/QuartzComposer'
 current-version: 168
@@ -361,7 +361,7 @@ exports:
                        QCPatchRenderingInfo._context, QCPatchRenderingInfo.flags ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0787E515-8FBF-3F28-ADEC-1AB655785FD0' ]
+uuids:           [ 'x86_64: 876E8B28-9500-34C6-B297-EA404D89C903' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzFilters.framework/Versions/A/QuartzFilters'
 exports:         
@@ -442,7 +442,7 @@ exports:
     objc-ivars:      [ QuartzFilter._privateData, QuartzFilterManager._privateData ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3AC6282E-1B48-34D1-876E-6ABDF4C6C5B7' ]
+uuids:           [ 'x86_64: 7128FB8C-83B0-3250-BF86-E8A1772CF1F5' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuickLookUI.framework/Versions/A/QuickLookUI'
 current-version: 0

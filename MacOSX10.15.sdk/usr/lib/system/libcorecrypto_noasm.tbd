@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5185A941-2C72-3CCF-891F-7BD889561DC4', 'x86_64: 5185A941-2C72-3CCF-891F-7BD889561DC4' ]
+uuids:           [ 'x86_64: 4F5B7717-B3B9-3D87-B48C-5E99D5C67A9A', 'x86_64: 4F5B7717-B3B9-3D87-B48C-5E99D5C67A9A' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcorecrypto_noasm.dylib'
-current-version: 866.100.30
+current-version: 866.140.1
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]

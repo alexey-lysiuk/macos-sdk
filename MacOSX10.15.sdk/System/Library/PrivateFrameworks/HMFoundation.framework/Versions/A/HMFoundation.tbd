@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8B000802-EDA0-3134-82B5-3423984D364B', 'x86_64: 8B000802-EDA0-3134-82B5-3423984D364B' ]
+uuids:           [ 'x86_64: 73A48102-6BBE-33B3-832E-26F52652462E', 'x86_64: 73A48102-6BBE-33B3-832E-26F52652462E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/HMFoundation.framework/Versions/A/HMFoundation'
-current-version: 557.23
+current-version: 557.25
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _HMFAreStringsEqualIgnoringCase, _HMFBooleanToString, _HMFDataIsReversed, 
@@ -34,10 +34,11 @@ exports:
                        _HMFProductInfoFortuneOSVersion, _HMFProductInfoFrancisOSVersion, 
                        _HMFProductInfoGloryBOSVersion, _HMFProductInfoGloryCOSVersion, 
                        _HMFProductInfoGloryGOSVersion, _HMFProductInfoGloryOSVersion, 
-                       _HMFProductInfoGraceBOSVersion, _HMFProductInfoGraceOSVersion, 
-                       _HMFProductInfoHopeBOSVersion, _HMFProductInfoHopeCOSVersion, 
-                       _HMFProductInfoHopeGOSVersion, _HMFProductInfoHopeOSVersion, 
-                       _HMFProductInfoJazzBOSVersion, _HMFProductInfoJazzOSVersion, 
+                       _HMFProductInfoGraceBOSVersion, _HMFProductInfoGraceFOSVersion, 
+                       _HMFProductInfoGraceOSVersion, _HMFProductInfoHopeBOSVersion, 
+                       _HMFProductInfoHopeCOSVersion, _HMFProductInfoHopeGOSVersion, 
+                       _HMFProductInfoHopeOSVersion, _HMFProductInfoJazzBOSVersion, 
+                       _HMFProductInfoJazzFOSVersion, _HMFProductInfoJazzOSVersion, 
                        _HMFProductInfoLibertyBOSVersion, _HMFProductInfoLibertyCOSVersion, 
                        _HMFProductInfoLibertyGOSVersion, _HMFProductInfoLibertyOSVersion, 
                        _HMFProductInfoMonarchOSVersion, _HMFProductInfoPeaceBOSVersion, 
@@ -45,8 +46,9 @@ exports:
                        _HMFProductInfoPeaceOSVersion, _HMFProductInfoTigrisOSVersion, 
                        _HMFProductInfoTildenOSVersion, _HMFProductInfoTopazOSVersion, 
                        _HMFProductInfoUnionOSVersion, _HMFProductInfoWhitetailOSVersion, 
-                       _HMFProductInfoYagerBOSVersion, _HMFProductInfoYagerOSVersion, 
-                       _HMFProductInfoYukonBOSVersion, _HMFProductInfoYukonOSVersion, 
+                       _HMFProductInfoYagerBOSVersion, _HMFProductInfoYagerFOSVersion, 
+                       _HMFProductInfoYagerOSVersion, _HMFProductInfoYukonBOSVersion, 
+                       _HMFProductInfoYukonFOSVersion, _HMFProductInfoYukonOSVersion, 
                        _HMFProductInfoYukonPreOSVersion, _HMFProductPlatformToString, 
                        _HMFProductVariantToString, _HMFQOSClassFromQualityOfService, 
                        _HMFQualityOfServiceCompare, _HMFQualityOfServiceToString, 

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 24203985-D683-3460-A21E-9E29E94D0B24', 'x86_64: 24203985-D683-3460-A21E-9E29E94D0B24', 
-                   'x86_64h: 9A33F390-687F-3EE2-8293-4E564A164469', 'x86_64h: 9A33F390-687F-3EE2-8293-4E564A164469' ]
+uuids:           [ 'x86_64: CEAA4BC1-62AB-3702-B790-82A55EA10302', 'x86_64: CEAA4BC1-62AB-3702-B790-82A55EA10302', 
+                   'x86_64h: 49AE61CA-C91E-31FE-9BD0-1AACFFB5181E', 'x86_64h: 49AE61CA-C91E-31FE-9BD0-1AACFFB5181E' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData'
 current-version: 977.3

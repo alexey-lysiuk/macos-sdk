@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 75A1C7F4-F925-36B1-A833-8109B6FB9A75' ]
+uuids:           [ 'x86_64: CCFFCA32-BFB1-30AE-BE51-D1C100168762' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/EventKitUI.framework/Versions/A/EventKitUI'
 current-version: 0

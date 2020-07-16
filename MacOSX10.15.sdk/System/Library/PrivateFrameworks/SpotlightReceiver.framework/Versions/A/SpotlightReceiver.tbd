@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B493FD16-1AA7-31AF-A766-3C1263E7E1EF' ]
+uuids:           [ 'x86_64: 0C7767A7-CA89-3527-83B4-C9C39543B2E7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpotlightReceiver.framework/Versions/A/SpotlightReceiver'
 exports:         

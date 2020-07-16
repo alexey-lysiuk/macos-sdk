@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C34C8FCE-54DE-3884-8074-057B06807D22', 'x86_64: C34C8FCE-54DE-3884-8074-057B06807D22' ]
+uuids:           [ 'x86_64: A7249C4C-6C0A-3C14-BA27-DC966F6CC6A0', 'x86_64: A7249C4C-6C0A-3C14-BA27-DC966F6CC6A0' ]
 platform:        zippered
 install-name:    '/usr/lib/libAudioToolboxUtility.dylib'
 exports:         

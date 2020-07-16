@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 89FA3D49-2A56-34E9-9A05-D806F0B62B50', 'x86_64: 89FA3D49-2A56-34E9-9A05-D806F0B62B50' ]
+uuids:           [ 'x86_64: B212CB16-03CD-3B13-A4A5-65A943DFF43B', 'x86_64: B212CB16-03CD-3B13-A4A5-65A943DFF43B' ]
 platform:        zippered
 install-name:    '/usr/lib/libsystemstats.dylib'
 current-version: 456.100.1

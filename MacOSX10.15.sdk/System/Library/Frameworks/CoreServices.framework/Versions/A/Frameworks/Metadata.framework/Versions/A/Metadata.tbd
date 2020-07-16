@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EE42CCA1-FEC2-3F1C-9B62-2E73EFB05FCC', 'x86_64: EE42CCA1-FEC2-3F1C-9B62-2E73EFB05FCC' ]
+uuids:           [ 'x86_64: 0973F7E5-D58C-3574-A3CE-4F12CAC2D4C7', 'x86_64: 0973F7E5-D58C-3574-A3CE-4F12CAC2D4C7' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata'
-current-version: 2076.3
+current-version: 2076.7
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]

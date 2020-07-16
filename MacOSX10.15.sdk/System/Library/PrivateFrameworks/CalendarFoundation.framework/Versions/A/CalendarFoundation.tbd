@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6BEE603A-378B-366E-9255-84C9EF3DCBA7', 'x86_64: 6BEE603A-378B-366E-9255-84C9EF3DCBA7' ]
+uuids:           [ 'x86_64: F051C149-562B-36F4-BF8F-CE66B5D6E360', 'x86_64: F051C149-562B-36F4-BF8F-CE66B5D6E360' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CalendarFoundation.framework/Versions/A/CalendarFoundation'
-current-version: 1140.4.2
+current-version: 1140.6.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CALAbbrevDateFormat, _CALAbbrevDateWithoutYearFormat, _CALAbbrevDayOfWeekFormat, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 37B07B2C-F75F-31E3-82F2-F1409478E0B0', 'x86_64: 37B07B2C-F75F-31E3-82F2-F1409478E0B0' ]
+uuids:           [ 'x86_64: 90C5DEA7-D1E2-3761-8F13-1EA27BD4CC31', 'x86_64: 90C5DEA7-D1E2-3761-8F13-1EA27BD4CC31' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MTLCompiler.framework/Versions/3902/Libraries/libMTLCompilerHelper.dylib'
 exports:         

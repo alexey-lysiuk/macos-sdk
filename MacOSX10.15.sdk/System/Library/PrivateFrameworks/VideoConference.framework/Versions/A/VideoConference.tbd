@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DADE8D94-7356-3438-BA38-ABA6D853ECE6' ]
+uuids:           [ 'x86_64: 26B844E6-2CDF-3382-B79D-1345C406BD9A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VideoConference.framework/Versions/A/VideoConference'
 current-version: 2

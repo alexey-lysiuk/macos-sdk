@@ -2,7 +2,7 @@
 //  NSFileProviderError.h
 //  FileProvider
 //
-//  Copyright (c) 2014-2017 Apple Inc. All rights reserved.
+//  Copyright (c) 2014-2020 Apple Inc. All rights reserved.
 //
 
 #import <FileProvider/NSFileProviderDefines.h>
@@ -11,11 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXPORT NSErrorDomain const NSFileProviderErrorDomain FILEPROVIDER_API_AVAILABILITY_V2;
+FOUNDATION_EXPORT NSErrorDomain const NSFileProviderErrorDomain FILEPROVIDER_API_AVAILABILITY_V2_V3;
 
 FOUNDATION_EXPORT NSString * const NSFileProviderErrorCollidingItemKey API_DEPRECATED("NSFileProviderErrorItemKey", ios(8.0, 13.0)) API_UNAVAILABLE(macos, tvos, watchos);
-FOUNDATION_EXPORT NSString * const NSFileProviderErrorItemKey FILEPROVIDER_API_AVAILABILITY_V3;
-FOUNDATION_EXPORT NSString * const NSFileProviderErrorNonExistentItemIdentifierKey FILEPROVIDER_API_AVAILABILITY_V2;
+FOUNDATION_EXPORT NSString * const NSFileProviderErrorItemKey API_AVAILABLE(ios(13.0), macos(10.15)) API_UNAVAILABLE(macCatalyst) API_UNAVAILABLE(watchos, tvos);
+FOUNDATION_EXPORT NSString * const NSFileProviderErrorNonExistentItemIdentifierKey FILEPROVIDER_API_AVAILABILITY_V2_V3;
 
 typedef NS_ERROR_ENUM(NSFileProviderErrorDomain, NSFileProviderErrorCode) {
     /** The user credentials cannot be verified */
@@ -52,28 +52,38 @@ typedef NS_ERROR_ENUM(NSFileProviderErrorDomain, NSFileProviderErrorCode) {
      \note Please use -[NSError (NSFileProviderError) fileProviderErrorForOutOfDateItem:] to build an error with this code.
      \see -[NSError (NSFileProviderError) fileProviderErrorForOutOfDateItem:]
      */
-    NSFileProviderErrorVersionOutOfDate FILEPROVIDER_API_AVAILABILITY_FPFS_CORE = -1006,
+    NSFileProviderErrorVersionOutOfDate FILEPROVIDER_API_AVAILABILITY_V3 = -1006,
 
     /** We're trying to non-recursively delete a non-empty directory
      */
-    NSFileProviderErrorDirectoryNotEmpty FILEPROVIDER_API_AVAILABILITY_FPFS_CORE = -1007,
+    NSFileProviderErrorDirectoryNotEmpty FILEPROVIDER_API_AVAILABILITY_V3 = -1007,
 
 
     /**
      Returned by NSFileProviderManager if no provider could be found in the application
      */
-    NSFileProviderErrorProviderNotFound FILEPROVIDER_API_AVAILABILITY_FPFS_CORE = -2001,
+    NSFileProviderErrorProviderNotFound FILEPROVIDER_API_AVAILABILITY_V3 = -2001,
 
     /**
      Returned by NSFileProviderManager if the application's provider has been disabled due to app translocation
      */
-    NSFileProviderErrorProviderTranslocated FILEPROVIDER_API_AVAILABILITY_FPFS_CORE = -2002,
-} FILEPROVIDER_API_AVAILABILITY_V2;
+    NSFileProviderErrorProviderTranslocated FILEPROVIDER_API_AVAILABILITY_V3 = -2002,
+
+    /**
+     Returned by NSFileProviderManager if the provider registered in the system is an older version than the one corresponding to this app.
+     */
+    NSFileProviderErrorOlderExtensionVersionRunning FILEPROVIDER_API_AVAILABILITY_V3 = -2003,
+
+    /**
+     Returned by NSFileProviderManager if the provider registered in the system is a newer version than the one corresponding to this app.
+     */
+    NSFileProviderErrorNewerExtensionVersionFound FILEPROVIDER_API_AVAILABILITY_V3 = -2004,
+} FILEPROVIDER_API_AVAILABILITY_V2_V3;
 
 @interface NSError (NSFileProviderError)
-+ (instancetype)fileProviderErrorForCollisionWithItem:(NSFileProviderItem)existingItem FILEPROVIDER_API_AVAILABILITY_V2;
-+ (instancetype)fileProviderErrorForNonExistentItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier FILEPROVIDER_API_AVAILABILITY_V2;
-+ (instancetype)fileProviderErrorForOutOfDateItem:(NSFileProviderItem)updatedVersion NS_SWIFT_NAME(fileProviderErrorForOutOfDateItem(_:)) FILEPROVIDER_API_AVAILABILITY_FPFS_CORE;
++ (instancetype)fileProviderErrorForCollisionWithItem:(NSFileProviderItem)existingItem FILEPROVIDER_API_AVAILABILITY_V2_V3;
++ (instancetype)fileProviderErrorForNonExistentItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier FILEPROVIDER_API_AVAILABILITY_V2_V3;
++ (instancetype)fileProviderErrorForOutOfDateItem:(NSFileProviderItem)updatedVersion NS_SWIFT_NAME(fileProviderErrorForOutOfDateItem(_:)) FILEPROVIDER_API_AVAILABILITY_V3;
 
 @end
 

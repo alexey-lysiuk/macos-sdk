@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8AB4A416-A174-386B-8A96-5F16EAA3FCDE', 'x86_64: 8AB4A416-A174-386B-8A96-5F16EAA3FCDE' ]
+uuids:           [ 'x86_64: ADF138F0-0274-3BA2-A1D2-48B91577FE53', 'x86_64: ADF138F0-0274-3BA2-A1D2-48B91577FE53' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport'
 current-version: 15016

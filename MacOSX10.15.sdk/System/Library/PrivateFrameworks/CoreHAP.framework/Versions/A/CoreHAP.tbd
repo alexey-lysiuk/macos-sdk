@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8A3BACEA-BCA7-3065-B02F-84E9FC1B80A4' ]
+uuids:           [ 'x86_64: 7D762090-35AA-334C-8E88-80BF00D68F62' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreHAP.framework/Versions/A/CoreHAP'
-current-version: 621.5.29
+current-version: 621.7.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CBUUIDCharacteristicValidRange, _HAPAccessoryHasPairings, 

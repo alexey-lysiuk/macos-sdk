@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C488A935-B94F-3F80-88E7-D2743FB1E460', 'x86_64: C488A935-B94F-3F80-88E7-D2743FB1E460' ]
+uuids:           [ 'x86_64: 6CF18E28-A7A8-3952-8171-7E4FF4FB37FA', 'x86_64: 6CF18E28-A7A8-3952-8171-7E4FF4FB37FA' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox'
 exports:         

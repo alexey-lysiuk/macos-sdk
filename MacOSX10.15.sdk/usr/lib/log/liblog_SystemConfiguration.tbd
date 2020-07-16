@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 62974060-EA62-3F2C-A98E-A3A82A502B26', 'x86_64: 62974060-EA62-3F2C-A98E-A3A82A502B26' ]
+uuids:           [ 'x86_64: CC67D52B-EB49-3139-8E6A-992AA2E8B27F', 'x86_64: CC67D52B-EB49-3139-8E6A-992AA2E8B27F' ]
 platform:        zippered
 install-name:    '/usr/lib/log/liblog_SystemConfiguration.dylib'
-current-version: 1061.101.1
+current-version: 1061.141.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogCopyFormattedString, _OSStateCreateStringWithData ]

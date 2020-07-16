@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 578863D9-6358-30F5-9B1C-F35568056CBA' ]
+uuids:           [ 'x86_64: 13707162-9D44-3CF9-8897-26254043EA3D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook'
-current-version: 2421.22
+current-version: 2421.27
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/AddressBookCore.framework/Versions/A/AddressBookCore', 
@@ -694,7 +694,7 @@ exports:
                        _ABMonogramOptions._foregroundColor, _ABMonogramOptions._vibrant ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1E80A7B4-2266-33AE-B694-FCBCF986AC91', 'x86_64: 1E80A7B4-2266-33AE-B694-FCBCF986AC91' ]
+uuids:           [ 'x86_64: 56464766-2D02-3795-92C5-E5DB6DDA6D38', 'x86_64: 56464766-2D02-3795-92C5-E5DB6DDA6D38' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AddressBookCore.framework/Versions/A/AddressBookCore'
 exports:         
@@ -958,26 +958,26 @@ exports:
                        __propertyIsSimilar, __propertyValuesMatchIfOneIsNil, __stringsAreSimilar, 
                        __typeOfABPersonProperty, __valueIsEmpty, __valuesAreSimilarForProperty, 
                        _ab_dispatch_concurrent, _ab_dispatch_interval_to_time, _ab_dispatch_main, 
-                       _ab_dispatch_main_sync, _ab_dispatch_sync_timeout, _ab_dispatch_wait_for_operation_queue, 
-                       _ab_integer_bit_clear, _ab_integer_bit_set, _ab_once, _ab_once_invalidate, 
-                       _ab_set_current_queue_name_while_running_block, _ab_set_once, 
-                       _byteBufferWithCapacity, _fastFirstLastSorting, _isCurrentProcessBlacklistedForXPCAccess, 
-                       _kAB21vCardEncoding, _kABAIMHomeLabel, _kABAIMInstantProperty, 
-                       _kABAIMInstantPropertyPriv, _kABAIMMobileMeLabel, _kABAIMWorkLabel, 
-                       _kABAccountMembershipProperty, _kABAccountsChanged, _kABActivityAlertProperty, 
-                       _kABActivityRingtoneProperty, _kABActivityTextToneProperty, 
-                       _kABAddressBookDidResetPriv, _kABAddressBookPreferencesChangedPriv, 
-                       _kABAddressBookWasResetPrivateNotification, _kABAddressBookWillResetPriv, 
-                       _kABAddressCityKey, _kABAddressCountryCodeKey, _kABAddressCountryKey, 
-                       _kABAddressDistributionListDictionaryKey, _kABAddressHomeLabel, 
-                       _kABAddressProperty, _kABAddressRegionKey, _kABAddressSamaKey, 
-                       _kABAddressStateKey, _kABAddressStreetKey, _kABAddressSubLocalityKey, 
-                       _kABAddressWorkLabel, _kABAddressZIPKey, _kABAlternateBirthdayComponentsProperty, 
-                       _kABAlternateBirthdayLabel, _kABAnniversaryLabel, _kABAppleAccountClassPrimary, 
-                       _kABAppleAccountClassPropertyKey, _kABAssistantLabel, _kABBirthdayComponentsProperty, 
-                       _kABBirthdayLabel, _kABBirthdayProperty, _kABBrotherLabel, 
-                       _kABCalendarURIsProperty, _kABCardDAVSourceClassName, _kABChildLabel, 
-                       _kABClipRectTransformType, _kABCreationDateProperty, _kABDatabaseChangedExternallyNotification, 
+                       _ab_dispatch_main_sync, _ab_dispatch_sync_timeout, _ab_integer_bit_clear, 
+                       _ab_integer_bit_set, _ab_once, _ab_once_invalidate, _ab_set_current_queue_name_while_running_block, 
+                       _ab_set_once, _byteBufferWithCapacity, _fastFirstLastSorting, 
+                       _isCurrentProcessBlacklistedForXPCAccess, _kAB21vCardEncoding, 
+                       _kABAIMHomeLabel, _kABAIMInstantProperty, _kABAIMInstantPropertyPriv, 
+                       _kABAIMMobileMeLabel, _kABAIMWorkLabel, _kABAccountMembershipProperty, 
+                       _kABAccountsChanged, _kABActivityAlertProperty, _kABActivityRingtoneProperty, 
+                       _kABActivityTextToneProperty, _kABAddressBookDidResetPriv, 
+                       _kABAddressBookPreferencesChangedPriv, _kABAddressBookWasResetPrivateNotification, 
+                       _kABAddressBookWillResetPriv, _kABAddressCityKey, _kABAddressCountryCodeKey, 
+                       _kABAddressCountryKey, _kABAddressDistributionListDictionaryKey, 
+                       _kABAddressHomeLabel, _kABAddressProperty, _kABAddressRegionKey, 
+                       _kABAddressSamaKey, _kABAddressStateKey, _kABAddressStreetKey, 
+                       _kABAddressSubLocalityKey, _kABAddressWorkLabel, _kABAddressZIPKey, 
+                       _kABAlternateBirthdayComponentsProperty, _kABAlternateBirthdayLabel, 
+                       _kABAnniversaryLabel, _kABAppleAccountClassPrimary, _kABAppleAccountClassPropertyKey, 
+                       _kABAssistantLabel, _kABBirthdayComponentsProperty, _kABBirthdayLabel, 
+                       _kABBirthdayProperty, _kABBrotherLabel, _kABCalendarURIsProperty, 
+                       _kABCardDAVSourceClassName, _kABChildLabel, _kABClipRectTransformType, 
+                       _kABCreationDateProperty, _kABDatabaseChangedExternallyNotification, 
                        _kABDatabaseChangedExternallyNotificationPriv, _kABDatabaseChangedNotification, 
                        _kABDatabaseChangedNotificationPriv, _kABDatabaseDirectoryKey, 
                        _kABDatabaseWillSaveNotification, _kABDaughterLabel, _kABDefaultSelectedGroup, 
@@ -1421,7 +1421,7 @@ exports:
                        PHXSource.configurationView, PHXSource.passwordField, _ABBlockTask._block ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2FE35C62-0F8F-3750-9ABB-8F4917C08AA6', 'x86_64: 2FE35C62-0F8F-3750-9ABB-8F4917C08AA6' ]
+uuids:           [ 'x86_64: 7597C280-EED8-313F-BE2F-72FAD1CB090F', 'x86_64: 7597C280-EED8-313F-BE2F-72FAD1CB090F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence'
 exports:         

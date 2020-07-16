@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 172BBC06-56FE-3AFA-83AF-16FBC2B8DF04', 'x86_64: 172BBC06-56FE-3AFA-83AF-16FBC2B8DF04' ]
+uuids:           [ 'x86_64: E2324619-42E5-38C7-82A2-17E639581E7F', 'x86_64: E2324619-42E5-38C7-82A2-17E639581E7F' ]
 platform:        zippered
 install-name:    '/usr/lib/libxcselect.dylib'
 exports:         

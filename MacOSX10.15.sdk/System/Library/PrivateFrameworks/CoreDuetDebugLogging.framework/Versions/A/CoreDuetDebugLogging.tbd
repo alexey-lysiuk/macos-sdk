@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6B53E397-5677-342B-9E49-72853B73FDE8', 'x86_64: 6B53E397-5677-342B-9E49-72853B73FDE8' ]
+uuids:           [ 'x86_64: 6D0113DB-61D8-3A21-95CB-9E30D8F929F9', 'x86_64: 6D0113DB-61D8-3A21-95CB-9E30D8F929F9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDuetDebugLogging.framework/Versions/A/CoreDuetDebugLogging'
 exports:         

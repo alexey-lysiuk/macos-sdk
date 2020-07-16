@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F90FFCE-403B-3724-991D-BA32401D99C5', 'x86_64: 5F90FFCE-403B-3724-991D-BA32401D99C5' ]
+uuids:           [ 'x86_64: AF488D13-9E89-35E0-B078-BE37CC5B8586', 'x86_64: AF488D13-9E89-35E0-B078-BE37CC5B8586' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcache.dylib'
 current-version: 83

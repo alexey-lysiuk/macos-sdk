@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 56BE172A-8762-3A61-999A-230781937BCA' ]
+uuids:           [ 'x86_64: 959CE934-B541-3172-846F-4D1709353526' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/QuickLook.framework/Versions/A/QuickLook'
 current-version: 0

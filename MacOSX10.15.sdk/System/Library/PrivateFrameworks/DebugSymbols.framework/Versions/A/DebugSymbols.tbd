@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0406F803-6865-370E-9D32-01EF177B5E7A', 'x86_64: 0406F803-6865-370E-9D32-01EF177B5E7A' ]
+uuids:           [ 'x86_64: 040AE30B-CF2C-3798-A289-0929B8CAB10D', 'x86_64: 040AE30B-CF2C-3798-A289-0929B8CAB10D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols'
 current-version: 194

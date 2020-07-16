@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CBD85015-6A37-3215-8034-B9A337F23242', 'x86_64: CBD85015-6A37-3215-8034-B9A337F23242' ]
+uuids:           [ 'x86_64: D960BC48-06D2-36F9-8C02-4C1AFBD57886', 'x86_64: D960BC48-06D2-36F9-8C02-4C1AFBD57886' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries//libCoreVMClient.mono.dylib'
 exports:         

@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.100.4) generated from IOInterruptDispatchSource.iig */
+/* iig(DriverKit-73.140.1) generated from IOInterruptDispatchSource.iig */
 
-/* IOInterruptDispatchSource.iig:1-39 */
+/* IOInterruptDispatchSource.iig:1-44 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -40,7 +40,12 @@ struct IOInterruptDispatchSourcePayload {
 	uint64_t count;
 };
 
-/* source class IOInterruptDispatchSource IOInterruptDispatchSource.iig:40-115 */
+enum {
+	kIOInterruptDispatchSourceTypeEdge  = 0x00000000,
+	kIOInterruptDispatchSourceTypeLevel = 0x00000001
+};
+
+/* source class IOInterruptDispatchSource IOInterruptDispatchSource.iig:45-136 */
 
 #if __DOCUMENTATION__
 #define KERNEL IIG_KERNEL
@@ -74,6 +79,22 @@ public:
 	    uint32_t index,
 	    IODispatchQueue * queue,
 	    IOInterruptDispatchSource ** source) LOCAL;
+
+    /*!
+     * @brief       Returns the type of interrupt used for a device supplying hardware interrupts, by index from an IOService provider.
+     * @param       provider The IOService object representing the HW device producing the interrupt.
+     * @param       index Index for the interrupt.
+     * @param 		interruptType The interrupt type for the interrupt source will be stored here.
+     *              kIOInterruptTypeEdge will be returned for edge-trigggered sources.
+     *              kIOInterruptTypeLevel will be returned for level-trigggered sources.
+     *              Other flags may be returned depending on the provider, for example PCI flags for messaged interrupts.
+     * @return      kIOReturnSuccess on success. See IOReturn.h for error codes.
+     */
+
+	static kern_return_t
+	GetInterruptType(IOService * provider,
+	    uint32_t index,
+	    uint64_t * interruptType);
 
 	virtual bool
 	init() override;
@@ -126,9 +147,10 @@ private:
 #undef KERNEL
 #else /* __DOCUMENTATION__ */
 
-/* generated class IOInterruptDispatchSource IOInterruptDispatchSource.iig:40-115 */
+/* generated class IOInterruptDispatchSource IOInterruptDispatchSource.iig:45-136 */
 
 #define IOInterruptDispatchSource_Create_ID            0xb6a948b1585fc259ULL
+#define IOInterruptDispatchSource_GetInterruptType_ID            0x846d2df6b6bef33bULL
 #define IOInterruptDispatchSource_SetHandler_ID            0xfcc79b0928501bb1ULL
 #define IOInterruptDispatchSource_InterruptOccurred_ID            0xce0513291cfa1ee1ULL
 
@@ -137,6 +159,11 @@ private:
         uint32_t index, \
         IODispatchQueue * queue, \
         IOInterruptDispatchSource ** source
+
+#define IOInterruptDispatchSource_GetInterruptType_Args \
+        IOService * provider, \
+        uint32_t index, \
+        uint64_t * interruptType
 
 #define IOInterruptDispatchSource_SetHandler_Args \
         OSAction * action
@@ -173,6 +200,12 @@ public:\
         uint32_t index,\
         IODispatchQueue * queue,\
         IOInterruptDispatchSource ** source);\
+\
+    static kern_return_t\
+    GetInterruptType(\
+        IOService * provider,\
+        uint32_t index,\
+        uint64_t * interruptType);\
 \
     kern_return_t\
     SetHandler(\
@@ -218,6 +251,11 @@ public:\
     Create_Invoke(const IORPC rpc,\
         Create_Handler func);\
 \
+    typedef kern_return_t (*GetInterruptType_Handler)(IOInterruptDispatchSource_GetInterruptType_Args);\
+    static kern_return_t\
+    GetInterruptType_Invoke(const IORPC rpc,\
+        GetInterruptType_Handler func);\
+\
     typedef kern_return_t (*SetHandler_Handler)(OSMetaClassBase * target, IOInterruptDispatchSource_SetHandler_Args);\
     static kern_return_t\
     SetHandler_Invoke(const IORPC rpc,\
@@ -239,6 +277,9 @@ protected:\
 \
     static kern_return_t\
     Create_Impl(IOInterruptDispatchSource_Create_Args);\
+\
+    static kern_return_t\
+    GetInterruptType_Impl(IOInterruptDispatchSource_GetInterruptType_Args);\
 \
 
 
@@ -301,6 +342,6 @@ public:
 
 #endif /* !__DOCUMENTATION__ */
 
-/* IOInterruptDispatchSource.iig:117- */
+/* IOInterruptDispatchSource.iig:138- */
 
 #endif /* ! _IOKIT_UIOINTERRUPTDISPATCHSOURCE_H */

@@ -10,7 +10,7 @@
 
 #import <GLKit/GLKitBase.h>
 
-#if TARGET_OS_MAC && !TARGET_OS_IPHONE
+#if defined __i386__ || defined __x86_64__
 	#ifndef __SSE3__
 		#warning "SSE3 instruction set not enabled. GLKit math routines will be slower."
 	#else
@@ -153,8 +153,8 @@ typedef struct _GLKQuaternion GLKQuaternion;
 #else
 union _GLKQuaternion
 {
-    struct { GLKVector3 v; float s; };
     struct { float x, y, z, w; };
+    struct { GLKVector3 v; float s; };
     float q[4];
 } __attribute__((aligned(16)));
 typedef union _GLKQuaternion GLKQuaternion;    

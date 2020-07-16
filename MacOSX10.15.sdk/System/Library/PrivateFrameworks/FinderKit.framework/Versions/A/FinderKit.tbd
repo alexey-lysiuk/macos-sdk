@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A93278D1-210D-384F-9ADE-3CDE49E7E4A4' ]
+uuids:           [ 'x86_64: 56547C0A-8C78-329B-9E5D-565CD7AD1ADB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit'
 current-version: 0

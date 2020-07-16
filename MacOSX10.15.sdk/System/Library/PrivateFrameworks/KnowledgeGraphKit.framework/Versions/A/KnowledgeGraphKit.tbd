@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2EE5CD25-217B-383F-B0C7-3CDF240F9269' ]
+uuids:           [ 'x86_64: 2C4145F1-495F-3E63-863D-154E129A71E2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/KnowledgeGraphKit.framework/Versions/A/KnowledgeGraphKit'
 swift-abi-version: 7

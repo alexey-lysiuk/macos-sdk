@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2359E2CD-8FCE-32D7-AF76-F4D9A3D9D9F8' ]
+uuids:           [ 'x86_64: 72EE68DB-F069-37F5-AA2A-40D5FCF139F4' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/ColorSyncLegacy'
 parent-umbrella: ApplicationServices

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: EF0B0F85-2D5F-3543-8B7F-F73251E354F4', 'x86_64: EF0B0F85-2D5F-3543-8B7F-F73251E354F4', 
-                   'x86_64h: 8BE0965F-6A6A-35B0-89D0-F0A75835C2CA', 'x86_64h: 8BE0965F-6A6A-35B0-89D0-F0A75835C2CA' ]
+uuids:           [ 'x86_64: C1FB2338-2D52-3884-BED3-071A82B1FD77', 'x86_64: C1FB2338-2D52-3884-BED3-071A82B1FD77', 
+                   'x86_64h: 4F9977AE-DBDB-3A16-A536-AC1F9938DCDD', 'x86_64h: 4F9977AE-DBDB-3A16-A536-AC1F9938DCDD' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate'
 current-version: 4
@@ -11,11 +11,11 @@ exports:
                        '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib' ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: E396BDC6-045F-302D-BA78-67233762C4D7', 'x86_64: E396BDC6-045F-302D-BA78-67233762C4D7', 
-                   'x86_64h: DAE0E5C5-BA70-325D-8B4C-6B821F009CBF', 'x86_64h: DAE0E5C5-BA70-325D-8B4C-6B821F009CBF' ]
+uuids:           [ 'x86_64: 4B6AB2C1-7CF5-3FDA-AC1C-04E531AB9BCE', 'x86_64: 4B6AB2C1-7CF5-3FDA-AC1C-04E531AB9BCE', 
+                   'x86_64h: EA6F5FF2-7A1B-35D5-A5A3-D2B3386ECB75', 'x86_64h: EA6F5FF2-7A1B-35D5-A5A3-D2B3386ECB75' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage'
-current-version: 524.2
+current-version: 524.2.1
 exports:         
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _Init_vImage, _SetvImageThreadCount, _SetvImageThreadState, 
@@ -306,8 +306,8 @@ exports:
                        _vImageVerticalShear_XRGB2101010W ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 8E10CA70-C873-31A5-AE86-FD22FBEC204E', 'x86_64: 8E10CA70-C873-31A5-AE86-FD22FBEC204E', 
-                   'x86_64h: 4E980D6B-4B3A-33D6-B52C-AFC7D120D11A', 'x86_64h: 4E980D6B-4B3A-33D6-B52C-AFC7D120D11A' ]
+uuids:           [ 'x86_64: C157903D-417A-322B-916E-DDCFE2AF97EE', 'x86_64: C157903D-417A-322B-916E-DDCFE2AF97EE', 
+                   'x86_64h: C6C2D42F-7456-3DBF-8BE2-9AA06EFC78FD', 'x86_64h: C6C2D42F-7456-3DBF-8BE2-9AA06EFC78FD' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib'
 exports:         
@@ -447,8 +447,8 @@ exports:
                        _ztrmm_, _ztrmv, _ztrmv_, _ztrsm, _ztrsm_, _ztrsv, _ztrsv_ ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 66DC1355-F9D7-3449-83E5-66F155C508E2', 'x86_64: 66DC1355-F9D7-3449-83E5-66F155C508E2', 
-                   'x86_64h: C05F9F9D-4498-37BD-9C1C-2F7B920B401D', 'x86_64h: C05F9F9D-4498-37BD-9C1C-2F7B920B401D' ]
+uuids:           [ 'x86_64: 69FA0C4F-B59D-374A-9DCF-E9FA79F332FD', 'x86_64: 69FA0C4F-B59D-374A-9DCF-E9FA79F332FD', 
+                   'x86_64h: 99C61C48-B14C-3DA6-8C31-6BF72DA0A3A9', 'x86_64h: 99C61C48-B14C-3DA6-8C31-6BF72DA0A3A9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib'
 exports:         
@@ -472,8 +472,8 @@ exports:
                        _BNNSOptimizerFilterApply, _BNNSSetNetwork ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 457EB68E-5FEB-3940-A9F1-8B6E75AC6FE0', 'x86_64: 457EB68E-5FEB-3940-A9F1-8B6E75AC6FE0', 
-                   'x86_64h: F8E9D081-7C60-32EC-A47D-2D30CAD73C5F', 'x86_64h: F8E9D081-7C60-32EC-A47D-2D30CAD73C5F' ]
+uuids:           [ 'x86_64: 6FEC8434-0C35-3528-A3DE-E3C78A748B6C', 'x86_64: 6FEC8434-0C35-3528-A3DE-E3C78A748B6C', 
+                   'x86_64h: 5E3E3867-50C3-3E6A-9A2E-007CE77A4641', 'x86_64h: 5E3E3867-50C3-3E6A-9A2E-007CE77A4641' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib'
 exports:         
@@ -1329,8 +1329,8 @@ exports:
                        _zupmtr, _zupmtr_ ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 5CEBADA6-BE7B-3928-8417-B60EF814B9D0', 'x86_64: 5CEBADA6-BE7B-3928-8417-B60EF814B9D0', 
-                   'x86_64h: 79CB28C5-F811-3EAF-AD8E-7D7D879FE662', 'x86_64h: 79CB28C5-F811-3EAF-AD8E-7D7D879FE662' ]
+uuids:           [ 'x86_64: AAC1A8DA-0B44-3D52-A03F-1DFED19D33BB', 'x86_64: AAC1A8DA-0B44-3D52-A03F-1DFED19D33BB', 
+                   'x86_64h: 3D433800-0099-33E0-8C81-15F83247B2C9', 'x86_64h: 3D433800-0099-33E0-8C81-15F83247B2C9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLinearAlgebra.dylib'
 exports:         
@@ -1352,7 +1352,7 @@ exports:
                        _la_vector_to_double_buffer, _la_vector_to_float_buffer ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EB7C9E98-D1E7-314C-90B4-3EB04428CC7C', 'x86_64: EB7C9E98-D1E7-314C-90B4-3EB04428CC7C' ]
+uuids:           [ 'x86_64: 371F36A7-B12F-363E-8955-F24F7C2048F6', 'x86_64: 371F36A7-B12F-363E-8955-F24F7C2048F6' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libQuadrature.dylib'
 exports:         
@@ -1361,7 +1361,7 @@ exports:
     symbols:         [ _quadrature_integrate ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8C55F5F2-6AE3-393C-B2FF-22B8CFCBD7FC', 'x86_64: 8C55F5F2-6AE3-393C-B2FF-22B8CFCBD7FC' ]
+uuids:           [ 'x86_64: B8A10D0C-4577-343D-B310-A3E81265D107', 'x86_64: B8A10D0C-4577-343D-B310-A3E81265D107' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparse.dylib'
 exports:         
@@ -1524,8 +1524,8 @@ exports:
                        __Z27SparseConvertFromCoordinateiilh18SparseAttributes_tPKiS1_PKfPvS4_ ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 9C402FE0-062B-3BCA-8E6B-36AE4BBD8871', 'x86_64: 9C402FE0-062B-3BCA-8E6B-36AE4BBD8871', 
-                   'x86_64h: 08F6D629-5DAC-3A99-B261-2B6095DD38B4', 'x86_64h: 08F6D629-5DAC-3A99-B261-2B6095DD38B4' ]
+uuids:           [ 'x86_64: CFFEAA75-99FB-369E-80A1-4BC73ADEBEA9', 'x86_64: CFFEAA75-99FB-369E-80A1-4BC73ADEBEA9', 
+                   'x86_64h: B147FEF6-A0DB-3830-BF06-45BEC58DB576', 'x86_64h: B147FEF6-A0DB-3830-BF06-45BEC58DB576' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparseBLAS.dylib'
 exports:         
@@ -1564,11 +1564,11 @@ exports:
                        _sparse_vector_triangular_solve_dense_float ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: BB2D5A62-C584-3D08-8B51-5BF9BA7BCD55', 'x86_64: BB2D5A62-C584-3D08-8B51-5BF9BA7BCD55', 
-                   'x86_64h: 0744F29B-F822-3571-9B4A-B592146D4E03', 'x86_64h: 0744F29B-F822-3571-9B4A-B592146D4E03' ]
+uuids:           [ 'x86_64: 1586D162-55FD-3EC0-AFC7-975EAE2D0DD6', 'x86_64: 1586D162-55FD-3EC0-AFC7-975EAE2D0DD6', 
+                   'x86_64h: D63DC0A5-B8B4-3562-A574-E73BC3B57407', 'x86_64h: D63DC0A5-B8B4-3562-A574-E73BC3B57407' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib'
-current-version: 735.100.4
+current-version: 735.140.1
 exports:         
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _vDSP_DCT_CreateSetup, _vDSP_DCT_Execute, _vDSP_DFT_CreateSetup, 
@@ -1680,11 +1680,11 @@ exports:
                        _vDSP_zvsub, _vDSP_zvsubD, _vDSP_zvzsml, _vDSP_zvzsmlD ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: ACAF653F-A0E9-3D01-9578-7152EAD1DBA1', 'x86_64: ACAF653F-A0E9-3D01-9578-7152EAD1DBA1', 
-                   'x86_64h: E6C94B52-931B-3858-AF4D-C2EA52ACB7F5', 'x86_64h: E6C94B52-931B-3858-AF4D-C2EA52ACB7F5' ]
+uuids:           [ 'x86_64: 61CF1106-41C2-3971-9187-BD1D53C00343', 'x86_64: 61CF1106-41C2-3971-9187-BD1D53C00343', 
+                   'x86_64h: 3601FDE3-B142-398D-987D-8151A51F0A96', 'x86_64h: 3601FDE3-B142-398D-987D-8151A51F0A96' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib'
-current-version: 735.100.4
+current-version: 735.140.1
 exports:         
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _VVACOS, _VVACOSF, _VVACOSF_, _VVACOSH, _VVACOSHF, _VVACOSHF_, 
@@ -1799,11 +1799,11 @@ exports:
                        _vvtanpif, _vvtanpif_ ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 20EC1281-A4CD-352D-817C-1016A8BDEC0A', 'x86_64: 20EC1281-A4CD-352D-817C-1016A8BDEC0A', 
-                   'x86_64h: 66282197-81EE-316F-978E-EF1471551DEF', 'x86_64h: 66282197-81EE-316F-978E-EF1471551DEF' ]
+uuids:           [ 'x86_64: 4686AE53-FD05-302C-AC20-C014EFC2305F', 'x86_64: 4686AE53-FD05-302C-AC20-C014EFC2305F', 
+                   'x86_64h: F6C5613D-2284-342B-9160-9731F78B4DE5', 'x86_64h: F6C5613D-2284-342B-9160-9731F78B4DE5' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib'
-current-version: 735.100.4
+current-version: 735.140.1
 exports:         
   - archs:           [ x86_64, x86_64h ]
     allowable-clients: [ Accelerate ]

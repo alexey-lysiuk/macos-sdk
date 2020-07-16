@@ -56,18 +56,18 @@ typedef struct {
  *   that the hash of all the individual page hashes in the Code Directory matches the signed CDHash,
  *   essentially verifying the signature was not tampered with.  However, individual page hashes are
  *   not verified by XNU until the corresponding pages are paged in once they are accessed while the
- *   binary executes.  It is not until the individual pages are mapped that XNU determines if a
+ *   binary executes.  It is not until the individual pages are paged in that XNU determines if a
  *   binary has been tampered with and will update the code signing flags accordingly.
  *   EndpointSecurity provides clients the current state of the CS flags in the `codesigning_flags`
  *   member of the `es_process_t` struct.  The CS_VALID bit in the `codesigning_flags` means that
  *   everything the kernel has validated up to that point in time was valid, but not that there has
  *   been a full validation of all the pages in the executable file.  If page content has been
  *   tampered with in the executable, we won't know until that page is paged in.  At that time, the
- *   process will have its CS_VALID bit removed and, if CS_KILL is set, the process will be killed,
- *   preventing any tampered code to be executed.  CS_KILL is generally set for platform binaries and
- *   for binaries having opted into the hardened runtime.  An ES client wishing to detect tampered
- *   code before it is paged in, for example already at exec time, can use the Security framework to
- *   do so, but should be cautious of the potentially significant performance cost of doing so.  The
+ *   process will have its CS_VALID bit cleared and, if CS_KILL is set, the process will be killed,
+ *   preventing any tampered code from being executed.  CS_KILL is generally set for platform
+ *   binaries and for binaries having opted into the hardened runtime.  An ES client wishing to
+ *   detect tampered code before it is paged in, for example at exec time, can use the Security
+ *   framework to do so, but should be cautious of the potentially significant performance cost.  The
  *   EndpointSecurity subsystem itself has no role in verifying the validity of code signatures.
  * - The `tty` member will be NULL if the process does not have an associated TTY.
  */

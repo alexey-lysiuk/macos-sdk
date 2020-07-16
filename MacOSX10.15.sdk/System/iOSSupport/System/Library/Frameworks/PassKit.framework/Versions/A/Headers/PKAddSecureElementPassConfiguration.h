@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(13.4))
+API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos)
 @interface PKAddSecureElementPassConfiguration : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 16F53AD2-1839-37BF-A2F5-92253FE4AF1A', 'x86_64: 16F53AD2-1839-37BF-A2F5-92253FE4AF1A' ]
+uuids:           [ 'x86_64: AE8C1AE9-5CBC-332F-BBE8-370A2A19FED6', 'x86_64: AE8C1AE9-5CBC-332F-BBE8-370A2A19FED6' ]
 platform:        zippered
 install-name:    '/usr/lib/libspindump.dylib'
 exports:         

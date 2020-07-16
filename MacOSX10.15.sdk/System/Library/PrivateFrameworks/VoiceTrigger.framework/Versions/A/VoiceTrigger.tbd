@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0CB72793-1F6D-32C9-8F74-BD9B59B0611C', 'x86_64: 0CB72793-1F6D-32C9-8F74-BD9B59B0611C' ]
+uuids:           [ 'x86_64: 09A89059-A154-37F5-91BB-6E0635D9C6F4', 'x86_64: 09A89059-A154-37F5-91BB-6E0635D9C6F4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/VoiceTrigger.framework/Versions/A/VoiceTrigger'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CAA294BD-BC93-384A-8415-B254C89098FC' ]
+uuids:           [ 'x86_64: FB72FB7D-5985-3D9C-82DB-A729FCA1249A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon'
 current-version: 162
@@ -20,7 +20,7 @@ exports:
     symbols:         [ _CarbonVersionNumber, _CarbonVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 63261921-DD00-312E-AFD1-C099E1984725' ]
+uuids:           [ 'x86_64: 9F6E13D9-374B-386F-8E15-FDD6CE967859' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels'
 current-version: 101
@@ -54,7 +54,7 @@ exports:
                        _kFontPanelVariationAxesKey, _kFontPanelVariationValuesKey ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C03A48FC-1A02-320D-9147-F4687A1BBC6F' ]
+uuids:           [ 'x86_64: EAF2DAC3-66B1-30BF-AF10-72DDA90D1044' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox'
 current-version: 994.6
@@ -512,7 +512,7 @@ exports:
                        _kTISTypeKeyboardViewer ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F5E9EA64-5D5E-346F-98D0-D04A2F805D8D' ]
+uuids:           [ 'x86_64: 36483951-6F3E-3F7E-8A5B-191C2357EF17' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help'
 current-version: 71
@@ -529,7 +529,7 @@ exports:
                        _kFILE, _kOPENBOOK, _kSEARCH, _kSEARCHALL, _kSTRING ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 63FE9A8C-A7C6-3ABD-AA1D-EA1BC6613C39' ]
+uuids:           [ 'x86_64: 1A1F320E-3E85-3F3D-8AE0-B238C4E92D40' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture'
 current-version: 5
@@ -641,7 +641,7 @@ exports:
                        _kICAWMCVersionKey, _kMetaDataDictionaryKey ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 90518F56-AD8A-3627-905A-16E2B8640F87' ]
+uuids:           [ 'x86_64: 284507AE-EF47-3ABC-86A4-669243DB1D33' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink'
 current-version: 227
@@ -657,7 +657,7 @@ exports:
                        _InkTextGetTypeID, _InkTextKeyModifiers, _InkUserWritingMode ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 718C485A-4167-3A26-B2CD-6C42B5B36D01' ]
+uuids:           [ 'x86_64: B6E28747-5FC7-3461-8A71-864A969ED022' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting'
 parent-umbrella: Carbon
@@ -706,14 +706,14 @@ exports:
                        __OSALoadURL, __OSAStoreScriptDataToURL, __OSAStoreURL ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29384C24-6667-3BAA-992A-DAD809D6387E' ]
+uuids:           [ 'x86_64: 0D9FB08F-EA87-3BE7-821B-C61BA5601050' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print'
 current-version: 271
 parent-umbrella: Carbon
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 478C57A9-D5A5-3951-B289-DA5323E9044A' ]
+uuids:           [ 'x86_64: 390C6FAA-99BF-3924-9180-9EAE41D9C6BE' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI'
 current-version: 55008
@@ -732,7 +732,7 @@ exports:
                        _kcunlock ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E6BE4EC1-5C53-38BB-AAFD-E7BF7A8975BC' ]
+uuids:           [ 'x86_64: 9614A01E-8303-3422-A3BA-6CE27540E09A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition'
 parent-umbrella: Carbon

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D13563BD-4F13-3864-9158-832ADE217BEB' ]
+uuids:           [ 'x86_64: CC0C5C2A-2433-3163-9783-D59553BD8901' ]
 platform:        macosx
 install-name:    '/usr/libexec/SmartCardServices/drivers/ifd-ccid.bundle/Contents/MacOS/libccid.dylib'
 current-version: 0
@@ -10,12 +10,12 @@ exports:
     symbols:         [ _IFDHCloseChannel, _IFDHControl, _IFDHCreateChannel, _IFDHCreateChannelByName, 
                        _IFDHGetCapabilities, _IFDHICCPresence, _IFDHPowerICC, _IFDHSetCapabilities, 
                        _IFDHSetProtocolParameters, _IFDHTransmitToICC, _g_rgSCardRawPci, 
-                       _g_rgSCardT0Pci, _g_rgSCardT1Pci, _get_ccid_usb_interface, 
-                       _libusb_alloc_transfer, _libusb_attach_kernel_driver, _libusb_bulk_transfer, 
-                       _libusb_cancel_transfer, _libusb_claim_interface, _libusb_clear_halt, 
-                       _libusb_close, _libusb_control_transfer, _libusb_detach_kernel_driver, 
-                       _libusb_error_name, _libusb_event_handler_active, _libusb_event_handling_ok, 
-                       _libusb_exit, _libusb_free_config_descriptor, _libusb_free_device_list, 
+                       _g_rgSCardT0Pci, _g_rgSCardT1Pci, _libusb_alloc_transfer, 
+                       _libusb_attach_kernel_driver, _libusb_bulk_transfer, _libusb_cancel_transfer, 
+                       _libusb_claim_interface, _libusb_clear_halt, _libusb_close, 
+                       _libusb_control_transfer, _libusb_detach_kernel_driver, _libusb_error_name, 
+                       _libusb_event_handler_active, _libusb_event_handling_ok, _libusb_exit, 
+                       _libusb_free_config_descriptor, _libusb_free_device_list, 
                        _libusb_free_transfer, _libusb_get_active_config_descriptor, 
                        _libusb_get_bus_number, _libusb_get_config_descriptor, _libusb_get_config_descriptor_by_value, 
                        _libusb_get_configuration, _libusb_get_device, _libusb_get_device_address, 

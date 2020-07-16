@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 85FD74FF-E9A6-3837-A7D9-F5641FEE01C1', 'x86_64: 85FD74FF-E9A6-3837-A7D9-F5641FEE01C1', 
-                   'x86_64h: E506A652-A423-3170-8032-0B03FF367FE8', 'x86_64h: E506A652-A423-3170-8032-0B03FF367FE8' ]
+uuids:           [ 'x86_64: 7058805D-0629-3E96-BD6E-295A80B56417', 'x86_64: 7058805D-0629-3E96-BD6E-295A80B56417', 
+                   'x86_64h: C8998674-DCB4-3C2C-9D6E-C0809D7727A2', 'x86_64h: C8998674-DCB4-3C2C-9D6E-C0809D7727A2' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib'
 exports:         

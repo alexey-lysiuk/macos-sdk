@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E23E5285-A0F0-3E73-8774-2C02AEEB2149', 'x86_64: E23E5285-A0F0-3E73-8774-2C02AEEB2149' ]
+uuids:           [ 'x86_64: A24DED9B-5294-3924-806D-8F609E944117', 'x86_64: A24DED9B-5294-3924-806D-8F609E944117' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDuetSync.framework/Versions/A/CoreDuetSync'
 exports:         

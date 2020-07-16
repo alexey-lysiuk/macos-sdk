@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7A3C5742-0B3F-3CC8-BC86-669A9C883788' ]
+uuids:           [ 'x86_64: DF86C213-6EFD-3973-8BE9-ED8C92ECC48E' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/StoreKit.framework/Versions/A/StoreKit'
 exports:         

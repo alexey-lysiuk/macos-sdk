@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5DF84B7A-9DD0-36DB-8686-D669CDA93D59', 'x86_64: 5DF84B7A-9DD0-36DB-8686-D669CDA93D59' ]
+uuids:           [ 'x86_64: 7EBAC15D-7837-395D-B405-1E29F7DA68FA', 'x86_64: 7EBAC15D-7837-395D-B405-1E29F7DA68FA' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore'
 current-version: 122.5.6

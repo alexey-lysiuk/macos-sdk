@@ -1,4 +1,4 @@
-/*  vfp.h (from vecLib-735.100)
+/*  vfp.h (from vecLib-735.140)
  *  Copyright (c) 1999-2020 by Apple Inc. All rights reserved.
  *
  *  Overview:

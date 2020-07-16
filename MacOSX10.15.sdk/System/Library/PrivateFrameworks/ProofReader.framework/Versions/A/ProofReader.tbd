@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A390FC7E-E545-3141-8799-2BCFBB164120', 'x86_64: A390FC7E-E545-3141-8799-2BCFBB164120' ]
+uuids:           [ 'x86_64: BA659608-AB49-31F6-8B29-91E1B036561E', 'x86_64: BA659608-AB49-31F6-8B29-91E1B036561E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProofReader.framework/Versions/A/ProofReader'
 current-version: 492.6

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DC6FF65F-12AE-3EDD-A1D7-1DB65A893250' ]
+uuids:           [ 'x86_64: B24540B1-6054-3722-B59B-4BC07BDA5982' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AutomaticAssessmentConfiguration.framework/Versions/A/Frameworks/AACDependencies.framework/Versions/A/AACDependencies'
 swift-abi-version: 7

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 89B9F9E1-5343-3EE9-9642-87E2D949FFEA', 'x86_64: 89B9F9E1-5343-3EE9-9642-87E2D949FFEA' ]
+uuids:           [ 'x86_64: 85B4A992-8B61-39FB-BCDE-05A2D5989D74', 'x86_64: 85B4A992-8B61-39FB-BCDE-05A2D5989D74' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CryptoTokenKit.framework/Versions/A/CryptoTokenKit'
 exports:         

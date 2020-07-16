@@ -1954,19 +1954,17 @@ extern "C" {
                                                TW_UINT16    MSG, 
                                                TW_MEMREF    pData);
 #elif defined _MAC_
-  #ifndef __clang_tapi__
-    TW_UINT16 DS_Entry ( pTW_IDENTITY pOrigin,
-                        TW_UINT32    DG,
-                        TW_UINT16    DAT,
-                        TW_UINT16    MSG,
-                        TW_MEMREF    pData );
-  #endif
+TW_UINT16 DS_Entry ( pTW_IDENTITY pOrigin, 
+                     TW_UINT32    DG, 
+                     TW_UINT16    DAT, 
+                     TW_UINT16    MSG, 
+                     TW_MEMREF    pData );
 
-  typedef TW_UINT16 (*DSENTRYPROC) ( pTW_IDENTITY	pOrigin,
-                        TW_UINT32	DG,
-                        TW_UINT16	DAT,
-                        TW_UINT16	MSG,
-                        TW_MEMREF	pData );
+typedef TW_UINT16 (*DSENTRYPROC) ( pTW_IDENTITY	pOrigin,
+                                   TW_UINT32	DG,    
+                                   TW_UINT16	DAT,
+                                   TW_UINT16	MSG,    
+                                   TW_MEMREF	pData );
 #else  
 FAR PASCAL TW_UINT16 DS_Entry( pTW_IDENTITY pOrigin, 
                                TW_UINT32    DG, 

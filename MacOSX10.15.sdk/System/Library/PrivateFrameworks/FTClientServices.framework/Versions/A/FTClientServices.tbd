@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0F4EE2FB-538A-3B39-9C18-EE65DAB0BF06', 'x86_64: 0F4EE2FB-538A-3B39-9C18-EE65DAB0BF06' ]
+uuids:           [ 'x86_64: A807748C-6792-37C9-B015-19C9DF113CEB', 'x86_64: A807748C-6792-37C9-B015-19C9DF113CEB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FTClientServices.framework/Versions/A/FTClientServices'
 current-version: 800

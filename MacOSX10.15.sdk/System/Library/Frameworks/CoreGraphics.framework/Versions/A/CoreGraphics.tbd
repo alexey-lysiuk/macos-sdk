@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 6933695A-C08B-37B6-9BC9-28A4218960C8', 'x86_64: 6933695A-C08B-37B6-9BC9-28A4218960C8', 
-                   'x86_64h: 54528FE3-21A7-3F64-B7AA-F6B95394488D', 'x86_64h: 54528FE3-21A7-3F64-B7AA-F6B95394488D' ]
+uuids:           [ 'x86_64: 7C62C568-C5FF-3B7A-B630-9D875EE09126', 'x86_64: 7C62C568-C5FF-3B7A-B630-9D875EE09126', 
+                   'x86_64h: 4A3CDE7B-4578-3058-966A-3D1DC095A935', 'x86_64h: 4A3CDE7B-4578-3058-966A-3D1DC095A935' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics'
-current-version: 1355.13
+current-version: 1355.22
 compatibility-version: 64
 exports:         
   - archs:           [ x86_64, x86_64h ]

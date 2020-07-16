@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0CC1256D-AB0C-393A-8A16-48D16A277756' ]
+uuids:           [ 'x86_64: 021C6BBA-56BF-3F25-9BE8-1141FD0101A0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudKitCode.framework/Versions/A/CloudKitCode'
 current-version: 867

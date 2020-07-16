@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 00B6EB28-1D3F-33C0-8FF5-CAD7175738D0', 'x86_64: 00B6EB28-1D3F-33C0-8FF5-CAD7175738D0' ]
+uuids:           [ 'x86_64: EC7F1209-7FB3-35CE-8983-AC7522F1663D', 'x86_64: EC7F1209-7FB3-35CE-8983-AC7522F1663D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RemoteTextInput.framework/Versions/A/RemoteTextInput'
 exports:         

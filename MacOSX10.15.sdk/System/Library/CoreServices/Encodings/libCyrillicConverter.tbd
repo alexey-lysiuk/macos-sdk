@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC120C56-96EB-37A9-A344-48452B43BA78', 'x86_64: FC120C56-96EB-37A9-A344-48452B43BA78' ]
+uuids:           [ 'x86_64: C1D24684-AB11-3DF4-AEDC-1C31F47DF6CF', 'x86_64: C1D24684-AB11-3DF4-AEDC-1C31F47DF6CF' ]
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libCyrillicConverter.dylib'
 current-version: 76

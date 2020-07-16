@@ -87,10 +87,9 @@ __BEGIN_DECLS
 
 #if defined(__XPC_TEST__) && __XPC_TEST__
 #define XPC_TESTSTATIC
-#define XPC_TESTEXTERN(x) extern x
+#define XPC_TESTEXTERN extern
 #else // defined(__XPC_TEST__) && __XPC_TEST__
 #define XPC_TESTSTATIC static
-#define XPC_TESTEXTERN(x)
 #endif // defined(__XPC_TEST__) && __XPC_TEST__
 
 #if __has_feature(objc_arc)

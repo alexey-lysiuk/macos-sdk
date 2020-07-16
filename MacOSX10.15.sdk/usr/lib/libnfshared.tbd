@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 058BB075-39E7-3639-9FAB-228C737E36DE', 'x86_64: 058BB075-39E7-3639-9FAB-228C737E36DE' ]
+uuids:           [ 'x86_64: 251C8E9F-85B5-38A6-8DB3-A980A153C771', 'x86_64: 251C8E9F-85B5-38A6-8DB3-A980A153C771' ]
 platform:        zippered
 install-name:    '/usr/lib/libnfshared.dylib'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BC15B825-955D-33CF-B416-A64D69A1D008', 'x86_64: BC15B825-955D-33CF-B416-A64D69A1D008' ]
+uuids:           [ 'x86_64: 7C69DF47-4017-3DF2-B55B-712B481654CB', 'x86_64: 7C69DF47-4017-3DF2-B55B-712B481654CB' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation'
 current-version: 55236.60.1

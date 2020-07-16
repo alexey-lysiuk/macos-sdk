@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30C75F88-4AC2-3703-BF9F-F4B48D9C84E0' ]
+uuids:           [ 'x86_64: 40ED1A74-3753-33E0-A922-04C53F54786D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACoreDAVGlue.framework/Versions/A/DACoreDAVGlue'
 exports:         

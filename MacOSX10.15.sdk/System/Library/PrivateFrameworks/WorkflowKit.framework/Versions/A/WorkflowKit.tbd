@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D417C1CF-8A7E-3C67-A7BB-6CD7200ECBBA' ]
+uuids:           [ 'x86_64: 7388A65C-67F6-3EFC-8114-BA32EF762EE5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WorkflowKit.framework/Versions/A/WorkflowKit'
 exports:         

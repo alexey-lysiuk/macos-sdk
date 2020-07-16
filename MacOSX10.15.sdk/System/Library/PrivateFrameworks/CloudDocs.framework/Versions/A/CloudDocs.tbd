@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FB0D9E1E-12F3-33F6-832E-00A392FC41CE', 'x86_64: FB0D9E1E-12F3-33F6-832E-00A392FC41CE' ]
+uuids:           [ 'x86_64: 1C1A0435-429A-31A8-AE61-C88A702A649A', 'x86_64: 1C1A0435-429A-31A8-AE61-C88A702A649A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CloudDocs.framework/Versions/A/CloudDocs'
-current-version: 698.1
+current-version: 698.16
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9B7584BD-2512-3265-8235-616F5BBA4733', 'x86_64: 9B7584BD-2512-3265-8235-616F5BBA4733' ]
+uuids:           [ 'x86_64: B2B74B9D-6AF2-30C0-A3EC-5F6C04D8B68D', 'x86_64: B2B74B9D-6AF2-30C0-A3EC-5F6C04D8B68D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/GKSPerformance.framework/Versions/A/GKSPerformance'
 exports:         

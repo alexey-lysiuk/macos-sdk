@@ -94,8 +94,8 @@ UIKIT_EXTERN API_AVAILABLE(ios(2.0)) @interface UIResponder : NSObject <UIRespon
 - (nullable id)targetForAction:(SEL)action withSender:(nullable id)sender API_AVAILABLE(ios(7.0));
 
 // Overrides for menu building and validation
-- (void)buildMenuWithBuilder:(id<UIMenuBuilder>)builder;
-- (void)validateCommand:(UICommand *)command;
+- (void)buildMenuWithBuilder:(id<UIMenuBuilder>)builder API_AVAILABLE(ios(13.0));
+- (void)validateCommand:(UICommand *)command API_AVAILABLE(ios(13.0));
 
 @property(nullable, nonatomic,readonly) NSUndoManager *undoManager API_AVAILABLE(ios(3.0));
 

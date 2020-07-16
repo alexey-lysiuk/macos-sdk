@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DFDC82DF-3E23-394C-8284-3DBC31E7EBDB' ]
+uuids:           [ 'x86_64: 09FEE738-41E4-3A9C-AF1E-1DD00C56339D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit'
 current-version: 923

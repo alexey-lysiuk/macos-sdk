@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4B771C86-0CB7-3B06-8F41-5A40DDF66D72', 'x86_64: 4B771C86-0CB7-3B06-8F41-5A40DDF66D72' ]
+uuids:           [ 'x86_64: 2BE94E6A-FA61-312F-84A1-F764D71B7E39', 'x86_64: 2BE94E6A-FA61-312F-84A1-F764D71B7E39' ]
 platform:        zippered
 install-name:    '/usr/lib/libMobileGestalt.dylib'
 exports:         

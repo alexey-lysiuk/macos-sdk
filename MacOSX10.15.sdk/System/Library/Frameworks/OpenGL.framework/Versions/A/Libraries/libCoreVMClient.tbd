@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29D2B5C2-CBFF-308A-ADD8-A559B760C494', 'x86_64: 29D2B5C2-CBFF-308A-ADD8-A559B760C494' ]
+uuids:           [ 'x86_64: 018A48BA-1326-3847-8FB5-A7C99322EB87', 'x86_64: 018A48BA-1326-3847-8FB5-A7C99322EB87' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib'
 exports:         

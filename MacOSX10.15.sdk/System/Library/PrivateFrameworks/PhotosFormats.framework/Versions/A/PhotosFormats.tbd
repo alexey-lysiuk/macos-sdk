@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B0AE09C5-0A2A-3005-AA52-327871C1CA7A', 'x86_64: B0AE09C5-0A2A-3005-AA52-327871C1CA7A' ]
+uuids:           [ 'x86_64: 3CCBAA1E-8047-3FFF-A585-7822C3965D43', 'x86_64: 3CCBAA1E-8047-3FFF-A585-7822C3965D43' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotosFormats.framework/Versions/A/PhotosFormats'
-current-version: 141.19.150
+current-version: 161.0.120
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CAMUserPreferenceCaptureEncodingBehavior, _CAMUserPreferenceSlomoConfiguration, 

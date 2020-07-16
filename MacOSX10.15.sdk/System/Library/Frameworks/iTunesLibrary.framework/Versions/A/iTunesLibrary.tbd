@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3D9BD83C-332B-3345-9972-8B59DE99FEB1' ]
+uuids:           [ 'x86_64: 40225C85-4B4F-398B-B599-BF96E9E325D0' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/iTunesLibrary.framework/Versions/A/iTunesLibrary'
 exports:         

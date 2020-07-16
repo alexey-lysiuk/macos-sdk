@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 20CFC433-3B4C-388B-AB7C-0120A7BBABCB' ]
+uuids:           [ 'x86_64: D24B4679-5DD8-30D1-A034-A36B72485180' ]
 platform:        macosx
 install-name:    '/usr/lib/libIOGTrace.dylib'
 exports:         

@@ -52,6 +52,7 @@
 #include <DriverKit/IOMemoryDescriptor.iig>
 #include <DriverKit/IOMemoryMap.iig>
 #include <DriverKit/IOBufferMemoryDescriptor.iig>
+#include <DriverKit/IODMACommand.iig>
 #include <DriverKit/IOService.iig>
 #include <DriverKit/IOUserClient.iig>
 

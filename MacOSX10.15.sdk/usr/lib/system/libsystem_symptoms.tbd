@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 487B92DE-45F9-39F9-A478-89BBD478157D', 'x86_64: 487B92DE-45F9-39F9-A478-89BBD478157D' ]
+uuids:           [ 'x86_64: 5820A2AF-CE72-3AB3-ABCC-273A3419FB55', 'x86_64: 5820A2AF-CE72-3AB3-ABCC-273A3419FB55' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_symptoms.dylib'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 33987A17-0281-32D0-85EF-2EC2D9F9D2BB', 'x86_64: 33987A17-0281-32D0-85EF-2EC2D9F9D2BB' ]
+uuids:           [ 'x86_64: AFB0DFCC-6580-30E5-8984-831985F37A2C', 'x86_64: AFB0DFCC-6580-30E5-8984-831985F37A2C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/QuickLookSupport.framework/Versions/A/QuickLookSupport'
 current-version: 0

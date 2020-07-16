@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 05BE7640-A9FD-3963-8199-E60DE3C37A7E', 'x86_64: 05BE7640-A9FD-3963-8199-E60DE3C37A7E' ]
+uuids:           [ 'x86_64: 5A020941-C43C-303E-8DE8-230FC6A84DBC', 'x86_64: 5A020941-C43C-303E-8DE8-230FC6A84DBC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProtocolBuffer.framework/Versions/A/ProtocolBuffer'
 current-version: 274.24.9

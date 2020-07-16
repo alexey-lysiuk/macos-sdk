@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B6A802A-B147-3259-A7ED-254CB5697A92', 'x86_64: 5B6A802A-B147-3259-A7ED-254CB5697A92' ]
+uuids:           [ 'x86_64: CA417614-F8CD-321B-9F9D-1734583638CC', 'x86_64: CA417614-F8CD-321B-9F9D-1734583638CC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IDSFoundation.framework/Versions/A/IDSFoundation'
 current-version: 800
@@ -284,12 +284,13 @@ exports:
                        _IDSRegistrationPropertyECVersion, _IDSRegistrationPropertyIsC2KEquipment, 
                        _IDSRegistrationPropertyKeyTransparencyVersion, _IDSRegistrationPropertyNicknamesVersion, 
                        _IDSRegistrationPropertyOptionallyReceiveTypingIndicator, 
-                       _IDSRegistrationPropertyShowPeerErrors, _IDSRegistrationPropertySupportsAcknowledgementsV1, 
-                       _IDSRegistrationPropertySupportsAnimojiV2, _IDSRegistrationPropertySupportsAudioMessagingV2, 
-                       _IDSRegistrationPropertySupportsAutoloopVideoV1, _IDSRegistrationPropertySupportsBubbleEditingV1, 
-                       _IDSRegistrationPropertySupportsCertifiedDeliveryV1, _IDSRegistrationPropertySupportsChatAppsV1, 
-                       _IDSRegistrationPropertySupportsFullScreenMomentsV1, _IDSRegistrationPropertySupportsFullScreenMomentsV2, 
-                       _IDSRegistrationPropertySupportsFullScreenMomentsV3, _IDSRegistrationPropertySupportsImpactEffectsV1, 
+                       _IDSRegistrationPropertyPrefersSDRVideo, _IDSRegistrationPropertyShowPeerErrors, 
+                       _IDSRegistrationPropertySupportsAcknowledgementsV1, _IDSRegistrationPropertySupportsAnimojiV2, 
+                       _IDSRegistrationPropertySupportsAudioMessagingV2, _IDSRegistrationPropertySupportsAutoloopVideoV1, 
+                       _IDSRegistrationPropertySupportsBubbleEditingV1, _IDSRegistrationPropertySupportsCertifiedDeliveryV1, 
+                       _IDSRegistrationPropertySupportsChatAppsV1, _IDSRegistrationPropertySupportsFullScreenMomentsV1, 
+                       _IDSRegistrationPropertySupportsFullScreenMomentsV2, _IDSRegistrationPropertySupportsFullScreenMomentsV3, 
+                       _IDSRegistrationPropertySupportsHDRVideo, _IDSRegistrationPropertySupportsImpactEffectsV1, 
                        _IDSRegistrationPropertySupportsIncomingFindMyV1, _IDSRegistrationPropertySupportsInlineAttachments, 
                        _IDSRegistrationPropertySupportsInvisibleInkV1, _IDSRegistrationPropertySupportsKeepReceipts, 
                        _IDSRegistrationPropertySupportsKeySharing, _IDSRegistrationPropertySupportsLiveDelivery, 
@@ -681,12 +682,13 @@ exports:
                        IDSDestinationPushToken._pushToken, IDSEndpointCapabilities._ecVersion, 
                        IDSEndpointCapabilities._isC2KEquipment, IDSEndpointCapabilities._nicknamesVersion, 
                        IDSEndpointCapabilities._optionallyReceiveTypingIndicator, 
-                       IDSEndpointCapabilities._showPeerErrors, IDSEndpointCapabilities._supportsAcknowledgementsV1, 
-                       IDSEndpointCapabilities._supportsActivitySharing, IDSEndpointCapabilities._supportsAnimojiV2, 
-                       IDSEndpointCapabilities._supportsAudioMessagingV2, IDSEndpointCapabilities._supportsAutoloopVideoV1, 
-                       IDSEndpointCapabilities._supportsBubbleEditingV1, IDSEndpointCapabilities._supportsCertifiedDeliveryV1, 
-                       IDSEndpointCapabilities._supportsChatAppsV1, IDSEndpointCapabilities._supportsFullScreenMomentsV1, 
-                       IDSEndpointCapabilities._supportsFullScreenMomentsV2, IDSEndpointCapabilities._supportsFullScreenMomentsV3, 
+                       IDSEndpointCapabilities._prefersSDRVideo, IDSEndpointCapabilities._showPeerErrors, 
+                       IDSEndpointCapabilities._supportsAcknowledgementsV1, IDSEndpointCapabilities._supportsActivitySharing, 
+                       IDSEndpointCapabilities._supportsAnimojiV2, IDSEndpointCapabilities._supportsAudioMessagingV2, 
+                       IDSEndpointCapabilities._supportsAutoloopVideoV1, IDSEndpointCapabilities._supportsBubbleEditingV1, 
+                       IDSEndpointCapabilities._supportsCertifiedDeliveryV1, IDSEndpointCapabilities._supportsChatAppsV1, 
+                       IDSEndpointCapabilities._supportsFullScreenMomentsV1, IDSEndpointCapabilities._supportsFullScreenMomentsV2, 
+                       IDSEndpointCapabilities._supportsFullScreenMomentsV3, IDSEndpointCapabilities._supportsHDRVideo, 
                        IDSEndpointCapabilities._supportsImpactEffectsV1, IDSEndpointCapabilities._supportsIncomingFindMyV1, 
                        IDSEndpointCapabilities._supportsInlineAttachments, IDSEndpointCapabilities._supportsInvisibleInkV1, 
                        IDSEndpointCapabilities._supportsKeepReceipts, IDSEndpointCapabilities._supportsKeySharing, 

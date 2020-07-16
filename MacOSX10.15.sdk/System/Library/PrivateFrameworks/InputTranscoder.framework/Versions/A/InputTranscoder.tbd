@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 08B108BB-C35D-3734-B2B2-00F5B9DBFF63', 'x86_64: 08B108BB-C35D-3734-B2B2-00F5B9DBFF63' ]
+uuids:           [ 'x86_64: D52D27AA-DA04-36D4-BFB0-6558E09C1541', 'x86_64: D52D27AA-DA04-36D4-BFB0-6558E09C1541' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/InputTranscoder.framework/Versions/A/InputTranscoder'
 current-version: 44

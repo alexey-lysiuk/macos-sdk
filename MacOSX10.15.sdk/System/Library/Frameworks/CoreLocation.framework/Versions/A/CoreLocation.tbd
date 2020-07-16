@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ACC174CE-32D4-3DFB-BD94-13A980F28CBC', 'x86_64: ACC174CE-32D4-3DFB-BD94-13A980F28CBC' ]
+uuids:           [ 'x86_64: 75966124-2FB7-33C3-BE49-3DD5F327F911', 'x86_64: 75966124-2FB7-33C3-BE49-3DD5F327F911' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreLocation.framework/Versions/A/CoreLocation'
 current-version: 2394.0.22

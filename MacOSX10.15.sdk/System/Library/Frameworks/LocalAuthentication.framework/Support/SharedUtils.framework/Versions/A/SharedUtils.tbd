@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A53F70BC-6E8B-3DC2-AED1-6C0BDE408ED9', 'x86_64: A53F70BC-6E8B-3DC2-AED1-6C0BDE408ED9' ]
+uuids:           [ 'x86_64: A3F9CE45-4F7A-3F5D-865C-6EB9B6C3B3B4', 'x86_64: A3F9CE45-4F7A-3F5D-865C-6EB9B6C3B3B4' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/Versions/A/SharedUtils'
-current-version: 693.100.21
+current-version: 693.140.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ACMContextAddCredential, _ACMContextAddCredentialWithScope, 

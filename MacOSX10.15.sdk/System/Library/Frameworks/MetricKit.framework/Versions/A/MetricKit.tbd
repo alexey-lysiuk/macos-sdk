@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D076D189-D10A-3471-916C-20F03A063574', 'x86_64: D076D189-D10A-3471-916C-20F03A063574' ]
+uuids:           [ 'x86_64: 1881804F-6061-3DF2-AE73-4F599A054263', 'x86_64: 1881804F-6061-3DF2-AE73-4F599A054263' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit'
 exports:         
@@ -16,10 +16,10 @@ exports:
                        MXUnitAveragePixelLuminance, MXUnitSignalBars ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 67A03979-0F09-3241-93C6-357D47B13A56', 'x86_64: 67A03979-0F09-3241-93C6-357D47B13A56' ]
+uuids:           [ 'x86_64: 83983C65-0003-30E8-9720-5912C73C9E2F', 'x86_64: 83983C65-0003-30E8-9720-5912C73C9E2F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SignpostMetrics.framework/Versions/A/SignpostMetrics'
-current-version: 42.1
+current-version: 42.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __MXSignpostMetricsSnapshot ]

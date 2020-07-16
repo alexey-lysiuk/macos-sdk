@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 67DA3A98-9F93-3792-8DAA-C0B7E8FAD0F0' ]
+uuids:           [ 'x86_64: 84CAA946-62CE-3659-A1DC-D8B1842E1CFE' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftSafariServices.dylib'
 current-version: 0

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3BD96CEB-B233-3240-B735-4EEB5B212D80' ]
+uuids:           [ 'x86_64: 769FB5B5-8FDF-3775-B7E0-E2A262C93FE3' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftPencilKit.dylib'
 current-version: 0

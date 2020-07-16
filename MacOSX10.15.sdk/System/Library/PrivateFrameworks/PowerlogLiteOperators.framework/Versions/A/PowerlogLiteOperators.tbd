@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A1E7CC02-0527-365B-98F6-A91835D342A8' ]
+uuids:           [ 'x86_64: AA27A730-5E9D-39CE-ACA4-8371606B46A3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/Versions/A/PowerlogLiteOperators'
 exports:         
@@ -151,11 +151,12 @@ exports:
                        _kPLBatteryAgentStringbaselineR0, _kPLBatteryAgentStringbaselineR1, 
                        _kPLBatteryAgentStringbaselineR2, _kPLBatteryAgentStringbaselineR3, 
                        _kPLBatteryAgentStringmPb, _kPLBatteryAgentStringmPp, _kPLBluetoothAgentEventBackwardDetailedPowerProfileStats, 
-                       _kPLBluetoothAgentEventForwardDeviceState, _kPLBluetoothAgentEventForwardPairedDevices, 
-                       _kPLBluetoothAgentEventIntervalConnectedDevices, _kPLCFBundleNumericVersionKey, 
-                       _kPLCFDeviceBootTime, _kPLCameraAgentCameraType, _kPLCameraAgentEventForwardCamera, 
-                       _kPLCameraAgentEventForwardTorch, _kPLCameraAgentState, _kPLChannelGroupDay, 
-                       _kPLChannelGroupMin, _kPLChannelGroupRegular, _kPLCoalitionAgentEventIntervalCoalition, 
+                       _kPLBluetoothAgentEventBackwardMaxDutyCycle, _kPLBluetoothAgentEventForwardDeviceState, 
+                       _kPLBluetoothAgentEventForwardPairedDevices, _kPLBluetoothAgentEventIntervalConnectedDevices, 
+                       _kPLCFBundleNumericVersionKey, _kPLCFDeviceBootTime, _kPLCameraAgentCameraType, 
+                       _kPLCameraAgentEventForwardCamera, _kPLCameraAgentEventForwardTorch, 
+                       _kPLCameraAgentState, _kPLChannelGroupDay, _kPLChannelGroupMin, 
+                       _kPLChannelGroupRegular, _kPLCoalitionAgentEventIntervalCoalition, 
                        _kPLCoalitionAgentEventPointCoalitionDrop, _kPLCoalitionAgentEventPointCoalitionMemory, 
                        _kPLCoalitionAgentEventPointCoalitionSnapshot, _kPLConfigAgentEventNoneNameConfig, 
                        _kPLDebugServiceEventNoneNameFastInsertTest, _kPLDisplayAgentAggregateNameUserTouch, 

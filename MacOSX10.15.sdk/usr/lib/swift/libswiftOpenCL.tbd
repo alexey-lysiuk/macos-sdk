@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1C70AF04-574F-318E-B872-B860F7EA3FBA', 'x86_64: 1C70AF04-574F-318E-B872-B860F7EA3FBA' ]
+uuids:           [ 'x86_64: D60702AA-B877-3BDB-891C-C3A3937153A0', 'x86_64: D60702AA-B877-3BDB-891C-C3A3937153A0' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftOpenCL.dylib'
 current-version: 0

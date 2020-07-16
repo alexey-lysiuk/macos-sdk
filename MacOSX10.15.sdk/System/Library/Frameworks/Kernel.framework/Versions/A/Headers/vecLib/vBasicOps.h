@@ -3,7 +3,7 @@
  
      Contains:   Basic Algebraic Operations for AltiVec
  
-     Version:    vecLib-735.100
+     Version:    vecLib-735.140
  
      Copyright:  Copyright (c) 1999-2020 by Apple Inc. All rights reserved.
  

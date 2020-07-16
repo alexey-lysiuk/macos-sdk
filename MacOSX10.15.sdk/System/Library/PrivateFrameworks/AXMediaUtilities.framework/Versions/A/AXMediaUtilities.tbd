@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D4B40D16-EF9B-3040-80B0-7CA0795C38B5', 'x86_64: D4B40D16-EF9B-3040-80B0-7CA0795C38B5' ]
+uuids:           [ 'x86_64: BE959C1E-B581-3506-9773-EA040BB91A8E', 'x86_64: BE959C1E-B581-3506-9773-EA040BB91A8E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AXMediaUtilities.framework/Versions/A/AXMediaUtilities'
 exports:         

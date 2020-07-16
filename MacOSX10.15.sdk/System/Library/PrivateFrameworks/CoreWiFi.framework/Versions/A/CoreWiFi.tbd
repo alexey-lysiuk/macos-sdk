@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 94D32852-5FAF-3BEF-964B-A122FF2A508A', 'x86_64: 94D32852-5FAF-3BEF-964B-A122FF2A508A' ]
+uuids:           [ 'x86_64: 316F9E11-D4A5-354F-876A-760EE119762F', 'x86_64: 316F9E11-D4A5-354F-876A-760EE119762F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreWiFi.framework/Versions/A/CoreWiFi'
 exports:         

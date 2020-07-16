@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 867DC39A-D693-38FE-B56F-8422DF8B5129' ]
+uuids:           [ 'x86_64: AFA02C7B-0FDB-3AF2-AF92-89366802BC52' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TVRemoteCore.framework/Versions/A/TVRemoteCore'
-current-version: 100.50.13
+current-version: 100.60.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromRMSMessageType, _NSStringFromRMSResponseCode, 

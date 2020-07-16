@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0981A881-7F88-3713-AC0B-FCD5A0B19780', 'x86_64: 0981A881-7F88-3713-AC0B-FCD5A0B19780' ]
+uuids:           [ 'x86_64: 46D16A1F-D66F-3F63-B77E-50C10AD0CCCF', 'x86_64: 46D16A1F-D66F-3F63-B77E-50C10AD0CCCF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SiriTasks.framework/Versions/A/SiriTasks'
 exports:         

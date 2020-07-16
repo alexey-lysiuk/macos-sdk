@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2D73FF12-1A20-344A-A73A-0BD686B3DC93', 'x86_64: 2D73FF12-1A20-344A-A73A-0BD686B3DC93' ]
+uuids:           [ 'x86_64: 76BA237E-B940-3EEB-AB55-683678C8BB6E', 'x86_64: 76BA237E-B940-3EEB-AB55-683678C8BB6E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhysicsKit.framework/Versions/A/PhysicsKit'
 current-version: 28

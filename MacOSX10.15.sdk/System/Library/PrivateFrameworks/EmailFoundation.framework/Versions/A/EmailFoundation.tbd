@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DDC3A5DE-5B3F-3AEE-B8E8-786B10B75B2F', 'x86_64: DDC3A5DE-5B3F-3AEE-B8E8-786B10B75B2F' ]
+uuids:           [ 'x86_64: FF802B48-6E44-34E6-9D1B-7D344E18B861', 'x86_64: FF802B48-6E44-34E6-9D1B-7D344E18B861' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmailFoundation.framework/Versions/A/EmailFoundation'
-current-version: 3608.80.23
+current-version: 3608.120.23
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EFArraysAreEqual, _EFAtomicObjectLoad, _EFAtomicObjectRelease, 
@@ -32,16 +32,17 @@ exports:
                        EFLazyCache, EFLazyFuture, EFLinearFunction, EFLocked, EFMainThreadScheduler, 
                        EFMeasuredObject, EFMutableByteSet, EFMutableIndexMap, EFMutableInt64Set, 
                        EFObjectPool, EFObservable, EFObserver, EFOperationQueueScheduler, 
-                       EFPair, EFPriorityDesignator, EFPrivacy, EFProcessBoost, EFProcessTransaction, 
-                       EFPromise, EFQuery, EFQueue, EFQueueScheduler, EFResource, 
-                       EFResourcePool, EFSQLAggregateFunction, EFSQLAndExpression, 
-                       EFSQLBetweenExpression, EFSQLBinaryExpression, EFSQLBinding, 
-                       EFSQLBitExpression, EFSQLBitExpressionGenerator, EFSQLCaseExpression, 
-                       EFSQLColumn, EFSQLColumnExpression, EFSQLColumnSchema, EFSQLConnection, 
-                       EFSQLDeleteStatement, EFSQLDisqualifiedColumnExpression, EFSQLExpressionGenerator, 
-                       EFSQLFunction, EFSQLGeneratorComparisonPredicateNode, EFSQLGeneratorCompoundPredicateNode, 
-                       EFSQLGeneratorTableRelationship, EFSQLIndexSchema, EFSQLIndexedColumnSchema, 
-                       EFSQLInsertStatement, EFSQLJoinOnExpressionGenerator, EFSQLLikeEscapedExpression, 
+                       EFPair, EFPathComponent, EFPriorityDesignator, EFPrivacy, 
+                       EFProcessBoost, EFProcessTransaction, EFPromise, EFQuery, 
+                       EFQueue, EFQueueScheduler, EFResource, EFResourcePool, EFSQLAggregateFunction, 
+                       EFSQLAndExpression, EFSQLBetweenExpression, EFSQLBinaryExpression, 
+                       EFSQLBinding, EFSQLBitExpression, EFSQLBitExpressionGenerator, 
+                       EFSQLCaseExpression, EFSQLColumn, EFSQLColumnExpression, EFSQLColumnSchema, 
+                       EFSQLConnection, EFSQLDeleteStatement, EFSQLDisqualifiedColumnExpression, 
+                       EFSQLExpressionGenerator, EFSQLFunction, EFSQLGeneratorComparisonPredicateNode, 
+                       EFSQLGeneratorCompoundPredicateNode, EFSQLGeneratorTableRelationship, 
+                       EFSQLIndexSchema, EFSQLIndexedColumnSchema, EFSQLInsertStatement, 
+                       EFSQLJoinOnExpressionGenerator, EFSQLLikeEscapedExpression, 
                        EFSQLObjectPropertyMapper, EFSQLOrExpression, EFSQLOrderByExpressionGenerator, 
                        EFSQLPreparedStatement, EFSQLPropertyMapper, EFSQLQueryGenerator, 
                        EFSQLRow, EFSQLSchema, EFSQLSelectExpressionGenerator, EFSQLSelectStatement, 

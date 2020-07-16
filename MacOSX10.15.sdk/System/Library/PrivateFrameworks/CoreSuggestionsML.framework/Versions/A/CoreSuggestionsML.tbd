@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 773AB796-C196-319D-BA68-63FEE3B71003', 'x86_64: 773AB796-C196-319D-BA68-63FEE3B71003' ]
+uuids:           [ 'x86_64: F47D02EF-07C3-3911-B4D5-9C94C12F5EE2', 'x86_64: F47D02EF-07C3-3911-B4D5-9C94C12F5EE2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSuggestionsML.framework/Versions/A/CoreSuggestionsML'
-current-version: 1052.33
+current-version: 1052.34
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CoreSuggestionsMLVersionNumber, _CoreSuggestionsMLVersionString, 

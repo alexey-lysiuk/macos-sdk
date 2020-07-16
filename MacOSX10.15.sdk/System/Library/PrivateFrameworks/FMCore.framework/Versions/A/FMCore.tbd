@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 37B83EAF-CF21-3F26-A4BE-173BB01B5BAA', 'x86_64: 37B83EAF-CF21-3F26-A4BE-173BB01B5BAA' ]
+uuids:           [ 'x86_64: 73DBFAA3-18FF-344D-9BB6-3D81D1DFC6B6', 'x86_64: 73DBFAA3-18FF-344D-9BB6-3D81D1DFC6B6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FMCore.framework/Versions/A/FMCore'
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B708F10-26FF-3B4E-85EF-7D3D7E962752' ]
+uuids:           [ 'x86_64: 0C548F93-F5ED-39E5-BACE-1B0B54E8208D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EmailDaemon.framework/Versions/A/EmailDaemon'
-current-version: 3608.80.23
+current-version: 3608.120.23
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EDConversationFlagsChanged, _EDConversationFlagsChangedConversationIDKey, 

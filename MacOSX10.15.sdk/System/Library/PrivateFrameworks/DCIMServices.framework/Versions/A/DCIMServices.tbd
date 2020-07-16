@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ADC231BE-E113-3551-B127-D15EAA29CC58', 'x86_64: ADC231BE-E113-3551-B127-D15EAA29CC58' ]
+uuids:           [ 'x86_64: EB2173A5-A681-35F6-A806-B3C81B872F73', 'x86_64: EB2173A5-A681-35F6-A806-B3C81B872F73' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DCIMServices.framework/Versions/A/DCIMServices'
-current-version: 141.19.150
+current-version: 161.0.120
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DCIMAVMetadataCaptureModeKey, _DCIMAVMetadataCaptureModeTimelapseValue, 

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: E396BDC6-045F-302D-BA78-67233762C4D7', 'x86_64: E396BDC6-045F-302D-BA78-67233762C4D7', 
-                   'x86_64h: DAE0E5C5-BA70-325D-8B4C-6B821F009CBF', 'x86_64h: DAE0E5C5-BA70-325D-8B4C-6B821F009CBF' ]
+uuids:           [ 'x86_64: 4B6AB2C1-7CF5-3FDA-AC1C-04E531AB9BCE', 'x86_64: 4B6AB2C1-7CF5-3FDA-AC1C-04E531AB9BCE', 
+                   'x86_64h: EA6F5FF2-7A1B-35D5-A5A3-D2B3386ECB75', 'x86_64h: EA6F5FF2-7A1B-35D5-A5A3-D2B3386ECB75' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage'
-current-version: 524.2
+current-version: 524.2.1
 exports:         
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _Init_vImage, _SetvImageThreadCount, _SetvImageThreadState, 

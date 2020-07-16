@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D352B8E-97D8-34FA-B2AF-3AB4E3149E2E', 'x86_64: 4D352B8E-97D8-34FA-B2AF-3AB4E3149E2E' ]
+uuids:           [ 'x86_64: B0B591F8-6875-351E-867F-8EB3CD38CD52', 'x86_64: B0B591F8-6875-351E-867F-8EB3CD38CD52' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector'
 current-version: 122.5.6

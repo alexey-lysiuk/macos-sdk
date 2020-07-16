@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C4A4B8DC-B3D7-3815-80ED-99D46017438E', 'x86_64: C4A4B8DC-B3D7-3815-80ED-99D46017438E' ]
+uuids:           [ 'x86_64: 94D67EF4-42B5-3F54-8D86-B6B2B16827DC', 'x86_64: 94D67EF4-42B5-3F54-8D86-B6B2B16827DC' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftDispatch.dylib'
 current-version: 0

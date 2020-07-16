@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED3CEB71-A202-3107-A39C-A156BD812BFA' ]
+uuids:           [ 'x86_64: C091BFD3-E3EA-3628-B9E5-BABC4A33CFE5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IOPlatformPluginFamily.framework/Versions/A/IOPlatformPluginFamily'
 exports:         

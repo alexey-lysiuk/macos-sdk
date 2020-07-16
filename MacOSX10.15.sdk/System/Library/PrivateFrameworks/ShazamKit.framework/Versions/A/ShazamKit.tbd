@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 063C8525-2EBB-3B47-8671-87041D84E34B', 'x86_64: 063C8525-2EBB-3B47-8671-87041D84E34B' ]
+uuids:           [ 'x86_64: EE9F50D8-0917-3ED2-B408-AA95A63AB822', 'x86_64: EE9F50D8-0917-3ED2-B408-AA95A63AB822' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ShazamKit.framework/Versions/A/ShazamKit'
 exports:         

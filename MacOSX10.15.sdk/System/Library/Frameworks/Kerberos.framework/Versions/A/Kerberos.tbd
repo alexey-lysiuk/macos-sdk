@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DC673FF3-4DC9-3C23-9718-343AB36B2984', 'x86_64: DC673FF3-4DC9-3C23-9718-343AB36B2984' ]
+uuids:           [ 'x86_64: 03BB492B-016E-37BF-B020-39C2CF7487FE', 'x86_64: 03BB492B-016E-37BF-B020-39C2CF7487FE' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos'
 current-version: 6

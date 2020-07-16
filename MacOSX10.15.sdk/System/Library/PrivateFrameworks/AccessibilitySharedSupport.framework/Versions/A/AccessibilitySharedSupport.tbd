@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FB542F4B-073C-3D2C-8A0F-DB60BF4402D6', 'x86_64: FB542F4B-073C-3D2C-8A0F-DB60BF4402D6' ]
+uuids:           [ 'x86_64: 0AA1DA16-1C88-3261-9060-BB5718BF17F0', 'x86_64: 0AA1DA16-1C88-3261-9060-BB5718BF17F0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySharedSupport.framework/Versions/A/AccessibilitySharedSupport'
 exports:         

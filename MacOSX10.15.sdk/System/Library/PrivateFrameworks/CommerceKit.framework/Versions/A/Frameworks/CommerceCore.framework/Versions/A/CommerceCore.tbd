@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 98C154AE-2EE0-3E36-9662-F85EF62534AB' ]
+uuids:           [ 'x86_64: DB9B78C7-8DE2-32F7-A63F-571CE154F3A7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Frameworks/CommerceCore.framework/Versions/A/CommerceCore'
 current-version: 379

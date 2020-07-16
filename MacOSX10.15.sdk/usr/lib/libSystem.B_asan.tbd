@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8662603-BA73-3172-9EB0-0026A5D9DB3F', 'x86_64: B8662603-BA73-3172-9EB0-0026A5D9DB3F' ]
+uuids:           [ 'x86_64: A5A47549-A64C-3916-9FAC-769FD578F866', 'x86_64: A5A47549-A64C-3916-9FAC-769FD578F866' ]
 platform:        zippered
 install-name:    '/usr/lib/libSystem.B.dylib'
 current-version: 1281.100.1
@@ -36,7 +36,7 @@ exports:
                        _libSystem_atfork_prepare, _mach_init_routine ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F90FFCE-403B-3724-991D-BA32401D99C5', 'x86_64: 5F90FFCE-403B-3724-991D-BA32401D99C5' ]
+uuids:           [ 'x86_64: AF488D13-9E89-35E0-B078-BE37CC5B8586', 'x86_64: AF488D13-9E89-35E0-B078-BE37CC5B8586' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcache.dylib'
 current-version: 83
@@ -56,10 +56,10 @@ exports:
                        _cache_value_make_purgeable_cb ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7A5E3F7-1E5A-3785-875A-B6647082B614', 'x86_64: C7A5E3F7-1E5A-3785-875A-B6647082B614' ]
+uuids:           [ 'x86_64: C7912BE5-993E-3581-B2A0-6AABDC8C5562', 'x86_64: C7912BE5-993E-3581-B2A0-6AABDC8C5562' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcommonCrypto.dylib'
-current-version: 60165
+current-version: 60165.120.1
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -111,10 +111,9 @@ exports:
                        _CCHmacUpdate, _CCKDFParametersCreateAnsiX963, _CCKDFParametersCreateCtrHmac, 
                        _CCKDFParametersCreateCtrHmacFixed, _CCKDFParametersCreateHkdf, 
                        _CCKDFParametersCreatePbkdf2, _CCKDFParametersDestroy, _CCKeyDerivationHMac, 
-                       _CCKeyDerivationPBKDF, _CCRSACryptorCreateFromData, _CCRSACryptorCreatePairFromData, 
-                       _CCRSACryptorCreatePublicKeyFromPrivateKey, _CCRSACryptorCrypt, 
-                       _CCRSACryptorDecrypt, _CCRSACryptorEncrypt, _CCRSACryptorExport, 
-                       _CCRSACryptorGeneratePair, _CCRSACryptorGetPublicKeyFromPrivateKey, 
+                       _CCKeyDerivationPBKDF, _CCRSACryptorCreateFromData, _CCRSACryptorCreatePublicKeyFromPrivateKey, 
+                       _CCRSACryptorCrypt, _CCRSACryptorDecrypt, _CCRSACryptorEncrypt, 
+                       _CCRSACryptorExport, _CCRSACryptorGeneratePair, _CCRSACryptorGetPublicKeyFromPrivateKey, 
                        _CCRSACryptorImport, _CCRSACryptorRelease, _CCRSACryptorSign, 
                        _CCRSACryptorVerify, _CCRSAGetCRTComponents, _CCRSAGetCRTComponentsSizes, 
                        _CCRSAGetKeyComponents, _CCRSAGetKeySize, _CCRSAGetKeyType, 
@@ -138,7 +137,7 @@ exports:
                        _kCCRandomDefault, _kCCRandomDevRandom ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A517E149-2D25-3C04-BCEF-F69149C85B18' ]
+uuids:           [ 'x86_64: 49B8F644-5705-3F16-BBE0-6FFF9B17C36E' ]
 platform:        macosx
 install-name:    '/usr/lib/system/libcompiler_rt.dylib'
 current-version: 101.2
@@ -363,7 +362,7 @@ exports:
                        _atomic_signal_fence, _atomic_thread_fence ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A5270B5-0D97-35DA-9296-4F4A428BC6A2', 'x86_64: 1A5270B5-0D97-35DA-9296-4F4A428BC6A2' ]
+uuids:           [ 'x86_64: 3C481225-21E7-370A-A30E-0CCFDD64A92C', 'x86_64: 3C481225-21E7-370A-A30E-0CCFDD64A92C' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcopyfile.dylib'
 exports:         
@@ -373,10 +372,10 @@ exports:
                        _xattr_name_with_flags, _xattr_name_without_flags, _xattr_preserve_for_intent ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FCDEC0D1-8C30-3989-BDD1-996BBC715C29', 'x86_64: FCDEC0D1-8C30-3989-BDD1-996BBC715C29' ]
+uuids:           [ 'x86_64: 60567BF8-80FA-359A-B2F3-A3BAEFB288FD', 'x86_64: 60567BF8-80FA-359A-B2F3-A3BAEFB288FD' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcorecrypto.dylib'
-current-version: 866.100.30
+current-version: 866.140.1
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -582,7 +581,7 @@ exports:
                        _fipspost_trace_vtable ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EB592997-B11C-3AB3-85B1-F725F3D0B412', 'x86_64: EB592997-B11C-3AB3-85B1-F725F3D0B412' ]
+uuids:           [ 'x86_64: CD9C059C-91D9-30E8-8926-5B9CD0D5D4F5', 'x86_64: CD9C059C-91D9-30E8-8926-5B9CD0D5D4F5' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libdispatch.dylib'
 current-version: 1173.100.2
@@ -715,10 +714,10 @@ exports:
                        OS_dispatch_workloop, OS_object, OS_voucher ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D2A07EF5-A64B-3692-BE13-89DAA2EC5E80', 'x86_64: D2A07EF5-A64B-3692-BE13-89DAA2EC5E80' ]
+uuids:           [ 'x86_64: 789A18C2-8AC7-3C88-813D-CD674376585D', 'x86_64: 789A18C2-8AC7-3C88-813D-CD674376585D' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libdyld.dylib'
-current-version: 750.5
+current-version: 750.6
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -769,7 +768,7 @@ exports:
                        _dyld_shared_cache_some_image_overridden, _environ, dyld_stub_binder ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CC5A2B43-770B-3C6C-BA10-AA3A6B4A142D', 'x86_64: CC5A2B43-770B-3C6C-BA10-AA3A6B4A142D' ]
+uuids:           [ 'x86_64: DB3337BE-01CA-3425-BD0C-87774FC0CDC0', 'x86_64: DB3337BE-01CA-3425-BD0C-87774FC0CDC0' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libkeymgr.dylib'
 current-version: 30
@@ -782,10 +781,10 @@ exports:
                        __keymgr_unlock_processwide_ptr, _keymgrVersionNumber, _keymgrVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A7FF7357-600F-3014-8C28-A4F367717E8D', 'x86_64: A7FF7357-600F-3014-8C28-A4F367717E8D' ]
+uuids:           [ 'x86_64: AFBCBDD3-0B55-3ECD-8E04-A73A3A57356B', 'x86_64: AFBCBDD3-0B55-3ECD-8E04-A73A3A57356B' ]
 platform:        zippered
 install-name:    '/usr/lib/system/liblaunch.dylib'
-current-version: 1738.100.39
+current-version: 1738.140.1
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -829,7 +828,7 @@ exports:
                        _vproc_transaction_end, _vprocmgr_lookup_vproc ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D8FED478-25A2-3844-AE4B-A5C9F9827615', 'x86_64: D8FED478-25A2-3844-AE4B-A5C9F9827615' ]
+uuids:           [ 'x86_64: AA613A9C-961A-3B67-B696-4622FA59FC4E', 'x86_64: AA613A9C-961A-3B67-B696-4622FA59FC4E' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libmacho.dylib'
 current-version: 959.0.1
@@ -874,7 +873,7 @@ exports:
                        _swap_x86_thread_state64 ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 51E0304F-AB11-3BF7-99DC-BB916CC9088B', 'x86_64: 51E0304F-AB11-3BF7-99DC-BB916CC9088B' ]
+uuids:           [ 'x86_64: F234E51D-FD0B-3EE4-B679-AE3EE9C536C3', 'x86_64: F234E51D-FD0B-3EE4-B679-AE3EE9C536C3' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libquarantine.dylib'
 current-version: 110.40.3
@@ -918,7 +917,7 @@ exports:
                        _responsibility_spawnattrs_getdisclaim, _responsibility_spawnattrs_setdisclaim ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 078F29AB-26BA-3493-BCAA-E1E75A187521', 'x86_64: 078F29AB-26BA-3493-BCAA-E1E75A187521' ]
+uuids:           [ 'x86_64: 7C7EFC79-BD24-33EF-B073-06AED234593E', 'x86_64: 7C7EFC79-BD24-33EF-B073-06AED234593E' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libremovefile.dylib'
 current-version: 48
@@ -930,7 +929,7 @@ exports:
                        _removefile_state_free, _removefile_state_get, _removefile_state_set ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0F1BAC19-2AE0-3F8E-9B90-AACF819B2BF7', 'x86_64: 0F1BAC19-2AE0-3F8E-9B90-AACF819B2BF7' ]
+uuids:           [ 'x86_64: 1563EE02-0657-3B78-99BE-A947C24122EF', 'x86_64: 1563EE02-0657-3B78-99BE-A947C24122EF' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_asl.dylib'
 current-version: 377.60.2
@@ -1007,7 +1006,7 @@ exports:
                        _setlogmask, _syslog, '_syslog$DARWIN_EXTSN', _vsyslog ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 32224AFF-C06F-3279-B753-097194EDEF49', 'x86_64: 32224AFF-C06F-3279-B753-097194EDEF49' ]
+uuids:           [ 'x86_64: 0D53847E-AF5F-3ACF-B51F-A15DEA4DEC58', 'x86_64: 0D53847E-AF5F-3ACF-B51F-A15DEA4DEC58' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_blocks.dylib'
 current-version: 74
@@ -1021,7 +1020,7 @@ exports:
                        __NSConcreteStackBlock, __NSConcreteWeakBlockVariable ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4F5EED22-4D46-3F04-8C64-C492CDAD70EB', 'x86_64: 4F5EED22-4D46-3F04-8C64-C492CDAD70EB' ]
+uuids:           [ 'x86_64: BBDED5E6-A646-3EED-B33A-91E4331EA063', 'x86_64: BBDED5E6-A646-3EED-B33A-91E4331EA063' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_c.dylib'
 current-version: 1353.100.2
@@ -1305,10 +1304,10 @@ exports:
                        _xprintf_exec, mcount ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2A2C778D-07EB-35C7-A954-8BF8FD74BD75', 'x86_64: 2A2C778D-07EB-35C7-A954-8BF8FD74BD75' ]
+uuids:           [ 'x86_64: 0EE84C33-64FD-372B-974A-AF7A136F2068', 'x86_64: 0EE84C33-64FD-372B-974A-AF7A136F2068' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_configuration.dylib'
-current-version: 1061.101.1
+current-version: 1061.141.1
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -1328,7 +1327,7 @@ exports:
                        _nwi_state_get_reachability_flags, _nwi_state_release ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FDA41CC4-170A-3D93-85BD-838A563B03C4', 'x86_64: FDA41CC4-170A-3D93-85BD-838A563B03C4' ]
+uuids:           [ 'x86_64: A199156E-058D-3ABB-BCE9-4B9F20DCED0F', 'x86_64: A199156E-058D-3ABB-BCE9-4B9F20DCED0F' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_coreservices.dylib'
 current-version: 114
@@ -1343,7 +1342,7 @@ exports:
                        _sysdir_start_search_path_enumeration, _sysdir_start_search_path_enumeration_private ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B567B86D-8818-38A4-A861-03EB83B55867', 'x86_64: B567B86D-8818-38A4-A861-03EB83B55867' ]
+uuids:           [ 'x86_64: 5B12B5DB-3F30-37C1-8ECC-49A66B1F2864', 'x86_64: 5B12B5DB-3F30-37C1-8ECC-49A66B1F2864' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_darwin.dylib'
 parent-umbrella: System
@@ -1371,7 +1370,7 @@ exports:
                        _warn_np, _wfprintf_np, _xferfd_np, _zsnprintf_np ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7C690DF5-E119-33FB-85CD-9EFC67A36E40', 'x86_64: 7C690DF5-E119-33FB-85CD-9EFC67A36E40' ]
+uuids:           [ 'x86_64: EBB4C2C2-E031-3094-B40A-E67BF261D295', 'x86_64: EBB4C2C2-E031-3094-B40A-E67BF261D295' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_dnssd.dylib'
 current-version: 1096.100.3
@@ -1395,7 +1394,7 @@ exports:
                        _TXTRecordGetValuePtr, _TXTRecordRemoveValue, _TXTRecordSetValue ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 415D83EF-084C-3485-B757-53001870EA94', 'x86_64: 415D83EF-084C-3485-B757-53001870EA94' ]
+uuids:           [ 'x86_64: 29FD922A-EC2C-3F25-BCCC-B58D716E60EC', 'x86_64: 29FD922A-EC2C-3F25-BCCC-B58D716E60EC' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_featureflags.dylib'
 current-version: 17
@@ -1405,7 +1404,7 @@ exports:
     symbols:         [ __os_feature_enabled_impl ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 17049D3F-C798-3651-B391-1551FC699D3E', 'x86_64: 17049D3F-C798-3651-B391-1551FC699D3E' ]
+uuids:           [ 'x86_64: 8A321605-5480-330B-AF9E-64E65DE61747', 'x86_64: 8A321605-5480-330B-AF9E-64E65DE61747' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_info.dylib'
 parent-umbrella: System
@@ -1524,10 +1523,10 @@ exports:
                        _yp_next, _yp_order, _yp_unbind, _yperr_string, _ypprot_err ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E76440E1-D1E8-3D9A-8B47-D01F554FF1C4', 'x86_64: E76440E1-D1E8-3D9A-8B47-D01F554FF1C4' ]
+uuids:           [ 'x86_64: 2B6311E6-6240-3EF7-8C87-475B66F7452C', 'x86_64: 2B6311E6-6240-3EF7-8C87-475B66F7452C' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_kernel.dylib'
-current-version: 6153.101.6
+current-version: 6153.141.1
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -1944,8 +1943,8 @@ exports:
                        _write, '_write$NOCANCEL', _writev, '_writev$NOCANCEL' ]
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: D9099D98-4E16-3EA1-8BF8-2EA3FCC4A282', 'x86_64: D9099D98-4E16-3EA1-8BF8-2EA3FCC4A282', 
-                   'x86_64h: 74741FA8-5C29-3241-9046-4FC91C6A6D4A', 'x86_64h: 74741FA8-5C29-3241-9046-4FC91C6A6D4A' ]
+uuids:           [ 'x86_64: D1CF3A92-2424-3420-B375-DEED7AA68C53', 'x86_64: D1CF3A92-2424-3420-B375-DEED7AA68C53', 
+                   'x86_64h: 00F331F1-0D09-39B3-8736-1FE90E64E903', 'x86_64h: 00F331F1-0D09-39B3-8736-1FE90E64E903' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_m.dylib'
 current-version: 3178
@@ -2155,7 +2154,7 @@ exports:
                        _y0, _y1, _yn ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 641F5F1A-7EB5-3D5A-9BF2-9842BA6056F5', 'x86_64: 641F5F1A-7EB5-3D5A-9BF2-9842BA6056F5' ]
+uuids:           [ 'x86_64: 8549294E-4C53-36EB-99F3-584A7393D8D5', 'x86_64: 8549294E-4C53-36EB-99F3-584A7393D8D5' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_malloc.dylib'
 current-version: 283.100.6
@@ -2200,7 +2199,7 @@ exports:
                        _valloc, _vfree, _zeroify_scalable_zone ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C9E988B2-6A18-35C0-9577-63201E9D6018', 'x86_64: C9E988B2-6A18-35C0-9577-63201E9D6018' ]
+uuids:           [ 'x86_64: F06C65C5-2CBE-313C-96E1-A09240F9FE57', 'x86_64: F06C65C5-2CBE-313C-96E1-A09240F9FE57' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_networkextension.dylib'
 parent-umbrella: System
@@ -2258,7 +2257,7 @@ exports:
                        _nelog_is_info_logging_enabled ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E405F84B-BD4F-3874-9755-CB3EC86E18D5', 'x86_64: E405F84B-BD4F-3874-9755-CB3EC86E18D5' ]
+uuids:           [ 'x86_64: FA22F928-D91B-3AA5-96BB-3186AC0FB264', 'x86_64: FA22F928-D91B-3AA5-96BB-3186AC0FB264' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_notify.dylib'
 current-version: 241.100.2
@@ -2273,7 +2272,7 @@ exports:
                        _notify_simple_post, _notify_suspend, _notify_suspend_pid ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6EF12F34-C33F-36BF-9A9A-2A35EA19EFE0', 'x86_64: 6EF12F34-C33F-36BF-9A9A-2A35EA19EFE0' ]
+uuids:           [ 'x86_64: 009A7C1F-313A-318E-B9F2-30F4C06FEA5C', 'x86_64: 009A7C1F-313A-318E-B9F2-30F4C06FEA5C' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_platform.dylib'
 current-version: 220.100.1
@@ -2336,7 +2335,7 @@ exports:
                        _sys_cache_control, _sys_dcache_flush, _sys_icache_invalidate ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A8514582-E000-3854-911A-0A73D2C79600', 'x86_64: A8514582-E000-3854-911A-0A73D2C79600' ]
+uuids:           [ 'x86_64: 62CB1A98-0B8F-31E7-A02B-A1139927F61D', 'x86_64: 62CB1A98-0B8F-31E7-A02B-A1139927F61D' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_pthread.dylib'
 current-version: 416.100.3
@@ -2417,10 +2416,10 @@ exports:
                        _start_wqthread, _thread_chkstk_darwin, _thread_start ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E9D78CDE-FB67-32E7-BABC-9EFC23AA0DC6', 'x86_64: E9D78CDE-FB67-32E7-BABC-9EFC23AA0DC6' ]
+uuids:           [ 'x86_64: 4ADBB2C0-C8B9-39FF-B9AF-2E00460A0FD6', 'x86_64: 4ADBB2C0-C8B9-39FF-B9AF-2E00460A0FD6' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_sandbox.dylib'
-current-version: 1217.101.2
+current-version: 1217.140.4
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -2473,7 +2472,7 @@ exports:
                        _sandbox_spawnattrs_setprofilename, _sandbox_suspend, _sandbox_unsuspend ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AAC639E5-7103-3366-A602-8FC6944E2C13', 'x86_64: AAC639E5-7103-3366-A602-8FC6944E2C13' ]
+uuids:           [ 'x86_64: F80872AA-E1FD-3D7E-8729-467656EC6561', 'x86_64: F80872AA-E1FD-3D7E-8729-467656EC6561' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_secinit.dylib'
 current-version: 62.100.2
@@ -2485,7 +2484,7 @@ exports:
                        _libsecinit_fileoperation_symlink ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 487B92DE-45F9-39F9-A478-89BBD478157D', 'x86_64: 487B92DE-45F9-39F9-A478-89BBD478157D' ]
+uuids:           [ 'x86_64: 5820A2AF-CE72-3AB3-ABCC-273A3419FB55', 'x86_64: 5820A2AF-CE72-3AB3-ABCC-273A3419FB55' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_symptoms.dylib'
 exports:         
@@ -2497,10 +2496,10 @@ exports:
                        _symptom_set_qualifier ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BB90B1FD-8C09-3DF4-BD8B-9E4AEADFEA2B', 'x86_64: BB90B1FD-8C09-3DF4-BD8B-9E4AEADFEA2B' ]
+uuids:           [ 'x86_64: 04B47629-847B-3D74-8ABE-C05EF9DEEFE4', 'x86_64: 04B47629-847B-3D74-8ABE-C05EF9DEEFE4' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_trace.dylib'
-current-version: 1147.100.8
+current-version: 1147.120
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -2554,7 +2553,7 @@ exports:
     objc-classes:    [ OS_os_log ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CC87C836-BE9D-334E-A0E6-0297D52E9D73', 'x86_64: CC87C836-BE9D-334E-A0E6-0297D52E9D73' ]
+uuids:           [ 'x86_64: 42B7B509-BAFE-365B-893A-72414C92F5BF', 'x86_64: 42B7B509-BAFE-365B-893A-72414C92F5BF' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libunwind.dylib'
 current-version: 35.4
@@ -2607,10 +2606,10 @@ exports:
                        _unw_regname, _unw_resume, _unw_set_fpreg, _unw_set_reg, _unw_step ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 32B0E31E-9DA3-328B-A962-BC9591B93537', 'x86_64: 32B0E31E-9DA3-328B-A962-BC9591B93537' ]
+uuids:           [ 'x86_64: 3E243A41-030F-38E3-9FD2-7B38C66C35B1', 'x86_64: 3E243A41-030F-38E3-9FD2-7B38C66C35B1' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libxpc.dylib'
-current-version: 1738.100.39
+current-version: 1738.140.1
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]

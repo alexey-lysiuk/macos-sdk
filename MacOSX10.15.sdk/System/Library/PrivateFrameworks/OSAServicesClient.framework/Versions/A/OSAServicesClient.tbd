@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 17FCD559-9E6D-366D-9AF3-917EC6B2C13E' ]
+uuids:           [ 'x86_64: DB474FEE-D07E-3A1D-871F-1CABE7961D77' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OSAServicesClient.framework/Versions/A/OSAServicesClient'
 exports:         

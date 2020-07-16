@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BDC6E6CA-EA3E-35D0-AF50-C41E442790FD' ]
+uuids:           [ 'x86_64: 5F398ADE-A2BA-3C11-BEA9-BB66782DE3EB' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/USBDriverKit.framework/Versions/A/USBDriverKit'
 exports:         

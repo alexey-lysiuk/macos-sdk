@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 24022037-691F-3A11-82C1-B3021AF24736' ]
+uuids:           [ 'x86_64: 29B65A6D-8083-351A-AB9A-4FA470F5DC8E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreKnowledge.framework/Versions/A/CoreKnowledge'
 swift-abi-version: 7

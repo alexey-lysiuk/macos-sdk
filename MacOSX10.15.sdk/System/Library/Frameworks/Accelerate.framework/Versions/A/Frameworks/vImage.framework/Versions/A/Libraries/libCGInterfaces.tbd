@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 86A3C54A-786E-34FA-957A-A488CCFAC1D6', 'x86_64: 86A3C54A-786E-34FA-957A-A488CCFAC1D6', 
-                   'x86_64h: 9092665A-D5C7-3ED8-A7D5-9216B48F8E3E', 'x86_64h: 9092665A-D5C7-3ED8-A7D5-9216B48F8E3E' ]
+uuids:           [ 'x86_64: 69118118-1CEC-3019-A36E-3EC2FF1CAD8F', 'x86_64: 69118118-1CEC-3019-A36E-3EC2FF1CAD8F', 
+                   'x86_64h: 8FD09D09-BB19-36C5-ADE9-4F22DA235AEE', 'x86_64h: 8FD09D09-BB19-36C5-ADE9-4F22DA235AEE' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/Libraries/libCGInterfaces.dylib'
-current-version: 524.2
+current-version: 524.2.1
 exports:         
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _Init_CGInterfaces ]

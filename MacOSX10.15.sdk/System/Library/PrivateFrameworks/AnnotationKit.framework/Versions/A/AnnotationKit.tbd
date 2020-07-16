@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 46E422E4-E51A-3E68-9333-19FC8C1A93D1' ]
+uuids:           [ 'x86_64: 9BB0EDB6-3808-30FC-B0ED-764DE5AAB893' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AnnotationKit.framework/Versions/A/AnnotationKit'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4E30AD80-C612-30CC-85C7-7B98EF4C3FA9', 'x86_64: 4E30AD80-C612-30CC-85C7-7B98EF4C3FA9' ]
+uuids:           [ 'x86_64: A0FF8D18-8BD3-3497-A53E-53CA3A072D5B', 'x86_64: A0FF8D18-8BD3-3497-A53E-53CA3A072D5B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaRemote.framework/Versions/A/MediaRemote'
 exports:         
@@ -1060,14 +1060,14 @@ exports:
                        _kMRMediaRemoteNowPlayingInfoIsAdvertisement, _kMRMediaRemoteNowPlayingInfoIsAlwaysLive, 
                        _kMRMediaRemoteNowPlayingInfoIsBanned, _kMRMediaRemoteNowPlayingInfoIsExplicitTrack, 
                        _kMRMediaRemoteNowPlayingInfoIsInWishList, _kMRMediaRemoteNowPlayingInfoIsLiked, 
-                       _kMRMediaRemoteNowPlayingInfoIsMusicApp, _kMRMediaRemoteNowPlayingInfoIsSharable, 
-                       _kMRMediaRemoteNowPlayingInfoIsSteerable, _kMRMediaRemoteNowPlayingInfoIsVideosApp, 
-                       _kMRMediaRemoteNowPlayingInfoMediaType, _kMRMediaRemoteNowPlayingInfoPlaybackProgress, 
-                       _kMRMediaRemoteNowPlayingInfoPlaybackRate, _kMRMediaRemoteNowPlayingInfoPlaylistGlobalIdentifier, 
-                       _kMRMediaRemoteNowPlayingInfoProhibitsSkip, _kMRMediaRemoteNowPlayingInfoPurchaseInfoData, 
-                       _kMRMediaRemoteNowPlayingInfoQueueIndex, _kMRMediaRemoteNowPlayingInfoRadioStationHash, 
-                       _kMRMediaRemoteNowPlayingInfoRadioStationIdentifier, _kMRMediaRemoteNowPlayingInfoRadioStationName, 
-                       _kMRMediaRemoteNowPlayingInfoRadioStationStringIdentifier, 
+                       _kMRMediaRemoteNowPlayingInfoIsLoading, _kMRMediaRemoteNowPlayingInfoIsMusicApp, 
+                       _kMRMediaRemoteNowPlayingInfoIsSharable, _kMRMediaRemoteNowPlayingInfoIsSteerable, 
+                       _kMRMediaRemoteNowPlayingInfoIsVideosApp, _kMRMediaRemoteNowPlayingInfoMediaType, 
+                       _kMRMediaRemoteNowPlayingInfoPlaybackProgress, _kMRMediaRemoteNowPlayingInfoPlaybackRate, 
+                       _kMRMediaRemoteNowPlayingInfoPlaylistGlobalIdentifier, _kMRMediaRemoteNowPlayingInfoProhibitsSkip, 
+                       _kMRMediaRemoteNowPlayingInfoPurchaseInfoData, _kMRMediaRemoteNowPlayingInfoQueueIndex, 
+                       _kMRMediaRemoteNowPlayingInfoRadioStationHash, _kMRMediaRemoteNowPlayingInfoRadioStationIdentifier, 
+                       _kMRMediaRemoteNowPlayingInfoRadioStationName, _kMRMediaRemoteNowPlayingInfoRadioStationStringIdentifier, 
                        _kMRMediaRemoteNowPlayingInfoRepeatMode, _kMRMediaRemoteNowPlayingInfoServiceIdentifier, 
                        _kMRMediaRemoteNowPlayingInfoShuffleMode, _kMRMediaRemoteNowPlayingInfoStartTime, 
                        _kMRMediaRemoteNowPlayingInfoSupportsFastForward15Seconds, 

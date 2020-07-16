@@ -122,7 +122,12 @@ es_unmute_process(es_client_t * _Nonnull client, const audit_token_t *_Nonnull a
  * @param count Out param that reports the number of audit tokens written
  * @param audit_tokens  Out param for pointer to audit_token data
  * @return es_return_t indicating success or error
- * @brief The caller takes ownership of the memory at `*audit_tokens` and must free it
+ * @brief The caller takes ownership of the memory at `*audit_tokens` and must free it.
+ *        If there are no muted processes and the call completes successfully,
+ *        `*count` is set to 0 and `*audit_token` is set to NULL.
+ * @note The audit tokens are returned in the same state as they were passed to
+ *       `es_mute_process` and may not accurately reflect the current state of the
+ *       respective processes.
  */
 OS_EXPORT
 API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios, tvos, watchos)

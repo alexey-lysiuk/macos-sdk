@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 49D48B73-D43F-352B-BF26-7BA26B057067', 'x86_64: 49D48B73-D43F-352B-BF26-7BA26B057067' ]
+uuids:           [ 'x86_64: B238A17F-4E74-39C4-B54E-92BEBA7A9302', 'x86_64: B238A17F-4E74-39C4-B54E-92BEBA7A9302' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PodcastsFoundation.framework/Versions/A/PodcastsFoundation'
 swift-abi-version: 7

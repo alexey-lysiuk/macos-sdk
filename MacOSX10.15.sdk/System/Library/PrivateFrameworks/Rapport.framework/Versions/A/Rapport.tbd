@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9B131F28-080B-370D-A6FD-BDF3F20DED98', 'x86_64: 9B131F28-080B-370D-A6FD-BDF3F20DED98' ]
+uuids:           [ 'x86_64: AF01D899-3BF9-3586-860A-D95A837101DF', 'x86_64: AF01D899-3BF9-3586-860A-D95A837101DF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Rapport.framework/Versions/A/Rapport'
 current-version: 0

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3BB6A9A4-6B63-3F16-B2AE-7F8B62F3AE10' ]
+uuids:           [ 'x86_64: 740D614F-3B90-3893-B5B6-C82D9DFFA15D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AMPDevices.framework/Versions/A/AMPDevices'
 exports:         

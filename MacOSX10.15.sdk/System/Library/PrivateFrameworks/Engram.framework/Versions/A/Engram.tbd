@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0C526FF7-5F37-34F9-9BA8-407DEE806C5F', 'x86_64: 0C526FF7-5F37-34F9-9BA8-407DEE806C5F' ]
+uuids:           [ 'x86_64: 83200CE7-9D5C-32B8-90B9-D762AC748D8B', 'x86_64: 83200CE7-9D5C-32B8-90B9-D762AC748D8B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Engram.framework/Versions/A/Engram'
 exports:         

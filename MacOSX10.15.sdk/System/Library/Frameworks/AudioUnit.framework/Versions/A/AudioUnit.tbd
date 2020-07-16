@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 73D89D5E-05D5-3F64-BE02-2B2ED6AD6C03', 'x86_64: 73D89D5E-05D5-3F64-BE02-2B2ED6AD6C03' ]
+uuids:           [ 'x86_64: C8F9CC56-F7CF-3E77-B6FC-BD8E1D19FA92', 'x86_64: C8F9CC56-F7CF-3E77-B6FC-BD8E1D19FA92' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9222549-BCCD-3D6E-A51D-7F9C59E38D20', 'x86_64: D9222549-BCCD-3D6E-A51D-7F9C59E38D20' ]
+uuids:           [ 'x86_64: 5DF454DA-B307-3499-B77D-7AF3646A8D4D', 'x86_64: 5DF454DA-B307-3499-B77D-7AF3646A8D4D' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftQuartzCore.dylib'
 current-version: 0

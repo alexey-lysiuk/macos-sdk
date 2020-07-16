@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 525E8A4B-297B-3CAC-8A4A-6C7E211D7A21' ]
+uuids:           [ 'x86_64: 437BCF12-48D2-3770-8BC9-567718FB1BCA' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore'
 current-version: 516.2

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 629470B1-4678-38E1-8800-E1B8AEB161F9' ]
+uuids:           [ 'x86_64: D1848BD6-8BE3-386B-9B10-7AB54E877077' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OnBoardingKit.framework/Versions/A/OnBoardingKit'
 exports:         
@@ -13,21 +13,22 @@ exports:
                        _OBPrivacyAppleMusicIdentifier, _OBPrivacyApplePayCashIdentifier, 
                        _OBPrivacyApplePayIdentifier, _OBPrivacyAskSiriIdentifier, 
                        _OBPrivacyBusinessChatIdentifier, _OBPrivacyClassKitIdentifier, 
-                       _OBPrivacyCloudCallingIdentifier, _OBPrivacyDictationIdentifier, 
-                       _OBPrivacyEmergencySOSIdentifier, _OBPrivacyFaceIDDiagnosticsIdentifier, 
-                       _OBPrivacyFaceIDIdentifier, _OBPrivacyGameCenterIdentifier, 
-                       _OBPrivacyGymKitIdentifier, _OBPrivacyHealthRecordsIdentifier, 
-                       _OBPrivacyImproveHealthIdentifier, _OBPrivacyImproveHealthRecordsIdentifier, 
-                       _OBPrivacyImproveMapsIdentifier, _OBPrivacyImproveSiriIdentifier, 
-                       _OBPrivacyLocationServicesIdentifier, _OBPrivacyMapsRAPIdentifier, 
-                       _OBPrivacyNewsIdentifier, _OBPrivacyPodcastsIdentifier, _OBPrivacyPrivacyPaneIdentifier, 
+                       _OBPrivacyCloudCallingIdentifier, _OBPrivacyContactTracingIdentifier, 
+                       _OBPrivacyDictationIdentifier, _OBPrivacyEmergencySOSIdentifier, 
+                       _OBPrivacyFaceIDDiagnosticsIdentifier, _OBPrivacyFaceIDIdentifier, 
+                       _OBPrivacyGameCenterIdentifier, _OBPrivacyGymKitIdentifier, 
+                       _OBPrivacyHealthRecordsIdentifier, _OBPrivacyImproveHealthIdentifier, 
+                       _OBPrivacyImproveHealthRecordsIdentifier, _OBPrivacyImproveMapsIdentifier, 
+                       _OBPrivacyImproveSiriIdentifier, _OBPrivacyLocationServicesIdentifier, 
+                       _OBPrivacyMapsRAPIdentifier, _OBPrivacyNewsIdentifier, _OBPrivacyNewsletterIdentifier, 
+                       _OBPrivacyPodcastsIdentifier, _OBPrivacyPrivacyPaneIdentifier, 
                        _OBPrivacyPrivacyPaneMiniIdentifier, _OBPrivacySafariIdentifier, 
                        _OBPrivacySafariSearchIdentifier, _OBPrivacySearchIdentifier, 
                        _OBPrivacySensorKitIdentifier, _OBPrivacySignInWithAppleIdentifier, 
                        _OBPrivacySiriIdentifier, _OBPrivacySiriSuggestionsIdentifier, 
                        _OBPrivacySpotlightSearchIdentifier, _OBPrivacySpotlightSuggestionsIdentifier, 
                        _OBPrivacyStocksIdentifier, _OBPrivacyTVAppIdentifier, _OBPrivacyTVProviderIdentifier, 
-                       _OBPrivacyVideosIdentifier, _OBPrivacyWheelchairIdentifier, 
+                       _OBPrivacyVideosIdentifier, _OBPrivacyWalletIdentifier, _OBPrivacyWheelchairIdentifier, 
                        _OBPrivacyiBooksIdentifier, _OBPrivacyiCloudKeychainIdentifier, 
                        _OBPrivacyiMessageFaceTimeIdentifier, _OBPrivacyiTunesStoreIdentifier, 
                        _OBPrivacyiTunesUIdentifier, _OBProcessNameForPID, __OBLoggingFacility ]

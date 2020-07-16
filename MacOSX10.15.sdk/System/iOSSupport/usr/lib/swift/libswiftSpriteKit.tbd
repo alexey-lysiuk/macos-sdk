@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F3D065C1-044F-3696-8A26-93B943252780' ]
+uuids:           [ 'x86_64: BF5F299D-106B-3366-8123-6F7144197648' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftSpriteKit.dylib'
 current-version: 0

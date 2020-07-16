@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4B2F1D11-C36B-3C48-9934-8A973348A966', 'x86_64: 4B2F1D11-C36B-3C48-9934-8A973348A966' ]
+uuids:           [ 'x86_64: 06E3E70B-C0D0-39A2-96B7-12ED6A0EBEE7', 'x86_64: 06E3E70B-C0D0-39A2-96B7-12ED6A0EBEE7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator'
 exports:         

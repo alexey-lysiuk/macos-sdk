@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7641FE70-DA2A-3A1A-8444-1FF191C0C6BE' ]
+uuids:           [ 'x86_64: 7F449424-3B2F-32F8-AA78-4775BBE5A478' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppSSOUI.framework/Versions/A/AppSSOUI'
 exports:         

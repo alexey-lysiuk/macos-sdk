@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4222CBDF-D637-30DB-BA45-C6E222BABB24', 'x86_64: 4222CBDF-D637-30DB-BA45-C6E222BABB24' ]
+uuids:           [ 'x86_64: 8CFA0620-5E43-3C4D-A75B-981C0961C2DE', 'x86_64: 8CFA0620-5E43-3C4D-A75B-981C0961C2DE' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox'
 current-version: 1000
@@ -270,7 +270,7 @@ exports:
     objc-classes:    [ ATDefaultDeviceAggregate ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EE6A2BD9-843C-3CC3-AEFC-6D7855DBB331', 'x86_64: EE6A2BD9-843C-3CC3-AEFC-6D7855DBB331' ]
+uuids:           [ 'x86_64: 5B539F50-93E8-3F73-9E4C-678C85D0488F', 'x86_64: 5B539F50-93E8-3F73-9E4C-678C85D0488F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AudioToolboxCore.framework/Versions/A/AudioToolboxCore'
 exports:         

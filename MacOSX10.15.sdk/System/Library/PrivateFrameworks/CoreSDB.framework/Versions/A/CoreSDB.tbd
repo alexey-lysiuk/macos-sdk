@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B3E353BA-F2C2-368C-98C1-88D76407390E', 'x86_64: B3E353BA-F2C2-368C-98C1-88D76407390E' ]
+uuids:           [ 'x86_64: F6795BAA-1B66-378D-9062-7BF121F7329B', 'x86_64: F6795BAA-1B66-378D-9062-7BF121F7329B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSDB.framework/Versions/A/CoreSDB'
 current-version: 800

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C4838DCE-48FB-3828-9FB2-097BA2848C99', 'x86_64: C4838DCE-48FB-3828-9FB2-097BA2848C99' ]
+uuids:           [ 'x86_64: B86FE9DB-71BB-3B6E-A4AE-2B0B44570A7F', 'x86_64: B86FE9DB-71BB-3B6E-A4AE-2B0B44570A7F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal'
 exports:         

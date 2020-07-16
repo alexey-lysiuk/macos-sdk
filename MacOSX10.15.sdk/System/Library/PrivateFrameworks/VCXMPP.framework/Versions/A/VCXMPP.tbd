@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EAB708DC-6342-3EC2-8467-F8FAF89FF28A' ]
+uuids:           [ 'x86_64: 573C03A1-9454-36EE-8BF8-70995E78C2AB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/VCXMPP'
 exports:         
@@ -13,7 +13,7 @@ exports:
     symbols:         [ _VCXMPPVersionNumber, _VCXMPPVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F59810BE-F420-3CB3-9D1D-9A77A3495CCE' ]
+uuids:           [ 'x86_64: 2860FBF8-4A3F-3FD4-AB3C-D8B983900E52' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/Apollo.framework/Versions/A/Apollo'
 exports:         
@@ -103,7 +103,7 @@ exports:
                        XMLStreamAuthenticator.previousDelegate, XMLStreamAuthenticator.xmlStream ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 48B5C3F7-B69E-37DE-91DB-D2C98D43018C' ]
+uuids:           [ 'x86_64: DD0C4E18-F465-3CFF-BE02-92F910E26019' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/Pear.framework/Versions/A/Pear'
 exports:         
@@ -202,7 +202,7 @@ exports:
                        __Z31PearMediaChannelSetOutboundSSRCP22OpaquePearMediaChannelj ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 84492947-E429-3A32-93BD-E698990E5D14' ]
+uuids:           [ 'x86_64: 20C14EAF-0E9D-3136-89FC-61317CB61A01' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/XMPPToolkit.framework/Versions/A/XMPPToolkit'
 exports:         
@@ -338,7 +338,7 @@ exports:
                        XTInvocationQueue.delegate ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F1D2CAF3-0A5F-397E-82C7-02FD2BB07B11' ]
+uuids:           [ 'x86_64: 955A2802-8D8A-3837-AD1B-9D6193DA62F5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/uxmi.framework/Versions/0.1/uxmi'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D28FCA52-116D-3886-8A23-263A2D8A9147', 'x86_64: D28FCA52-116D-3886-8A23-263A2D8A9147' ]
+uuids:           [ 'x86_64: 5DAF38C9-53CF-319A-A853-C2EDC46F30EF', 'x86_64: 5DAF38C9-53CF-319A-A853-C2EDC46F30EF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GraphicsServices.framework/Versions/A/GraphicsServices'
 current-version: 14

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 963431F9-40AA-3D9B-A48D-FDCAADD4ED85', 'x86_64: 963431F9-40AA-3D9B-A48D-FDCAADD4ED85' ]
+uuids:           [ 'x86_64: D4A32969-A087-3E05-924B-02FFFD14692D', 'x86_64: D4A32969-A087-3E05-924B-02FFFD14692D' ]
 platform:        zippered
 install-name:    '/usr/lib/libDHCPServer.A.dylib'
 exports:         

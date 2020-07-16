@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D0D96307-8E71-378F-8B42-D6FFA6B51975' ]
+uuids:           [ 'x86_64: DFC8FD7E-6E3E-3104-B7E0-1DCF62A91A21' ]
 platform:        macosx
 install-name:    '/usr/lib/libruby.2.6.dylib'
 current-version: 2.6.3
@@ -708,7 +708,7 @@ exports:
                        _st_values_check ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9DC3B1E-563E-353E-8453-2A21EE017811' ]
+uuids:           [ 'x86_64: C52897DA-A4F1-312A-89A2-5F7F26453B98' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/libruby.2.6.dylib'
 current-version: 2.6.3

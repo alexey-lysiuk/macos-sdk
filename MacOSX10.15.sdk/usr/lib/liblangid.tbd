@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E9595222-602B-38F0-8572-0F1872A00527', 'x86_64: E9595222-602B-38F0-8572-0F1872A00527' ]
+uuids:           [ 'x86_64: 30CFC08C-EF36-3CF5-8AEA-C1CB070306B7', 'x86_64: 30CFC08C-EF36-3CF5-8AEA-C1CB070306B7' ]
 platform:        zippered
 install-name:    '/usr/lib/liblangid.dylib'
 exports:         

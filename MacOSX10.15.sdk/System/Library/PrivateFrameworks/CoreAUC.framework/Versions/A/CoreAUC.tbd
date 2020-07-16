@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5BF7FDC2-E106-3E73-B950-2A0DDE2CA11F', 'x86_64: 5BF7FDC2-E106-3E73-B950-2A0DDE2CA11F' ]
+uuids:           [ 'x86_64: 4341271C-D270-3F9F-8464-31A20D15158D', 'x86_64: 4341271C-D270-3F9F-8464-31A20D15158D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreAUC.framework/Versions/A/CoreAUC'
 exports:         

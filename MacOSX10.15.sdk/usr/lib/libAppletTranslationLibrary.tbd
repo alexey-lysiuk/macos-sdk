@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AD119DE5-9AFB-3062-92AF-CE24C88D209D', 'x86_64: AD119DE5-9AFB-3062-92AF-CE24C88D209D' ]
+uuids:           [ 'x86_64: 15C8F3A5-7361-3379-A880-A6E233E161A6', 'x86_64: 15C8F3A5-7361-3379-A880-A6E233E161A6' ]
 platform:        zippered
 install-name:    '/usr/lib/libAppletTranslationLibrary.dylib'
 exports:         

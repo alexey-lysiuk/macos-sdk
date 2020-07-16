@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9BBCEFE3-FDF9-393B-9F8C-854AD7FC088B' ]
+uuids:           [ 'x86_64: 3C36C074-29FF-3C20-BB80-F2CF23A7E868' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SafariShared.framework/Versions/A/SafariShared'
-current-version: 609.1.20
+current-version: 609.3.5
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]
@@ -581,10 +581,10 @@ exports:
                        WBSHistory._stringsForUserTypedDomainExpansion, WBSHistoryItem._lastVisit ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 94767C98-C6CF-3569-A87B-2843A1959BEA', 'x86_64: 94767C98-C6CF-3569-A87B-2843A1959BEA' ]
+uuids:           [ 'x86_64: CB2A3817-3FFE-3F35-99D3-EFA8F728027C', 'x86_64: CB2A3817-3FFE-3F35-99D3-EFA8F728027C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SafariCore.framework/Versions/A/SafariCore'
-current-version: 609.1.20
+current-version: 609.3.5
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]
@@ -647,13 +647,14 @@ exports:
                        _WBSSafariBookmarksSyncAgentProxyConnectionWasInvalidatedNotification, 
                        _WBSSafariBookmarksSyncAgentServiceName, _WBSSafariBookmarksSyncAgentSyncResultKey, 
                        _WBSSavedPasswordStoreDidChangeNotification, _WBSSuppressCloudKitBookmarkMigrationForCyclerTestPreferenceKey, 
-                       __WBSLocalizedString, __WBSRunOnceImpl, _canonicalizedCharacterClasses, 
-                       _parseCustomCharacterClass, _parseIdentifier, _parseNamedCharacterClass, 
-                       _parsePasswordRequiredOrAllowedPropertyValue, _parsePasswordRule, 
-                       _parsePasswordRules, _parsePositiveIntegerPropertyValue, _safariAutomationApplicationBundleIdentifier, 
-                       _safariMobileApplicationBundleIdentifier, _safariProductionApplicationBundleIdentifier, 
-                       _safariTechnologyPreviewApplicationBundleIdentifier, _skipWhitespaceCharacters, 
-                       _stringFromLocalMigrationState, _stringFromRemoteMigrationState ]
+                       __WBSLocalizedString, __WBSLocalizedStringWithCurrentUserLocale, 
+                       __WBSRunOnceImpl, _canonicalizedCharacterClasses, _parseCustomCharacterClass, 
+                       _parseIdentifier, _parseNamedCharacterClass, _parsePasswordRequiredOrAllowedPropertyValue, 
+                       _parsePasswordRule, _parsePasswordRules, _parsePositiveIntegerPropertyValue, 
+                       _safariAutomationApplicationBundleIdentifier, _safariMobileApplicationBundleIdentifier, 
+                       _safariProductionApplicationBundleIdentifier, _safariTechnologyPreviewApplicationBundleIdentifier, 
+                       _skipWhitespaceCharacters, _stringFromLocalMigrationState, 
+                       _stringFromRemoteMigrationState ]
     objc-classes:    [ WBSAddressBookValueSpecifier, WBSAggresiveURLCredentialCache, 
                        WBSAllowedPasswordRule, WBSAnalyticsLogger, WBSAnalyticsSafariActivatedHomeScreenQuickActionEvent, 
                        WBSAnalyticsSafariAutoFillAuthenticationEvent, WBSAnalyticsSafariAutoFillAuthenticationPreferenceEvent, 

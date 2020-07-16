@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 02BAAFC9-985F-3481-99E2-BB798795DE9B' ]
+uuids:           [ 'x86_64: 631066D1-21BF-3ABA-BC36-5840F643551E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/JetEngine.framework/Versions/A/JetEngine'
 swift-abi-version: 7

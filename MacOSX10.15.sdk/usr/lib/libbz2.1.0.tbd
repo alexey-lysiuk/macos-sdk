@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FFCD4427-AF87-36D2-8097-8870FDC75A1B', 'x86_64: FFCD4427-AF87-36D2-8097-8870FDC75A1B' ]
+uuids:           [ 'x86_64: 14CC4988-B6D4-3879-AFC2-9A0DDC6388DE', 'x86_64: 14CC4988-B6D4-3879-AFC2-9A0DDC6388DE' ]
 platform:        zippered
 install-name:    '/usr/lib/libbz2.1.0.dylib'
 current-version: 1.0.5

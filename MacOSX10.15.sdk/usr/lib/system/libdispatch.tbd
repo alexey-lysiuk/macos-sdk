@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EB592997-B11C-3AB3-85B1-F725F3D0B412', 'x86_64: EB592997-B11C-3AB3-85B1-F725F3D0B412' ]
+uuids:           [ 'x86_64: CD9C059C-91D9-30E8-8926-5B9CD0D5D4F5', 'x86_64: CD9C059C-91D9-30E8-8926-5B9CD0D5D4F5' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libdispatch.dylib'
 current-version: 1173.100.2

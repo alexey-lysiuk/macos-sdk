@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 430E04FE-F068-3476-9CA2-72CB5F040D1F', 'x86_64: 430E04FE-F068-3476-9CA2-72CB5F040D1F' ]
+uuids:           [ 'x86_64: B6F8368F-2395-379B-B768-71C53BB1B903', 'x86_64: B6F8368F-2395-379B-B768-71C53BB1B903' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Security.framework/Versions/A/Security'
-current-version: 59306.101.1
+current-version: 59306.140.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ApplyScopeDictionaryForID, _ApplyScopeListForID, _AuthorizationCopyInfo, 
@@ -898,21 +898,22 @@ exports:
                        _SecPolicyCreateAppleiCloudSetupService, _SecPolicyCreateBasicX509, 
                        _SecPolicyCreateCodeSigning, _SecPolicyCreateConfigurationProfileSigner, 
                        _SecPolicyCreateDemoDigitalCatalogSigning, _SecPolicyCreateEAP, 
-                       _SecPolicyCreateEscrowServiceSigner, _SecPolicyCreateFactoryDeviceCertificate, 
-                       _SecPolicyCreateIPSec, _SecPolicyCreateItemImplInstance, _SecPolicyCreateLegacySSL, 
+                       _SecPolicyCreateEscrowServiceIdKeySigning, _SecPolicyCreateEscrowServiceSigner, 
+                       _SecPolicyCreateFactoryDeviceCertificate, _SecPolicyCreateIPSec, 
+                       _SecPolicyCreateItemImplInstance, _SecPolicyCreateLegacySSL, 
                        _SecPolicyCreateLockdownPairing, _SecPolicyCreateMacAppStoreReceipt, 
                        _SecPolicyCreateMacOSProfileApplicationSigning, _SecPolicyCreateMeasuredBootPolicySigning, 
                        _SecPolicyCreateMobileAsset, _SecPolicyCreateMobileAssetDevelopment, 
                        _SecPolicyCreateMobileSoftwareUpdate, _SecPolicyCreateMobileStoreSigner, 
                        _SecPolicyCreateOCSPSigner, _SecPolicyCreateOSXProvisioningProfileSigning, 
                        _SecPolicyCreateOTAPKISigner, _SecPolicyCreateOTATasking, 
-                       _SecPolicyCreatePCSEscrowServiceSigner, _SecPolicyCreatePassbookCardSigner, 
-                       _SecPolicyCreateQAConfigurationProfileSigner, _SecPolicyCreateRevocation, 
-                       _SecPolicyCreateSMIME, _SecPolicyCreateSSL, _SecPolicyCreateTestApplePPQSigning, 
-                       _SecPolicyCreateTestAppleSMPEncryption, _SecPolicyCreateTestMobileStoreSigner, 
-                       _SecPolicyCreateTestOTAPKISigner, _SecPolicyCreateURLBag, 
-                       _SecPolicyCreateWithOID, _SecPolicyCreateWithProperties, _SecPolicyCreateiAP, 
-                       _SecPolicyCreateiAPSWAuth, _SecPolicyCreateiAPSWAuthWithExpiration, 
+                       _SecPolicyCreatePCSEscrowServiceIdKeySigning, _SecPolicyCreatePCSEscrowServiceSigner, 
+                       _SecPolicyCreatePassbookCardSigner, _SecPolicyCreateQAConfigurationProfileSigner, 
+                       _SecPolicyCreateRevocation, _SecPolicyCreateSMIME, _SecPolicyCreateSSL, 
+                       _SecPolicyCreateTestApplePPQSigning, _SecPolicyCreateTestAppleSMPEncryption, 
+                       _SecPolicyCreateTestMobileStoreSigner, _SecPolicyCreateTestOTAPKISigner, 
+                       _SecPolicyCreateURLBag, _SecPolicyCreateWithOID, _SecPolicyCreateWithProperties, 
+                       _SecPolicyCreateiAP, _SecPolicyCreateiAPSWAuth, _SecPolicyCreateiAPSWAuthWithExpiration, 
                        _SecPolicyCreateiPhoneActivation, _SecPolicyCreateiPhoneApplicationSigning, 
                        _SecPolicyCreateiPhoneDeviceCertificate, _SecPolicyCreateiPhoneProfileApplicationSigning, 
                        _SecPolicyCreateiPhoneProvisioningProfileSigning, _SecPolicyCreateiPhoneVPNApplicationSigning, 
@@ -1445,11 +1446,11 @@ exports:
                        _kSecPolicyAppleDemoDigitalCatalog, _kSecPolicyAppleDeveloperIDPlusTicket, 
                        _kSecPolicyAppleEAP, _kSecPolicyAppleEscrowProxyCompatibilityServerAuth, 
                        _kSecPolicyAppleEscrowProxyServerAuth, _kSecPolicyAppleEscrowService, 
-                       _kSecPolicyAppleExternalDeveloper, _kSecPolicyAppleFMiPServerAuth, 
-                       _kSecPolicyAppleFactoryDeviceCertificate, _kSecPolicyAppleGSService, 
-                       _kSecPolicyAppleGenericApplePinned, _kSecPolicyAppleGenericAppleSSLPinned, 
-                       _kSecPolicyAppleHomeKitServerAuth, _kSecPolicyAppleIDAuthority, 
-                       _kSecPolicyAppleIDSService, _kSecPolicyAppleIDSServiceContext, 
+                       _kSecPolicyAppleEscrowServiceIdKeySigning, _kSecPolicyAppleExternalDeveloper, 
+                       _kSecPolicyAppleFMiPServerAuth, _kSecPolicyAppleFactoryDeviceCertificate, 
+                       _kSecPolicyAppleGSService, _kSecPolicyAppleGenericApplePinned, 
+                       _kSecPolicyAppleGenericAppleSSLPinned, _kSecPolicyAppleHomeKitServerAuth, 
+                       _kSecPolicyAppleIDAuthority, _kSecPolicyAppleIDSService, _kSecPolicyAppleIDSServiceContext, 
                        _kSecPolicyAppleIDValidation, _kSecPolicyAppleIDValidationRecordSigning, 
                        _kSecPolicyAppleIDValidationRecordSigningPolicy, _kSecPolicyAppleIPsec, 
                        _kSecPolicyAppleKeyTransparency, _kSecPolicyAppleLegacyPushService, 
@@ -1460,9 +1461,9 @@ exports:
                        _kSecPolicyAppleMobileSoftwareUpdate, _kSecPolicyAppleMobileStore, 
                        _kSecPolicyAppleOCSPSigner, _kSecPolicyAppleOSXProvisioningProfileSigning, 
                        _kSecPolicyAppleOTAPKISigner, _kSecPolicyAppleOTATasking, 
-                       _kSecPolicyApplePCSEscrowService, _kSecPolicyApplePKINITClient, 
-                       _kSecPolicyApplePKINITServer, _kSecPolicyApplePPQService, 
-                       _kSecPolicyApplePPQSigning, _kSecPolicyApplePackageSigning, 
+                       _kSecPolicyApplePCSEscrowService, _kSecPolicyApplePCSEscrowServiceIdKeySigning, 
+                       _kSecPolicyApplePKINITClient, _kSecPolicyApplePKINITServer, 
+                       _kSecPolicyApplePPQService, _kSecPolicyApplePPQSigning, _kSecPolicyApplePackageSigning, 
                        _kSecPolicyApplePassbookSigning, _kSecPolicyApplePayIssuerEncryption, 
                        _kSecPolicyAppleProfileSigner, _kSecPolicyApplePushService, 
                        _kSecPolicyAppleQAProfileSigner, _kSecPolicyAppleRevocation, 

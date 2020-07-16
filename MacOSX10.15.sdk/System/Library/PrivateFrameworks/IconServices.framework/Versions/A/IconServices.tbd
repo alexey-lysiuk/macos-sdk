@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2431AD46-37B8-367F-A1DC-119C781B1453', 'x86_64: 2431AD46-37B8-367F-A1DC-119C781B1453' ]
+uuids:           [ 'x86_64: 0DADB4C3-46FF-3FDB-8A86-51E2067FC7F4', 'x86_64: 0DADB4C3-46FF-3FDB-8A86-51E2067FC7F4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices'
 current-version: 438.3

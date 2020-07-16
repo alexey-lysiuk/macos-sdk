@@ -134,6 +134,41 @@ HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierIrregularHeartR
 HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierAudioExposureEvent API_AVAILABLE(ios(13.0), watchos(6.0));         // HKCategoryValueAudioExposureEvent
 HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierToothbrushingEvent API_AVAILABLE(ios(13.0), watchos(6.0));         // HKCategoryValue
 
+// Symptoms
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierAbdominalCramps API_AVAILABLE(ios(13.6));                    // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierAcne API_AVAILABLE(ios(13.6));                               // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierAppetiteChanges API_AVAILABLE(ios(13.6));                    // HKCategoryValueAppetiteChanges
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierGeneralizedBodyAche API_AVAILABLE(ios(13.6));                // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierBloating API_AVAILABLE(ios(13.6));                           // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierBreastPain API_AVAILABLE(ios(13.6));                         // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierChestTightnessOrPain API_AVAILABLE(ios(13.6));               // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierChills API_AVAILABLE(ios(13.6));                             // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierConstipation API_AVAILABLE(ios(13.6));                       // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierCoughing API_AVAILABLE(ios(13.6));                           // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierDiarrhea API_AVAILABLE(ios(13.6));                           // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierDizziness API_AVAILABLE(ios(13.6));                          // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierFainting API_AVAILABLE(ios(13.6));                           // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierFatigue API_AVAILABLE(ios(13.6));                            // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierFever API_AVAILABLE(ios(13.6));                              // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierHeadache API_AVAILABLE(ios(13.6));                           // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierHeartburn API_AVAILABLE(ios(13.6));                          // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierHotFlashes API_AVAILABLE(ios(13.6));                         // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierLowerBackPain API_AVAILABLE(ios(13.6));                      // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierLossOfSmell API_AVAILABLE(ios(13.6));                        // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierLossOfTaste API_AVAILABLE(ios(13.6));                        // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierMoodChanges API_AVAILABLE(ios(13.6));                        // HKCategoryValuePresence
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierNausea API_AVAILABLE(ios(13.6));                             // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierPelvicPain API_AVAILABLE(ios(13.6));                         // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierRapidPoundingOrFlutteringHeartbeat API_AVAILABLE(ios(13.6)); // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierRunnyNose API_AVAILABLE(ios(13.6));                          // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierShortnessOfBreath API_AVAILABLE(ios(13.6));                  // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierSinusCongestion API_AVAILABLE(ios(13.6));                    // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierSkippedHeartbeat API_AVAILABLE(ios(13.6));                   // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierSleepChanges API_AVAILABLE(ios(13.6));                       // HKCategoryValuePresence
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierSoreThroat API_AVAILABLE(ios(13.6));                         // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierVomiting API_AVAILABLE(ios(13.6));                           // HKCategoryValueSeverity
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierWheezing API_AVAILABLE(ios(13.6));                           // HKCategoryValueSeverity
+
 /*--------------------------------------*/
 /*   HKCharacteristicType Identifiers   */
 /*--------------------------------------*/

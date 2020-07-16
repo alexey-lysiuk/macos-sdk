@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E3730538-9C9D-3D13-AE94-B8217329B9ED' ]
+uuids:           [ 'x86_64: 63F3BEB9-64D2-398C-9D68-BE1A44EF3606' ]
 platform:        macosx
 install-name:    '/usr/lib/libdz.dylib'
 current-version: 228.100.5

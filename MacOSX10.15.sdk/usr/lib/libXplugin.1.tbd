@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DF8B9A8E-EB55-34EB-A3C3-B27F4756B652' ]
+uuids:           [ 'x86_64: 5C5A6128-4A9E-3FCB-8485-1AA32666F819' ]
 platform:        macosx
 install-name:    '/usr/lib/libXplugin.1.dylib'
 exports:         

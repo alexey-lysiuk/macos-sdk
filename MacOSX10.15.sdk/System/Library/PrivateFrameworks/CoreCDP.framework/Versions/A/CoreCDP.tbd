@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 116AEC58-A1E2-3087-AB5E-8D7C96096792', 'x86_64: 116AEC58-A1E2-3087-AB5E-8D7C96096792' ]
+uuids:           [ 'x86_64: 02FAD776-F1F8-3581-AA78-30A0203BA3B5', 'x86_64: 02FAD776-F1F8-3581-AA78-30A0203BA3B5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreCDP.framework/Versions/A/CoreCDP'
 exports:         

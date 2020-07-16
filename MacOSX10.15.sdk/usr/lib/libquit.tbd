@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29EEF02C-841D-3FEB-B599-D3C08AAF4310', 'x86_64: 29EEF02C-841D-3FEB-B599-D3C08AAF4310' ]
+uuids:           [ 'x86_64: FB251B0B-CC47-3F99-81F6-95AE46E3D1C8', 'x86_64: FB251B0B-CC47-3F99-81F6-95AE46E3D1C8' ]
 platform:        zippered
 install-name:    '/usr/lib/libquit.dylib'
 exports:         

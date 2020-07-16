@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 078F29AB-26BA-3493-BCAA-E1E75A187521', 'x86_64: 078F29AB-26BA-3493-BCAA-E1E75A187521' ]
+uuids:           [ 'x86_64: 7C7EFC79-BD24-33EF-B073-06AED234593E', 'x86_64: 7C7EFC79-BD24-33EF-B073-06AED234593E' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libremovefile.dylib'
 current-version: 48

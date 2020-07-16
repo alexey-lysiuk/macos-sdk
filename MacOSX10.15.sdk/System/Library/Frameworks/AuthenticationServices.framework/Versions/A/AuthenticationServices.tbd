@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 669AE9B7-6595-31A3-8A3F-BBE75A6B27DF' ]
+uuids:           [ 'x86_64: 13A6D14E-F00B-341D-8975-119C3211D4E7' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/AuthenticationServices'
-current-version: 609.1.20
+current-version: 609.3.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ASAuthorizationAppleIDProviderCredentialRevokedNotification, 

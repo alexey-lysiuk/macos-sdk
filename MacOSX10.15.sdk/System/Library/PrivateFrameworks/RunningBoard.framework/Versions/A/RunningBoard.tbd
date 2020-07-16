@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4491A7BB-11B4-3EB4-AC8B-62B844D4F7AF' ]
+uuids:           [ 'x86_64: 70DF77BA-9719-3E9F-9A1A-FEA1E57B7B2C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/RunningBoard.framework/Versions/A/RunningBoard'
-current-version: 223.100.31
+current-version: 223.140.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromRBSJetsamBand, _RBAttributePrimitiveEntitlement, 

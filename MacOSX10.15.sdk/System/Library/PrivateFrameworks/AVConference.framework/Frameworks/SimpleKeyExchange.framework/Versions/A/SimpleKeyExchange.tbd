@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2710CE50-2346-39A7-9D0D-3FBEF3D037EA', 'x86_64: 2710CE50-2346-39A7-9D0D-3FBEF3D037EA' ]
+uuids:           [ 'x86_64: 948EFD8F-5293-3137-8E4F-37A3C38E44AC', 'x86_64: 948EFD8F-5293-3137-8E4F-37A3C38E44AC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/SimpleKeyExchange.framework/Versions/A/SimpleKeyExchange'
 exports:         

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: E097B676-FF88-3EF4-92FD-6A5DBC3A4384', 'x86_64: E097B676-FF88-3EF4-92FD-6A5DBC3A4384', 
-                   'x86_64h: BBC375B7-AF20-3D2C-8826-78D3BDC8A004', 'x86_64h: BBC375B7-AF20-3D2C-8826-78D3BDC8A004' ]
+uuids:           [ 'x86_64: AD4EE0C4-913A-3AA7-941D-B39DCAF29305', 'x86_64: AD4EE0C4-913A-3AA7-941D-B39DCAF29305', 
+                   'x86_64h: 35A2BD9F-4E33-30DE-A994-4AB585AC3AFE', 'x86_64h: 35A2BD9F-4E33-30DE-A994-4AB585AC3AFE' ]
 platform:        zippered
 install-name:    '/usr/lib/libsqlite3.dylib'
-current-version: 308.4
+current-version: 308.5
 compatibility-version: 9
 exports:         
   - archs:           [ x86_64, x86_64h ]

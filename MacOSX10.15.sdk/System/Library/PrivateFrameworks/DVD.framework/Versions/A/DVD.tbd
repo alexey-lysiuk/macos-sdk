@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D4D2EBCF-0C90-3C13-963C-47C6B6A50D8C' ]
+uuids:           [ 'x86_64: 43E4DCE7-2DA0-3F9B-8C4E-78D1DFDB6E53' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DVD.framework/Versions/A/DVD'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 86910240-E081-365D-87E2-7ED06FE7994D', 'x86_64: 86910240-E081-365D-87E2-7ED06FE7994D' ]
+uuids:           [ 'x86_64: 23F43F5B-7284-38D4-99F3-2FA53C43D5D6', 'x86_64: 23F43F5B-7284-38D4-99F3-2FA53C43D5D6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SiriTTS.framework/Versions/A/SiriTTS'
 exports:         

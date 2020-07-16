@@ -368,6 +368,9 @@ typedef integer_t       cpu_threadtype_t;
 #if !defined(RC_HIDE_XNU_ICELAKE)
 #define CPUFAMILY_INTEL_ICELAKE         0x38435547
 #endif /* not RC_HIDE_XNU_ICELAKE */
+#if !defined(RC_HIDE_XNU_COMETLAKE)
+#define CPUFAMILY_INTEL_COMETLAKE       0x1cf8a03e
+#endif /* not RC_HIDE_XNU_COMETLAKE */
 #define CPUFAMILY_ARM_9                 0xe73283ae
 #define CPUFAMILY_ARM_11                0x8ff620d8
 #define CPUFAMILY_ARM_XSCALE            0x53b005f5

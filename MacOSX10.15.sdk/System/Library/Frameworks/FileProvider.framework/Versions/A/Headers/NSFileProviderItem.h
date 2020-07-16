@@ -2,7 +2,7 @@
 //  NSFileProviderItem.h
 //  FileProvider
 //
-//  Copyright (c) 2016-2017 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
 //
 
 #import <FileProvider/NSFileProviderDefines.h>
@@ -16,7 +16,7 @@ typedef NSString *NSFileProviderItemIdentifier NS_EXTENSIBLE_STRING_ENUM;
  The root of the hierarchical enumeration, i.e the container enumerated when the
  user starts browsing your file provider.
  */
-FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderRootContainerItemIdentifier NS_SWIFT_NAME(NSFileProviderItemIdentifier.rootContainer) FILEPROVIDER_API_AVAILABILITY_V2;
+FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderRootContainerItemIdentifier NS_SWIFT_NAME(NSFileProviderItemIdentifier.rootContainer) FILEPROVIDER_API_AVAILABILITY_V2_V3;
 
 /**
  The item identifier of the working set, a synthetic container used by the
@@ -45,7 +45,7 @@ FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderRootContainer
  is listed in the materialized containers, see the documentation on
  -materializedItemsDidChangeWithCompletionHandler:.
  */
-FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderWorkingSetContainerItemIdentifier NS_SWIFT_NAME(NSFileProviderItemIdentifier.workingSet) FILEPROVIDER_API_AVAILABILITY_V2;
+FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderWorkingSetContainerItemIdentifier NS_SWIFT_NAME(NSFileProviderItemIdentifier.workingSet) FILEPROVIDER_API_AVAILABILITY_V2_V3;
 
 /**
  The container containing all the trashed items.
@@ -64,7 +64,7 @@ FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderTrashContaine
  */
 typedef NSData *NSFileProviderVersionData NS_TYPED_EXTENSIBLE_ENUM;
 
-FILEPROVIDER_API_AVAILABILITY_FPFS_CORE
+FILEPROVIDER_API_AVAILABILITY_V3
 @interface NSFileProviderItemVersion : NSObject
 
 /**
@@ -101,7 +101,7 @@ FILEPROVIDER_API_AVAILABILITY_FPFS_CORE
  A special value for favorite ranks, to use when no rank was set when the item
  was favorited.
  */
-FOUNDATION_EXPORT unsigned long long const NSFileProviderFavoriteRankUnranked FILEPROVIDER_API_AVAILABILITY_V2;
+FOUNDATION_EXPORT unsigned long long const NSFileProviderFavoriteRankUnranked FILEPROVIDER_API_AVAILABILITY_V2_V3;
 
 typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
     /**
@@ -201,7 +201,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
  The flags of the item. Flags define on-disk properties of the item but are
  also taken into account by the UI to determine item actions.
  */
-@property (nonatomic, readonly, strong, nullable) id <NSFileProviderItemFlags> flags FILEPROVIDER_API_AVAILABILITY_FPFS_CORE;
+@property (nonatomic, readonly, strong, nullable) id <NSFileProviderItemFlags> flags FILEPROVIDER_API_AVAILABILITY_V3;
 
 @property (nonatomic, readonly, copy, nullable) NSNumber *documentSize;
 @property (nonatomic, readonly, copy, nullable) NSNumber *childItemCount;
@@ -241,7 +241,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
  will be communicated under NSFileProviderItemFieldContents.  Remote changes to
  the resource fork should bump itemVersion.contentVersion.
  */
-@property (nonatomic, readonly, strong, nullable) NSDictionary <NSString *, NSData *> *extendedAttributes FILEPROVIDER_API_AVAILABILITY_FPFS_CORE;
+@property (nonatomic, readonly, strong, nullable) NSDictionary <NSString *, NSData *> *extendedAttributes FILEPROVIDER_API_AVAILABILITY_V3;
 
 
 /*
@@ -301,7 +301,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
  trashed. As such, when the user decides to restore the item from trash, `parentItemIdentifier` will be used for
  the default restore location.
  */
-@property (nonatomic, readonly, getter=isTrashed) BOOL trashed FILEPROVIDER_API_DEPRECATED_V3("Set item.parentItemIdentifier to NSFileProviderTrashContainerItemIdentifier instead");
+@property (nonatomic, readonly, getter=isTrashed) BOOL trashed FILEPROVIDER_API_AVAILABILITY_V2;
 
 /*
  The download and upload properties below determine which of the cloud badges
@@ -356,12 +356,12 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
 
  This property is deprecated in favor of the "itemVersion" property.
  */
-@property (nonatomic, strong, readonly, nullable) NSData *versionIdentifier API_DEPRECATED("itemVersion", ios(11.0, 13.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos);
+@property (nonatomic, strong, readonly, nullable) NSData *versionIdentifier API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos);
 
 /**
  The version is used to track which version of an item has been modified when informing a provider about changes. It is also used to invalidate the thumbnail cache.
  */
-@property (nonatomic, strong, readonly, nullable) NSFileProviderItemVersion *itemVersion FILEPROVIDER_API_AVAILABILITY_FPFS_CORE;
+@property (nonatomic, strong, readonly, nullable) NSFileProviderItemVersion *itemVersion FILEPROVIDER_API_AVAILABILITY_V3;
 
 /**
  The target of a symlink.
@@ -370,7 +370,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
  this field should contain the target of the symlink.
  */
 @property (nonatomic, readonly, copy, nullable) NSString *symlinkTargetPath
-    FILEPROVIDER_API_AVAILABILITY_FPFS_CORE;
+    FILEPROVIDER_API_AVAILABILITY_V3;
 
 /**
  Use this dictionary to add state information to the item. It is accessible to

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 84E508F7-DF24-3EED-91A9-286A86446D64', 'x86_64: 84E508F7-DF24-3EED-91A9-286A86446D64' ]
+uuids:           [ 'x86_64: 8AA61DAF-533A-322F-B2A1-4843BDF6EA5A', 'x86_64: 8AA61DAF-533A-322F-B2A1-4843BDF6EA5A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AssetsLibraryServices.framework/Versions/A/AssetsLibraryServices'
-current-version: 141.19.150
+current-version: 161.0.120
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ALGetLibrarySizes, _ALGetPhotosAndVideosCount, _ALPhotosAndVideosCountNotificationName, 
@@ -45,18 +45,17 @@ exports:
                        _PLDiskSpaceDidBecomeLowDarwinNotification, _PLDiskSpaceDidBecomeLowNotification, 
                        _PLDoesIndicatorFileExistAtPath, _PLDonateMomentShareURL, 
                        _PLEnableCoreDataMultithreadedAsserts, _PLErrorFromXPCDictionary, 
-                       _PLFileAttributesNamespace, _PLFileSystemPersistenceAddedDateKey, 
-                       _PLFileSystemPersistenceAdjustmentModelVersionKey, _PLFileSystemPersistenceAvalancheTypeKey, 
-                       _PLFileSystemPersistenceAvalancheUUIDKey, _PLFileSystemPersistenceCloudAssetPlaceholderKindKey, 
-                       _PLFileSystemPersistenceCloudAssetUUIDKey, _PLFileSystemPersistenceCloudJobRecoveryCountKey, 
-                       _PLFileSystemPersistenceCreatorBundleIDKey, _PLFileSystemPersistenceCustomCreationDateKey, 
-                       _PLFileSystemPersistenceCustomLocationKey, _PLFileSystemPersistenceDBRebuildInProgressKey, 
-                       _PLFileSystemPersistenceDBRebuildUUIDKey, _PLFileSystemPersistenceDeferredProcessingKey, 
-                       _PLFileSystemPersistenceDemoContentKey, _PLFileSystemPersistenceDescriptionKey, 
-                       _PLFileSystemPersistenceExtraDurationDataKey, _PLFileSystemPersistenceFavoriteKey, 
-                       _PLFileSystemPersistenceGroupingStateKey, _PLFileSystemPersistenceGroupingUUIDKey, 
-                       _PLFileSystemPersistenceHiddenKey, _PLFileSystemPersistenceImportedByKey, 
-                       _PLFileSystemPersistenceInProgressCameraAdjustmentsDataKey, 
+                       _PLFileSystemPersistenceAddedDateKey, _PLFileSystemPersistenceAdjustmentModelVersionKey, 
+                       _PLFileSystemPersistenceAvalancheTypeKey, _PLFileSystemPersistenceAvalancheUUIDKey, 
+                       _PLFileSystemPersistenceCloudAssetPlaceholderKindKey, _PLFileSystemPersistenceCloudAssetUUIDKey, 
+                       _PLFileSystemPersistenceCloudJobRecoveryCountKey, _PLFileSystemPersistenceCreatorBundleIDKey, 
+                       _PLFileSystemPersistenceCustomCreationDateKey, _PLFileSystemPersistenceCustomLocationKey, 
+                       _PLFileSystemPersistenceDBRebuildInProgressKey, _PLFileSystemPersistenceDBRebuildUUIDKey, 
+                       _PLFileSystemPersistenceDeferredProcessingKey, _PLFileSystemPersistenceDemoContentKey, 
+                       _PLFileSystemPersistenceDescriptionKey, _PLFileSystemPersistenceExtraDurationDataKey, 
+                       _PLFileSystemPersistenceFavoriteKey, _PLFileSystemPersistenceGroupingStateKey, 
+                       _PLFileSystemPersistenceGroupingUUIDKey, _PLFileSystemPersistenceHiddenKey, 
+                       _PLFileSystemPersistenceImportedByKey, _PLFileSystemPersistenceInProgressCameraAdjustmentsDataKey, 
                        _PLFileSystemPersistenceInProgressDestinationPathKey, _PLFileSystemPersistenceInProgressEffectFilterNameKey, 
                        _PLFileSystemPersistenceInProgressFilteredPreviewImagePathKey, 
                        _PLFileSystemPersistenceInProgressPublishableKey, _PLFileSystemPersistenceMediaGroupUUIDKey, 
@@ -85,12 +84,13 @@ exports:
                        _PLIsCurrentDeviceCuratedLibraryTabEnabled, _PLIsDeviceClassiPhone, 
                        _PLIsEDUMode, _PLIsErrorEqualToCode, _PLIsForegroundApplication, 
                        _PLIsInternalDevice, _PLIsInternalEmbeddedDevice, _PLIsInternalTool, 
-                       _PLIsMobileSlideShow, _PLIsPTPD, _PLIsProcessWithAppleBundleIdentifier, 
+                       _PLIsLowDiskSpaceError, _PLIsMobileSlideShow, _PLIsPTPD, _PLIsProcessWithAppleBundleIdentifier, 
                        _PLIsReallyAssetsd, _PLIsSpringboard, _PLIsSuppressingLogsForUnitTesting, 
                        _PLIsSystemLibraryAccessProhibited, _PLIsTallScreen, _PLIsValidStateForMinimumStateRequirement, 
                        _PLIsXcTest, _PLJobLogDictionary, _PLKeepDaemonAliveServiceName, 
-                       _PLLegacyMigrationStateKey, _PLLibraryServicesOperationNameActivateTCC, 
-                       _PLLibraryServicesOperationNameCoreAnalyticsSetup, _PLLibraryServicesOperationNameCrashRecoveryImportFromFileSystem, 
+                       _PLLegacyMigrationStateKey, _PLLegacyOriginalsRelocatedDirName, 
+                       _PLLibraryServicesOperationNameActivateTCC, _PLLibraryServicesOperationNameCoreAnalyticsSetup, 
+                       _PLLibraryServicesOperationNameCrashRecoveryImportFromFileSystem, 
                        _PLLibraryServicesOperationNameCrashRecoveryOps, _PLLibraryServicesOperationNameCrashRecoveryRebuildCloudFeed, 
                        _PLLibraryServicesOperationNameCrashRecoveryRebuildMoments, 
                        _PLLibraryServicesOperationNameCrashRecoveryRecalculateAlbumCounts, 
@@ -130,7 +130,8 @@ exports:
                        _PLMillisecondDateFormatter, _PLNormalizedCGRectToInt64, _PLOriginalsDirectoryName, 
                        _PLPIDForProcessNamed, _PLPhotoBakedFormatInfoForFormat, _PLPhotoBakedFormatIsDynamicallySized, 
                        _PLPhotoLibraryFrameworkBundle, _PLPhotoLibraryServicesFrameworkBundle, 
-                       _PLPhotoStreamDataDirectoryName, _PLPhotosErrorDomain, _PLPhotosErrorKeyNewURLSandboxExtension, 
+                       _PLPhotoStreamDataDirectoryName, _PLPhotosErrorCodeFromUnderlyingError, 
+                       _PLPhotosErrorDomain, _PLPhotosErrorKeyNewURLSandboxExtension, 
                        _PLPhotosErrorKeyValidationFailureReasons, _PLPhysicalScreenScale, 
                        _PLPhysicalScreenSize, _PLPlatformAnalysisSupported, _PLPlatformCloudFeedSupported, 
                        _PLPlatformCloudPhotosLibrarySupported, _PLPlatformCloudSchedulerSupported, 
@@ -181,6 +182,7 @@ exports:
                        _PLThumbnailManagerVersionKey, _PLThumbnailTableExtension, 
                        _PLURLForResourceProperties, _PLURLFromXPCDictionary, _PLUUIDBytesFromString, 
                        _PLUUIDDataFromString, _PLUnarchiveUUIDStringsSetFromData, 
+                       _PLUnderlyingErrorCodeForDomain, _PLUnderlyingErrorHasOSDomain, 
                        _PLUnderlyingPOSIXError, _PLUniformTypeIdentifierIsRenderableImage, 
                        _PLVideoMetadataFileExtension, _PLVideoMetadataFileSuffix, 
                        _PLWatchPlatformLibraryServicesOperationNameMigrateOrRebuild, 

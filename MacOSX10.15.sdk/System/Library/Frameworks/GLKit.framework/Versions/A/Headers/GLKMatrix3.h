@@ -111,9 +111,9 @@ GLK_INLINE GLKMatrix3 GLKMatrix3Make(float m00, float m01, float m02,
                                             float m10, float m11, float m12,
                                             float m20, float m21, float m22)
 {
-    GLKMatrix3 m = { m00, m01, m02,
-                     m10, m11, m12,
-                     m20, m21, m22 };
+    GLKMatrix3 m = {{ m00, m01, m02,
+                      m10, m11, m12,
+                      m20, m21, m22 }};
     return m;
 }
 
@@ -121,25 +121,25 @@ GLK_INLINE GLKMatrix3 GLKMatrix3MakeAndTranspose(float m00, float m01, float m02
                                                         float m10, float m11, float m12,
                                                         float m20, float m21, float m22)
 {
-    GLKMatrix3 m = { m00, m10, m20,
-                     m01, m11, m21,
-                     m02, m12, m22 };
+    GLKMatrix3 m = {{ m00, m10, m20,
+                      m01, m11, m21,
+                      m02, m12, m22 }};
     return m;
 }
 
 GLK_INLINE GLKMatrix3 GLKMatrix3MakeWithArray(float values[9])
 {
-    GLKMatrix3 m = { values[0], values[1], values[2],
-                     values[3], values[4], values[5],
-                     values[6], values[7], values[8] };
+    GLKMatrix3 m = {{ values[0], values[1], values[2],
+                      values[3], values[4], values[5],
+                      values[6], values[7], values[8] }};
     return m;
 }
 
 GLK_INLINE GLKMatrix3 GLKMatrix3MakeWithArrayAndTranspose(float values[9])
 {
-    GLKMatrix3 m = { values[0], values[3], values[6],
-                     values[1], values[4], values[7],
-                     values[2], values[5], values[8] };
+    GLKMatrix3 m = {{ values[0], values[3], values[6],
+                      values[1], values[4], values[7],
+                      values[2], values[5], values[8] }};
     return m;
 }
 
@@ -147,9 +147,9 @@ GLK_INLINE GLKMatrix3 GLKMatrix3MakeWithRows(GLKVector3 row0,
                                                     GLKVector3 row1, 
                                                     GLKVector3 row2)
 {
-    GLKMatrix3 m = { row0.v[0], row1.v[0], row2.v[0],
-                     row0.v[1], row1.v[1], row2.v[1],
-                     row0.v[2], row1.v[2], row2.v[2] };
+    GLKMatrix3 m = {{ row0.v[0], row1.v[0], row2.v[0],
+                      row0.v[1], row1.v[1], row2.v[1],
+                      row0.v[2], row1.v[2], row2.v[2] }};
     return m;
 }
 
@@ -157,9 +157,9 @@ GLK_INLINE GLKMatrix3 GLKMatrix3MakeWithColumns(GLKVector3 column0,
                                                        GLKVector3 column1, 
                                                        GLKVector3 column2)
 {
-    GLKMatrix3 m = { column0.v[0], column0.v[1], column0.v[2],
-                     column1.v[0], column1.v[1], column1.v[2],
-                     column2.v[0], column2.v[1], column2.v[2] };
+    GLKMatrix3 m = {{ column0.v[0], column0.v[1], column0.v[2],
+                      column1.v[0], column1.v[1], column1.v[2],
+                      column2.v[0], column2.v[1], column2.v[2] }};
     return m;
 }
 
@@ -177,17 +177,17 @@ GLK_INLINE GLKMatrix3 GLKMatrix3MakeWithQuaternion(GLKQuaternion quaternion)
     float _2z = z + z;
     float _2w = w + w;
     
-    GLKMatrix3 m = { 1.0f - _2y * y - _2z * z,
-                    _2x * y + _2w * z,
-                    _2x * z - _2w * y,
-
-                    _2x * y - _2w * z,
-                    1.0f - _2x * x - _2z * z,
-                    _2y * z + _2w * x,
-
-                    _2x * z + _2w * y,
-                    _2y * z - _2w * x,
-                    1.0f - _2x * x - _2y * y };
+    GLKMatrix3 m = {{ 1.0f - _2y * y - _2z * z,
+                     _2x * y + _2w * z,
+                     _2x * z - _2w * y,
+ 
+                     _2x * y - _2w * z,
+                     1.0f - _2x * x - _2z * z,
+                     _2y * z + _2w * x,
+ 
+                     _2x * z + _2w * y,
+                     _2y * z - _2w * x,
+                     1.0f - _2x * x - _2y * y }};
     
     return m;
 }
@@ -208,17 +208,17 @@ GLK_INLINE GLKMatrix3 GLKMatrix3MakeRotation(float radians, float x, float y, fl
     float cosp = 1.0f - cos;
     float sin = sinf(radians);
     
-    GLKMatrix3 m = { cos + cosp * v.v[0] * v.v[0],
-                     cosp * v.v[0] * v.v[1] + v.v[2] * sin,
-                     cosp * v.v[0] * v.v[2] - v.v[1] * sin,
-
-                     cosp * v.v[0] * v.v[1] - v.v[2] * sin,
-                     cos + cosp * v.v[1] * v.v[1],
-                     cosp * v.v[1] * v.v[2] + v.v[0] * sin,
-
-                     cosp * v.v[0] * v.v[2] + v.v[1] * sin,
-                     cosp * v.v[1] * v.v[2] - v.v[0] * sin,
-                     cos + cosp * v.v[2] * v.v[2] };
+    GLKMatrix3 m = {{ cos + cosp * v.v[0] * v.v[0],
+                      cosp * v.v[0] * v.v[1] + v.v[2] * sin,
+                      cosp * v.v[0] * v.v[2] - v.v[1] * sin,
+ 
+                      cosp * v.v[0] * v.v[1] - v.v[2] * sin,
+                      cos + cosp * v.v[1] * v.v[1],
+                      cosp * v.v[1] * v.v[2] + v.v[0] * sin,
+ 
+                      cosp * v.v[0] * v.v[2] + v.v[1] * sin,
+                      cosp * v.v[1] * v.v[2] - v.v[0] * sin,
+                      cos + cosp * v.v[2] * v.v[2] }};
     
     return m;
 }
@@ -228,9 +228,9 @@ GLK_INLINE GLKMatrix3 GLKMatrix3MakeXRotation(float radians)
     float cos = cosf(radians);
     float sin = sinf(radians);
     
-    GLKMatrix3 m = { 1.0f, 0.0f, 0.0f,
+    GLKMatrix3 m = {{ 1.0f, 0.0f, 0.0f,
                      0.0f, cos, sin,
-                     0.0f, -sin, cos };
+                     0.0f, -sin, cos }};
     
     return m;
 }
@@ -240,9 +240,9 @@ GLK_INLINE GLKMatrix3 GLKMatrix3MakeYRotation(float radians)
     float cos = cosf(radians);
     float sin = sinf(radians);
     
-    GLKMatrix3 m = { cos, 0.0f, -sin,
-                     0.0f, 1.0f, 0.0f,
-                     sin, 0.0f, cos };
+    GLKMatrix3 m = {{ cos, 0.0f, -sin,
+                      0.0f, 1.0f, 0.0f,
+                      sin, 0.0f, cos }};
     
     return m;
 }
@@ -252,29 +252,29 @@ GLK_INLINE GLKMatrix3 GLKMatrix3MakeZRotation(float radians)
     float cos = cosf(radians);
     float sin = sinf(radians);
     
-    GLKMatrix3 m = { cos, sin, 0.0f,
-                     -sin, cos, 0.0f,
-                     0.0f, 0.0f, 1.0f };
+    GLKMatrix3 m = {{ cos, sin, 0.0f,
+                      -sin, cos, 0.0f,
+                      0.0f, 0.0f, 1.0f }};
     
     return m;
 }
 
 GLK_INLINE GLKMatrix2 GLKMatrix3GetMatrix2(GLKMatrix3 matrix)
 {
-    GLKMatrix2 m = { matrix.m[0], matrix.m[1],
-                     matrix.m[3], matrix.m[4] };
+    GLKMatrix2 m = {{ matrix.m[0], matrix.m[1],
+                      matrix.m[3], matrix.m[4] }};
     return m;
 }
 
 GLK_INLINE GLKVector3 GLKMatrix3GetRow(GLKMatrix3 matrix, int row)
 {
-    GLKVector3 v = { matrix.m[row], matrix.m[3 + row], matrix.m[6 + row] };
+    GLKVector3 v = {{ matrix.m[row], matrix.m[3 + row], matrix.m[6 + row] }};
     return v;
 }
 
 GLK_INLINE GLKVector3 GLKMatrix3GetColumn(GLKMatrix3 matrix, int column)
 {
-    GLKVector3 v = { matrix.m[column * 3 + 0], matrix.m[column * 3 + 1], matrix.m[column * 3 + 2] };
+    GLKVector3 v = {{ matrix.m[column * 3 + 0], matrix.m[column * 3 + 1], matrix.m[column * 3 + 2] }};
     return v;
 }
 
@@ -298,9 +298,9 @@ GLK_INLINE GLKMatrix3 GLKMatrix3SetColumn(GLKMatrix3 matrix, int column, GLKVect
     
 GLK_INLINE GLKMatrix3 GLKMatrix3Transpose(GLKMatrix3 matrix)
 {
-    GLKMatrix3 m = { matrix.m[0], matrix.m[3], matrix.m[6],
-                     matrix.m[1], matrix.m[4], matrix.m[7],
-                     matrix.m[2], matrix.m[5], matrix.m[8] };
+    GLKMatrix3 m = {{ matrix.m[0], matrix.m[3], matrix.m[6],
+                      matrix.m[1], matrix.m[4], matrix.m[7],
+                      matrix.m[2], matrix.m[5], matrix.m[8] }};
     return m;
 }
  
@@ -417,25 +417,25 @@ GLK_INLINE GLKMatrix3 GLKMatrix3Subtract(GLKMatrix3 matrixLeft, GLKMatrix3 matri
     
 GLK_INLINE GLKMatrix3 GLKMatrix3Scale(GLKMatrix3 matrix, float sx, float sy, float sz)
 {
-    GLKMatrix3 m = { matrix.m[0] * sx, matrix.m[1] * sx, matrix.m[2] * sx,
-                     matrix.m[3] * sy, matrix.m[4] * sy, matrix.m[5] * sy,
-                     matrix.m[6] * sz, matrix.m[7] * sz, matrix.m[8] * sz };
+    GLKMatrix3 m = {{ matrix.m[0] * sx, matrix.m[1] * sx, matrix.m[2] * sx,
+                      matrix.m[3] * sy, matrix.m[4] * sy, matrix.m[5] * sy,
+                      matrix.m[6] * sz, matrix.m[7] * sz, matrix.m[8] * sz }};
     return m;
 }
 
 GLK_INLINE GLKMatrix3 GLKMatrix3ScaleWithVector3(GLKMatrix3 matrix, GLKVector3 scaleVector)
 {
-    GLKMatrix3 m = { matrix.m[0] * scaleVector.v[0], matrix.m[1] * scaleVector.v[0], matrix.m[2] * scaleVector.v[0],
-                     matrix.m[3] * scaleVector.v[1], matrix.m[4] * scaleVector.v[1], matrix.m[5] * scaleVector.v[1],
-                     matrix.m[6] * scaleVector.v[2], matrix.m[7] * scaleVector.v[2], matrix.m[8] * scaleVector.v[2] };
+    GLKMatrix3 m = {{ matrix.m[0] * scaleVector.v[0], matrix.m[1] * scaleVector.v[0], matrix.m[2] * scaleVector.v[0],
+                      matrix.m[3] * scaleVector.v[1], matrix.m[4] * scaleVector.v[1], matrix.m[5] * scaleVector.v[1],
+                      matrix.m[6] * scaleVector.v[2], matrix.m[7] * scaleVector.v[2], matrix.m[8] * scaleVector.v[2] }};
     return m;
 }
 
 GLK_INLINE GLKMatrix3 GLKMatrix3ScaleWithVector4(GLKMatrix3 matrix, GLKVector4 scaleVector)
 {
-    GLKMatrix3 m = { matrix.m[0] * scaleVector.v[0], matrix.m[1] * scaleVector.v[0], matrix.m[2] * scaleVector.v[0],
-                     matrix.m[3] * scaleVector.v[1], matrix.m[4] * scaleVector.v[1], matrix.m[5] * scaleVector.v[1],
-                     matrix.m[6] * scaleVector.v[2], matrix.m[7] * scaleVector.v[2], matrix.m[8] * scaleVector.v[2] };
+    GLKMatrix3 m = {{ matrix.m[0] * scaleVector.v[0], matrix.m[1] * scaleVector.v[0], matrix.m[2] * scaleVector.v[0],
+                      matrix.m[3] * scaleVector.v[1], matrix.m[4] * scaleVector.v[1], matrix.m[5] * scaleVector.v[1],
+                      matrix.m[6] * scaleVector.v[2], matrix.m[7] * scaleVector.v[2], matrix.m[8] * scaleVector.v[2] }};
     return m;
 }
 
@@ -477,9 +477,9 @@ GLK_INLINE GLKMatrix3 GLKMatrix3RotateZ(GLKMatrix3 matrix, float radians)
 
 GLK_INLINE GLKVector3 GLKMatrix3MultiplyVector3(GLKMatrix3 matrixLeft, GLKVector3 vectorRight)
 {
-    GLKVector3 v = { matrixLeft.m[0] * vectorRight.v[0] + matrixLeft.m[3] * vectorRight.v[1] + matrixLeft.m[6] * vectorRight.v[2],
-                     matrixLeft.m[1] * vectorRight.v[0] + matrixLeft.m[4] * vectorRight.v[1] + matrixLeft.m[7] * vectorRight.v[2],
-                     matrixLeft.m[2] * vectorRight.v[0] + matrixLeft.m[5] * vectorRight.v[1] + matrixLeft.m[8] * vectorRight.v[2] };
+    GLKVector3 v = {{ matrixLeft.m[0] * vectorRight.v[0] + matrixLeft.m[3] * vectorRight.v[1] + matrixLeft.m[6] * vectorRight.v[2],
+                      matrixLeft.m[1] * vectorRight.v[0] + matrixLeft.m[4] * vectorRight.v[1] + matrixLeft.m[7] * vectorRight.v[2],
+                      matrixLeft.m[2] * vectorRight.v[0] + matrixLeft.m[5] * vectorRight.v[1] + matrixLeft.m[8] * vectorRight.v[2] }};
     return v;
 }
 

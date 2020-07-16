@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 05E8D5C4-50A9-3769-8B7C-BF621333B51B' ]
+uuids:           [ 'x86_64: 749B87EB-5AD8-3C7D-BEA3-85D330B0CE62' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PrivateFederatedLearning.framework/Versions/A/PrivateFederatedLearning'
 exports:         

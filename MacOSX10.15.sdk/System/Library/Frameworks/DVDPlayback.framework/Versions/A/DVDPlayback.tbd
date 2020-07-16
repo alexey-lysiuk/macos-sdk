@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC6B6DBA-DA23-3702-96E6-333701EB218B' ]
+uuids:           [ 'x86_64: 2B2CE1CF-A40D-36FE-B672-C36AEE5049D6' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/DVDPlayback.framework/Versions/A/DVDPlayback'
 current-version: 5960

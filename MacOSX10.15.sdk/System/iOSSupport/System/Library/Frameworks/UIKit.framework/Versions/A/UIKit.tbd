@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 437395B9-DA2C-3A70-88BD-E24247FB5020' ]
+uuids:           [ 'x86_64: 01D18FD1-7E41-3BD8-93D0-AF77ECC49035' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/UIKit.framework/Versions/A/UIKit'
 current-version: 61000
@@ -11,10 +11,10 @@ exports:
                        '/System/iOSSupport/System/Library/PrivateFrameworks/UIKitCore.framework/Versions/A/UIKitCore' ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 79C5CE2C-1BE7-394C-8DAE-A0FBA6281A48' ]
+uuids:           [ 'x86_64: E0A29B96-5819-3B89-B04D-405CF2367048' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/ShareSheet.framework/Versions/A/ShareSheet'
-current-version: 1526.14
+current-version: 1526.37
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _UIActivityTypeAddToReadingList, _UIActivityTypeAirDrop, _UIActivityTypeAssignToContact, 
@@ -40,10 +40,10 @@ exports:
                        _UIActivityUserDefaultsManager, _UIUserDefaultsActivityProxy ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 27837A1C-A833-3F99-B8D8-84A583EEA523', 'x86_64: 27837A1C-A833-3F99-B8D8-84A583EEA523' ]
+uuids:           [ 'x86_64: EC55B9E5-7E62-380A-9AB1-FC7BEF663653', 'x86_64: EC55B9E5-7E62-380A-9AB1-FC7BEF663653' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation'
-current-version: 661.2
+current-version: 662
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, UIKitCore ]
@@ -502,7 +502,7 @@ exports:
                         __ZTSNSt3__120__shared_ptr_emplaceINS_6vectorIlNS_9allocatorIlEEEENS2_IS4_EEEE ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3C89346C-8EBC-3A79-BC2A-3205F29DCD76' ]
+uuids:           [ 'x86_64: 7C1106E9-03D8-36E1-9828-02615B815143' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/DocumentManager.framework/Versions/A/DocumentManager'
 current-version: 171.4.10
@@ -577,7 +577,7 @@ exports:
                        UIDocumentBrowserTransitionController, UIDocumentBrowserViewController ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 938A55ED-E553-3281-B7DC-D6C506D8D039' ]
+uuids:           [ 'x86_64: 531CD635-C991-3763-8B88-CCF65D4FF8C6' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/UIKitCore.framework/Versions/A/UIKitCore'
 current-version: 61000
@@ -1176,7 +1176,7 @@ exports:
                        _UIKeyboardGetCandidateUISingleLineFont, _UIKeyboardGetComponentsFromLanguageIdentifier, 
                        _UIKeyboardGetCurrentIdiom, _UIKeyboardGetCurrentInputMode, 
                        _UIKeyboardGetCurrentUILanguage, _UIKeyboardGetDefaultHardwareKeyboardForInputMode, 
-                       _UIKeyboardGetDefaultHardwareKeyboardLayoutForInputMode, _UIKeyboardGetDefaultInputModeLayoutForHardwareKeyboard, 
+                       _UIKeyboardGetDefaultHardwareKeyboardLayoutForInputMode, _UIKeyboardGetDefaultInputModeLayoutForHardwareKeyboardWithCountryCode, 
                        _UIKeyboardGetDefaultInputModesForLanguage, _UIKeyboardGetDefaultSoftwareKeyboardForInputMode, 
                        _UIKeyboardGetDeleteKeyImage, _UIKeyboardGetDeleteOnKeyImage, 
                        _UIKeyboardGetDomainForCurrentLocale, _UIKeyboardGetGlobeKeyImage, 

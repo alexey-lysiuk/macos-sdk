@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DE6D442E-B10E-3CD6-89D3-4DB1F9097D86', 'x86_64: DE6D442E-B10E-3CD6-89D3-4DB1F9097D86' ]
+uuids:           [ 'x86_64: 426DBDAA-8EC7-3994-9967-757F308BBB5A', 'x86_64: 426DBDAA-8EC7-3994-9967-757F308BBB5A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ScreenReaderCore.framework/Versions/A/ScreenReaderCore'
 current-version: 390

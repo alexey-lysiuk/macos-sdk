@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0FB6AB80-0A10-3165-9722-2CD9D7FD753E' ]
+uuids:           [ 'x86_64: BDD46765-5695-3A80-B159-3671FACDD81B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AdID.framework/Versions/A/AdID'
 exports:         

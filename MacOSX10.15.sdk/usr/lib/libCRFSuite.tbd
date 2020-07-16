@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E52BECF7-1819-3998-ACC4-8D1A332CE4EB', 'x86_64: E52BECF7-1819-3998-ACC4-8D1A332CE4EB' ]
+uuids:           [ 'x86_64: 5E5DE3CB-30DD-34DC-AEF8-FE8536A85E96', 'x86_64: 5E5DE3CB-30DD-34DC-AEF8-FE8536A85E96' ]
 platform:        zippered
 install-name:    '/usr/lib/libCRFSuite.dylib'
 exports:         

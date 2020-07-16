@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AAC639E5-7103-3366-A602-8FC6944E2C13', 'x86_64: AAC639E5-7103-3366-A602-8FC6944E2C13' ]
+uuids:           [ 'x86_64: F80872AA-E1FD-3D7E-8729-467656EC6561', 'x86_64: F80872AA-E1FD-3D7E-8729-467656EC6561' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_secinit.dylib'
 current-version: 62.100.2

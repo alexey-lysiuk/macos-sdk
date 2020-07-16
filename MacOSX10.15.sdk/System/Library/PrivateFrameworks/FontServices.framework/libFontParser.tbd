@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B59E080A-9FC3-3511-9024-E6D5461E60D1', 'x86_64: B59E080A-9FC3-3511-9024-E6D5461E60D1' ]
+uuids:           [ 'x86_64: 9E9E2EAA-3273-360E-A01B-EB986ECB7BCF', 'x86_64: 9E9E2EAA-3273-360E-A01B-EB986ECB7BCF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/libFontParser.dylib'
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 33CD31A0-7ADE-3BB3-A6DA-9A1A0E2AF04C', 'x86_64: 33CD31A0-7ADE-3BB3-A6DA-9A1A0E2AF04C' ]
+uuids:           [ 'x86_64: 0B4A0001-19BD-345A-A282-7E41C316CE3B', 'x86_64: 0B4A0001-19BD-345A-A282-7E41C316CE3B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CPAnalytics.framework/Versions/A/CPAnalytics'
-current-version: 141.19.150
+current-version: 161.0.120
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ Photos, PhotosUI, PhotosUICore ]

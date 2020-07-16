@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 55EACF17-86EA-3F6E-A2CF-AF2F08C5F295', 'x86_64: 55EACF17-86EA-3F6E-A2CF-AF2F08C5F295' ]
+uuids:           [ 'x86_64: 788818B7-7EBC-316D-9464-D12E365E3791', 'x86_64: 788818B7-7EBC-316D-9464-D12E365E3791' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI'
 current-version: 609.4

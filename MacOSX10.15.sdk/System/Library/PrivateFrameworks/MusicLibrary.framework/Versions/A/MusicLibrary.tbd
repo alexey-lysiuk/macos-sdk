@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7E43F346-7B41-3E43-A092-AC5E403CB2EF', 'x86_64: 7E43F346-7B41-3E43-A092-AC5E403CB2EF' ]
+uuids:           [ 'x86_64: AD45291A-740B-3DB8-8A90-7E82D9B09CC6', 'x86_64: AD45291A-740B-3DB8-8A90-7E82D9B09CC6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MusicLibrary.framework/Versions/A/MusicLibrary'
 current-version: 18

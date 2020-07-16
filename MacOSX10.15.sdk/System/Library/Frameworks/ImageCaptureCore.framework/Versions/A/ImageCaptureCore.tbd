@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 47AD8B27-A38D-3A6A-B3F1-2770A8CF7EB3', 'x86_64: 47AD8B27-A38D-3A6A-B3F1-2770A8CF7EB3' ]
+uuids:           [ 'x86_64: 281CE141-B350-30E2-B345-FC7E7DF1AA3A', 'x86_64: 281CE141-B350-30E2-B345-FC7E7DF1AA3A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageCaptureCore.framework/Versions/A/ImageCaptureCore'
 exports:         

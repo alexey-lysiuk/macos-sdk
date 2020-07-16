@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7B7CDA57-828F-373E-BB4C-4828F913228B' ]
+uuids:           [ 'x86_64: 9D4188A6-8A9C-3092-BCDD-09D97F696E96' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WebFilterDNS.framework/Versions/A/WebFilterDNS'
 exports:         

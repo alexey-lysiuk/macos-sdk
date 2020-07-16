@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9BC67B04-0864-3E74-93A9-DC44A0FCA578', 'x86_64: 9BC67B04-0864-3E74-93A9-DC44A0FCA578' ]
+uuids:           [ 'x86_64: 1AD3AB3B-11A1-3BA6-82F3-CF1A7BAE6E47', 'x86_64: 1AD3AB3B-11A1-3BA6-82F3-CF1A7BAE6E47' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ClassKit.framework/Versions/A/ClassKit'
-current-version: 145.4.49
+current-version: 145.6.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CLSAdoptPersonaUniqueIdentifier, _CLSAppleContactsPrivateEntitlement, 

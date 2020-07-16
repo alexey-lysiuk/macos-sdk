@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E7C4BAD2-E33D-3A97-9A8D-C64DC3ABC421' ]
+uuids:           [ 'x86_64: 5D9709E6-CB92-30B6-9C54-2409B9FB3BC4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WebContentAnalysis.framework/Versions/A/WebContentAnalysis'
 exports:         

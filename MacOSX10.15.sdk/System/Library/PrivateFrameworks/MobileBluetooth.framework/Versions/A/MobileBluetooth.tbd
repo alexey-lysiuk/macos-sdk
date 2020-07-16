@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 156F9DB4-C4C5-3191-9A2F-1C1A10A45A0E', 'x86_64: 156F9DB4-C4C5-3191-9A2F-1C1A10A45A0E' ]
+uuids:           [ 'x86_64: 7698AAC6-873F-38C0-921D-4A606E0333E8', 'x86_64: 7698AAC6-873F-38C0-921D-4A606E0333E8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MobileBluetooth.framework/Versions/A/MobileBluetooth'
 exports:         

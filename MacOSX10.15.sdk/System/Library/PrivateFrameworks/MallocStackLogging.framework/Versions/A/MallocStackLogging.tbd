@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 07446037-9BA8-38D8-917A-6C8EBB73169F' ]
+uuids:           [ 'x86_64: BE0C1E1E-F986-3776-83EB-701CDBD5D931' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MallocStackLogging.framework/Versions/A/MallocStackLogging'
 exports:         

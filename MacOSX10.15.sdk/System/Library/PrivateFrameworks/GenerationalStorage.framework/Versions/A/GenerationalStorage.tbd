@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 54182052-9E17-3A2A-8943-8915E6D319CE', 'x86_64: 54182052-9E17-3A2A-8943-8915E6D319CE' ]
+uuids:           [ 'x86_64: 54483E50-20BB-3AF8-900F-992320C109B0', 'x86_64: 54483E50-20BB-3AF8-900F-992320C109B0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GenerationalStorage.framework/Versions/A/GenerationalStorage'
 current-version: 314

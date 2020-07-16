@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 48B5C3F7-B69E-37DE-91DB-D2C98D43018C' ]
+uuids:           [ 'x86_64: DD0C4E18-F465-3CFF-BE02-92F910E26019' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/Pear.framework/Versions/A/Pear'
 exports:         

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D4B89F45-8296-3E49-B9D6-3BF18FCB6579' ]
+uuids:           [ 'x86_64: 95D530F3-E617-35F5-849F-7A43298FBE45' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/PluginProcessShim.dylib'
-current-version: 609.1.20
+current-version: 609.3.5
 ...

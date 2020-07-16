@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8FDBE1D2-5D2B-3FEF-A05A-667D560EFA9F', 'x86_64: 8FDBE1D2-5D2B-3FEF-A05A-667D560EFA9F' ]
+uuids:           [ 'x86_64: BE3EA454-5EA6-380A-8D95-CAEA25A49F0B', 'x86_64: BE3EA454-5EA6-380A-8D95-CAEA25A49F0B' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftCompression.dylib'
 current-version: 0

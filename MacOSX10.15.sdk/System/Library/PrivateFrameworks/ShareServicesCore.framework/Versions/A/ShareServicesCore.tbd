@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 58C68993-9182-3CDF-8D7D-12DD71C8BA0C' ]
+uuids:           [ 'x86_64: 1FD613EE-6A3C-3E31-8C00-5157CAA379B2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ShareServicesCore.framework/Versions/A/ShareServicesCore'
-current-version: 141.19.150
+current-version: 161.0.120
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SBLFileURLFromFileURLs, _SBLNeedsLivePhotoBundleForSharingService, 

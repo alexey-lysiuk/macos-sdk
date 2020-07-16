@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5D49B78D-FCA2-3A9D-9D06-2A53DC648292', 'x86_64: 5D49B78D-FCA2-3A9D-9D06-2A53DC648292' ]
+uuids:           [ 'x86_64: FF52C80F-4DD7-344C-96A6-639DCF80EBBE', 'x86_64: FF52C80F-4DD7-344C-96A6-639DCF80EBBE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/LoggingSupport.framework/Versions/A/LoggingSupport'
-current-version: 1147.100.8
+current-version: 1147.120
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogClearOptions, _OSLogConstructArchive, _OSLogConstructHighVolumeAgeLimit, 

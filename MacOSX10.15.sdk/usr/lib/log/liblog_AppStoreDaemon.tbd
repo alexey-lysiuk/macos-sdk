@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EC3BCC35-E7EE-3295-B5BC-5681E5345A8D' ]
+uuids:           [ 'x86_64: 14B2034A-2C83-32DA-BC9F-EA71DF967C41' ]
 platform:        macosx
 install-name:    '/usr/lib/log/liblog_AppStoreDaemon.dylib'
 exports:         

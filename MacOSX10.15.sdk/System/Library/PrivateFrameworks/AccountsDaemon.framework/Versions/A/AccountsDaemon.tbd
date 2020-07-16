@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 42F80252-2CFD-3704-8390-CD182FDB6491', 'x86_64: 42F80252-2CFD-3704-8390-CD182FDB6491' ]
+uuids:           [ 'x86_64: F8B91912-80AD-34C0-99CC-4A3569D9F6FD', 'x86_64: F8B91912-80AD-34C0-99CC-4A3569D9F6FD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AccountsDaemon.framework/Versions/A/AccountsDaemon'
 exports:         

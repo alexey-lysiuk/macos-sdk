@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F358E822-231C-373A-A189-73DE12B538F9', 'x86_64: F358E822-231C-373A-A189-73DE12B538F9' ]
+uuids:           [ 'x86_64: 85794370-72C5-3364-BD2B-7451355FEECF', 'x86_64: 85794370-72C5-3364-BD2B-7451355FEECF' ]
 platform:        zippered
 install-name:    '/usr/lib/libform.5.4.dylib'
 current-version: 5.4

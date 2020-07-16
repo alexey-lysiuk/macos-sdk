@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 27E980DF-3B8A-3E40-9C01-85FEB732D7CB' ]
+uuids:           [ 'x86_64: 4101B1D8-B6A9-3880-A5B9-CAB36761EF21' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MessageUIMacHelper.framework/Versions/A/MessageUIMacHelper'
-current-version: 3608.80.23
+current-version: 3608.120.23
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CanSendMail, _CreateMailComposeViewControllerHelper, _CreateMessageComposeViewControllerHelper, 

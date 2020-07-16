@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AFE89217-8B84-34E9-AB03-CB3901271B19' ]
+uuids:           [ 'x86_64: DC9D4D83-823D-366F-B013-73EE5C526351' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/Libraries/libAGM.dylib'
 exports:         

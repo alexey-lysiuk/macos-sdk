@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3D8BA34A-AAF7-3AF2-9B5B-189AC4755404', 'x86_64: 3D8BA34A-AAF7-3AF2-9B5B-189AC4755404' ]
+uuids:           [ 'x86_64: 14223387-6F81-3976-8605-4BC2F253A93E', 'x86_64: 14223387-6F81-3976-8605-4BC2F253A93E' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit'
 current-version: 275

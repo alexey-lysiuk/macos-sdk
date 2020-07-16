@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0B8F63C9-6EF1-3984-A3CB-C53E39B5D227' ]
+uuids:           [ 'x86_64: 21B7C8A0-89EC-386E-8951-B673295F1F98' ]
 platform:        macosx
 install-name:    '/usr/lib/libnetsnmpmibs.25.dylib'
 current-version: 26.2

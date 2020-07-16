@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A5CEF842-369A-32B9-BFA6-96E6F4D7D3C6', 'x86_64: A5CEF842-369A-32B9-BFA6-96E6F4D7D3C6' ]
+uuids:           [ 'x86_64: 38F47052-570F-361E-B793-554F0821E577', 'x86_64: 38F47052-570F-361E-B793-554F0821E577' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotoImaging.framework/Versions/A/PhotoImaging'
-current-version: 141.19.150
+current-version: 161.0.120
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GUInvertMatrix, _GUMatrixVector, _PIAdjustment_AutoEnhance_Identifier, 

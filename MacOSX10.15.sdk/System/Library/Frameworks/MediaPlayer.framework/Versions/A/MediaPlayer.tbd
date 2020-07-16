@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 74DF946F-09C6-3053-BED6-EB83374261AE' ]
+uuids:           [ 'x86_64: FE739C02-1000-36C8-9FAD-26FF3D8240CB' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/MediaPlayer.framework/Versions/A/MediaPlayer'
 exports:         
@@ -109,16 +109,17 @@ exports:
                        __MPNowPlayingInfoPropertyDefaultPlaybackRate, __MPNowPlayingInfoPropertyForMRMediaRemoteNowPlayingInfoProperty, 
                        __MPNowPlayingInfoPropertyIsAdvertisement, __MPNowPlayingInfoPropertyIsBanned, 
                        __MPNowPlayingInfoPropertyIsInWishList, __MPNowPlayingInfoPropertyIsLiked, 
-                       __MPNowPlayingInfoPropertyIsMusicApp, __MPNowPlayingInfoPropertyIsSharable, 
-                       __MPNowPlayingInfoPropertyIsSteerable, __MPNowPlayingInfoPropertyIsVideosApp, 
-                       __MPNowPlayingInfoPropertyPlaylistGlobalIdentifier, __MPNowPlayingInfoPropertyProhibitsSkip, 
-                       __MPNowPlayingInfoPropertyPurchaseInfoData, __MPNowPlayingInfoPropertyRadioStationHash, 
-                       __MPNowPlayingInfoPropertyRadioStationIdentifier, __MPNowPlayingInfoPropertyRadioStationName, 
-                       __MPNowPlayingInfoPropertyRadioStationStringIdentifier, __MPNowPlayingInfoPropertyRepeatMode, 
-                       __MPNowPlayingInfoPropertyShuffleMode, __MPNowPlayingInfoPropertySupportsFastForward15Seconds, 
-                       __MPNowPlayingInfoPropertySupportsIsBanned, __MPNowPlayingInfoPropertySupportsIsLiked, 
-                       __MPNowPlayingInfoPropertySupportsRewind15Seconds, __MPNowPlayingInfoPropertySupportsWishlisting, 
-                       __MPNowPlayingInfoPropertyiTunesStoreIdentifier, __MPNowPlayingInfoPropertyiTunesStoreSubscriptionAdamIdentifier, 
+                       __MPNowPlayingInfoPropertyIsLoading, __MPNowPlayingInfoPropertyIsMusicApp, 
+                       __MPNowPlayingInfoPropertyIsSharable, __MPNowPlayingInfoPropertyIsSteerable, 
+                       __MPNowPlayingInfoPropertyIsVideosApp, __MPNowPlayingInfoPropertyPlaylistGlobalIdentifier, 
+                       __MPNowPlayingInfoPropertyProhibitsSkip, __MPNowPlayingInfoPropertyPurchaseInfoData, 
+                       __MPNowPlayingInfoPropertyRadioStationHash, __MPNowPlayingInfoPropertyRadioStationIdentifier, 
+                       __MPNowPlayingInfoPropertyRadioStationName, __MPNowPlayingInfoPropertyRadioStationStringIdentifier, 
+                       __MPNowPlayingInfoPropertyRepeatMode, __MPNowPlayingInfoPropertyShuffleMode, 
+                       __MPNowPlayingInfoPropertySupportsFastForward15Seconds, __MPNowPlayingInfoPropertySupportsIsBanned, 
+                       __MPNowPlayingInfoPropertySupportsIsLiked, __MPNowPlayingInfoPropertySupportsRewind15Seconds, 
+                       __MPNowPlayingInfoPropertySupportsWishlisting, __MPNowPlayingInfoPropertyiTunesStoreIdentifier, 
+                       __MPNowPlayingInfoPropertyiTunesStoreSubscriptionAdamIdentifier, 
                        __MPRemoteCommandCenterSupportedCommandsDidChangeNotification ]
     objc-classes:    [ MPAVAuxiliaryDevice, MPAVBatteryLevel, MPAVEndpointRoute, 
                        MPAVEndpointRoutingDataSource, MPAVOutputDeviceRoute, MPAVOutputDeviceRoutingDataSource, 

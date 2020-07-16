@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 44CDAEB5-1C85-3719-9DC3-30AEF83CE335' ]
+uuids:           [ 'x86_64: 010D0B89-DC8B-38A1-8017-4B223A0AC096' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/CoreNFC.framework/Versions/A/CoreNFC'
 exports:         

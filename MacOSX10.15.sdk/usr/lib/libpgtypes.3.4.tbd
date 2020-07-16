@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0747CC39-3D19-32AD-A788-2D47947AAEFC' ]
+uuids:           [ 'x86_64: 4939C3DA-016B-3136-861F-E92CF8BE476B' ]
 platform:        macosx
 install-name:    '/usr/lib/libpgtypes.3.dylib'
 current-version: 3.4

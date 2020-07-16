@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FCCA67FE-325C-3A7E-81F9-ABADD46B8FE4', 'x86_64: FCCA67FE-325C-3A7E-81F9-ABADD46B8FE4' ]
+uuids:           [ 'x86_64: CC3D3DFD-26CF-3781-828E-64C997EC8112', 'x86_64: CC3D3DFD-26CF-3781-828E-64C997EC8112' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DeviceManagement.framework/Versions/A/DeviceManagement'
 current-version: 32.4
@@ -200,7 +200,7 @@ exports:
                        DMFWebsitePolicyMonitor, DMFiCloudPolicyMonitor ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 37642E5D-B54B-310A-A302-77F796415F00', 'x86_64: 37642E5D-B54B-310A-A302-77F796415F00' ]
+uuids:           [ 'x86_64: FC0822C4-C234-3543-9F47-3C0496E25A52', 'x86_64: FC0822C4-C234-3543-9F47-3C0496E25A52' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst'
 current-version: 6.1

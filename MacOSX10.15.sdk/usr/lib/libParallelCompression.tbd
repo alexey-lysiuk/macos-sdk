@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1C75C683-F774-3FBA-8588-DB706857FDF5', 'x86_64: 1C75C683-F774-3FBA-8588-DB706857FDF5' ]
+uuids:           [ 'x86_64: 44C95AB4-0523-370A-B907-1DD9F7D01B69', 'x86_64: 44C95AB4-0523-370A-B907-1DD9F7D01B69' ]
 platform:        zippered
 install-name:    '/usr/lib/libParallelCompression.dylib'
 exports:         

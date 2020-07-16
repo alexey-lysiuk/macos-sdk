@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B0373A39-DBC6-3A84-879B-BA46E30D04BF', 'x86_64: B0373A39-DBC6-3A84-879B-BA46E30D04BF' ]
+uuids:           [ 'x86_64: 00BFFB9A-2FFE-3C24-896A-251BC61917FD', 'x86_64: 00BFFB9A-2FFE-3C24-896A-251BC61917FD' ]
 platform:        zippered
 install-name:    '/usr/lib/libbsm.0.dylib'
 exports:         

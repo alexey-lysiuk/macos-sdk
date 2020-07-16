@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7FA73EFE-C17C-396D-BF32-26F4AD210F77', 'x86_64: 7FA73EFE-C17C-396D-BF32-26F4AD210F77' ]
+uuids:           [ 'x86_64: 0A3ED7FB-748E-3CF6-AC79-557D92255242', 'x86_64: 0A3ED7FB-748E-3CF6-AC79-557D92255242' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/TimeSync.framework/Versions/A/TimeSync'
 exports:         

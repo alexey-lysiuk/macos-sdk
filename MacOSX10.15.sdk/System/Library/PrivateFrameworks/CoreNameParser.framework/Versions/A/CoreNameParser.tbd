@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DD4E7DF1-D3A1-3327-A6B1-6B5C03B4945D', 'x86_64: DD4E7DF1-D3A1-3327-A6B1-6B5C03B4945D' ]
+uuids:           [ 'x86_64: EE3A975D-D678-3F81-9EDE-2D394232A5C9', 'x86_64: EE3A975D-D678-3F81-9EDE-2D394232A5C9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreNameParser.framework/Versions/A/CoreNameParser'
 exports:         

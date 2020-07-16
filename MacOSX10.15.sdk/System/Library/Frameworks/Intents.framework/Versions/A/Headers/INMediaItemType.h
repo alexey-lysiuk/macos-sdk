@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger, INMediaItemType) {
     INMediaItemTypeStation API_AVAILABLE(ios(13.0), watchos(6.0)),
     INMediaItemTypeMusic API_AVAILABLE(ios(13.0), watchos(6.0)),
     INMediaItemTypeAlgorithmicRadioStation API_AVAILABLE(ios(13.4), watchos(6.2)),
+    INMediaItemTypeNews API_AVAILABLE(ios(13.4.1), watchos(6.2.1)),
 } API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macos, tvos);
 
 #endif // INMediaItemType_h

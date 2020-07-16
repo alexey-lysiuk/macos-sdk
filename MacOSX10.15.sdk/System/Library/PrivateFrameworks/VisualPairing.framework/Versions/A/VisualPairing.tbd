@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FBBD3561-5B2A-389A-912B-FBB37AC11783' ]
+uuids:           [ 'x86_64: 7F419371-EFA9-3266-A24A-F9ECD57A457D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VisualPairing.framework/Versions/A/VisualPairing'
 current-version: 0

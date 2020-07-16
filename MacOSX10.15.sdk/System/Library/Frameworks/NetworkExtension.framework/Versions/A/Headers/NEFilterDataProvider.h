@@ -29,6 +29,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 /*!
+ * @typedef NEFilterDataAttribute
+ * @abstract Attribute flags describing data
+ */
+typedef NS_ENUM(NSInteger, NEFilterDataAttribute) {
+	/*! @const NEFilterDataAttributeHasIPHeader IP header is included in data */
+	NEFilterDataAttributeHasIPHeader = 0x00000001
+} API_AVAILABLE(macos(10.15.5)) API_UNAVAILABLE(ios, watchos, tvos);
+
+/*!
  * @interface NEFilterDataProvider
  * @discussion The NEFilterDataProvider class declares the programmatic interface for an object that evaluates network data flows based on a set of locally-available rules and makes decisions about whether to block or allow the flows.
  */
@@ -48,7 +57,7 @@ API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
  * @discussion This function is called by the framework when a filtering decision needs to be made about some inbound data that the filter previously requested access to via the NEFilterFlowDataVerdict or the NEFilterNewFlowVerdict. Subclasses must override this method.
  * @param flow The NEFilterFlow from which the data was read.
  * @param offset The offset in bytes from the start of the flow's inbound data at which readBytes begins.
- * @param readBytes The data that was read.
+ * @param readBytes The data that was read.  For non-UDP/TCP flows, since data may optionally include the IP header, readBytes includes a 4-bytes NEFilterDataAttribute field preceding the user data.  Handler must examine the NEFilterDataAttribute field and handle the data accordingly.
  * @return An NEFilterFlowDataVerdict containing the verdict for the flow.
  */
 - (NEFilterDataVerdict *)handleInboundDataFromFlow:(NEFilterFlow *)flow readBytesStartOffset:(NSUInteger)offset readBytes:(NSData *)readBytes API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos);
@@ -58,7 +67,7 @@ API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
  * @discussion This function is called by the framework when a filtering decision needs to be made about some outbound data that the filter previously requested access to via the NEFilterFlowDataVerdict or the NEFilterNewFlowVerdict. Subclasses must override this method.
  * @param flow The NEFilterFlow from which the data was read.
  * @param offset The offset in bytes from the start of the flow's outbound data at which readBytes begins.
- * @param readBytes The data that was read.
+ * @param readBytes The data that was read.  For non-UDP/TCP flows, since data may optionally include the IP header, readBytes includes a 4-bytes NEFilterDataAttribute field preceding the user data.  Handler must examine the NEFilterDataAttribute field and handle the data accordingly.
  * @return An NEFilterFlowDataVerdict containing the verdict for the flow.
  */
 - (NEFilterDataVerdict *)handleOutboundDataFromFlow:(NEFilterFlow *)flow readBytesStartOffset:(NSUInteger)offset readBytes:(NSData *)readBytes API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos);

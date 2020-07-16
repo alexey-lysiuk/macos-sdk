@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FAF6BB3A-42DA-317E-AFF7-192A103D27CF', 'x86_64: FAF6BB3A-42DA-317E-AFF7-192A103D27CF' ]
+uuids:           [ 'x86_64: B2A38C6A-4A79-35BA-811C-580E0E1DA748', 'x86_64: B2A38C6A-4A79-35BA-811C-580E0E1DA748' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderBrailleDriver.framework/Versions/A/ScreenReaderBrailleDriver'
 current-version: 390
@@ -90,8 +90,9 @@ exports:
                        _kSCRDFreedomScientificPacMate40ModelName, _kSCRDHandyTechBluetoothConfigServiceName, 
                        _kSCRDHandyTechBluetoothHardwareServiceName, _kSCRDHumanwareBrailliantBluetoothName, 
                        _kSCRDNPHB2GDeviceIdentifier, _kSCRDNinepointSystemsNinepointBluetoothName, 
-                       _kSCRDOrbitReader20DeviceIdentifier, _kSCRDSeikaNotetakerBluetoothNameRegExPattern, 
-                       _kSCRDUSBDeviceDisconnectNotification, _kSCRODBaumVario340DeviceIdentifier ]
+                       _kSCRDOrbitReader20DeviceIdentifier, _kSCRDOrbitReader40DeviceIdentifier, 
+                       _kSCRDSeikaNotetakerBluetoothNameRegExPattern, _kSCRDUSBDeviceDisconnectNotification, 
+                       _kSCRODBaumVario340DeviceIdentifier ]
     objc-classes:    [ SCRDFileReader, SCRDUSBDevice ]
     objc-ivars:      [ SCRDFileReader._delegate, SCRDFileReader._fileHandle, SCRDFileReader._readerThread, 
                        SCRDFileReader._threadStartCount, SCRDUSBDevice._device, SCRDUSBDevice._interface, 

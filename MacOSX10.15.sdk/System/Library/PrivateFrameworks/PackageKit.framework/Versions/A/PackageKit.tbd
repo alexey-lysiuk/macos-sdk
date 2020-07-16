@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EF8A6E09-A3E0-3F63-B25B-46791075429D' ]
+uuids:           [ 'x86_64: DFA53655-3A48-31BB-8D3F-B988076D2BD3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/PackageKit'
 current-version: 434
@@ -136,8 +136,8 @@ exports:
                        PKMutablePackage, PKMutableProduct, PKMutableReceipt, PKMutableSignedContainer, 
                        PKMutableXARArchive, PKNetEnabledProduct, PKObsoletionInstallOperation, 
                        PKPackage, PKPackageChecker, PKPackageInfo, PKPackageReference, 
-                       PKPackageRequirements, PKPackageSourceManager, PKPackageSpecifier, 
-                       PKPatchAndUpdateInstallOperation, PKPatchFilesInstallOperation, 
+                       PKPackageRequirements, PKPackageScriptServiceClient, PKPackageSourceManager, 
+                       PKPackageSpecifier, PKPatchAndUpdateInstallOperation, PKPatchFilesInstallOperation, 
                        PKPayloadCopier, PKPrepareDiskInstallOperation, PKPrepareForCommitInstallOperation, 
                        PKProduct, PKProductArchiver, PKProductChecker, PKProductInfo, 
                        PKProductUnarchiver, PKReceipt, PKRelocateComponentsInstallOperation, 

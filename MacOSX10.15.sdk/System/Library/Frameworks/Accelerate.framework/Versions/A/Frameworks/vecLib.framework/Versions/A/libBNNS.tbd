@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 66DC1355-F9D7-3449-83E5-66F155C508E2', 'x86_64: 66DC1355-F9D7-3449-83E5-66F155C508E2', 
-                   'x86_64h: C05F9F9D-4498-37BD-9C1C-2F7B920B401D', 'x86_64h: C05F9F9D-4498-37BD-9C1C-2F7B920B401D' ]
+uuids:           [ 'x86_64: 69FA0C4F-B59D-374A-9DCF-E9FA79F332FD', 'x86_64: 69FA0C4F-B59D-374A-9DCF-E9FA79F332FD', 
+                   'x86_64h: 99C61C48-B14C-3DA6-8C31-6BF72DA0A3A9', 'x86_64h: 99C61C48-B14C-3DA6-8C31-6BF72DA0A3A9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib'
 exports:         

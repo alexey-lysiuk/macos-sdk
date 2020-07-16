@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 18FC1782-76E2-3D43-B189-CABA85F29912' ]
+uuids:           [ 'x86_64: 4C2979DA-4584-3CA8-A8E1-82FFAE8CA6F8' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/BusinessChat.framework/Versions/A/BusinessChat'
 exports:         

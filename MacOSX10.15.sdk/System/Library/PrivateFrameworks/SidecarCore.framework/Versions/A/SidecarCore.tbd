@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 90141C89-DFE8-3989-8427-EB95AA3FDE0E', 'x86_64: 90141C89-DFE8-3989-8427-EB95AA3FDE0E' ]
+uuids:           [ 'x86_64: 469E5222-A5C7-3B09-B617-EDB6E9E46B93', 'x86_64: 469E5222-A5C7-3B09-B617-EDB6E9E46B93' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SidecarCore.framework/Versions/A/SidecarCore'
 current-version: 209.40.4

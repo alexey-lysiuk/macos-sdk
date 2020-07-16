@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CEA52B0A-DB45-325D-B415-A662BE8E8147', 'x86_64: CEA52B0A-DB45-325D-B415-A662BE8E8147' ]
+uuids:           [ 'x86_64: E3742A66-010C-3AD7-BBC9-9B00B33F9CF4', 'x86_64: E3742A66-010C-3AD7-BBC9-9B00B33F9CF4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDuetStatistics.framework/Versions/A/CoreDuetStatistics'
 exports:         

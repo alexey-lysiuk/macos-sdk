@@ -1,12 +1,13 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4125CA75-8636-3828-B03F-10F5481919B1', 'x86_64: 4125CA75-8636-3828-B03F-10F5481919B1' ]
+uuids:           [ 'x86_64: 9B87C589-EAB4-3636-B9A8-26D9231F379E', 'x86_64: 9B87C589-EAB4-3636-B9A8-26D9231F379E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmailCore.framework/Versions/A/EmailCore'
-current-version: 3608.80.23
+current-version: 3608.120.23
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _ECAccountSchemeDataAccess, _ECAccountSchemeEWS, _ECAccountSchemeIMAP, 
+    symbols:         [ _ECAccountCacheKeyEnabled, _ECAccountCacheKeyParentAccount, 
+                       _ECAccountSchemeDataAccess, _ECAccountSchemeEWS, _ECAccountSchemeIMAP, 
                        _ECAccountSchemeLocal, _ECAccountSchemePOP, _ECAllowNetworkActivityButLog, 
                        _ECAssertNetworkActivityAllowed, _ECAuthSchemeAPOP, _ECAuthSchemeAppleToken, 
                        _ECAuthSchemeClearText, _ECAuthSchemeCramMD5, _ECAuthSchemeDigestMD5, 
@@ -40,14 +41,13 @@ exports:
                        _ECMailDataclassPropertyIgnoreServerDefinedJunkMailbox, _ECMailDataclassPropertyIgnoreServerDefinedSentMailbox, 
                        _ECMailDataclassPropertyIgnoreServerDefinedTrashMailbox, _ECMailDataclassPropertyInboxMailboxName, 
                        _ECMailDataclassPropertyJournalMailboxName, _ECMailDataclassPropertyJunkMailboxName, 
-                       _ECMailDataclassPropertyLastSyncDate, _ECMailDataclassPropertyNeedsGmailLabelsCleanup, 
-                       _ECMailDataclassPropertyNotesMailboxName, _ECMailDataclassPropertyNumberOfDaysToKeepJunk, 
-                       _ECMailDataclassPropertyNumberOfDaysToKeepTrash, _ECMailDataclassPropertyOutboxMailboxName, 
-                       _ECMailDataclassPropertyQueriedUserToSetPathPrefix, _ECMailDataclassPropertySentMessagesMailboxName, 
-                       _ECMailDataclassPropertyShouldUseGmailLabelStores, _ECMailDataclassPropertyToDosMailboxName, 
-                       _ECMailDataclassPropertyTrashMailboxName, _ECMessageHeaderKeyAttachments, 
-                       _ECMessageHeaderKeyAutoSubmitted, _ECMessageHeaderKeyBCC, 
-                       _ECMessageHeaderKeyCC, _ECMessageHeaderKeyContentDescription, 
+                       _ECMailDataclassPropertyNeedsGmailLabelsCleanup, _ECMailDataclassPropertyNotesMailboxName, 
+                       _ECMailDataclassPropertyNumberOfDaysToKeepJunk, _ECMailDataclassPropertyNumberOfDaysToKeepTrash, 
+                       _ECMailDataclassPropertyOutboxMailboxName, _ECMailDataclassPropertyQueriedUserToSetPathPrefix, 
+                       _ECMailDataclassPropertySentMessagesMailboxName, _ECMailDataclassPropertyShouldUseGmailLabelStores, 
+                       _ECMailDataclassPropertyToDosMailboxName, _ECMailDataclassPropertyTrashMailboxName, 
+                       _ECMessageHeaderKeyAttachments, _ECMessageHeaderKeyAutoSubmitted, 
+                       _ECMessageHeaderKeyBCC, _ECMessageHeaderKeyCC, _ECMessageHeaderKeyContentDescription, 
                        _ECMessageHeaderKeyContentDisposition, _ECMessageHeaderKeyContentID, 
                        _ECMessageHeaderKeyContentLanguage, _ECMessageHeaderKeyContentLocation, 
                        _ECMessageHeaderKeyContentTransferEncoding, _ECMessageHeaderKeyContentType, 

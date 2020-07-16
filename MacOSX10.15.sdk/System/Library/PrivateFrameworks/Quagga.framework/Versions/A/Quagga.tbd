@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F9D0C875-00D6-3801-B8BE-9FEAA3FD09A3', 'x86_64: F9D0C875-00D6-3801-B8BE-9FEAA3FD09A3' ]
+uuids:           [ 'x86_64: BA80A025-9F81-3933-9224-833F371A4DDB', 'x86_64: BA80A025-9F81-3933-9224-833F371A4DDB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Quagga.framework/Versions/A/Quagga'
 exports:         

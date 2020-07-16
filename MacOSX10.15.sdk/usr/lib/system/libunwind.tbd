@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CC87C836-BE9D-334E-A0E6-0297D52E9D73', 'x86_64: CC87C836-BE9D-334E-A0E6-0297D52E9D73' ]
+uuids:           [ 'x86_64: 42B7B509-BAFE-365B-893A-72414C92F5BF', 'x86_64: 42B7B509-BAFE-365B-893A-72414C92F5BF' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libunwind.dylib'
 current-version: 35.4

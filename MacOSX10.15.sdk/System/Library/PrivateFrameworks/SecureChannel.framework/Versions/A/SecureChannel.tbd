@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D4C7BC07-1B7F-3BCE-82A0-139A1249C4D2', 'x86_64: D4C7BC07-1B7F-3BCE-82A0-139A1249C4D2' ]
+uuids:           [ 'x86_64: B7CA7154-D889-3777-869A-F36D8F7C14AA', 'x86_64: B7CA7154-D889-3777-869A-F36D8F7C14AA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SecureChannel.framework/Versions/A/SecureChannel'
 exports:         

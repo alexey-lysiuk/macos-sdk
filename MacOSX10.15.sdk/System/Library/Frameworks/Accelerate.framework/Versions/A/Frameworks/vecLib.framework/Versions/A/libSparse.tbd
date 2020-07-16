@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8C55F5F2-6AE3-393C-B2FF-22B8CFCBD7FC', 'x86_64: 8C55F5F2-6AE3-393C-B2FF-22B8CFCBD7FC' ]
+uuids:           [ 'x86_64: B8A10D0C-4577-343D-B310-A3E81265D107', 'x86_64: B8A10D0C-4577-343D-B310-A3E81265D107' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparse.dylib'
 exports:         

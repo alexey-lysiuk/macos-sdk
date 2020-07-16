@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 112CE509-B5C9-34D6-BCC2-0ECBBC758719', 'x86_64: 112CE509-B5C9-34D6-BCC2-0ECBBC758719' ]
+uuids:           [ 'x86_64: FA2EC92C-5509-392F-8E30-FA5BE0D87615', 'x86_64: FA2EC92C-5509-392F-8E30-FA5BE0D87615' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Futhark.framework/Versions/A/Futhark'
 exports:         

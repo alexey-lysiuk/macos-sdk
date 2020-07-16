@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2ABBAC00-3E33-30E4-987E-B5A8C9C2AB86' ]
+uuids:           [ 'x86_64: B43E58F3-DD9B-3090-9CC8-F7F6D6C0B66C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TrustedPeers.framework/Versions/A/TrustedPeers'
 exports:         

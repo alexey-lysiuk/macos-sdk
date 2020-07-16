@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8D0A8B45-79C7-367A-81EC-63280FF1ED0D', 'x86_64: 8D0A8B45-79C7-367A-81EC-63280FF1ED0D' ]
+uuids:           [ 'x86_64: A4C811C6-8E5B-3037-A838-79103C6D8B91', 'x86_64: A4C811C6-8E5B-3037-A838-79103C6D8B91' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ktrace.framework/Versions/A/ktrace'
 current-version: 354.100.2

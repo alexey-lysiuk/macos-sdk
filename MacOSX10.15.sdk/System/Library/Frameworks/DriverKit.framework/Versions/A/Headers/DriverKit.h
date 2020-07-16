@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.100.4) generated from DriverKit.iig */
+/* iig(DriverKit-73.140.1) generated from DriverKit.iig */
 
 /* DriverKit.iig:1- */
 /*
@@ -55,6 +55,7 @@
 #include <DriverKit/IOMemoryDescriptor.h>  /* .iig include */
 #include <DriverKit/IOMemoryMap.h>  /* .iig include */
 #include <DriverKit/IOBufferMemoryDescriptor.h>  /* .iig include */
+#include <DriverKit/IODMACommand.h>  /* .iig include */
 #include <DriverKit/IOService.h>  /* .iig include */
 #include <DriverKit/IOUserClient.h>  /* .iig include */
 

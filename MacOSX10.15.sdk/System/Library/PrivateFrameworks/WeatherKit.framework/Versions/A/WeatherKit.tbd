@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 05912325-9B18-339F-8B39-7EAF08503972' ]
+uuids:           [ 'x86_64: ECC4E5F3-7AAE-3698-BDF1-E2029FE9AA17' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WeatherKit.framework/Versions/A/WeatherKit'
 current-version: 670.4.3

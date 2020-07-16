@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 98403887-DE21-3DE7-AA0D-EFBE431E70F2' ]
+uuids:           [ 'x86_64: A0F33458-482D-3537-89F4-DD2CBB43CE79' ]
 platform:        macosx
 install-name:    '/usr/local/lib/libimg4_development.dylib'
 current-version: 61.60.4

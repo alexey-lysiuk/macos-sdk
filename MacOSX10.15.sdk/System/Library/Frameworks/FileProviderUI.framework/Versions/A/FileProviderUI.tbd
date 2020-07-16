@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E2232120-8B22-30BC-9B4B-B0ABBCC49F04' ]
+uuids:           [ 'x86_64: 7440FF1B-6E6E-3100-9939-BD0CB574E33A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/FileProviderUI.framework/Versions/A/FileProviderUI'
 current-version: 29

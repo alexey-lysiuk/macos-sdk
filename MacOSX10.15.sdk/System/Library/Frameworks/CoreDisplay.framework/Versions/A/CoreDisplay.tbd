@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 53F750C6-947A-39AE-984E-41939B858A68' ]
+uuids:           [ 'x86_64: 213D7011-8180-3CF4-9BE7-FB8F75DCDB95' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay'
-current-version: 186.5.25
+current-version: 186.6.15
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CDNotificationRegisterCallbackBlock, _CDNotificationRegisterCallbackBlockOnQueue, 
@@ -98,14 +98,15 @@ exports:
                        _CoreDisplay_DisplaySurface_GetSize, _CoreDisplay_DisplaySurface_GetSrcZoomRect, 
                        _CoreDisplay_DisplaySurface_GetUpdateArea, _CoreDisplay_DisplaySurface_GetUpdateRect, 
                        _CoreDisplay_DisplaySurface_GetUpdateShape, _CoreDisplay_DisplaySurface_PrepareForAccess, 
-                       _CoreDisplay_Display_ContrastRatio, _CoreDisplay_Display_CopyDisplayContainerID, 
-                       _CoreDisplay_Display_CopyDisplayInfo, _CoreDisplay_Display_CopyMasteringInfo, 
-                       _CoreDisplay_Display_CopyPreset, _CoreDisplay_Display_CopyPresetData, 
-                       _CoreDisplay_Display_CopyPresetUniqueID, _CoreDisplay_Display_CopyUserAdjustment, 
-                       _CoreDisplay_Display_CopyUserAdjustmentData, _CoreDisplay_Display_FactoryReset, 
-                       _CoreDisplay_Display_FactoryResetPreset, _CoreDisplay_Display_FactoryResetUserAdjustment, 
-                       _CoreDisplay_Display_ForceColorOutput, _CoreDisplay_Display_GetAcceleratorRegistryID, 
-                       _CoreDisplay_Display_GetActivePresetIndex, _CoreDisplay_Display_GetActualSurfaceFormatForRequestedSurfaceFormat, 
+                       _CoreDisplay_Display_ContrastRatio, _CoreDisplay_Display_CopyCalibrationInfo, 
+                       _CoreDisplay_Display_CopyDisplayContainerID, _CoreDisplay_Display_CopyDisplayInfo, 
+                       _CoreDisplay_Display_CopyMasteringInfo, _CoreDisplay_Display_CopyPreset, 
+                       _CoreDisplay_Display_CopyPresetData, _CoreDisplay_Display_CopyPresetUniqueID, 
+                       _CoreDisplay_Display_CopyUserAdjustment, _CoreDisplay_Display_CopyUserAdjustmentData, 
+                       _CoreDisplay_Display_FactoryReset, _CoreDisplay_Display_FactoryResetPreset, 
+                       _CoreDisplay_Display_FactoryResetUserAdjustment, _CoreDisplay_Display_ForceColorOutput, 
+                       _CoreDisplay_Display_GetAcceleratorRegistryID, _CoreDisplay_Display_GetActivePresetIndex, 
+                       _CoreDisplay_Display_GetActualSurfaceFormatForRequestedSurfaceFormat, 
                        _CoreDisplay_Display_GetAmbientBrightnessInNits, _CoreDisplay_Display_GetCapabilities, 
                        _CoreDisplay_Display_GetCompositingColorSpace, _CoreDisplay_Display_GetCurrentGraphicsContentProtectionStatus, 
                        _CoreDisplay_Display_GetCurrentHeadroom, _CoreDisplay_Display_GetCurrentSurface, 
@@ -119,6 +120,7 @@ exports:
                        _CoreDisplay_Display_GetPotentialHeadroom, _CoreDisplay_Display_GetPresetCount, 
                        _CoreDisplay_Display_GetReferenceHeadroom, _CoreDisplay_Display_GetRefreshTiming, 
                        _CoreDisplay_Display_GetShinyData, _CoreDisplay_Display_GetThermalCompensation, 
+                       _CoreDisplay_Display_GetUserAdjustmentLuminanceCorrectionFactor, 
                        _CoreDisplay_Display_GetUserBrightness, _CoreDisplay_Display_InvalidateUserAdjustment, 
                        _CoreDisplay_Display_IsAccessibility, _CoreDisplay_Display_IsActivePresetReference, 
                        _CoreDisplay_Display_IsBuiltIn, _CoreDisplay_Display_IsCustomWhitePointSet, 
@@ -126,8 +128,8 @@ exports:
                        _CoreDisplay_Display_IsHDRModeEnabled, _CoreDisplay_Display_IsMain, 
                        _CoreDisplay_Display_IsPresetValid, _CoreDisplay_Display_IsPresetWritable, 
                        _CoreDisplay_Display_IsReady, _CoreDisplay_Display_IsThermallyLimited, 
-                       _CoreDisplay_Display_IsUserAdjustmentValid, _CoreDisplay_Display_PresentDisplaySurface, 
-                       _CoreDisplay_Display_PresentIOAccelSurfaceWithIOAccelSurfaceInfoAndBufferIndex, 
+                       _CoreDisplay_Display_IsUserAdjustmentSupported, _CoreDisplay_Display_IsUserAdjustmentValid, 
+                       _CoreDisplay_Display_PresentDisplaySurface, _CoreDisplay_Display_PresentIOAccelSurfaceWithIOAccelSurfaceInfoAndBufferIndex, 
                        _CoreDisplay_Display_PresentIOSurface, _CoreDisplay_Display_PresentIOSurfaceWithSrcAndDstRect, 
                        _CoreDisplay_Display_PresentIOSurfaceWithSrcAndDstRectAndWithOptions, 
                        _CoreDisplay_Display_PresentScreenRefresh, _CoreDisplay_Display_ProductNumber, 
@@ -214,13 +216,14 @@ exports:
                        _kCDDisplayPresetPrimaryRedXKey, _kCDDisplayPresetPrimaryRedYKey, 
                        _kCDDisplayPresetSRGBKey, _kCDDisplayPresetST2084CapableKey, 
                        _kCDDisplayPresetTCLUTsSubTypeKey, _kCDDisplayPresetUIPrimariesStandardTypeKey, 
-                       _kCDDisplayPresetUIReferencePreset, _kCDDisplayPresetUIReferencePresetKey, 
-                       _kCDDisplayPresetUITransferGammaKey, _kCDDisplayPresetUIWhitePointStandardTypeKey, 
-                       _kCDDisplayPresetUniqueIDKey, _kCDDisplayPresetValidKey, _kCDDisplayPresetWhitePointXKey, 
+                       _kCDDisplayPresetUIReferencePresetKey, _kCDDisplayPresetUITransferGammaKey, 
+                       _kCDDisplayPresetUIWhitePointStandardTypeKey, _kCDDisplayPresetUniqueIDKey, 
+                       _kCDDisplayPresetValidKey, _kCDDisplayPresetWhitePointXKey, 
                        _kCDDisplayPresetWhitePointYKey, _kCDDisplayPresetWritableKey, 
-                       _kCDDisplayUserAdjustmentDescriptionKey, _kCDDisplayUserAdjustmentFrontAmblientIlluminanceKey, 
-                       _kCDDisplayUserAdjustmentFrontAmblientWhitePointXKey, _kCDDisplayUserAdjustmentFrontAmblientWhitePointYKey, 
-                       _kCDDisplayUserAdjustmentMeasuredLuminanceScaleFactorKey, 
+                       _kCDDisplayUserAdjustmentDescriptionKey, _kCDDisplayUserAdjustmentExpectedLuminanceKey, 
+                       _kCDDisplayUserAdjustmentExpectedWhitePointXKey, _kCDDisplayUserAdjustmentExpectedWhitePointYKey, 
+                       _kCDDisplayUserAdjustmentFrontAmblientIlluminanceKey, _kCDDisplayUserAdjustmentFrontAmblientWhitePointXKey, 
+                       _kCDDisplayUserAdjustmentFrontAmblientWhitePointYKey, _kCDDisplayUserAdjustmentMeasuredLuminanceScaleFactorKey, 
                        _kCDDisplayUserAdjustmentMeasuredWhitePointXDeltaKey, _kCDDisplayUserAdjustmentMeasuredWhitePointYDeltaKey, 
                        _kCDDisplayUserAdjustmentRearAmblientIlluminanceKey, _kCDDisplayUserAdjustmentRearAmblientWhitePointXKey, 
                        _kCDDisplayUserAdjustmentRearAmblientWhitePointYKey, _kCDDisplayUserAdjustmentTemperatureKey, 

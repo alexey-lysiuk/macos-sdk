@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 28A40F1D-3754-3928-AACE-0E3BA001173A' ]
+uuids:           [ 'x86_64: 2CB648CB-2AFD-3833-93B0-589FD30F6D7D' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftMapKit.dylib'
 current-version: 0

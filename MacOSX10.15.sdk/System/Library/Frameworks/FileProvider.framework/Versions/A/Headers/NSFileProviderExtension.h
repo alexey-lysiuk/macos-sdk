@@ -1,7 +1,7 @@
 //
 //  NSFileProviderExtension.h
 //
-//  Copyright (c) 2014-2017 Apple Inc. All rights reserved.
+//  Copyright (c) 2014-2020 Apple Inc. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 #import <FileProvider/NSFileProviderDefines.h>

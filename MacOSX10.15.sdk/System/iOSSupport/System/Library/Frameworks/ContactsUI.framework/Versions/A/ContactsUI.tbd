@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C6E03304-85BF-3E16-B279-B6FE352C041B' ]
+uuids:           [ 'x86_64: 9CD8D9F4-E718-306B-87C6-FC1356825C71' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/ContactsUI.framework/Versions/A/ContactsUI'
 current-version: 33

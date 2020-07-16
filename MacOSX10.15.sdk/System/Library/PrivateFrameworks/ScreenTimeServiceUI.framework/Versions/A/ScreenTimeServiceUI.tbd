@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C4A9310A-B1EB-3F1F-9285-362EAEF6B563' ]
+uuids:           [ 'x86_64: C39796A7-460F-32A5-9FAF-6FF94124BBBC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ScreenTimeServiceUI.framework/Versions/A/ScreenTimeServiceUI'
-current-version: 433
+current-version: 440
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, LockoutUI, ParentalControls, ScreenTime, ScreenTimeSettingsUI, 

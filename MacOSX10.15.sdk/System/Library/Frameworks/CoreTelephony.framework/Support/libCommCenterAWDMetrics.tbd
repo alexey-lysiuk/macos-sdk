@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7F8A2C13-FFBE-3B1D-8929-510EA05A7559' ]
+uuids:           [ 'x86_64: DAE4D1BA-A3BA-3630-B9FF-A8F259C13158' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterAWDMetrics.dylib'
 exports:         

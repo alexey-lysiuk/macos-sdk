@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D2943204-C3A0-3C09-A7A9-BF75822678B4', 'x86_64: D2943204-C3A0-3C09-A7A9-BF75822678B4' ]
+uuids:           [ 'x86_64: 23DBB313-A082-3C08-8E1F-2D31EE4247EF', 'x86_64: 23DBB313-A082-3C08-8E1F-2D31EE4247EF' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreBluetooth.framework/Versions/A/CoreBluetooth'
 exports:         

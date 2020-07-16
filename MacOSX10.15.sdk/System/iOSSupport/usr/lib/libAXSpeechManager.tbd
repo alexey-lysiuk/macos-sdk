@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0EED655F-FF86-3E5F-86CE-FE1CEA8993E7' ]
+uuids:           [ 'x86_64: 308C5D52-8946-3F9D-8277-8C9949F9580C' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/libAXSpeechManager.dylib'
 exports:         

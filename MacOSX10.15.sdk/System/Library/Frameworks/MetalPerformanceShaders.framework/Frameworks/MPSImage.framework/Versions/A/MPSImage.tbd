@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CDC36001-66DA-3BBD-A9AA-2470B634B9C9', 'x86_64: CDC36001-66DA-3BBD-A9AA-2470B634B9C9' ]
+uuids:           [ 'x86_64: B424FE0C-6E90-3BFA-A6E7-DD86C735AE90', 'x86_64: B424FE0C-6E90-3BFA-A6E7-DD86C735AE90' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/Versions/A/MPSImage'
 current-version: 122.5.6

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2026F9E9-49B0-3E81-ABA2-C4333B301A77' ]
+uuids:           [ 'x86_64: 6FC7343C-7C8A-3C2D-B706-177378E2B049' ]
 platform:        macosx
 install-name:    '/usr/lib/libexslt.0.dylib'
 current-version: 9.15

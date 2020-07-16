@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2BAB1B88-C198-3D20-8DA3-056E66510E7A', 'x86_64: 2BAB1B88-C198-3D20-8DA3-056E66510E7A' ]
+uuids:           [ 'x86_64: 2E5FD5AE-8A7F-353F-9BD1-0241F3586181', 'x86_64: 2E5FD5AE-8A7F-353F-9BD1-0241F3586181' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE'
 current-version: 838.1

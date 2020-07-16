@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1D0B2F05-B49E-3D00-930E-E9D4FA9BFC01', 'x86_64: 1D0B2F05-B49E-3D00-930E-E9D4FA9BFC01' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/MorphunAssetsUpdater.framework/Versions/A/MorphunAssetsUpdater'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _MorphunAssetsUpdaterVersionNumber, _MorphunAssetsUpdaterVersionString ]
+    objc-classes:    [ ForceUpdateMessage, GetAssetPathsMessage, MorphunAssetsUpdater ]
+...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6DFA249D-CEC1-310B-A5A9-F6A4F9C2CAB7' ]
+uuids:           [ 'x86_64: AB20E77F-BB32-37C1-80F8-55D9BBCA5152' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/3425AMD/libcl2module.dylib'
 current-version: 2.5.1

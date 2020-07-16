@@ -91,83 +91,83 @@ GLK_INLINE GLKVector3 GLKVector3Project(GLKVector3 vectorToProject, GLKVector3 p
     
 GLK_INLINE GLKVector3 GLKVector3Make(float x, float y, float z)
 {
-    GLKVector3 v = { x, y, z };
+    GLKVector3 v = {{ x, y, z }};
     return v;
 }
 
 GLK_INLINE GLKVector3 GLKVector3MakeWithArray(float values[3])
 {
-    GLKVector3 v = { values[0], values[1], values[2] };
+    GLKVector3 v = {{ values[0], values[1], values[2] }};
     return v;
 }
    
 GLK_INLINE GLKVector3 GLKVector3Negate(GLKVector3 vector)
 {
-    GLKVector3 v = { -vector.v[0], -vector.v[1], -vector.v[2] };
+    GLKVector3 v = {{ -vector.v[0], -vector.v[1], -vector.v[2] }};
     return v;
 }
     
 GLK_INLINE GLKVector3 GLKVector3Add(GLKVector3 vectorLeft, GLKVector3 vectorRight)
 {
-    GLKVector3 v = { vectorLeft.v[0] + vectorRight.v[0],
-                     vectorLeft.v[1] + vectorRight.v[1],
-                     vectorLeft.v[2] + vectorRight.v[2] };
+    GLKVector3 v = {{ vectorLeft.v[0] + vectorRight.v[0],
+                      vectorLeft.v[1] + vectorRight.v[1],
+                      vectorLeft.v[2] + vectorRight.v[2] }};
     return v;
 }
 
 GLK_INLINE GLKVector3 GLKVector3Subtract(GLKVector3 vectorLeft, GLKVector3 vectorRight)
 {
-    GLKVector3 v = { vectorLeft.v[0] - vectorRight.v[0],
-                     vectorLeft.v[1] - vectorRight.v[1],
-                     vectorLeft.v[2] - vectorRight.v[2] };
+    GLKVector3 v = {{ vectorLeft.v[0] - vectorRight.v[0],
+                      vectorLeft.v[1] - vectorRight.v[1],
+                      vectorLeft.v[2] - vectorRight.v[2] }};
     return v;
 }
 
 GLK_INLINE GLKVector3 GLKVector3Multiply(GLKVector3 vectorLeft, GLKVector3 vectorRight)
 {
-    GLKVector3 v = { vectorLeft.v[0] * vectorRight.v[0],
-                     vectorLeft.v[1] * vectorRight.v[1],
-                     vectorLeft.v[2] * vectorRight.v[2] };
+    GLKVector3 v = {{ vectorLeft.v[0] * vectorRight.v[0],
+                      vectorLeft.v[1] * vectorRight.v[1],
+                      vectorLeft.v[2] * vectorRight.v[2] }};
     return v;
 }
 
 GLK_INLINE GLKVector3 GLKVector3Divide(GLKVector3 vectorLeft, GLKVector3 vectorRight)
 {
-    GLKVector3 v = { vectorLeft.v[0] / vectorRight.v[0],
-                     vectorLeft.v[1] / vectorRight.v[1],
-                     vectorLeft.v[2] / vectorRight.v[2] };
+    GLKVector3 v = {{ vectorLeft.v[0] / vectorRight.v[0],
+                      vectorLeft.v[1] / vectorRight.v[1],
+                      vectorLeft.v[2] / vectorRight.v[2] }};
     return v;
 }
 
 GLK_INLINE GLKVector3 GLKVector3AddScalar(GLKVector3 vector, float value)
 {
-    GLKVector3 v = { vector.v[0] + value,
-                     vector.v[1] + value,
-                     vector.v[2] + value };
+    GLKVector3 v = {{ vector.v[0] + value,
+                      vector.v[1] + value,
+                      vector.v[2] + value }};
     return v;
 }
 
 GLK_INLINE GLKVector3 GLKVector3SubtractScalar(GLKVector3 vector, float value)
 {
-    GLKVector3 v = { vector.v[0] - value,
-                     vector.v[1] - value,
-                     vector.v[2] - value };
+    GLKVector3 v = {{ vector.v[0] - value,
+                      vector.v[1] - value,
+                      vector.v[2] - value }};
     return v;    
 }
 
 GLK_INLINE GLKVector3 GLKVector3MultiplyScalar(GLKVector3 vector, float value)
 {
-    GLKVector3 v = { vector.v[0] * value,
-                     vector.v[1] * value,
-                     vector.v[2] * value };
+    GLKVector3 v = {{ vector.v[0] * value,
+                      vector.v[1] * value,
+                      vector.v[2] * value }};
     return v;   
 }
 
 GLK_INLINE GLKVector3 GLKVector3DivideScalar(GLKVector3 vector, float value)
 {
-    GLKVector3 v = { vector.v[0] / value,
-                     vector.v[1] / value,
-                     vector.v[2] / value };
+    GLKVector3 v = {{ vector.v[0] / value,
+                      vector.v[1] / value,
+                      vector.v[2] / value }};
     return v;
 }
     
@@ -258,7 +258,7 @@ GLK_INLINE bool GLKVector3AllGreaterThanOrEqualToScalar(GLKVector3 vector, float
 GLK_INLINE GLKVector3 GLKVector3Normalize(GLKVector3 vector)
 {
     float scale = 1.0f / GLKVector3Length(vector);
-    GLKVector3 v = { vector.v[0] * scale, vector.v[1] * scale, vector.v[2] * scale };
+    GLKVector3 v = {{ vector.v[0] * scale, vector.v[1] * scale, vector.v[2] * scale }};
     return v;
 }
     
@@ -279,17 +279,17 @@ GLK_INLINE float GLKVector3Distance(GLKVector3 vectorStart, GLKVector3 vectorEnd
     
 GLK_INLINE GLKVector3 GLKVector3Lerp(GLKVector3 vectorStart, GLKVector3 vectorEnd, float t)
 {
-    GLKVector3 v = { vectorStart.v[0] + ((vectorEnd.v[0] - vectorStart.v[0]) * t),
-                     vectorStart.v[1] + ((vectorEnd.v[1] - vectorStart.v[1]) * t),
-                     vectorStart.v[2] + ((vectorEnd.v[2] - vectorStart.v[2]) * t) };
+    GLKVector3 v = {{ vectorStart.v[0] + ((vectorEnd.v[0] - vectorStart.v[0]) * t),
+                      vectorStart.v[1] + ((vectorEnd.v[1] - vectorStart.v[1]) * t),
+                      vectorStart.v[2] + ((vectorEnd.v[2] - vectorStart.v[2]) * t) }};
     return v;
 }
  
 GLK_INLINE GLKVector3 GLKVector3CrossProduct(GLKVector3 vectorLeft, GLKVector3 vectorRight)
 {
-    GLKVector3 v = { vectorLeft.v[1] * vectorRight.v[2] - vectorLeft.v[2] * vectorRight.v[1],
-                     vectorLeft.v[2] * vectorRight.v[0] - vectorLeft.v[0] * vectorRight.v[2],
-                     vectorLeft.v[0] * vectorRight.v[1] - vectorLeft.v[1] * vectorRight.v[0] };
+    GLKVector3 v = {{ vectorLeft.v[1] * vectorRight.v[2] - vectorLeft.v[2] * vectorRight.v[1],
+                      vectorLeft.v[2] * vectorRight.v[0] - vectorLeft.v[0] * vectorRight.v[2],
+                      vectorLeft.v[0] * vectorRight.v[1] - vectorLeft.v[1] * vectorRight.v[0] }};
     return v;
 }
         

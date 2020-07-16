@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0872690D-36C9-393A-8DE2-76D36825044C' ]
+uuids:           [ 'x86_64: D6992041-C4AD-3830-8E1A-B058A8B9FE50' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SCEP.framework/Versions/A/SCEP'
 exports:         

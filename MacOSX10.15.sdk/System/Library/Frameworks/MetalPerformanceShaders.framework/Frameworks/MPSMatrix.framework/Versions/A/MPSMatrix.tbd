@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1E4FE6EF-6D42-3439-835C-F4F20B05E0F5', 'x86_64: 1E4FE6EF-6D42-3439-835C-F4F20B05E0F5' ]
+uuids:           [ 'x86_64: 02006D92-E2AB-3892-A96B-37F6520C19BA', 'x86_64: 02006D92-E2AB-3892-A96B-37F6520C19BA' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix'
 current-version: 122.5.6

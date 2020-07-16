@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8EDF5B41-65B0-3911-973F-72290348E44D' ]
+uuids:           [ 'x86_64: 2652FF0B-1493-38AA-BE21-63D6A131C638' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/Social.framework/Versions/A/Social'
 current-version: 87

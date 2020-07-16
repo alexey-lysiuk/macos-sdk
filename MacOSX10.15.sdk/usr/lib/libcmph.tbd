@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D4C5E0A8-92D9-33D5-9F83-6F4742FFBE29', 'x86_64: D4C5E0A8-92D9-33D5-9F83-6F4742FFBE29' ]
+uuids:           [ 'x86_64: E72A20DB-2E86-378D-A237-EB9A1370F989', 'x86_64: E72A20DB-2E86-378D-A237-EB9A1370F989' ]
 platform:        zippered
 install-name:    '/usr/lib/libcmph.dylib'
 exports:         

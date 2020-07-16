@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D77DD54-8818-3961-9C78-C0A937130814' ]
+uuids:           [ 'x86_64: A30AD288-C430-334E-9CC9-31E015ADC09F' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftMapKit.dylib'
 current-version: 0

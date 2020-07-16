@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EBC5E5F5-63FA-36FD-B557-27ADB3594201' ]
+uuids:           [ 'x86_64: 9FB1F0FA-5A35-36CB-B05B-83C4AA06C60C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TuriCore.framework/Versions/A/TuriCore'
 current-version: 0

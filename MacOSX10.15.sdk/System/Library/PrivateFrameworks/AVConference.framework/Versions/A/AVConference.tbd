@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 779D76FA-D763-3310-9426-1B57F97C92EC', 'x86_64: 779D76FA-D763-3310-9426-1B57F97C92EC' ]
+uuids:           [ 'x86_64: 36E67E14-33DD-38B2-BA63-9686EF279D9D', 'x86_64: 36E67E14-33DD-38B2-BA63-9686EF279D9D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Versions/A/AVConference'
 exports:         

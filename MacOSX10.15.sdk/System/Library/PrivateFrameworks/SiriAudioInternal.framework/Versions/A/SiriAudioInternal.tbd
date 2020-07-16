@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4A263476-6815-31FA-9020-B94D91436F60' ]
+uuids:           [ 'x86_64: E3E007C7-2A6F-3122-ABAD-DA4AC3F6B4A2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SiriAudioInternal.framework/Versions/A/SiriAudioInternal'
 swift-abi-version: 7

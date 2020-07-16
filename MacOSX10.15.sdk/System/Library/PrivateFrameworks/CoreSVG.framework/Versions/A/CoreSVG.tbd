@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 53213F48-F888-3EBE-AE30-E9303E9B712C', 'x86_64: 53213F48-F888-3EBE-AE30-E9303E9B712C' ]
+uuids:           [ 'x86_64: F38189F9-C8F9-3D62-9D5F-3F520FB81724', 'x86_64: F38189F9-C8F9-3D62-9D5F-3F520FB81724' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSVG.framework/Versions/A/CoreSVG'
-current-version: 129
+current-version: 129.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CGContextDrawSVGDocument, _CGContextDrawSVGNode, _CGSVGAtomCopyString, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E232469E-9595-3930-8834-2B7513F82FCC' ]
+uuids:           [ 'x86_64: 23E03EFF-0148-3F03-BD94-FBD308501B59' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/iPodUpdater.framework/Versions/A/iPodUpdater'
 exports:         

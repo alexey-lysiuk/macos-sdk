@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B60D7E51-1EE9-3673-B957-0ABEB451A1D7' ]
+uuids:           [ 'x86_64: 94772B89-1A18-3332-8747-AA1D2F7D5544' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftDemangle.dylib'
 current-version: 1103.8.25

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A8C34A66-B658-3807-87BF-DB9C4BDCF400', 'x86_64: A8C34A66-B658-3807-87BF-DB9C4BDCF400' ]
+uuids:           [ 'x86_64: 6DCF4802-78DB-3F4F-B3C4-FD96AF708F45', 'x86_64: 6DCF4802-78DB-3F4F-B3C4-FD96AF708F45' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IDSKVStore.framework/Versions/A/IDSKVStore'
 current-version: 800

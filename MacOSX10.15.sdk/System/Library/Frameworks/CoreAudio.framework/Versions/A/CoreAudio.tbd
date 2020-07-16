@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CF50C6CC-6753-3D64-A76B-21CE211A98E8', 'x86_64: CF50C6CC-6753-3D64-A76B-21CE211A98E8' ]
+uuids:           [ 'x86_64: 9DA02E7A-56A0-3FFF-94C2-1795BA761F07', 'x86_64: 9DA02E7A-56A0-3FFF-94C2-1795BA761F07' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio'
 exports:         

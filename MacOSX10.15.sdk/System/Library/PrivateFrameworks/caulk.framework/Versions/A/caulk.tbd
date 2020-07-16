@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DFE1EBB6-9A42-3227-8601-5CFCB1F665CD', 'x86_64: DFE1EBB6-9A42-3227-8601-5CFCB1F665CD' ]
+uuids:           [ 'x86_64: 06D695EA-E2BC-31E4-9816-9C12542BA744', 'x86_64: 06D695EA-E2BC-31E4-9816-9C12542BA744' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/caulk.framework/Versions/A/caulk'
 exports:         

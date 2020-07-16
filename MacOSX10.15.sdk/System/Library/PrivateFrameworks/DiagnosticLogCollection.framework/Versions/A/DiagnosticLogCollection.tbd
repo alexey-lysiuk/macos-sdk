@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 541DC527-FE6F-37C7-8E73-BDEB07D835B3', 'x86_64: 541DC527-FE6F-37C7-8E73-BDEB07D835B3' ]
+uuids:           [ 'x86_64: C598ABA7-6985-36CF-8C5E-895BA7B0DD1C', 'x86_64: C598ABA7-6985-36CF-8C5E-895BA7B0DD1C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DiagnosticLogCollection.framework/Versions/A/DiagnosticLogCollection'
 current-version: 800

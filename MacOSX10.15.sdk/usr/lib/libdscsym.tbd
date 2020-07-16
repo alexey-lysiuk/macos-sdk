@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CCC6EBC3-25C2-3E53-A986-D52A0C77F164', 'x86_64: CCC6EBC3-25C2-3E53-A986-D52A0C77F164' ]
+uuids:           [ 'x86_64: 2DB18AFD-581B-3A4A-BD22-58454EC89F69', 'x86_64: 2DB18AFD-581B-3A4A-BD22-58454EC89F69' ]
 platform:        zippered
 install-name:    '/usr/lib/libdscsym.dylib'
 current-version: 243.2

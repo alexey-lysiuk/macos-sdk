@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F33987F5-A14A-3A55-8D26-FDE9A57B9269', 'x86_64: F33987F5-A14A-3A55-8D26-FDE9A57B9269' ]
+uuids:           [ 'x86_64: E6E3B6EA-A2BE-3752-B06D-BECCBA4E85B2', 'x86_64: E6E3B6EA-A2BE-3752-B06D-BECCBA4E85B2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreAnalytics.framework/Versions/A/CoreAnalytics'
 exports:         
@@ -50,8 +50,9 @@ exports:
                        __ZTIN13CoreAnalytics13EventObserverE, __ZTIN13CoreAnalytics21ConfigurationObserverE, 
                        __ZTSN13CoreAnalytics13EventObserverE, __ZTSN13CoreAnalytics21ConfigurationObserverE, 
                        __ZTVN13CoreAnalytics13EventObserverE, __ZTVN13CoreAnalytics21ConfigurationObserverE, 
-                       _analytics_cancel_queried_awd_metric, _analytics_is_awd_metric_enabled, 
-                       _analytics_is_event_used, _analytics_mark_awd_queriable, _analytics_send_awd_metric, 
+                       _ad_addScalarForKey, _analytics_cancel_queried_awd_metric, 
+                       _analytics_is_awd_metric_enabled, _analytics_is_event_used, 
+                       _analytics_mark_awd_queriable, _analytics_send_awd_metric, 
                        _analytics_send_awd_trigger, _analytics_send_event, _analytics_send_event_lazy, 
                        _analytics_send_queried_awd_metric, _analytics_send_queried_awd_trigger, 
                        _analytics_set_awd_query_callback, _analytics_set_callback_for_queried_event, 

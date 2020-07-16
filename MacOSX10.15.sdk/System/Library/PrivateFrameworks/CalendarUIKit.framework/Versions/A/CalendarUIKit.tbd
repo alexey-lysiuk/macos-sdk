@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EC66958D-51B1-3A6C-85D9-866BE6F5BFC6' ]
+uuids:           [ 'x86_64: 6B03E58E-796D-36E9-A061-A73EE532D705' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CalendarUIKit.framework/Versions/A/CalendarUIKit'
 current-version: 0

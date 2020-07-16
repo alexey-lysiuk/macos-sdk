@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ACD4362A-7AFB-3360-9FB5-A6DD519158C3' ]
+uuids:           [ 'x86_64: 1F65CF17-D985-3743-8993-36B1D06ECBE9' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebKitLegacy.framework/Versions/A/WebKitLegacy'
-current-version: 609.1.20
+current-version: 609.3.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DOMEventException, _DOMException, _DOMRangeException, _DOMXPathException, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F4E107F2-A4C8-397E-A16A-A3062E50B799', 'x86_64: F4E107F2-A4C8-397E-A16A-A3062E50B799' ]
+uuids:           [ 'x86_64: BAEB40B7-908F-3D97-9BE9-5EAB83930543', 'x86_64: BAEB40B7-908F-3D97-9BE9-5EAB83930543' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation'
 current-version: 800

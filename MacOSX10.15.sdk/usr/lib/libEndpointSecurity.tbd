@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB958CCC-024F-337C-8413-A711F4CE0227' ]
+uuids:           [ 'x86_64: 1A30BC41-21D8-3863-B38E-5A1FF9F02FC9' ]
 platform:        macosx
 install-name:    '/usr/lib/libEndpointSecurity.dylib'
-current-version: 63.100.26
+current-version: 63.140.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _es_authorize_file_provider_materialize, _es_authorize_file_provider_materialize_unsafe, 

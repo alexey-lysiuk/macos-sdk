@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AEAEE894-BA4B-334F-90E1-7374DFB41979', 'x86_64: AEAEE894-BA4B-334F-90E1-7374DFB41979' ]
+uuids:           [ 'x86_64: E9A20E72-B17F-33D6-8894-41934A10B822', 'x86_64: E9A20E72-B17F-33D6-8894-41934A10B822' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib'
 exports:         

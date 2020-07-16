@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B3B9D9CC-B66D-3F10-8046-FA40F6FA64AD', 'x86_64: B3B9D9CC-B66D-3F10-8046-FA40F6FA64AD' ]
+uuids:           [ 'x86_64: 103C0D7A-1572-3441-8D6E-29657649BA30', 'x86_64: 103C0D7A-1572-3441-8D6E-29657649BA30' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PeopleSuggester.framework/Versions/A/PeopleSuggester'
 exports:         

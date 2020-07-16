@@ -2,7 +2,7 @@
 //  NSFileProviderDomain.h
 //  FileProvider
 //
-//  Copyright © 2017 Apple Inc. All rights reserved.
+//  Copyright © 2017-2020 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -33,7 +33,7 @@ typedef NSString *NSFileProviderDomainIdentifier NS_EXTENSIBLE_STRING_ENUM;
  common directory. That directory path is indicated by the
  @p pathRelativeToDocumentStorage property.
  */
-FILEPROVIDER_API_AVAILABILITY_V2
+FILEPROVIDER_API_AVAILABILITY_V2_V3
 @interface NSFileProviderDomain : NSObject
 
 /**

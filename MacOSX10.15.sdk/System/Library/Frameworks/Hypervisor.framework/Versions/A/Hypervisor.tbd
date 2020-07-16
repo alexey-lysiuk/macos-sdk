@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BDA98F6A-6DA6-37BE-9462-CC80FAE2F88B' ]
+uuids:           [ 'x86_64: D38AD2E7-4332-3DB9-BDB8-301CFA517695' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Hypervisor.framework/Versions/A/Hypervisor'
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BCA32239-EE89-36EB-9908-32A8E6F7C5F4' ]
+uuids:           [ 'x86_64: 1874AA53-2C73-3DB2-A98F-69D9BDB3ADC8' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore'
-current-version: 609.1.20
+current-version: 609.3.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _JSCheckScriptSyntax, _JSClassCreate, _JSClassRelease, _JSClassRetain, 
@@ -1422,12 +1422,13 @@ exports:
                        __ZN3WTF21RefCountedLeakCounter9decrementEv, __ZN3WTF21RefCountedLeakCounter9incrementEv, 
                        __ZN3WTF21RefCountedLeakCounterC1EPKc, __ZN3WTF21RefCountedLeakCounterC2EPKc, 
                        __ZN3WTF21RefCountedLeakCounterD1Ev, __ZN3WTF21RefCountedLeakCounterD2Ev, 
-                       __ZN3WTF21URLByRemovingUserInfoEP5NSURL, __ZN3WTF21bootSessionUUIDStringEv, 
-                       __ZN3WTF21charactersToIntStrictEPKhmPbi, __ZN3WTF21charactersToIntStrictEPKtmPbi, 
-                       __ZN3WTF21createCFURLFromBufferEPKcmPK7__CFURL, __ZN3WTF21currentSearchLocaleIDEv, 
-                       __ZN3WTF21processHasEntitlementEPKc, __ZN3WTF21sentenceBreakIteratorENS_10StringViewE, 
-                       __ZN3WTF22CrossThreadTaskHandler13postTaskReplyEONS_15CrossThreadTaskE, 
-                       __ZN3WTF22CrossThreadTaskHandler14suspendAndWaitEv, __ZN3WTF22CrossThreadTaskHandler6resumeEv, 
+                       __ZN3WTF21URLByRemovingUserInfoEP5NSURL, __ZN3WTF21applicationSDKVersionEv, 
+                       __ZN3WTF21bootSessionUUIDStringEv, __ZN3WTF21charactersToIntStrictEPKhmPbi, 
+                       __ZN3WTF21charactersToIntStrictEPKtmPbi, __ZN3WTF21createCFURLFromBufferEPKcmPK7__CFURL, 
+                       __ZN3WTF21currentSearchLocaleIDEv, __ZN3WTF21processHasEntitlementEPKc, 
+                       __ZN3WTF21sentenceBreakIteratorENS_10StringViewE, __ZN3WTF22CrossThreadTaskHandler13postTaskReplyEONS_15CrossThreadTaskE, 
+                       __ZN3WTF22CrossThreadTaskHandler14suspendAndWaitEv, __ZN3WTF22CrossThreadTaskHandler21setCompletionCallbackEONS_8FunctionIFvvEEE, 
+                       __ZN3WTF22CrossThreadTaskHandler4killEv, __ZN3WTF22CrossThreadTaskHandler6resumeEv, 
                        __ZN3WTF22CrossThreadTaskHandler8postTaskEONS_15CrossThreadTaskE, 
                        __ZN3WTF22CrossThreadTaskHandlerC1EPKcNS0_25AutodrainedPoolForRunLoopE, 
                        __ZN3WTF22CrossThreadTaskHandlerC2EPKcNS0_25AutodrainedPoolForRunLoopE, 
@@ -1454,10 +1455,11 @@ exports:
                        __ZN3WTF24normalizeLineEndingsToLFEONS_6VectorIhLm0ENS_15CrashOnOverflowELm16ENS_10FastMallocEEE, 
                        __ZN3WTF24numberToFixedWidthStringEdjRNSt3__15arrayIcLm123EEE, 
                        __ZN3WTF24numberToFixedWidthStringEfjRNSt3__15arrayIcLm123EEE, 
-                       __ZN3WTF24releaseLineBreakIteratorEP14UBreakIterator, __ZN3WTF25addLanguageChangeObserverEPvPFvS0_E, 
-                       __ZN3WTF25createCanonicalUUIDStringEv, __ZN3WTF25deallocateSendRightSafelyEj, 
-                       __ZN3WTF25fastDecommitAlignedMemoryEPvm, __ZN3WTF25fastMallocDumpMallocStatsEv, 
-                       __ZN3WTF26getAndResetAccumulatedLogsEv, __ZN3WTF26normalizeLineEndingsToCRLFEONS_6VectorIhLm0ENS_15CrashOnOverflowELm16ENS_10FastMallocEEE, 
+                       __ZN3WTF24releaseLineBreakIteratorEP14UBreakIterator, __ZN3WTF24setApplicationSDKVersionEj, 
+                       __ZN3WTF25addLanguageChangeObserverEPvPFvS0_E, __ZN3WTF25createCanonicalUUIDStringEv, 
+                       __ZN3WTF25deallocateSendRightSafelyEj, __ZN3WTF25fastDecommitAlignedMemoryEPvm, 
+                       __ZN3WTF25fastMallocDumpMallocStatsEv, __ZN3WTF26getAndResetAccumulatedLogsEv, 
+                       __ZN3WTF26normalizeLineEndingsToCRLFEONS_6VectorIhLm0ENS_15CrashOnOverflowELm16ENS_10FastMallocEEE, 
                        __ZN3WTF27protocolHostAndPortAreEqualERKNS_3URLES2_, __ZN3WTF27releaseFastMallocFreeMemoryEv, 
                        __ZN3WTF28displayNameForLanguageLocaleERKNS_6StringE, __ZN3WTF28encodeWithURLEscapeSequencesERKNS_6StringE, 
                        __ZN3WTF28normalizeLineEndingsToNativeEONS_6VectorIhLm0ENS_15CrashOnOverflowELm16ENS_10FastMallocEEE, 
@@ -1503,9 +1505,9 @@ exports:
                        __ZN3WTF5equalEPKNS_10StringImplEPKhj, __ZN3WTF5equalEPKNS_10StringImplEPKtj, 
                        __ZN3WTF5equalEPKNS_10StringImplES2_, __ZN3WTF5equalERKNS_10StringImplES2_, 
                        __ZN3WTF5sleepENS_7SecondsE, __ZN3WTF5sleepERKNS_24TimeWithDynamicClockTypeE, 
-                       __ZN3WTF6String23make16BitFrom8BitSourceEPKhm, __ZN3WTF6String23make8BitFrom16BitSourceEPKtm, 
-                       __ZN3WTF6String24numberToStringFixedWidthEdj, __ZN3WTF6String26fromUTF8WithLatin1FallbackEPKhm, 
-                       __ZN3WTF6String28numberToStringFixedPrecisionEdjNS_29TrailingZerosTruncatingPolicyE, 
+                       __ZN3WTF6Config17permanentlyFreezeEv, __ZN3WTF6String23make16BitFrom8BitSourceEPKhm, 
+                       __ZN3WTF6String23make8BitFrom16BitSourceEPKtm, __ZN3WTF6String24numberToStringFixedWidthEdj, 
+                       __ZN3WTF6String26fromUTF8WithLatin1FallbackEPKhm, __ZN3WTF6String28numberToStringFixedPrecisionEdjNS_29TrailingZerosTruncatingPolicyE, 
                        __ZN3WTF6String28numberToStringFixedPrecisionEfjNS_29TrailingZerosTruncatingPolicyE, 
                        __ZN3WTF6String6appendEPKhj, __ZN3WTF6String6appendEPKtj, 
                        __ZN3WTF6String6appendERKS0_, __ZN3WTF6String6appendEh, __ZN3WTF6String6appendEt, 
@@ -2886,7 +2888,6 @@ exports:
                        __ZNK3WTF3URL11createCFURLEv, __ZNK3WTF3URL11encodedPassEv, 
                        __ZNK3WTF3URL11encodedUserEv, __ZNK3WTF3URL11hostAndPortEv, 
                        __ZNK3WTF3URL11isLocalFileEv, __ZNK3WTF3URL12baseAsStringEv, 
-                       __ZNK3WTF3URL12copyToBufferERNS_6VectorIcLm512ENS_15CrashOnOverflowELm16ENS_10FastMallocEEE, 
                        __ZNK3WTF3URL12isolatedCopyEv, __ZNK3WTF3URL14fileSystemPathEv, 
                        __ZNK3WTF3URL14isHierarchicalEv, __ZNK3WTF3URL15protocolIsAboutEv, 
                        __ZNK3WTF3URL16isMatchingDomainERKNS_6StringE, __ZNK3WTF3URL17lastPathComponentEv, 
@@ -3136,6 +3137,6 @@ exports:
                        __ZThn24_N9Inspector28InspectorScriptProfilerAgentD0Ev, __ZThn24_N9Inspector28InspectorScriptProfilerAgentD1Ev, 
                        __ZThn24_NK9Inspector28InspectorScriptProfilerAgent18isAlreadyProfilingEv, 
                        _g_gigacageConfig, _g_jscConfig, _g_opcodeMap, _g_opcodeMapWide16, 
-                       _g_opcodeMapWide32, _kJSClassDefinitionEmpty ]
+                       _g_opcodeMapWide32, _g_wtfConfig, _kJSClassDefinitionEmpty ]
     objc-classes:    [ JSContext, JSManagedValue, JSScript, JSValue, JSVirtualMachine ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2D405F16-31AE-38B8-AF5F-A8613C972DB6', 'x86_64: 2D405F16-31AE-38B8-AF5F-A8613C972DB6' ]
+uuids:           [ 'x86_64: 71E12F96-738C-3399-8846-CFB99ACA19F4', 'x86_64: 71E12F96-738C-3399-8846-CFB99ACA19F4' ]
 platform:        zippered
 install-name:    '/usr/lib/libipconfig.dylib'
 exports:         

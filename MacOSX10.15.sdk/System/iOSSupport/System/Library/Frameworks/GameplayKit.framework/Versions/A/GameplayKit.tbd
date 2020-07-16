@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CAA275D3-030F-3937-8254-48880C5B3D19' ]
+uuids:           [ 'x86_64: D492ADCC-4A4F-3396-A963-4D6DA50E40A0' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/GameplayKit.framework/Versions/A/GameplayKit'
 current-version: 89

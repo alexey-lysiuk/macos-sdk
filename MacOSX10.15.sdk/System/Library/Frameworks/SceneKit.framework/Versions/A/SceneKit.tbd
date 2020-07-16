@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40A2D015-0E53-33F1-915E-F77960182863' ]
+uuids:           [ 'x86_64: 2089FCAB-CE3B-302C-8AF3-D48686BB1806' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/SceneKit.framework/Versions/A/SceneKit'
 current-version: 540.10

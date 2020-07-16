@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2DA1C581-D858-37BF-818A-61B5AA91A6CD' ]
+uuids:           [ 'x86_64: 709E434D-32B5-3DD9-B2EA-5B6180F86E17' ]
 platform:        macosx
 install-name:    '/usr/lib/libSLAMDynamic.dylib'
 exports:         

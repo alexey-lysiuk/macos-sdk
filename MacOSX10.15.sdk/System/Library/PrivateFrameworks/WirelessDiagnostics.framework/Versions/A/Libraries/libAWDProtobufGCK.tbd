@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 541F80B1-61EC-38F8-80B8-CE6F49BEBCAE', 'x86_64: 541F80B1-61EC-38F8-80B8-CE6F49BEBCAE' ]
+uuids:           [ 'x86_64: B1C92EB8-23B2-3A3A-938B-C041146457FD', 'x86_64: B1C92EB8-23B2-3A3A-938B-C041146457FD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDProtobufGCK.dylib'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E66D1D23-0CCE-35A3-B4DE-2961EE860C5B', 'x86_64: E66D1D23-0CCE-35A3-B4DE-2961EE860C5B' ]
+uuids:           [ 'x86_64: F0A15A1B-020E-33A8-B2A7-0259B860F591', 'x86_64: F0A15A1B-020E-33A8-B2A7-0259B860F591' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MMCS.framework/Versions/A/MMCS'
 current-version: 495

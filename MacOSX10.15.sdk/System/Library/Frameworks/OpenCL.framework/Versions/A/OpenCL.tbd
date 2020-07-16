@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3F0E363C-9380-3226-A4D1-67E740079AAD', 'x86_64: 3F0E363C-9380-3226-A4D1-67E740079AAD' ]
+uuids:           [ 'x86_64: 293FE223-9186-320B-81A4-EC8104C38357', 'x86_64: 293FE223-9186-320B-81A4-EC8104C38357' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL'
 exports:         

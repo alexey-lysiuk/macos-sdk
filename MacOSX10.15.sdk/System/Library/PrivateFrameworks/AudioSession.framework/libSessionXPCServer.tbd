@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 459BCBD1-28AE-3A57-9728-FDD0F6AA6185' ]
+uuids:           [ 'x86_64: C6509C49-9A2E-3E8F-8001-EDCE8C7D0F8C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AudioSession.framework/libSessionXPCServer.dylib'
 exports:         

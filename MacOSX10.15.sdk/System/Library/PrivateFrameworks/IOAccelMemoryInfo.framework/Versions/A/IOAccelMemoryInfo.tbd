@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8626B839-52BD-3BE1-BD83-B5C72D7B586D', 'x86_64: 8626B839-52BD-3BE1-BD83-B5C72D7B586D' ]
+uuids:           [ 'x86_64: 50DDA9C2-BDDF-33D4-9BA9-A161E99F1EAD', 'x86_64: 50DDA9C2-BDDF-33D4-9BA9-A161E99F1EAD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IOAccelMemoryInfo.framework/Versions/A/IOAccelMemoryInfo'
 exports:         

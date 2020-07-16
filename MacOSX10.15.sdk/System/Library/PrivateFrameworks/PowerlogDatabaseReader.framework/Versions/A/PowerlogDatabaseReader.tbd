@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6DE1C05D-E329-3F84-A0A2-1AA3661F9F74' ]
+uuids:           [ 'x86_64: 6AAFB3C8-C0E4-3571-9318-C1D62E008D80' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PowerlogDatabaseReader.framework/Versions/A/PowerlogDatabaseReader'
 exports:         

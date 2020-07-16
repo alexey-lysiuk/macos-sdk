@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 68D528EF-726D-3A89-87A3-55F062F236B6', 'x86_64: 68D528EF-726D-3A89-87A3-55F062F236B6' ]
+uuids:           [ 'x86_64: 8168D7EB-F6E7-3DA2-A623-440938B81962', 'x86_64: 8168D7EB-F6E7-3DA2-A623-440938B81962' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DiagnosticExtensions.framework/Versions/A/DiagnosticExtensions'
 exports:         

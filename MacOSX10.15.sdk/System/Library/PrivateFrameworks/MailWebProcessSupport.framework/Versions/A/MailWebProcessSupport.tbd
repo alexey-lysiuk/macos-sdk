@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5CEC9A52-F14D-3055-9938-D9B9EFC7A339' ]
+uuids:           [ 'x86_64: F352A6E9-E6BB-3FC2-A854-73C7DBDD6AA8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MailWebProcessSupport.framework/Versions/A/MailWebProcessSupport'
-current-version: 3608.80.23
+current-version: 3608.120.23
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _kBodyFieldSource, _kBodyFieldSourceLength, _kConstantsSource, 

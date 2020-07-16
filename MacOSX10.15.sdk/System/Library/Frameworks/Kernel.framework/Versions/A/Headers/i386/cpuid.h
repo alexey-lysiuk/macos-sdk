@@ -178,6 +178,7 @@
 #define CPUID_LEAF7_EXTFEATURE_AVX5124VNNIW     _Bit(2)         /* AVX512_4VNNIW */
 #define CPUID_LEAF7_EXTFEATURE_AVX5124FMAPS     _Bit(3)         /* AVX512_4FMAPS */
 #define CPUID_LEAF7_EXTFEATURE_FSREPMOV         _Bit(4)         /* Fast Short REP MOV */
+#define CPUID_LEAF7_EXTFEATURE_SRBDS_CTRL       _Bit(9)         /* SRBDS MSR Presence and Mitigation Control */
 #define CPUID_LEAF7_EXTFEATURE_MDCLEAR          _Bit(10)        /* Overloaded VERW / L1D_FLUSH */
 #define CPUID_LEAF7_EXTFEATURE_TSXFA            _Bit(13)        /* TSX RTM_FORCE_ABORT MSR */
 #define CPUID_LEAF7_EXTFEATURE_IBRS             _Bit(26)        /* IBRS / IBPB */
@@ -272,6 +273,9 @@
 #define CPUID_MODEL_ICELAKE_DT          0x7D
 #define CPUID_MODEL_ICELAKE_H           0x9F
 #endif /* not RC_HIDE_XNU_ICELAKE */
+#if !defined(RC_HIDE_XNU_COMETLAKE)
+#define CPUID_MODEL_COMETLAKE_DT        0xA5
+#endif /* not RC_HIDE_XNU_COMETLAKE */
 
 #define CPUID_VMM_FAMILY_UNKNOWN        0x0
 #define CPUID_VMM_FAMILY_VMWARE         0x1

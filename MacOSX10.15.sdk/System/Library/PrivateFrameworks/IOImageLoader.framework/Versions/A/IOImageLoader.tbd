@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 387BEAA4-7F26-3AD7-AA78-E7310A201DAC' ]
+uuids:           [ 'x86_64: D46649DF-BCDA-3017-89BE-996776E1A353' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IOImageLoader.framework/Versions/A/IOImageLoader'
 exports:         

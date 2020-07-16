@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 141C97B5-8A24-3A6F-9A58-038CD1CC6F16', 'x86_64: 141C97B5-8A24-3A6F-9A58-038CD1CC6F16' ]
+uuids:           [ 'x86_64: 40564000-6895-309D-8AFC-0313C328DC66', 'x86_64: 40564000-6895-309D-8AFC-0313C328DC66' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libGPUCompiler.dylib'
-current-version: 902.14.9
+current-version: 902.14.11
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LLVMExtraCreateBinary, _LLVMExtraCreateIRObjectFile, _LLVMExtraCreateMetalLibObjectFile, 

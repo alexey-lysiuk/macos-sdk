@@ -90,7 +90,7 @@ GLK_INLINE GLKVector2 GLKVector2Project(GLKVector2 vectorToProject, GLKVector2 p
     
 GLK_INLINE GLKVector2 GLKVector2Make(float x, float y)
 {
-    GLKVector2 v = { x, y };
+    GLKVector2 v = {{ x, y }};
     return v;
 }
     
@@ -101,7 +101,7 @@ GLK_INLINE GLKVector2 GLKVector2MakeWithArray(float values[2])
     v = _mm_loadl_pi(v, (__m64 *)values);
     return *(GLKVector2 *)&v;
 #else
-    GLKVector2 v = { values[0], values[1] };
+    GLKVector2 v = {{ values[0], values[1] }};
     return v;
 #endif
 }
@@ -113,7 +113,7 @@ GLK_INLINE GLKVector2 GLKVector2Negate(GLKVector2 vector)
     v = _mm_sub_ps(_mm_setzero_ps(), _mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vector));
     return *(GLKVector2 *)&v;
 #else
-    GLKVector2 v = { -vector.v[0] , -vector.v[1] };
+    GLKVector2 v = {{ -vector.v[0] , -vector.v[1] }};
     return v;
 #endif
 }
@@ -125,8 +125,8 @@ GLK_INLINE GLKVector2 GLKVector2Add(GLKVector2 vectorLeft, GLKVector2 vectorRigh
     v = _mm_add_ps(_mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vectorLeft), _mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vectorRight));
     return *(GLKVector2 *)&v;
 #else
-    GLKVector2 v = { vectorLeft.v[0] + vectorRight.v[0],
-                     vectorLeft.v[1] + vectorRight.v[1] };
+    GLKVector2 v = {{ vectorLeft.v[0] + vectorRight.v[0],
+                      vectorLeft.v[1] + vectorRight.v[1] }};
     return v;
 #endif
 }
@@ -138,8 +138,8 @@ GLK_INLINE GLKVector2 GLKVector2Subtract(GLKVector2 vectorLeft, GLKVector2 vecto
     v = _mm_sub_ps(_mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vectorLeft), _mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vectorRight));
     return *(GLKVector2 *)&v;
 #else
-    GLKVector2 v = { vectorLeft.v[0] - vectorRight.v[0],
-                     vectorLeft.v[1] - vectorRight.v[1] };
+    GLKVector2 v = {{ vectorLeft.v[0] - vectorRight.v[0],
+                      vectorLeft.v[1] - vectorRight.v[1] }};
     return v;
 #endif
 }
@@ -151,8 +151,8 @@ GLK_INLINE GLKVector2 GLKVector2Multiply(GLKVector2 vectorLeft, GLKVector2 vecto
     v = _mm_mul_ps(_mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vectorLeft), _mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vectorRight));
     return *(GLKVector2 *)&v;
 #else
-    GLKVector2 v = { vectorLeft.v[0] * vectorRight.v[0],
-                     vectorLeft.v[1] * vectorRight.v[1] };
+    GLKVector2 v = {{ vectorLeft.v[0] * vectorRight.v[0],
+                      vectorLeft.v[1] * vectorRight.v[1] }};
     return v;
 #endif
 }
@@ -164,8 +164,8 @@ GLK_INLINE GLKVector2 GLKVector2Divide(GLKVector2 vectorLeft, GLKVector2 vectorR
     v = _mm_div_ps(_mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vectorLeft), _mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vectorRight));
     return *(GLKVector2 *)&v;
 #else
-    GLKVector2 v = { vectorLeft.v[0] / vectorRight.v[0],
-                     vectorLeft.v[1] / vectorRight.v[1] };
+    GLKVector2 v = {{ vectorLeft.v[0] / vectorRight.v[0],
+                      vectorLeft.v[1] / vectorRight.v[1] }};
     return v;
 #endif
 }
@@ -177,8 +177,8 @@ GLK_INLINE GLKVector2 GLKVector2AddScalar(GLKVector2 vector, float value)
     v = _mm_add_ps(_mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vector), _mm_set1_ps(value));
     return *(GLKVector2 *)&v;
 #else
-    GLKVector2 v = { vector.v[0] + value,
-                     vector.v[1] + value };
+    GLKVector2 v = {{ vector.v[0] + value,
+                      vector.v[1] + value }};
     return v;
 #endif
 }
@@ -190,8 +190,8 @@ GLK_INLINE GLKVector2 GLKVector2SubtractScalar(GLKVector2 vector, float value)
     v = _mm_sub_ps(_mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vector), _mm_set1_ps(value));
     return *(GLKVector2 *)&v;
 #else    
-    GLKVector2 v = { vector.v[0] - value,
-                     vector.v[1] - value };
+    GLKVector2 v = {{ vector.v[0] - value,
+                      vector.v[1] - value }};
     return v;
 #endif
 }
@@ -203,8 +203,8 @@ GLK_INLINE GLKVector2 GLKVector2MultiplyScalar(GLKVector2 vector, float value)
     v = _mm_mul_ps(_mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vector), _mm_set1_ps(value));
     return *(GLKVector2 *)&v;
 #else
-    GLKVector2 v = { vector.v[0] * value,
-                     vector.v[1] * value };
+    GLKVector2 v = {{ vector.v[0] * value,
+                      vector.v[1] * value }};
     return v;
 #endif
 }
@@ -216,8 +216,8 @@ GLK_INLINE GLKVector2 GLKVector2DivideScalar(GLKVector2 vector, float value)
     v = _mm_div_ps(_mm_loadl_pi(_mm_setzero_ps(), (__m64 *)&vector), _mm_set1_ps(value));
     return *(GLKVector2 *)&v;
 #else
-    GLKVector2 v = { vector.v[0] / value,
-                     vector.v[1] / value };
+    GLKVector2 v = {{ vector.v[0] / value,
+                      vector.v[1] / value }};
     return v;
 #endif
 }
@@ -332,8 +332,8 @@ GLK_INLINE float GLKVector2Distance(GLKVector2 vectorStart, GLKVector2 vectorEnd
     
 GLK_INLINE GLKVector2 GLKVector2Lerp(GLKVector2 vectorStart, GLKVector2 vectorEnd, float t)
 {
-    GLKVector2 v = { vectorStart.v[0] + ((vectorEnd.v[0] - vectorStart.v[0]) * t),
-                     vectorStart.v[1] + ((vectorEnd.v[1] - vectorStart.v[1]) * t) };
+    GLKVector2 v = {{ vectorStart.v[0] + ((vectorEnd.v[0] - vectorStart.v[0]) * t),
+                      vectorStart.v[1] + ((vectorEnd.v[1] - vectorStart.v[1]) * t) }};
     return v;
 }
 

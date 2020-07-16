@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 216D98C2-01E4-30A9-BC5D-F39F51079297' ]
+uuids:           [ 'x86_64: CB329853-68F3-3A8F-A286-C891DE194F74' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AirPlaySupport.framework/Versions/A/AirPlaySupport'
 exports:         

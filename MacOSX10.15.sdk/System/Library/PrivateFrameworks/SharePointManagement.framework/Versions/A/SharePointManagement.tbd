@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D2879496-3CB4-30CF-86DF-6CEAEF5EBCD0', 'x86_64: D2879496-3CB4-30CF-86DF-6CEAEF5EBCD0' ]
+uuids:           [ 'x86_64: 2054572C-C65C-3EE5-8108-72C3B1E15727', 'x86_64: 2054572C-C65C-3EE5-8108-72C3B1E15727' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SharePointManagement.framework/Versions/A/SharePointManagement'
 current-version: 104

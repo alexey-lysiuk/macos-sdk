@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6237A620-13EA-319F-8A2D-CDD84FE75F4B', 'x86_64: 6237A620-13EA-319F-8A2D-CDD84FE75F4B' ]
+uuids:           [ 'x86_64: 65ACA67F-A29E-3A7E-9DDE-30F012DC0BEF', 'x86_64: 65ACA67F-A29E-3A7E-9DDE-30F012DC0BEF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DTXConnectionServices.framework/Versions/A/DTXConnectionServices'
-current-version: 64535.41
+current-version: 64535.52.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CFArrayCreateWithDTXPrimitiveArray, _CFDictionaryCreateWithDTXPrimitiveDictionary, 
@@ -16,10 +16,11 @@ exports:
                        _DTXPrimitiveDictionaryDestroy, _DTXPrimitiveDictionaryGetSerialized, 
                        _DTXPrimitiveDictionaryReferencingSerialized, _DTXSpawnSubtask, 
                        _DTXSpawn_CPUTypeKey, _DTXSpawn_DYLDForcePlatformKey, _DTXSpawn_StderrPathKey, 
-                       _DTXSpawn_StdinPathKey, _DTXSpawn_StdoutPathKey, _DTXSpawn_TimeoutKey, 
-                       _DTXSubtaskCheckin, __DTXPrimitiveDictionaryEnumerate, __DTXPrimitiveDictionaryGetCount, 
-                       __createObjectFromPrimitiveType, _kDTXAckBarrierMessage, _kDTXBarrierMessage, 
-                       _kDTXHeartbeatMessage, _kDTXInterruptionMessage ]
+                       _DTXSpawn_StdinPathKey, _DTXSpawn_StdoutPathKey, _DTXSpawn_SuspendedKey, 
+                       _DTXSpawn_TimeoutKey, _DTXSubtaskCheckin, __DTXPrimitiveDictionaryEnumerate, 
+                       __DTXPrimitiveDictionaryGetCount, __createObjectFromPrimitiveType, 
+                       _kDTXAckBarrierMessage, _kDTXBarrierMessage, _kDTXHeartbeatMessage, 
+                       _kDTXInterruptionMessage ]
     objc-classes:    [ DTXBlockCompressorFactory, DTXBlockCompressorLibCompression, 
                        DTXChannel, DTXConnection, DTXDecompressionException, DTXFileDescriptorTransport, 
                        DTXFoundationURLTransport, DTXMachTransport, DTXMessage, DTXMessageParser, 

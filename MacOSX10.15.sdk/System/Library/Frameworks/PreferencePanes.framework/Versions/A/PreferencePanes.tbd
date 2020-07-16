@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ADD5C3C8-4C7B-3A53-9022-CB4EB03C2A16' ]
+uuids:           [ 'x86_64: D52B1980-2C2F-3374-A5C9-1B5A4B7ED1EE' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/PreferencePanes.framework/Versions/A/PreferencePanes'
 exports:         

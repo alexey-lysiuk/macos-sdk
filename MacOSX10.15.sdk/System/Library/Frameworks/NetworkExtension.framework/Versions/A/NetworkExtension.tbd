@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CB7E4930-C6EC-3642-B4BF-2B9D54BA3A53', 'x86_64: CB7E4930-C6EC-3642-B4BF-2B9D54BA3A53' ]
+uuids:           [ 'x86_64: 3ED35C5A-B170-373E-8277-D4198E408810', 'x86_64: 3ED35C5A-B170-373E-8277-D4198E408810' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/NetworkExtension.framework/Versions/A/NetworkExtension'
 exports:         
@@ -139,9 +139,9 @@ exports:
                        _kNEActiveVPNKey, _kNEAllowAllCaptiveNetworkPluginsKey, _kNEAllowCaptiveWebSheetKey, 
                        _kNEAllowCellularDataKey, _kNEAllowRoamingCellularDataKey, 
                        _kNEAllowedCaptiveNetworkPluginsKey, _kNEAlwaysOnKey, _kNEAppIdentifierMatchesKey, 
-                       _kNEAppRules, _kNEApplicationCreatedKey, _kNEApplicationRulesKey, 
-                       _kNEAuthEAPPluginsKey, _kNEAuthMethodCertificateValue, _kNEAuthMethodNoneValue, 
-                       _kNEAuthMethodPasswordValue, _kNEAuthMethodPromptValue, _kNEAuthMethodSharedSecretValue, 
+                       _kNEAppRules, _kNEApplicationRulesKey, _kNEAuthEAPPluginsKey, 
+                       _kNEAuthMethodCertificateValue, _kNEAuthMethodNoneValue, _kNEAuthMethodPasswordValue, 
+                       _kNEAuthMethodPromptValue, _kNEAuthMethodSharedSecretValue, 
                        _kNEAuthNameKey, _kNEAuthPasswordKey, _kNEAuthPasswordPluginTypeKey, 
                        _kNEAuthProtocolEAPKRBValue, _kNEAuthProtocolEAPRSAValue, 
                        _kNEAuthProtocolEAPTLSValue, _kNEAuthProtocolKey, _kNEAuthProtocolTokenCard, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 184459B4-4C04-32BA-A6FD-13B8273CC98D', 'x86_64: 184459B4-4C04-32BA-A6FD-13B8273CC98D' ]
+uuids:           [ 'x86_64: D66A166C-D5B5-318A-ABF5-E42167419CA8', 'x86_64: D66A166C-D5B5-318A-ABF5-E42167419CA8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSpeech.framework/Versions/A/CoreSpeech'
 swift-abi-version: 7
@@ -103,7 +103,8 @@ exports:
                        _kCSAssetPremiumKey, _kCSAssetValueLanguageAny, _kCSAudioRecordContextKey, 
                        _kCSAudioRecordDeviceInfoKey, _kCSAudioSyncedFileSuffix, _kCSContainsPayload, 
                        _kCSDateTrainedKey, _kCSDiagnosticReporterAudioDidStartWatchDogFire, 
-                       _kCSDiagnosticReporterAudioDidStopWatchDogFire, _kCSDiagnosticReporterAudioSnapshotTime, 
+                       _kCSDiagnosticReporterAudioDidStopWatchDogFire, _kCSDiagnosticReporterAudioResourceNotAvailable, 
+                       _kCSDiagnosticReporterAudioSessionInterrupted, _kCSDiagnosticReporterAudioSnapshotTime, 
                        _kCSDiagnosticReporterAudioStreamDeallocDuringStreaming, _kCSDiagnosticReporterAudioTypeKey, 
                        _kCSDiagnosticReporterDomainKey, _kCSDiagnosticReporterVoiceIdDelayedScores, 
                        _kCSDiagnosticReporterVoiceIdExplicitUttRejected, _kCSDiagnosticReporterVoiceIdMissingHomeId, 
@@ -144,7 +145,8 @@ exports:
                        _kPeakDecay, _kPeakDecay1, _kPeakResetTime, _kVTSiriAssertionDisabledDarwinNotification, 
                        _kVTSiriAssertionEnabledDarwinNotification, _kXPCEncodeKeyIsRemoteDevice, 
                        _kXPCEncodeKeyRemoteDeviceProductIdentifier, _kXPCEncodeKeyRemoteDeviceUID, 
-                       _kXPCEncodeKeyRoute, _sumsegment, _vecsqrt, _zeroCrossingVAD ]
+                       _kXPCEncodeKeyRoute, _msnExceptionAnnounceMessage, _msnExceptionPrewarm, 
+                       _sumsegment, _vecsqrt, _zeroCrossingVAD ]
     objc-classes:    [ CSAESKeyManager, CSAVVCRecordingClientMonitor, CSAVVoiceTriggerClientManager, 
                        CSActivationEvent, CSActivationEventNotifier, CSActivationXPCClient, 
                        CSAggregator, CSAlarmMonitor, CSAlertBehaviorPredictor, CSAlwaysOnProcessorStateMonitor, 
@@ -175,10 +177,11 @@ exports:
                        CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, 
                        CSKeywordDetector, CSLanguageCodeUpdateMonitor, CSLanguageDetector, 
                        CSLanguageDetectorAssetMonitor, CSLanguageDetectorOption, 
-                       CSListeningEnabledPolicyWatch, CSMediaPlayingMonitor, CSMyriadPHash, 
-                       CSMyriadSelfTriggerCoordinator, CSNNVADEndpointAnalyzer, CSNetworkAvailabilityMonitor, 
-                       CSNovDetector, CSNovDetectorResult, CSOSTransaction, CSOpportuneSpeakBehaviorMonitor, 
-                       CSOpportuneSpeakEventMonitor, CSOpportuneSpeakListener, CSOpportuneSpeakListenerDeviceManager, 
+                       CSListeningEnabledPolicyWatch, CSMSNExceptionManager, CSMediaPlayingMonitor, 
+                       CSMyriadPHash, CSMyriadSelfTriggerCoordinator, CSNNVADEndpointAnalyzer, 
+                       CSNetworkAvailabilityMonitor, CSNovDetector, CSNovDetectorResult, 
+                       CSOSTransaction, CSOpportuneSpeakBehaviorMonitor, CSOpportuneSpeakEventMonitor, 
+                       CSOpportuneSpeakListener, CSOpportuneSpeakListenerDeviceManager, 
                        CSOpportuneSpeakListenerOption, CSOpportuneSpeakListnerTestService, 
                        CSP2PService, CSPhraseSpotterEnabledMonitor, CSPlainAudioFileWriter, 
                        CSPolicy, CSPreferences, CSRemoteControlClient, CSRemoteRecordClient, 

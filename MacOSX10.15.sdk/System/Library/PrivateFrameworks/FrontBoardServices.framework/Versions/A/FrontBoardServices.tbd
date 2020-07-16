@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 900DE3E5-DC8C-39CF-AD25-ABDCAC8315B7', 'x86_64: 900DE3E5-DC8C-39CF-AD25-ABDCAC8315B7' ]
+uuids:           [ 'x86_64: 2C044425-27FC-373A-94EE-4C0370001432', 'x86_64: 2C044425-27FC-373A-94EE-4C0370001432' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FrontBoardServices.framework/Versions/A/FrontBoardServices'
 current-version: 0
@@ -159,7 +159,7 @@ exports:
                        FBSSceneTransitionContext._watchdogTransitionContext ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1EFE4339-9393-3B15-8DC9-2BE9B03F3062', 'x86_64: 1EFE4339-9393-3B15-8DC9-2BE9B03F3062' ]
+uuids:           [ 'x86_64: 10D0F3BB-E8F3-365E-8528-6AC996A9B0E7', 'x86_64: 10D0F3BB-E8F3-365E-8528-6AC996A9B0E7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard'
 current-version: 0
@@ -312,7 +312,7 @@ exports:
                        BSXPCCoder._message, BSXPCCoder._xpcConnection ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 275081C1-A1ED-39F6-9B21-9D4B60BB8C8F' ]
+uuids:           [ 'x86_64: 95D829A0-6339-35F7-BC46-5A54AE62DB30' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices'
 current-version: 0

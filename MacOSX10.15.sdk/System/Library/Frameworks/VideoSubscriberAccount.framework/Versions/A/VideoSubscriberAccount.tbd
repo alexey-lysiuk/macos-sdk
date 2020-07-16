@@ -1,14 +1,14 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EADE4209-B974-3FDA-A2C3-F5090F3B3933', 'x86_64: EADE4209-B974-3FDA-A2C3-F5090F3B3933' ]
+uuids:           [ 'x86_64: 00AA6A50-F4A0-35A9-81D2-A8943F70C3C3', 'x86_64: 00AA6A50-F4A0-35A9-81D2-A8943F70C3C3' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/VideoSubscriberAccount.framework/Versions/A/VideoSubscriberAccount'
-current-version: 331.50.16
+current-version: 331.70.6
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _VSAccountProviderAuthenticationSchemeAPI, _VSAccountProviderAuthenticationSchemeSAML, 
                        _VSAccountStoreDidChangeNotification, _VSActiveSubscriptionsDidChangeNotification, 
-                       _VSAllKnownTemplateElements, _VSBundleURLForProcessIdentifier, 
+                       _VSAllKnownTemplateElements, _VSBuddyBundleID, _VSBundleURLForProcessIdentifier, 
                        _VSCheckAccessOptionPrompt, _VSCheckEntitlementForTask, _VSDataCompressionValueTransformerName, 
                        _VSDefaultLogObject, _VSDeveloperServiceDidChangeNotification, 
                        _VSDeveloperServiceInterface, _VSDeveloperServiceProvidersDidChangeNotification, 
@@ -92,8 +92,8 @@ exports:
                        VSSAMLAuthenticationToken, VSSecurityTask, VSSemaphore, VSSetTopBoxProfile, 
                        VSStateMachine, VSStateTransition, VSStoreRequest, VSStoreRequestOperation, 
                        VSStoreURLBag, VSStoreURLBagLoadOperation, VSSubscription, 
-                       VSSubscriptionRegistrationCenter, VSSubscriptionSource, VSTimeoutOperation, 
-                       VSTreeNode, VSValueType, VSValueTypeProperty, VSVerificationDataOperation, 
-                       VSVerificationStateResetOperation, VSViewServiceResponse, 
-                       VSViewServiceXPCInterface, VSWeakForwardingTarget ]
+                       VSSubscriptionRegistrationCenter, VSSubscriptionSource, VSTestSetupPreparationOperation, 
+                       VSTimeoutOperation, VSTreeNode, VSValueType, VSValueTypeProperty, 
+                       VSVerificationDataOperation, VSVerificationStateResetOperation, 
+                       VSViewServiceResponse, VSViewServiceXPCInterface, VSWeakForwardingTarget ]
 ...

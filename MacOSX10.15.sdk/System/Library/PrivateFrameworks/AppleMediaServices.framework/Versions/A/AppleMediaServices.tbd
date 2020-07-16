@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5CE187D7-42DB-37EE-8CFF-E996503B3D45', 'x86_64: 5CE187D7-42DB-37EE-8CFF-E996503B3D45' ]
+uuids:           [ 'x86_64: 533DB7DE-4799-3A05-B75F-AEE8B45FF6F5', 'x86_64: 533DB7DE-4799-3A05-B75F-AEE8B45FF6F5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleMediaServices.framework/Versions/A/AppleMediaServices'
 exports:         

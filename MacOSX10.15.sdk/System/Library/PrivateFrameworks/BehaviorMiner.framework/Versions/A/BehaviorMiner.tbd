@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F2D9AE09-F6DA-3BD0-986C-A007CB5AEC0D' ]
+uuids:           [ 'x86_64: 1602F1CB-E750-3493-82DF-C3EFF0FEE8F6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BehaviorMiner.framework/Versions/A/BehaviorMiner'
 exports:         

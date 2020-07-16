@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 07F3B58C-F362-35F2-9A79-F38015A78DDA', 'x86_64: 07F3B58C-F362-35F2-9A79-F38015A78DDA' ]
+uuids:           [ 'x86_64: F2921F9A-3041-3495-878D-64134267B847', 'x86_64: F2921F9A-3041-3495-878D-64134267B847' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders'
 current-version: 122.5.6
@@ -16,7 +16,7 @@ exports:
                        _MPSSetHeapCacheDuration, _MPSSupportsMTLDevice ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5DF84B7A-9DD0-36DB-8686-D669CDA93D59', 'x86_64: 5DF84B7A-9DD0-36DB-8686-D669CDA93D59' ]
+uuids:           [ 'x86_64: 7EBAC15D-7837-395D-B405-1E29F7DA68FA', 'x86_64: 7EBAC15D-7837-395D-B405-1E29F7DA68FA' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore'
 current-version: 122.5.6
@@ -106,7 +106,7 @@ exports:
                        MPSTemporaryImage._readCount, MPSVector._buffer, MPSVector._offset ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CDC36001-66DA-3BBD-A9AA-2470B634B9C9', 'x86_64: CDC36001-66DA-3BBD-A9AA-2470B634B9C9' ]
+uuids:           [ 'x86_64: B424FE0C-6E90-3BFA-A6E7-DD86C735AE90', 'x86_64: B424FE0C-6E90-3BFA-A6E7-DD86C735AE90' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/Versions/A/MPSImage'
 current-version: 122.5.6
@@ -138,7 +138,7 @@ exports:
                        MPSUnaryImageKernel._getPreferredTileSize ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1E4FE6EF-6D42-3439-835C-F4F20B05E0F5', 'x86_64: 1E4FE6EF-6D42-3439-835C-F4F20B05E0F5' ]
+uuids:           [ 'x86_64: 02006D92-E2AB-3892-A96B-37F6520C19BA', 'x86_64: 02006D92-E2AB-3892-A96B-37F6520C19BA' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix'
 current-version: 122.5.6
@@ -155,7 +155,7 @@ exports:
                        MPSMatrixSolveTriangular, MPSMatrixUnaryKernel, MPSMatrixVectorMultiplication ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8F8F0C2E-C4EC-3418-A06A-42B8280DDC9D', 'x86_64: 8F8F0C2E-C4EC-3418-A06A-42B8280DDC9D' ]
+uuids:           [ 'x86_64: CAA5A368-DB71-34F6-AEF9-27A8BC298F53', 'x86_64: CAA5A368-DB71-34F6-AEF9-27A8BC298F53' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/Versions/A/MPSNDArray'
 exports:         
@@ -226,7 +226,7 @@ exports:
     objc-ivars:      [ MPSNDArrayGatherGradientState._axis ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6BEFB262-2538-3A12-9E9F-A7CF94D2B68A', 'x86_64: 6BEFB262-2538-3A12-9E9F-A7CF94D2B68A' ]
+uuids:           [ 'x86_64: 05612E06-50CB-318F-9F8E-EF4D49FAB3B0', 'x86_64: 05612E06-50CB-318F-9F8E-EF4D49FAB3B0' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork'
 current-version: 122.5.6
@@ -332,7 +332,7 @@ exports:
                        MPSRNNRecurrentImageState, MPSRNNRecurrentMatrixState, MPSRNNSingleGateDescriptor ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D352B8E-97D8-34FA-B2AF-3AB4E3149E2E', 'x86_64: 4D352B8E-97D8-34FA-B2AF-3AB4E3149E2E' ]
+uuids:           [ 'x86_64: B0B591F8-6875-351E-867F-8EB3CD38CD52', 'x86_64: B0B591F8-6875-351E-867F-8EB3CD38CD52' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector'
 current-version: 122.5.6

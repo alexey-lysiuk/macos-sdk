@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D6EF1F92-D1F2-3298-9DE5-C462489A472B', 'x86_64: D6EF1F92-D1F2-3298-9DE5-C462489A472B' ]
+uuids:           [ 'x86_64: A9E7CB78-2A27-35B8-B453-28A22650CED8', 'x86_64: A9E7CB78-2A27-35B8-B453-28A22650CED8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AssetCacheServices.framework/Versions/A/AssetCacheServices'
 current-version: 111.1

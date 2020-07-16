@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D6CB2732-E62F-34D1-97E7-ED57E05ED8D4', 'x86_64: D6CB2732-E62F-34D1-97E7-ED57E05ED8D4' ]
+uuids:           [ 'x86_64: 84FBBA9E-C353-3D12-B424-05A2FD18E531', 'x86_64: 84FBBA9E-C353-3D12-B424-05A2FD18E531' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication'
-current-version: 64535.34
+current-version: 64535.34.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _VMUBacktraceIsExcludedMarker, _VMUCreateRootNodeMarkingMap, 

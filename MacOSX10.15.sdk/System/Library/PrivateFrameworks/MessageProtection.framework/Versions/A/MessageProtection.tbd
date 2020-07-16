@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B0CBD8D3-2B44-3C2B-B6E0-DAAC6A649B5C', 'x86_64: B0CBD8D3-2B44-3C2B-B6E0-DAAC6A649B5C' ]
+uuids:           [ 'x86_64: AA3D5DF1-8822-3589-B430-8817EF5E7F86', 'x86_64: AA3D5DF1-8822-3589-B430-8817EF5E7F86' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MessageProtection.framework/Versions/A/MessageProtection'
 current-version: 206.100.2

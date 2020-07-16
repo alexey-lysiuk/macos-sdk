@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9027DC0A-5CA2-3323-9F67-D71EB3593281' ]
+uuids:           [ 'x86_64: DAF7486A-D73B-390E-8273-C8B5E4D75554' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit'
 current-version: 141.2

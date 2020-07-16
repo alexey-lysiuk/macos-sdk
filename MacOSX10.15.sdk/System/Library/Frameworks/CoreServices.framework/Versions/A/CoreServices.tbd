@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 888FE7B9-CE6C-3C7C-BA33-63364462228A', 'x86_64: 888FE7B9-CE6C-3C7C-BA33-63364462228A' ]
+uuids:           [ 'x86_64: AA140158-E909-34C2-B2F5-20EBC93E0056', 'x86_64: AA140158-E909-34C2-B2F5-20EBC93E0056' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices'
-current-version: 1069.22
+current-version: 1069.24
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork', 
@@ -27,7 +27,7 @@ exports:
                        _nextafterf, _remquo, '_remquo$fenv_access_off' ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2BAB1B88-C198-3D20-8DA3-056E66510E7A', 'x86_64: 2BAB1B88-C198-3D20-8DA3-056E66510E7A' ]
+uuids:           [ 'x86_64: 2E5FD5AE-8A7F-353F-9BD1-0241F3586181', 'x86_64: 2E5FD5AE-8A7F-353F-9BD1-0241F3586181' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE'
 current-version: 838.1
@@ -106,7 +106,7 @@ exports:
                        _vAEBuildAppleEvent, _vAEBuildDesc, _vAEBuildParameters ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D0FECC17-7E16-308F-98EA-AF311CB77FE6' ]
+uuids:           [ 'x86_64: BE379206-99FA-30CD-8391-2708473A633F' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore'
 current-version: 1217
@@ -749,7 +749,7 @@ exports:
                        _scPrefsSetString, _str2dec, _x80tod, _x80told ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 11513ED9-8B4B-39BB-A6B2-AA6AA0A2DF72', 'x86_64: 11513ED9-8B4B-39BB-A6B2-AA6AA0A2DF72' ]
+uuids:           [ 'x86_64: 26B70C82-25BC-353A-858F-945B14C803A2', 'x86_64: 26B70C82-25BC-353A-858F-945B14C803A2' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices'
 current-version: 323.7
@@ -816,7 +816,7 @@ exports:
                        _kIDXSearchPrefixMatch, _kIDXSearchWildcardMatch ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CE3D8B13-2583-3527-8532-D5DDAAD7D56B', 'x86_64: CE3D8B13-2583-3527-8532-D5DDAAD7D56B' ]
+uuids:           [ 'x86_64: FC84DB48-A3CE-30F7-A918-B3587731ACC7', 'x86_64: FC84DB48-A3CE-30F7-A918-B3587731ACC7' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents'
 current-version: 1268.100.1
@@ -835,10 +835,10 @@ exports:
                        _FSEventsPurgeEventsForDeviceUpToEventId ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E51EE658-608C-3034-9635-4FDF1E241E62', 'x86_64: E51EE658-608C-3034-9635-4FDF1E241E62' ]
+uuids:           [ 'x86_64: 9A5359D9-9148-3B18-B868-56A9DA5FB60C', 'x86_64: 9A5359D9-9148-3B18-B868-56A9DA5FB60C' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices'
-current-version: 1069.22
+current-version: 1069.24
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -1215,10 +1215,10 @@ exports:
                        _LSURLOverride, _UTType, _UTTypeQuery ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EE42CCA1-FEC2-3F1C-9B62-2E73EFB05FCC', 'x86_64: EE42CCA1-FEC2-3F1C-9B62-2E73EFB05FCC' ]
+uuids:           [ 'x86_64: 0973F7E5-D58C-3574-A3CE-4F12CAC2D4C7', 'x86_64: 0973F7E5-D58C-3574-A3CE-4F12CAC2D4C7' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata'
-current-version: 2076.3
+current-version: 2076.7
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -1659,10 +1659,10 @@ exports:
                        _MDPlistBytes, _MDServiceConnection ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A0654B4E-3194-3066-911F-FF1FBEE1D2C2', 'x86_64: A0654B4E-3194-3066-911F-FF1FBEE1D2C2' ]
+uuids:           [ 'x86_64: 0E4F48AD-402C-3E9D-9CA9-6DD9479B28F9', 'x86_64: 0E4F48AD-402C-3E9D-9CA9-6DD9479B28F9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices'
-current-version: 1069.22
+current-version: 1069.24
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -1796,7 +1796,7 @@ exports:
                        _kcgetkeychainname, _wsCFDateToISO8601String, _wsCreateDateFromISO8601 ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D4F82BC9-FD9B-3E04-B78E-D9E2A73B0BD7', 'x86_64: D4F82BC9-FD9B-3E04-B78E-D9E2A73B0BD7' ]
+uuids:           [ 'x86_64: 2C5E1D85-E8B1-3DC5-91B9-E3EDB48E9369', 'x86_64: 2C5E1D85-E8B1-3DC5-91B9-E3EDB48E9369' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit'
 current-version: 417.1
@@ -1919,7 +1919,7 @@ exports:
                        _kSKSubstitutions, _kSKTermChars ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AEB4E42C-F5A2-3F63-80B0-4226483AD4F5', 'x86_64: AEB4E42C-F5A2-3F63-80B0-4226483AD4F5' ]
+uuids:           [ 'x86_64: 02DE0D56-E371-3EF5-9BC1-FA435451B412', 'x86_64: 02DE0D56-E371-3EF5-9BC1-FA435451B412' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList'
 current-version: 131.4

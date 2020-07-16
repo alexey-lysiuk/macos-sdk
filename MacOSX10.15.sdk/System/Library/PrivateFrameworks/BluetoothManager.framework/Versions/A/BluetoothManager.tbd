@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 53234A24-BD3D-3996-9199-D42CCDA629F7', 'x86_64: 53234A24-BD3D-3996-9199-D42CCDA629F7' ]
+uuids:           [ 'x86_64: EE033591-512D-3AE0-B87C-7036AE29B8FB', 'x86_64: EE033591-512D-3AE0-B87C-7036AE29B8FB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BluetoothManager.framework/Versions/A/BluetoothManager'
 exports:         

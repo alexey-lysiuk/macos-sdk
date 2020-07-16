@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D70F9B08-02E2-3FE8-8F28-270847F61FE8' ]
+uuids:           [ 'x86_64: 2FCCB617-DC06-321A-B213-56CD3A631E40' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftCreateML.dylib'
 swift-abi-version: 7

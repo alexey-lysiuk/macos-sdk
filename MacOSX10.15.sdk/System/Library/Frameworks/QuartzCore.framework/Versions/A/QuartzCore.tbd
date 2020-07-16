@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 16502545-A0F3-3367-929B-DD80A6440226', 'x86_64: 16502545-A0F3-3367-929B-DD80A6440226' ]
+uuids:           [ 'x86_64: FE927B0E-BD49-32CC-8A55-90F553C86C15', 'x86_64: FE927B0E-BD49-32CC-8A55-90F553C86C15' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore'
 current-version: 1.11
@@ -198,14 +198,15 @@ exports:
                        _CARenderImageIsNative, _CARenderImageNew, _CARenderImageNewMipmapped, 
                        _CARenderImageNewWithCGImage, _CARenderImageRowbytes, _CARenderImageSetShouldTile, 
                        _CARenderLayerGetContextId, _CARenderMTLCompileShader, _CARenderMTLGetState, 
-                       _CARenderMTLSetState, _CARenderNotificationAddObserver, _CARenderNotificationPostNotification, 
-                       _CARenderNotificationRemoveEveryObserver, _CARenderNotificationRemoveObserver, 
-                       _CARenderOGLCollect, _CARenderOGLDestroy, _CARenderOGLFinish, 
-                       _CARenderOGLFlush, _CARenderOGLGetColorSpace, _CARenderOGLGetFeatureFlags, 
-                       _CARenderOGLGetFlags, _CARenderOGLGetGLContext, _CARenderOGLNew, 
-                       _CARenderOGLNew_, _CARenderOGLPrepareUpdateShape, _CARenderOGLPurge, 
-                       _CARenderOGLRender, _CARenderOGLRenderDisplay, _CARenderOGLRenderSeparated, 
-                       _CARenderOGLSetAccelerator, _CARenderOGLSetColorSpace, _CARenderOGLSetDestinationBitDepth, 
+                       _CARenderMTLLoadPipelines, _CARenderMTLSetState, _CARenderNotificationAddObserver, 
+                       _CARenderNotificationPostNotification, _CARenderNotificationRemoveEveryObserver, 
+                       _CARenderNotificationRemoveObserver, _CARenderOGLCollect, 
+                       _CARenderOGLDestroy, _CARenderOGLFinish, _CARenderOGLFlush, 
+                       _CARenderOGLGetColorSpace, _CARenderOGLGetFeatureFlags, _CARenderOGLGetFlags, 
+                       _CARenderOGLGetGLContext, _CARenderOGLNew, _CARenderOGLNew_, 
+                       _CARenderOGLPrepareUpdateShape, _CARenderOGLPurge, _CARenderOGLRender, 
+                       _CARenderOGLRenderDisplay, _CARenderOGLRenderSeparated, _CARenderOGLSetAccelerator, 
+                       _CARenderOGLSetColorSpace, _CARenderOGLSetDestinationBitDepth, 
                        _CARenderOGLSetDestinationIOSurface, _CARenderOGLSetDestinationOffset, 
                        _CARenderOGLSetDestinationTexture, _CARenderOGLSetDisplayBounds, 
                        _CARenderOGLSetFeatureFlags, _CARenderOGLSetGLContext, _CARenderOGLSetHDRScalingFactor, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3A2EDA99-6E00-3150-99C0-BDE7B7A3D3D4' ]
+uuids:           [ 'x86_64: 643B8E76-76BC-36E8-8142-992FA912539A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudFamilyRestrictions.framework/Versions/A/CloudFamilyRestrictions'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0767A365-B79E-3C97-8C02-34FF7A675663', 'x86_64: 0767A365-B79E-3C97-8C02-34FF7A675663' ]
+uuids:           [ 'x86_64: 9DA8A821-4354-3E24-BAA1-4519D2279F2B', 'x86_64: 9DA8A821-4354-3E24-BAA1-4519D2279F2B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/WirelessDiagnostics'
 current-version: 757
@@ -694,7 +694,7 @@ exports:
                         __ZTSNSt3__123enable_shared_from_thisI12PRNGeneratorEE ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7BDEF2E7-3ACB-3777-A84D-35DD5A9AB09D', 'x86_64: 7BDEF2E7-3ACB-3777-A84D-35DD5A9AB09D' ]
+uuids:           [ 'x86_64: D1EA2A4B-BC59-3FE2-BAA9-4448D6F8393F', 'x86_64: D1EA2A4B-BC59-3FE2-BAA9-4448D6F8393F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDSupportFramework.dylib'
 exports:         

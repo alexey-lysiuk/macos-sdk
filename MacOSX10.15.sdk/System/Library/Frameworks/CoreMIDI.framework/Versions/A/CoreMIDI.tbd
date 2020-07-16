@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A30B3DF-94F0-31BE-ADFA-DA58E93D6FBD', 'x86_64: 1A30B3DF-94F0-31BE-ADFA-DA58E93D6FBD' ]
+uuids:           [ 'x86_64: 017B0334-8AC4-304B-A5E2-C82C51BE1917', 'x86_64: 017B0334-8AC4-304B-A5E2-C82C51BE1917' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI'
 current-version: 69

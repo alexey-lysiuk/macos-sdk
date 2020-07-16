@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CFFA76AC-6D61-3F1A-963C-1FC8BE188C6E', 'x86_64: CFFA76AC-6D61-3F1A-963C-1FC8BE188C6E' ]
+uuids:           [ 'x86_64: 96DF6ED6-DFEF-30CC-A2C5-7D7CB03D1C0B', 'x86_64: 96DF6ED6-DFEF-30CC-A2C5-7D7CB03D1C0B' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftAppKit.dylib'
 current-version: 0

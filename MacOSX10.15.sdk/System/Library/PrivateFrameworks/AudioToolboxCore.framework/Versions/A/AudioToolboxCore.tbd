@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EE6A2BD9-843C-3CC3-AEFC-6D7855DBB331', 'x86_64: EE6A2BD9-843C-3CC3-AEFC-6D7855DBB331' ]
+uuids:           [ 'x86_64: 5B539F50-93E8-3F73-9E4C-678C85D0488F', 'x86_64: 5B539F50-93E8-3F73-9E4C-678C85D0488F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AudioToolboxCore.framework/Versions/A/AudioToolboxCore'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5C006794-FD06-3CB8-AB6F-D45EBF3826E8' ]
+uuids:           [ 'x86_64: 50A4C342-AA72-32A0-B444-23ED1ED90804' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SPShared.framework/Versions/A/SPShared'
 swift-abi-version: 7
@@ -285,12 +285,7 @@ exports:
                        '_$sSo13NSFileManagerC8SPSharedE14flatEnumerator2at26includingPropertiesForKeysSo011NSDirectoryE0CSg10Foundation3URLV_SaySo16NSURLResourceKeyaGSgtF', 
                        '_$sSo13NSFileManagerC8SPSharedE15removeDirectory3urly10Foundation3URLV_tKFZ', 
                        '_$sSo13NSFileManagerC8SPSharedE15shallowContents2ofSay10Foundation3URLVGAH_tFZ', 
-                       '_$sSo13NSFileManagerC8SPSharedE25daemonAgentFileAttributesSDySo0A12AttributeKeyaypGvMZ', 
-                       '_$sSo13NSFileManagerC8SPSharedE25daemonAgentFileAttributesSDySo0A12AttributeKeyaypGvau', 
-                       '_$sSo13NSFileManagerC8SPSharedE25daemonAgentFileAttributesSDySo0A12AttributeKeyaypGvgZ', 
-                       '_$sSo13NSFileManagerC8SPSharedE25daemonAgentFileAttributesSDySo0A12AttributeKeyaypGvpZ', 
-                       '_$sSo13NSFileManagerC8SPSharedE25daemonAgentFileAttributesSDySo0A12AttributeKeyaypGvsZ', 
-                       '_$sSo13NSFileManagerC8SPSharedE26createDirectoryIfNecessary3url10attributesSb10Foundation3URLV_SDySo0A12AttributeKeyaypGtFZ', 
+                       '_$sSo13NSFileManagerC8SPSharedE26createDirectoryIfNecessary3url10attributesSb10Foundation3URLV_SDySo0A12AttributeKeyaypGSgtFZ', 
                        '_$sSo14NSXPCInterfaceC8SPSharedE10setClasses_3for13argumentIndex7ofReplyySaySo8NSObjectCmG_10ObjectiveC8SelectorVSiSbtF', 
                        '_$sSo15NSXPCConnectionC8SPSharedE14hasEntitlementySbxAC0D0RzlF', 
                        '_$ss28CustomDebugStringConvertibleP8SPSharedRlzCrlE16classDescriptionSSvg', 

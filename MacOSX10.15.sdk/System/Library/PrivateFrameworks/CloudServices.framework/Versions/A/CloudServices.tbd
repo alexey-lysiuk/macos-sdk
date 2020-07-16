@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4AE7A0E3-E48F-3752-91E3-78E46924594E', 'x86_64: 4AE7A0E3-E48F-3752-91E3-78E46924594E' ]
+uuids:           [ 'x86_64: 5C7293BD-7F65-381E-A2F1-F47FE9183B79', 'x86_64: 5C7293BD-7F65-381E-A2F1-F47FE9183B79' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CloudServices.framework/Versions/A/CloudServices'
 exports:         
@@ -62,14 +62,15 @@ exports:
                        _kSecureBackupRemainingAttemptsKey, _kSecureBackupSMSTargetInfoKey, 
                        _kSecureBackupSMSTargetKey, _kSecureBackupSMSTargetPhoneNumberKey, 
                        _kSecureBackupSerialNumberKey, _kSecureBackupServiceAccountInfoKey, 
-                       _kSecureBackupSilentRecoveryAttemptKey, _kSecureBackupStingrayEscrowDigestKey, 
-                       _kSecureBackupStingrayEscrowTimestampKey, _kSecureBackupStingrayMetadataHashKey, 
-                       _kSecureBackupStingrayMetadataKey, _kSecureBackupSuppressServerFiltering, 
-                       _kSecureBackupSynchronizeKey, _kSecureBackupTriggerUpdateKey, 
-                       _kSecureBackupUseCachedPassphraseKey, _kSecureBackupUsesComplexPassphraseKey, 
-                       _kSecureBackupUsesMultipleiCSCKey, _kSecureBackupUsesNumericPassphraseKey, 
-                       _kSecureBackupUsesRandomPassphraseKey, _kSecureBackupUsesRecoveryKeyKey, 
-                       _kSecureBackupVerificationTokenKey, _kSecureBackupiCDPRecordsKey, 
+                       _kSecureBackupSilentDoubleRecoveryKey, _kSecureBackupSilentRecoveryAttemptKey, 
+                       _kSecureBackupStingrayEscrowDigestKey, _kSecureBackupStingrayEscrowTimestampKey, 
+                       _kSecureBackupStingrayMetadataHashKey, _kSecureBackupStingrayMetadataKey, 
+                       _kSecureBackupSuppressServerFiltering, _kSecureBackupSynchronizeKey, 
+                       _kSecureBackupTriggerUpdateKey, _kSecureBackupUseCachedPassphraseKey, 
+                       _kSecureBackupUsesComplexPassphraseKey, _kSecureBackupUsesMultipleiCSCKey, 
+                       _kSecureBackupUsesNumericPassphraseKey, _kSecureBackupUsesRandomPassphraseKey, 
+                       _kSecureBackupUsesRecoveryKeyKey, _kSecureBackupVerificationTokenKey, 
+                       _kSecureBackupiCDPDoubleEnrollmentRecordIDsKey, _kSecureBackupiCDPRecordsKey, 
                        _kSecureBackupiCloudDataProtectionDeleteAllRecordsKey, _kSecureBackupiCloudDataProtectionEnabledKey, 
                        _kSecureBackupiCloudIdentityDataKey, _kSecureBackupiCloudIdentityPublicDataKey ]
     objc-classes:    [ SecureBackup, SecureBackupBeginPasscodeRequestResults ]

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F1AD3BAD-5EC7-399B-A109-FBC6773A3ABE', 'x86_64: F1AD3BAD-5EC7-399B-A109-FBC6773A3ABE' ]
+uuids:           [ 'x86_64: 6562EE0B-C8AF-377A-98EA-74AA37D75CA4', 'x86_64: 6562EE0B-C8AF-377A-98EA-74AA37D75CA4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ScreenTimeCore.framework/Versions/A/ScreenTimeCore'
-current-version: 433
+current-version: 440
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ ChatKit, ContextStoreAgent, DataDetectorsViewDebug, DataDetectorsViewService, 

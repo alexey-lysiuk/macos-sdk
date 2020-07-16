@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B7F1310F-D207-34CD-86FB-0DEC1796D2E2', 'x86_64: B7F1310F-D207-34CD-86FB-0DEC1796D2E2' ]
+uuids:           [ 'x86_64: E5983EF6-0462-3EB6-8F28-B14EAC3B7B63', 'x86_64: E5983EF6-0462-3EB6-8F28-B14EAC3B7B63' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CalDAV.framework/Versions/A/CalDAV'
 current-version: 790.4.1

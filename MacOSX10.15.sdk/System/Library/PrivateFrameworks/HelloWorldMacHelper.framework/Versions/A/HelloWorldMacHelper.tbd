@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 83FF98B2-0CF7-3547-9CCA-2AF80591ED5A', 'x86_64: 83FF98B2-0CF7-3547-9CCA-2AF80591ED5A' ]
+uuids:           [ 'x86_64: C6E05DBD-DB36-32E5-9109-FD33B0EFD974', 'x86_64: C6E05DBD-DB36-32E5-9109-FD33B0EFD974' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/HelloWorldMacHelper.framework/Versions/A/HelloWorldMacHelper'
 exports:         

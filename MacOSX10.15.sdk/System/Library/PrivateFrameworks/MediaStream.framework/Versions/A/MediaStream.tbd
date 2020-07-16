@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 01FD45D7-2DBC-3DC5-99CF-EA943BB86965', 'x86_64: 01FD45D7-2DBC-3DC5-99CF-EA943BB86965' ]
+uuids:           [ 'x86_64: C50FEAB4-5761-33BB-A075-C6E19EEE4F5B', 'x86_64: C50FEAB4-5761-33BB-A075-C6E19EEE4F5B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaStream.framework/Versions/A/MediaStream'
-current-version: 141.19.150
+current-version: 161.0.120
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MSAlbumSharingInitialize, _MSMSLocalizedString, _MSMediaStreamInitialize, 

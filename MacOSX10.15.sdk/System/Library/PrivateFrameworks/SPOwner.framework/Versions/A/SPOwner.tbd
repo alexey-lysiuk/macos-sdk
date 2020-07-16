@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3B909D0A-1C81-32D6-B22E-4C6526FFF59F', 'x86_64: 3B909D0A-1C81-32D6-B22E-4C6526FFF59F' ]
+uuids:           [ 'x86_64: 1042E9F2-EBA3-3707-9608-6C00463A42C2', 'x86_64: 1042E9F2-EBA3-3707-9608-6C00463A42C2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SPOwner.framework/Versions/A/SPOwner'
 exports:         

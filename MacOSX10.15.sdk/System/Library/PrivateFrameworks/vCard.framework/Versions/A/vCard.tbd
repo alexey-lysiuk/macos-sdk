@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6A885911-1932-3FC9-BAEA-4BD35A77EEC8', 'x86_64: 6A885911-1932-3FC9-BAEA-4BD35A77EEC8' ]
+uuids:           [ 'x86_64: 2662D17A-7BC0-39FF-8550-8AEDF548AAB8', 'x86_64: 2662D17A-7BC0-39FF-8550-8AEDF548AAB8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/vCard.framework/Versions/A/vCard'
 current-version: 0

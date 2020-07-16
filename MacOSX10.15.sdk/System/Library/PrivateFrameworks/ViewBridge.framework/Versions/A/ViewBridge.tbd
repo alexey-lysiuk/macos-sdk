@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E1DB0984-8B31-36E4-9854-A3345F67BED3' ]
+uuids:           [ 'x86_64: 25CE39DF-2052-3873-9113-DB52B385C4BB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/ViewBridge'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D5CEC1AD-A2EC-362C-B71A-22FD521917F1', 'x86_64: D5CEC1AD-A2EC-362C-B71A-22FD521917F1' ]
+uuids:           [ 'x86_64: 0502F395-8EE6-3D2A-9239-06FD5622E19E', 'x86_64: 0502F395-8EE6-3D2A-9239-06FD5622E19E' ]
 platform:        zippered
 install-name:    '/usr/lib/libpam.2.dylib'
 current-version: 3

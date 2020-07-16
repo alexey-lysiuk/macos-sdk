@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F7D0F01D-CD05-3FA8-A475-E71D89250740', 'x86_64: F7D0F01D-CD05-3FA8-A475-E71D89250740' ]
+uuids:           [ 'x86_64: 21760CFD-62FF-3466-B3AD-191D02411DA0', 'x86_64: 21760CFD-62FF-3466-B3AD-191D02411DA0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/perfdata.framework/Versions/A/perfdata'
 current-version: 51.100.6

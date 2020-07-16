@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9DA0FFD0-61AD-312D-A120-E5EEE8BD3B7C', 'x86_64: 9DA0FFD0-61AD-312D-A120-E5EEE8BD3B7C' ]
+uuids:           [ 'x86_64: 6E96BFE8-A3C7-35A1-9A79-B229D41D55B9', 'x86_64: 6E96BFE8-A3C7-35A1-9A79-B229D41D55B9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/ATSHI.dylib'
 exports:         

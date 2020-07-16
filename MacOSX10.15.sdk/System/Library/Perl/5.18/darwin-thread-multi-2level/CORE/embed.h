@@ -931,6 +931,7 @@
 #define make_trie_failtable(a,b,c,d)	S_make_trie_failtable(aTHX_ a,b,c,d)
 #define nextchar(a)		S_nextchar(aTHX_ a)
 #define parse_lparen_question_flags(a)	S_parse_lparen_question_flags(aTHX_ a)
+#define rck_elide_nothing(a) 	S_rck_elide_nothing(aTHX_ a)
 #define reg(a,b,c,d)		S_reg(aTHX_ a,b,c,d)
 #define reg_node(a,b)		S_reg_node(aTHX_ a,b)
 #define reg_recode(a,b)		S_reg_recode(aTHX_ a,b)
@@ -948,7 +949,7 @@
 #define reguni(a,b,c)		S_reguni(aTHX_ a,b,c)
 #define regwhite		S_regwhite
 #define scan_commit(a,b,c,d)	S_scan_commit(aTHX_ a,b,c,d)
-#define study_chunk(a,b,c,d,e,f,g,h,i,j,k)	S_study_chunk(aTHX_ a,b,c,d,e,f,g,h,i,j,k)
+#define study_chunk(a,b,c,d,e,f,g,h,i,j,k,l)	S_study_chunk(aTHX_ a,b,c,d,e,f,g,h,i,j,k,l)
 #  endif
 #  if defined(PERL_IN_REGCOMP_C) || defined(PERL_IN_REGEXEC_C) || defined(PERL_IN_UTF8_C)
 #define _get_invlist_len_addr(a)	S__get_invlist_len_addr(aTHX_ a)

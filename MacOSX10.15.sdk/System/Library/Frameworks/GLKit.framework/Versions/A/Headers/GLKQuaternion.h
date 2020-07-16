@@ -90,13 +90,13 @@ void GLKQuaternionRotateVector4Array(GLKQuaternion quaternion, GLKVector4 *__non
     
 GLK_INLINE GLKQuaternion GLKQuaternionMake(float x, float y, float z, float w)
 {
-    GLKQuaternion q = { x, y, z, w };
+    GLKQuaternion q = {{ x, y, z, w }};
     return q;
 }
 
 GLK_INLINE GLKQuaternion GLKQuaternionMakeWithVector3(GLKVector3 vector, float scalar)
 {
-    GLKQuaternion q = { vector.v[0], vector.v[1], vector.v[2], scalar };
+    GLKQuaternion q = {{ vector.v[0], vector.v[1], vector.v[2], scalar }};
     return q;
 }
     
@@ -106,7 +106,7 @@ GLK_INLINE GLKQuaternion GLKQuaternionMakeWithArray(float values[4])
     __m128 v = _mm_load_ps(values);
     return *(GLKQuaternion *)&v;
 #else
-    GLKQuaternion q = { values[0], values[1], values[2], values[3] };
+    GLKQuaternion q = {{ values[0], values[1], values[2], values[3] }};
     return q;
 #endif
 }
@@ -115,7 +115,7 @@ GLK_INLINE GLKQuaternion GLKQuaternionMakeWithAngleAndAxis(float radians, float 
 {
     float halfAngle = radians * 0.5f;
     float scale = sinf(halfAngle);
-    GLKQuaternion q = { scale * x, scale * y, scale * z, cosf(halfAngle) };
+    GLKQuaternion q = {{ scale * x, scale * y, scale * z, cosf(halfAngle) }};
     return q;
 }
     
@@ -130,10 +130,10 @@ GLK_INLINE GLKQuaternion GLKQuaternionAdd(GLKQuaternion quaternionLeft, GLKQuate
     __m128 v = _mm_load_ps(&quaternionLeft.q[0]) + _mm_load_ps(&quaternionRight.q[0]);
     return *(GLKQuaternion *)&v;
 #else
-    GLKQuaternion q = { quaternionLeft.q[0] + quaternionRight.q[0],
-                        quaternionLeft.q[1] + quaternionRight.q[1],
-                        quaternionLeft.q[2] + quaternionRight.q[2],
-                        quaternionLeft.q[3] + quaternionRight.q[3] };
+    GLKQuaternion q = {{ quaternionLeft.q[0] + quaternionRight.q[0],
+                         quaternionLeft.q[1] + quaternionRight.q[1],
+                         quaternionLeft.q[2] + quaternionRight.q[2],
+                         quaternionLeft.q[3] + quaternionRight.q[3] }};
     return q;
 #endif
 }
@@ -144,10 +144,10 @@ GLK_INLINE GLKQuaternion GLKQuaternionSubtract(GLKQuaternion quaternionLeft, GLK
     __m128 v = _mm_load_ps(&quaternionLeft.q[0]) - _mm_load_ps(&quaternionRight.q[0]);
     return *(GLKQuaternion *)&v;
 #else
-    GLKQuaternion q = { quaternionLeft.q[0] - quaternionRight.q[0],
-                        quaternionLeft.q[1] - quaternionRight.q[1],
-                        quaternionLeft.q[2] - quaternionRight.q[2],
-                        quaternionLeft.q[3] - quaternionRight.q[3] };
+    GLKQuaternion q = {{ quaternionLeft.q[0] - quaternionRight.q[0],
+                         quaternionLeft.q[1] - quaternionRight.q[1],
+                         quaternionLeft.q[2] - quaternionRight.q[2],
+                         quaternionLeft.q[3] - quaternionRight.q[3] }};
     return q;
 #endif
 }
@@ -183,25 +183,25 @@ GLK_INLINE GLKQuaternion GLKQuaternionMultiply(GLKQuaternion quaternionLeft, GLK
     return *(GLKQuaternion *)&r;
 #else
 
-    GLKQuaternion q = { quaternionLeft.q[3] * quaternionRight.q[0] +
-                        quaternionLeft.q[0] * quaternionRight.q[3] +
-                        quaternionLeft.q[1] * quaternionRight.q[2] -
-                        quaternionLeft.q[2] * quaternionRight.q[1],
-        
-                        quaternionLeft.q[3] * quaternionRight.q[1] +
-                        quaternionLeft.q[1] * quaternionRight.q[3] +
-                        quaternionLeft.q[2] * quaternionRight.q[0] -
-                        quaternionLeft.q[0] * quaternionRight.q[2],
-        
-                        quaternionLeft.q[3] * quaternionRight.q[2] +
-                        quaternionLeft.q[2] * quaternionRight.q[3] +
-                        quaternionLeft.q[0] * quaternionRight.q[1] -
-                        quaternionLeft.q[1] * quaternionRight.q[0],
-        
-                        quaternionLeft.q[3] * quaternionRight.q[3] -
-                        quaternionLeft.q[0] * quaternionRight.q[0] -
-                        quaternionLeft.q[1] * quaternionRight.q[1] -
-                        quaternionLeft.q[2] * quaternionRight.q[2] };
+    GLKQuaternion q = {{ quaternionLeft.q[3] * quaternionRight.q[0] +
+                         quaternionLeft.q[0] * quaternionRight.q[3] +
+                         quaternionLeft.q[1] * quaternionRight.q[2] -
+                         quaternionLeft.q[2] * quaternionRight.q[1],
+         
+                         quaternionLeft.q[3] * quaternionRight.q[1] +
+                         quaternionLeft.q[1] * quaternionRight.q[3] +
+                         quaternionLeft.q[2] * quaternionRight.q[0] -
+                         quaternionLeft.q[0] * quaternionRight.q[2],
+         
+                         quaternionLeft.q[3] * quaternionRight.q[2] +
+                         quaternionLeft.q[2] * quaternionRight.q[3] +
+                         quaternionLeft.q[0] * quaternionRight.q[1] -
+                         quaternionLeft.q[1] * quaternionRight.q[0],
+         
+                         quaternionLeft.q[3] * quaternionRight.q[3] -
+                         quaternionLeft.q[0] * quaternionRight.q[0] -
+                         quaternionLeft.q[1] * quaternionRight.q[1] -
+                         quaternionLeft.q[2] * quaternionRight.q[2] }};
     return q;
 #endif
 }
@@ -234,7 +234,7 @@ GLK_INLINE GLKQuaternion GLKQuaternionConjugate(GLKQuaternion quaternion)
     
     return *(GLKQuaternion *)&v;
 #else
-    GLKQuaternion q = { -quaternion.q[0], -quaternion.q[1], -quaternion.q[2], quaternion.q[3] };
+    GLKQuaternion q = {{ -quaternion.q[0], -quaternion.q[1], -quaternion.q[2], quaternion.q[3] }};
     return q;
 #endif
 }
@@ -256,7 +256,7 @@ GLK_INLINE GLKQuaternion GLKQuaternionInvert(GLKQuaternion quaternion)
                           quaternion.q[1] * quaternion.q[1] +
                           quaternion.q[2] * quaternion.q[2] +
                           quaternion.q[3] * quaternion.q[3]);
-    GLKQuaternion q = { -quaternion.q[0] * scale, -quaternion.q[1] * scale, -quaternion.q[2] * scale, quaternion.q[3] * scale };
+    GLKQuaternion q = {{ -quaternion.q[0] * scale, -quaternion.q[1] * scale, -quaternion.q[2] * scale, quaternion.q[3] * scale }};
     return q;
 #endif
 }
@@ -269,7 +269,7 @@ GLK_INLINE GLKQuaternion GLKQuaternionNormalize(GLKQuaternion quaternion)
     __m128 v = q * _mm_set1_ps(scale);
     return *(GLKQuaternion *)&v;
 #else
-    GLKQuaternion q = { quaternion.q[0] * scale, quaternion.q[1] * scale, quaternion.q[2] * scale, quaternion.q[3] * scale };
+    GLKQuaternion q = {{ quaternion.q[0] * scale, quaternion.q[1] * scale, quaternion.q[2] * scale, quaternion.q[3] * scale }};
     return q;
 #endif
 }

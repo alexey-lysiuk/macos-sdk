@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FEB63B0B-D774-3FEB-B89A-66C2179DAC85', 'x86_64: FEB63B0B-D774-3FEB-B89A-66C2179DAC85' ]
+uuids:           [ 'x86_64: 3A848992-9182-382A-BF7D-5CB9707BE27B', 'x86_64: 3A848992-9182-382A-BF7D-5CB9707BE27B' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MediaToolbox.framework/Versions/A/MediaToolbox'
 exports:         
@@ -796,13 +796,14 @@ exports:
                        _FigiTunesMetadataGetOSTypeKeyToShortStringKeyMapping, _IFFParseFileTypeAtom, 
                        _IsReferenceMovie, _MTAudioProcessingTapCreate, _MTAudioProcessingTapGetSourceAudio, 
                        _MTAudioProcessingTapGetStorage, _MTAudioProcessingTapGetTypeID, 
-                       _MTConvertCaptionStyleDataFromCSSToCMTextMarkup, _MTCopyImageDataForAssetAtURL, 
-                       _MTCopyLocalizedNameForMediaSubType, _MTCopyLocalizedNameForMediaType, 
-                       _MTCopyLocalizedStringForVideoDynamicRange, _MTCopyNameForAssetAtURL, 
-                       _MTCopyStringForColorInfo, _MTCopyStringsForMediaTypeAndSubType, 
+                       _MTCapabilityIsAvailable, _MTConvertCaptionStyleDataFromCSSToCMTextMarkup, 
+                       _MTCopyImageDataForAssetAtURL, _MTCopyLocalizedNameForMediaSubType, 
+                       _MTCopyLocalizedNameForMediaType, _MTCopyLocalizedStringForVideoDynamicRange, 
+                       _MTCopyNameForAssetAtURL, _MTCopyStringForColorInfo, _MTCopyStringsForMediaTypeAndSubType, 
                        _MTCreate3x3MatrixArrayFromCGAffineTransform, _MTEnableCaption2015Behavior, 
                        _MTGetCGAffineTransformFrom3x3MatrixArray, _MTGetCaption2015Behavior, 
-                       _MTGetMaxRecommendedResolutionForTVApp, _MTOverrideShouldPlayHDRVideo, 
+                       _MTGetDefaultStreamingHDRLowPowerPreference, _MTGetMaxRecommendedResolutionForTVApp, 
+                       _MTGetStreamingHDRLowPowerPreference, _MTOverrideShouldPlayHDRVideo, 
                        _MTPluginByteSourceCopyFileName, _MTPluginByteSourceCopyFileNamesInRelativeDirectory, 
                        _MTPluginByteSourceCopyTypeIdentifier, _MTPluginByteSourceCreateAuxiliaryByteSource, 
                        _MTPluginByteSourceGetLength, _MTPluginByteSourceGetTypeID, 
@@ -820,7 +821,8 @@ exports:
                        _MTPluginSampleCursorGetClassID, _MTPluginSampleCursorGetTypeID, 
                        _MTPluginTrackReaderGetCMBaseObject, _MTPluginTrackReaderGetClassID, 
                        _MTPluginTrackReaderGetTypeID, _MTRegisterPluginFormatReaderBundleDirectory, 
-                       _MTRegisterProfessionalVideoWorkflowFormatReaders, _MTShouldPlayHDRVideo, 
+                       _MTRegisterProfessionalVideoWorkflowFormatReaders, _MTSetStreamingHDRLowPowerPreference, 
+                       _MTShouldPlayHDRVideo, _MT_GetShouldPlayHDRVideoNotificationSingleton, 
                        _MovieProxyDataCreateForByteStream, _MovieUsesFragments, _ObtainCFDataSinfsFromMedia, 
                        _ObtainSinfInfoFromMedia, _PKDCopyCryptKeyIdentifiersFromPSSH, 
                        _PKDCopyDecryptFormatTypeFromCodecType, _PKDCopyDefaultKeyIDFromSinfArray, 
@@ -3032,8 +3034,8 @@ exports:
                        _kFigiTunesMetadataKey_Thanks, _kFigiTunesMetadataKey_TrackNumber, 
                        _kFigiTunesMetadataKey_TrackSubTitle, _kFigiTunesMetadataKey_UserComment, 
                        _kFigiTunesMetadataKey_UserGenre, _kFigiTunesMetadataLongKeyspace, 
-                       _kFigiTunesMetadataShortKeyspace, _kMTCaptionStyleConversionKey_OperationLog, 
-                       _kMTPluginFormatReaderInstantiationOption_AllowIncrementalFragmentParsing, 
+                       _kFigiTunesMetadataShortKeyspace, _kMTCapability_WillChooseHDROnCurrentPowerSourceKey, 
+                       _kMTCaptionStyleConversionKey_OperationLog, _kMTPluginFormatReaderInstantiationOption_AllowIncrementalFragmentParsing, 
                        _kMTPluginFormatReaderProperty_ContainsFragments, _kMTPluginFormatReaderProperty_CouldContainFragments, 
                        _kMTPluginFormatReaderProperty_Duration, _kMTPluginFormatReaderProperty_Metadata, 
                        _kMTPluginFormatReaderProperty_MetadataFormat, _kMTPluginFormatReaderProperty_MetadataKeySpace, 
@@ -3051,9 +3053,10 @@ exports:
                        _kMTPluginTrackReaderProperty_Metadata, _kMTPluginTrackReaderProperty_NaturalTimescale, 
                        _kMTPluginTrackReaderProperty_NominalFrameRate, _kMTPluginTrackReaderProperty_PreferredTransform, 
                        _kMTPluginTrackReaderProperty_TotalSampleDataLength, _kMTPluginTrackReaderProperty_UneditedDuration, 
-                       _kMentorCreationOptionKey_SampleBufferCryptor, _kMentorCreationOptionKey_SpeculativelySaveFrames, 
-                       _kMentorCreationOptionKey_ThreadPriority, _kMentorCursorAccuracy_Approximate, 
-                       _kMentorCursorAccuracy_Exact, _kMentorKey_AbortReading, _kMentorKey_ConsolidateContinuousEdits, 
+                       _kMTSupportNotification_ShouldPlayHDRVideoChanged, _kMentorCreationOptionKey_SampleBufferCryptor, 
+                       _kMentorCreationOptionKey_SpeculativelySaveFrames, _kMentorCreationOptionKey_ThreadPriority, 
+                       _kMentorCursorAccuracy_Approximate, _kMentorCursorAccuracy_Exact, 
+                       _kMentorKey_AbortReading, _kMentorKey_ConsolidateContinuousEdits, 
                        _kMentorKey_ContinueFromPreviousOrder, _kMentorKey_CursorAccuracy, 
                        _kMentorKey_DefaultGradualDecoderRefresh, _kMentorKey_EditRate, 
                        _kMentorKey_ModeChangePolicy, _kMentorKey_OKToWaitForTrackToGrow, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FBA274DA-2172-31C8-9759-AFB227E0E7E7', 'x86_64: FBA274DA-2172-31C8-9759-AFB227E0E7E7' ]
+uuids:           [ 'x86_64: 87CEE13C-8585-3EFB-92CD-0852DFF0921B', 'x86_64: 87CEE13C-8585-3EFB-92CD-0852DFF0921B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppContainer.framework/Versions/A/AppContainer'
 exports:         

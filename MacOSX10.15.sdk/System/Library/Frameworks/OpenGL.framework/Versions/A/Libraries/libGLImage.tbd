@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5182EE22-2914-30E0-A87D-C38F345F695B', 'x86_64: 5182EE22-2914-30E0-A87D-C38F345F695B' ]
+uuids:           [ 'x86_64: 9A3FE633-61B8-3CC7-8183-62960109401A', 'x86_64: 9A3FE633-61B8-3CC7-8183-62960109401A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib'
 exports:         

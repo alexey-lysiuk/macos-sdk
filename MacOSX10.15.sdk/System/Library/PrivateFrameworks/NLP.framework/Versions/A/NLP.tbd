@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1075DCE3-66BE-3861-8FEF-63A619C001C8', 'x86_64: 1075DCE3-66BE-3861-8FEF-63A619C001C8' ]
+uuids:           [ 'x86_64: D657EC20-2475-3D89-9F80-03F1F04B0B89', 'x86_64: D657EC20-2475-3D89-9F80-03F1F04B0B89' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/NLP.framework/Versions/A/NLP'
 current-version: 202

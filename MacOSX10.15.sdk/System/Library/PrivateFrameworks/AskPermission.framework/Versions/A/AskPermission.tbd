@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EC5E89AA-8960-3D6C-9B4E-3A1638A148E6' ]
+uuids:           [ 'x86_64: B8D1A34A-B071-3DFF-AED6-2213EBA5A288' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AskPermission.framework/Versions/A/AskPermission'
 exports:         

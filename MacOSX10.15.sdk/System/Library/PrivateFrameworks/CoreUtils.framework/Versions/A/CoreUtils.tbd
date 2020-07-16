@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 172FC306-619F-3451-9BCA-F0B0D0B58EFD', 'x86_64: 172FC306-619F-3451-9BCA-F0B0D0B58EFD' ]
+uuids:           [ 'x86_64: 456CC907-E838-3945-B70A-66E862C19CD6', 'x86_64: 456CC907-E838-3945-B70A-66E862C19CD6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreUtils.framework/Versions/A/CoreUtils'
 exports:         
@@ -124,13 +124,15 @@ exports:
                        _CUStateDumpWithObject, _CUTXTDataCreateWithDictionary, _CUTXTDictionaryCreateWithTXTData, 
                        _CUVectorClockCompare, _CUVectorClockCreate, _CUVectorClockCreateDictionary, 
                        _CUVectorClockLocalEvent, _CUVectorClockReceivedMessage, _CUVectorClockSendMessageCopy, 
-                       _CUXPCDecodeBool, _CUXPCDecodeDouble, _CUXPCDecodeNSData, 
-                       _CUXPCDecodeNSDataOfLength, _CUXPCDecodeNSError, _CUXPCDecodeNSErrorIfNeeded, 
-                       _CUXPCDecodeNSString, _CUXPCDecodeSInt64Ranged, _CUXPCDecodeSInt64RangedEx, 
-                       _CUXPCDecodeUInt64Ranged, _CUXPCDecodeUInt64RangedEx, _CUXPCEncodeNSError, 
-                       _CUXPCGetNextClientID, _CocoaTextViewAppendUTF8String, _CopyEDIDbyUUID, 
-                       _CopyFileDataByFile, _CopyFileDataByPath, _CoreAudioCopyDataSourceName, 
-                       _CoreAudioCopyPropertyData, _CoreAudioFindDeviceByUID, _CoreAudioGetDefaultAudioDevice, 
+                       _CUXPCDecodeBool, _CUXPCDecodeDouble, _CUXPCDecodeNSArrayOfInteger, 
+                       _CUXPCDecodeNSData, _CUXPCDecodeNSDataOfLength, _CUXPCDecodeNSError, 
+                       _CUXPCDecodeNSErrorIfNeeded, _CUXPCDecodeNSString, _CUXPCDecodeNSUUID, 
+                       _CUXPCDecodeSInt64Ranged, _CUXPCDecodeSInt64RangedEx, _CUXPCDecodeUInt64Ranged, 
+                       _CUXPCDecodeUInt64RangedEx, _CUXPCEncodeNSArrayOfNSNumber, 
+                       _CUXPCEncodeNSError, _CUXPCGetNextClientID, _CocoaTextViewAppendUTF8String, 
+                       _CopyEDIDbyUUID, _CopyFileDataByFile, _CopyFileDataByPath, 
+                       _CoreAudioCopyDataSourceName, _CoreAudioCopyPropertyData, 
+                       _CoreAudioFindDeviceByUID, _CoreAudioGetDefaultAudioDevice, 
                        _CoreAudioGetPropertyData, _CoreAudioPropertyListener_Create, 
                        _CoreAudioPropertyListener_Delete, _CoreAudioRampParameterStart, 
                        _CoreAudioSetDefaultAudioDevice, _CoreAudioSetPropertyData, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D2DC7F80-FC4A-3AA8-B185-4D87985C163C' ]
+uuids:           [ 'x86_64: 051EAA90-51B4-3AFA-9BBC-7B5EF6035F8B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HDRProcessing.framework/Versions/A/HDRProcessing'
 exports:         

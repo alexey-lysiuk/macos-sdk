@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B2098EE-671A-35D3-AA04-04222E2CFA51' ]
+uuids:           [ 'x86_64: 95301D00-CE35-3F53-BAE1-6E6217706702' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/PencilKit.framework/Versions/A/PencilKit'
 exports:         

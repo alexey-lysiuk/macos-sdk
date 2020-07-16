@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 760B4D9F-AFC7-3550-BAC5-F29968DF1082', 'x86_64: 760B4D9F-AFC7-3550-BAC5-F29968DF1082' ]
+uuids:           [ 'x86_64: 74BA9546-AED1-321C-A769-FDACB2AD40AE', 'x86_64: 74BA9546-AED1-321C-A769-FDACB2AD40AE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CryptoKitCBridging.framework/Versions/A/CryptoKitCBridging'
 exports:         

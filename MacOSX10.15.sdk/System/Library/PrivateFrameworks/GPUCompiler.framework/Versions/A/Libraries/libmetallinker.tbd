@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 072B2A21-A58E-389D-ACC6-3408F2DBB3D3' ]
+uuids:           [ 'x86_64: 159CEABA-54A9-3FED-BD02-0849CBF4D498' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/A/Libraries/libmetallinker.dylib'
 current-version: 0

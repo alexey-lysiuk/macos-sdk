@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 65DC565F-EAD8-30BE-B540-70F87DA1E4F5', 'x86_64: 65DC565F-EAD8-30BE-B540-70F87DA1E4F5' ]
+uuids:           [ 'x86_64: BE99683D-352B-3CFA-A1D3-837A3FEEA75C', 'x86_64: BE99683D-352B-3CFA-A1D3-837A3FEEA75C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Categories.framework/Versions/A/Categories'
 current-version: 5.7

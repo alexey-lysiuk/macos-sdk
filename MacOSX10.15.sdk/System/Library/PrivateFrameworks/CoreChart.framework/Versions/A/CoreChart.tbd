@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 60CDE97E-5738-35C0-AE25-4556E1F79194' ]
+uuids:           [ 'x86_64: A535CE36-E5C7-3627-8C9F-F5A7C20EB35B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreChart.framework/Versions/A/CoreChart'
 exports:         
@@ -9,19 +9,23 @@ exports:
                        _CCChartViewCATransactionFromBackgroundThread, _CCChartViewDelegate, 
                        _CCChartViewRendererType, _CCChartViewZoomFactor, _CCRendererTypeCoreAnimation, 
                        _CCRendererTypeCoreGraphics, _CoreChartVersionNumber, _CoreChartVersionString ]
-    objc-classes:    [ CCChartDataRowBinding, CCChartView, CCVegaAreaMarkDef, CCVegaCARenderer, 
-                       CCVegaCGCanvas, CCVegaCGContext, CCVegaCGFontProperties, CCVegaCGImage, 
-                       CCVegaCGLinearGradient, CCVegaCGTextMetrics, CCVegaCSSCursorMap, 
-                       CCVegaCSSStyleDeclaration, CCVegaColorHandler, CCVegaColorOrGradient, 
+    objc-classes:    [ CCAccessibilityElement, CCChartDataRowBinding, CCChartView, 
+                       CCTestUtils, CCTransaction, CCVegaAccessibilityHelper, CCVegaAreaMarkDef, 
+                       CCVegaCARenderer, CCVegaCGCanvas, CCVegaCGContext, CCVegaCGFontProperties, 
+                       CCVegaCGImage, CCVegaCGLinearGradient, CCVegaCGTextMetrics, 
+                       CCVegaCSSCursorMap, CCVegaCSSStyleDeclaration, CCVegaColorOrGradient, 
                        CCVegaCurveFactory, CCVegaCurveFactoryCardinal, CCVegaCurveFactoryLinear, 
-                       CCVegaCurveFactoryLinearClosed, CCVegaCurves, CCVegaEventQueueItem, 
-                       CCVegaGroupMarkDef, CCVegaHTMLElement, CCVegaJSColor, CCVegaJSColorMap, 
-                       CCVegaJSConsole, CCVegaJSDocument, CCVegaJSFont, CCVegaJSFontCache, 
-                       CCVegaJSMouseEvent, CCVegaLineMarkDef, CCVegaLogProxy, CCVegaLogProxyHandler, 
-                       CCVegaLogger, CCVegaMark, CCVegaMarkDef, CCVegaMarkItem, CCVegaMultiItemShapeMarkDef, 
-                       CCVegaPathMarkDef, CCVegaRectMarkDef, CCVegaRenderer, CCVegaRendererOptions, 
+                       CCVegaCurveFactoryLinearClosed, CCVegaCurves, CCVegaDataUpdateQueueItem, 
+                       CCVegaEventQueueItem, CCVegaGroupMarkDef, CCVegaHTMLElement, 
+                       CCVegaImageMarkDef, CCVegaJSColor, CCVegaJSColorMap, CCVegaJSConsole, 
+                       CCVegaJSDocument, CCVegaJSFont, CCVegaJSFontCache, CCVegaJSMouseEvent, 
+                       CCVegaLineMarkDef, CCVegaLocalizationFunctions, CCVegaLogProxy, 
+                       CCVegaLogProxyHandler, CCVegaLogger, CCVegaMark, CCVegaMarkDef, 
+                       CCVegaMarkItem, CCVegaMultiItemShapeMarkDef, CCVegaPathMarkDef, 
+                       CCVegaRectMarkDef, CCVegaRenderer, CCVegaRendererOptions, 
                        CCVegaRuleMarkDef, CCVegaSVGRenderer, CCVegaScenegraphUtils, 
-                       CCVegaScripts, CCVegaShapeMarkDef, CCVegaSignalListener, CCVegaSingleItemShapeMarkDef, 
-                       CCVegaStringHandler, CCVegaSymbolMarkDef, CCVegaSymbolPath, 
-                       CCVegaTextMarkDef, CCVegaWorker, CCViewRendererDelegate ]
+                       CCVegaScripts, CCVegaShapeMarkDef, CCVegaSignalListener, CCVegaSignalUpdateQueueItem, 
+                       CCVegaSingleItemShapeMarkDef, CCVegaSymbolMarkDef, CCVegaSymbolPath, 
+                       CCVegaTextMarkDef, CCVegaTransaction, CCVegaUpdateQueueItem, 
+                       CCVegaWorker, CCVegaWorkerClient, CCViewRendererDelegate ]
 ...

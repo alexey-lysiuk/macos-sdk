@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F4D0DCCD-198B-3463-91A0-A8458E8CA5C6' ]
+uuids:           [ 'x86_64: 524B7BE7-AF0B-371E-948B-BA3C018D9638' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/VisionKit.framework/Versions/A/VisionKit'
 exports:         

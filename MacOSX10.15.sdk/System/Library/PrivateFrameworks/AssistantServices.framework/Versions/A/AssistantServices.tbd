@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4C5EBAEF-7DDA-3C63-A07F-0C8260668FE6', 'x86_64: 4C5EBAEF-7DDA-3C63-A07F-0C8260668FE6' ]
+uuids:           [ 'x86_64: 09232523-EE7D-3403-AEDA-EAEDBA8A13AB', 'x86_64: 09232523-EE7D-3403-AEDA-EAEDBA8A13AB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AssistantServices.framework/Versions/A/AssistantServices'
 exports:         

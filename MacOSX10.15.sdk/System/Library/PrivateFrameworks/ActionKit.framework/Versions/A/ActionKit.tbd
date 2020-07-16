@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40651C99-A621-3CCF-AAE8-69FDD111FD33' ]
+uuids:           [ 'x86_64: F3A64C55-9FE1-386C-96CE-0F304E54742A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ActionKit.framework/Versions/A/ActionKit'
 exports:         

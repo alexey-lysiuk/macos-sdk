@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1E786EE4-E89D-301B-9BA4-F9F1D1563375' ]
+uuids:           [ 'x86_64: 1602302B-8A87-3561-AB23-0068A83EBB74' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IPTelephony.framework/Support/libIPTelephony.dylib'
 exports:         

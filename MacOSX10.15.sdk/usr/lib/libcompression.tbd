@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 34D9E608-EEE0-3FD6-97DC-FF16D823ABC3', 'x86_64: 34D9E608-EEE0-3FD6-97DC-FF16D823ABC3', 
-                   'x86_64h: 7F258A06-E01D-32D2-9CD2-6B2931DA5DA7', 'x86_64h: 7F258A06-E01D-32D2-9CD2-6B2931DA5DA7' ]
+uuids:           [ 'x86_64: 3938CD1B-E242-3474-8A7F-9F66D316AFF3', 'x86_64: 3938CD1B-E242-3474-8A7F-9F66D316AFF3', 
+                   'x86_64h: 64C91066-586D-38C0-A2F3-3E60A940F859', 'x86_64h: 64C91066-586D-38C0-A2F3-3E60A940F859' ]
 platform:        zippered
 install-name:    '/usr/lib/libcompression.dylib'
 exports:         

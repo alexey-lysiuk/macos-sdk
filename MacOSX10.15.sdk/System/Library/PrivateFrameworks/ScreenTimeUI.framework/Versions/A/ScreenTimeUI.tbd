@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BC60A871-F8D5-3B2E-9444-66BB2C114479' ]
+uuids:           [ 'x86_64: 5300628B-8AD8-3372-A6CE-329D877ABE15' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ScreenTimeUI.framework/Versions/A/ScreenTimeUI'
-current-version: 433
+current-version: 440
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ ChatKit, ContactsUI, DataDetectorsViewDebug, DataDetectorsViewService, 

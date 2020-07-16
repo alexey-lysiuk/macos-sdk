@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EDBE7A09-8334-3F68-B8AE-B43A14DF7509' ]
+uuids:           [ 'x86_64: 4DEC0A61-00AF-3279-AF18-6BEB871DB4C0' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftUIKit.dylib'
 current-version: 0

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D846BA35-59A1-3B78-B1C8-7E0EDE972AD2' ]
+uuids:           [ 'x86_64: 4A92D8D8-A9E5-3A9C-942F-28576F6BCDF5' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory'
 exports:         
@@ -13,7 +13,7 @@ exports:
                        ODNode, ODQuery, ODRecord, ODRecordMap, ODSession ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 58835104-9E7A-32E8-862B-530CE899C9B4' ]
+uuids:           [ 'x86_64: 7E6C88EB-3DD9-32B0-81FC-179552834FA9' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory'
 exports:         

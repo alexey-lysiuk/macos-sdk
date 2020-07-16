@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 38C0EBE6-0410-3609-864C-1B5BB893E822' ]
+uuids:           [ 'x86_64: 434A4BBB-22EB-37A1-B387-0CE85E70A6EF' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/IOUSBHost.framework/Versions/A/IOUSBHost'
 exports:         

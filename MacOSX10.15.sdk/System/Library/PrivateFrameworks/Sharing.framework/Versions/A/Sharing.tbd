@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8D0C1BC4-5133-399B-9EFC-74CAEF4FA389', 'x86_64: 8D0C1BC4-5133-399B-9EFC-74CAEF4FA389' ]
+uuids:           [ 'x86_64: CBDA0ADD-F1E7-3B06-9118-C5E183F0D3D6', 'x86_64: CBDA0ADD-F1E7-3B06-9118-C5E183F0D3D6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Sharing.framework/Versions/A/Sharing'
-current-version: 1526.14
+current-version: 1526.37
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSDataFromHexString, _NSStringLooksLikeBTAddress, _RPCompanionLinkDeviceIsEqualToSFDevice, 
@@ -180,8 +180,8 @@ exports:
                        _SFWiFiPasswordSharingAdvertisingEnded, _SFiTunesStoreLinkType, 
                        __SFIsWiFiEnabled, __SFNodeCreateWithXPCObject, __SFNodeUpdateCachedChildNode, 
                        __SFNodeUpdateCachedParentNode, __SFNodeXPCObjectCreate, _airdrop_log, 
-                       _asset_log, _asset_metadata_log, _auto_unlock_log, _browser_log, 
-                       _charging_events_log, _charging_log, _createSFNodeArrayForXPCArray, 
+                       _airdrop_ui_log, _asset_log, _asset_metadata_log, _auto_unlock_log, 
+                       _browser_log, _charging_events_log, _charging_log, _createSFNodeArrayForXPCArray, 
                        _createXPCArrayForSFNodeArray, _daemon_log, _framework_log, 
                        _gSDAppleIDAgent, _gSDSetupAgent, _gSFNearbyAgent, _gSFRunningInSharingD, 
                        _handoff_log, _kCFErrorDomainSFOperation, _kSFAppleIDClientAccountInfoAppleIDCFKey, 

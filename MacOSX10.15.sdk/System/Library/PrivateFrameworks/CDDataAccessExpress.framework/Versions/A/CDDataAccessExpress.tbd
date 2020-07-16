@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FBFA0E2A-913A-30E2-875A-9E20DF63862A', 'x86_64: FBFA0E2A-913A-30E2-875A-9E20DF63862A' ]
+uuids:           [ 'x86_64: 871ADF11-ACC2-3506-918D-C58B6EB90ADD', 'x86_64: 871ADF11-ACC2-3506-918D-C58B6EB90ADD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CDDataAccessExpress.framework/Versions/A/CDDataAccessExpress'
 exports:         

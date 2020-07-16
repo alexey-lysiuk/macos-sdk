@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BB84D70B-638D-3B34-A427-AF3E423CC3D2', 'x86_64: BB84D70B-638D-3B34-A427-AF3E423CC3D2' ]
+uuids:           [ 'x86_64: AE0EDE20-1D87-3A44-ADFC-1CDD96D97885', 'x86_64: AE0EDE20-1D87-3A44-ADFC-1CDD96D97885' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftIntents.dylib'
 current-version: 0

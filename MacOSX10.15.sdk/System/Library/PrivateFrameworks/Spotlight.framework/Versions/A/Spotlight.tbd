@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B419F339-F6C8-3B2E-839C-F78039565B9B' ]
+uuids:           [ 'x86_64: A985152C-10A5-3839-8770-090679ACC07A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Spotlight.framework/Versions/A/Spotlight'
-current-version: 2076.3
+current-version: 2076.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PRSResultDidUpdate, _SPAppDelegatePreferencesChanged, _SPBodyColor, 

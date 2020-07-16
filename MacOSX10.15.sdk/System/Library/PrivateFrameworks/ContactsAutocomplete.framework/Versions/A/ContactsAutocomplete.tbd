@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B1A4EC54-EF5B-3E3C-A511-EF5799180BC8', 'x86_64: B1A4EC54-EF5B-3E3C-A511-EF5799180BC8' ]
+uuids:           [ 'x86_64: 7355EC48-BA3B-333E-A2DD-C7622382FAE4', 'x86_64: 7355EC48-BA3B-333E-A2DD-C7622382FAE4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsAutocomplete.framework/Versions/A/ContactsAutocomplete'
 exports:         

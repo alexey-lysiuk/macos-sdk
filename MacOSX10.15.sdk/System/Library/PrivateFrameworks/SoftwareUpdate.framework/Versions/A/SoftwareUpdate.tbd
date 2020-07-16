@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3F281C5B-A5D3-34FE-BEB1-4E532046F06B' ]
+uuids:           [ 'x86_64: 59C58F16-5AA2-32BF-B07A-CF961D2D005D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SoftwareUpdate.framework/Versions/A/SoftwareUpdate'
 current-version: 747

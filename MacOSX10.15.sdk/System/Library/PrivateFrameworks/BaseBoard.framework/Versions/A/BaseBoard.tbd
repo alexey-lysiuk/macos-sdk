@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1EFE4339-9393-3B15-8DC9-2BE9B03F3062', 'x86_64: 1EFE4339-9393-3B15-8DC9-2BE9B03F3062' ]
+uuids:           [ 'x86_64: 10D0F3BB-E8F3-365E-8528-6AC996A9B0E7', 'x86_64: 10D0F3BB-E8F3-365E-8528-6AC996A9B0E7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard'
 current-version: 0

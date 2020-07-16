@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 76AC0E38-90C6-30C0-9D67-1ABF20E2FB2F', 'x86_64: 76AC0E38-90C6-30C0-9D67-1ABF20E2FB2F' ]
+uuids:           [ 'x86_64: 9DB5B5A3-2A56-31CD-8115-6EA98697BECC', 'x86_64: 9DB5B5A3-2A56-31CD-8115-6EA98697BECC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessProximity.framework/Versions/A/WirelessProximity'
 exports:         

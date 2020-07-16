@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CF003168-3232-3136-B8ED-7CCD12038B57', 'x86_64: CF003168-3232-3136-B8ED-7CCD12038B57' ]
+uuids:           [ 'x86_64: 886DC2EE-365F-3B65-A35E-C6A2B9A0A216', 'x86_64: 886DC2EE-365F-3B65-A35E-C6A2B9A0A216' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MobileIcons.framework/Versions/A/MobileIcons'
 current-version: 372

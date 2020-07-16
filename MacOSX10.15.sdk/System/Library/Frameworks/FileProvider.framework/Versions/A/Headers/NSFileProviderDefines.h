@@ -2,7 +2,7 @@
 //  NSFileProviderDefines.h
 //  FileProvider
 //
-//  Copyright © 2017 Apple Inc. All rights reserved.
+//  Copyright © 2017-2020 Apple Inc. All rights reserved.
 //
 
 #ifndef PREPROCESS_AVAILABILITY_MACROS
@@ -13,11 +13,8 @@
 
 #define FILEPROVIDER_CLASS_AVAILABILITY API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
 #define FILEPROVIDER_API_AVAILABILITY_V2 API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
-
-#define FILEPROVIDER_API_AVAILABILITY_V3 API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst)
-#define FILEPROVIDER_API_DEPRECATED_V3(message) API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos, macCatalyst)
-#define FILEPROVIDER_API_AVAILABILITY_FPFS_CORE API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst)
-#define FILEPROVIDER_API_AVAILABILITY_FPFS_NEXT API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst)
+#define FILEPROVIDER_API_AVAILABILITY_V2_V3 API_AVAILABLE(ios(11.0), macos(10.15)) API_UNAVAILABLE(macCatalyst) API_UNAVAILABLE(watchos, tvos)
+#define FILEPROVIDER_API_AVAILABILITY_V3 API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macCatalyst)
 
 #else
 // This file intentionally left blank.

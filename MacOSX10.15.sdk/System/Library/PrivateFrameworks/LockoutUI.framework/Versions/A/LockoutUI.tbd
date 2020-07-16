@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C18C290B-FE48-3131-9FAF-B59D2999B393' ]
+uuids:           [ 'x86_64: 50305D29-94CF-3F28-BAC3-94725C21E92B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LockoutUI.framework/Versions/A/LockoutUI'
 exports:         

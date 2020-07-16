@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B57DF935-DF2D-362A-8F93-759EC9E85A50', 'x86_64: B57DF935-DF2D-362A-8F93-759EC9E85A50' ]
+uuids:           [ 'x86_64: 932C7705-353B-395F-9A23-09D62EAFAD81', 'x86_64: 932C7705-353B-395F-9A23-09D62EAFAD81' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SpotlightIndex.framework/Versions/A/SpotlightIndex'
-current-version: 2076.3
+current-version: 2076.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _RLEOIDArrayAddOid, _RLEOIDArrayAddOid_locked, _RLEOIDArrayAddOids, 

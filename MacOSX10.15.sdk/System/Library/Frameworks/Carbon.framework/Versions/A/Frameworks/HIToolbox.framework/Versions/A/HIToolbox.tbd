@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C03A48FC-1A02-320D-9147-F4687A1BBC6F' ]
+uuids:           [ 'x86_64: EAF2DAC3-66B1-30BF-AF10-72DDA90D1044' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox'
 current-version: 994.6

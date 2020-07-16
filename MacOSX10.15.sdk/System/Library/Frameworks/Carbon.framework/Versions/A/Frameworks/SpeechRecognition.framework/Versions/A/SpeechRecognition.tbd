@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E6BE4EC1-5C53-38BB-AAFD-E7BF7A8975BC' ]
+uuids:           [ 'x86_64: 9614A01E-8303-3422-A3BA-6CE27540E09A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition'
 parent-umbrella: Carbon

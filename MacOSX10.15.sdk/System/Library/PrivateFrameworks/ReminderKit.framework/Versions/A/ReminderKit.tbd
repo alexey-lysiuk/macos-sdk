@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F7EB6321-0DA3-3B4E-AD1F-94B0C4C8CD5D', 'x86_64: F7EB6321-0DA3-3B4E-AD1F-94B0C4C8CD5D' ]
+uuids:           [ 'x86_64: 669BCAF4-D9A0-357B-9B90-21FC36A61631', 'x86_64: 669BCAF4-D9A0-357B-9B90-21FC36A61631' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit'
 exports:         

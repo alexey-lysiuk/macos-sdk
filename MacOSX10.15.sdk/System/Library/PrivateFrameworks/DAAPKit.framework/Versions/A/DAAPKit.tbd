@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6E58F0D4-6966-32C7-B0FA-C6088E77EBBE', 'x86_64: 6E58F0D4-6966-32C7-B0FA-C6088E77EBBE' ]
+uuids:           [ 'x86_64: DDF5C070-7625-32AD-8EEE-EE41D397C804', 'x86_64: DDF5C070-7625-32AD-8EEE-EE41D397C804' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DAAPKit.framework/Versions/A/DAAPKit'
 exports:         

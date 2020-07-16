@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4117FF53-3EF7-30B2-95AF-016D62EFD5D4', 'x86_64: 4117FF53-3EF7-30B2-95AF-016D62EFD5D4' ]
+uuids:           [ 'x86_64: EDB1E70D-DECF-3E94-AAEC-F897E352F565', 'x86_64: EDB1E70D-DECF-3E94-AAEC-F897E352F565' ]
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libLatin5Converter.dylib'
 current-version: 76

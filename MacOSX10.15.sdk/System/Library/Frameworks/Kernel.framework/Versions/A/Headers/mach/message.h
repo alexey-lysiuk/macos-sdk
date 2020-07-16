@@ -592,6 +592,7 @@ typedef union{
 #define round_msg(x)    (((mach_msg_size_t)(x) + sizeof (natural_t) - 1) & \
 	                        ~(sizeof (natural_t) - 1))
 
+
 /*
  *  There is no fixed upper bound to the size of Mach messages.
  */

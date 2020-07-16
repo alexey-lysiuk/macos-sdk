@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CF70409E-5A62-371F-B0E5-CEBE37EB8DAB', 'x86_64: CF70409E-5A62-371F-B0E5-CEBE37EB8DAB' ]
+uuids:           [ 'x86_64: D1DD933D-0E75-32A2-940D-412DFF8333F6', 'x86_64: D1DD933D-0E75-32A2-940D-412DFF8333F6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DistributedEvaluation.framework/Versions/A/DistributedEvaluation'
 swift-abi-version: 7

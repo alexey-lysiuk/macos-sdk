@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6BEFB262-2538-3A12-9E9F-A7CF94D2B68A', 'x86_64: 6BEFB262-2538-3A12-9E9F-A7CF94D2B68A' ]
+uuids:           [ 'x86_64: 05612E06-50CB-318F-9F8E-EF4D49FAB3B0', 'x86_64: 05612E06-50CB-318F-9F8E-EF4D49FAB3B0' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork'
 current-version: 122.5.6

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F570670-3E03-3487-9989-C194803EC3CE' ]
+uuids:           [ 'x86_64: 855537EC-FD8A-3C05-8BE0-0AA41AF99BD6' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/Frameworks/libwebrtc.dylib'
-current-version: 609.1.20
+current-version: 609.3.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ConvertToI420, __ZN3rtc10LogMessage10LogToDebugENS_15LoggingSeverityE, 

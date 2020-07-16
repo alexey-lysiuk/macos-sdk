@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 806E8F32-64C9-3538-B622-8F5AF95161A2' ]
+uuids:           [ 'x86_64: 2AFD09C9-A71F-3BB0-902F-AB2E79653C9C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SMBClientEngine.framework/Versions/A/SMBClientEngine'
 exports:         

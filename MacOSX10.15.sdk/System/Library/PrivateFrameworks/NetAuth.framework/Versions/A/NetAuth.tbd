@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D324C7CC-E614-35F6-8619-DECBE90ECAEB', 'x86_64: D324C7CC-E614-35F6-8619-DECBE90ECAEB' ]
+uuids:           [ 'x86_64: B0C03C41-87A3-352B-B130-96E1A6F94B47', 'x86_64: B0C03C41-87A3-352B-B130-96E1A6F94B47' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/NetAuth.framework/Versions/A/NetAuth'
 exports:         

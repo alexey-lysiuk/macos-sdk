@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29D3760B-2AB2-3D38-9FA5-6EFFC7F51EBC', 'x86_64: 29D3760B-2AB2-3D38-9FA5-6EFFC7F51EBC' ]
+uuids:           [ 'x86_64: 57696192-BF9D-3946-8C78-35FCEF406B00', 'x86_64: 57696192-BF9D-3946-8C78-35FCEF406B00' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Contacts.framework/Versions/A/Contacts'
 current-version: 0

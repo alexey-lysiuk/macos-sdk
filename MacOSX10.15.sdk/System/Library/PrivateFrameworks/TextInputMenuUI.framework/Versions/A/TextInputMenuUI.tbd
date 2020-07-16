@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CBF34020-7A85-3E73-B28B-974EF6D8A7A7' ]
+uuids:           [ 'x86_64: F9B9C77C-4AD3-375E-8D8D-1324861F7697' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TextInputMenuUI.framework/Versions/A/TextInputMenuUI'
 current-version: 249.1

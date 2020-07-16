@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A71C8EFB-1BAF-3F16-B2E1-7B406457208D' ]
+uuids:           [ 'x86_64: D0549BA7-9FE8-3658-A9B7-068817789752' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/Versions/A/SymptomEvaluator'
-current-version: 1238.100.26
+current-version: 1238.120.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CLIPS_BASEBAND_BEDF_MODULE, _CLIPS_BASEBAND_MODULE, _CLIPS_BLUETOOTH_MODULE, 

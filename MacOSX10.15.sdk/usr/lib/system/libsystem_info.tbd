@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 17049D3F-C798-3651-B391-1551FC699D3E', 'x86_64: 17049D3F-C798-3651-B391-1551FC699D3E' ]
+uuids:           [ 'x86_64: 8A321605-5480-330B-AF9E-64E65DE61747', 'x86_64: 8A321605-5480-330B-AF9E-64E65DE61747' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_info.dylib'
 parent-umbrella: System

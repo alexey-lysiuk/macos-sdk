@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F91AD6D6-8242-348C-8296-AF1DD8DBA2EF', 'x86_64: F91AD6D6-8242-348C-8296-AF1DD8DBA2EF' ]
+uuids:           [ 'x86_64: 487F2E7A-A5FF-3C36-A8E9-B85D98618116', 'x86_64: 487F2E7A-A5FF-3C36-A8E9-B85D98618116' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUWrangler.framework/Versions/A/GPUWrangler'
 current-version: 0

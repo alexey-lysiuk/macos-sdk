@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B95EF0B6-F121-3457-A5CE-06896F5C717C', 'x86_64: B95EF0B6-F121-3457-A5CE-06896F5C717C' ]
+uuids:           [ 'x86_64: 5D391FD1-391B-390A-BBC1-62A537C8DAFE', 'x86_64: 5D391FD1-391B-390A-BBC1-62A537C8DAFE' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication'
-current-version: 693.100.21
+current-version: 693.140.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LAAvailableMechanisms, _LABiometryDatabaseHash, _LACopyExternalizedContext, 

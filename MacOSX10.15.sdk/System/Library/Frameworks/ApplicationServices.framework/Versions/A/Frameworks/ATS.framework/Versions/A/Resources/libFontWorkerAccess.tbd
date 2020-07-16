@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 34DBE829-E212-31CB-A211-DA5D91B90314', 'x86_64: 34DBE829-E212-31CB-A211-DA5D91B90314' ]
+uuids:           [ 'x86_64: C277D45D-90BE-38B1-A088-B95E00869CFB', 'x86_64: C277D45D-90BE-38B1-A088-B95E00869CFB' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontWorkerAccess.dylib'
 exports:         

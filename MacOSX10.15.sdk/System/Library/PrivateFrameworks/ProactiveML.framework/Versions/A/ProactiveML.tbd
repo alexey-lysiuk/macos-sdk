@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4238F666-B485-386F-A4CF-5750CE7A9E57', 'x86_64: 4238F666-B485-386F-A4CF-5750CE7A9E57' ]
+uuids:           [ 'x86_64: FCF8085B-2F25-3360-B330-6F4BDD2685CD', 'x86_64: FCF8085B-2F25-3360-B330-6F4BDD2685CD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveML.framework/Versions/A/ProactiveML'
-current-version: 1052.33
+current-version: 1052.34
 swift-abi-version: 7
 exports:         
   - archs:           [ x86_64 ]

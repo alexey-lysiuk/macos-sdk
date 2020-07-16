@@ -7,7 +7,7 @@
 
 #import <TargetConditionals.h>
 #import <os/availability.h>
-#if TARGET_OS_IPHONE && (!defined(TARGET_OS_MACCATALYST) || !TARGET_OS_MACCATALYST)
+#if TARGET_OS_IPHONE && ((!defined(TARGET_OS_MACCATALYST) || !TARGET_OS_MACCATALYST) && (!defined(TARGET_OS_MACCATALYST) || !TARGET_OS_MACCATALYST))
 #import <OpenGLES/gltypes.h>
 #else // !TARGET_OS_IPHONE
 #import <OpenGL/gltypes.h>
@@ -20,7 +20,7 @@
 	#define GLK_EXTERN extern 
 #endif
 
-#if TARGET_OS_IPHONE && (!defined(TARGET_OS_MACCATALYST) || !TARGET_OS_MACCATALYST)
+#if TARGET_OS_IPHONE && ((!defined(TARGET_OS_MACCATALYST) || !TARGET_OS_MACCATALYST) && (!defined(TARGET_OS_MACCATALYST) || !TARGET_OS_MACCATALYST))
 #import <OpenGLES/OpenGLESAvailability.h>
 #define OPENGL_DEPRECATED(...)
 #else

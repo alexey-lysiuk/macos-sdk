@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D28326AA-CE67-3126-BF8A-DF450FCC42B2', 'x86_64: D28326AA-CE67-3126-BF8A-DF450FCC42B2' ]
+uuids:           [ 'x86_64: 45B31693-B9F0-3F4B-81AF-4361279925F2', 'x86_64: 45B31693-B9F0-3F4B-81AF-4361279925F2' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit'
-current-version: 1894.40.150
+current-version: 1894.60.100
 compatibility-version: 45
 exports:         
   - archs:           [ x86_64 ]
@@ -1349,10 +1349,10 @@ exports:
                        _NSToolbarSeparator._inPalette ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 27837A1C-A833-3F99-B8D8-84A583EEA523', 'x86_64: 27837A1C-A833-3F99-B8D8-84A583EEA523' ]
+uuids:           [ 'x86_64: EC55B9E5-7E62-380A-9AB1-FC7BEF663653', 'x86_64: EC55B9E5-7E62-380A-9AB1-FC7BEF663653' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation'
-current-version: 661.2
+current-version: 662
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, UIKitCore ]

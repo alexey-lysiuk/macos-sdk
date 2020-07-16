@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C1C46134-249B-3BA5-BC1E-F86E0D59EAB9' ]
+uuids:           [ 'x86_64: B0165F70-7BBC-3FC2-945B-FADE0F4CEE5F' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ExecutionPolicy.framework/Versions/A/ExecutionPolicy'
 exports:         

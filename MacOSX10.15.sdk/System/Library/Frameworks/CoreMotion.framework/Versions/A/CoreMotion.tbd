@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B6984888-2E35-3667-808A-F1B9120F241F', 'x86_64: B6984888-2E35-3667-808A-F1B9120F241F' ]
+uuids:           [ 'x86_64: EACCA10E-4A14-3143-AE98-B826E97B7431', 'x86_64: EACCA10E-4A14-3143-AE98-B826E97B7431' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreMotion.framework/Versions/A/CoreMotion'
 current-version: 2394.0.22

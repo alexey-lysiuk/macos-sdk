@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC83B860-61BD-384E-81BF-CA3CBE655968', 'x86_64: AC83B860-61BD-384E-81BF-CA3CBE655968' ]
+uuids:           [ 'x86_64: 7C2B3259-083B-31B8-BCDB-1BA360529936', 'x86_64: 7C2B3259-083B-31B8-BCDB-1BA360529936' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreEmoji.framework/Versions/A/CoreEmoji'
-current-version: 107
+current-version: 107.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CEMCopyEmojiTokens, _CEMCreateEmojiCharacterSet, _CEMCreateEmojiLocaleData, 

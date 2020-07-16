@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.8.25.8 clang-1103.0.30.20)
-// swift-module-flags: -target x86_64-apple-ios13.4-macabi -enable-objc-interop -swift-version 5 -enforce-exclusivity=checked -O -enable-library-evolution -module-name RealityKit
+// swift-module-flags: -target x86_64-apple-ios13.6-macabi -enable-objc-interop -swift-version 5 -enforce-exclusivity=checked -O -enable-library-evolution -module-name RealityKit
 import AudioToolbox
 import Combine
 import CoreGraphics

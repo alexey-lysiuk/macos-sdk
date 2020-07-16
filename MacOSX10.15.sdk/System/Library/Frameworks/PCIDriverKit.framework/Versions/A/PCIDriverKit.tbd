@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A99F75B6-2F26-3491-B7E9-591FF569C3C4' ]
+uuids:           [ 'x86_64: 1F8BC1A0-FB1E-344C-B3BE-43843BFC037C' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/PCIDriverKit.framework/Versions/A/PCIDriverKit'
 exports:         

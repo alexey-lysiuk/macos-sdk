@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EFE56369-34F2-32E7-B0E8-EC5F087BBC64', 'x86_64: EFE56369-34F2-32E7-B0E8-EC5F087BBC64' ]
+uuids:           [ 'x86_64: 4A7E2A63-E19A-3936-92F5-03F2FD602172', 'x86_64: 4A7E2A63-E19A-3936-92F5-03F2FD602172' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/C2.framework/Versions/A/C2'
 current-version: 495

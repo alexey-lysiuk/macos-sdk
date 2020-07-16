@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.100.4) generated from IOUserNetworkEthernet.iig */
+/* iig(DriverKit-73.140.1) generated from IOUserNetworkEthernet.iig */
 
 /* IOUserNetworkEthernet.iig:1-14 */
 #ifndef _IOUSERNETWORKETHERNET_IIG

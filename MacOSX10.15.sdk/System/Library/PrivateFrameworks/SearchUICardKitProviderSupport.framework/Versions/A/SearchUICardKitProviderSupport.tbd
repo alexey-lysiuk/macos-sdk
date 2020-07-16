@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 665775C9-67B3-3523-97D8-BA0AE1E48C89' ]
+uuids:           [ 'x86_64: 26D853B1-B1A1-3D60-844F-D087CEA549CB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SearchUICardKitProviderSupport.framework/Versions/A/SearchUICardKitProviderSupport'
 exports:         

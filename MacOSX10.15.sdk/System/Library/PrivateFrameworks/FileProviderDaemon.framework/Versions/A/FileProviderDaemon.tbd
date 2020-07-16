@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1FB02E47-AC12-363F-AF15-EA939BC9A52F', 'x86_64: 1FB02E47-AC12-363F-AF15-EA939BC9A52F' ]
+uuids:           [ 'x86_64: 9965351F-21FD-3477-B478-8ABAA0DB513A', 'x86_64: 9965351F-21FD-3477-B478-8ABAA0DB513A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FileProviderDaemon.framework/Versions/A/FileProviderDaemon'
 current-version: 0

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BE881CCF-E993-3A6D-9113-81B06FDAE08F', 'x86_64: BE881CCF-E993-3A6D-9113-81B06FDAE08F' ]
+uuids:           [ 'x86_64: 32760843-A629-3D1A-B3C2-090441EAFB8C', 'x86_64: 32760843-A629-3D1A-B3C2-090441EAFB8C' ]
 platform:        zippered
 install-name:    '/usr/lib/libtailspin.dylib'
 current-version: 75.3

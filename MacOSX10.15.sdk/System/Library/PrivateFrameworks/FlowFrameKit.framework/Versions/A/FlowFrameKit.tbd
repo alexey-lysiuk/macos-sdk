@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CB511B12-4A53-3C0D-8482-EE7989AE21C0' ]
+uuids:           [ 'x86_64: 8177E910-8109-3422-BAA6-BB645D66CCE7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FlowFrameKit.framework/Versions/A/FlowFrameKit'
 swift-abi-version: 7

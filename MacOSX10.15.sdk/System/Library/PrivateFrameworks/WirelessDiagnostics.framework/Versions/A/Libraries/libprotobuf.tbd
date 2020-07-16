@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40872F70-D56D-3FD9-88EC-A953422DA946', 'x86_64: 40872F70-D56D-3FD9-88EC-A953422DA946' ]
+uuids:           [ 'x86_64: 0CDB164D-E7C3-3D4F-BF11-47402D67D7B0', 'x86_64: 0CDB164D-E7C3-3D4F-BF11-47402D67D7B0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libprotobuf.dylib'
 exports:         
@@ -1352,7 +1352,7 @@ exports:
                         __ZTSN20wireless_diagnostics6google8protobuf17DescriptorBuilder17OptionInterpreter21AggregateOptionFinderE ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E53600CB-4792-3669-BE44-AF2F00D87CA1', 'x86_64: E53600CB-4792-3669-BE44-AF2F00D87CA1' ]
+uuids:           [ 'x86_64: 578CA7D8-149E-3643-937B-DAD5501E4575', 'x86_64: 578CA7D8-149E-3643-937B-DAD5501E4575' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libprotobuf-lite.dylib'
 exports:         

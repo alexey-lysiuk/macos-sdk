@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A0654B4E-3194-3066-911F-FF1FBEE1D2C2', 'x86_64: A0654B4E-3194-3066-911F-FF1FBEE1D2C2' ]
+uuids:           [ 'x86_64: 0E4F48AD-402C-3E9D-9CA9-6DD9479B28F9', 'x86_64: 0E4F48AD-402C-3E9D-9CA9-6DD9479B28F9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices'
-current-version: 1069.22
+current-version: 1069.24
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]

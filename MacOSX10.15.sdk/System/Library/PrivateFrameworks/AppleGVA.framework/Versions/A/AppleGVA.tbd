@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 12563E5B-A5B3-30A3-96F5-7C5C87A87F6C' ]
+uuids:           [ 'x86_64: 9A858F8F-4405-32DF-A1C9-C0D557291226' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleGVA.framework/Versions/A/AppleGVA'
-current-version: 76.1
+current-version: 10.0.20
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AVFCODEC_CreateMediaAcceleratorInterface, _AVFJPG_CreateMediaAcceleratorInterface, 

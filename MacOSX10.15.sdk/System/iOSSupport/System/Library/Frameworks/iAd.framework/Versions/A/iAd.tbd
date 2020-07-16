@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F58D0ACB-5766-3C48-96A8-3757A8F65B99' ]
+uuids:           [ 'x86_64: EB345413-A76C-3163-B8E9-5274AF18347C' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/iAd.framework/Versions/A/iAd'
 exports:         
@@ -9,7 +9,7 @@ exports:
                        _ADBannerContentSizeIdentifierLandscape, _ADBannerContentSizeIdentifierPortrait, 
                        _ADCanStealControllerForCreativeType, _ADClampedBannerSize, 
                        _ADClearLocationPermissionCache, _ADClientErrorDomain, _ADConvertScreenRectToUIOrientation, 
-                       _ADCreativeTypeHasView, _ADCreativeTypeShouldCycle, _ADCreativeTypeSkipsVisibilityCheck, 
+                       _ADCreativeTypeHasView, _ADCreativeTypeSkipsVisibilityCheck, 
                        _ADDeviceDescription, _ADErrorDomain, _ADMakeRectilinear, 
                        _ADMaximumControllersForCreativeType, _ADPresentingViewControllerForView, 
                        _ADSetupSharedNSURLCache, _ADSubscriptionEventInfoAdamIDKey, 

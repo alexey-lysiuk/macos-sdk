@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F47F3FB2-0F32-3504-8D55-1B707765F359' ]
+uuids:           [ 'x86_64: 5DABA913-67F4-3188-AFA3-16370417AA78' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WebInspector.framework/Versions/A/WebInspector'
-current-version: 609.1.20
+current-version: 609.3.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _RWIAutomationAvailabilityFromString, _RWIErrorDomain, _RWINSStringFromAutomationAvailability, 

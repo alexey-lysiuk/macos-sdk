@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 09CB6B87-E8AC-3332-99CF-D813926BC40F' ]
+uuids:           [ 'x86_64: 10460F51-3412-3FCA-8CE5-C13401A5887F' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/ImageFormats/unorm8_1rgb.dylib'
 exports:         

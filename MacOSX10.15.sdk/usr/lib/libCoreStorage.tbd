@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 96B61D43-3196-34E2-964A-41A44D2E8FF2' ]
+uuids:           [ 'x86_64: A457B0FE-D77F-30AA-99A4-70F6A98DFE59' ]
 platform:        macosx
 install-name:    '/usr/lib/libCoreStorage.dylib'
 exports:         

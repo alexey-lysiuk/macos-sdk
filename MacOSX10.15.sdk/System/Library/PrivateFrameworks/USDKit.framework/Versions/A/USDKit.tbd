@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 603E35EC-5713-3CA7-8922-D5FD4F780F2C', 'x86_64: 603E35EC-5713-3CA7-8922-D5FD4F780F2C' ]
+uuids:           [ 'x86_64: 87C9A7EE-017C-34C1-9E4C-3E2BBA20AAD0', 'x86_64: 87C9A7EE-017C-34C1-9E4C-3E2BBA20AAD0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/USDKit.framework/Versions/A/USDKit'
-current-version: 24.48
+current-version: 24.50
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _USDKitAdditionalErrorsKey, _USDKitErrorDomain, _USDKitVersionNumber, 

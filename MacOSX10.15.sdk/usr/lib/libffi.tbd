@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2AACAE86-FCF4-3613-89A4-5F822BD92AA9', 'x86_64: 2AACAE86-FCF4-3613-89A4-5F822BD92AA9' ]
+uuids:           [ 'x86_64: 6068BAD9-0878-3491-97E4-6CF6BC813C2E', 'x86_64: 6068BAD9-0878-3491-97E4-6CF6BC813C2E' ]
 platform:        zippered
 install-name:    '/usr/lib/libffi.dylib'
 current-version: 26

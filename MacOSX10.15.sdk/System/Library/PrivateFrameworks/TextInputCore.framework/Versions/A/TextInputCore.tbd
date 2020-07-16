@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 730A27A5-B042-3DE9-889A-E3EA2FA3E218' ]
+uuids:           [ 'x86_64: D32E13B3-1FE5-3D9E-ADD6-435A6BE206E5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TextInputCore.framework/Versions/A/TextInputCore'
 swift-abi-version: 7

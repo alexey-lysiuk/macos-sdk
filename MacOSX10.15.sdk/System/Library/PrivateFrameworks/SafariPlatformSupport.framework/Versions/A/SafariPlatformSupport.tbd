@@ -1,8 +1,8 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CEDEF662-1E55-3044-B359-099B695974D4', 'x86_64: CEDEF662-1E55-3044-B359-099B695974D4' ]
+uuids:           [ 'x86_64: 591A5FC1-9B06-357E-BB92-0F31119C39D2', 'x86_64: 591A5FC1-9B06-357E-BB92-0F31119C39D2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SafariPlatformSupport.framework/Versions/A/SafariPlatformSupport'
-current-version: 609.1.20
+current-version: 609.3.5
 compatibility-version: 528
 ...

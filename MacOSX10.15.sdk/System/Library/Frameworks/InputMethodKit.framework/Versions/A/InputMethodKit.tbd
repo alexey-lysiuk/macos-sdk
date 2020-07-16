@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C1CB65F9-8CED-3964-9D04-AF9013B8961D' ]
+uuids:           [ 'x86_64: 5620C3CE-582F-3409-A6E8-2BE4E9444A8A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/InputMethodKit.framework/Versions/A/InputMethodKit'
 current-version: 429

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 91A020DC-639A-3A2E-88CB-3339114375EF', 'x86_64: 91A020DC-639A-3A2E-88CB-3339114375EF' ]
+uuids:           [ 'x86_64: 247A58CE-CAB0-36F3-AFD8-F585E6F6AB89', 'x86_64: 247A58CE-CAB0-36F3-AFD8-F585E6F6AB89' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IDSHashPersistence.framework/Versions/A/IDSHashPersistence'
 current-version: 800

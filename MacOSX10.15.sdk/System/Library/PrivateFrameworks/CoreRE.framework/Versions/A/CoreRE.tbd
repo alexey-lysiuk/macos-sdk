@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8DCBD4B6-AAA4-32A0-9FA6-FFD6E6F012B4', 'x86_64: 8DCBD4B6-AAA4-32A0-9FA6-FFD6E6F012B4' ]
+uuids:           [ 'x86_64: 125DF3E1-B2D3-3DC1-9A77-4F846E549A17', 'x86_64: 125DF3E1-B2D3-3DC1-9A77-4F846E549A17' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreRE.framework/Versions/A/CoreRE'
 current-version: 31.255

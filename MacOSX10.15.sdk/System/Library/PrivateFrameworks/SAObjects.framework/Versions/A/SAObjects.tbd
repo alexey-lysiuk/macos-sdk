@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6A581E5D-0DC1-312C-993E-505F1F84FCE4', 'x86_64: 6A581E5D-0DC1-312C-993E-505F1F84FCE4' ]
+uuids:           [ 'x86_64: 6B8ADF4F-A727-325D-8D1A-A228EB96C595', 'x86_64: 6B8ADF4F-A727-325D-8D1A-A228EB96C595' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SAObjects.framework/Versions/A/SAObjects'
 exports:         

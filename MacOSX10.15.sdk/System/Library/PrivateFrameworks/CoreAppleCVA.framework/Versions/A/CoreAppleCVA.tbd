@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AFE13623-955D-3142-A440-4EA89F330284', 'x86_64: AFE13623-955D-3142-A440-4EA89F330284' ]
+uuids:           [ 'x86_64: 1F5F6810-C859-320B-9ADD-D40CDC270C86', 'x86_64: 1F5F6810-C859-320B-9ADD-D40CDC270C86' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreAppleCVA.framework/Versions/A/CoreAppleCVA'
 current-version: 3.4

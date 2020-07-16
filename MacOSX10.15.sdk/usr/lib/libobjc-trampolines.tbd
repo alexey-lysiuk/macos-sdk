@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 48095A55-7C82-3AE8-95CE-29A21B6450D8', 'x86_64: 48095A55-7C82-3AE8-95CE-29A21B6450D8', 
-                   'x86_64h: CCA8AC98-12A2-3984-ACD6-1D77DAD6C0AD', 'x86_64h: CCA8AC98-12A2-3984-ACD6-1D77DAD6C0AD' ]
+uuids:           [ 'x86_64: 571C6A14-9E0E-3139-B82D-A1A3D46F2C9C', 'x86_64: 571C6A14-9E0E-3139-B82D-A1A3D46F2C9C', 
+                   'x86_64h: 88F9B648-C455-36F8-BBB9-7D1A9F57D073', 'x86_64h: 88F9B648-C455-36F8-BBB9-7D1A9F57D073' ]
 platform:        zippered
 install-name:    '/usr/lib/libobjc-trampolines.dylib'
 current-version: 228

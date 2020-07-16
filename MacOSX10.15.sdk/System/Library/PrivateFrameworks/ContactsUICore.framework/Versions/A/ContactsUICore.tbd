@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6B933608-5C0D-3D71-A1BE-D6FDBF678269', 'x86_64: 6B933608-5C0D-3D71-A1BE-D6FDBF678269' ]
+uuids:           [ 'x86_64: BC4DFE6F-26A1-309A-86C8-9D6505779313', 'x86_64: BC4DFE6F-26A1-309A-86C8-9D6505779313' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsUICore.framework/Versions/A/ContactsUICore'
 exports:         

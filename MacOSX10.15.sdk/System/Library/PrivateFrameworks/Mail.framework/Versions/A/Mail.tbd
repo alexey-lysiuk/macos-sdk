@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5FE38303-D16B-32C5-8FD6-A785B12265DC' ]
+uuids:           [ 'x86_64: 90566F33-1A87-3037-85EB-11B2523C82C8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Mail.framework/Versions/A/Mail'
-current-version: 3608.80.23
+current-version: 3608.120.23
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ CoreSuggestionsTests, DebugBundle, EmailAuthenticationPlugin, 
@@ -108,16 +108,17 @@ exports:
                        _MFDirectoryNameMessageAttachments, _MFDirectoryNameMessages, 
                        _MFDirectoryNameOfflineCache, _MFDirectoryNameSignatures, 
                        _MFDirectoryPrefixTemporaryMessages, _MFEMLXPlistDataExtendedAttribute, 
-                       _MFEWSDefaultServerPath, _MFEWSErrorDomain, _MFEWSOfflineIdStringPrefix, 
-                       _MFEmlxKeyColor, _MFEmlxKeyConversationID, _MFEmlxKeyDateLastViewed, 
-                       _MFEmlxKeyDateReceived, _MFEmlxKeyFlags, _MFEmlxKeyGmailLabelIDs, 
-                       _MFEmlxKeyRemoteID, _MFErrorKeyEWSFolderId, _MFErrorKeyEWSItemId, 
-                       _MFErrorKeyPOPResponseCode, _MFExceptionKeySQLiteDatabase, 
-                       _MFExceptionKeySQLiteErrorMessage, _MFExceptionKeySQLiteResultCode, 
-                       _MFExcludedMailboxes, _MFFavoritesKeyFavorites, _MFFavoritesKeyFavoritesMailboxAccountURLString, 
-                       _MFFavoritesKeyFavoritesMailboxIsContainer, _MFFavoritesKeyFavoritesMailboxIsPreferredSelection, 
-                       _MFFavoritesKeyFavoritesMailboxName, _MFFavoritesKeyFavoritesMailboxPersistentIdentifier, 
-                       _MFFavoritesKeyFavoritesMailboxType, _MFFavoritesKeyFavoritesSelectedSubmailboxPersistentIdentifier, 
+                       _MFEWSAccountLastSyncDateDefault, _MFEWSDefaultServerPath, 
+                       _MFEWSErrorDomain, _MFEWSOfflineIdStringPrefix, _MFEmlxKeyColor, 
+                       _MFEmlxKeyConversationID, _MFEmlxKeyDateLastViewed, _MFEmlxKeyDateReceived, 
+                       _MFEmlxKeyFlags, _MFEmlxKeyGmailLabelIDs, _MFEmlxKeyRemoteID, 
+                       _MFErrorKeyEWSFolderId, _MFErrorKeyEWSItemId, _MFErrorKeyPOPResponseCode, 
+                       _MFExceptionKeySQLiteDatabase, _MFExceptionKeySQLiteErrorMessage, 
+                       _MFExceptionKeySQLiteResultCode, _MFExcludedMailboxes, _MFFavoritesKeyFavorites, 
+                       _MFFavoritesKeyFavoritesMailboxAccountURLString, _MFFavoritesKeyFavoritesMailboxIsContainer, 
+                       _MFFavoritesKeyFavoritesMailboxIsPreferredSelection, _MFFavoritesKeyFavoritesMailboxName, 
+                       _MFFavoritesKeyFavoritesMailboxPersistentIdentifier, _MFFavoritesKeyFavoritesMailboxType, 
+                       _MFFavoritesKeyFavoritesSelectedSubmailboxPersistentIdentifier, 
                        _MFFavoritesKeyFavoritesVersion, _MFFileExtensionEmlx, _MFFileExtensionEmlxpart, 
                        _MFFileExtensionMailSignature, _MFFileExtensionNoIndex, _MFFileExtensionPartialEmlx, 
                        _MFFileNameAccountsMap, _MFFileNameAccountsPlist, _MFFileNameBackupTableOfContents, 

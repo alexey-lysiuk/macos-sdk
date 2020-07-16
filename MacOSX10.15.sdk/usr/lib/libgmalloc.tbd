@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5905D7CA-DBCF-38EC-9567-71A29A7E150C', 'x86_64: 5905D7CA-DBCF-38EC-9567-71A29A7E150C' ]
+uuids:           [ 'x86_64: 7222D268-960E-3D34-BF61-51441D06D2F2', 'x86_64: 7222D268-960E-3D34-BF61-51441D06D2F2' ]
 platform:        zippered
 install-name:    '/usr/lib/libgmalloc.dylib'
 ...

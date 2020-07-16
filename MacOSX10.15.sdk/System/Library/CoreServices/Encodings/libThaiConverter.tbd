@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BED54CFF-60C0-304A-B30A-AAF73D505DF2', 'x86_64: BED54CFF-60C0-304A-B30A-AAF73D505DF2' ]
+uuids:           [ 'x86_64: 1D2B352D-51F5-3142-80DB-0F6EB0046289', 'x86_64: 1D2B352D-51F5-3142-80DB-0F6EB0046289' ]
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libThaiConverter.dylib'
 current-version: 76

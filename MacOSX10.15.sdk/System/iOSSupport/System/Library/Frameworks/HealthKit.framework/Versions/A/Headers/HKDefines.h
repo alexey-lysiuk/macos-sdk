@@ -238,4 +238,36 @@ typedef NS_ENUM(NSInteger, HKCategoryValueAudioExposureEvent) {
     HKCategoryValueAudioExposureEventLoudEnvironment = 1,
 } API_AVAILABLE(ios(13.0), watchos(6.0));
 
+/*!
+ @enum          HKCategoryValueSeverity
+ @abstract      Set of values to indicate the severity of a symptom.
+ */
+typedef NS_ENUM(NSInteger, HKCategoryValueSeverity) {
+    HKCategoryValueSeverityUnspecified = 0,
+    HKCategoryValueSeverityNotPresent,
+    HKCategoryValueSeverityMild,
+    HKCategoryValueSeverityModerate,
+    HKCategoryValueSeveritySevere,
+} API_AVAILABLE(ios(13.6));
+
+/*!
+ @enum          HKCategoryValueAppetiteChanges
+ @abstract      Set of values to indicate the direction of appetite changes.
+ */
+typedef NS_ENUM(NSInteger, HKCategoryValueAppetiteChanges) {
+    HKCategoryValueAppetiteChangesUnspecified = 0,
+    HKCategoryValueAppetiteChangesNoChange,
+    HKCategoryValueAppetiteChangesDecreased,
+    HKCategoryValueAppetiteChangesIncreased,
+} API_AVAILABLE(ios(13.6));
+
+/*!
+ @enum          HKCategoryValuePresence
+ @abstract      Set of values to indicate whether a data type is present or not.
+ */
+typedef NS_ENUM(NSInteger, HKCategoryValuePresence) {
+    HKCategoryValuePresencePresent = 0,
+    HKCategoryValuePresenceNotPresent,
+} API_AVAILABLE(ios(13.6));
+
 NS_ASSUME_NONNULL_END

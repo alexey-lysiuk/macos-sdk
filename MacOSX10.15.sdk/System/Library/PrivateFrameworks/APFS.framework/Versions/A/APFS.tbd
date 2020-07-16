@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2F5A48FB-9788-3A24-87FE-C1B7DDBC8A07', 'x86_64: 2F5A48FB-9788-3A24-87FE-C1B7DDBC8A07' ]
+uuids:           [ 'x86_64: C86A3423-E61C-335A-9D17-0B3CE5BB6467', 'x86_64: C86A3423-E61C-335A-9D17-0B3CE5BB6467' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS'
 exports:         

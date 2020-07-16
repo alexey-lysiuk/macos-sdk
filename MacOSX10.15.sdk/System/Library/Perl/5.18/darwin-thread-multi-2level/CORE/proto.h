@@ -6641,7 +6641,9 @@ STATIC void	S_parse_lparen_question_flags(pTHX_ struct RExC_state_t *pRExC_state
 			__attribute__nonnull__(pTHX_1);
 #define PERL_ARGS_ASSERT_PARSE_LPAREN_QUESTION_FLAGS	\
 	assert(pRExC_state)
-
+STATIC void	S_rck_elide_nothing(pTHX_ regnode *node);
+#define PERL_ARGS_ASSERT_RCK_ELIDE_NOTHING	\
+	assert(node)
 PERL_STATIC_NO_RET void	S_re_croak2(pTHX_ const char* pat1, const char* pat2, ...)
 			__attribute__noreturn__
 			__attribute__nonnull__(pTHX_1)
@@ -6749,7 +6751,7 @@ STATIC void	S_scan_commit(pTHX_ const struct RExC_state_t *pRExC_state, struct s
 #define PERL_ARGS_ASSERT_SCAN_COMMIT	\
 	assert(pRExC_state); assert(data); assert(minlenp)
 
-STATIC I32	S_study_chunk(pTHX_ struct RExC_state_t *pRExC_state, regnode **scanp, I32 *minlenp, I32 *deltap, regnode *last, struct scan_data_t *data, I32 stopparen, U8* recursed, struct regnode_charclass_class *and_withp, U32 flags, U32 depth)
+STATIC I32	S_study_chunk(pTHX_ struct RExC_state_t *pRExC_state, regnode **scanp, I32 *minlenp, I32 *deltap, regnode *last, struct scan_data_t *data, I32 stopparen, U8* recursed, struct regnode_charclass_class *and_withp, U32 flags, U32 depth, bool was_mutate_ok)
 			__attribute__nonnull__(pTHX_1)
 			__attribute__nonnull__(pTHX_2)
 			__attribute__nonnull__(pTHX_3)

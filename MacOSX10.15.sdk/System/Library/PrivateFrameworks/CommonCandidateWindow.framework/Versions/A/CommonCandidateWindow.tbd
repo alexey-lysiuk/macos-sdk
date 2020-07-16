@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4E0B8032-3563-3028-884B-16C263599809' ]
+uuids:           [ 'x86_64: 6FE5079B-D96C-35E3-9D3D-3194D31A8428' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CommonCandidateWindow.framework/Versions/A/CommonCandidateWindow'
 exports:         

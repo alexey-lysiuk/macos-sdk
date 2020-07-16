@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5A27AE11-7336-3193-B106-B62DD32F94B4' ]
+uuids:           [ 'x86_64: 5D6882B9-9214-3A27-A554-36D0CC62A2E2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotosGraph.framework/Versions/A/PhotosGraph'
 swift-abi-version: 7

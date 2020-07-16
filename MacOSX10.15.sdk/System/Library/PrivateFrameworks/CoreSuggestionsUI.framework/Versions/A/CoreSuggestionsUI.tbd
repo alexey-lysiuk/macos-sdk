@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 47D5ABCE-631D-30B2-B858-29B8E73646ED' ]
+uuids:           [ 'x86_64: 972F3F83-55CD-39D8-A86B-E4B7B12675C1' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreSuggestionsUI.framework/Versions/A/CoreSuggestionsUI'
-current-version: 1052.33
+current-version: 1052.34
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CoreSuggestionsUIVersionNumber, _CoreSuggestionsUIVersionString, 

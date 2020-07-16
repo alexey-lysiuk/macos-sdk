@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 451D22EA-55C4-3088-83DD-9B6367F61547', 'x86_64: 451D22EA-55C4-3088-83DD-9B6367F61547' ]
+uuids:           [ 'x86_64: 9861C1CB-D8C2-31F5-B1B6-F2BF785E016E', 'x86_64: 9861C1CB-D8C2-31F5-B1B6-F2BF785E016E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MapsSupport.framework/Versions/A/MapsSupport'
 exports:         

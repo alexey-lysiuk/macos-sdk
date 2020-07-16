@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9E14A05C-0E62-36A9-832E-3DB7896D7E43' ]
+uuids:           [ 'x86_64: 882962E1-6E3C-37FD-AE47-6EFF1075EE62' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/AuthenticationServices'
-current-version: 609.1.20
+current-version: 609.3.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ASAuthorizationAppleIDProviderCredentialRevokedNotification, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 86CAA6AE-1450-39FA-8D2D-8FB5E32A43A0', 'x86_64: 86CAA6AE-1450-39FA-8D2D-8FB5E32A43A0' ]
+uuids:           [ 'x86_64: 24CFAE81-8D0D-39A8-A2F8-3BCFAA93DC1F', 'x86_64: 24CFAE81-8D0D-39A8-A2F8-3BCFAA93DC1F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/TextRecognition.framework/Versions/A/TextRecognition'
 current-version: 157

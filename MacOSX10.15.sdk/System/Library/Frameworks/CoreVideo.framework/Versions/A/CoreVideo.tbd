@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8507ED54-43C3-3E5B-BC74-512FE510BF8D', 'x86_64: 8507ED54-43C3-3E5B-BC74-512FE510BF8D' ]
+uuids:           [ 'x86_64: 5314E70D-325F-3E98-99FC-00FDF520747E', 'x86_64: 5314E70D-325F-3E98-99FC-00FDF520747E' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo'
 current-version: 1.5

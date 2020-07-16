@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C5E01566-C6E6-33D3-94DB-1514CDAA2B34' ]
+uuids:           [ 'x86_64: B3258763-2843-32E6-A677-6E843F734BDA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/UniversalAccess'
 current-version: 236
@@ -31,7 +31,7 @@ exports:
                        UAScrollZoomSimpleController._didAwakeFromNib ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E50153B1-DD3C-36BE-82A7-145211A2F022' ]
+uuids:           [ 'x86_64: 17BB6F9F-DA6B-3667-86B2-A350D08F3F8B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UniversalAccessCore.framework/Versions/A/UniversalAccessCore'
 current-version: 236
@@ -184,7 +184,7 @@ exports:
                        UAUserSwitch, UAZoomSettings ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 35AAD48C-A91D-3EF4-9DF5-D0E1353138B1' ]
+uuids:           [ 'x86_64: 54CB7D4E-FE0D-39FB-8EE1-00D9AEE61062' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Libraries/libUAPreferences.dylib'
 exports:         

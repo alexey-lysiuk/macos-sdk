@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E5237EBF-E311-39D8-A308-1AD243CCFD96' ]
+uuids:           [ 'x86_64: CEFEAA95-8B9C-3F68-8CBD-CE00A29DAEFC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DisplayTransportServices.framework/Versions/A/DisplayTransportServices'
 exports:         
