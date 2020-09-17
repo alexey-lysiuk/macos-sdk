@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1350599C-30F1-309B-8AF0-12AA1C3D0EFD', 'x86_64: 1350599C-30F1-309B-8AF0-12AA1C3D0EFD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/HearingCore.framework/Versions/A/HearingCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXHAMessageKeyIdentifier, _AXHAMessageKeyPayload, _AXHANULL, 
                        _AXHearingAidServerName, _HAEngineeringLog, _HAInitializeLogging, 

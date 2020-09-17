@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3C481225-21E7-370A-A30E-0CCFDD64A92C', 'x86_64: 3C481225-21E7-370A-A30E-0CCFDD64A92C' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libcopyfile.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _copyfile, _copyfile_state_alloc, _copyfile_state_free, _copyfile_state_get, 
                        _copyfile_state_set, _fcopyfile, _xattr_flags_from_name, _xattr_intent_with_flags, 

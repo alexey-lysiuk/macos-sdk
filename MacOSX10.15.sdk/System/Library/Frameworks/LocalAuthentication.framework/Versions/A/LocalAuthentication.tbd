@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5D391FD1-391B-390A-BBC1-62A537C8DAFE', 'x86_64: 5D39
 platform:        zippered
 install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication'
 current-version: 693.140.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LAAvailableMechanisms, _LABiometryDatabaseHash, _LACopyExternalizedContext, 
                        _LAEnabledBiometryUsers, _LAErrorDomain, _LAErrorInfoBiometryType, 

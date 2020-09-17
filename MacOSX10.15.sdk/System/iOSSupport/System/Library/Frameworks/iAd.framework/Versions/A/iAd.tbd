@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EB345413-A76C-3163-B8E9-5274AF18347C' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/iAd.framework/Versions/A/iAd'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ADBannerContentSizeIdentifier320x50, _ADBannerContentSizeIdentifier480x32, 
                        _ADBannerContentSizeIdentifierLandscape, _ADBannerContentSizeIdentifierPortrait, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 469E5222-A5C7-3B09-B617-EDB6E9E46B93', 'x86_64: 469E
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SidecarCore.framework/Versions/A/SidecarCore'
 current-version: 209.40.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SidecarBundle, _SidecarDeviceGeneration, _SidecarDevicesChangedNotification, 
                        _SidecarDiagnose, _SidecarDisplayManagerConnectedDevicesChangedNotification, 

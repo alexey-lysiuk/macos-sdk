@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9A7F1DDB-E375-3283-9AC9-BC8BECC6106F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/A/Libraries/libairutility.dylib'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MTLAddAIRFunctionArgOptPass, _MTLAddAIRMetadataPrunerPass, 
                        _MTLAddAIRVerifierPass, _MTLAddGlobalCtorOptPass, _MTLAddPipelineLevelPasses, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A126406C-DA38-3FFE-8B25-BB9859EFD159', 'x86_64: A126
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync'
 current-version: 4.7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.10$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
                        '$ld$install_name$os10.11$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 071729BA-0DEF-3B1B-AE5F-B69A46FA276E', 'x86_64: 071729BA-0DEF-3B1B-AE5F-B69A46FA276E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppStoreFoundation.framework/Versions/A/AppStoreFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ ASFIAPItem, ASFReceipt ]
 ...

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 08268D08-8D42-32E5-B9EE-00196274047A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PreferencePanesSupport.framework/Versions/A/PreferencePanesSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SetSymbolicHotKeyButtonValue, _SetSymbolicHotKeyEnabled, 
                        _SetSymbolicHotKeyValue, _SetSymbolicHotModifierValue, _closeIOCOnnection, 

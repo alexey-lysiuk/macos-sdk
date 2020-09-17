@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 932E151C-1D19-30F0-BDD0-13B54E70B577' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ConsoleKit.framework/Versions/A/ConsoleKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ConsoleKitVersionNumber, _ConsoleKitVersionString, _HashBytes, 
                        _benchmarkBlock, _kCSKDBItemActivityID, _kCSKDBItemCreatorAID, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1E185CFD-8C5D-302E-A00A-9C678F70B4E4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HTTPServer.framework/Versions/A/HTTPServer'
 current-version: 37
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DDExtractFileNameWithoutExtension, _DDIntersectionRange, 
                        _DDRangeCompare, _DDRangeFromString, _DDStringFromRange, _DDUnionRange, 

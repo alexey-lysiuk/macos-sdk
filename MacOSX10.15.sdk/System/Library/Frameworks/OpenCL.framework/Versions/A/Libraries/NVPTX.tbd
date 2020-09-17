@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 39371120-BA2A-3C79-B9EB-C71829DCAFC2' ]
 platform:        macosx
 install-name:    '/AppleInternal/BuildRoot/Library/Caches/com.apple.xbs/Binaries/GPUDriversNvidia/install/TempContent/Root/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/NVPTX.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LLVMInitializeNVPTXAsmPrinter, _LLVMInitializeNVPTXBackendAsmPrinter, 
                        _LLVMInitializeNVPTXTarget, _LLVMInitializeNVPTXTargetInfo, 

@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libpq.5.dylib'
 current-version: 5.6
 compatibility-version: 5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PQbackendPID, _PQbinaryTuples, _PQcancel, _PQclear, _PQclientEncoding, 
                        _PQcmdStatus, _PQcmdTuples, _PQconndefaults, _PQconnectPoll, 

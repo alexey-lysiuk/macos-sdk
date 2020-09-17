@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3F824859-2E9B-3772-A475-73E4F88A15C2', 'x86_64: 3F824859-2E9B-3772-A475-73E4F88A15C2' ]
 platform:        zippered
 install-name:    '/usr/lib/libAccessibility.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXBeginListeningToUserDefaultsChanges, _AXCPCopySharedResourcesPreferencesDomainForDomain, 
                        _AXCPSharedResourcesDirectory, _AXDisallowsUIBasedAccessibilityFeatures, 

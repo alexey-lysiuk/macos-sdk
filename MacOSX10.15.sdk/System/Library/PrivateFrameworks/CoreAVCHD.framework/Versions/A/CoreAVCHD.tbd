@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreAVCHD.framework/Versions/A/CoreAVCHD'
 current-version: 6100
 compatibility-version: 5600
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CAVCHCreateMediaContainer, _CAVCHDCopyClipInfoDictionary, 
                        _CAVCHDCopyClipLocationTable, _CAVCHDGetClipNumberFromFingerprint, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F53748F5-CE5C-34C9-AC2A-D50631615213' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FamilyControls.framework/Versions/A/FamilyControls'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FCAppIsSigned, _FCAppIsSignedByAppStore, _FCAppIsSignedByApple, 
                        _FCAppLaunchWasBlocked, _FCAuthorizeManagedUserLogin, _FCContentFilterPageWasBlocked, 

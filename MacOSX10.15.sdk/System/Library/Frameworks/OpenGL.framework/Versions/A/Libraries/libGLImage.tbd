@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9A3FE633-61B8-3CC7-8183-62960109401A', 'x86_64: 9A3FE633-61B8-3CC7-8183-62960109401A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _glgCompress, _glgConvertPixelHeightToBlocks, _glgConvertPixelWidthToBlocks, 
                        _glgConvertPixels, _glgConvertType, _glgCreateProcessor, _glgDecompress, 

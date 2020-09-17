@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6F271388-3817-336D-9B96-08C7AAC4BA39', 'x86_64: 6F271388-3817-336D-9B96-08C7AAC4BA39' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProtectedCloudStorage.framework/Versions/A/ProtectedCloudStorage'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PCSAllServiceKeyRollingEnabled, _PCSBackupCheckUserRegistry, 
                        _PCSBackupCopyRecoveredDataWithKeybag, _PCSBackupCopyRecoveredKeyWithIdentitySet, 

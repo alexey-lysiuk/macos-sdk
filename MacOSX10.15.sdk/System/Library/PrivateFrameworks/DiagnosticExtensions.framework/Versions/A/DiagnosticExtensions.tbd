@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8168D7EB-F6E7-3DA2-A623-440938B81962', 'x86_64: 8168D7EB-F6E7-3DA2-A623-440938B81962' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DiagnosticExtensions.framework/Versions/A/DiagnosticExtensions'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DEUtilsValidateConnection, _DEUtilsValidateDestination, _DiagnosticExtensionsVersionNumber, 
                        _DiagnosticExtensionsVersionString, _pgrep, _signal_USR2 ]

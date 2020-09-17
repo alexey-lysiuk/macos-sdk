@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 28F86C87-F2F3-3C5A-9F04-B0ED596A8DF4', 'x86_64: 28F86C87-F2F3-3C5A-9F04-B0ED596A8DF4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsDonation.framework/Versions/A/ContactsDonation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CNDDonationsEnabledNotificationName, _CNDDonationsEnabledPreferencesKey, 
                        _CNDSIMCardItemIdentifierTransform, _CNDSIMCardItemValueTransform, 

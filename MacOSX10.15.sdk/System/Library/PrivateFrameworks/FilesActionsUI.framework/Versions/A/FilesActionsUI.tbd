@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: EAA2EAE8-E9BD-34E4-8652-9435D6027541' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FilesActionsUI.framework/Versions/A/FilesActionsUI'
 current-version: 29
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FAUICreatePDFFromDocumentURLs, _FAUICreateTempFileURLInTemporaryDirectory, 
                        _FAUICreateTemporaryFolderURLAppropriateForURL, _FAUIInitLogging, 

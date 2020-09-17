@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: FF52C80F-4DD7-344C-96A6-639DCF80EBBE', 'x86_64: FF52
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/LoggingSupport.framework/Versions/A/LoggingSupport'
 current-version: 1147.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogClearOptions, _OSLogConstructArchive, _OSLogConstructHighVolumeAgeLimit, 
                        _OSLogConstructHighVolumeSizeLimit, _OSLogConstructPersistAgeLimit, 

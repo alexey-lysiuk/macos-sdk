@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: EC1F2EDD-EE33-3E68-B40B-CF303FA5805F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityFoundation.framework/Versions/A/AccessibilityFoundation'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXEGetLog, _AXFAnnouncementRequestedNotification, _AXFApplicationActivatedNotification, 
                        _AXFApplicationDeactivatedNotification, _AXFApplicationHiddenNotification, 

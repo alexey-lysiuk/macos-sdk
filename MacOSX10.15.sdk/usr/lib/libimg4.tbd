@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 51A629A2-C7F4-3C10-B0DE-04A12DFA98EB' ]
 platform:        macosx
 install-name:    '/usr/lib/libimg4.dylib'
 current-version: 61.60.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __img4_environment_platform, __img4_environment_ppl, __img4_environment_trust_cache, 
                        __img4_nonce_domain_cryptex, __img4_nonce_domain_pdi, __img4_nonce_domain_test, 

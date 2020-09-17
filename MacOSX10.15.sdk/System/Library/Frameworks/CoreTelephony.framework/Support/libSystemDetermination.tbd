@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E0295D91-F993-3531-8B56-878893CC11F9' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libSystemDetermination.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN26SystemDeterminationManager10initializeEN8dispatch13group_sessionE, 
                        __ZN26SystemDeterminationManager12cleanup_syncERKN8dispatch13group_sessionE, 

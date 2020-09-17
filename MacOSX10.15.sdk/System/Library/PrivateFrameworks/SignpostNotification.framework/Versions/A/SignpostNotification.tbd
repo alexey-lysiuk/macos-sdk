@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 3AB0B639-7F9C-3783-BDBB-2E8CA1E364EA', 'x86_64: 3AB0
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SignpostNotification.framework/Versions/A/SignpostNotification'
 current-version: 42.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EnableSignpostNotificationGeneration, _SignpostGetNewNotificationConnection, 
                        _SignpostNotificationSendNotificationSubscriptionRequestOnConnection, 

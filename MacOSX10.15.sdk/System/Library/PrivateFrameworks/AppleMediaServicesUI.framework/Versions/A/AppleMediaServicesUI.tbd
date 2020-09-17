@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D4344C01-5B2B-3986-BFF8-AB306F53F6C3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleMediaServicesUI.framework/Versions/A/AppleMediaServicesUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ AMSUIAlertDialogTask, AMSUIAuthenticateTask, AMSUICGRectHelper, 
                        AMSUICodeRedeemerViewController, AMSUIDynamicViewController, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 184EC90A-C2A2-3E9E-87AA-E5187EB37AB9' ]
 platform:        macosx
 install-name:    '/usr/lib/libcoreroutine.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSOperatingSystemVersionAll, _RTApplicationManagerBundleIdAirPlayDiagnostics, 
                        _RTApplicationManagerBundleIdAppStore, _RTApplicationManagerBundleIdAppleWatch, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8E899484-3014-3335-8443-EA263FB15C35' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/StoreJavaScript.framework/Versions/A/StoreJavaScript'
 current-version: 379
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FRBundleDispatchEventMessage, _FRBundleDispatchEventName, 
                        _FRBundleDispatchEventObject, _FRBundleDispatchGlobalEventMessage, 

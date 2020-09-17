@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C6427B6C-AAC2-3769-9712-FB1C475F3F66' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/ModuleBase.framework/Versions/A/ModuleBase'
 current-version: 693.140.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ AuthenticationInProgress, AuthenticationInProgressToken, AuthenticationManager, 
                        ContextPlugin, MechanismManager, Module ]

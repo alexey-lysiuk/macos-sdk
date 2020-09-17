@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 52C0E33A-5460-31F5-8D42-4460F0FB41EF' ]
 platform:        macosx
 install-name:    '/usr/lib/libIASUnifiedProgress.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IASLog, _StartDebugLogging, _StopDebugLogging, _WriteDebugLog, 
                        _kIASInstallPhaseActualPercentageKey, _kIASInstallPhaseConclusionDelayKey, 

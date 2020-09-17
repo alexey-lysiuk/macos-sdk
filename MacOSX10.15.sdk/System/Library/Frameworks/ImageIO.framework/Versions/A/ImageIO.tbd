@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 3F4CA5A4-F210-3578-AF38-C19B3D85CC0A', 'x86_64: 3F4C
                    'x86_64h: C17C7280-54F6-3750-85CE-C43428256D62', 'x86_64h: C17C7280-54F6-3750-85CE-C43428256D62' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ '$ld$install_name$os10.4$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
                        '$ld$install_name$os10.5$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 

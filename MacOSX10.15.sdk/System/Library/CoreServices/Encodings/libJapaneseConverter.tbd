@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5804619A-0FCD-38FF-A66C-54E3EDFFE0C8', 'x86_64: 5804
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libJapaneseConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetJapaneseConverterDefinition ]
 ...

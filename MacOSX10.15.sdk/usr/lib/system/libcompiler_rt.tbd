@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/system/libcompiler_rt.dylib'
 current-version: 101.2
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$hide$os10.10$___chkstk_darwin', '$ld$hide$os10.10$___extendhfsf2', 
                        '$ld$hide$os10.10$___truncdfhf2', '$ld$hide$os10.10$___truncsfhf2', 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3F1ABAB8-4AE6-399F-B94D-E7AA25005D14' ]
 platform:        macosx
 install-name:    '/usr/lib/libATCommandStudioDynamic.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ATCSThreadJoin, _ATCSThreadKill, _ATCSThreadSpawn, _DEFAULT_XPC_CLIENT_SERVICE, 
                        __ZN10ATCSLogger10fsInstanceE, __ZN10ATCSLogger10logCommandE12ATCSLogGroupPKcS2_jPKNS_16CommandFormatterE, 

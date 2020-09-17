@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FFE6F6C1-3204-336B-B95F-E9994C6700AE', 'x86_64: FFE6F6C1-3204-336B-B95F-E9994C6700AE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DeviceCheckInternal.framework/Versions/A/DeviceCheckInternal'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DCCryptoErrorDomain, _DCFetchErrorDomain, _DeviceCheckInternalVersionNumber, 
                        _DeviceCheckInternalVersionString, _fallback_server_pubkey ]

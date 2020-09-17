@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 841E06A8-DABE-3FC8-9439-DF5793415DF4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IOKitten.framework/Versions/A/IOKitten'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IOErrorDomain, _IOKAppPowerStateInterest, _IOKAudioPlane, 
                        _IOKBusyInterest, _IOKDeviceTreePlane, _IOKFireWirePlane, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C3D08CC9-C3AD-3EEE-BCED-564239ADA56A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SystemUIPlugin.framework/Versions/A/SystemUIPlugin'
 current-version: 38
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ NSMenuExtra, NSMenuExtraView ]
     objc-ivars:      [ NSMenuExtraView._alternateImage, NSMenuExtraView._image, NSMenuExtraView._menu, 

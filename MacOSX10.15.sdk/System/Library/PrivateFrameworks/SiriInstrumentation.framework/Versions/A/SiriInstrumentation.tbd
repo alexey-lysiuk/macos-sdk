@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4D6F0482-76C0-35DA-AE6B-347C4048CBEC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SiriInstrumentation.framework/Versions/A/SiriInstrumentation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SIReflectionHydrateProtoFromEventTypeAndData, _SIReflectionInferClassFromEventType, 
                        _SIReflectionInferEventTypeFromClass, _SISchemaAcousticProfileReadFrom, 

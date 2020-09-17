@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 38A88B23-3389-3C3A-AEDE-D42A5F5267C6', 'x86_64: 38A8
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CalendarPersistence.framework/Versions/A/CalendarPersistence'
 current-version: 1040.5.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CALAbbrevDateFormat, _CALAbbrevDateWithoutYearFormat, _CALAbbrevDayOfWeekFormat, 
                        _CALAbbrevDayOfWeekWithAbbrevDateFormat, _CALAbbrevDayOfWeekWithDayOfMonthFormat, 

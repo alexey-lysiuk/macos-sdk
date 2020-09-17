@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D89EF729-C379-3FCA-B52C-609602A16827' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/FMFCore.framework/Versions/A/FMFCore'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ FMFCoreTests, FindMy, FindMySiriIntents, FindMyTests, fmfcoretool ]
     symbols:         [ '_$s7FMFCore0A16PreferenceDomainSSvau', '_$s7FMFCore0A16PreferenceDomainSSvp', 

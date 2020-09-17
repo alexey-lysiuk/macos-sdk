@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D482C01E-6A34-3C01-93C2-F32C52324FFD' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/JavaScriptOSA.framework/Versions/A/JavaScriptOSA'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _JavaScriptOpen ]
     objc-classes:    [ JSStorage, JSStorageResult, JSStorageScriptContext ]

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 66FDF89A-4F8B-3BFE-A267-BF784E068475' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AOSUILite.framework/Versions/A/AOSUILite'
 current-version: 415
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AOSUILiteVersionNumber, _AOSUILiteVersionString, _AddGlobalObject, 
                        _CallJSFunctionWithParameters, _EvaluateJavaScript, _JSCopyStringValue, 

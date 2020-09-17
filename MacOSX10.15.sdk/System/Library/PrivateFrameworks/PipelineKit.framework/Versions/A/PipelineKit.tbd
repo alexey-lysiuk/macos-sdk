@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 64697CA3-D2E6-3E1A-A831-E9EF330B71C0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PipelineKit.framework/Versions/A/PipelineKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MediaMiningKit, PhotoAnalysis, PhotosGraph ]
     symbols:         [ _PIErrorDomain, _PipelineKitVersionNumber, _PipelineKitVersionString, 

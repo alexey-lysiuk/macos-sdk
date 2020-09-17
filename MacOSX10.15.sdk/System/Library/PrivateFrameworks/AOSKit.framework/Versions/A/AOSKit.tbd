@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 912D818B-7968-3139-84B6-440541F2794B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AOSKit.framework/Versions/A/AOSKit'
 current-version: 277
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AOSAccountCacheNewAuthToken, _AOSAccountCopyAuthInfo, _AOSAccountCopyInfo, 
                        _AOSAccountCreate, _AOSAccountGetAppleID, _AOSAccountGetPassword, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1AFB0C19-36CE-3A42-AEEE-31232F8940EA', 'x86_64: 1AFB
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CameraImagingFramework.framework/Versions/A/CameraImagingFramework'
 current-version: 100.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CameraImagingVersionNumber, _CameraImagingVersionString ]
 ...

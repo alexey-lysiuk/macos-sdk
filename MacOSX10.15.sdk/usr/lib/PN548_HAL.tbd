@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 46D3D673-D599-3B6D-92A7-379868710C66' ]
 platform:        macosx
 install-name:    '/usr/lib/PN548_HAL.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NFCalibrationGetData, _NFCalibrationGetRFConfigTLVs, _NFHardwareDebug, 
                        _NFHardwareGPIOClose, _NFHardwareGPIOOpen, _NFHardwareGPIOSetDeviceWake, 

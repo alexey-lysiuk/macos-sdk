@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 932C7705-353B-395F-9A23-09D62EAFAD81', 'x86_64: 932C
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SpotlightIndex.framework/Versions/A/SpotlightIndex'
 current-version: 2076.7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RLEOIDArrayAddOid, _RLEOIDArrayAddOid_locked, _RLEOIDArrayAddOids, 
                        _RLEOIDArrayAddSortedOids, _RLEOIDArrayClear, _RLEOIDArrayContainsOid, 

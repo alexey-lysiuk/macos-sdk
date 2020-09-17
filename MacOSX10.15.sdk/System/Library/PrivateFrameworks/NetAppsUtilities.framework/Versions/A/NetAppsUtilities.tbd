@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 27F9B510-F000-3D18-A0CB-C09E92716D1C', 'x86_64: 27F9B510-F000-3D18-A0CB-C09E92716D1C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/NetAppsUtilities.framework/Versions/A/NetAppsUtilities'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NACancelableCancel, _NAEmptyResult, _NAEqualObjects, _NAErrorDomain, 
                        _NAFutureCallbackStack, _NAStringFromBOOL, _NSStringFromNADiffOperationType, 

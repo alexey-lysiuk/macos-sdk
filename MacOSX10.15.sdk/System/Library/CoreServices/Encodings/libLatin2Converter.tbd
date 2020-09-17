@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9CA8A9B0-E0AB-33F0-A38B-8586F7C81759', 'x86_64: 9CA8
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libLatin2Converter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetLatin2ConverterDefinition ]
 ...

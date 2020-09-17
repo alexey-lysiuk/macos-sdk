@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1A30BC41-21D8-3863-B38E-5A1FF9F02FC9' ]
 platform:        macosx
 install-name:    '/usr/lib/libEndpointSecurity.dylib'
 current-version: 63.140.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _es_authorize_file_provider_materialize, _es_authorize_file_provider_materialize_unsafe, 
                        _es_authorize_file_provider_update, _es_clear_cache, _es_copy_message, 

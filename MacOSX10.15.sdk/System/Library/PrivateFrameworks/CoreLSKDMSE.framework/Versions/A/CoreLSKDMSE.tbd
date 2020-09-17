@@ -5,7 +5,7 @@ platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    '/System/Library/PrivateFrameworks/CoreLSKDMSE.framework/CoreLSKDMSE'
 current-version: 4.9.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BBdyFX9JObVXUh8aGhB0aD3, _Mym0f1araacCU5xeSFjr ]
 ...

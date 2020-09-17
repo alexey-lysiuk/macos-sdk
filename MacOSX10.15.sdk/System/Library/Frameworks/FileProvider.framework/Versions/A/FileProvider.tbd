@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3BC3B7F7-A568-3D99-B654-F5F2379F1560', 'x86_64: 3BC3B7F7-A568-3D99-B654-F5F2379F1560' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/FileProvider.framework/Versions/A/FileProvider'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$hide$os10.0$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.0$_OBJC_METACLASS_$_NSFileProviderExtension', 
                        '$ld$hide$os10.1$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.1$_OBJC_METACLASS_$_NSFileProviderExtension', 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5DABA913-67F4-3188-AFA3-16370417AA78' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WebInspector.framework/Versions/A/WebInspector'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RWIAutomationAvailabilityFromString, _RWIErrorDomain, _RWINSStringFromAutomationAvailability, 
                        _RWIProtocolInspectorFrontendConnectedNotification, _RWIProtocolInspectorFrontendDisconnectedNotification, 

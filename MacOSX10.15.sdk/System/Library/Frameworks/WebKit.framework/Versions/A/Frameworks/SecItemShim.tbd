@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F69FA9E9-7455-3D14-8C26-AA6DAABC1B14' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/SecItemShim.dylib'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _WebKitSecItemShimInitialize ]
 ...

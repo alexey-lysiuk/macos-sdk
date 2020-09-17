@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 86F0E011-7D94-3652-81DA-475848667837' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ServerInformation.framework/Versions/A/ServerInformation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SICopyLocalizedServerProductName, _SICopyMinimumServerVersion, 
                        _SICopyServerBuildVersion, _SICopyServerVersion, _SIGetServerInstallPathPrefix, 

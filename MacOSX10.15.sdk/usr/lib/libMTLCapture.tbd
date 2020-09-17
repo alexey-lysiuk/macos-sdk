@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/libMTLCapture.dylib'
 current-version: 266.69.6
 compatibility-version: 1.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DYMTLWrapDeviceWithDebugLayer, _GTHarvesterAddTexturePlane, 
                        _GTHarvesterGetData, _GTHarvesterGetDataSize, _GTHarvesterGetMetadata, 

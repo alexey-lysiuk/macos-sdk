@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9CD8D9F4-E718-306B-87C6-FC1356825C71' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/ContactsUI.framework/Versions/A/ContactsUI'
 current-version: 33
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ABAddressBookBundle, _ABAddressBookGetDefaultRotationContentSettings, 
                        _ABAddressBookSetAutorotationEnabled, _ABAddressBookShouldAllowAutorotation, 

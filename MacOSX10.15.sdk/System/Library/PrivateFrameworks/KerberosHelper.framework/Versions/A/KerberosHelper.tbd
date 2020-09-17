@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7556CA39-95FC-32A4-9A0C-E42C5497A43B', 'x86_64: 7556CA39-95FC-32A4-9A0C-E42C5497A43B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/KerberosHelper.framework/Versions/A/KerberosHelper'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _KRBAcquireTicket, _KRBCloseSession, _KRBCopyClientPrincipalInfo, 
                        _KRBCopyKeychainLookupInfo, _KRBCopyRealm, _KRBCopyServicePrincipal, 

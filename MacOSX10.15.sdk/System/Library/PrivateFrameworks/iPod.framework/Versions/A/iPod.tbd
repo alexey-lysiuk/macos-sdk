@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1B6524A6-EAB6-3180-A812-9EBAF47E7137' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/iPod.framework/Versions/A/iPod'
 current-version: 24
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _iPodAquireLock, _iPodCopyConnected, _iPodCopyConnectedWithOptions, 
                        _iPodCopyMountpoint, _iPodCopyName, _iPodCopyPreferences, 

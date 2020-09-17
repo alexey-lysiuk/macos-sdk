@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: FB8F300F-B0DD-321A-BD2D-853CCC1E086A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HomeKit.framework/Versions/A/HomeKit'
 current-version: 621.7.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HMAccessControlUserCodingKey, _HMAccessoryAddControlTargetsMessageKey, 
                        _HMAccessoryAllowedHostAddressesCodingKey, _HMAccessoryAllowedHostNameCodingKey, 

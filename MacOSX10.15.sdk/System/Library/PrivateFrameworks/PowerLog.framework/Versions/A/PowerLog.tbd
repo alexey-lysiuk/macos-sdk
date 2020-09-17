@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FAD6E2DC-8C9D-38A0-9CB1-75F48473A3E2', 'x86_64: FAD6E2DC-8C9D-38A0-9CB1-75F48473A3E2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PowerLog.framework/Versions/A/PowerLog'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PLBatchDropMessages, _PLBatteryGaugeGetSnapshot, _PLBatteryGaugePauseTracingForBundleId, 
                        _PLBatteryGaugePauseTracingForPid, _PLBatteryGaugePauseTracingForProcessName, 

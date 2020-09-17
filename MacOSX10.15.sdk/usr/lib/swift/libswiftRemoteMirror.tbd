@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D3A67A1C-0573-3FE5-BA69-84F0CB632011' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftRemoteMirror.dylib'
 current-version: 1103.8.25
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __Z15getTypeInfoKindRKN5swift10reflection8TypeInfoE, __ZN5swift10reflection13OpaqueTypeRef3getEv, 
                        __ZN5swift10reflection13OpaqueTypeRef9SingletonE, __ZN5swift10reflection13TypeConverter11getTypeInfoEPKNS0_7TypeRefE, 

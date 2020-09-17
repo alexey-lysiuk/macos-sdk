@@ -5,7 +5,7 @@ platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftMetalKit.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftMetalKit.dylib', '$ld$install_name$os10.1$@rpath/libswiftMetalKit.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftMetalKit.dylib', '$ld$install_name$os10.3$@rpath/libswiftMetalKit.dylib', 

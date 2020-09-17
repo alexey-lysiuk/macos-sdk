@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8828E186-8EE1-3691-B3F6-4B9BED13C1E1' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EmbeddedOSInstall.framework/Versions/A/EmbeddedOSInstall'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AMAuthInstallApAddTag, _AMAuthInstallApApplyRequestRules, 
                        _AMAuthInstallApCopyDescription, _AMAuthInstallApCopyDeviceEntryFromDeviceMap, 

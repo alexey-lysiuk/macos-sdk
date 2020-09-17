@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 72EE68DB-F069-37F5-AA2A-40D5FCF139F4' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/ColorSyncLegacy'
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ DMProxy ]
     symbols:         [ _CMCloneProfileRef, _CMCloseProfile, _CMConvertDoubleXYZToD50, 

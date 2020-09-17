@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A748C246-1484-3CBC-94DD-B4C47877AA78', 'x86_64: A748C246-1484-3CBC-94DD-B4C47877AA78' ]
 platform:        zippered
 install-name:    '/usr/lib/libpcap.A.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___pcap_atodn, ___pcap_atoin, ___pcap_nametodnaddr, _add_addr_to_dev, 
                        _add_addr_to_if, _add_dev, _bpf_dump, _bpf_filter, _bpf_filter_with_aux_data, 

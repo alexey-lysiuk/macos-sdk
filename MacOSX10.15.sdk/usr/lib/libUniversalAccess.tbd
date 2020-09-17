@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8277408F-D2EE-3B5A-8DD4-C4D6329A2501' ]
 platform:        macosx
 install-name:    '/usr/lib/libUniversalAccess.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __AXVisualSupportAgentEnterZoomResizeMode, __AXVisualSupportAgentRefreshState, 
                        __UniversalAccessAXVisualSupportAgentStart, __UniversalAccessAssistiveControlIsRunning, 

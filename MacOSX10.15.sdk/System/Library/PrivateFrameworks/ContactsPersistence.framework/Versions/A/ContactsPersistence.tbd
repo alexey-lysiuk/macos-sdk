@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7597C280-EED8-313F-BE2F-72FAD1CB090F', 'x86_64: 7597C280-EED8-313F-BE2F-72FAD1CB090F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ABCDAccountContainerSuffix, _ABCDCompareByOrderingIndex, 
                        _ABCDCompareByOrderingIndexWithPrimaryFirst, _ABCDContainerGuardianRestrictedKey, 

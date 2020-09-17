@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1FD613EE-6A3C-3E31-8C00-5157CAA379B2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ShareServicesCore.framework/Versions/A/ShareServicesCore'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SBLFileURLFromFileURLs, _SBLNeedsLivePhotoBundleForSharingService, 
                        _SBLShareKitShareableItemErrorDomain, _SBLShareKitSharingParameterBounds, 

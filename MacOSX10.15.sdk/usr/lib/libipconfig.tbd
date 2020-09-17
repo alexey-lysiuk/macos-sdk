@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 71E12F96-738C-3399-8846-CFB99ACA19F4', 'x86_64: 71E12F96-738C-3399-8846-CFB99ACA19F4' ]
 platform:        zippered
 install-name:    '/usr/lib/libipconfig.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IPConfigurationForgetNetwork, _IPConfigurationServiceCopyInformation, 
                        _IPConfigurationServiceCreate, _IPConfigurationServiceGetNotificationKey, 

@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libsystem_dnssd.dylib'
 current-version: 1096.100.3
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DNSServiceAddRecord, _DNSServiceBrowse, _DNSServiceBrowserCreate, 
                        _DNSServiceConstructFullName, _DNSServiceCreateConnection, 

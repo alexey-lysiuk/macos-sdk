@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 10D30391-9ABA-3454-96CC-7BCFF1D5B7D7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreRecognition.framework/Versions/A/CoreRecognition'
 current-version: 157
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CRAdaptiveThresholdImage, _CRCameraReaderErrorDomain, _CRCodeRedeemerErrorDomain, 
                        _CRCodeRedeemerInfoStatsKey, _CRInsightsCardImageCutBufferKey, 

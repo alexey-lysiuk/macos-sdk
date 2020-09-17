@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8E372963-BE27-3A7B-A9BC-AACCBA3AE6B3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/RemoteXPC.framework/Versions/A/RemoteXPC'
 current-version: 1738.140.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _XPC_REMOTE_CONNECTION_PROTOCOL_VERSION_CURRENT, __xpc_type_remote_connection, 
                        _xpc_remote_channel_arm_read, _xpc_remote_channel_attach_stream, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CFF0E564-1338-3825-91BF-ABF9B1BAE3EF' ]
 platform:        macosx
 install-name:    '/usr/lib/log/liblog_odtypes.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogCopyFormattedString ]
 ...

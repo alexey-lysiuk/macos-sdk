@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: BF13C461-7D06-3DA5-80DD-9117A4CB52DB', 'x86_64: BF13
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/VectorKit.framework/Versions/A/VectorKit'
 current-version: 1606.24.10
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CGPointZero, _CGRectNull, _CGRectStandardize, _CGRectUnion, 
                        _CGRectZero, _CGSizeZero, _GEOMapRectEnclosingCameraProperties, 

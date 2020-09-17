@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 4AB9E045-7465-363D-8144-FF9CA725B8C5' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MultipeerConnectivity.framework/Versions/A/MultipeerConnectivity'
 current-version: 166
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MCErrorDomain, _kMCSessionMaximumNumberOfPeers, _kMCSessionMinimumNumberOfPeers ]
     objc-classes:    [ MCAdvertiserAssistant, MCBrowserViewController, MCNearbyServiceAdvertiser, 

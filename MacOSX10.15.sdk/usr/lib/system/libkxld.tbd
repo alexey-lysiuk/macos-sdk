@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 756B1F0D-2E37-31A7-A6F0-2E5C22E62C3D', 'x86_64: 756B1F0D-2E37-31A7-A6F0-2E5C22E62C3D' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libkxld.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _isOldInterface, _isSplitKext, _kaslr_offsets, _kaslr_offsets_count, 
                        _kaslr_offsets_index, _kxld_create_context, _kxld_destroy_context, 

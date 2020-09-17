@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 972F3F83-55CD-39D8-A86B-E4B7B12675C1' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreSuggestionsUI.framework/Versions/A/CoreSuggestionsUI'
 current-version: 1052.34
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreSuggestionsUIVersionNumber, _CoreSuggestionsUIVersionString, 
                        _SGUIAccessibilityIdentifierActionButton, _SGUIAccessibilityIdentifierCloseButton, 

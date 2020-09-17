@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C94F3B7B-1854-38EB-9778-834501C53B3F', 'x86_64: C94F
 platform:        zippered
 install-name:    '/usr/lib/libDiagnosticMessagesClient.dylib'
 current-version: 112
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _msgtracer_domain_free, _msgtracer_domain_new, _msgtracer_log, 
                        _msgtracer_log_with_keys, _msgtracer_log_with_keys_skip_nulls, 

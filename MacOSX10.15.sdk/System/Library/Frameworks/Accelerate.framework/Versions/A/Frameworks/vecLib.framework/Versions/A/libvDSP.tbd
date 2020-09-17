@@ -5,7 +5,7 @@ uuids:           [ 'x86_64: 1586D162-55FD-3EC0-AFC7-975EAE2D0DD6', 'x86_64: 1586
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib'
 current-version: 735.140.1
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _vDSP_DCT_CreateSetup, _vDSP_DCT_Execute, _vDSP_DFT_CreateSetup, 
                        _vDSP_DFT_DestroySetup, _vDSP_DFT_DestroySetupD, _vDSP_DFT_Execute, 

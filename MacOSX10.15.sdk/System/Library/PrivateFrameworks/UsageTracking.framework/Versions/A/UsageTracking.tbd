@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2F048B23-9D29-3956-9916-018CB1EA665E', 'x86_64: 2F04
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UsageTracking.framework/Versions/A/UsageTracking'
 current-version: 131
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ DeviceManagementTests, PowerlogHelperdOperators, PowerlogLiteOperators, 
                          RemoteManagementTests, SafariShared, ScreenTime, ScreenTimeAgent, 

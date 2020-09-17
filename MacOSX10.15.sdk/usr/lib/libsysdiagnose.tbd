@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D5A2BD0E-25D1-39C1-A46F-02609000562A', 'x86_64: D5A2BD0E-25D1-39C1-A46F-02609000562A' ]
 platform:        zippered
 install-name:    '/usr/lib/libsysdiagnose.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _metricCompression, _metricGetLogCopying, _metricGetLogGeneration, 
                        _metricGetOSLogArchive, _metricGetTimeSensitive, _metricLogCopying, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F5D8DBDA-72B0-3F59-BFF5-BFDA66D95E86' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreFollowUpUI.framework/Versions/A/CoreFollowUpUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreFollowUpUIVersionNumber, _CoreFollowUpUIVersionString ]
     objc-classes:    [ FLExtensionContext, FLExtensionViewController, FLFollowUpActionHandler, 

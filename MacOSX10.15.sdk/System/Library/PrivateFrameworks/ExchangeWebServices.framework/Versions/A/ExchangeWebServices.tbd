@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7CA35906-0702-37D4-BE2B-C75EA6B1490C', 'x86_64: 7CA3
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ExchangeWebServices.framework/Versions/A/ExchangeWebServices'
 current-version: 281
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EWSEmailAddressKeyEmailAddress1, _EWSEmailAddressKeyEmailAddress2, 
                        _EWSEmailAddressKeyEmailAddress3, _EWSErrorKeyInvalidResponse, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E6155556-336A-3525-8A56-0B1E110EEC3B', 'x86_64: E6155556-336A-3525-8A56-0B1E110EEC3B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/Versions/A/EmbeddedAcousticRecognition'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EARCCCommandTaggingResultGetCommandTaggings, _EARCCommandTaggerCreate, 
                        _EARCCommandTaggerCreateCommandTaggingResults, _EARCCommandTaggerGetCommandPhraseForIndex, 

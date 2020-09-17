@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8DCDB2BC-8AC4-3B62-A2D0-B3861F09D01D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/RTTUI.framework/Versions/A/RTTUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RTTUIVersionNumber, _RTTUIVersionString, _ttyImageNamed ]
     objc-classes:    [ RTTUIConversationControllerCoordinator, RTTUIConversationViewController, 

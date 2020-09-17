@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 82447213-EC76-3D8C-BEDB-9F70B8D95E16' ]
 platform:        macosx
 install-name:    '/usr/lib/PN548.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DefaultServerName, _FindLockBytePosition, _FindResBytePosition, 
                        _GetRfTransRegValProc, _NdefInfo, _VerifyRoutingTable, _aHsuBr_115_2K, 

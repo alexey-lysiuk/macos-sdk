@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 457E4DE7-2805-36FE-A394-06A18C4A52D8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/A/Libraries/libsrc2module.dylib'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _cl2module, _metal2module ]
 ...

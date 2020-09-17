@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DynamicDesktop.framework/Versions/A/DynamicDesktop'
 current-version: 2044.50.1
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ DesktopPictures, DesktopScreenEffectsPref, Dock, livedesktop ]
     symbols:         [ '_$s14DynamicDesktop010AppearanceB0V09canSelectC0Sbvg', '_$s14DynamicDesktop010AppearanceB0V09canSelectC0SbvpMV', 

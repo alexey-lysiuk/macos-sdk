@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 48EDD60A-7336-361E-B33F-8E8718E92D00' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os4.3$/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore', 
                        '$ld$install_name$os5.0$/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore', 

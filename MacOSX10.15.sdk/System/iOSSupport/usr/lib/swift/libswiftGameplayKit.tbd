@@ -5,7 +5,7 @@ platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftGameplayKit.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftGameplayKit.dylib', 
                        '$ld$install_name$os10.1$@rpath/libswiftGameplayKit.dylib', 

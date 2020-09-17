@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C50FEAB4-5761-33BB-A075-C6E19EEE4F5B', 'x86_64: C50F
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaStream.framework/Versions/A/MediaStream'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MSAlbumSharingInitialize, _MSMSLocalizedString, _MSMediaStreamInitialize, 
                        _MediaStreamVersionNumber, _MediaStreamVersionString, _XPCSetLogBlocks, 

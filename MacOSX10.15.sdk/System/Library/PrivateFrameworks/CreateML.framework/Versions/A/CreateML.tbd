@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8E0E239B-22F4-341D-B17A-C3912FF72228' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CreateML.framework/Versions/A/CreateML'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s8CreateML021defaultFileNameColumnE0SSvau', '_$s8CreateML021defaultFileNameColumnE0SSvp', 
                        '_$s8CreateML028getSimilarItemsParameterNameE0SSvau', '_$s8CreateML028getSimilarItemsParameterNameE0SSvp', 

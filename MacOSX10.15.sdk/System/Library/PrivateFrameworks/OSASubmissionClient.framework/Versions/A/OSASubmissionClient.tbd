@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CB5F0ABC-F7D1-3AEF-BFCA-A4D50ECDB583', 'x86_64: CB5F0ABC-F7D1-3AEF-BFCA-A4D50ECDB583' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/OSASubmissionClient.framework/Versions/A/OSASubmissionClient'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSASubmissionClientVersionNumber, _OSASubmissionClientVersionString ]
     objc-classes:    [ OSASubmissionClient ]

@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents'
 current-version: 1268.100.1
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FSEventStreamCopyDescription, _FSEventStreamCopyPathsBeingWatched, 
                        _FSEventStreamCreate, _FSEventStreamCreateRelativeToDevice, 

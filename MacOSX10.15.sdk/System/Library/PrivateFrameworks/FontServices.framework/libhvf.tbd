@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1605B441-08E0-332D-B7D8-0E13F37B54E7', 'x86_64: 1605B441-08E0-332D-B7D8-0E13F37B54E7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/libhvf.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN3hvf10PartLoaderD0Ev, __ZN3hvf10PartLoaderD1Ev, __ZN3hvf10PartLoaderD2Ev, 
                        __ZN3hvf5Shape23calculateSegmentFactorsEv, __ZN3hvf6LoaderD0Ev, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0837D912-3783-35D6-A94A-E474E18600CF', 'x86_64: 0837
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/AVFoundation.framework/Versions/A/Frameworks/AVFAudio.framework/Versions/A/AVFAudio' ]
     symbols:         [ _AVAppleMakerNote_ARKitPhoto, _AVAppleMakerNote_AssetIdentifier, 
@@ -784,7 +784,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CAC3CA5F-FCF6-37EB-8F1A-090340E2C38E', 'x86_64: CAC3CA5F-FCF6-37EB-8F1A-090340E2C38E' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AVFoundation.framework/Versions/A/Frameworks/AVFAudio.framework/Versions/A/AVFAudio'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AVAudioBitRateStrategy_Constant, _AVAudioBitRateStrategy_LongTermAverage, 
                        _AVAudioBitRateStrategy_Variable, _AVAudioBitRateStrategy_VariableConstrained, 

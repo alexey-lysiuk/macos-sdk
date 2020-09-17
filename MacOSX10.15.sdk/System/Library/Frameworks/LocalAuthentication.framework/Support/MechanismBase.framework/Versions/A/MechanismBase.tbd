@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D78DF78F-D6D8-3E83-86C3-05183C3F205D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/MechanismBase.framework/Versions/A/MechanismBase'
 current-version: 693.140.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ ACMContextRecord, MechanismACM, MechanismBase, MechanismContext, 
                        MechanismKofN, MechanismKofNReorganizer, RemoteUIManager ]

@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveML.framework/Versions/A/ProactiveML'
 current-version: 1052.34
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AWDProactiveModelFittingAvailableSessionsReadFrom, _AWDProactiveModelFittingEvalMetricsReadFrom, 
                        _AWDProactiveModelFittingEvaluationReadFrom, _AWDProactiveModelFittingLabelSupportPairReadFrom, 

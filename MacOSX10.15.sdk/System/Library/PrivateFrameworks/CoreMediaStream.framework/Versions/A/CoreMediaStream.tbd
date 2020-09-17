@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9E36F6C5-91D9-3DF7-8946-53FA035B67C3', 'x86_64: 9E36
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreMediaStream.framework/Versions/A/CoreMediaStream'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreMediaStreamVersionNumber, _CoreMediaStreamVersionString, 
                        _MPSStateRequestReadFrom, _MPSStateResponseReadFrom, _MSASInitialize, 

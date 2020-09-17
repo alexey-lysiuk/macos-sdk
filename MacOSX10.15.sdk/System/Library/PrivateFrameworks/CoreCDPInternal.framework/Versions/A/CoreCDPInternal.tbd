@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EC0BDE23-2931-3210-865D-7A7E53C3530E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreCDPInternal.framework/Versions/A/CoreCDPInternal'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CDPBackupMetadataDeviceColorKey, _CDPBackupMetadataDeviceEnclosureColorKey, 
                        _CDPBackupMetadataDeviceModelClassKey, _CDPBackupMetadataDeviceModelKey, 

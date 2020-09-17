@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 56EA6C88-D518-3CC6-936D-8E7CEA7B7A86' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OSAKit.framework/Versions/A/OSAKit'
 current-version: 107
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ActiveProc, _FilterProc, _IdleProc, _OSAScriptErrorAppAddressKey, 
                        _OSAScriptErrorAppName, _OSAScriptErrorAppNameKey, _OSAScriptErrorBriefMessage, 

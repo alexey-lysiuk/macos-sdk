@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A5081B9F-4659-3765-9A10-18190EE0AB1C' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterCommandDrivers.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __Z15read_rest_valueR10Cdma1xCellRKN3xpc6objectE, __Z15read_rest_valueR11TDSCDMACellRKN3xpc6objectE, 
                        __Z15read_rest_valueR12CdmaEvdoCellRKN3xpc6objectE, __Z15read_rest_valueR15RemoteVinylInfoRKN3xpc6objectE, 

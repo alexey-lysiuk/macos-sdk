@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D0E8454C-33A9-3F96-B3A0-EDB12C32283A', 'x86_64: D0E8454C-33A9-3F96-B3A0-EDB12C32283A' ]
 platform:        zippered
 install-name:    '/usr/lib/libnetworkextension.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ne_filter_allocate_globals, _ne_filter_copy_connection, _ne_filter_crypto_generate_client_key, 
                        _ne_filter_crypto_init_client, _ne_filter_crypto_init_master, 

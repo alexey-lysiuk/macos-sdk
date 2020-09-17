@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 95D829A0-6339-35F7-BC46-5A54AE62DB30' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BSBoardServicesVersionNumber, _BSBoardServicesVersionString, 
                        _BSLogXPCConnection, _BSServiceConnectionEndpointInstanceKey, 

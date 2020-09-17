@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E3E3CC22-50F8-3E9E-A9D5-BAEAED7F07CD' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Seeding'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SeedingVersionNumber, _SeedingVersionString, _kSeedEnrollmentCookiePath ]
     objc-classes:    [ SDBuildInfo, SDCatalogUtilities, SDLegalDoc, SDSeedProgramManager, 

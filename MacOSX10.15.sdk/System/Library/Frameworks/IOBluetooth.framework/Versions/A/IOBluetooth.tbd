@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CF9CEFBA-97AC-3474-93AF-863C2C74C645', 'x86_64: CF9CEFBA-97AC-3474-93AF-863C2C74C645' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/CoreBluetooth.framework/Versions/A/CoreBluetooth' ]
     symbols:         [ _A2DPLog, _AAPServerUUID, _AAPServiceUUID, _AVRCPLog, _AddEmptyDataRefToDictionary, 

@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libnetsnmptrapd.25.dylib'
 current-version: 26.2
 compatibility-version: 26
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SyslogTrap, _axforward_handler, _command_handler, _dropauth, 
                        _exec_format1, _exec_format2, _forward_handler, _free_trap1_fmt, 

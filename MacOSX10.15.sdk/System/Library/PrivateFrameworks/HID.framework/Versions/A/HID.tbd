@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9C8E2F7D-96D9-36A9-B8F4-7C339A5B78F1' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HID.framework/Versions/A/HID'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HIDVersionNumber, _HIDVersionString, _kHIDUserDevicePropertyCreateInactiveKey ]
     objc-classes:    [ HIDEventSystemClient, HIDManager, HIDUserDevice, HIDVirtualEventService ]

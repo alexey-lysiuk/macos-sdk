@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox'
 current-version: 994.6
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AGL, AppKit, AppleShareClient, Backup, DesktopServices, 
                          DesktopServicesPriv, Dock, Finder, FinderKit, ImageKit, 

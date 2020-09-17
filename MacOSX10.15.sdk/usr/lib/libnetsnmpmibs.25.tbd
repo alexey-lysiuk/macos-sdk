@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libnetsnmpmibs.25.dylib'
 current-version: 26.2
 compatibility-version: 26
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _Add_Entry, _Check_HR_FileSys_NFS, _End_HR_FileSys, _Exit, 
                        _Get_FSIndex, _Get_FSSize, _Get_HR_Disk_Label, _Get_Next_Device, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 84D1A4B8-2812-3A6A-9A2F-1B2AE7EE04EC', 'x86_64: 84D1A4B8-2812-3A6A-9A2F-1B2AE7EE04EC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotoVision.framework/Versions/A/PhotoVision'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AXMediaUtilities, AXMediaUtilitiesService, CoreDuet, MediaMiningKit, 
                          NotesUI, PhotoAnalysis, PhotoVisionTool, PhotosGraph, VideoProcessing, 

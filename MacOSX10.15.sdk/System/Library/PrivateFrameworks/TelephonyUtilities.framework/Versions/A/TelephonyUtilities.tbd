@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C4B5073A-4B07-3D79-B057-A4C51599E472', 'x86_64: C4B5073A-4B07-3D79-B057-A4C51599E472' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/TelephonyUtilities.framework/Versions/A/TelephonyUtilities'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TUActiveCountryCode, _TUAddDarwinObserver, _TUAddLocalNSObserver, 
                        _TUAddTelephonyCenterObserver, _TUAllowLocalVideoRecording, 

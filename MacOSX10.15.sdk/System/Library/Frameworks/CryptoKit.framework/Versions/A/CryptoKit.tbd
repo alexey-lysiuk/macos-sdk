@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 79A92FB1-8ADE-3DAD-AD4E-4B9A3ADA0726', 'x86_64: 79A9
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s6Digest9CryptoKit12HashFunctionPTl', '_$s9CryptoKit03ChaC4PolyO4open_5using10Foundation4DataVAC9SealedBoxV_AA12SymmetricKeyVtKFZ', 
                        '_$s9CryptoKit03ChaC4PolyO4open_5using14authenticating10Foundation4DataVAC9SealedBoxV_AA12SymmetricKeyVxtKAG0I8ProtocolRzlFZ', 

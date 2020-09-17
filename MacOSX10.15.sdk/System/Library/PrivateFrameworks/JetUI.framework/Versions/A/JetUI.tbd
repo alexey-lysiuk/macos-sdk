@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D882167E-95E0-3270-A83A-9A19952ECBE5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/JetUI.framework/Versions/A/JetUI'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ App Store, AppStoreKit, AppStoreKitMac, AppStoreKitMacTests, 
                          JetPreflight, JetPreflightTests, MacAppStore, MacAppStoreTests ]

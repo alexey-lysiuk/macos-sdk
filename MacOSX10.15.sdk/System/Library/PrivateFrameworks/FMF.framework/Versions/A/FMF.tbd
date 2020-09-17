@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 32E28A29-60F5-3A70-A0E0-6D3E8A878628', 'x86_64: 32E28A29-60F5-3A70-A0E0-6D3E8A878628' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FMF.framework/Versions/A/FMF'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FMFDevicesChangedNotification, _FMFErrorDomain, _FMFFenceAcceptanceStatusAccepted, 
                        _FMFFenceAcceptanceStatusPending, _FMFFenceAcceptanceStatusPendingHidden, 

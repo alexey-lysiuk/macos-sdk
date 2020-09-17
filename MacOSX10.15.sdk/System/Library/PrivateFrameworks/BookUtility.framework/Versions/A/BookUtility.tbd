@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BookUtility.framework/Versions/A/BookUtility'
 current-version: 1341
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AMSBooksBagKeyAddFundsURL, _AMSBooksBagKeyAppAnalyticsURL, 
                        _AMSBooksBagKeyBooksISBNURL, _AMSBooksBagKeyBooksMediaAPIHost, 

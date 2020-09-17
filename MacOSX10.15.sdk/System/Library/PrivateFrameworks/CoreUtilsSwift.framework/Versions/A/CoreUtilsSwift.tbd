@@ -6,7 +6,7 @@ install-name:    '/System/Library/PrivateFrameworks/CoreUtilsSwift.framework/Ver
 current-version: 0
 compatibility-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s14CoreUtilsSwift10fatalError_4file4lines5NeverOSSyXK_s12StaticStringVSutF', 
                        '_$s14CoreUtilsSwift11DaysPerWeekSivau', '_$s14CoreUtilsSwift11DaysPerWeekSivp', 

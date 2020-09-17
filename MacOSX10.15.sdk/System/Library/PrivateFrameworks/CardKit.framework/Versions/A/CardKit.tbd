@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E0F60C47-F245-3EDE-B656-37F43AC551A6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CardKit.framework/Versions/A/CardKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CRKIsLargeDevice, _CRKIsRTL, _CardKitVersionNumber, _CardKitVersionString, 
                        __CRKIsRTLWithApp, __CRKSystemRootDirectory ]

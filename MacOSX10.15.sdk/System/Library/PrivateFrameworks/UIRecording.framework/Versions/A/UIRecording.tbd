@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 21111F4D-9EEB-3E1E-B0B5-4639BE2DC641' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UIRecording.framework/Versions/A/UIRecording'
 current-version: 28
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AMUIRecordingVersionNumber, _AMUIRecordingVersionString, 
                        _AXUIElementHasAttribute, _CGPointChanged, _CGStringForEventType, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 54A1C204-FCBA-3106-A896-28F22ECF144E', 'x86_64: 54A1C204-FCBA-3106-A896-28F22ECF144E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AudioSession.framework/libSessionUtility.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN2as12StreamFormat11clearLayoutEv, __ZN2as12StreamFormat13mutableLayoutEv, 
                        __ZN2as12StreamFormat16default_instanceEv, __ZN2as12StreamFormat5clearEv, 

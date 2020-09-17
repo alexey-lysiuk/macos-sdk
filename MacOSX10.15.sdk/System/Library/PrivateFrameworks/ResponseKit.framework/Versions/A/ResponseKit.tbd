@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 32703B82-A948-3876-B46D-D86B60EF5076', 'x86_64: 3270
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ResponseKit.framework/Versions/A/ResponseKit'
 current-version: 148.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSSubtractRange, _RKAggdScalarPrefixKey, _RKAggdStatisticsActionSelected, 
                        _RKAggdStatisticsActionSuggested, _RKAggdStatisticsActionTriggered, 

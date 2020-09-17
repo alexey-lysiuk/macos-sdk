@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 21DAD964-51A7-3F38-9C91-EF46C0CFF12D', 'x86_64: 21DA
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreHandwriting.framework/Versions/A/CoreHandwriting'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CHRecognitionOptionFrameContext, _CHRecognitionOptionPrecedingSpaceBehavior, 
                        _CHRecognitionOptionShouldPreserveCaseVariantCandidates, _CHRecognitionOptionShouldRefineCandidates, 

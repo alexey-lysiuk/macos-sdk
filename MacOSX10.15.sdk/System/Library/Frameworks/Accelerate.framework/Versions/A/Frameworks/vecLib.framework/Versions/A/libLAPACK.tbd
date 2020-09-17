@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6FEC8434-0C35-3528-A3DE-E3C78A748B6C', 'x86_64: 6FEC
                    'x86_64h: 5E3E3867-50C3-3E6A-9A2E-007CE77A4641', 'x86_64h: 5E3E3867-50C3-3E6A-9A2E-007CE77A4641' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _CBDSQR, _CBDSQR_, _CGBBRD, _CGBBRD_, _CGBCON, _CGBCON_, _CGBEQU, 
                        _CGBEQUB, _CGBEQUB_, _CGBEQU_, _CGBRFS, _CGBRFS_, _CGBSV, 

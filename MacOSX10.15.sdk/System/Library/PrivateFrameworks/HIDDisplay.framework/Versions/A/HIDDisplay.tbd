@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: AA4124BF-B416-397F-B480-8863E26EF85C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HIDDisplay.framework/Versions/A/HIDDisplay'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HIDDisplayCopyPreset, _HIDDisplayCopyPresetUniqueID, _HIDDisplayCreateDeviceManagementInterfaceWithContainerID, 
                        _HIDDisplayCreateDeviceManagementInterfaceWithService, _HIDDisplayCreateDeviceWithContainerID, 

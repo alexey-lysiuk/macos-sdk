@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 618BDC4B-07E1-355F-BC49-727F8C9D299B' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/QuickLook.framework/Versions/A/QuickLook'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/QuickLookIosmac.framework/Versions/A/QuickLookIosmac' ]
     objc-classes:    [ QLPreviewController ]
@@ -13,7 +13,7 @@ uuids:           [ 'x86_64: 36D1B106-12EF-3171-AC57-8978FF86F9DB', 'x86_64: 36D1
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/QuickLookIosmac.framework/Versions/A/QuickLookIosmac'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _QLAdaptSizeToRect, _QLBubbleControlIdentifierKey, _QLBubbleControlKeyEquivalentKey, 
                        _QLBubbleControlLeftAlignedKey, _QLBubbleControlShrinkableKey, 

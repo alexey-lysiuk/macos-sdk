@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 31A52896-B372-34B2-96A3-340275193E0A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/Vectorizer.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _createVectorizerPass, _getVectorizerFunctions, _getVectorizerWidths ]
 ...

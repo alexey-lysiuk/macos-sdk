@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 948D9DB8-F7AE-32B4-91FA-DCD08893448F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MobileAssetUpdater.framework/Versions/A/MobileAssetUpdater'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ MobileAssetUpdater ]
     objc-ivars:      [ MobileAssetUpdater._alternateAssetTypes, MobileAssetUpdater._asset, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C1E5A62F-507B-3EEC-9A77-D5FB5D201A55' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUADaemon.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UADHandleEvent, _UADHandleMessage, _UADHandleXPCEvent, _UADInitialize, 
                        _UADIsHandlerLoadedForEventType, _UADLoadHandlerForEventType, 

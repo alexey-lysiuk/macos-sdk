@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F12D8EE0-9284-3E57-AE73-414266E11586' ]
 platform:        macosx
 install-name:    '/usr/lib/libpmsample.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _pm_sample_pid, _pm_sample_task, _pm_sample_task_and_pid, 
                        _pm_samples_copy, _pm_samples_delta, _pm_samples_destroy, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B731A472-2106-3867-9B69-9F9B8466419E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/AccessibilitySupport'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityEvents.framework/Versions/A/AccessibilityEvents', 
                        '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityFoundation.framework/Versions/A/AccessibilityFoundation', 
@@ -17,7 +17,7 @@ uuids:           [ 'x86_64: 765CC3DA-1D7B-345E-823A-C2DE9E638287' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityEvents.framework/Versions/A/AccessibilityEvents'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXEFixedGlyphForMacKeyCode, _AXEGlyphForMacKeyCode, _AXEGlyphForPureModifierFlags, 
                        _AXEHIDDeviceGetDeviceInfo, _AXEHIDDeviceGetDeviceInfoUsingCache, 
@@ -54,7 +54,7 @@ uuids:           [ 'x86_64: EC1F2EDD-EE33-3E68-B40B-CF303FA5805F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityFoundation.framework/Versions/A/AccessibilityFoundation'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXEGetLog, _AXFAnnouncementRequestedNotification, _AXFApplicationActivatedNotification, 
                        _AXFApplicationDeactivatedNotification, _AXFApplicationHiddenNotification, 
@@ -162,7 +162,7 @@ uuids:           [ 'x86_64: C8542A59-0421-3B75-9DFC-C5C126E1E406' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityKit.framework/Versions/A/AccessibilityKit'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXKContrastRatioForColor, _AXKDebugPrintHierarchy, _AXKHsv2rgb, 
                        _AXKRecommendedColorForColors, _AXKRgb2hsv, _AXKThreadingCheckAssertCurrentQueueIsAppQueueForElement, 
@@ -196,7 +196,7 @@ uuids:           [ 'x86_64: 7FC4A9ED-FE33-300E-BEF2-F233CE4FDA90' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityVisuals.framework/Versions/A/AccessibilityVisuals'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXVAccessibilityVisualsSpaceUUID, _AXVAdjustedHSBColor, _AXVApproximateCharactersToShowInMenu, 
                        _AXVBrailleSpace, _AXVBrailleTransliterationAttribute, _AXVBrailleWindowLevel, 

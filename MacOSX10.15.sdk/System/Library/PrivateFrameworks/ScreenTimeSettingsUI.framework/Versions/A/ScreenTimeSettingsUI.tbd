@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9433CD91-50A9-3B8D-B5F8-DE47C1FACAE5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ScreenTimeSettingsUI.framework/Versions/A/ScreenTimeSettingsUI'
 current-version: 440
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ ScreenTime ]
     objc-classes:    [ STAlwaysAllowedController, STAlwaysAllowedItem, STContentAndPrivacyController, 

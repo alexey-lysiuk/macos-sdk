@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B8237BCD-D087-3835-8347-9E8E69A5CD20', 'x86_64: B823
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Email.framework/Versions/A/Email'
 current-version: 3608.120.23
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EMAccountsChangedNotification, _EMAccountsChangedNotificationAccountsKey, 
                        _EMActivityFetchStateKey, _EMActivityKindFetch, _EMActivityLastSuccessfulUpdateKey, 

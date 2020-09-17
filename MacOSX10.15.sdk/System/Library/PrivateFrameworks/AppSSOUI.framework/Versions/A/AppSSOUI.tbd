@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7F449424-3B2F-32F8-AA78-4775BBE5A478' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppSSOUI.framework/Versions/A/AppSSOUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ SOUIAuthorizationViewController ]
 ...

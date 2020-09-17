@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8D2C283D-B15C-3D43-A01E-46D52CB769B2', 'x86_64: 8D2C
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libSimplifiedChineseConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetSimplifiedChineseConverterDefinition ]
 ...

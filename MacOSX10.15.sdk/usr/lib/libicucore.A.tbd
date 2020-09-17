@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8AC2CB07-E7E0-340D-A849-186FA1F27251', 'x86_64: 8AC2
 platform:        zippered
 install-name:    '/usr/lib/libicucore.A.dylib'
 current-version: 64.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _T_CString_int64ToString, _T_CString_integerToString, _T_CString_stringToInteger, 
                        _T_CString_toLowerCase, _T_CString_toUpperCase, _UCNV_FROM_U_CALLBACK_ESCAPE, 

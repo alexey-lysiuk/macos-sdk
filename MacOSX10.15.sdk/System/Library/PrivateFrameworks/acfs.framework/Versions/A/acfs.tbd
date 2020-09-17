@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F1A6F745-F6FB-3A76-B49D-088023F4686D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/acfs.framework/Versions/A/acfs'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CFXsanErrorDomain, _GetXsanConfigEssentials, _buildSanConfig, 
                        _buildSanConfigC, _buildSanConfigCF, _buildXsanDirs, _changeXsanIPAddr, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B238A17F-4E74-39C4-B54E-92BEBA7A9302', 'x86_64: B238
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PodcastsFoundation.framework/Versions/A/PodcastsFoundation'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AirPodcasts, AppStoreKit, AppStoreKitTests, AppStoreTests, 
                          CorePodcasts, IMDebug, IMUIUtil, IntentsExtension, MacPodcastsKit, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 675ADC65-2535-3D14-8EE1-77743AAB4EAD', 'x86_64: 675ADC65-2535-3D14-8EE1-77743AAB4EAD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreCaptureControl.framework/Versions/A/CoreCaptureControl'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreCaptureControlCapture, _CoreCaptureControlCaptureWithComponentDirectory, 
                        _CoreCaptureControlConfigurePipe, _CoreCaptureControlConfigureProfile, 

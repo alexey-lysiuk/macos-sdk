@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EFF4D8D9-9214-33C3-841F-109C6CC692EB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FMCoreUI.framework/Versions/A/FMCoreUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ FMAnnotationView ]
 ...

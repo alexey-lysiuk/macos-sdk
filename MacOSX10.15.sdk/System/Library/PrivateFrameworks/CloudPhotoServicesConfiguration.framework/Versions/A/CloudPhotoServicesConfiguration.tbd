@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 26AEA3B7-9C94-3218-8507-8A0D638FC147' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudPhotoServicesConfiguration.framework/Versions/A/CloudPhotoServicesConfiguration'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CPSAccountAppleIDKey, _CPSAccountAuthTokenKey, _CPSAccountAvailabilityDataClassURLKey, 
                        _CPSAccountDisplayNameKey, _CPSAccountFirstNameKey, _CPSAccountLastNameKey, 

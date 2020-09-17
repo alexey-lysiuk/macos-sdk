@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 394C0B36-8D72-35B1-8602-A99302DAEE50' ]
 platform:        macosx
 install-name:    '/usr/lib/AppleConvergedTransport.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AppleConvergedTransportCreate, _AppleConvergedTransportFree, 
                        _AppleConvergedTransportInitParameters, _AppleConvergedTransportIsValid, 

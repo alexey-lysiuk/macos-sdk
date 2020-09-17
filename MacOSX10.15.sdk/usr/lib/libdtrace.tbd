@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 68F838A5-961B-3917-A357-3CD1D6B0FD98' ]
 platform:        macosx
 install-name:    '/usr/lib/libdtrace.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __dtrace_disallow_dsym, __dtrace_version, _ctf_type_name, 
                        _demangleSymbolCString, _dtrace_addr2str, _dtrace_aggregate_clear, 

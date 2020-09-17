@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 4A49A591-9B8D-3ED4-B6E2-BD470569CB7F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ShareKit.framework/Versions/A/ShareKit'
 current-version: 641.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSSharingPlugInServiceOptionAppIDKey, _NSSharingPlugInServiceOptionAppIsBackgroundOnlyKey, 
                        _NSSharingPlugInServiceOptionAuditSessionKey, _NSSharingPlugInServiceOptionParametersKey, 

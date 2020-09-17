@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BA294A54-F309-398D-B308-F97032AFF555', 'x86_64: BA294A54-F309-398D-B308-F97032AFF555' ]
 platform:        zippered
 install-name:    '/usr/lib/libnetwork.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NETCORE_XPC_TYPE_ANY, ___nw_create_backtrace_string, ___nw_should_simulate_crash, 
                        ___nwlog_create_hash_from_private_string, ___nwlog_disable_simulate_crash_block, 

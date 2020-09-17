@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 29B65A6D-8083-351A-AB9A-4FA470F5DC8E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreKnowledge.framework/Versions/A/CoreKnowledge'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s10Foundation14DateComponentsV13CoreKnowledgeE02toB0AA0B0VSgyF', 
                        '_$s10Foundation14DateComponentsV13CoreKnowledgeE10storeLinks10fromEntity17completionHandleryAD8CKEntityC_ys5Error_pSgctF', 

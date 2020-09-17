@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 054B9B58-41E4-302E-9864-AFEDDB76FE38', 'x86_64: 054B
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libGreekConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetGreekConverterDefinition ]
 ...

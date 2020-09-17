@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 70F16562-E0B4-3A4F-B303-0CB0BE92F717' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMDPersistence.framework/Versions/A/IMDPersistence'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CSDBSharedRecordStore, _IMAttachmentClassGIFOrSticker, _IMAttachmentClassOther, 
                        _IMAttachmentClassPhoto, _IMAttachmentClassVideo, _IMCopyIndexableChatDictionaryForRecordRef, 

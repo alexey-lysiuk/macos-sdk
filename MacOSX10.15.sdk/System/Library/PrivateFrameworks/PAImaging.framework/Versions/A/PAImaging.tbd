@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7D2BED8E-76B1-3EDF-8FE2-EC68574EB9D6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PAImaging.framework/Versions/A/PAImaging'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CATransform3DFromNSString, _CGAffineTransformFromNSString, 
                        _CGVectorEqualWithAbsError, _NSStringFromCATransform3D, _PAAnimationDuration, 

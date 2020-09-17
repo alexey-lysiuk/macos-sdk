@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6B49F7A2-EA77-3F66-9B94-DCF16A2AB3B7', 'x86_64: 6B49
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RemoteManagement.framework/Versions/A/RemoteManagement'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AccountExtension, AppManagementExtension, CloudMDMAppListTestApp, 
                          LegacyProfilesExtension, ManagementTestExtension, MiniLauncher, 

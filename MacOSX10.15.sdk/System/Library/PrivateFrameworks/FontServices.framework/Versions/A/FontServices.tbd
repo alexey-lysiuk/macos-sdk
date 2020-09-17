@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8E17A3DD-A754-3F57-B253-9C8B5506BE1A', 'x86_64: 8E17A3DD-A754-3F57-B253-9C8B5506BE1A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/Versions/A/FontServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FontServicesVersionNumber, _FontServicesVersionString ]
 ...

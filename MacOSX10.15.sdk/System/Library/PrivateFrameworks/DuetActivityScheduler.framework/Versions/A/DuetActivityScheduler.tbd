@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 188C6793-A94C-3B49-A9F4-AF8A348C7E62', 'x86_64: 188C6793-A94C-3B49-A9F4-AF8A348C7E62' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DuetActivityScheduler.framework/Versions/A/DuetActivityScheduler'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __DASActivityDurationInterminable, __DASActivityDurationLong, 
                        __DASActivityDurationModerate, __DASActivityDurationShort, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F011400A-018E-386C-9A54-74612F1A0254' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/oncrpc.framework/Versions/A/oncrpc'
 current-version: 53.0.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __newrpclib___rpc_createerr, __newrpclib__authenticate, __newrpclib__null_auth, 
                        __newrpclib__seterr_reply, __newrpclib_authnone_create, __newrpclib_authunix_create, 

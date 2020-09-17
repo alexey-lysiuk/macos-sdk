@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 30CFC08C-EF36-3CF5-8AEA-C1CB070306B7', 'x86_64: 30CFC08C-EF36-3CF5-8AEA-C1CB070306B7' ]
 platform:        zippered
 install-name:    '/usr/lib/liblangid.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _langid_consume_string, _langid_create, _langid_create_with_datapath, 
                        _langid_dispose, _langid_global_dispose, _langid_highest_score, 

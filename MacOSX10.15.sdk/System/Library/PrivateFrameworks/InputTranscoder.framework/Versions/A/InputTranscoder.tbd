@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D52D27AA-DA04-36D4-BFB0-6558E09C1541', 'x86_64: D52D
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/InputTranscoder.framework/Versions/A/InputTranscoder'
 current-version: 44
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ITCandidateEnumerateTokenIDs, _ITCandidateGetScore, _ITCandidateGetSources, 
                        _ITCandidateGetString, _ITCandidateGetStrokedPath, _ITCandidateIsCompletion, 

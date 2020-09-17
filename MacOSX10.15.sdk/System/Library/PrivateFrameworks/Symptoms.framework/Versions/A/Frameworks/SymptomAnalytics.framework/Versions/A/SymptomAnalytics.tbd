@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2D5277FB-2FCC-34E7-B316-5DD68314F97C', 'x86_64: 2D52
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomAnalytics.framework/Versions/A/SymptomAnalytics'
 current-version: 1238.120.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SymptomAnalyticsFrameworkDidSaveNotification, _kProcessKeyTypeBundleName, 
                        _kProcessKeyTypeProcName, _kStateMachineStatusKeyAdminState, 

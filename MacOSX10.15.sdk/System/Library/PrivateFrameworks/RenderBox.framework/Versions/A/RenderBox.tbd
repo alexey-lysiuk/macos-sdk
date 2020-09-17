@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DB4D89AA-0698-36DD-8861-B6BC333BF8B0', 'x86_64: DB4D89AA-0698-36DD-8861-B6BC333BF8B0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RenderBox.framework/Versions/A/RenderBox'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RBColorBlack, _RBColorClear, _RBColorEqualToColor, _RBColorFromCGColor, 
                        _RBColorFromLinear, _RBColorMake, _RBColorMakeLinear, _RBColorToLinear, 

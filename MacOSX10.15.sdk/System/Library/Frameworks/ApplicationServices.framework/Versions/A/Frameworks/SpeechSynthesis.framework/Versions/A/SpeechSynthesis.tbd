@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 75344F8F-32CA-3558-B4E6-F56D498250E4' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis'
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CancelSpokenNotification, _CancelSpokenNotificationForProcess, 
                        _CancelTalkingAlert, _ContinueSpeech, _CopyAvailableIntervals, 

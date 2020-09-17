@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5AA0BC07-A8BA-33DE-B58D-EAE3C112F303', 'x86_64: 5AA0
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CryptoKitPrivate.framework/Versions/A/CryptoKitPrivate'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s10Foundation4DataV16CryptoKitPrivateE11secretShareAcD15CKSecretSharingO06SecretG0V_tKcfC', 
                        '_$s16CryptoKitPrivate0aB5ErrorO014underlyingCoreaD0yACs5Int32V_tcACmFWC', 

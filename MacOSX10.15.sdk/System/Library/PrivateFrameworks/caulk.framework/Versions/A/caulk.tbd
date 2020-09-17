@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 06D695EA-E2BC-31E4-9816-9C12542BA744', 'x86_64: 06D695EA-E2BC-31E4-9816-9C12542BA744' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/caulk.framework/Versions/A/caulk'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN5caulk10concurrent9messenger20shared_high_priorityEv, 
                        __ZN5caulk10concurrent9messenger23shared_logging_priorityEv, 

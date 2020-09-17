@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: CC50D2C0-BA74-372B-B5F1-930B606DD88B', 'x86_64: CC50
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AttributeGraph.framework/Versions/A/AttributeGraph'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s10Attributes14AttributeGraph9InputListPTl', '_$s14AttributeGraph011AnyOptionalA0V10identifierSo11AGAttributeavM', 
                        '_$s14AttributeGraph011AnyOptionalA0V10identifierSo11AGAttributeavg', 

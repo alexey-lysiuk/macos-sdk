@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B5D98C73-E28B-3DF3-A458-9B4C8BD42B4C', 'x86_64: B5D9
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PrintKit.framework/Versions/A/PrintKit'
 current-version: 244
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PKAnnotationsImagedKey, _PKCancelAlert, _PKCancelJobs, _PKCertUISynchronization, 
                        _PKCheckAlert, _PKCopiesKey, _PKCopyLocalizedPrinterStateReasons, 

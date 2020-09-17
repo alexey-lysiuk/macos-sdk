@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4D28FEF3-B1FA-3761-B08D-89469226B390' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Lookup.framework/Versions/A/Lookup'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LUCanConnectToService, _LULookupVersionNumber, _LULookupVersionString, 
                        _LUNotificationPopoverWillClose, _LUTermOptionDisableSearchTermIndicator, 

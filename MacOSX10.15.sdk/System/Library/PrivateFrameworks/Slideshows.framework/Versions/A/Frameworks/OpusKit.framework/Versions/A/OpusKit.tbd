@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4F577609-77C2-30DC-B36A-502B2FD81818' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Slideshows.framework/Versions/A/Frameworks/OpusKit.framework/Versions/A/OpusKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OKErrorDomain, _OKPlatformDescriptionATV, _OKPlatformDescriptionDekstop, 
                        _OKPlatformDescriptionPad, _OKPlatformDescriptionPhone, _OKPlatformDescriptionWeb, 

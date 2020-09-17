@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B1534796-1000-3520-A641-A97A4AC5D39B', 'x86_64: B153
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore'
 current-version: 659
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DDAddressBookAccessAllowed, _DDAddressResultCanBeMergedWith, 
                        _DDApplyOptions, _DDBinderAIMOrEmailKey, _DDBinderAddressBookContactNameKey, 

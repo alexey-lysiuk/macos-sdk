@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 23F43F5B-7284-38D4-99F3-2FA53C43D5D6', 'x86_64: 23F43F5B-7284-38D4-99F3-2FA53C43D5D6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SiriTTS.framework/Versions/A/SiriTTS'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN14NeuralTTSUtils16is_amx_availableEv, __ZN14NeuralTTSUtils17compile_ane_modelEPKc, 
                        __ZN14NeuralTTSUtils17should_prefer_amxEv, __ZN14NeuralTTSUtils18disable_neural_ttsE, 

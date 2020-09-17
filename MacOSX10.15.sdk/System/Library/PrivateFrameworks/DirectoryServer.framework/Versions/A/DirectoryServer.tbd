@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E9EE124D-2045-3F44-B4B6-71324F683A57' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DirectoryServer.framework/Versions/A/DirectoryServer'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/DirectoryServer.framework/Frameworks/CFDirectoryServer.framework/Versions/A/CFDirectoryServer' ]
     symbols:         [ _DSCopyFQDNForSelf, _DSRunTask, _DSRunTaskAsync, _kDefaultLocaleName, 
@@ -17,7 +17,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6BF5482B-D41F-35CE-A715-3E5AA26B28F1' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DirectoryServer.framework/Frameworks/CFDirectoryServer.framework/Versions/A/CFDirectoryServer'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DSCStringCreate, _DSChangePasswordWithPolicy, _DSConfigCopyEnabledAuthMechs, 
                        _DSConfigCopyEnabledAuthMechsFromServer, _DSConfigCopyIdentityName, 

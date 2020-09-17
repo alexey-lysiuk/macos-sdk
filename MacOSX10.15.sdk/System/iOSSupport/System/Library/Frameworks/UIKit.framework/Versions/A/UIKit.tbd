@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 01D18FD1-7E41-3BD8-93D0-AF77ECC49035' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/UIKit.framework/Versions/A/UIKit'
 current-version: 61000
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/ShareSheet.framework/Versions/A/ShareSheet', 
                        '/System/iOSSupport/System/Library/PrivateFrameworks/DocumentManager.framework/Versions/A/DocumentManager', 
@@ -15,7 +15,7 @@ uuids:           [ 'x86_64: E0A29B96-5819-3B89-B04D-405CF2367048' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/ShareSheet.framework/Versions/A/ShareSheet'
 current-version: 1526.37
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UIActivityTypeAddToReadingList, _UIActivityTypeAirDrop, _UIActivityTypeAssignToContact, 
                        _UIActivityTypeCloudSharing, _UIActivityTypeCopyToPasteboard, 
@@ -44,7 +44,7 @@ uuids:           [ 'x86_64: EC55B9E5-7E62-380A-9AB1-FC7BEF663653', 'x86_64: EC55
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation'
 current-version: 662
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, UIKitCore ]
     symbols:         [ _NSAccessibilitySpellingStateAttributeName, _NSAllRomanInputSourcesLocaleIdentifier, 
@@ -506,7 +506,7 @@ uuids:           [ 'x86_64: 7C1106E9-03D8-36E1-9828-02615B815143' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/DocumentManager.framework/Versions/A/DocumentManager'
 current-version: 171.4.10
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DOCAdaptSizeToRect, _DOCAlertItemIsNotReadable, _DOCAlertUserTheNetworkIsNotReachable, 
                        _DOCAlertUserTrashedFileCanNotBeOpened, _DOCCenterSizeInRect, 
@@ -581,7 +581,7 @@ uuids:           [ 'x86_64: 531CD635-C991-3763-8B88-CCF65D4FF8C6' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/UIKitCore.framework/Versions/A/UIKitCore'
 current-version: 61000
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation' ]
     symbols:         [ '$ld$add$os10.0$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$add$os10.0$_OBJC_METACLASS_$_NSFileProviderExtension', 

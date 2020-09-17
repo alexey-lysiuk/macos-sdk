@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8631DD97-095B-334D-95FA-99AE1FFD95EB', 'x86_64: 8631DD97-095B-334D-95FA-99AE1FFD95EB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUSupport.framework/Versions/A/Libraries/libGPUSupport.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _gldAttachDrawable, _gldBufferSubData, _gldClearFence, _gldCopyBufferSubData, 
                        _gldCopyTexSubImage, _gldCopyTextureData, _gldCreateBuffer, 

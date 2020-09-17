@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libsystem_platform.dylib'
 current-version: 220.100.1
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSAtomicAdd32, _OSAtomicAdd32Barrier, _OSAtomicAdd64, _OSAtomicAdd64Barrier, 
                        _OSAtomicAnd32, _OSAtomicAnd32Barrier, _OSAtomicAnd32Orig, 

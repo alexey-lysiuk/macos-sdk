@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B042F277-E604-3E14-9E91-D9F445D1CA47' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilityPerformance.framework/Versions/A/AccessibilityPerformance'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXPLoggingDefaultCategory, _AXPLoggingDefaultSubsystem, _AccessibilityPerformanceVersionNumber, 
                        _AccessibilityPerformanceVersionString, _axp_log_performance ]

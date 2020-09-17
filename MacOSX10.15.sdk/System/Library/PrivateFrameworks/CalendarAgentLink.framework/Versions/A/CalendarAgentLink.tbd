@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 57225073-4A73-3AB8-849A-47C0E90B04BF', 'x86_64: 5722
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CalendarAgentLink.framework/Versions/A/CalendarAgentLink'
 current-version: 840.5.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ABRemoteAccountCollectionAccountsKey, _ABRemoteAccountCollectionBaseURLKey, 
                        _ABRemoteAccountCollectionTagKey, _ABRemoteAccountIdentifierKey, 

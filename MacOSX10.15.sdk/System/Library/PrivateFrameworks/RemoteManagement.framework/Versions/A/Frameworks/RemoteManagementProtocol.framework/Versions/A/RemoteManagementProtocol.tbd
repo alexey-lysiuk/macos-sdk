@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: AD725C4F-5AC4-3DFC-8DB3-5F1FE2524C4D', 'x86_64: AD725C4F-5AC4-3DFC-8DB3-5F1FE2524C4D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RemoteManagement.framework/Versions/A/Frameworks/RemoteManagementProtocol.framework/Versions/A/RemoteManagementProtocol'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RMProtocolChannelDevice, _RMProtocolChannelUser, _RMProtocolCommandRequest_Status_busy, 
                        _RMProtocolCommandRequest_Status_completed, _RMProtocolCommandRequest_Status_failed, 

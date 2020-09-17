@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1BC7D355-E136-391A-8215-6982742645DD', 'x86_64: 1BC7D355-E136-391A-8215-6982742645DD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IntentsFoundation.framework/Versions/A/IntentsFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IFMergeDictionaries, _IntentsFoundationVersionNumber, _IntentsFoundationVersionString ]
     objc-classes:    [ IFObjectHasher, INFGrammarCollection, INFPartOfSpeech, INFSentence, 

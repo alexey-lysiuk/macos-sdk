@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9A858F8F-4405-32DF-A1C9-C0D557291226' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleGVA.framework/Versions/A/AppleGVA'
 current-version: 10.0.20
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AVFCODEC_CreateMediaAcceleratorInterface, _AVFJPG_CreateMediaAcceleratorInterface, 
                        _AVFJPG_GetJPEGDecodeAvailability, _AVFPixelProcess_Create, 

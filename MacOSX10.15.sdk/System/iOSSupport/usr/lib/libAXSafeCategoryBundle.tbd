@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3C75F232-E7F7-3852-9382-AC7CB46CA944' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/libAXSafeCategoryBundle.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXSetUIAXReportSenderErrorLoggerFunction, _AXSetValidationErrorLoggingFunction, 
                        _UIAccessibilityInstallSafeCategories, _UIAccessibilityInstallSafeCategory ]

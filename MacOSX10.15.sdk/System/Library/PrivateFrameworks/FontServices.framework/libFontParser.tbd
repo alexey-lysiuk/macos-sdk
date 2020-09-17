@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9E9E2EAA-3273-360E-A01B-EB986ECB7BCF', 'x86_64: 9E9E2EAA-3273-360E-A01B-EB986ECB7BCF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/libFontParser.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CreateFontForScaler, _FPFontCanCreatePostScriptSubset, _FPFontCopyAllNames, 
                        _FPFontCopyCharacterSet, _FPFontCopyFamilyName, _FPFontCopyFullName, 

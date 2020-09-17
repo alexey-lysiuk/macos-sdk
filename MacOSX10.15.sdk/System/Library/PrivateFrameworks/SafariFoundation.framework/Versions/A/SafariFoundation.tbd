@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 487F18D9-A81A-3575-B757-38DE5DD1FB55', 'x86_64: 487F
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SafariFoundation.framework/Versions/A/SafariFoundation'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SFAutoFillFromAddressBookPreferenceKey, _SFCredentialProviderDeveloperEntitlement, 
                        _SFCredentialProviderExtensionPointIdentifier, _SFCredentialProviderShowsConfigurationUIKey, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 38C90A0D-20CD-3FDB-BE55-6840139DAC3C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Install.framework/Versions/A/Install'
 current-version: 1000
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AddMacroToPlistMacroList, _BundleIdentifierSearch, _BundleIdentifierSearchArgs, 
                        _BundleIdentifierValidationProc, _BundleVersionFilter, _BundleVersionFilterArgs, 

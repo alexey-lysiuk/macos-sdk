@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 99B1D079-4088-3A16-B3FE-C72310DE0868' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SocialUI.framework/Versions/A/SocialUI'
 current-version: 5500
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AcknowledgmentPickerDOMProviderMaximumBubbleXPosition, _AcknowledgmentPickerDOMProviderPickerButtonAnimationClass, 
                        _AcknowledgmentPickerDOMProviderPickerButtonContainerElementType, 

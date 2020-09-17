@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0203AF27-AB5E-32FA-B529-AB7F29EEB887', 'x86_64: 0203AF27-AB5E-32FA-B529-AB7F29EEB887' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaExperience.framework/Versions/A/MediaExperience'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FigEndpointPickerCreate, _FigEndpointPickerGetClassID, _FigEndpointPickerGetTypeID, 
                        _FigEndpointPickerManagerGetSharedManager, _FigEndpointPickerManagerRegisterEndpointManager, 

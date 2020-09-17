@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/libarchive.2.dylib'
 current-version: 9.2
 compatibility-version: 9
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _archive_bzlib_version, _archive_clear_error, _archive_compression, 
                        _archive_compression_name, _archive_copy_error, _archive_entry_acl, 

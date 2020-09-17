@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E0AD7785-92E1-3C0E-ADD8-5F6EBC67543A' ]
 platform:        macosx
 install-name:    '/usr/lib/libapp_launch_measurement.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _alm_app_did_present, _alm_app_extended_launch_end, _alm_app_will_launch, 
                        _alm_app_will_launch_with_signpost_id, _alm_clear_responsive_launch_bailed, 

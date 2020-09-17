@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 70C25EA9-F7A7-366C-97C6-EEE7845FFCC3', 'x86_64: 70C25EA9-F7A7-366C-97C6-EEE7845FFCC3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleSRP.framework/Versions/A/AppleSRP'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BigIntegerAdd, _BigIntegerAddInt, _BigIntegerBitLen, _BigIntegerCheckPrime, 
                        _BigIntegerCmp, _BigIntegerCmpInt, _BigIntegerDivInt, _BigIntegerFree, 

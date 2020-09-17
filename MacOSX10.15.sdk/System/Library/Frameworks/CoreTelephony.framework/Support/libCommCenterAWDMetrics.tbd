@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DAE4D1BA-A3BA-3630-B9FF-A8F259C13158' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterAWDMetrics.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN3awd7configs10BedfConfig10SharedCtorEv, __ZN3awd7configs10BedfConfig10SharedDtorEv, 
                        __ZN3awd7configs10BedfConfig16default_instanceEv, __ZN3awd7configs10BedfConfig17default_instance_E, 

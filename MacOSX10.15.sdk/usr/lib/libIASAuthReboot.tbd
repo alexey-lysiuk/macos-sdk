@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0E8E7F50-FFCC-39BA-9103-6330F95497AD' ]
 platform:        macosx
 install-name:    '/usr/lib/libIASAuthReboot.dylib'
 current-version: 1000
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IARAuthenticatedRestartSupported, _IARCommitLoginCredentials, 
                        _IARCommitLoginCredentialsFinalized, _IARIALibRootSideStashLoginCredentialsWithUserData, 

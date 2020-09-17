@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: AB47B927-65E3-3924-88BE-0A5BE7906785', 'x86_64: AB47B927-65E3-3924-88BE-0A5BE7906785' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _gfxAllocateTextureLevel, _gfxAnnotateAddDataSource, _gfxAnnotateBuffer, 
                        _gfxAnnotateRemoveDataSource, _gfxAnnotateTexture, _gfxClearSyncObjectsInHash, 

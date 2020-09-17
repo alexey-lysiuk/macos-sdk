@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5B539F50-93E8-3F73-9E4C-678C85D0488F', 'x86_64: 5B539F50-93E8-3F73-9E4C-678C85D0488F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AudioToolboxCore.framework/Versions/A/AudioToolboxCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AudioCodecs, AudioDSPGraph, AudioDSPManager, AudioHistory, 
                          AudioServerDriver, AudioToolbox, CoreAudio, CoreMedia, EmbeddedSystemAUs, 

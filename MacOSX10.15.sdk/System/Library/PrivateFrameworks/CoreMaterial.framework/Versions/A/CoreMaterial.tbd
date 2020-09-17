@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0CA8F4EA-12B8-3D2D-ACA1-D322D8090491', 'x86_64: 0CA8F4EA-12B8-3D2D-ACA1-D322D8090491' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreMaterial.framework/Versions/A/CoreMaterial'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ CoreMaterialTester, MaterialKit, Materials, PointerUIServices, 
                          SpringBoard, SpringBoard-Tests, SpringBoardCore, UIKitCore, 

@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libsystem_secinit.dylib'
 current-version: 62.100.2
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __libsecinit_initializer, _libsecinit_delete_all_data_container_content_for_current_user, 
                        _libsecinit_fileoperation_save, _libsecinit_fileoperation_set_attributes, 

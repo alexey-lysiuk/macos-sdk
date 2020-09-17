@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AAC1A8DA-0B44-3D52-A03F-1DFED19D33BB', 'x86_64: AAC1
                    'x86_64h: 3D433800-0099-33E0-8C81-15F83247B2C9', 'x86_64h: 3D433800-0099-33E0-8C81-15F83247B2C9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLinearAlgebra.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     allowable-clients: [ vecLib ]
     symbols:         [ _la_add_attributes, _la_diagonal_matrix_from_vector, _la_difference, 

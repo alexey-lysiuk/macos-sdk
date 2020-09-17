@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 56D01AFF-6EA1-331F-992B-8E245D060538' ]
 platform:        macosx
 install-name:    '/usr/lib/libxpc_datastores.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _xpc_datastore_copy_state, _xpc_datastore_publisher_create, 
                        _xpc_datastore_publisher_invalidate_state, _xpc_datastore_subscriber_create ]

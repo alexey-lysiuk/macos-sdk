@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 74F6CD9C-27A7-39C7-A7EB-47E60D2517EB', 'x86_64: 74F6
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleIDAuthSupport.framework/Versions/A/AppleIDAuthSupport'
 current-version: 90.40.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AppleIDAuthSupportAuthenticate, _AppleIDAuthSupportCopyAppNewAppTokensWithAuthAttribute, 
                        _AppleIDAuthSupportCopyAppToken, _AppleIDAuthSupportCopyAppTokens, 

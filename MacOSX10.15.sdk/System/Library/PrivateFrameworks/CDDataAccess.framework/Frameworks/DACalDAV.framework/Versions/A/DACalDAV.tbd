@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 84175593-2E4B-322A-8602-3FCF79AF96B0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CalDAVPrincipalResultType_Group, _CalDAVPrincipalResultType_Person, 
                        _CalDAVPrincipalResultType_Resource, _CalDAVPrincipalResultType_Room, 

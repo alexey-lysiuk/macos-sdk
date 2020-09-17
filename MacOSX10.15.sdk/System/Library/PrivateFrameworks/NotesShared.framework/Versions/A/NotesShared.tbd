@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7EB53A1A-7873-3D81-8E8C-C8CE29316CC7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/NotesShared.framework/Versions/A/NotesShared'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CRPropertyOneOf, _CRPropertyOneOfKey, _CRPropertyRegisterLatest, 
                        _CRPropertySet, _CRPropertyString, _ICACAccountPropertyDidChooseToMigrate, 

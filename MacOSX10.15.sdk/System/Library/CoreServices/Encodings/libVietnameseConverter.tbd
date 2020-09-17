@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: CED84363-E6FA-3CF8-9E87-F31B5C122736', 'x86_64: CED8
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libVietnameseConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetVietnameseConverterDefinition ]
 ...

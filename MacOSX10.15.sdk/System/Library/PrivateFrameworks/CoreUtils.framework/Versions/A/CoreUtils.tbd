@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 456CC907-E838-3945-B70A-66E862C19CD6', 'x86_64: 456CC907-E838-3945-B70A-66E862C19CD6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreUtils.framework/Versions/A/CoreUtils'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AES_CBCFrame_Final, _AES_CBCFrame_Init, _AES_CBCFrame_Update, 
                        _AES_CTR_Final, _AES_CTR_Init, _AES_CTR_Update, _AES_GCM_AddAAD, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: BFA7D5B5-20EE-38E3-B8A7-96CE1F9BB48A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CloseCatalog, _CopyNodeRef, _CopyPropertyList, _CreateClientNodeRef, 
                        _CreatePropertyList, _DSMergeOldDocumentsAndDesktopToHomeDirectory, 

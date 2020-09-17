@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6D4DFF4B-B62D-31E9-9FB9-60553578338E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreFollowUp.framework/Versions/A/CoreFollowUp'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreFollowUpVersionNumber, _CoreFollowUpVersionString, _FLDaemonExportedInterface, 
                        _FLError, _FLErrorDomain, _FLFollowUpActionLaunchArgumentsKey, 

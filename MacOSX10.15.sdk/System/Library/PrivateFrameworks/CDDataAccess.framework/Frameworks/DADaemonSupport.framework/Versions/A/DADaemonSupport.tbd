@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 630332E9-E935-336D-8BF5-3A44EF4DB4F7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DADaemonSupport.framework/Versions/A/DADaemonSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___RootDomainConnect, __devicePowerChanged, _gDADHighAvailabilityQueue, 
                        _gDADMainRunloopStopped, _gDADOperationQueue, _handleSignal ]

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 69C204CF-54DF-35FD-B81A-7C66257C2074' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EmbeddedOSSupportHost.framework/Versions/A/EmbeddedOSSupportHost'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __eos_endpoint_connect, __eos_endpoint_connect_with_deadline, 
                        __eos_endpoint_get_addr_in6, __eos_endpoint_get_ifindex, __eos_endpoint_get_ifname, 

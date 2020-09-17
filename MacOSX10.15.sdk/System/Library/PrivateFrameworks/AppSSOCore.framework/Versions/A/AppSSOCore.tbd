@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3FBA882A-83BF-3163-916F-0D7FA17D010D', 'x86_64: 3FBA882A-83BF-3163-916F-0D7FA17D010D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppSSOCore.framework/Versions/A/AppSSOCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SOAuthorizationOptionCoreNoUserInterface, _SOErrorDomain, 
                        _SOErrorSubcodeKey, _appSSO_handleResponse, _appSSO_handleResponseCredential, 

@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libcache.dylib'
 current-version: 83
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _cache_create, _cache_destroy, _cache_get, _cache_get_and_retain, 
                        _cache_get_cost_hint, _cache_get_count_hint, _cache_get_info, 

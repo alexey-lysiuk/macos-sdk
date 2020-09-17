@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 793D9643-CD83-3AAC-8B96-88D548FAB620', 'x86_64: 793D
 platform:        zippered
 install-name:    '/usr/lib/libz.1.dylib'
 current-version: 1.2.11
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _adler32, _adler32_combine, _adler32_z, _compress, _compress2, 
                        _compressBound, _crc32, _crc32_combine, _crc32_z, _deflate, 

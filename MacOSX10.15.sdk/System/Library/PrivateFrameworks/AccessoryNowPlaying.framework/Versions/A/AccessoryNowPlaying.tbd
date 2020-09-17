@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B1E870C3-1745-35EC-9B07-3D13FF71910C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessoryNowPlaying.framework/Versions/A/AccessoryNowPlaying'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AccessoryNowPlayingVersionNumber, _AccessoryNowPlayingVersionString, 
                        _kACCNowPlaying_NowPlayingUpdate_MediaItemAttributes, _kACCNowPlaying_NowPlayingUpdate_MediaItemAttributes_AlbumDiscCount, 

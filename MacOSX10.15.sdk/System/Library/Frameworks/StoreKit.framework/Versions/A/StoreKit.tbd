@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D39EA2FD-A7E7-341F-80BD-18912272CAFE' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/StoreKit.framework/Versions/A/StoreKit'
 current-version: 379
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SKDownloadTimeRemainingUnknown, _SKErrorDomain, _SKReceiptPropertyIsExpired, 
                        _SKReceiptPropertyIsRevoked, _SKReceiptPropertyIsVolumePurchase, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0215AB1C-27F3-32DF-BB83-C44DF131772D', 'x86_64: 0215
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SampleAnalysis.framework/Versions/A/SampleAnalysis'
 current-version: 243.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EventTypeString, _SABinarySearchArray, _SACFAbsoluteTimeFromTimespec, 
                        _SAFormattedBytes, _SAFormattedBytesDouble, _SAFormattedSignedBytes, 

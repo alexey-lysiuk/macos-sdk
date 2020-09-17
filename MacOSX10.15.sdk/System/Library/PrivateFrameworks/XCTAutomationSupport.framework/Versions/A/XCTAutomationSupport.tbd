@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 75EFDEE4-C25D-3FE1-895D-41F082902256', 'x86_64: 75EFDEE4-C25D-3FE1-895D-41F082902256' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/XCTAutomationSupport.framework/Versions/A/XCTAutomationSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _XCAXAccessibilityAttributeForStringAttribute, _XCAXAccessibilityAttributesForStringAttributes, 
                        _XCAXDefaultStringAttributes, _XCAXDefaultStringAttributes_iOS, 

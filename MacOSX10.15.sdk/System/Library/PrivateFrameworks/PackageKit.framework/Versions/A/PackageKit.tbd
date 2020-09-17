@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: DFA53655-3A48-31BB-8D3F-B988076D2BD3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/PackageKit'
 current-version: 434
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PKArchiveFolderFileType, _PKArchiveOpenOptionValidatedDigest, 
                        _PKArchiveSignatureTypeCMS, _PKArchiveSignatureTypeCodeSign, 

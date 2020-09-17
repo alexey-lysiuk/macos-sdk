@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8EAE0F82-4E6E-35BD-ABAA-811CE601A1C6', 'x86_64: 8EAE0F82-4E6E-35BD-ABAA-811CE601A1C6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AXRuntime.framework/Versions/A/AXRuntime'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXAPIEnabled, _AXArrayForString, _AXAttributeAllowsRequeryWhenRemoteElementFails, 
                        _AXAttributeForXCAttribute, _AXAuditClippingTest, _AXAuditContrastDetectionTest, 

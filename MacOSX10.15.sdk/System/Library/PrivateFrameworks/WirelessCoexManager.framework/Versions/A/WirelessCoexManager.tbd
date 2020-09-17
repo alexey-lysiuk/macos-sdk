@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 51E976A2-0239-3C9E-8A0F-92FA510D8C81' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WirelessCoexManager.framework/Versions/A/WirelessCoexManager'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _WCMEnabled, _WirelessRadioManagerDumpLog, _WirelessRadioManagerSetLogToFile ]
     objc-classes:    [ WCMClientProxy, WCMSetting, WRMClientInterface, WRM_iRATInterface, 

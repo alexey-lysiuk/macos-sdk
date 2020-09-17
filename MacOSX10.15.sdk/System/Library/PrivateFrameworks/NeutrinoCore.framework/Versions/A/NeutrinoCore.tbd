@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C1497730-1E2B-3A8E-B981-15979215595B', 'x86_64: C149
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/NeutrinoCore.framework/Versions/A/NeutrinoCore'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CGAffineTransformDeterminant, _CGAffineTransformDot, _CGAffineTransformFixedPoint, 
                        _CGAffineTransformForMappingFromRectToRect, _CGAffineTransformHasRotation, 

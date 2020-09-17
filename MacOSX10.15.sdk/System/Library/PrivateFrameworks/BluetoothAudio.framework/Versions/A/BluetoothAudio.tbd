@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0CECF045-94AB-3BF3-8625-553EDC1EF889' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BluetoothAudio.framework/Versions/A/BluetoothAudio'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BluetoothAudioVersionNumber, _BluetoothAudioVersionString, 
                        _BluetoothEndpointCollectionCopyAsCFArray, _BluetoothEndpointCollectionCreate, 

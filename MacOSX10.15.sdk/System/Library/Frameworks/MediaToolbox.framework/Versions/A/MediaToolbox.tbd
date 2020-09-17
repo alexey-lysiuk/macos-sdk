@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3A848992-9182-382A-BF7D-5CB9707BE27B', 'x86_64: 3A848992-9182-382A-BF7D-5CB9707BE27B' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MediaToolbox.framework/Versions/A/MediaToolbox'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AudioMentorDispose, _AudioMentorInvalidate, _AudioMentorNew, 
                        _AudioMentorSetClientPID, _AudioMentorSetModeToDoNothing, 

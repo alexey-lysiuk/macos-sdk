@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 50A4C342-AA72-32A0-B444-23ED1ED90804' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SPShared.framework/Versions/A/SPShared'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s10Foundation12DateIntervalV8SPSharedE6stringACSgSS_tcfC', 
                        '_$s10Foundation3URLV8SPSharedE17extendedAttribute4nameAA4DataVSS_tKF', 

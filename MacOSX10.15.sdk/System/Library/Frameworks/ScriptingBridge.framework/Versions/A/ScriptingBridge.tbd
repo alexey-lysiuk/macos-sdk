@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 91077BE2-51A9-3BB7-8364-4F142DEA0C18' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ScriptingBridge.framework/Versions/A/ScriptingBridge'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ SBAppContext, SBAppLocator, SBApplication, SBElementArray, 
                        SBObject ]

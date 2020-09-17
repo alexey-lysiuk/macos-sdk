@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 05612E06-50CB-318F-9F8E-EF4D49FAB3B0', 'x86_64: 0561
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MetalPerformanceShaders ]
     symbols:         [ _DeadlockedBecauseTheCPUBasedWeightUpdateForThePreviousBatchOccursAtCompletionOfThisCmdBuf_TryGPUUpdateOrNewCmdBufInstead ]

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DC1A27C5-0172-3C72-9B24-06996D0B6207', 'x86_64: DC1A27C5-0172-3C72-9B24-06996D0B6207' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AuthKit.framework/Versions/A/AuthKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AKAAAccountClassPrimary, _AKAbsintheErrorDomain, _AKAccessibilityIdentifierTiburon, 
                        _AKAccountNameHeaderKey, _AKAccountNameTypeHeaderKey, _AKActionButtonKey, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 059227B1-A5CF-371D-A9ED-1C7D2422B9A9' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/BusinessChat.framework/Versions/A/BusinessChat'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BCAuthenticationResponseStatusAuthenticated, _BCAuthenticationResponseStatusFailed, 
                        _BCBubbleViewStyleIcon, _BCBubbleViewStyleLarge, _BCBubbleViewStyleSmall, 

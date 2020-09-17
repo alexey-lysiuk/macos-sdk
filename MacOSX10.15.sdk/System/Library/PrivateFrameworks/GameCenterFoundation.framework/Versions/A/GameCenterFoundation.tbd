@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 33BE428B-A35C-3673-81F8-0695BF5DDFA9', 'x86_64: 33BE428B-A35C-3673-81F8-0695BF5DDFA9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GKAbsoluteTimeAsWhenString, _GKAbsoluteTimeAsWhenStringWithOptions, 
                        _GKAcceptFriendRequestIDs, _GKAcceptGameInviteNotification, 

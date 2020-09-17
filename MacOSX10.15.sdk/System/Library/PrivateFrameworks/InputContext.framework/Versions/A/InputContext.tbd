@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 12CFA2A0-3A27-3874-99E5-93B793FF28E8', 'x86_64: 12CFA2A0-3A27-3874-99E5-93B793FF28E8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/InputContext.framework/InputContext'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _InputContextVersionNumber, _InputContextVersionString, __ICMachTimeToNanoseconds, 
                        _isEquivalentDictionary ]

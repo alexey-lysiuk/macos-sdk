@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 23423A6C-FA6E-3BF5-BBF9-413DCD112990' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MessagesKit.framework/Versions/A/MessagesKit'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MessagesKitVersionNumber, _MessagesKitVersionString, _SOAccountPropertyIMAccountUniqueIDKey, 
                        _SOAlertsAddressMeKey, _SOAlertsChatGuidKey, _SOAlertsMessageDeliveryErrorKey, 

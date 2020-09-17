@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1042E9F2-EBA3-3707-9608-6C00463A42C2', 'x86_64: 1042E9F2-EBA3-3707-9608-6C00463A42C2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SPOwner.framework/Versions/A/SPOwner'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SPBeaconEstimatedLocationChangedNotification, _SPBeaconLocationSourceConnection, 
                        _SPBeaconLocationSourceConnectionMaintenance, _SPBeaconLocationSourceDisconnection, 

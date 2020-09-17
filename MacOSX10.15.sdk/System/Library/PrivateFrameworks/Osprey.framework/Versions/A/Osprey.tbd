@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 35B59E34-48DC-3765-AC03-F4EA04B19506' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Osprey.framework/Versions/A/Osprey'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ OspreyChannel, OspreyConnectionMetrics, OspreyGRPCBidiStreamingCallContext, 
                        OspreyGRPCCallContext, OspreyRequest, OspreyServiceClient ]

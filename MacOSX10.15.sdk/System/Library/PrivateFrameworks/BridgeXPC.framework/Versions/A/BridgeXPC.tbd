@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2FC8FCE8-9255-38F7-AEAA-6B26CA67D908' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BridgeXPC.framework/Versions/A/BridgeXPC'
 current-version: 37
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _bridge_xpc_connection_activate, _bridge_xpc_connection_cancel, 
                        _bridge_xpc_connection_create_connected_pair, _bridge_xpc_connection_create_for_remote_service, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3478F467-8BC8-3FD1-BB52-65F51A2BE643' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SearchAds.framework/Versions/A/SearchAds'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SearchAdsVersionNumber, _SearchAdsVersionString ]
     objc-classes:    [ ADDataObject, ADInstallAttributionData, ADLocationManager, 

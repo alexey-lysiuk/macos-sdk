@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/libruby.2.6.dylib'
 current-version: 2.6.3
 compatibility-version: 2.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _InitVM_Enumerator, _InitVM_Math, _InitVM_Object, _InitVM_Random, 
                        _InitVM_Struct, _InitVM_process, _InitVM_transcode, _Init_Array, 

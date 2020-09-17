@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F0B1C9B4-C800-3698-870F-757BD71C9DEE' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/GameKit.framework/Versions/A/GameKit'
 current-version: 665.26
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/Metal.framework/Versions/A/Metal', 
                        '/System/Library/Frameworks/ModelIO.framework/Versions/A/ModelIO', 
@@ -24,7 +24,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 33BE428B-A35C-3673-81F8-0695BF5DDFA9', 'x86_64: 33BE428B-A35C-3673-81F8-0695BF5DDFA9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GKAbsoluteTimeAsWhenString, _GKAbsoluteTimeAsWhenStringWithOptions, 
                        _GKAcceptFriendRequestIDs, _GKAcceptGameInviteNotification, 
@@ -368,7 +368,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 17C74459-599A-37FE-9F52-9E2E1D0D10A3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUI.framework/Versions/A/GameCenterUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GKBubbleFlowTransitionPhaseName, _GKBubbleFlowTransitionTypeName, 
                        _GKBubbleTypeName, _GKCollectionColumnLayoutDividerKind, _GKCollectionLayoutTopHeaderKind, 

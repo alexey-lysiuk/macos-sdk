@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7128FB8C-83B0-3250-BF86-E8A1772CF1F5' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuickLookUI.framework/Versions/A/QuickLookUI'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/QuickLook.framework/Versions/A/QuickLook' ]
     symbols:         [ _QLAXImageAndText_Image, _QLAXImageAndText_Text, _QLDisplayBundleDisplayStateCurrentPageKey, 

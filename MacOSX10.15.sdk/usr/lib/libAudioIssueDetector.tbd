@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 223FF7F1-4ABB-3179-B36D-5F4CEE177243', 'x86_64: 223FF7F1-4ABB-3179-B36D-5F4CEE177243' ]
 platform:        zippered
 install-name:    '/usr/lib/libAudioIssueDetector.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AudioDataAnalysisManagerCreate, _AudioDataAnalysisManagerCreateNodeEnvSPL, 
                        _AudioDataAnalysisManagerCreateNodePCM, _AudioDataAnalysisManagerCreateNodeSPL, 

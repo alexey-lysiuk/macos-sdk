@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4D71ADB3-B29D-3D20-B6DE-9E94061F86AC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DisplayServices.framework/Versions/A/DisplayServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/usr/lib/libobjc.A.dylib' ]
     symbols:         [ _CreateNotificationKeyFromNameAndDisplayID, _DSDisplayIDKey, 

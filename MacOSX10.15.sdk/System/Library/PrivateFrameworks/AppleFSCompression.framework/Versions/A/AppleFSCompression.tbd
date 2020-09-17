@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 466ABD77-2E52-36D1-8E39-77AE2CC61611', 'x86_64: 466A
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression'
 current-version: 119.100.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AFSCLockFileFd, _AFSCLockFilePath, _AFSCUnlockFile, _CloseStreamCompressor, 
                        _CompressFile, _CreateCompressionQueue, _CreateStreamCompressor, 

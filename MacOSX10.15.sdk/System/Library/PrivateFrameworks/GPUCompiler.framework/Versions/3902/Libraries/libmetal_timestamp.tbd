@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F45AFD70-E4DD-3ABB-AA00-6563A841184B', 'x86_64: F45A
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libmetal_timestamp.dylib'
 current-version: 902.14.11
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _getMetalTimeStamp ]
 ...

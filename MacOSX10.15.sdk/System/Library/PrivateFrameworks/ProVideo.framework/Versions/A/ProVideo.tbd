@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7F6E5892-91F4-381E-86A0-116026AA6BAA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ProVideo.framework/Versions/A/ProVideo'
 current-version: 443.4.42
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AppStartupActionPreferenceKey, _CGAffineTransformFromPVAnimInfo, 
                        _CreatePVLPThrottlingControlParameters, _FiltersLiteVersionNumber, 

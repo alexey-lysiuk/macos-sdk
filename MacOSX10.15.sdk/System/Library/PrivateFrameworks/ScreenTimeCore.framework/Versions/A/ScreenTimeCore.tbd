@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6562EE0B-C8AF-377A-98EA-74AA37D75CA4', 'x86_64: 6562
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ScreenTimeCore.framework/Versions/A/ScreenTimeCore'
 current-version: 440
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ ChatKit, ContextStoreAgent, DataDetectorsViewDebug, DataDetectorsViewService, 
                          Dock, IMCore, IMDPersistence, IMDPersistenceAgent, IMDPersistenceTests-OSX, 

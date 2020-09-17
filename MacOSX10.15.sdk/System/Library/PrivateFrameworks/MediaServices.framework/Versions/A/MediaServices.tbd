@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EA82F76E-BF9B-37C3-9C8F-BEBC7D87D0CE', 'x86_64: EA82F76E-BF9B-37C3-9C8F-BEBC7D87D0CE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaServices.framework/Versions/A/MediaServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MSVArchivedDataWithRootObject, _MSVArtworkServiceErrorDomain, 
                        _MSVBundleIDForAuditToken, _MSVBundleIDForPID, _MSVCLIPrint, 

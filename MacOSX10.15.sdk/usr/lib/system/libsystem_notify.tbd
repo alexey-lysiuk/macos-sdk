@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: FA22F928-D91B-3AA5-96BB-3186AC0FB264', 'x86_64: FA22
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_notify.dylib'
 current-version: 241.100.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __notify_fork_child, _notify_cancel, _notify_check, _notify_dump_status, 
                        _notify_get_event, _notify_get_state, _notify_is_valid_token, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C4BC12A3-4D01-377F-A1DB-7E1490831CF2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Backup.framework/Versions/A/Backup'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BUAboutToDeleteSnapshots, _BUActivatedSnapshot, _BUChangeTimeMachineTarget, 
                        _BUCopyCurrentTargetOriginalPath, _BUCopyCurrentTargetSnapshotURL, 

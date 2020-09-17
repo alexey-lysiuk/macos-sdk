@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: ABBB6E81-FF5E-3F8D-9103-3C4CE1E8A028' ]
 platform:        macosx
 install-name:    '/SetupAssistantSupport.framework/Versions/A/SetupAssistantSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SASProximityActionTypeKey, _SASProximityErrorDomain, _SASProximityPayloadTypeKey, 
                        _SASProximityVersionKey, _SASProximityVersionValue, _SetupAssistantSupportVersionNumber, 

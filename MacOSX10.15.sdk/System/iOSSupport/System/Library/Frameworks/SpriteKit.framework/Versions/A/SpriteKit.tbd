@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 66C14578-137A-368A-B71C-5F5E0FF8DB39' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit'
 current-version: 25.37
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SKComponentRGBABlack, _SKComponentRGBABlue, _SKComponentRGBAClear, 
                        _SKComponentRGBAGreen, _SKComponentRGBARed, _SKComponentRGBAWhite, 

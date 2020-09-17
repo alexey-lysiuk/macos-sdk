@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 19344923-88EA-3D77-8E26-43A532511513' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/Versions/A/DaemonUtils'
 current-version: 693.140.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LANVRAMNamespaceStartupManager, __libBiometricKit ]
     objc-classes:    [ AirDb, BiometryHelper, Caller, CredentialRequest, DaemonUtils, 

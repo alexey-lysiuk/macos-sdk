@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EBECA2D1-27D2-3B5A-BF3D-AB1F8B12F60D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BatteryUIKit.framework/Versions/A/BatteryUIKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromPowerSource ]
     objc-classes:    [ BUIBatteryObserver, BUIImage, BUIPowerSource, BUIViewController ]

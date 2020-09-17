@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0D5BFD01-D4A7-3C8D-AA69-C329C1A69792', 'x86_64: 0D5B
 platform:        zippered
 install-name:    '/usr/lib/libmecab.dylib'
 current-version: 883.11
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _mecab_cost_train, _mecab_destroy, _mecab_dict_gen, _mecab_dict_index, 
                        _mecab_dictionary_info, _mecab_do, _mecab_format_node, _mecab_get_feature, 

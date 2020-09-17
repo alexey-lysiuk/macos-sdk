@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9747D170-7C41-3FDD-8B49-1F2639A88535', 'x86_64: 9747D170-7C41-3FDD-8B49-1F2639A88535' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/iAdServices.framework/Versions/A/iAdServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ADBKSApplicationStateDescription, _ADClientGlobalStateChangedNotification, 
                        _ADClientSegmentDataErrorDomain, _ADDefaultsBundleID, _ADErrorDomain, 

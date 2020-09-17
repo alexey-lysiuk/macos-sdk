@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 65A77FE9-D4E4-3743-8452-967A4939E08D', 'x86_64: 65A77FE9-D4E4-3743-8452-967A4939E08D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RevealCore.framework/Versions/A/RevealCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RevealCoreVersionNumber, _RevealCoreVersionString ]
     objc-classes:    [ RVDocumentContext, RVItem, RVSelection ]

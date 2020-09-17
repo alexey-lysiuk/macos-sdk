@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B6124448-7690-34AE-8939-ED84AAC630CE' ]
 platform:        macosx
 install-name:    '/usr/lib/libauto.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___auto_reference_logger, _auto_assign_weak_reference, _auto_collect, 
                        _auto_collect_multithreaded, _auto_collection_parameters, 

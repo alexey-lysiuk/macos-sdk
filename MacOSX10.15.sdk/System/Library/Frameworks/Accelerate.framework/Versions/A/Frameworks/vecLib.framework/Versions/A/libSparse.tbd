@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B8A10D0C-4577-343D-B310-A3E81265D107', 'x86_64: B8A10D0C-4577-343D-B310-A3E81265D107' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparse.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ vecLib ]
     symbols:         [ __SparseAMD, __SparseAMDWorkspaceSize, __SparseCGIterate_Double, 

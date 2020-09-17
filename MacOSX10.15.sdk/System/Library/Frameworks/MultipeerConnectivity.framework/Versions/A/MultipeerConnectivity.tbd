@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: ECB78B83-E384-3079-915E-2D7C791DCD2E' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/MultipeerConnectivity.framework/Versions/A/MultipeerConnectivity'
 current-version: 166
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MCErrorDomain, _kMCSessionMaximumNumberOfPeers, _kMCSessionMinimumNumberOfPeers ]
     objc-classes:    [ MCAdvertiserAssistant, MCBrowserViewController, MCNearbyServiceAdvertiser, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7CBFA8E0-084D-3E20-BAC9-D123060626A8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AOSAccounts.framework/Versions/A/AOSAccounts'
 current-version: 1.9.95
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AOSAccountsGetLogLevel, _AOSAccountsSetLogLevel, _AOSDebugUserDictValueForKey, 
                        _AOSLogSafeDictionaryForDictionary, _CopyAccountPrefsForAltDSID, 

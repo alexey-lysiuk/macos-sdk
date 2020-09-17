@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D1F928B0-6231-3889-8194-017AE3DC16F7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OSUpdate.framework/Versions/A/OSUpdate'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AutoDownloaded, _AvailableForDownload, _BundlePath, _EvaluationDate, 
                        _FreeSpaceRequired, _IABundleIdentifier, _NotificationDelay, 

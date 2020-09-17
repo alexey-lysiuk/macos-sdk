@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help'
 current-version: 71
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ PrintingUI ]
     symbols:         [ _AHGotoApplicationHelp, _AHGotoMainTOC, _AHGotoPage, _AHLookupAnchor, 

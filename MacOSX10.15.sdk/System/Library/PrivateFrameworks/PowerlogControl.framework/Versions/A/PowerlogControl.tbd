@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DF1BE91B-BC3F-3018-9A60-F0D8AFA818C3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PowerlogControl.framework/Versions/A/PowerlogControl'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PowerlogControlDefaultsChanged, _PowerlogControlEnablePowerLog, 
                        _PowerlogControlEnablePowerLogOld, _PowerlogControlModeKey, 

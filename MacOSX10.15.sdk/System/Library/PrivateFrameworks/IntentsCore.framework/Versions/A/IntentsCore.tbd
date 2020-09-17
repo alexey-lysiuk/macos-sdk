@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CCF15EDB-D503-3C06-80E6-A76BDAE37DDB', 'x86_64: CCF15EDB-D503-3C06-80E6-A76BDAE37DDB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IntentsCore.framework/Versions/A/IntentsCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _INCDecodeHashedRouteUIDs, _INCDeserializeNSUserActivityData, 
                        _INCExtensionErrorDomain, _INCExtensionTransactionStateTypeGetName, 

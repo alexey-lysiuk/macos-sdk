@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9A065E55-1355-380B-91A6-357A73DB9138' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI'
 current-version: 415
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AAFamilyEligibilityKey, _AAHTTPHSAActionReprovision, _AAHTTPHSAActionStartProvisioning, 
                        _AAHTTPHSAActionSynchronize, _AAHTTPHeaderXAppleMDAction, 

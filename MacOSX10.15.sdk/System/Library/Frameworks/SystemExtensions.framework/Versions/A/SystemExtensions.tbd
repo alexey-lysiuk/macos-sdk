@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E84C846B-225A-3DED-9AAA-05AF9128608D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/SystemExtensions.framework/Versions/A/SystemExtensions'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSSystemExtensionUsageDescriptionKey, _OSBundleUsageDescriptionKey, 
                        _OSSystemExtensionCategoryIdentifierDriverExtension, _OSSystemExtensionCategoryIdentifierEndpointSecurity, 

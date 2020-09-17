@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CDF739BA-70AA-3FA2-9E0E-2E1BFC348A59', 'x86_64: CDF739BA-70AA-3FA2-9E0E-2E1BFC348A59' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CorePrediction.framework/Versions/A/CorePrediction'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CPMLAnalysisClassify, _CPMLAnalysisRegressionPrediction, 
                        _CPMLBetweenssKMeansAnalysis, _CPMLCentersKMeansAnalysis, 

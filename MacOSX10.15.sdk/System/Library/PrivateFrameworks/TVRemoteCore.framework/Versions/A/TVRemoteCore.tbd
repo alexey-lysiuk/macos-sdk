@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AFA02C7B-0FDB-3AF2-AF92-89366802BC52' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TVRemoteCore.framework/Versions/A/TVRemoteCore'
 current-version: 100.60.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromRMSMessageType, _NSStringFromRMSResponseCode, 
                        _TVRCAirplayIDKey, _TVRCButtonApplicationBundleIDKey, _TVRCButtonSkipIntervalKey, 

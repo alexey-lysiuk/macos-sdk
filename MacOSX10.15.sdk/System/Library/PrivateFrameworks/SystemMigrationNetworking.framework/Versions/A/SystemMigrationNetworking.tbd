@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 01DFDF6E-3802-3384-B9B5-EA031658D858' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SystemMigrationNetworking.framework/Versions/A/SystemMigrationNetworking'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SMActionPlistHeaderKeyExists, _SMActionPlistHeaderKeyIsABrokenSymlink, 
                        _SMNActionUniqueID, _SMNCurrentLogLevel, _SMNDE_AttributesKey, 

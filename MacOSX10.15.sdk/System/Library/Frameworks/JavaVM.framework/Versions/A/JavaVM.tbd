@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 2D077212-ADC6-3097-820C-01DDC8823BF6' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/JavaVM.framework/Versions/A/JavaVM'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CheckForInstalledJavaRuntimes, _JAWT_GetAWT, _JNI_CreateJavaVM, 
                        _JNI_GetCreatedJavaVMs, _JNI_GetDefaultJavaVMInitArgs, _JVMCopyDefaultPrefForTaskAndKey, 

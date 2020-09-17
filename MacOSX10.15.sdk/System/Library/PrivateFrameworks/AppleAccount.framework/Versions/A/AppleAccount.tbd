@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 939881CD-B6FE-36F7-AE17-602329EE352D', 'x86_64: 939881CD-B6FE-36F7-AE17-602329EE352D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleAccount.framework/Versions/A/AppleAccount'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AAAbsintheSignerDefaultTimeout, _AAAccountClassBasic, _AAAccountClassFull, 
                        _AAAccountClassPrimary, _AAAccountConfigChangedNotification, 

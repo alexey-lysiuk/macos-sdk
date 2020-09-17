@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: BE448022-E93F-3B59-A696-AA26E90E6BB5', 'x86_64: BE44
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libGPUCompilerImplLazy.dylib'
 current-version: 902.14.11
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___clang_metalfe_GPUCompiler_compileFromSourceToBufferWrapper, 
                        ___clang_metalfe_GPUCompiler_compileFromSourceWrapper, ___clang_metalfe_GPUCompiler_linkToBufferWrapper, 

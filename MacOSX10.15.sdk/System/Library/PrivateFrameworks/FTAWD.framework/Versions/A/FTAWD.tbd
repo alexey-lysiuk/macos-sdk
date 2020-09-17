@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 77C52082-EB65-3BE0-8DAC-59463E88D8FE', 'x86_64: 77C5
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FTAWD.framework/Versions/A/FTAWD'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FTAWDLogCallAcceptReceived, _FTAWDLogCallAcceptSent, _FTAWDLogCallCancelSent, 
                        _FTAWDLogCallConnected, _FTAWDLogCallDeclineSent, _FTAWDLogCallEnded, 

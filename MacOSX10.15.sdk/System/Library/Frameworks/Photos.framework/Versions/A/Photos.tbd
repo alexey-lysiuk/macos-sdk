@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: BFE43748-5620-3302-96B2-361A9473C8E4', 'x86_64: BFE4
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Photos.framework/Versions/A/Photos'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromPHErrorCode, _PHAdjustmentBaseVersionDescription, 
                        _PHAdjustmentDataKey, _PHAssetAnalysisAssetCountsKey, _PHAssetAnalysisClustererEligibleFaceCountKey, 

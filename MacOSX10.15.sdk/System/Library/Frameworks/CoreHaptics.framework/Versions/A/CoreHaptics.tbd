@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 693F766E-D2FA-3BE6-B12B-AE7F0291E74D', 'x86_64: 693F766E-D2FA-3BE6-B12B-AE7F0291E74D' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CHHapticDynamicParameterIDAudioAttackTimeControl, _CHHapticDynamicParameterIDAudioBrightnessControl, 
                        _CHHapticDynamicParameterIDAudioDecayTimeControl, _CHHapticDynamicParameterIDAudioPanControl, 

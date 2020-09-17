@@ -5,7 +5,7 @@ uuids:           [ 'x86_64: 265783CE-6D74-36C9-B6D2-95D3910199EC', 'x86_64: 2657
 platform:        zippered
 install-name:    '/usr/lib/libobjc.A.dylib'
 current-version: 228
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ '$ld$hide$os10.5$_OBJC_CLASS_$_NSObject', '$ld$hide$os10.5$_OBJC_IVAR_$_NSObject.isa', 
                        '$ld$hide$os10.5$_OBJC_METACLASS_$_NSObject', '$ld$hide$os10.6$_OBJC_CLASS_$_NSObject', 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 70DF77BA-9719-3E9F-9A1A-FEA1E57B7B2C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/RunningBoard.framework/Versions/A/RunningBoard'
 current-version: 223.140.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromRBSJetsamBand, _RBAttributePrimitiveEntitlement, 
                        _RBBackBoardClientEntitlement, _RBBackgroundViewServicesEntitlement, 

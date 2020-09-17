@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/OTSVG.framework/Versions/A/OTSVG'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OTSVGDocumentCreate, _OTSVGDocumentCreateWithData, _OTSVGDocumentEnumerateIDs, 
                        _OTSVGDocumentGetIntrinsicRect, _OTSVGDocumentRelease, _OTSVGGlyphRecordingCreate, 

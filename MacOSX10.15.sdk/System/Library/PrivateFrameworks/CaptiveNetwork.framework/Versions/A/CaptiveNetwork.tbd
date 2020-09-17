@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B21C637D-D066-3FB6-9E87-81984F002979', 'x86_64: B21C637D-D066-3FB6-9E87-81984F002979' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CaptiveNetwork.framework/Versions/A/CaptiveNetwork'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CNAccountsAdd, _CNAccountsCopy, _CNAccountsResolve, _CNAccountsUse, 
                        _CNDebugLaunchWebsheet, _CNDumpState, _CNForgetSSID, _CNIAmTheWebsheetApp2, 

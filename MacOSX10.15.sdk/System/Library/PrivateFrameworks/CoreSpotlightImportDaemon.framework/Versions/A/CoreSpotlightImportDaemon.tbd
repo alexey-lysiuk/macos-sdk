@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 36C483FA-0F10-385F-98ED-2701DE67F6A5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreSpotlightImportDaemon.framework/Versions/A/CoreSpotlightImportDaemon'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CSImportAgentMachServiceName, _CoreSpotlightImportDaemonVersionNumber, 
                        _CoreSpotlightImportDaemonVersionString ]

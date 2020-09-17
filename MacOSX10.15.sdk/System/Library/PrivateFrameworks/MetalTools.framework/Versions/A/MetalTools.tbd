@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MetalTools.framework/Versions/A/MetalTools'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __Z14MTLGPUDebugLogv, __Z19emitKernelTelemetryP18MTLTelemetryDevice, 
                        __Z20emitBlitDistributionP18MTLTelemetryDeviceNSt3__113unordered_mapI14MTLPixelFormat28MTLTelemetryBlitDistributionNS1_4hashIyEENS1_8equal_toIS3_EENS1_9allocatorINS1_4pairIKS3_S4_EEEEEE, 

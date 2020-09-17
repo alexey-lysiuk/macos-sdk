@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0E670C5D-C985-3EF5-B602-262BDE0F6DB5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPURawCounter.framework/Versions/A/GPURawCounter'
 current-version: 12.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CTRCopyAllCounterSourceGroup, _CTRReleaseAllCounterSourceGroup, 
                        _GPURawCounterVersionNumber, _GPURawCounterVersionString ]

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 17C74459-599A-37FE-9F52-9E2E1D0D10A3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUI.framework/Versions/A/GameCenterUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GKBubbleFlowTransitionPhaseName, _GKBubbleFlowTransitionTypeName, 
                        _GKBubbleTypeName, _GKCollectionColumnLayoutDividerKind, _GKCollectionLayoutTopHeaderKind, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 50305D29-94CF-3F28-BAC3-94725C21E92B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LockoutUI.framework/Versions/A/LockoutUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LOErrorDomain, _LOErrorResponsePinErrorKey, _LOErrorResponseUserInfoKey, 
                        _LOLockoutUIVersionNumber, _LOLockoutUIVersionString ]

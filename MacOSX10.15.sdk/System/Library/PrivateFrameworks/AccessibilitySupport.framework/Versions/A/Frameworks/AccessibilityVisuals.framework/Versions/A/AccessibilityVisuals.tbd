@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7FC4A9ED-FE33-300E-BEF2-F233CE4FDA90' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityVisuals.framework/Versions/A/AccessibilityVisuals'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXVAccessibilityVisualsSpaceUUID, _AXVAdjustedHSBColor, _AXVApproximateCharactersToShowInMenu, 
                        _AXVBrailleSpace, _AXVBrailleTransliterationAttribute, _AXVBrailleWindowLevel, 

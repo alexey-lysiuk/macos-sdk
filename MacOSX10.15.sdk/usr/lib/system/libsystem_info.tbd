@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8A321605-5480-330B-AF9E-64E65DE61747', 'x86_64: 8A32
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_info.dylib'
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LI_get_thread_item, _LI_get_thread_list, _LI_ils_create, 
                        _LI_set_thread_item, _LI_set_thread_list, ___dn_skipname, 

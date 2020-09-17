@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 010D0B89-DC8B-38A1-8017-4B223A0AC096' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/CoreNFC.framework/Versions/A/CoreNFC'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NFCErrorDomain, _NFCISO15693TagResponseErrorKey, _NFCTagResponseUnexpectedLengthErrorKey ]
     objc-classes:    [ NFCISO15693CustomCommandConfiguration, NFCISO15693ReadMultipleBlocksConfiguration, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 980779B6-1416-3CBB-91DF-C9BAC4088826' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleVPA.framework/Versions/A/AppleVPA'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _VPA_CreateMediaAcceleratorInterface, _VPA_DI_CreateAcceleratorInterface, 
                        _VPA_HWJPEG_CreateDestIOSurface, _VPA_HWJPEG_DecodeSessionCreate, 

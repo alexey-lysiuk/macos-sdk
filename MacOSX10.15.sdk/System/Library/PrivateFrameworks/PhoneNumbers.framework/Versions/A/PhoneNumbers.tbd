@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8FC8870C-4F82-36F2-8456-A4A990E3F2A4', 'x86_64: 8FC8870C-4F82-36F2-8456-A4A990E3F2A4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhoneNumbers.framework/Versions/A/PhoneNumbers'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/CorePhoneNumbers.framework/Versions/A/CorePhoneNumbers' ]
     symbols:         [ _PhoneNumbersVersionNumber, _PhoneNumbersVersionString, _pn_default_log ]
@@ -12,7 +12,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E4DAD514-0B3B-3E0B-8AEA-39B320FAAF03', 'x86_64: E4DAD514-0B3B-3E0B-8AEA-39B320FAAF03' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CorePhoneNumbers.framework/Versions/A/CorePhoneNumbers'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CFPhoneNumberBundleCopyRulesetFileSystemPath, _CFPhoneNumberBundleCopyRulesetURL, 
                        _CFPhoneNumberBundleGetBundle, _CFPhoneNumberCopyCountryCode, 

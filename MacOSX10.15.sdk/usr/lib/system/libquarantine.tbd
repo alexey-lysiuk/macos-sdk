@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libquarantine.dylib'
 current-version: 110.40.3
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___esp_check, ___esp_check_ns, ___esp_enabled, ___esp_notify, 
                        ___esp_notify_ns, ___libquarantineVersionNumber, ___libquarantineVersionString, 

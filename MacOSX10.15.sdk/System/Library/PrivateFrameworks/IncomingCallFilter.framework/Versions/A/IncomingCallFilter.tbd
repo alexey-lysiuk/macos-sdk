@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 79B6774C-8A90-316E-95F2-BC7ED1F50C7F', 'x86_64: 79B6
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IncomingCallFilter.framework/Versions/A/IncomingCallFilter'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ICFCallProviderShouldAllowIncomingCall, _ICFCallProviderShouldAllowIncomingCallWithQueue, 
                        _ICFRegisterCallFilterBlockWithIdentifier, _ICFRegisterCallFilterResultBlockWithIdentifier, 

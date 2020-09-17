@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F06C65C5-2CBE-313C-96E1-A09240F9FE57', 'x86_64: F06C
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_networkextension.dylib'
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NEHelperCacheAddRedirectedAddress, _NEHelperCacheClearRedirectedAddresses, 
                        _NEHelperCacheClearUUIDs, _NEHelperCacheCopyAppUUIDMapping, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EE3A975D-D678-3F81-9EDE-2D394232A5C9', 'x86_64: EE3A975D-D678-3F81-9EDE-2D394232A5C9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreNameParser.framework/Versions/A/CoreNameParser'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __NPCollapseWhitespaceAndStrip, __NPRemoveAppSignature, __NPRemoveEmojis, 
                        __NPRemoveParenthesisBracketsAndInside, __NPStripDiatritics, 

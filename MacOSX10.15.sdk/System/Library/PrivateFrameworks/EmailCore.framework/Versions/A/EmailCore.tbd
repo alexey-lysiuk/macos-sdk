@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9B87C589-EAB4-3636-B9A8-26D9231F379E', 'x86_64: 9B87
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmailCore.framework/Versions/A/EmailCore'
 current-version: 3608.120.23
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ECAccountCacheKeyEnabled, _ECAccountCacheKeyParentAccount, 
                        _ECAccountSchemeDataAccess, _ECAccountSchemeEWS, _ECAccountSchemeIMAP, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5FC5F72A-29EB-3371-ABF4-AA079B1B567D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterBase.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CSIErrorString, _CSIEventString, _DERDecoderGetBuffer, _DERDecoderGetBufferLength, 
                        _DERDecoderGetCount, _DERDecoderGetDataAt, _DERDecoderGetDataWithTag, 

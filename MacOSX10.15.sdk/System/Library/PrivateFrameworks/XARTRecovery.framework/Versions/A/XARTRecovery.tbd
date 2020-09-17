@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B7693010-7A50-333E-A0D5-C1CE9D86F064' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/XARTRecovery.framework/Versions/A/XARTRecovery'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _XARTRecoveryVersionNumber, _XARTRecoveryVersionString, _xart_msg_create, 
                        _xart_msg_create_reply, _xart_msg_get_error_string, _xart_msg_release, 

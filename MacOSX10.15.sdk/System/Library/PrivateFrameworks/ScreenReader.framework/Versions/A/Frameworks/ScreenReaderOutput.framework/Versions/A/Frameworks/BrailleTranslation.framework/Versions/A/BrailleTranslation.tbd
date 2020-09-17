@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4A9C4464-5AD4-3D2B-80E6-666990EE7787' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderOutput.framework/Versions/A/Frameworks/BrailleTranslation.framework/Versions/A/BrailleTranslation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BRLTFlagsForMode, _BRLTLog, _BRLTModeDescription, _BRLTModeForFlags, 
                        _BRLTSConnectionHasEntitlement, _BRLTTranslationServiceClientInterface, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: FE7393B7-E997-3E06-8A16-284C5FA43E21', 'x86_64: FE73
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/QuickLookUIIosmac.framework/Versions/A/QuickLookUIIosmac'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _QuickLookUIIosmacVersionNumber, _QuickLookUIIosmacVersionString, 
                        _sharedQLIosMacPanelHelper ]

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C2560F5C-4A3F-3649-AAE1-0A6177A4C4FA', 'x86_64: C256
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DeviceToDeviceManager.framework/Versions/A/DeviceToDeviceManager'
 current-version: 38
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _D2DInitialize, _D2DRelease, _D2DRetain, _D2DStartAdvertisingPair, 
                        _D2DStartAdvertisingPairOnTransport, _D2DStartBrowsingForKey, 

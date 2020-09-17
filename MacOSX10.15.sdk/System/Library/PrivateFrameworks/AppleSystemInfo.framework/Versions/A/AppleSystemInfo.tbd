@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 67255151-F989-39F0-BC87-0C0BDAE70730', 'x86_64: 67255151-F989-39F0-BC87-0C0BDAE70730' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleSystemInfo.framework/Versions/A/AppleSystemInfo'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASI_BusSpeedInHz, _ASI_CPUSpeedInHz, _ASI_CopyBusSpeedDescription, 
                        _ASI_CopyCPUDescription, _ASI_CopyCPUKind, _ASI_CopyComputerModelName, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 40225C85-4B4F-398B-B599-BF96E9E325D0' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/iTunesLibrary.framework/Versions/A/iTunesLibrary'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.10$/Library/Frameworks/iTunesLibrary.framework/iTunesLibrary', 
                        '$ld$install_name$os10.11$/Library/Frameworks/iTunesLibrary.framework/iTunesLibrary', 

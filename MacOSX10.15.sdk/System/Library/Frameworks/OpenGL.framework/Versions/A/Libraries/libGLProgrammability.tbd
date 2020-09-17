@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 85815C4E-3376-33DF-9FBB-6512142AB61B', 'x86_64: 85815C4E-3376-33DF-9FBB-6512142AB61B' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLProgrammability.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PPParserAttachLLVMIR, _PPParserAttachStream, _PPParserAttachString, 
                        _PPParserBuildErrorString, _PPParserCreate, _PPParserFree, 

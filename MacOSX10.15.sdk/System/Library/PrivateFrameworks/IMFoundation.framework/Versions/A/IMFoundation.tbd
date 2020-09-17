@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: BAEB40B7-908F-3D97-9BE9-5EAB83930543', 'x86_64: BAEB
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CopyKeychainSearchList, _ExtractURLQueries, _FZAVErrorDomain, 
                        _FZRelayParameter_ConnectionID, _FZRelayParameter_PeerBlob, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C6509C49-9A2E-3E8F-8001-EDCE8C7D0F8C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AudioSession.framework/libSessionXPCServer.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AVAudioSession_startXPCServer, __ZN17PlatformUtilities11ProcessNameEi, 
                        __ZN17PlatformUtilities11processNameEi, __ZN17PlatformUtilities25CopyHardwareModelFullNameEv, 

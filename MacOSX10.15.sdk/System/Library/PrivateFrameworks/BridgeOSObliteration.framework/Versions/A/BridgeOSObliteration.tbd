@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CF4BC91D-7F48-3520-9EB0-0D59E35E2F8A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BridgeOSObliteration.framework/Versions/A/BridgeOSObliteration'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BridgeOS_Obliterate, _kDisplayProgressBarKey, _kMobileObliterationError, 
                        _kMobileObliterationInternalError, _kMobileObliterationRebootError, 

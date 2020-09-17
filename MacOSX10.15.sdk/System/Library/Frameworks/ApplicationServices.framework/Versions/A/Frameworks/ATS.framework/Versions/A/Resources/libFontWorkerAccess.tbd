@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C277D45D-90BE-38B1-A088-B95E00869CFB', 'x86_64: C277D45D-90BE-38B1-A088-B95E00869CFB' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontWorkerAccess.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AskATSIfReadyForXType, _AskATSToShutdown, _DoNotifyATS, _GetFontWorkerVT, 
                        _XTConsumeSandboxExtension, _XTConsumeSandboxExtensions, _XTDataStreamAppendBytes, 

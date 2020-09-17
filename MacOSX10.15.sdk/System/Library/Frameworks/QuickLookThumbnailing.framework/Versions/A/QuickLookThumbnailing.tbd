@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9CCB50D8-AA39-3744-93FB-7B5B65467AB3', 'x86_64: 9CCB
 platform:        zippered
 install-name:    '/System/Library/Frameworks/QuickLookThumbnailing.framework/Versions/A/QuickLookThumbnailing'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _QLCreateCGImageWithData, _QLCreateColorSpaceForThumbnailExtension, 
                        _QLImageCreateForDefaultThumbnailGenerationFromData, _QLShouldUseExtendedRangeForContextWithColorspace, 

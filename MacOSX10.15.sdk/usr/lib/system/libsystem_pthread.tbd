@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libsystem_pthread.dylib'
 current-version: 416.100.3
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ____chkstk_darwin, ___is_threaded, ___pthread_init, ___pthread_workqueue_setkill, 
                        ___unix_conforming, __pthread_atfork_child, __pthread_atfork_child_handlers, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C1D24684-AB11-3DF4-AEDC-1C31F47DF6CF', 'x86_64: C1D2
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libCyrillicConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetCyrillicConverterDefinition ]
 ...

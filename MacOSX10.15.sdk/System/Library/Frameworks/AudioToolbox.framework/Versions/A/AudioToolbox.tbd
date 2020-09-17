@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8CFA0620-5E43-3C4D-A75B-981C0961C2DE', 'x86_64: 8CFA
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox'
 current-version: 1000
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/AudioToolboxCore.framework/Versions/A/AudioToolboxCore' ]
     symbols:         [ '$ld$hide$os10.10$_AudioCodecAppendInputBufferList', '$ld$hide$os10.10$_AudioCodecAppendInputData', 
@@ -273,7 +273,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5B539F50-93E8-3F73-9E4C-678C85D0488F', 'x86_64: 5B539F50-93E8-3F73-9E4C-678C85D0488F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AudioToolboxCore.framework/Versions/A/AudioToolboxCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AudioCodecs, AudioDSPGraph, AudioDSPManager, AudioHistory, 
                          AudioServerDriver, AudioToolbox, CoreAudio, CoreMedia, EmbeddedSystemAUs, 

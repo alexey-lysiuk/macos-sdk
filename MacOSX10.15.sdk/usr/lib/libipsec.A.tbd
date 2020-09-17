@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 98BB3F58-BC5B-3214-B72B-BA146BAA9134', 'x86_64: 98BB
 platform:        zippered
 install-name:    '/usr/lib/libipsec.A.dylib'
 current-version: 300
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___ipsec_errcode, ___ipsec_set_strerror, ___libipsec_create_buffer, 
                        ___libipsec_delete_buffer, ___libipsec_flex_debug, ___libipsec_flush_buffer, 

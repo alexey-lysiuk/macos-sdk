@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 225FAD2B-DF67-3012-8047-74DA09B40B2C', 'x86_64: 225FAD2B-DF67-3012-8047-74DA09B40B2C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RTTUtilities.framework/Versions/A/RTTUtilities'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXTTYMessageKeyCallID, _AXTTYMessageKeyContactID, _AXTTYMessageKeyContactPathSearchAction, 
                        _AXTTYMessageKeyContactSearchAction, _AXTTYMessageKeyConversation, 

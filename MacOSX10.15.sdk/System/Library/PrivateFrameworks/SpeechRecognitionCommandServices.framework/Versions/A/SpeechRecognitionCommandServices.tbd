@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 312CDC95-6CE9-3E2F-BC5C-0C1B7D260468' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpeechRecognitionCommandServices.framework/Versions/A/SpeechRecognitionCommandServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CreateMutableDictionaryFromSpokenCommandString, _IsValidCommandParameterIdentifier, 
                        _SRCSLogGeneral, _SpeechRecognitionCommandServicesVersionNumber, 

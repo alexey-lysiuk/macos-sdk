@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Safari.framework/Versions/A/Safari'
 current-version: 609.3.5
 compatibility-version: 528
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BAChangeCopyChangedItem, _BAChangeCopyServerId, _BAChangeCopySourceServerIdForMove, 
                        _BAChangeGetChangeType, _BAChangeGetIsBookmarkChange, _BAChangeGetIsFolderChange, 

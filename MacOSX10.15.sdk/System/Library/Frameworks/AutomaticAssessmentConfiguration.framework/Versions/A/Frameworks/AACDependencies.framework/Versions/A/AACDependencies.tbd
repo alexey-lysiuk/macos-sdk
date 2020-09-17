@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B24540B1-6054-3722-B59B-4BC07BDA5982' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AutomaticAssessmentConfiguration.framework/Versions/A/Frameworks/AACDependencies.framework/Versions/A/AACDependencies'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s15AACDependencies26AERCurrentWindowsPublisherV16windowPrimitives07refreshD0ACSo09AERWindowF0_p_7Combine03AnyD0Vyyps5NeverOGtcfC', 
                        '_$s15AACDependencies26AERCurrentWindowsPublisherV7Combine0D0AAMc', 

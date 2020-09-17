@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: ECE0EE72-86AD-3196-927E-218BFFF5A7AE', 'x86_64: ECE0EE72-86AD-3196-927E-218BFFF5A7AE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ParsecSubscriptionServiceSupport.framework/Versions/A/ParsecSubscriptionServiceSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ParsecSubscriptionServiceSupportVersionNumber, _ParsecSubscriptionServiceSupportVersionString ]
     objc-classes:    [ PSSSSubscriptionManager, PSSSSubscriptionManagerInternal ]

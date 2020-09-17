@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F8B25C92-FE73-3EBA-BD57-E28835E15691' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpotlightServices.framework/Versions/A/SpotlightServices'
 current-version: 2076.7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PRSDirectivesManagerDescriptorsForModelInputScore, _PRSLogCategoryDefault, 
                        _PRSModelErrorDomain, _PRSModelManagerAssociatedObjectKeyForType, 

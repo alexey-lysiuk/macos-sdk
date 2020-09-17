@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BCD744D4-E17E-3C2E-B69C-F69C789892E9', 'x86_64: BCD744D4-E17E-3C2E-B69C-F69C789892E9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IOSurfaceAlignProperty, _IOSurfaceAllowsPixelSizeCasting, 
                        _IOSurfaceBindAccel, _IOSurfaceBindAccelOnPlane, _IOSurfaceCopyAllValues, 

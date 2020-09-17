@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4415F027-D36D-3B9C-96BA-AD22B44A4722' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/NetFS.framework/Versions/A/NetFS'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GetCompleteMountURL, _GetURLFromURLRemountInfo, _GetURLRemountInfo, 
                        _GetURLRemountInfoSize, _MountCompleteURL, _MountServerURL, 

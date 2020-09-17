@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B424FE0C-6E90-3BFA-A6E7-DD86C735AE90', 'x86_64: B424
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/Versions/A/MPSImage'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSNeuralNetwork, MetalPerformanceShaders ]
     symbols:         [ _MPSSubTileEncode ]

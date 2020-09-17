@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: CA6C86FD-051A-31BB-B3AF-3D02D6FD94B6', 'x86_64: CA6C
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/LocationSupport.framework/Versions/A/LocationSupport'
 current-version: 2394.0.22
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CLISP_ME_TOKEN, _CLProfilingIdentify, _CLProfilingIdentifySiloInvocation, 
                        _CLWriteStackshot, __ZN12CLConnection10isEntitledERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 

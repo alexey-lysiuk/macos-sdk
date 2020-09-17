@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 01B8B6B3-E2C3-3607-B34A-8283A7E0E924' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis'
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DCMAddFoundRecordToIteratorAM, _DCMAddRecord, _DCMCloseDictionary, 
                        _DCMCompactDictionary, _DCMCopyParametersFromData, _DCMCountObjectIterator, 

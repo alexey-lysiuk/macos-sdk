@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 643B8E76-76BC-36E8-8142-992FA912539A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudFamilyRestrictions.framework/Versions/A/CloudFamilyRestrictions'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CFRAllowedContactEmail, _CFRAllowedContacts, _CFRAppAccessEnabledKey, 
                        _CFRAppBlackListKey, _CFRAppLimitsDomain, _CFRAppLimitsOldDomain, 

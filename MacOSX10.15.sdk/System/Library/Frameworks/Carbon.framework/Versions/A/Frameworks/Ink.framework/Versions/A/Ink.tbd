@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink'
 current-version: 227
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _InkAddStrokeToCurrentPhrase, _InkIsPhraseInProgress, _InkSetApplicationRecognitionMode, 
                        _InkSetApplicationWritingMode, _InkSetDrawingMode, _InkSetPhraseTerminationMode, 

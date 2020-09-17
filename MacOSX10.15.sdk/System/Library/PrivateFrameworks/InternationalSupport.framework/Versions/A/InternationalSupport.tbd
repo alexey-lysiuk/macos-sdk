@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8D8D4A7D-FD35-36B8-A456-7C93030EDAB3', 'x86_64: 8D8D
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/InternationalSupport.framework/Versions/A/InternationalSupport'
 current-version: 45.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _InternationalSupportVersionNumber, _InternationalSupportVersionString ]
     objc-classes:    [ ISUtilities ]

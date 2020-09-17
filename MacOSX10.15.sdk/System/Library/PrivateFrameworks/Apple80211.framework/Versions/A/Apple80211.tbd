@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C53B760A-3305-3053-9BBE-BB70AE3C349B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Apple80211'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ACInterfaceCreate, _ACInterfaceDeviceNameCopy, _ACInterfaceGetPower, 
                        _ACInterfaceSetPower, _ACNetworkAssociate, _ACNetworkCopyBroadcastScanResults, 

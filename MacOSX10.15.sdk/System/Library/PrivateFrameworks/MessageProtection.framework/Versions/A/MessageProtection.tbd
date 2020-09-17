@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AA3D5DF1-8822-3589-B430-8817EF5E7F86', 'x86_64: AA3D
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MessageProtection.framework/Versions/A/MessageProtection'
 current-version: 206.100.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SecExposeStream, _SecMPComputePaddingForStorage, _SecMPCopyProtectedMsgHash, 
                        _SecMPFIAppendSerialization, _SecMPFICopyProtClass, _SecMPFIPurgeAllFromKeychain, 

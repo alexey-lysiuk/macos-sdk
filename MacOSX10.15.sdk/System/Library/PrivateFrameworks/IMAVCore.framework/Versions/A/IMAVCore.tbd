@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 89E31A17-6EE9-3976-889A-6E83C9B53A9F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMAVCore.framework/Versions/A/IMAVCore'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IMAVCallManagerCallStateChangedNotification, _IMAVCallManagerCallStateKey, 
                        _IMAVCallManagerPreviousCallStateKey, _IMAVChatCameraAspectRatioKey, 

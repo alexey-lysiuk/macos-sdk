@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 982B20EF-64C1-371B-839A-FBE8F326FA2A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ProactiveSupportStubs.framework/Versions/A/ProactiveSupportStubs'
 current-version: 258.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ProactiveSupportStubsVersionNumber, _ProactiveSupportStubsVersionString ]
     objc-classes:    [ _PASDeviceStateStub ]

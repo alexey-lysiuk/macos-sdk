@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 871ADF11-ACC2-3506-918D-C58B6EB90ADD', 'x86_64: 871ADF11-ACC2-3506-918D-C58B6EB90ADD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CDDataAccessExpress.framework/Versions/A/CDDataAccessExpress'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASClientAccountDumpStatusNotification, _ASPolicyErrorCodeKey, 
                        _ASPolicyErrorKey, _ASPolicyKey, _ASPolicyKeyChangedNotification, 

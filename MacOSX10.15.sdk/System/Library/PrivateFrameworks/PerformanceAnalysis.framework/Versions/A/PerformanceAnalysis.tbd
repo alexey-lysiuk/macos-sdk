@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B47C00E5-ECC2-313D-93D4-DBDF562C48EF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis'
 current-version: 243.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PACFBundleCopyStringForKey, _PACancelOperation, _PACurrentRealTimeInSeconds, 
                        _PADetailedPerfLoggingWhiteListAddEntry, _PADetailedPerfLoggingWhiteListClearList, 

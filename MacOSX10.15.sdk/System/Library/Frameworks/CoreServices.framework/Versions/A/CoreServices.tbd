@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AA140158-E909-34C2-B2F5-20EBC93E0056', 'x86_64: AA14
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices'
 current-version: 1069.24
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork', 
                        '/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation', 
@@ -33,7 +33,7 @@ install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/F
 current-version: 838.1
 compatibility-version: 0
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ DesktopServices, Foundation, HIServices, LaunchServices, 
                          PrintCore ]
@@ -111,7 +111,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore'
 current-version: 1217
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AudioToolbox, Foundation, Metadata ]
     symbols:         [ _AbsoluteDeltaToDuration, _AbsoluteDeltaToNanoseconds, _AbsoluteToDuration, 
@@ -754,7 +754,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices'
 current-version: 323.7
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DCSActivateDictionaryPanel, _DCSCopyActiveDictionaries, _DCSCopyAvailableDictionaries, 
                        _DCSCopyDefinitionMarkup, _DCSCopyDefinitionRecords, _DCSCopyDefinitions, 
@@ -821,7 +821,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents'
 current-version: 1268.100.1
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FSEventStreamCopyDescription, _FSEventStreamCopyPathsBeingWatched, 
                        _FSEventStreamCreate, _FSEventStreamCreateRelativeToDevice, 
@@ -840,7 +840,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices'
 current-version: 1069.24
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ Foundation ]
     symbols:         [ _AcquireIconRef, _CompositeIconRef, _GetCustomIconsEnabled, 
@@ -1220,7 +1220,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata'
 current-version: 2076.7
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ Foundation ]
     symbols:         [ _MDBackupBegin, _MDBackupCancel, _MDBackupCreate, _MDBackupEnd, 
@@ -1664,7 +1664,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices'
 current-version: 1069.24
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AlertSoundPlay, _AlertSoundPlayCustomSound, _BatteryCount, 
                        _CSGetDefaultIdentityAuthority, _CSGetLocalIdentityAuthority, 
@@ -1801,7 +1801,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit'
 current-version: 417.1
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AIATFree, _AIATGetAllocator, _AIATMalloc, _AIATRegisterReportErrorUPP, 
                        _AIATSetAllocator, _DisposeIASearchIsHitFilterUPP, _IACFDataDocAccessorCreate, 
@@ -1924,7 +1924,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList'
 current-version: 131.4
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ Foundation ]
     symbols:         [ _LSSharedFileListAddObserver, _LSSharedFileListAddObserverOnQueue, 

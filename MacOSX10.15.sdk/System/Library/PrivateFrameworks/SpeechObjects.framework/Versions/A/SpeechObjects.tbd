@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D08CC887-96FA-3A69-8B96-89F9AB5E824A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpeechObjects.framework/Versions/A/SpeechObjects'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSSpeechSynthesizerImmedidateBoundary, _NSSpeechSynthesizerSentenceBoundary, 
                        _NSSpeechSynthesizerWordBoundary, _SDIMLocalCallBack, _SODecodeSecureArray, 

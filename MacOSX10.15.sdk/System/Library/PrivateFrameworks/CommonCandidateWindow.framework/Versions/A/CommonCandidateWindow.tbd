@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6FE5079B-D96C-35E3-9D3D-3194D31A8428' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CommonCandidateWindow.framework/Versions/A/CommonCandidateWindow'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CCWAttachChild, _CCWClearSelection, _CCWCreate, _CCWDetachChild, 
                        _CCWGetCandidateAtLineNumber, _CCWGetCandidateAtSelection, 

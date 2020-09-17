@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D46649DF-BCDA-3017-89BE-996776E1A353' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IOImageLoader.framework/Versions/A/IOImageLoader'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN28IOImageLoaderImageDictionary12getAttributeEP14__CFDictionaryPK10__CFString, 
                        __ZN28IOImageLoaderImageDictionary12getAttributeEP14__CFDictionaryPKc, 

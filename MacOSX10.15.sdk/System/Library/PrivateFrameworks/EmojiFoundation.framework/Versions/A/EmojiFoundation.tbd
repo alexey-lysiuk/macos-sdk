@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F498EE1E-7C0C-35D3-9614-16A3AB278A13', 'x86_64: F498EE1E-7C0C-35D3-9614-16A3AB278A13' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmojiFoundation.framework/Versions/A/EmojiFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EMFEmojiCategoryActivity, _EMFEmojiCategoryFlags, _EMFEmojiCategoryFoodAndDrink, 
                        _EMFEmojiCategoryNature, _EMFEmojiCategoryObjects, _EMFEmojiCategoryPeople, 

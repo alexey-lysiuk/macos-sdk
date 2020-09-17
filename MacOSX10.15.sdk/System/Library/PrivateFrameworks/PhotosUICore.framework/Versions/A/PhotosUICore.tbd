@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 146FCA5F-FBEB-315F-BE63-69E8384BF2D7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotosUICore.framework/Versions/A/PhotosUICore'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CALayerContentsGravityFromPXGContentsGravity, _CGImagePropertyOrientationFromPXImageOrientation, 
                        _FromZoomLevelInAnimation, _NSStringFromPXEdgeInsets, _NSStringFromPXGAccessiblityContentKind, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3C2D0FE7-CDA3-3B31-A67E-BBF069CFA5B8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BookKitFoundation.framework/Versions/A/BookKitFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BCMetadataXattrAssetID, _BCMetadataXattrAuthor, _BCMetadataXattrBookDescription, 
                        _BCMetadataXattrComments, _BCMetadataXattrExplicit, _BCMetadataXattrFirstOpened, 

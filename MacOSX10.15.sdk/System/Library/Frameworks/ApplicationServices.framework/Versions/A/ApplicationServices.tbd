@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D4320505-6458-38FD-81F0-406F2F0A4039', 'x86_64: D432
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices'
 current-version: 52
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS', 
                        '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/ColorSyncLegacy', 
@@ -26,7 +26,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS'
 current-version: 236
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AGAddAttribute, _AGBeginIteration, _AGComputeByteCapacity, 
                        _AGComputeByteCapacityV, _AGComputeChecksum, _AGComputeIncrementalCapacity, 
@@ -178,7 +178,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5F513967-DDD7-3F22-AD14-8A38ABD9F2D0' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATSUI.framework/Versions/A/ATSUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ATSApplyMorph, _ATSClearGlyphVector, _ATSGrowGlyphVector, 
                        _ATSInitializeGlyphVector, _ATSUBatchBreakLines, _ATSUBreakLine, 
@@ -238,7 +238,7 @@ uuids:           [ 'x86_64: 72EE68DB-F069-37F5-AA2A-40D5FCF139F4' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/ColorSyncLegacy'
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ DMProxy ]
     symbols:         [ _CMCloneProfileRef, _CMCloseProfile, _CMConvertDoubleXYZToD50, 
@@ -290,7 +290,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices'
 current-version: 676
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXAPIEnabled, _AXIsProcessTrusted, _AXIsProcessTrustedWithOptions, 
                        _AXMakeProcessTrusted, _AXObserverAddNotification, _AXObserverAddNotificationAsync, 
@@ -513,7 +513,7 @@ uuids:           [ 'x86_64: 01B8B6B3-E2C3-3607-B34A-8283A7E0E924' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis'
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DCMAddFoundRecordToIteratorAM, _DCMAddRecord, _DCMCloseDictionary, 
                        _DCMCompactDictionary, _DCMCopyParametersFromData, _DCMCountObjectIterator, 
@@ -556,7 +556,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore'
 current-version: 516.2
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CPLAutoSelectCancel, _CPLAutoSelectCreateContext, _CPLAutoSelectGetInfo, 
                        _CPLAutoSelectHasNewPPD, _CPLAutoSelectInstallableOptions, 
@@ -724,7 +724,7 @@ uuids:           [ 'x86_64: 27A36D07-B5E9-32E6-87B6-3127F260F48D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD'
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATSUI.framework/Versions/A/ATSUI' ]
     symbols:         [ '$ld$hide$os10.10$_AddPt', '$ld$hide$os10.10$_ClipCGContextToRegion', 
@@ -1113,7 +1113,7 @@ uuids:           [ 'x86_64: 75344F8F-32CA-3558-B4E6-F56D498250E4' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis'
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CancelSpokenNotification, _CancelSpokenNotificationForProcess, 
                        _CancelTalkingAlert, _ContinueSpeech, _CopyAvailableIntervals, 

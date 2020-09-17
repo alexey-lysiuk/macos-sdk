@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 57697048-D149-34D0-9499-05821C791EA2', 'x86_64: 57697048-D149-34D0-9499-05821C791EA2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreRecents.framework/Versions/A/CoreRecents'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CRAddressKindEmail, _CRAddressKindGroup, _CRAddressKindInstantMessage, 
                        _CRAddressKindMapLocation, _CRAddressKindPhoneNumber, _CRAddressKindURL, 

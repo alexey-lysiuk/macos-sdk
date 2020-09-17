@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3ED35C5A-B170-373E-8277-D4198E408810', 'x86_64: 3ED35C5A-B170-373E-8277-D4198E408810' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/NetworkExtension.framework/Versions/A/NetworkExtension'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/Network.framework/Versions/A/Network' ]
     symbols:         [ _CFARRAY_TYPE, _CFBOOLEAN_TYPE, _CFDATA_TYPE, _CFDICTIONARY_TYPE, 

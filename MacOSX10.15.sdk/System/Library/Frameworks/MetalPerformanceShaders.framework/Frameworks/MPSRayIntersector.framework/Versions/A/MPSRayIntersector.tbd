@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B0B591F8-6875-351E-867F-8EB3CD38CD52', 'x86_64: B0B5
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MetalPerformanceShaders ]
     symbols:         [ _MPSAccelerationStructureBuilderCPU, _MPSAccelerationStructureBuilderGPU, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DD0C4E18-F465-3CFF-BE02-92F910E26019' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/Pear.framework/Versions/A/Pear'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/usr/lib/libxml2.2.dylib' ]
     symbols:         [ _LibXML2NodeListCreateFromPearCodecInfoList, _PearCodecInfoCopyLibXML2Node, 

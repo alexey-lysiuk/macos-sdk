@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6068BAD9-0878-3491-97E4-6CF6BC813C2E', 'x86_64: 6068
 platform:        zippered
 install-name:    '/usr/lib/libffi.dylib'
 current-version: 26
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ffi_call, _ffi_closure_alloc, _ffi_closure_free, _ffi_find_closure_for_code_np, 
                        _ffi_get_struct_offsets, _ffi_java_ptrarray_to_raw, _ffi_java_raw_call, 

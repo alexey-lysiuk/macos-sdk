@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8F904E03-8B1F-31AD-9318-42CD0AD5F728' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppSupportUI.framework/Versions/A/AppSupportUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NUIContainerViewDirectionalInsetsUseDefault, _NUIContainerViewDirectionalInsetsUseSystem, 
                        _NUIContainerViewInsetsUseDefault, _NUIContainerViewInsetsUseSystem, 

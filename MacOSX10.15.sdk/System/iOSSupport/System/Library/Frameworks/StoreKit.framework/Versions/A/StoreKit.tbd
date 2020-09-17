@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DF86C213-6EFD-3973-8BE9-ED8C92ECC48E' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/StoreKit.framework/Versions/A/StoreKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SKCloudServiceCapabilitiesDidChangeNotification, _SKCloudServiceSetupActionSubscribe, 
                        _SKCloudServiceSetupMessageIdentifierAddMusic, _SKCloudServiceSetupMessageIdentifierConnect, 

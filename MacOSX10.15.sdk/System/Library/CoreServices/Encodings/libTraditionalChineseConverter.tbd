@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AE28CE00-994E-3D79-A716-6B2694F42BD0', 'x86_64: AE28
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libTraditionalChineseConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetTraditionalChineseConverterDefinition ]
 ...

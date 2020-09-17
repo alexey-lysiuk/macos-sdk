@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: CC67D52B-EB49-3139-8E6A-992AA2E8B27F', 'x86_64: CC67
 platform:        zippered
 install-name:    '/usr/lib/log/liblog_SystemConfiguration.dylib'
 current-version: 1061.141.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogCopyFormattedString, _OSStateCreateStringWithData ]
 ...

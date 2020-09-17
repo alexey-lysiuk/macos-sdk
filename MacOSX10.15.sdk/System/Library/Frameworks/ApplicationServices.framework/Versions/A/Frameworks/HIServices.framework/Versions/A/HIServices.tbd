@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices'
 current-version: 676
 parent-umbrella: ApplicationServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXAPIEnabled, _AXIsProcessTrusted, _AXIsProcessTrustedWithOptions, 
                        _AXMakeProcessTrusted, _AXObserverAddNotification, _AXObserverAddNotificationAsync, 

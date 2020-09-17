@@ -5,7 +5,7 @@ uuids:           [ 'x86_64: 4B6AB2C1-7CF5-3FDA-AC1C-04E531AB9BCE', 'x86_64: 4B6A
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage'
 current-version: 524.2.1
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _Init_vImage, _SetvImageThreadCount, _SetvImageThreadState, 
                        _SetvImageVectorAvailable, __vImage_TempBuffer_Enable_Legacy, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 51D93E5B-D80B-3D68-8428-9D7684A8F1EC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Slideshows.framework/Versions/A/Frameworks/OpusFoundation.framework/Versions/A/OpusFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CLLocationCoordinate2DFromString, _MKCoordinateRegionFromString, 
                        _NSColorFromString, _NSEdgeInsetsFromString, _NSIndexPath2DFromString, 

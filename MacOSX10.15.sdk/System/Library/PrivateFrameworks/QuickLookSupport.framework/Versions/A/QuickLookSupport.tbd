@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AFB0DFCC-6580-30E5-8984-831985F37A2C', 'x86_64: AFB0
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/QuickLookSupport.framework/Versions/A/QuickLookSupport'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _QLAdaptContextCTMToFitRectInRect, _QLAdaptContextCTMToScaleRectToRect, 
                        _QLAdaptSizeInSize, _QLAdaptSizeOutSize, _QLAdaptSizeToRect, 

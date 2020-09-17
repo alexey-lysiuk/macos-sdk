@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6FC06AC7-C636-3ECA-AC0C-79C179A5C012' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CalendarAgent.framework/Versions/A/CalendarAgent'
 current-version: 930.5.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CalAgentErrorDomain, _CalAgentErrorGenerateStringVersion, 
                        _CalAgentNS_ApplePushServiceConnection, _CalAgentNS_Log, _CalAgentNS_Log_Accounts, 

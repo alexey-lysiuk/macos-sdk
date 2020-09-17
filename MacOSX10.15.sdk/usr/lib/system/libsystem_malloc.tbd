@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libsystem_malloc.dylib'
 current-version: 283.100.6
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___mach_stack_logging_copy_uniquing_table, ___mach_stack_logging_enumerate_records, 
                        ___mach_stack_logging_frames_for_uniqued_stack, ___mach_stack_logging_get_frames, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 21CE7B78-785C-39E3-8D1E-3D45299DBCE4' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ContactsUI.framework/Versions/A/ContactsUI'
 current-version: 2421.27
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ABCNContactSortByFirstName, _ABCNContactSortByLastName, _ABCNContactSortingSubstringAttributeName, 
                        _ABCN_PICKER_GROUP_LIST_MAX_WIDTH_KEY, _ABCN_PICKER_GROUP_LIST_MAX_WIDTH_VALUE, 

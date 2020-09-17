@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7444D6BA-0830-3610-A217-F51386D04698' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ConversationKit.framework/Versions/A/ConversationKit'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s15ConversationKit029ParticipantViewLabelContainerD0C10isCenteredSbvM', 
                        '_$s15ConversationKit029ParticipantViewLabelContainerD0C10isCenteredSbvg', 

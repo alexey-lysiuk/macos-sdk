@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 490DE897-E1A0-3BCC-BB62-5EFFC32291D7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AutoBugCaptureCore.framework/Versions/A/AutoBugCaptureCore'
 current-version: 1238.120.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ ABCAdministrator ]
 ...

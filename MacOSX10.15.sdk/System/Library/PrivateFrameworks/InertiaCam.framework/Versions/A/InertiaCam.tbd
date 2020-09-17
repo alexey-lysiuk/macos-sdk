@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9896768B-D2E4-32B8-B88D-27806A55445B', 'x86_64: 9896768B-D2E4-32B8-B88D-27806A55445B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/InertiaCam.framework/Versions/A/InertiaCam'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ICAnalyzeInputMotion, _ICCalcCanDoTripod, _ICCalcCinematicL1Corrections, 
                        _ICCalcPassThruCorrections, _ICCalcSmoothingCorrections, _ICCalcTripodCorrections, 

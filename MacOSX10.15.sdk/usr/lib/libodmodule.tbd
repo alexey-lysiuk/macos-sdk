@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 68A107FF-6A99-302C-88DD-79640EB8AC66' ]
 platform:        macosx
 install-name:    '/usr/lib/libodmodule.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CFArrayAppendServer, _ODModuleMsgKeyAccountName, _ODModuleMsgKeyAdditionalInfo, 
                        _ODModuleMsgKeyAuthInformationType, _ODModuleMsgKeyConnectionFlags, 

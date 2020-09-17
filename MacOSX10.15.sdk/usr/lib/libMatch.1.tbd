@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5C6F3971-9D9E-3630-BDB6-60BFC5A665E0', 'x86_64: 5C6F3971-9D9E-3630-BDB6-60BFC5A665E0' ]
 platform:        zippered
 install-name:    '/usr/lib/libMatch.1.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _matchCombine, _matchCompile, _matchDiagram, _matchDup, _matchExec, 
                        _matchFree, _matchInit, _matchOptimize, _matchPack, _matchPrintNodes, 

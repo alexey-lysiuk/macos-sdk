@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6CF18E28-A7A8-3952-8171-7E4FF4FB37FA', 'x86_64: 6CF18E28-A7A8-3952-8171-7E4FF4FB37FA' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _H264VideoDecoder_CreateInstance, _MPEG4VideoDecoder_CreateInstance, 
                        _VCH263VideoDecoder_CreateInstance, _VCH263VideoEncoder_CreateInstance, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 371F36A7-B12F-363E-8955-F24F7C2048F6', 'x86_64: 371F36A7-B12F-363E-8955-F24F7C2048F6' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libQuadrature.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ vecLib ]
     symbols:         [ _quadrature_integrate ]

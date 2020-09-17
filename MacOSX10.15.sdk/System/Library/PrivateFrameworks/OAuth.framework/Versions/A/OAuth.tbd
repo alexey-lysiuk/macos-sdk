@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7C2D9BA1-E683-3257-8ADB-A4846C8D42F2', 'x86_64: 7C2D
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/OAuth.framework/Versions/A/OAuth'
 current-version: 25
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OAAuthTokenKey, _OAConsumerKeyKey, _OANonceKey, _OASignatureKey, 
                        _OASignatureMethodKey, _OATimestampKey, _OAVersionKey, _oauth_version ]

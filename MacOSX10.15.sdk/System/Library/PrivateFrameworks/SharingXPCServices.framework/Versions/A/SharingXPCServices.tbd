@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C0EBC4DE-0D53-33F6-A48A-34215E962A90' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SharingXPCServices.framework/Versions/A/SharingXPCServices'
 current-version: 1526.37
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SharingXPCServicesVersionNumber, _SharingXPCServicesVersionString ]
 ...

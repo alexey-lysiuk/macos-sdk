@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 017B0334-8AC4-304B-A5E2-C82C51BE1917', 'x86_64: 017B
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI'
 current-version: 69
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MIDIClientCreate, _MIDIClientCreateWithBlock, _MIDIClientDispose, 
                        _MIDIConfigCheckVirginState, _MIDIConfigDelete, _MIDIConfigDuplicate, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5DAF38C9-53CF-319A-A853-C2EDC46F30EF', 'x86_64: 5DAF
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GraphicsServices.framework/Versions/A/GraphicsServices'
 current-version: 14
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GSColorCreateColorWithDeviceRGBA, _GSColorCreateColorWithDeviceRGBAInfo, 
                        _GSColorCreateWithDeviceWhite, _GSColorGetRGBAComponents, 

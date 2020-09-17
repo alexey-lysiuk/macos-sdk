@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 159CEABA-54A9-3FED-BD02-0849CBF4D498' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/A/Libraries/libmetallinker.dylib'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MTLOptimizeUsedListForFunctionConstants, _MTLRemoveUnusedFunctionConstantsFromUsedList ]
 ...

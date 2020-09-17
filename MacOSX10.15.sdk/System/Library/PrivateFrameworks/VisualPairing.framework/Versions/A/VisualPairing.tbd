@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VisualPairing.framework/Versions/A/VisualPairing'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ VPPresenterView, VPScannerView ]
 ...

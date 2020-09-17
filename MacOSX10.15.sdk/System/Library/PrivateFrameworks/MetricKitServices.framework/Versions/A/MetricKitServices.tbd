@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 659B176A-A641-31CB-9B22-A45229087AE6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MetricKitServices.framework/Versions/A/MetricKitServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MetricKitServicesVersionNumber, _MetricKitServicesVersionString ]
     objc-classes:    [ MXPowerlogService, MXService, MXUtilities ]

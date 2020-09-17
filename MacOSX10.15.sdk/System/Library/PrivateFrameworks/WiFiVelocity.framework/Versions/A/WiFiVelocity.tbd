@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 55D057F9-7B47-3B44-93B1-FC3F338071DC', 'x86_64: 55D057F9-7B47-3B44-93B1-FC3F338071DC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WiFiVelocity.framework/Versions/A/WiFiVelocity'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _W5DebugDescriptionForAWDLSyncChannelSequence, _W5DebugDescriptionForAWDLSyncState, 
                        _W5DescriptionForAWDLElectionParameters, _W5DescriptionForAWDLOpMode, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E37D5C0A-684B-3DB3-9579-ABEDD31955E5' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/MediaLibrary.framework/Versions/A/MediaLibrary'
 current-version: 787
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MLApertureAllPhotosTypeIdentifier, _MLApertureAllProjectsTypeIdentifier, 
                        _MLApertureFacebookAlbumTypeIdentifier, _MLApertureFacebookGroupTypeIdentifier, 

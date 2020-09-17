@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 25320834-10AC-3DCC-8B63-DE8EE134E5EA' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MessageUI.framework/Versions/A/MessageUI'
 current-version: 3608.120.23
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MFAccessibilityLargeTextEnabled, _MFAutomaticHorizontalEdgeInsets, 
                        _MFCenteredRectInRectWithViewScale, _MFComposeRecipientDragType, 

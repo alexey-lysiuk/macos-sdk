@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E3789D53-6A48-3D73-8B54-071E167C3DB4', 'x86_64: E3789D53-6A48-3D73-8B54-071E167C3DB4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDProtobufFacetime.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN3awd7metrics12PLRHistogram10SharedCtorEv, __ZN3awd7metrics12PLRHistogram10SharedDtorEv, 
                        __ZN3awd7metrics12PLRHistogram16default_instanceEv, __ZN3awd7metrics12PLRHistogram17default_instance_E, 

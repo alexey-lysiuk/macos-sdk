@@ -5,7 +5,7 @@ platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftPencilKit.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s9PencilKit11PKLassoToolV19_bridgeToObjectiveCSoABCyF', 
                        '_$s9PencilKit11PKLassoToolV26_forceBridgeFromObjectiveC_6resultySoABC_ACSgztFZ', 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 07F9CA9C-B954-3EA0-A710-3122BFF9F057', 'x86_64: 07F9
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$hide$os10.6$_NSHTTPCookieComment', '$ld$hide$os10.6$_NSHTTPCookieCommentURL', 
                        '$ld$hide$os10.6$_NSHTTPCookieDiscard', '$ld$hide$os10.6$_NSHTTPCookieDomain', 

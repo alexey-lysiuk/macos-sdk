@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EE033591-512D-3AE0-B87C-7036AE29B8FB', 'x86_64: EE033591-512D-3AE0-B87C-7036AE29B8FB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BluetoothManager.framework/Versions/A/BluetoothManager'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AddressForBTDevice, _BluetoothAccessoryInEarStatusNotification, 
                        _BluetoothAccessorySealValueStatusNotification, _BluetoothAccessorySettingsChanged, 

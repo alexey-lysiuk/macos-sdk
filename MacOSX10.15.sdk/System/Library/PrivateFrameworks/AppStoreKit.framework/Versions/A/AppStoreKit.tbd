@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B6CC48BC-5301-39BA-8003-B5364ED11865' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppStoreKit.framework/Versions/A/AppStoreKit'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ App Store, MacAppStore, MacAppStoreTests ]
     symbols:         [ '_$s10Foundation12NotificationV11AppStoreKitE041makePersonalizationDataProviderDidRefreshB04with6objectAcD0G5StyleO_ypSgtFZ', 

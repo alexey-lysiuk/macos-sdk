@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 87CEE13C-8585-3EFB-92CD-0852DFF0921B', 'x86_64: 87CEE13C-8585-3EFB-92CD-0852DFF0921B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppContainer.framework/Versions/A/AppContainer'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASBBundleIdPassesSanityCheck, _ASBContainerErrorsIsOtherReportableError, 
                        _ASBContainerErrorsIsPermissionsError, _ASBContainerErrorsRecordPermissionsError, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 25CE39DF-2052-3873-9113-DB52B385C4BB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/ViewBridge'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSServiceViewControllerDidAdvanceToRunPhaseNotification, 
                        _NSServiceViewControllerWillAdvanceToRunPhaseNotification, 

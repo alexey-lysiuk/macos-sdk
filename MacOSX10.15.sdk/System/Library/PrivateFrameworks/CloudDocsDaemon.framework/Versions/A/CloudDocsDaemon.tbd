@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/Versions/A/CloudDocsDaemon'
 current-version: 698.16
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BRCBundleIDForProcessIdentifier, _BRCCopyQuarantineInfo, 
                        _BRCCoreAnalyticsReporterDSIDKey, _BRCCoreAnalyticsReporterErrorCountKey, 

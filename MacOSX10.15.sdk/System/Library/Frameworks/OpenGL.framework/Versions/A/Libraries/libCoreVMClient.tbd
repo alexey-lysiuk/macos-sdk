@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 018A48BA-1326-3847-8FB5-A7C99322EB87', 'x86_64: 018A48BA-1326-3847-8FB5-A7C99322EB87' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __cvmsIsAssert, __cvmsIsMonolithic, _cvms_connection_control, 
                        _cvms_connection_create, _cvms_connection_has_service, _cvms_connection_release, 

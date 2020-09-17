@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 24A6C3BE-2534-30D3-977C-51473958679F', 'x86_64: 24A6
 platform:        zippered
 install-name:    '/System/Library/Frameworks/LatentSemanticMapping.framework/Versions/A/LatentSemanticMapping'
 current-version: 2.12.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LSMMapAddCategory, _LSMMapAddText, _LSMMapAddTextWithWeight, 
                        _LSMMapApplyClusters, _LSMMapCompile, _LSMMapCompileWithBlock, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: AC4E9077-CB49-3AC0-94A2-3A188BA841F3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MonitorPanel.framework/Versions/A/MonitorPanel'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CalibrateDisplay, _ChangeMirrorMaster, _ClearDisplayModeFlag, 
                        _ClearDisplayModeFlags, _CopyDisplayModes, _CopyPreferredModes, 

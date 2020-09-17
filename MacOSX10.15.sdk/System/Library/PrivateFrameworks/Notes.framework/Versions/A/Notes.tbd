@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 745311DB-DECF-3962-81B4-C392C054762F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Notes.framework/Versions/A/Notes'
 current-version: 351
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ Notes, NotesAccountNotificationPlugin, NotesAccountSetup, 
                          NotesIAAccountMigratorPlugin, NotesImporter, NotesShared, 

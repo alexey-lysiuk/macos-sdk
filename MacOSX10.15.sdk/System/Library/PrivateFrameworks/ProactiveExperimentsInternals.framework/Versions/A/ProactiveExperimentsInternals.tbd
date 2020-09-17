@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BE247D08-F6F6-3BCF-B98A-324B95DE5E22', 'x86_64: BE247D08-F6F6-3BCF-B98A-324B95DE5E22' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveExperimentsInternals.framework/Versions/A/ProactiveExperimentsInternals'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PREServerSideErrorDomain, _PREServerSideErrorInfoKey, _ProactiveExperimentsInternalsVersionNumber, 
                        _ProactiveExperimentsInternalsVersionString, _pre_sv_quicktype_handle, 

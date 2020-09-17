@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 05260508-F8CC-3C0A-8C79-DD136057DB08' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MachineSettings.framework/Versions/A/MachineSettings'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DelayUntilRepeatKey, _DoubleClickThresholdTimeKey, _FNStateKey, 
                        _IgnoreTrackpadIfMousePresentKey, _KeyRepeatIntervalKey, _ModifierMappingKey, 

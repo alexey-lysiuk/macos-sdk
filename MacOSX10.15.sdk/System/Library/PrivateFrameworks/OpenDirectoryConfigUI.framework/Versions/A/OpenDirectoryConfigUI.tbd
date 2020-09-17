@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A8DA96BF-18CC-3953-867E-C53E679CE985' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OpenDirectoryConfigUI.framework/Versions/A/OpenDirectoryConfigUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ODCUIAuthSucceededNotification ]
     objc-classes:    [ ODCServersView, ODCSummaryView ]

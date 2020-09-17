@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 774C22E9-FD0D-3495-8EFD-009947F57505' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/InternetAccounts.framework/Versions/A/InternetAccounts'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AOSAccountsFramework, _AOSShimAccountCopyProperty, _AOSShimAccountRefreshLoggedIn, 
                        _AOSShimCopyAccountIDFromMailAlias, _AOSShimCopyAccountType, 

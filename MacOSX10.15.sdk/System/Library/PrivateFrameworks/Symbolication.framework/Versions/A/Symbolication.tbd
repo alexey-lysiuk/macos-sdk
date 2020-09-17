@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 84FBBA9E-C353-3D12-B424-05A2FD18E531', 'x86_64: 84FB
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication'
 current-version: 64535.34.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _VMUBacktraceIsExcludedMarker, _VMUCreateRootNodeMarkingMap, 
                        _VMUDirectedGraphCompatibilityVersionNumberInGraphKey, _VMUDirectedGraphToolCompatibilityVersionKey, 

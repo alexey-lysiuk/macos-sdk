@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: CBC576AC-3AB9-349E-A0DF-4CDC4AB30A37', 'x86_64: CBC5
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Marco.framework/Versions/A/Marco'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MarcoAction, _MarcoActionWithUserInfo, _MarcoAddCallMetric, 
                        _MarcoAddCallMetric_Double, _MarcoAddCallMetric_Float, _MarcoAddCallMetric_Int, 

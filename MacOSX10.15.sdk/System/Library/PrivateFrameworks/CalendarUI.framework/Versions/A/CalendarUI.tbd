@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 28644241-B15A-3681-AFE8-34868FE73676' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CalendarUI.framework/Versions/A/CalendarUI'
 current-version: 1020.6.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CALGroupPboardType, _CALLocationPboardType, _CALPixelAlignedPoint, 
                        _CALPixelAlignedRect, _CALPixelAlignedSize, _CALResourcePboardType, 

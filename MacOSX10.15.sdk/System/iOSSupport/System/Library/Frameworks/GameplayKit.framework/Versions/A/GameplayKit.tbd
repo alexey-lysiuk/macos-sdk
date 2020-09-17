@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D492ADCC-4A4F-3396-A963-4D6DA50E40A0' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/GameplayKit.framework/Versions/A/GameplayKit'
 current-version: 89
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GKClosestPointsBetweenLineSegments, _GKDoesCircleIntersectLine, 
                        _GKDoesCircleIntersectLineSegment, _GKDoesCircleIntersectPolygon, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: EB2173A5-A681-35F6-A806-B3C81B872F73', 'x86_64: EB21
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DCIMServices.framework/Versions/A/DCIMServices'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DCIMAVMetadataCaptureModeKey, _DCIMAVMetadataCaptureModeTimelapseValue, 
                        _DCIMScaledSizeForFormat, _DCIMServicesFrameworkBundle, _DCIMServicesLocalizedFrameworkString, 

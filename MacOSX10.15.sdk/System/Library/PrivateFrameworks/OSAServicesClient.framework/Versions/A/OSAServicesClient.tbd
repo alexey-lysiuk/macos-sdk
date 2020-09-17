@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DB474FEE-D07E-3A1D-871F-1CABE7961D77' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OSAServicesClient.framework/Versions/A/OSAServicesClient'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSAServicesClientVersionNumber, _OSAServicesClientVersionString ]
     objc-classes:    [ OSAServicesClient ]

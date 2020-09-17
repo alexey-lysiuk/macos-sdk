@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D3D38976-0D5F-3267-B947-59ACBE41571E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FindMyMac.framework/Versions/A/FindMyMac'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AtLoginWindow, _CopyDataAndBytesAndLengthFromDictionary, 
                        _CopyNVRAMKeys, _CopyPropertyAsCFString, _CopyPropertyAsData, 

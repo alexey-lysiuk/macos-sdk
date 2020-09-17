@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libecpg.6.dylib'
 current-version: 6.5
 compatibility-version: 6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ECPGallocate_desc, _ECPGconnect, _ECPGdeallocate, _ECPGdeallocate_all, 
                        _ECPGdeallocate_desc, _ECPGdebug, _ECPGdescribe, _ECPGdisconnect, 

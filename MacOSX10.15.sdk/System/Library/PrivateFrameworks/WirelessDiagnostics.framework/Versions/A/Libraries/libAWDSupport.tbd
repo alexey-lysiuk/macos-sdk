@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EBE20139-E443-30DF-BCAD-2A6A8470F631', 'x86_64: EBE20139-E443-30DF-BCAD-2A6A8470F631' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDSupport.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __Z14sDumpMetricLogNSt3__110shared_ptrI17AwdMetadataLoaderEEPKvm10DumpFormat, 
                        __Z14sGetMetricNameRKNSt3__110shared_ptrI17AwdMetadataLoaderEEj, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7F0DA183-1796-315A-B44A-2C234C7C50BE', 'x86_64: 7F0D
 platform:        zippered
 install-name:    '/usr/lib/libChineseTokenizer.dylib'
 current-version: 34
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ChineseTokenizerAdvanceToNextToken, _ChineseTokenizerCreate, 
                        _ChineseTokenizerGetCurrentTokenRange, _ChineseTokenizerGoToTokenAtIndex, 

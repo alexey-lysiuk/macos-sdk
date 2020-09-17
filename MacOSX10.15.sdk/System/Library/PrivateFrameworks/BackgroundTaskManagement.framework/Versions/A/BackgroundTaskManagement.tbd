@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A6877DAD-8F47-363C-983A-DC8DDE83B7B5', 'x86_64: A687
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Versions/A/BackgroundTaskManagement'
 current-version: 104
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BackgroundTaskManagementVersionNumber, _BackgroundTaskManagementVersionString, 
                        _kBTMBackgroundItemsChangeNotification ]

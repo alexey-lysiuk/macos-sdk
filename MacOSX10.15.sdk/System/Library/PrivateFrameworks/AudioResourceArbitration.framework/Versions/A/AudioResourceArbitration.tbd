@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 2BD68521-C19C-3D67-B5EB-DE3E9A4DAF0A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AudioResourceArbitration.framework/Versions/A/AudioResourceArbitration'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN4aura15make_error_codeENS_5ErrorE, __ZN4aura18ErrorType_categoryEv, 
                        __ZN4aura20make_error_conditionENS_5ErrorE, __ZNK4aura20IOControllerTopology10GetStreamsEj, 

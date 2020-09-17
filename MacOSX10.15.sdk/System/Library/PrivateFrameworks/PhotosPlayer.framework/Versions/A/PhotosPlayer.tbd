@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 975FE6C9-C2E4-330B-B9F6-01C67C68C997' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotosPlayer.framework/Versions/A/PhotosPlayer'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ISCircularEaseOut, _ISCubicEaseOut, _ISLivePhotoShouldRenderAtPlaybackTime, 
                        _ISQuadraticEaseOut, _ISQuarticEaseOut, _ISQuinticEaseOut, 

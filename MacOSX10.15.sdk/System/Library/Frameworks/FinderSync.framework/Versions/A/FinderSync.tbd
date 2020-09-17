@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 4A2D7AA9-7722-3ED0-A2F9-5E5B8D8CB195' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/FinderSync.framework/Versions/A/FinderSync'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ FIFinderSync, FIFinderSyncController ]
 ...

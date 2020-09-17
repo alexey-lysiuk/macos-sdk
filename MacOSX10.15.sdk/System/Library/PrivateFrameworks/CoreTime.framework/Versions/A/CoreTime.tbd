@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8A9DD850-DF07-3511-A76A-9989AA95C042', 'x86_64: 8A9D
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreTime.framework/Versions/A/CoreTime'
 current-version: 266.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TMBBTimeActiveNotification, _TMConfirmTimeZone, _TMConvertTicksToSeconds, 
                        _TMGetKernelMonotonicClock, _TMGetReferenceTime, _TMGetTrustedInterval, 

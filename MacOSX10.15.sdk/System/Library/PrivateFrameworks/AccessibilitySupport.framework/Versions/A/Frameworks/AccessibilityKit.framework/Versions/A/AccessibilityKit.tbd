@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C8542A59-0421-3B75-9DFC-C5C126E1E406' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityKit.framework/Versions/A/AccessibilityKit'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXKContrastRatioForColor, _AXKDebugPrintHierarchy, _AXKHsv2rgb, 
                        _AXKRecommendedColorForColors, _AXKRgb2hsv, _AXKThreadingCheckAssertCurrentQueueIsAppQueueForElement, 

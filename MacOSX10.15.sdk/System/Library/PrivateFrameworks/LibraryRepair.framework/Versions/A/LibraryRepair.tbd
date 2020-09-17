@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 25FBAB7B-961F-300E-9ECC-1970DEC5BC6C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LibraryRepair.framework/Versions/A/LibraryRepair'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LRConnectionInterruptedCode, _LRConnectionInvalidCode, _LRErrorDomain, 
                        _LRFailureErrorCode, _LRInvalidArgumentsCode, _LRNotAuthorizedCode, 

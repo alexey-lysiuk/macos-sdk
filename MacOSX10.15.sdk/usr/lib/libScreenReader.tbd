@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3C2F1AC6-842A-30FE-8E03-84DE52C0059A' ]
 platform:        macosx
 install-name:    '/usr/lib/libScreenReader.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ScreenReaderCopyAudioIntroPath, __ScreenReaderCopyElement, 
                        __ScreenReaderCopyFocusedElement, __ScreenReaderCopyInfo, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 68321A97-E058-31C1-A7AE-F1874879B728' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Automator.framework/Versions/A/Automator'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AMAcceptsKey, _AMActionViewArrowHeight, _AMActionViewHorizontalBorderInset, 
                        _AMActionViewPortRadius, _AMActionViewVerticalBorderInset, 

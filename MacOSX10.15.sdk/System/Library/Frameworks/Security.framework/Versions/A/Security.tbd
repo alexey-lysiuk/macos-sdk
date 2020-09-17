@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B6F8368F-2395-379B-B768-71C53BB1B903', 'x86_64: B6F8
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Security.framework/Versions/A/Security'
 current-version: 59306.140.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ApplyScopeDictionaryForID, _ApplyScopeListForID, _AuthorizationCopyInfo, 
                        _AuthorizationCopyPrivilegedReference, _AuthorizationCopyRights, 

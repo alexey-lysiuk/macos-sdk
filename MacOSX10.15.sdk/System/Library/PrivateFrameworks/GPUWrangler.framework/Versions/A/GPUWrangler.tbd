@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 487F2E7A-A5FF-3C36-A8E9-B85D98618116', 'x86_64: 487F
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUWrangler.framework/Versions/A/GPUWrangler'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GPUWranglerClose, _GPUWranglerDispatchEvent, _GPUWranglerForEachGPU, 
                        _GPUWranglerGPUByID, _GPUWranglerGPUCopyProperty, _GPUWranglerGPUCopyPropertyStr, 

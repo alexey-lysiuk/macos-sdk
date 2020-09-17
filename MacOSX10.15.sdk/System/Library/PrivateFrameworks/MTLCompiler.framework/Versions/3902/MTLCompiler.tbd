@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3B67BACA-C868-36F9-8718-0B8FE6969503', 'x86_64: 3B67BACA-C868-36F9-8718-0B8FE6969503' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MTLCompiler.framework/Versions/3902/MTLCompiler'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MTLCodeGenServiceBuildRequest, _MTLCodeGenServiceCreate, 
                        _MTLCodeGenServiceDestroy, _MTLCodeGenServiceSetPluginPath ]

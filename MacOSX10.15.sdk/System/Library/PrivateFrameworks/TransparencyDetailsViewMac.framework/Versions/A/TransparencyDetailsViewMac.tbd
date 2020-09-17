@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F6A4833E-A1C0-37F1-926B-3DD86779A397' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TransparencyDetailsViewMac.framework/Versions/A/TransparencyDetailsViewMac'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TransparencyDetailsViewMacVersionNumber, _TransparencyDetailsViewMacVersionString ]
     objc-classes:    [ ADUserTransparencySheet ]

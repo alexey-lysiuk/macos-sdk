@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 819D5576-7068-3966-B7A2-E7A4E33186EE', 'x86_64: 819D5576-7068-3966-B7A2-E7A4E33186EE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/TextInput.framework/Versions/A/TextInput'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CIMMecabraCandidateSyllableSeparator, _InputModeResources, 
                        _TIAccessibilityServiceName, _TIAddressBookChangedNotification, 

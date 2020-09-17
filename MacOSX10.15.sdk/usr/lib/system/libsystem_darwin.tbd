@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5B12B5DB-3F30-37C1-8ECC-49A66B1F2864', 'x86_64: 5B12
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_darwin.dylib'
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___libdarwin_init, ___os_temporary_resource_shortage, _claimfd_np, 
                        _close_drop_np, _close_drop_optional_np, _crfprintf_np, _dirstat_np, 

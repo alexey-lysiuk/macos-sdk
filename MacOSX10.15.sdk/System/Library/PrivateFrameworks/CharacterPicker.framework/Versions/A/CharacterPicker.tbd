@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: FAF26F82-0163-32EC-BABE-8B107A87A17B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CharacterPicker.framework/Versions/A/CharacterPicker'
 current-version: 164.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CPKCategoryTitleFavorites, _CPKCategoryTitleMore, _CPKCategoryTitleRecents, 
                        _CPKCategoryTitleRecentsAndFavorites, _CPKCategoryTitleSearch, 

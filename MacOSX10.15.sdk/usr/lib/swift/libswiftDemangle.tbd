@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 94772B89-1A18-3332-8747-AA1D2F7D5544' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftDemangle.dylib'
 current-version: 1103.8.25
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN5swift6Mangle10isNonAsciiEN4llvm9StringRefE, __ZN5swift6Mangle17translateOperatorEN4llvm9StringRefE, 
                        __ZN5swift6Mangle20getStandardTypeSubstEN4llvm9StringRefE, 

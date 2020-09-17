@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C0DA2AAB-FEA8-322E-9F1A-E3B88A3CEE80' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Jet.framework/Versions/A/Jet'
 current-version: 8.14
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __Z10jet_assertbP8NSString, __Z13xglCheckErrorv, __Z13xglPrintErrorv, 
                        __Z13xglPrintFloatPKcj, __Z13xglPrintStatev, __Z14jet_util_isPOTjj, 

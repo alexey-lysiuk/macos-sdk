@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BC4DFE6F-26A1-309A-86C8-9D6505779313', 'x86_64: BC4DFE6F-26A1-309A-86C8-9D6505779313' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsUICore.framework/Versions/A/ContactsUICore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CNContactsUIErrorDialRequestKey, _CNContactsUIErrorDomain, 
                        _CNContactsUIErrorURLKey, _CNContactsUIErrorUserActivityKey, 

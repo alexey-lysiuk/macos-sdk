@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 13707162-9D44-3CF9-8897-26254043EA3D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook'
 current-version: 2421.27
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/AddressBookCore.framework/Versions/A/AddressBookCore', 
                        '/System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence', 
@@ -697,7 +697,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 56464766-2D02-3795-92C5-E5DB6DDA6D38', 'x86_64: 56464766-2D02-3795-92C5-E5DB6DDA6D38' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AddressBookCore.framework/Versions/A/AddressBookCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence' ]
     symbols:         [ _ABACAccountPropertyAllowsInsecureAuthentication, _ABACAccountPropertyAltDSID, 
@@ -1424,7 +1424,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7597C280-EED8-313F-BE2F-72FAD1CB090F', 'x86_64: 7597C280-EED8-313F-BE2F-72FAD1CB090F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ABCDAccountContainerSuffix, _ABCDCompareByOrderingIndex, 
                        _ABCDCompareByOrderingIndexWithPrimaryFirst, _ABCDContainerGuardianRestrictedKey, 

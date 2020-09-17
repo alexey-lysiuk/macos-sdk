@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8044D016-DFCB-3625-BDE5-F3F80B37F4DE' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/PDFKit.framework/Versions/A/PDFKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PDFAnnotationHighlightingModeInvert, _PDFAnnotationHighlightingModeNone, 
                        _PDFAnnotationHighlightingModeOutline, _PDFAnnotationHighlightingModePush, 

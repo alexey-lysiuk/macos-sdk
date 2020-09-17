@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0237323B-EC78-3FBF-9FC7-5A1FE2B5CE25', 'x86_64: 0237
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MetadataUtilities.framework/Versions/A/MetadataUtilities'
 current-version: 2076.7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MDCopyBestAvailableLanguage, _MDCreateFilterGenerator, _MDGetBestAvailableLanguage, 
                        _MDMatch, _MDMatchWithFuzzyIndicies, _MDMatchWithFuzzyIndiciesRange, 

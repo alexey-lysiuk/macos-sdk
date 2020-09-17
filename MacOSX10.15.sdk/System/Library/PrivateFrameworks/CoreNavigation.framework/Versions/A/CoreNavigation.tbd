@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreNavigation.framework/Versions/A/CoreNavigation'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN10CNTimeSpan11DeserializeER21CNSerializationStream, __ZN10CNTimeSpan11SetTimeSpanExd, 
                        __ZN10CNTimeSpan11SetTimeSpanEyd, __ZN10CNTimeSpanmIERKS_, 

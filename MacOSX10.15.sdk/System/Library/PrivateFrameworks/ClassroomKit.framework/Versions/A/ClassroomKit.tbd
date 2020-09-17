@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C3DCA6C0-7C2A-3FF9-A34E-EE9564B45E55' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ClassroomKit.framework/Versions/A/ClassroomKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/DeviceManagement.framework/Versions/A/DeviceManagement' ]
     symbols:         [ _CACHE_DIRECTORY, _CRKActiveInstructorIdentifiersUserInfoKey, 
@@ -272,7 +272,7 @@ uuids:           [ 'x86_64: FC0822C4-C234-3543-9F47-3C0496E25A52', 'x86_64: FC08
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst'
 current-version: 6.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CATAssertIsNotQueue, _CATAssertIsQueue, _CATErrorDomain, 
                        _CATErrorWithCodeAndUserInfo, _CATErrorWithDomainCodeAndUserInfo, 
@@ -298,7 +298,7 @@ uuids:           [ 'x86_64: CC3D3DFD-26CF-3781-828E-64C997EC8112', 'x86_64: CC3D
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DeviceManagement.framework/Versions/A/DeviceManagement'
 current-version: 32.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst' ]
     symbols:         [ _DMFAllConfigurationOrganizationTypes, _DMFAppLog, _DMFBundleIdentifierErrorKey, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 60348592-B319-32C3-A69D-D506AAA65B13' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpeechDictionary.framework/Versions/A/SpeechDictionary'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SLHomographCopyTune, _SLHomographGetPOS, _SLHomographGetPhonemes, 
                        _SLHomographGetTags, _SLTokenAddHomographs, _SLTokenCountHomographs, 

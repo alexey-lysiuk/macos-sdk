@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B4856A82-B956-3C82-A428-44E001DC0B21', 'x86_64: B4856A82-B956-3C82-A428-44E001DC0B21' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/IdentityLookup.framework/Versions/A/IdentityLookup'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ILClassificationUIExtensionPointIdentifier, _ILDefaultLog, 
                        _ILMessageFilterErrorDomain, _ILMessageFilterExtensionPointIdentifier, 

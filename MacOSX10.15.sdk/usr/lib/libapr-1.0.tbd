@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libapr-1.0.dylib'
 current-version: 5.8
 compatibility-version: 5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _apr__SHA256_Data, _apr__SHA256_End, _apr__SHA256_Final, _apr__SHA256_Init, 
                        _apr__SHA256_Transform, _apr__SHA256_Update, _apr_allocator_alloc, 

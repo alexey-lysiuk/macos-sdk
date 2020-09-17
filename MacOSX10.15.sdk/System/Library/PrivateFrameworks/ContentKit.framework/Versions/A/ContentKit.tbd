@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 303193F1-69C4-3FFA-8757-FE8BA2DDAC45' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ContentKit.framework/Versions/A/ContentKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CNContactPropertyKeyFromWFContactPropertyID, _DCBaiduMapsURLScheme, 
                        _DCCityMapperURLScheme, _DCGoogleMapsURLScheme, _DCTransitURLScheme, 

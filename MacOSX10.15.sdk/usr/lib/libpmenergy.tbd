@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B33FB1C8-EACB-39C5-9B71-283EAB72E7E2' ]
 platform:        macosx
 install-name:    '/usr/lib/libpmenergy.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _pm_energy_impact, _pm_energy_impact_internal, _pm_mach_time_to_ns, 
                        _pm_task_add, _pm_task_subtract ]

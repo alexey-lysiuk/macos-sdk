@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BE0C1E1E-F986-3776-83EB-701CDBD5D931' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MallocStackLogging.framework/Versions/A/MallocStackLogging'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _msl_coldest_frame_is_threadid, _msl_copy_disk_stack_logs, 
                        _msl_copy_msl_lite_hooks, _msl_disk_stack_logs_enumerate_from_buffer, 

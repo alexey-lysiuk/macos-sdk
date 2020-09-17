@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8E6F9EFA-5E1E-330C-9868-791D2CF0C520' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HIDAnalytics.framework/Versions/A/HIDAnalytics'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HIDAnalyticsEventActivate, _HIDAnalyticsEventAddField, _HIDAnalyticsEventAddHistogramField, 
                        _HIDAnalyticsEventCancel, _HIDAnalyticsEventCreate, _HIDAnalyticsEventSetIntegerValueForField, 

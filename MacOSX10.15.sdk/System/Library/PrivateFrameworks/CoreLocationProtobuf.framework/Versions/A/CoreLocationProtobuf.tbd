@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 777998FF-16F5-3199-A884-1D57C0B01108', 'x86_64: 777998FF-16F5-3199-A884-1D57C0B01108' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreLocationProtobuf.framework/Versions/A/CoreLocationProtobuf'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CLPAccessoryMetaReadFrom, _CLPAltimeterCollectionRequestReadFrom, 
                        _CLPAppCollectionRequestReadFrom, _CLPAppCollectionResponseReadFrom, 

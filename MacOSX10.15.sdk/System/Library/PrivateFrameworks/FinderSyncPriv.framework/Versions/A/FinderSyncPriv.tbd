@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C16B806A-C162-3C1A-AEB9-ECD0430A4B0F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FinderSyncPriv.framework/Versions/A/FinderSyncPriv'
 current-version: 1298.6.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ FIFinderSyncExtensionHost ]
 ...

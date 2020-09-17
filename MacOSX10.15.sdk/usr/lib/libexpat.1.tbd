@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/libexpat.1.dylib'
 current-version: 8
 compatibility-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _XML_DefaultCurrent, _XML_ErrorString, _XML_ExpatVersion, 
                        _XML_ExpatVersionInfo, _XML_ExternalEntityParserCreate, _XML_FreeContentModel, 

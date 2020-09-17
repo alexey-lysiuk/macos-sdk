@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 32760843-A629-3D1A-B3C2-090441EAFB8C', 'x86_64: 3276
 platform:        zippered
 install-name:    '/usr/lib/libtailspin.dylib'
 current-version: 75.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TSPConfiguration_EnabledKey, _TSPConfiguration_EnabledModifierKey, 
                        _TSPConfiguration_EnforcedByManualConfigurationKey, _TSPConfiguration_EnforcedByProfileKey, 

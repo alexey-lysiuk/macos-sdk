@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8E6C825B-B290-3835-B1FA-C8D58F98949C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationLite.framework/Versions/A/SymptomPresentationLite'
 current-version: 1238.120.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _kPerformanceFlowAvgUsecsEstabTime, _kPerformanceFlowConnAttempts, 
                        _kPerformanceFlowConnSuccesses, _kPerformanceFlowOverallTime, 

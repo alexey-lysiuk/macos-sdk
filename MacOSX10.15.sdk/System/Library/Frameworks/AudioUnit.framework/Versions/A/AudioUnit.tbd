@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C8F9CC56-F7CF-3E77-B6FC-BD8E1D19FA92', 'x86_64: C8F9CC56-F7CF-3E77-B6FC-BD8E1D19FA92' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$add$os10.10$_AudioCodecAppendInputBufferList', '$ld$add$os10.10$_AudioCodecAppendInputData', 
                        '$ld$add$os10.10$_AudioCodecGetProperty', '$ld$add$os10.10$_AudioCodecGetPropertyInfo', 

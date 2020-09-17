@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 02A7CFBA-BD99-3527-A1F9-566C7262A033' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HomeKitDaemon.framework/Versions/A/HomeKitDaemon'
 current-version: 621.7.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AVCAudioCodecTypeAsString, _AVCCipherSuiteAsString, _AVCVideoCodecTypeAsString, 
                        _AVCVideoResolutionAsString, _AWDHomeKitAccessoryNetworkProtectionReportReadFrom, 

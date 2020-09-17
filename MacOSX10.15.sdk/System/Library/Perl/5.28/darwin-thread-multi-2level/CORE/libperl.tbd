@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Perl/5.28/darwin-thread-multi-2level/CORE/libperl.dylib'
 current-version: 5.28.2
 compatibility-version: 5.28
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASCII_TO_NEED, _NATIVE_TO_NEED, _PL_AboveLatin1, _PL_Assigned_invlist, 
                        _PL_C_locale_obj, _PL_GCB_invlist, _PL_HasMultiCharFold, _PL_LB_invlist, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3376303C-A5D7-343E-A44A-59D6D6159868' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/InstallerDiagnostics.framework/Versions/A/InstallerDiagnostics'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IDDiagnosticsMessageTypes, _IDDiagnosticsProtocolInterface, 
                        _InstallerDiagnosticsVersionNumber, _InstallerDiagnosticsVersionString, 

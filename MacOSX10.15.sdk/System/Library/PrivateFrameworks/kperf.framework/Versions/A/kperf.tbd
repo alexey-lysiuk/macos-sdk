@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 734130FB-CC26-385A-AAC6-8CAE898BD871', 'x86_64: 734130FB-CC26-385A-AAC6-8CAE898BD871' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/kperf.framework/Versions/A/kperf'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _kpc_counterbuf_alloc, _kpc_counterbuf_free, _kpc_cpu_string, 
                        _kpc_force_all_ctrs_get, _kpc_force_all_ctrs_set, _kpc_get_actionid, 

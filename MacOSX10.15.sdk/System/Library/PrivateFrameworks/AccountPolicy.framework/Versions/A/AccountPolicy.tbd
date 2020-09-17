@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1FAAFA06-4368-3621-A670-2BF198FD745C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccountPolicy.framework/Versions/A/AccountPolicy'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/AccountPolicy.framework/Frameworks/CFAccountPolicy.framework/Versions/A/CFAccountPolicy' ]
     symbols:         [ _APCreateError, _APCreateErrorWithEvalDetails, _kAPErrorDomain, 
@@ -43,7 +43,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7BED8FA3-F421-3CAB-B585-051927AA3D16' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccountPolicy.framework/Frameworks/CFAccountPolicy.framework/Versions/A/CFAccountPolicy'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _APAttributesUsedByPolicies, _APAuthenticationAllowed, _APCategoryAndIdentifierForLegacyPolicyName, 
                        _APCopyLocalizedEvaluationDetails, _APCopyLocalizedPasswordContentSummary, 

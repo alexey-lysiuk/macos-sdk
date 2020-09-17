@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 98065EA1-3484-3A5A-B05C-D2FABED8CEA4', 'x86_64: 9806
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MediaAccessibility.framework/Versions/A/MediaAccessibility'
 current-version: 62
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MAAudibleMediaCopyPreferredCharacteristics, _MAAudibleMediaPrefCopyPreferDescriptiveVideo, 
                        _MAAudibleMediaPrefResetAll, _MAAudibleMediaPrefSetPreferDescriptiveVideo, 

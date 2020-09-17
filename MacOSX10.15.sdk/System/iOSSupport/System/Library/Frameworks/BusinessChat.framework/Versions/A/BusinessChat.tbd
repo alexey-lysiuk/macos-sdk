@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4C2979DA-4584-3CA8-A8E1-82FFAE8CA6F8' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/BusinessChat.framework/Versions/A/BusinessChat'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BCAuthenticationResponseStatusAuthenticated, _BCAuthenticationResponseStatusFailed, 
                        _BCBubbleViewStyleIcon, _BCBubbleViewStyleLarge, _BCBubbleViewStyleSmall, 

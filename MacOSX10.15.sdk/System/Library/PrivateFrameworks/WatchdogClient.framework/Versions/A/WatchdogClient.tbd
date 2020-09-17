@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WatchdogClient.framework/Versions/A/WatchdogClient'
 current-version: 67.120.2
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _wd_endpoint_activate, _wd_endpoint_add_queue, _wd_endpoint_add_work_processor, 
                        _wd_endpoint_register, _wd_endpoint_set_alive_func ]

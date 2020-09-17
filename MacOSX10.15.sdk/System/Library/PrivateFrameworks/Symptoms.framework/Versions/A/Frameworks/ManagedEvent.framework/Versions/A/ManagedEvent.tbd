@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 41E0230D-7AC1-39EC-B70C-9721D4B3E342' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/ManagedEvent.framework/Versions/A/ManagedEvent'
 current-version: 1238.120.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _kManagedEventKeyBackgroundCombinedFlowProperties, _kManagedEventKeyBackgroundSpecificFlowClassifications, 
                        _kManagedEventKeyForegroundApps, _kManagedEventKeyForegroundCombinedFlowProperties, 

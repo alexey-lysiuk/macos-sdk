@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7E7FEE2A-CCF6-324F-BF45-499CE87337BF', 'x86_64: 7E7F
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MailSupport.framework/Versions/A/MailSupport'
 current-version: 3608.120.23
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ EmailTests, IMAP, MIME, Mail, MailCompositionService, MailIntentsExtension, 
                          MailNotificationContentExtension, MailQuickLookExtension, 

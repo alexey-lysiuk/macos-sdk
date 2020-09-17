@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 73A48102-6BBE-33B3-832E-26F52652462E', 'x86_64: 73A4
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/HMFoundation.framework/Versions/A/HMFoundation'
 current-version: 557.25
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HMFAreStringsEqualIgnoringCase, _HMFBooleanToString, _HMFDataIsReversed, 
                        _HMFDigestAlgorithmFromString, _HMFDigestAlgorithmToString, 

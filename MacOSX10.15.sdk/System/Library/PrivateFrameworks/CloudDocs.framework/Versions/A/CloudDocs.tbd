@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CloudDocs.framework/Versions/A/CloudDocs'
 current-version: 698.16
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BRAccountDidCompleteFirstSyncDownKey, _BRAccountIsDatabaseFromTheFutureKey, 
                        _BRAccountIsServiceEnabledKey, _BRAccountIsSynchronizingDesktop, 

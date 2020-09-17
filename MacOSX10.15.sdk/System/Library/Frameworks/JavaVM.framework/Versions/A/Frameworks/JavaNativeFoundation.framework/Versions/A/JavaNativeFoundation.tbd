@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 26E063D6-B98C-3D0C-BDB2-7DB65001F4BB' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaNativeFoundation.framework/Versions/A/JavaNativeFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _JNFAssertionFailure, _JNFCFToJavaBoolean, _JNFCallBooleanMethod, 
                        _JNFCallByteMethod, _JNFCallCharMethod, _JNFCallDoubleMethod, 

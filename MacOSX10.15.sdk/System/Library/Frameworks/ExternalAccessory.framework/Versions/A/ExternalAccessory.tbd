@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 00A09B30-9EBF-388A-8D42-A49A10378A77', 'x86_64: 00A09B30-9EBF-388A-8D42-A49A10378A77' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EAAccessoryAccessibilityActionKey, _EAAccessoryAccessibilityContextKey, 
                        _EAAccessoryAccessibilityHeightKey, _EAAccessoryAccessibilityItemPropertyKey, 

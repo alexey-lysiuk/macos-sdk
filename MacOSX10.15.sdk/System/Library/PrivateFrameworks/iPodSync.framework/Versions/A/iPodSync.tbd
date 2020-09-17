@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: FC26338C-77D9-3EB1-A8AE-7FCF84785E47' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/iPodSync.framework/Versions/A/iPodSync'
 current-version: 121.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CopySyncEngineDisplayNameForDataClass, _CopySyncEngineImageForDataClass, 
                        _IsiPodRegisteredForSync, _IsiPodRegisteredForSyncWithUID, 

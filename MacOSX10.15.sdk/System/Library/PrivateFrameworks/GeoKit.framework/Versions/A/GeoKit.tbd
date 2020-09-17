@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4FE24A95-D84F-39EE-948B-42C54C634BE1' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GeoKit.framework/Versions/A/GeoKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GEOAlignCGPointToUserSpace, _GEOAlignCGRectToUserSpace, _GEOAlignPointToUserSpace, 
                        _GEOAlignRectToUserSpace, _GEOBundle, _GEOCityCountryCodeKey, 

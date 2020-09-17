@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C24A4702-6251-3316-9544-25D75EEFF9C7', 'x86_64: C24A4702-6251-3316-9544-25D75EEFF9C7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDuetDataModel.framework/Versions/A/CoreDuetDataModel'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ CDDMAirplaneModeEvent, CDDMAppNameMapper, CDDMAppStateChangeEvent, 
                        CDDMAttributeNameMapper, CDDMBacklightEvent, CDDMBatteryEvent, 

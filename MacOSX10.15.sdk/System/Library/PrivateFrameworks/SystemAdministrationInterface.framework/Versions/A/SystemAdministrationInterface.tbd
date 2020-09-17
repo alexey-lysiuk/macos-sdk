@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EEBBF183-EF1E-3C59-8C0A-0DF977BF8ED3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SystemAdministrationInterface.framework/Versions/A/SystemAdministrationInterface'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LAContextClass, _SecRequiresGracePeriod, _eEccountType, _isApplePayEnabled, 
                        _isComputerUnlockEnabled, _isStorePurchaseEnabled ]

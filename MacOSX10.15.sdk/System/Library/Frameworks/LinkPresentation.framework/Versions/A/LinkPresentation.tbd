@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F7613341-13F8-3C5A-9A89-5C9E8A8E10CF' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/LinkPresentation.framework/Versions/A/LinkPresentation'
 current-version: 119.18
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/URLFormatting.framework/Versions/A/URLFormatting' ]
     symbols:         [ _LPErrorDomain, _LPLogChannelFetching, _LPLogChannelPlugin, 
@@ -42,7 +42,7 @@ uuids:           [ 'x86_64: 7F99D166-86DC-3F77-A34A-2DA7183D7160', 'x86_64: 7F99
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/URLFormatting.framework/Versions/A/URLFormatting'
 current-version: 119.18
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ URLFormattingTestingOverrides ]
 ...

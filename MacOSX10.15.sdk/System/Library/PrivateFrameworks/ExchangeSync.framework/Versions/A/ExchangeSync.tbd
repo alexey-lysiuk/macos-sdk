@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2DAEB1C0-4186-3306-8378-C8B097767D1A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ExchangeSync.framework/Versions/A/ExchangeSync'
 current-version: 121
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ExchangeSyncVersionNumber, _ExchangeSyncVersionString, _kExchangeSyncD_SyncNowNotification ]
     objc-classes:    [ EXSAccount, EXSAccountManager, EXSAccountMetadata, EXSChangeItem, 

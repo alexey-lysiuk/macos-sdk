@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0B4A0001-19BD-345A-A282-7E41C316CE3B', 'x86_64: 0B4A
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CPAnalytics.framework/Versions/A/CPAnalytics'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ Photos, PhotosUI, PhotosUICore ]
     symbols:         [ _CPAnalyticKnowledgeStoreVersionType, _CPAnalyticKnowledgeStoreVersionValue, 

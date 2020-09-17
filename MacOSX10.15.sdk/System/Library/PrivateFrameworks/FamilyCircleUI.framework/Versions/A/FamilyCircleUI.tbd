@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 57F234B7-CC5C-380F-9894-DD4BEA7C9C5C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FamilyCircleUI.framework/Versions/A/FamilyCircleUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FamilyCircleUIVersionNumber, _FamilyCircleUIVersionString ]
     objc-classes:    [ FASharedService, FASharedServicesResponse ]

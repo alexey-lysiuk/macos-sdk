@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 91BEC50E-EFE6-3E6C-AB42-3B58ABA5B794' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Collaboration.framework/Versions/A/Collaboration'
 current-version: 81
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SidebarContacts, _SidebarNetworkGroups, _SidebarNetworkUsers, 
                        _SidebarUsersGroups, _SortABGroupsByName, _SortABPeopleByFirstName, 

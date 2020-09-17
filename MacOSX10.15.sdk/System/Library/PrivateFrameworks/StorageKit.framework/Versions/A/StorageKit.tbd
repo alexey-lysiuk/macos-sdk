@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 965923EE-35FE-32C9-9F84-C132945FD26C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/StorageKit.framework/Versions/A/StorageKit'
 current-version: 53
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AddUserDictionaryForAPFS, _AddUserToRecipe, _CreateScaledUserGraphics, 
                        _GetDataValueForODAttribute, _GetStringValueForODAttribute, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FEA4C71E-B629-378F-A546-12FDEF941226', 'x86_64: FEA4C71E-B629-378F-A546-12FDEF941226' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/HeimODAdmin.framework/Versions/A/HeimODAdmin'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HeimODAddAppleIDAlias, _HeimODAddCertificate, _HeimODAddCertificateSubjectAndTrustAnchor, 
                        _HeimODAddServerAlias, _HeimODAddSubjectAltCertName, _HeimODAddSubjectAltCertSHA1Digest, 

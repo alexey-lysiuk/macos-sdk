@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 286AE0BE-1498-34BF-920D-6085D8BBAA81' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PrintingPrivate.framework/Versions/A/PrintingPrivate'
 current-version: 192
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CreateTemporaryFile, _HttpConnectionFromURI, _LoadAndGetPMPrinterInfoBundle, 
                        _LoadAndGetPrintCocoaUIBundle, _PKPrinterBonjourDomain, _PKPrinterInterfaceIndex, 

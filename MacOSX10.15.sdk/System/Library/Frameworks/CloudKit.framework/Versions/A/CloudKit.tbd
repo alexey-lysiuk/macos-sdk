@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1B851180-FC00-357F-B6C1-BB0EA7D6D5CA', 'x86_64: 1B85
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CloudKit.framework/Versions/A/CloudKit'
 current-version: 867
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CKAPSEnvironmentEntitlementString, _CKAbsoluteHostTime, _CKAcceptablePredicateValueClasses, 
                        _CKAcceptableValueClasses, _CKAccountChangedNotification, 

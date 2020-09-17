@@ -5,7 +5,7 @@ platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftCoreNFC.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s7CoreNFC27NFCTagReaderSessionDelegateMp', '_$s7CoreNFC27NFCTagReaderSessionDelegateP03tagdE0_22didInvalidateWithErrorySo0cdE0C_s0K0_ptFTj', 
                        '_$s7CoreNFC27NFCTagReaderSessionDelegateP03tagdE0_22didInvalidateWithErrorySo0cdE0C_s0K0_ptFTq', 

@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/libcups.2.dylib'
 current-version: 2.14
 compatibility-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __cupsAppleCopyDefaultPaperID, __cupsAppleCopyDefaultPrinter, 
                        __cupsAppleGetUseLastPrinter, __cupsAppleLanguage, __cupsAppleLocale, 

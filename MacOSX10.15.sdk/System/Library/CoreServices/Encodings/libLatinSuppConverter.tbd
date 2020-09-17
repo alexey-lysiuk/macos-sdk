@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 94D6D0DC-67A4-3028-ACD8-2676F8FCC835', 'x86_64: 94D6
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libLatinSuppConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetLatinSuppConverterDefinition ]
 ...

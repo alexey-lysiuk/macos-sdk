@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 96BB04BD-D6E0-3D70-8F36-89B46DA1DA30', 'x86_64: 96BB
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RunningBoardServices.framework/Versions/A/RunningBoardServices'
 current-version: 223.140.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromRBSAcquisitionCompletionPolicy, _NSStringFromRBSCPUMaximumUsageViolationPolicy, 
                        _NSStringFromRBSDebugState, _NSStringFromRBSDurationEndPolicy, 

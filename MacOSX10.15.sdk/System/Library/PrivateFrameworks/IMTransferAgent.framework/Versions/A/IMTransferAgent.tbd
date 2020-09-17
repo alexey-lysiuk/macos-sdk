@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FF383D1D-5E0E-36CA-AA0A-3838EF822442' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMTransferAgent.framework/Versions/A/IMTransferAgent'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CKNicknameRecordType, _IMOptOutOfOptimizedMadridAttachmentDownloadPath, 
                        _IMOptOutOfOptimizedMadridAttachmentUploadPath, _IMSetOptOutOfOptimizedMadridAttachmentDownloadPath, 

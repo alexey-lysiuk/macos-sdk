@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E94F34D2-FA63-39C6-BB43-13FF3F335026' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SystemMigrationUtils.framework/Versions/A/SystemMigrationUtils'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SMAnalyticsManagerYAACallbackNameExtractEntryACL, _SMAnalyticsManagerYAACallbackNameExtractEntryBegin, 
                        _SMAnalyticsManagerYAACallbackNameExtractEntryEnd, _SMAnalyticsManagerYAACallbackNameExtractEntryProgress, 

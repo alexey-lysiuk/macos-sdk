@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit'
 current-version: 1894.60.100
 compatibility-version: 45
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
                        '/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation', 
@@ -1353,7 +1353,7 @@ uuids:           [ 'x86_64: EC55B9E5-7E62-380A-9AB1-FC7BEF663653', 'x86_64: EC55
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation'
 current-version: 662
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, UIKitCore ]
     symbols:         [ _NSAccessibilitySpellingStateAttributeName, _NSAllRomanInputSourcesLocaleIdentifier, 

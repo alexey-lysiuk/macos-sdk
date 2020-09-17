@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CAD23230-CF3B-36FC-9F09-6A234B56E65A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpeechObjects.framework/Versions/A/Frameworks/DictationFeedbackServices.framework/Versions/A/DictationFeedbackServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DFSCreateDeserializedDFRButtonEventDictionary, _DFSCreateDeserializedRecognizedStringDictionary, 
                        _DFSCreateDeserializedRecognizerInformationDictionary, _DFSCreateSerializedDFRButtonEventDictionary, 

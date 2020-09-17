@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C017016E-43D6-354B-830E-848530D1C8B2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilityPlatformTranslation.framework/Versions/A/AccessibilityPlatformTranslation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXPConvertValue, _AXPCustomActionIdentifier, _AXPCustomActionName, 
                        _AXPCustomRotorDirection, _AXPCustomRotorName, _AXPCustomRotorSystemType, 

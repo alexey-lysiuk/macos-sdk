@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4E58A602-F7BD-3660-B1A0-EBFB92E84A49' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AudioVideoBridging.framework/Versions/A/AudioVideoBridging'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AVB17221AEMAspectRatioHeightKey, _AVB17221AEMAspectRatioWidthKey, 
                        _AVB17221AEMBodePlotFrequencyKey, _AVB17221AEMBodePlotMagnitudeKey, 

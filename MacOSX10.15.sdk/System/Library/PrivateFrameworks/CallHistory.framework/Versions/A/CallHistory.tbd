@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 31AC395C-0C0F-3093-BD9B-D13B2A747EF8', 'x86_64: 31AC
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CallHistory.framework/Versions/A/CallHistory'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CHCallerIdAvailabilityAsString, _DeserializeTransactions, 
                        _HandleInteractionsForDeserializedTransactions, _createBackgroundTaskAssertion, 

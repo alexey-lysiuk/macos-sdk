@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 103C0D7A-1572-3441-8D6E-29657649BA30', 'x86_64: 103C0D7A-1572-3441-8D6E-29657649BA30' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PeopleSuggester.framework/Versions/A/PeopleSuggester'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreBehaviorAnalysisPETCoreBehaviorAnalysisEventReadFrom, 
                        _PeopleSuggesterVersionNumber, _PeopleSuggesterVersionString, 

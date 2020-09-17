@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D2AE5AC0-EDCE-3216-B8C9-CF59292A545F', 'x86_64: D2AE5AC0-EDCE-3216-B8C9-CF59292A545F' ]
 platform:        zippered
 install-name:    '/usr/lib/libgermantok.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _germantok_tokenize ]
 ...

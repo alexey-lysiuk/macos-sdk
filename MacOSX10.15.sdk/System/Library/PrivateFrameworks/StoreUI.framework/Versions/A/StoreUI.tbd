@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 4E9F304B-1949-3909-B664-D073EDA6B24D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/StoreUI.framework/Versions/A/StoreUI'
 current-version: 379
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FRBundleAppIsFrontmostChangedEvent, _FRBundleAuthenticateFinishedEvent, 
                        _FRBundleUserChangedEvent, _FRBundleViewDidBecomeVisibleEvent, 

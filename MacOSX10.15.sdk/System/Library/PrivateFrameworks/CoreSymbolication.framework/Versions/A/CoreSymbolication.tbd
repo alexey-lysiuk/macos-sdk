@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0B3BF87A-7F95-3D79-B4F8-421D6FAC4A6C', 'x86_64: 0B3B
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication'
 current-version: 64535.33.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CSAddressSetAdd, _CSAddressSetCreate, _CSArchitectureGetArchitectureForName, 
                        _CSArchitectureGetCurrent, _CSArchitectureGetFamily, _CSArchitectureGetFamilyName, 

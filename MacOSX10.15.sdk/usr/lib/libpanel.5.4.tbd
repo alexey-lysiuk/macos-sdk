@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/libpanel.5.4.dylib'
 current-version: 5.4
 compatibility-version: 5.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _bottom_panel, _del_panel, _hide_panel, _move_panel, _new_panel, 
                        _panel_above, _panel_below, _panel_hidden, _panel_userptr, 

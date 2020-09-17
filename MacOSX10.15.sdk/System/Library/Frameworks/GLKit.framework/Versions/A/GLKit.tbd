@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B577EE15-04AC-3BC6-9C69-B5F5C0DCB08F' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/GLKit.framework/Versions/A/GLKit'
 current-version: 118
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GLKMathProject, _GLKMathUnproject, _GLKMatrix3Identity, _GLKMatrix3Invert, 
                        _GLKMatrix3InvertAndTranspose, _GLKMatrix4Identity, _GLKMatrix4Invert, 

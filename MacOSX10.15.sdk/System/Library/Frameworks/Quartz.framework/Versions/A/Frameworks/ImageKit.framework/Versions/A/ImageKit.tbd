@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5F086EE2-5745-3E28-B292-1DE5E0652E36' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IKAnimationDelayKey, _IKAnimationDurationKey, _IKAnimationFrameRateKey, 
                        _IKAnimationVelocityCurveKey, _IKBestRepresentationFromNSImageForPhysicalSize, 

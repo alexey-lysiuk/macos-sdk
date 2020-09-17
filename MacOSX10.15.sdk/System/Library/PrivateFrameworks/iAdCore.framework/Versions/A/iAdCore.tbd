@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D18EC01A-A2EE-336E-9BA1-294FFC6E7921', 'x86_64: D18EC01A-A2EE-336E-9BA1-294FFC6E7921' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/iAdCore.framework/Versions/A/iAdCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ADAccountTypeGetStringForValue, _ADAdActionCopyDescription, 
                        _ADAdActionValidate, _ADAdAction_ClickActionGetStringForValue, 

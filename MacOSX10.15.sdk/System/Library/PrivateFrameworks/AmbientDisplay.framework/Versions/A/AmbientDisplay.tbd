@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: ED83CFA7-87C7-39AB-A6C9-B8037D81074F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/AmbientDisplay'
 current-version: 110
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ALSHIDManager_start, _ALSHIDManager_stop, _AMBDCreateIntentionContext, 
                        _AMBDDestroyIntentionContext, _AMBDEnableHDR, _AMBDGetCurrentDisplayBrightness, 

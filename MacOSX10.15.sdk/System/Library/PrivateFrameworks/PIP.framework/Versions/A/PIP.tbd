@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A65B53D9-FE0B-31C5-B6C2-591D495BAFD0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PIP.framework/Versions/A/PIP'
 current-version: 109
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ PIPViewController ]
 ...

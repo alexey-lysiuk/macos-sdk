@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C3B0BD2F-B61A-363B-ABA9-018C71D8FC12', 'x86_64: C3B0
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Metal.framework/Versions/A/Metal'
 current-version: 212.8
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MTLAddDevice, _MTLAddDeviceClass, _MTLBinaryLibraryDomain, 
                        _MTLCPUCacheModeString, _MTLCaptureEnabled, _MTLCaptureErrorDomain, 

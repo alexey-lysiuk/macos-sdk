@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8FDC573F-890A-3F08-B357-99895521C93D', 'x86_64: 8FDC573F-890A-3F08-B357-99895521C93D' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreMediaIO.framework/Versions/A/CoreMediaIO'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CMIOAddAtExitListener, _CMIOAnalyticsRegisterDevice, _CMIOAnalyticsSendStart, 
                        _CMIODeviceProcessAVCCommand, _CMIODeviceProcessRS422Command, 

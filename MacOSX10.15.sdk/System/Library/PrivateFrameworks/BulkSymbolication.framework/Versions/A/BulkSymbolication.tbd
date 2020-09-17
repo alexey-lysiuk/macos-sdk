@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C93BADEE-0D10-3832-9046-7AB767B3E711' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BulkSymbolication.framework/Versions/A/BulkSymbolication'
 current-version: 243.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BulkSymbolicationVersionNumber, _BulkSymbolicationVersionString, 
                        _kBKSRequestErrorDomain, _kSpeedTracerEndPoint ]

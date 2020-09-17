@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5D494F43-14E4-3EEA-B01C-B5B2BBB74FC3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IntlPreferences.framework/Versions/A/IntlPreferences'
 current-version: 301.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IPAllowToChangeEnablingStatePropertyKey, _IPAppleLanguagesSchemaVersionCurrent, 
                        _IPAppleLanguagesSchemaVersionJazzkonA, _IPAppleLanguagesSchemaVersionJazzkonA_1, 

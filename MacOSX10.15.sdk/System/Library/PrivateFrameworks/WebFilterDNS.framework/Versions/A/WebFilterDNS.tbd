@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9D4188A6-8A9C-3092-BCDD-09D97F696E96' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WebFilterDNS.framework/Versions/A/WebFilterDNS'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LookupNameForAddr, _NameResolvesToAddr, _NameResolvesToName, 
                        _WCFConnectionDealloc, _WCFConnectionNew, _WCFIsServerRunning, 

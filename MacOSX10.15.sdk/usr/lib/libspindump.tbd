@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: AE8C1AE9-5CBC-332F-BBE8-370A2A19FED6', 'x86_64: AE8C1AE9-5CBC-332F-BBE8-370A2A19FED6' ]
 platform:        zippered
 install-name:    '/usr/lib/libspindump.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SPCachePort, _SPGenerateSpindump, _SPHIDResponseDelayThreshold, 
                        _SPNotifyLeavingFullWake, _SPReportCPUUsageResource, _SPReportCPUWakeupsResource, 

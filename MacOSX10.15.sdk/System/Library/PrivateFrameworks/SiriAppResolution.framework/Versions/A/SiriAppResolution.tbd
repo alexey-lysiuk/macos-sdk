@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A6339841-7D8C-3303-B015-F7322E8BD72E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SiriAppResolution.framework/Versions/A/SiriAppResolution'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AudioFlowDelegatePlugin, AudioFlowDelegatePluginTests, ContactsFlowDelegatePlugin, 
                          ContactsFlowDelegatePlugin-Tests, ControlsFlowDelegatePlugin, 

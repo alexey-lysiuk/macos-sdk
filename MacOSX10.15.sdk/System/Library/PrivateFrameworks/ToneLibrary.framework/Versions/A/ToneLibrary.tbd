@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 67E2F7EE-18D2-3154-A968-8F1623EDD1E9', 'x86_64: 67E2F7EE-18D2-3154-A968-8F1623EDD1E9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/ToneLibrary'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromTLAlertPlaybackCompletionType, _NSStringFromTLAlertType, 
                        _TLAlertErrorDomain, _TLAlertPlaybackCompletionTypeFromString, 

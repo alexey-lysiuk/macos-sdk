@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0560F960-5A58-3AAB-B7F8-92E4F5828712' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/DriverKit.framework/Versions/A/DriverKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DriverExecutableMain, _IOBufferMemoryDescriptor_Class, _IODMACommand_Class, 
                        _IODataQueueDispatchSource_Class, _IODelay, _IODispatchQueue_Class, 

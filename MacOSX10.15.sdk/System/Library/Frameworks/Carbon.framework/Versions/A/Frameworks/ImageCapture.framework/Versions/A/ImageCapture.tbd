@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture'
 current-version: 5
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ICACloseSession, _ICAConvertJPEGDataToICADataInPlace, _ICAConvertTIFFDataToICADataInPlace, 
                        _ICACopyMatchingDeviceDictionaries, _ICACopyObjectData, _ICACopyObjectPropertyDictionary, 

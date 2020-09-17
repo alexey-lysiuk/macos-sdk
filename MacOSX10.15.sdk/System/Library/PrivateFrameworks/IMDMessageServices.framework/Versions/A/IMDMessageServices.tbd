@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: ED5FB8B7-1C62-3F05-B9EB-BD21EA1DA7BA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMDMessageServices.framework/Versions/A/IMDMessageServices'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IMDMessageServicesCallbackIntervalKey, _IMDMessageServicesExpireStateDictionaryKey, 
                        _IMDMessageServicesExpireStateKey, _IMDMessageServicesExpireStateShouldDeleteKey, 

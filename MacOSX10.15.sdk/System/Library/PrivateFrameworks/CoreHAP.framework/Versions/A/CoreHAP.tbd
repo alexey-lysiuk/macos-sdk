@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7D762090-35AA-334C-8E88-80BF00D68F62' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreHAP.framework/Versions/A/CoreHAP'
 current-version: 621.7.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CBUUIDCharacteristicValidRange, _HAPAccessoryHasPairings, 
                        _HAPAccessoryServerRelayMaximumReachabilityProbeTimeInterval, 

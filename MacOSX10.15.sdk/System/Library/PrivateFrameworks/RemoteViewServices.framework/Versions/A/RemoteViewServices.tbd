@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D3AAC2BE-3423-3F18-9654-E35F1DD8DDB3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/RemoteViewServices.framework/Versions/A/RemoteViewServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GetNSWindowDescriptionString, _NSPBOXSessionMessageSetPresentationOptionsParamKey, 
                        _NSRemotePanelOrderPlaceAndChangeKeyKey, _NSRemotePanelOrderPlaceJustOrderOutKey, 

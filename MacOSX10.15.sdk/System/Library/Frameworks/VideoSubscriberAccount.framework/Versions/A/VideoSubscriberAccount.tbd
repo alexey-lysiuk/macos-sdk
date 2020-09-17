@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 00AA6A50-F4A0-35A9-81D2-A8943F70C3C3', 'x86_64: 00AA
 platform:        zippered
 install-name:    '/System/Library/Frameworks/VideoSubscriberAccount.framework/Versions/A/VideoSubscriberAccount'
 current-version: 331.70.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _VSAccountProviderAuthenticationSchemeAPI, _VSAccountProviderAuthenticationSchemeSAML, 
                        _VSAccountStoreDidChangeNotification, _VSActiveSubscriptionsDidChangeNotification, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 807E7AE4-2EAF-3DDB-A7E8-2ED6EE96417A', 'x86_64: 807E7AE4-2EAF-3DDB-A7E8-2ED6EE96417A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ViceroyTrace.framework/Versions/A/ViceroyTrace'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AWDGCKSubmitLinkStatusMetric, _GKSSubmitAWDMetricsFromGameD, 
                        _VCReporting_GetDynamicReportingModuleID, _VRTraceDebugBreak, 

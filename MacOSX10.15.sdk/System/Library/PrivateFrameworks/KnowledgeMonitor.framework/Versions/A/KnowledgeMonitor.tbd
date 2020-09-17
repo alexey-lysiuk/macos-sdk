@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E6788117-2C4F-397D-9077-7D7E786570EC', 'x86_64: E6788117-2C4F-397D-9077-7D7E786570EC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/KnowledgeMonitor.framework/Versions/A/KnowledgeMonitor'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _KnowledgeMonitorVersionNumber, _KnowledgeMonitorVersionString, 
                        __DKApplicationIsForegroundType, __DKApplicationIsTrackableType, 

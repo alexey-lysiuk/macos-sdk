@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E5EF044D-7423-3DB7-AB77-BE1CBAB31820', 'x86_64: E5EF
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PersonalizationPortrait.framework/Versions/A/PersonalizationPortrait'
 current-version: 1052.34
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PETPortraitFeatureId, _PPCollapseWhitespaceAndStrip, _PPCreateCalendarColorWithDecoder, 
                        _PPEncodeCalendarColor, _PPErrorDomain, _PPErrorInfoKey, _PPGetSourceInternPool, 

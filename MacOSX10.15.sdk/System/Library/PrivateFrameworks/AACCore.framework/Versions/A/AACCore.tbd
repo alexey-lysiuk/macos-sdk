@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3B9ACF8E-8507-35DD-9252-051B8CC1D212', 'x86_64: 3B9ACF8E-8507-35DD-9252-051B8CC1D212' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AACCore.framework/Versions/A/AACCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AEAssessmentStateDidChangeNotificationName, _AEAssessmentStatePublisherRegisteringMachServiceName, 
                        _AECoreError, _AECoreErrorDomain, _AECoreErrorUserInfo, _AELocalizedStringFromTableInBundle, 

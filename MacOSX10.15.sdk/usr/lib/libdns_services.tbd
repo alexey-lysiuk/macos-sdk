@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B5D9EC1F-09B1-3F33-A707-74649CE53E98', 'x86_64: B5D9EC1F-09B1-3F33-A707-74649CE53E98' ]
 platform:        zippered
 install-name:    '/usr/lib/libdns_services.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DNSXEnableProxy, _DNSXRefDeAlloc, _dnssd_copy_description, 
                        _dnssd_getaddrinfo_activate, _dnssd_getaddrinfo_create, _dnssd_getaddrinfo_invalidate, 

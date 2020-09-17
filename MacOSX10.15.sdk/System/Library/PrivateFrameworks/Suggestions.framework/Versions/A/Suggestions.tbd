@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: EEF4A125-2F14-35B7-8997-06F3403E7CA7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Suggestions.framework/Versions/A/Suggestions'
 current-version: 322
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GetQueryStringAndAttributesFromInput, _SGTAddressBookAccessAllowed, 
                        _SGTAppCopyDefaultValueKeys, _SGTAppGetDefaultValueForKey, 

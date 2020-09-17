@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 50DDA9C2-BDDF-33D4-9BA9-A161E99F1EAD', 'x86_64: 50DDA9C2-BDDF-33D4-9BA9-A161E99F1EAD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IOAccelMemoryInfo.framework/Versions/A/IOAccelMemoryInfo'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IOAccelMemoryInfoErrorDomain, _IOAccelMemoryInfoIOKitDriverKey, 
                        _IOAccelMemoryInfoProcessIDKey ]

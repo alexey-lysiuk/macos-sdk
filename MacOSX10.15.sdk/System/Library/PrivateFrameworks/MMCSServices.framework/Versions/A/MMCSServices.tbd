@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 63BE4C37-6936-32A5-8FCD-03E0A77EAD73' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MMCSServices.framework/Versions/A/MMCSServices'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _failReasonStringForMMCSError, _parseMMCSError ]
     objc-classes:    [ MMCSController, MMCSGetFile, MMCSPutFile, MMCSRequestorContext, 

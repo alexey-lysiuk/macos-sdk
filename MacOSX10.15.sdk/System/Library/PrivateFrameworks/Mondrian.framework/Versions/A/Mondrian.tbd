@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: DC204772-C4A0-371B-8367-285E016DA209' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Mondrian.framework/Versions/A/Mondrian'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GridRectEdgeOppositeEdge, _MOAVAssetCreateThumbnailWithURL, 
                        _MOAssetsViewCustomStyleCellRegistration, _MOAssetsViewCustomStyleDefaultCellRegistration, 

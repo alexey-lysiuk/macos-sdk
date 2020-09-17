@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 85B4A992-8B61-39FB-BCDE-05A2D5989D74', 'x86_64: 85B4A992-8B61-39FB-BCDE-05A2D5989D74' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CryptoTokenKit.framework/Versions/A/CryptoTokenKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TKClientTokenServerPortName, _TKEntitlementSlotType, _TKErrorDomain, 
                        _TKNotifyNameFirstSlot, _TKProtocolSlotClientName, _TKProtocolSlotRegistryName, 

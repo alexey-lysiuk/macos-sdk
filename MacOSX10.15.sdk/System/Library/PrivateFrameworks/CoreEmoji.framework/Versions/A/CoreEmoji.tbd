@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7C2B3259-083B-31B8-BCDB-1BA360529936', 'x86_64: 7C2B
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreEmoji.framework/Versions/A/CoreEmoji'
 current-version: 107.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CEMCopyEmojiTokens, _CEMCreateEmojiCharacterSet, _CEMCreateEmojiLocaleData, 
                        _CEMEmojiLocaleDataCopyCommonEmojiTokens, _CEMEmojiLocaleDataCreateEmojiTokensForString, 

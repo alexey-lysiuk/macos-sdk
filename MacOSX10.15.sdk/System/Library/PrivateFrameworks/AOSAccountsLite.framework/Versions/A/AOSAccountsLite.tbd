@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 4C6A225B-83EF-311A-867B-8FF4AC579F0B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AOSAccountsLite.framework/Versions/A/AOSAccountsLite'
 current-version: 1.9.95
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AOSAccountsLiteVersionNumber, _AOSAccountsLiteVersionString, 
                        _MMLAccountCopyProperty, _MMLAccountIsVetted, _MMLAccountLogin, 

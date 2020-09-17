@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EF74E0CA-C9EA-33ED-9604-0EF3FD239DDC' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/TWAIN.framework/Versions/A/TWAIN'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DSM_Entry ]
 ...

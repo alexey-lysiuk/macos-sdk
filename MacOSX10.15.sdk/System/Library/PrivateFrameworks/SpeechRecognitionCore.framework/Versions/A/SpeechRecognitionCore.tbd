@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4D6CAC2A-151B-3BBE-BDB7-E2BE72128691' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpeechRecognitionCore.framework/Versions/A/SpeechRecognitionCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RXAdLibCreate, _RXGlobalSetDownloadProgressCallback, _RXLanguageModelCreate, 
                        _RXLanguageModelCreateWithURL, _RXLanguageModelWriteToURL, 

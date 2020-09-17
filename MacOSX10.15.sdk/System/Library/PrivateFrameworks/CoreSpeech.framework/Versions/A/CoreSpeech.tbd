@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D66A166C-D5B5-318A-ABF5-E42167419CA8', 'x86_64: D66A
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSpeech.framework/Versions/A/CoreSpeech'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CSAudioLogDirectory, _CSCopyKeychainBaseQueryDictionary, 
                        _CSErrorDomain, _CSFidesBorealisTriggerTypeAsString, _CSHasAOP, 

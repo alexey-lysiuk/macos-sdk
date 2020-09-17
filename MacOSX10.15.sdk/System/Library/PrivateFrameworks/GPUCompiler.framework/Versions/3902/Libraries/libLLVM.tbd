@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F04DE300-34B7-30CC-876C-390BCCF0B309', 'x86_64: F04D
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libLLVM.dylib'
 current-version: 3902.14.11
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EnableIPRA, _LLVMABIAlignmentOfType, _LLVMABISizeOfType, 
                        _LLVMAddAggressiveDCEPass, _LLVMAddAlias, _LLVMAddAlignmentFromAssumptionsPass, 

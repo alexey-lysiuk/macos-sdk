@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F01467F6-23A7-37EE-A170-33CE1577B41D', 'x86_64: F01467F6-23A7-37EE-A170-33CE1577B41D' ]
 platform:        zippered
 install-name:    '/usr/lib/libutil.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _freemntopts, _getmnt_silent, _getmntoptnum, _getmntopts, 
                        _getmntoptstr, _humanize_number, _pidfile_close, _pidfile_open, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EC7F1209-7FB3-35CE-8983-AC7522F1663D', 'x86_64: EC7F1209-7FB3-35CE-8983-AC7522F1663D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RemoteTextInput.framework/Versions/A/RemoteTextInput'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RTICanLogMessageAtLevel, _RTILogFacility, _RTIServiceAnonymousName, 
                        _RTIServiceIOSMacName, _RTIServiceMediaRemoteName, _RTIServiceRapportName, 

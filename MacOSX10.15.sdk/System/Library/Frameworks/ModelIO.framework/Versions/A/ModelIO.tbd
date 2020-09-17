@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5AA4B52C-4277-3B13-9A9B-01BFB32A17DE', 'x86_64: 5AA4
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ModelIO.framework/Versions/A/ModelIO'
 current-version: 217.45
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MDLAssetLoadingOptionAssetAtTime, _MDLAssetLoadingOptionBufferAllocator, 
                        _MDLAssetLoadingOptionComputeBitangents, _MDLAssetLoadingOptionComputeFaceNormals, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 59C58F16-5AA2-32BF-B07A-CF961D2D005D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SoftwareUpdate.framework/Versions/A/SoftwareUpdate'
 current-version: 747
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SUAddAutoreleasePoolToCurrentRunLoop, _SUAppStoreAgentDidAutoInstallNotificationTextKey, 
                        _SUAppStoreAgentDidAutoInstallNotificationTitleKey, _SUAppStoreAgentDidAutoInstallNotificationURLStringKey, 

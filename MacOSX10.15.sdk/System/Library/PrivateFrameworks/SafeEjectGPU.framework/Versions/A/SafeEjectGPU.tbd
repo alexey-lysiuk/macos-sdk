@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 64F2982A-D4A5-33C8-95B5-6CA3F16302DF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SafeEjectGPU.framework/Versions/A/SafeEjectGPU'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SafeEjectGPUVersionNumber, _SafeEjectGPUVersionString ]
     objc-classes:    [ SafeEjectGPU, SafeEjectGPUSession ]

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 14223387-6F81-3976-8605-4BC2F253A93E', 'x86_64: 1422
 platform:        zippered
 install-name:    '/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit'
 current-version: 275
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$hide$os10.7$_SCDynamicStoreAddWatchedKey', '$ld$hide$os10.7$_SCDynamicStoreCopyMultiple', 
                        '$ld$hide$os10.7$_SCDynamicStoreCopyValue', '$ld$hide$os10.7$_SCDynamicStoreCreate', 

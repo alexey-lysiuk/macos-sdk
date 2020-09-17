@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 45BBE80A-C077-312E-BE88-C6C34C90D549' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IDSSystemPreferencesSignIn.framework/Versions/A/IDSSystemPreferencesSignIn'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IDSSignInAccountsWithSystemPreferencesCredentials ]
 ...

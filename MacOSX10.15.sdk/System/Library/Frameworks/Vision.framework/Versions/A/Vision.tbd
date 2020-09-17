@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 00B35E81-2B53-3A35-A2B7-570A9498345F', 'x86_64: 00B3
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Vision.framework/Versions/A/Vision'
 current-version: 3.0.97
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CCRectLowLevel, _VNAnimalDetectorCat, _VNAnimalDetectorDog, 
                        _VNAnimalIdentifierCat, _VNAnimalIdentifierDog, _VNBarcodeSymbologyAztec, 

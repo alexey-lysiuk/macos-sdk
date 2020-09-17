@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libsystem_asl.dylib'
 current-version: 377.60.2
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASL_LEVEL_TO_STRING, __asl_evaluate_send, __asl_fork_child, 
                        __asl_lib_log, __asl_log_args_to_xpc, __asl_msg_dump, __asl_mt_shim_fork_child, 

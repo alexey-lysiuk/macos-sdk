@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 28C5DA1E-5995-354D-978C-4B06BE646F35', 'x86_64: 28C5
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/iWorkXPC.framework/Versions/A/iWorkXPC'
 current-version: 11
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _iWorkXPCVersionNumber, _iWorkXPCVersionString ]
     objc-classes:    [ IWXPCFrameworkPlaceholder ]

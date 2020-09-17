@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libsystem_configuration.dylib'
 current-version: 1061.141.1
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __dns_configuration_ack, __libSC_info_fork_child, __libSC_info_fork_parent, 
                        __libSC_info_fork_prepare, __nwi_config_agent_copy_data, __nwi_state_ack, 

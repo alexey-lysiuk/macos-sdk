@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 63923E3F-1489-3762-B5EB-5CE28A35FF50', 'x86_64: 63923E3F-1489-3762-B5EB-5CE28A35FF50' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DAAddCallbackToSession, _DAApprovalSessionCreate, _DAApprovalSessionGetTypeID, 
                        _DAApprovalSessionScheduleWithRunLoop, _DAApprovalSessionUnscheduleFromRunLoop, 

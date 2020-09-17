@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 43E4DCE7-2DA0-3F9B-8C4E-78D1DFDB6E53' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DVD.framework/Versions/A/DVD'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DVDVideoApplySPDCSQ, _DVDVideoBackEndDecode, _DVDVideoBeginDecode, 
                        _DVDVideoClearMP, _DVDVideoClearSP, _DVDVideoCloseDevice, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 55BA10E5-2B07-378D-BE76-5BCF32469EDB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AudioHistory.framework/Versions/A/AudioHistory'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AudioHistoryCreateEventTimeStamp, _AudioHistoryCreateObject, 
                        _AudioHistoryEnumerateEventRange, _AudioHistoryIsReading, 

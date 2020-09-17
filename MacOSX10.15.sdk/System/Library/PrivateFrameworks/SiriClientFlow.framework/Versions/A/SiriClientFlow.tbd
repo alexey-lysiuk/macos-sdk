@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AF4BF8E0-606C-3127-AB53-9B2E9168816B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SiriClientFlow.framework/Versions/A/SiriClientFlow'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CFBCGetDiagnosticsSubmissionAllowedClassIdentifier, _CFBCGetDiagnosticsSubmissionAllowedResponseAllowedPListKey, 
                        _CFBCGetDiagnosticsSubmissionAllowedResponseClassIdentifier, 

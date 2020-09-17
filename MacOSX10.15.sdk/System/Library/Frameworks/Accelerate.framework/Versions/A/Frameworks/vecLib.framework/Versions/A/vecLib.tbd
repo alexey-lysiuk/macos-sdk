@@ -5,7 +5,7 @@ uuids:           [ 'x86_64: 4686AE53-FD05-302C-AC20-C014EFC2305F', 'x86_64: 4686
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib'
 current-version: 735.140.1
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     allowable-clients: [ Accelerate ]
     re-exports:      [ '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib', 
@@ -23,7 +23,7 @@ uuids:           [ 'x86_64: C157903D-417A-322B-916E-DDCFE2AF97EE', 'x86_64: C157
                    'x86_64h: C6C2D42F-7456-3DBF-8BE2-9AA06EFC78FD', 'x86_64h: C6C2D42F-7456-3DBF-8BE2-9AA06EFC78FD' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _APL_dgemm, _APL_dgemm_LU, _APL_dgemm_QR, _APL_dsyrk, _APL_dtrsm, 
                        _APL_sgemm, _APL_sgemm_LU, _APL_sgemm_QR, _APL_ssyrk, _APL_strsm, 
@@ -164,7 +164,7 @@ uuids:           [ 'x86_64: 69FA0C4F-B59D-374A-9DCF-E9FA79F332FD', 'x86_64: 69FA
                    'x86_64h: 99C61C48-B14C-3DA6-8C31-6BF72DA0A3A9', 'x86_64h: 99C61C48-B14C-3DA6-8C31-6BF72DA0A3A9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     allowable-clients: [ vecLib ]
     symbols:         [ _BNNSApplyVectorActivationLayer, _BNNSBatchNormFilterApplyBackwardBatch, 
@@ -189,7 +189,7 @@ uuids:           [ 'x86_64: 6FEC8434-0C35-3528-A3DE-E3C78A748B6C', 'x86_64: 6FEC
                    'x86_64h: 5E3E3867-50C3-3E6A-9A2E-007CE77A4641', 'x86_64h: 5E3E3867-50C3-3E6A-9A2E-007CE77A4641' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _CBDSQR, _CBDSQR_, _CGBBRD, _CGBBRD_, _CGBCON, _CGBCON_, _CGBEQU, 
                        _CGBEQUB, _CGBEQUB_, _CGBEQU_, _CGBRFS, _CGBRFS_, _CGBSV, 
@@ -1046,7 +1046,7 @@ uuids:           [ 'x86_64: AAC1A8DA-0B44-3D52-A03F-1DFED19D33BB', 'x86_64: AAC1
                    'x86_64h: 3D433800-0099-33E0-8C81-15F83247B2C9', 'x86_64h: 3D433800-0099-33E0-8C81-15F83247B2C9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLinearAlgebra.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     allowable-clients: [ vecLib ]
     symbols:         [ _la_add_attributes, _la_diagonal_matrix_from_vector, _la_difference, 
@@ -1068,7 +1068,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 371F36A7-B12F-363E-8955-F24F7C2048F6', 'x86_64: 371F36A7-B12F-363E-8955-F24F7C2048F6' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libQuadrature.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ vecLib ]
     symbols:         [ _quadrature_integrate ]
@@ -1077,7 +1077,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B8A10D0C-4577-343D-B310-A3E81265D107', 'x86_64: B8A10D0C-4577-343D-B310-A3E81265D107' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparse.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ vecLib ]
     symbols:         [ __SparseAMD, __SparseAMDWorkspaceSize, __SparseCGIterate_Double, 
@@ -1241,7 +1241,7 @@ uuids:           [ 'x86_64: CFFEAA75-99FB-369E-80A1-4BC73ADEBEA9', 'x86_64: CFFE
                    'x86_64h: B147FEF6-A0DB-3830-BF06-45BEC58DB576', 'x86_64h: B147FEF6-A0DB-3830-BF06-45BEC58DB576' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparseBLAS.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     allowable-clients: [ Sparse, vecLib ]
     symbols:         [ _sparse_commit, _sparse_elementwise_norm_double, _sparse_elementwise_norm_float, 
@@ -1282,7 +1282,7 @@ uuids:           [ 'x86_64: 1586D162-55FD-3EC0-AFC7-975EAE2D0DD6', 'x86_64: 1586
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib'
 current-version: 735.140.1
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _vDSP_DCT_CreateSetup, _vDSP_DCT_Execute, _vDSP_DFT_CreateSetup, 
                        _vDSP_DFT_DestroySetup, _vDSP_DFT_DestroySetupD, _vDSP_DFT_Execute, 
@@ -1398,7 +1398,7 @@ uuids:           [ 'x86_64: 61CF1106-41C2-3971-9187-BD1D53C00343', 'x86_64: 61CF
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib'
 current-version: 735.140.1
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _VVACOS, _VVACOSF, _VVACOSF_, _VVACOSH, _VVACOSHF, _VVACOSHF_, 
                        _VVACOSH_, _VVACOS_, _VVASIN, _VVASINF, _VVASINF_, _VVASINH, 

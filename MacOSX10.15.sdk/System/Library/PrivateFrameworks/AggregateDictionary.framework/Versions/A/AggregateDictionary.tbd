@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 95A291F5-B69F-3C37-9483-C3B2EBF52AC1', 'x86_64: 95A291F5-B69F-3C37-9483-C3B2EBF52AC1' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AggregateDictionary.framework/Versions/A/AggregateDictionary'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ADClientAddValueForScalarKey, _ADClientBatchKeys, _ADClientCheckpoint, 
                        _ADClientClearDistributionKey, _ADClientClearScalarKey, _ADClientCommit, 

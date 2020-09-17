@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 849ACDCC-F72C-33EB-A9A9-1F1AAB67B6C1', 'x86_64: 849A
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/GeoServices'
 current-version: 1624.26.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AllRequestsKeyPathFragment, _AnalyticsLoggingSubsystem, _AnyRequestKeyPathFragment, 
                        _AppKeyPathPrefix, _DefaultKeyPathFragment, _DefaultLoggingSubsystem, 

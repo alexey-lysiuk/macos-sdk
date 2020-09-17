@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A4CCA6A1-2A94-3063-BDCD-F14C9EEAFBAD' ]
 platform:        macosx
 install-name:    '/usr/lib/libnfrestore.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NfJcopUpdateFileClose, _NfJcopUpdateFileGetPlan, _NfJcopUpdateFileGetRequiredMemoryForPlan, 
                        _NfJcopUpdateFileGetSequenceForPlan, _NfJcopUpdateFileLogDescription, 

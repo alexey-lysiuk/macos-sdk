@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4A0F3B93-4D23-3E74-9A3D-AD19E9C0E59E', 'x86_64: 4A0F3B93-4D23-3E74-9A3D-AD19E9C0E59E' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Network.framework/Versions/A/Network'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/usr/lib/libnetwork.dylib' ]
     symbols:         [ '$ld$install_name$os10.0$/System/Library/PrivateFrameworks/Network.framework/Network', 

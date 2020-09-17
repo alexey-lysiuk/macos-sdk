@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 22251300-31BA-3F21-A1AD-9B50C23DA38C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FWAVC.framework/Versions/A/FWAVC'
 current-version: 46
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FWAVCDVFramerCreate, _FWAVCDVFramerFrameGetClientPrivateData, 
                        _FWAVCDVFramerFrameGetDVMode, _FWAVCDVFramerFrameGetFrameDataBuf, 

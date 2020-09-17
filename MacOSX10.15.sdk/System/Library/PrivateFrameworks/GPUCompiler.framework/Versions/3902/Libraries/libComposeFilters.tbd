@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: BFEE9721-029C-3084-891D-41E80B69F63F', 'x86_64: BFEE
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libComposeFilters.dylib'
 current-version: 902.14.11
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _composeImageFilterFunctionsFromModulesSPI, _composeImageFilterFunctionsSPI ]
 ...

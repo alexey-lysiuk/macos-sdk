@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 10D0F3BB-E8F3-365E-8528-6AC996A9B0E7', 'x86_64: 10D0
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BSAbsoluteTimeFromMachTime, _BSActionClearResponseListenerWithToken, 
                        _BSActionCreateResponseListenerWithHandler, _BSActionErrorDomain, 

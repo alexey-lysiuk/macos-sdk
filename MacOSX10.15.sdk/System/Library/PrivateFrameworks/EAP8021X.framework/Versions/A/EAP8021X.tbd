@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D3F76E01-2F9F-33E1-B5C9-CAC6E01724C2', 'x86_64: D3F76E01-2F9F-33E1-B5C9-CAC6E01724C2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EAP8021X.framework/Versions/A/EAP8021X'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AKAAuthResultsInit, _AKAAuthResultsRelease, _AKAAuthResultsSetAUTS, 
                        _AKAAuthResultsSetCK, _AKAAuthResultsSetIK, _AKAAuthResultsSetRES, 

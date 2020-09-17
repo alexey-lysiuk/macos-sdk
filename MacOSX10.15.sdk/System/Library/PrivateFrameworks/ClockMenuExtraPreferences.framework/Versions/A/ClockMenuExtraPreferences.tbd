@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 53D35FFF-937F-3889-B073-23790F05755D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ClockMenuExtraPreferences.framework/Versions/A/ClockMenuExtraPreferences'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CLKAppendAMPMLegacyKey, _CLKAppleDatePreferencesChangedNotification, 
                        _CLKDisplaySecondsLegacyKey, _CLKErrorLog, _CLKFlashSeparatorsLegacyKey, 

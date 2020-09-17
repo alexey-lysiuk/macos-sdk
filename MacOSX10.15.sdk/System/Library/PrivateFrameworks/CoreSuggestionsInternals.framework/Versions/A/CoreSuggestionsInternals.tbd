@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 436AC348-2939-3477-BAC0-103DBD02E8AB', 'x86_64: 436A
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/Versions/A/CoreSuggestionsInternals'
 current-version: 1052.34
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreSuggestionsInternalsVersionNumber, _CoreSuggestionsInternalsVersionString, 
                        _MIN_PADDING, _SGAddSignificantPseudoContactsEmail, _SGBytesToHex, 

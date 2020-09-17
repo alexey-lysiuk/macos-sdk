@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libnetsnmphelpers.25.dylib'
 current-version: 26.2
 compatibility-version: 26
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _netsnmp_helpers_dummy_text ]
 ...

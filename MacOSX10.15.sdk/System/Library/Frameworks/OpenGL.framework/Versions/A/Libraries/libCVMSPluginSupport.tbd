@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 2B6C3C16-3F5F-36A8-8070-2A862B90328B', 'x86_64: 2B6C3C16-3F5F-36A8-8070-2A862B90328B' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _cvmAddModularFunctionToCache, _cvmBuildModularFunctionDeferred, 
                        _cvmBuildModularFunctionSync, _cvmCancelFunctionPointerWrite, 

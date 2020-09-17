@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 665045A2-6882-3863-9F8E-209AD756E6D9' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DialogEngine.framework/Versions/A/DialogEngine'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CATDebugMode, _CATDefaultMode, _CATDisableUpdates, _CATExecute, 
                        _CATExecuteWithStrings, _CATResetState, _CATTestMode, _CATValidateWithStrings, 

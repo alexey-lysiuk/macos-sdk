@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D3C57A32-6BD0-3228-B1C4-0F42A6128A6C', 'x86_64: D3C57A32-6BD0-3228-B1C4-0F42A6128A6C' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib', 
                        '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib' ]
@@ -36,7 +36,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FB5E6A75-398E-38EF-8CB2-59F5BFE3034C', 'x86_64: FB5E6A75-398E-38EF-8CB2-59F5BFE3034C' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CGLGetCurrentContext, _CGLSetCurrentContext, _glAccum, _glActiveShaderProgram, 
                        _glActiveStencilFaceEXT, _glActiveTexture, _glActiveTextureARB, 
@@ -427,7 +427,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D8B4D804-7323-30BC-871C-B7236FFC2FE3', 'x86_64: D8B4D804-7323-30BC-871C-B7236FFC2FE3' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _gluBeginCurve, _gluBeginPolygon, _gluBeginSurface, _gluBeginTrim, 
                        _gluBuild1DMipmapLevels, _gluBuild1DMipmapLevelsCTX, _gluBuild1DMipmaps, 

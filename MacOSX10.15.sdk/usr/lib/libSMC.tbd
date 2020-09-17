@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5C9C17F2-1E6F-3A19-A440-86F74D82284F' ]
 platform:        macosx
 install-name:    '/usr/lib/libSMC.dylib'
 current-version: 20
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AccumSetupSettingsCPU, _AccumSetupSettingsGPU, _AccumSetupSettingsHP, 
                        _AccumulatorPlatformStructLookupArray, _SMCAEPopulatePlatform, 

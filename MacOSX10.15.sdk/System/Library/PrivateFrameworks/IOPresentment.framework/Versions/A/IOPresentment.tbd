@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 32F1B3BC-4644-3982-AAB2-8EB5D5FF0161', 'x86_64: 32F1
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment'
 current-version: 47.10
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IOPresentmentBegin, _IOPresentmentBindIOAccelSurfaceToResource, 
                        _IOPresentmentBindIOSurfaceToResourcePlane, _IOPresentmentBindIOSurfaceToResourcePlaneWithDirtyRect, 

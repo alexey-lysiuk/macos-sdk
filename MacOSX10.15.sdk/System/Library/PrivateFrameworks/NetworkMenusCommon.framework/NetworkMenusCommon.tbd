@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EEF91DBF-66C9-3CA7-8DC1-613107CA9B36' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/NetworkMenusCommon.framework/NetworkMenusCommon'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _const_notificationName_NC, _easeFunction, _kConnectionTimerInterval, 
                        _kStatusCheckInterval, _limit ]

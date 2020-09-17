@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/SafariServices.framework/Versions/A/SafariServices'
 current-version: 609.3.5
 compatibility-version: 535
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SFErrorDomain, _SSGetApplicationNameForUserAgent, _SSGetBestURLForUserTypedString, 
                        _SSGetFullySimplifiedStringForURL, _SSGetSafariDateOfLastActiveUse, 

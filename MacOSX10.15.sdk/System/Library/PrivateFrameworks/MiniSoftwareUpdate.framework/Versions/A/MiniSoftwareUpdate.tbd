@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 99D9AE92-CDF2-3F72-9004-899FA194FF72' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MiniSoftwareUpdate.framework/Versions/A/MiniSoftwareUpdate'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MSUCatalogAppleCatalogURLKey, _MSUCatalogApplePostURLKey, 
                        _MSUCatalogBaseURLStringKey, _MSUCatalogErrorDomain, _MSUCatalogIndexDateKey, 

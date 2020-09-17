@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BA80A025-9F81-3933-9224-833F371A4DDB', 'x86_64: BA80A025-9F81-3933-9224-833F371A4DDB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Quagga.framework/Versions/A/Quagga'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ACBSConfigCopy, _ACBSConfigCopySymbologiesEnabled, _ACBSConfigCreate, 
                        _ACBSConfigFree, _ACBSConfigSetDebuggingEnabled, _ACBSConfigSetFailedLocationsEnabled, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4EF71926-A3DD-3164-BE44-33F45754E7B3' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaRuntimeSupport.framework/Versions/A/JavaRuntimeSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _JRSAccessibilityUnregisterUniqueIdForUIElement, _JRSCopyCanonicalLanguageForPrimaryLanguage, 
                        _JRSCopyOSJavaSupportVersion, _JRSCopyOSName, _JRSCopyOSVersion, 

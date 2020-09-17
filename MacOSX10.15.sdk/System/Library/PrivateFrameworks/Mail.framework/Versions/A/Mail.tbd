@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 90566F33-1A87-3037-85EB-11B2523C82C8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Mail.framework/Versions/A/Mail'
 current-version: 3608.120.23
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ CoreSuggestionsTests, DebugBundle, EmailAuthenticationPlugin, 
                          EmailNotificationPlugin, EmailUIPlugin, Mail, MailCacheDelete, 

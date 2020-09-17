@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 32A6F4EA-48AB-35A9-9CED-DE0EE0FC9147' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MetricKitCore.framework/Versions/A/MetricKitCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MetricKitCoreVersionNumber, _MetricKitCoreVersionString ]
     objc-classes:    [ MXCore, MXCorePayloadConstructor, MXSource ]

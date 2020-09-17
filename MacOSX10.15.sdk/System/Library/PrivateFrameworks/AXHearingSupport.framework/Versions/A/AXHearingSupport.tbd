@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B0811498-14F3-345C-A20F-995857454CBB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AXHearingSupport.framework/Versions/A/AXHearingSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXCloudKitContainerIdentifier, _AXCloudKitErrorDomain, _AXCloudKitFinishedSchemaCheckKey, 
                        _AXCloudKitMaxRecordDataBytes, _AXCloudKitPushTopic, _AXCloudKitServerChangeTokenKey, 

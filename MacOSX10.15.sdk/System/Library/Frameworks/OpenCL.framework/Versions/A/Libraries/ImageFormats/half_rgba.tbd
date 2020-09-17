@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6DD21E95-D229-3C3E-BF21-362513862EAA' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/ImageFormats/half_rgba.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___FunctionTableTransposed_AVX10, ___FunctionTableTransposed_F16C, 
                        ___FunctionTableTransposed_SSE3, ___FunctionTableTransposed_SSE41, 

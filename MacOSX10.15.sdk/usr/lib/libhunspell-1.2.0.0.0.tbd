@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D9444204-9FC4-3116-9115-DD87A0EE79FE' ]
 platform:        macosx
 install-name:    '/usr/lib/libhunspell-1.2.0.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _Hunspell_add, _Hunspell_add_with_affix, _Hunspell_analyze, 
                        _Hunspell_create, _Hunspell_create_key, _Hunspell_destroy, 

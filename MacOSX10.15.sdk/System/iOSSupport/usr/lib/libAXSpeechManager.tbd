@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 308C5D52-8946-3F9D-8277-8C9949F9580C' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/libAXSpeechManager.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXAVSpeechSynthesisVoiceFromTTSSpeechVoice, _AXAVVoiceQualityFromTTSFootprint, 
                        _AXAlexVoiceIdentifier, _AXNeuralSiriFemaleVoiceIdentifier, 

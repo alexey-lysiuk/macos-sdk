@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A36F5C29-2391-3FDF-80CB-1AF83779E85D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AuthKitUI.framework/Versions/A/AuthKitUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AKAppleIDButtonDefaultCornerRadius, _AKColorSpaceStandardRGB, 
                        _AKContentAlignmentCentered, _AKContentAlignmentMake, _AKCreateAppleIDButtonImage, 

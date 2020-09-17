@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 33F49412-5106-35B8-AA60-5A497C3967E6' ]
 platform:        macosx
 install-name:    '/usr/lib/libodfde.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ODFDEAddUser, _ODFDEResetPassword, _ODFDESynchronizeUsers, 
                        _ODFDESynchronizeUsersOnVolume, ___odfdeVersionNumber, ___odfdeVersionString ]

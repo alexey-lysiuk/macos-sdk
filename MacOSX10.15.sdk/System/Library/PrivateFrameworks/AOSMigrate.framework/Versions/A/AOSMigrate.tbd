@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B5FBEDAB-04BF-3475-9922-0DBA860EF501' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AOSMigrate.framework/Versions/A/AOSMigrate'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AOSMigrateAccountWithAppleID ]
 ...

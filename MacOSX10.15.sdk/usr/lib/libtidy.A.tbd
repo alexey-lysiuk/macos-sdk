@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 41B15FFB-6FD2-3E1B-A1F8-E6B12EF3C1EE', 'x86_64: 41B15FFB-6FD2-3E1B-A1F8-E6B12EF3C1EE' ]
 platform:        zippered
 install-name:    '/usr/lib/libtidy.A.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _tidyAccessWarningCount, _tidyAttrFirst, _tidyAttrGetABBR, 
                        _tidyAttrGetALINK, _tidyAttrGetALT, _tidyAttrGetBGCOLOR, _tidyAttrGetById, 

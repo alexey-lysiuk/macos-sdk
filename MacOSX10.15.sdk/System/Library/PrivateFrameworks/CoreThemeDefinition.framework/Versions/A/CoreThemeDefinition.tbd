@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 07E2565C-F3F9-344F-BD46-C92E437BA0BA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreThemeDefinition.framework/Versions/A/CoreThemeDefinition'
 current-version: 447.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AbortDistillKey, _CSIDataKey, _CoreThemeArtworkFormatCAAR, 
                        _CoreThemeArtworkFormatPNG, _CoreThemeArtworkFormatPSD, _CoreThemeDefinitionDataModelKey, 

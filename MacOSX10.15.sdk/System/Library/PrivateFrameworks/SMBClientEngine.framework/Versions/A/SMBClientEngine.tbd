@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 2AFD09C9-A71F-3BB0-902F-AB2E79653C9C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SMBClientEngine.framework/Versions/A/SMBClientEngine'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ContextFlags2int, _DIFF1970TO1601, _SMBClientEngineVersionNumber, 
                        _SMBClientEngineVersionString, _asn1_ContextFlags, _asn1_ContextFlags_tag__2, 

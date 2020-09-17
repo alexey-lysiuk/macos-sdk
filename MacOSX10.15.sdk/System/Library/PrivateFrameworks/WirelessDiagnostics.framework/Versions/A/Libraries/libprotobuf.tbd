@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0CDB164D-E7C3-3D4F-BF11-47402D67D7B0', 'x86_64: 0CDB164D-E7C3-3D4F-BF11-47402D67D7B0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libprotobuf.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libprotobuf-lite.dylib' ]
     symbols:         [ __ZN20wireless_diagnostics6google8protobuf10ReflectionD0Ev, 
@@ -1355,7 +1355,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 578CA7D8-149E-3643-937B-DAD5501E4575', 'x86_64: 578CA7D8-149E-3643-937B-DAD5501E4575' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libprotobuf-lite.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN20wireless_diagnostics6google8protobuf11LogSilencerC1Ev, 
                        __ZN20wireless_diagnostics6google8protobuf11LogSilencerC2Ev, 

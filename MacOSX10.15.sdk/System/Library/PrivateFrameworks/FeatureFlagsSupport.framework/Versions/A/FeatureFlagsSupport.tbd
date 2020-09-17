@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 835471F3-0644-342C-BAE4-F7D0929EBF23', 'x86_64: 8354
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FeatureFlagsSupport.framework/Versions/A/FeatureFlagsSupport'
 current-version: 17
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ FFConfiguration, FFFeatureState ]
 ...

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 213EC455-CA90-3309-B8AF-F94BF0729001' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/GameplayKit.framework/Versions/A/GameplayKit'
 current-version: 89
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GKClosestPointsBetweenLineSegments, _GKDoesCircleIntersectLine, 
                        _GKDoesCircleIntersectLineSegment, _GKDoesCircleIntersectPolygon, 

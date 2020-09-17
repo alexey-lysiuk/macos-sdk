@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D8B4D804-7323-30BC-871C-B7236FFC2FE3', 'x86_64: D8B4D804-7323-30BC-871C-B7236FFC2FE3' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _gluBeginCurve, _gluBeginPolygon, _gluBeginSurface, _gluBeginTrim, 
                        _gluBuild1DMipmapLevels, _gluBuild1DMipmapLevelsCTX, _gluBuild1DMipmaps, 

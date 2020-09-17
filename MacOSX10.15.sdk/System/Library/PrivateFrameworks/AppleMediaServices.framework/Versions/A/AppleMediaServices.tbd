@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 533DB7DE-4799-3A05-B75F-AEE8B45FF6F5', 'x86_64: 533DB7DE-4799-3A05-B75F-AEE8B45FF6F5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleMediaServices.framework/Versions/A/AppleMediaServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AMSAccountFlagAgeVerificationExpiration, _AMSAccountFlagPersonalization, 
                        _AMSAccountFlagRetailDemo, _AMSAccountFlagUnderThirteen, _AMSAccountGrandSlamTokenIdentifierMultiUser, 

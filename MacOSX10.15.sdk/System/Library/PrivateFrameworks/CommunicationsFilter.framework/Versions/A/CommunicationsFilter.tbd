@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C32767B2-2703-3A2E-B1A5-E3C571F6BE2F', 'x86_64: C327
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CommunicationsFilter.framework/Versions/A/CommunicationsFilter'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CMFAgentName, _CMFBlockListAddItemForAllServices, _CMFBlockListCopyItemsForAllServicesService, 
                        _CMFBlockListIsItemBlocked, _CMFBlockListRemoveItemFromAllServices, 

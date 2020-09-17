@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A985152C-10A5-3839-8770-090679ACC07A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Spotlight.framework/Versions/A/Spotlight'
 current-version: 2076.7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PRSResultDidUpdate, _SPAppDelegatePreferencesChanged, _SPBodyColor, 
                        _SPBodyFont, _SPDescriptionBodyColorOfWeight, _SPDescriptionBodyFontOfWeightSize, 

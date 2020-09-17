@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: BE489B37-3FA2-3D7D-9112-98E715AEA815' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SocialServices.framework/Versions/A/SocialServices'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ SLGoogleAuthController ]
 ...

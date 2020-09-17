@@ -6,7 +6,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics'
 current-version: 1355.22
 compatibility-version: 64
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ '$ld$install_name$os10.4$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
                        '$ld$install_name$os10.5$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 

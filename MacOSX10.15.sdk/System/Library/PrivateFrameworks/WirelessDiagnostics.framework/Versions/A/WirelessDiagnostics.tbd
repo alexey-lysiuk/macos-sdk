@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9DA8A821-4354-3E24-BAA1-4519D2279F2B', 'x86_64: 9DA8
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/WirelessDiagnostics'
 current-version: 757
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDSupportFramework.dylib' ]
     symbols:         [ _AWDPostMetric, _AWDPostSimpleMetric, _AWDPostSimpleMetricWithBool, 
@@ -697,7 +697,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D1EA2A4B-BC59-3FE2-BAA9-4448D6F8393F', 'x86_64: D1EA2A4B-BC59-3FE2-BAA9-4448D6F8393F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDSupportFramework.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AWDCFNetworkCacheMetricsReadFrom, _AWDCFNetworkStreamTaskTimingReadFrom, 
                        _AWDCFNetworkTaskMetricsReadFrom, _AWDCFNetworkTransactionMetricsReadFrom, 

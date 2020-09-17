@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9BB0EDB6-3808-30FC-B0ED-764DE5AAB893' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AnnotationKit.framework/Versions/A/AnnotationKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AKAdornmentZPositionOffset, _AKAnnotationChangeObjectKey, 
                        _AKAnnotationLayerSetupCompleteNotification, _AKAnnotationPropertiesChangedNotification, 

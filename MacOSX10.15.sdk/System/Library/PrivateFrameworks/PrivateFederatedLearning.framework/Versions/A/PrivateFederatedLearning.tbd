@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 749B87EB-5AD8-3C7D-BEA3-85D330B0CE62' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PrivateFederatedLearning.framework/Versions/A/PrivateFederatedLearning'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PFLClientIsAllowedForIdentifier, _PFLClientIsEntitled, _PFLPrivatize, 
                        _PFLPrivatizeCustomNorm, _PFLSeparatedDPCustom, _PFLSimulateCrashIfNecessary, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 15AD4C26-7016-3302-A122-036A0C86EA5F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotoLibrary.framework/Versions/A/PhotoLibrary'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PHLIngestAssetMetadataPropertyKey, _PHLIngestAssetURLDataKey, 
                        _PHLIngestRequestMetadataCreationDateKey, _PHLIngestRequestMetadataPlaybackVariationKey, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D3B57285-E83E-3495-9620-1CFB0B0462FE', 'x86_64: D3B57285-E83E-3495-9620-1CFB0B0462FE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/LegacyHandle.framework/Versions/A/LegacyHandle'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CheckInHandleDebug, _CheckOutHandleDebug, _CloseAllHandles, 
                        _CreateHandle, _FindHandle, _GetNumHandles ]

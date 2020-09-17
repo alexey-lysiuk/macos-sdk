@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libdispatch.dylib'
 current-version: 1173.100.2
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$hide$os10.12$_dispatch_assert_queue', '$ld$hide$os10.12$_dispatch_assert_queue_not', 
                        '$ld$hide$os10.12$_dispatch_queue_create_with_target', __dispatch_begin_NSAutoReleasePool, 

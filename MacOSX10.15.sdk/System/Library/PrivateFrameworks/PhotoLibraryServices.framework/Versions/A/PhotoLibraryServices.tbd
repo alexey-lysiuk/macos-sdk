@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D1C34943-CC02-30C0-8ADB-0DC8E9DD0CC3', 'x86_64: D1C3
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/Versions/A/PhotoLibraryServices'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CLOUD_COALESCED_EVENT_KEY, _CLOUD_SYNC_CHANGE_KEY, _CPLStatusFromPathManager, 
                        _CreateCGImageFromJPEGData, _DateCreatedFromExifDictionary, 

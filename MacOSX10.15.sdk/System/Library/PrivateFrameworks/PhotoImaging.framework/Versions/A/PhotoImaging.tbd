@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 38F47052-570F-361E-B793-554F0821E577', 'x86_64: 38F4
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotoImaging.framework/Versions/A/PhotoImaging'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GUInvertMatrix, _GUMatrixVector, _PIAdjustment_AutoEnhance_Identifier, 
                        _PIAdjustment_AutoLoop_Identifier, _PIAdjustment_Crop_Identifier, 

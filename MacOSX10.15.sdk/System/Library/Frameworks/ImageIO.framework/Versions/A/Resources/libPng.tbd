@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 798EBADF-2FA2-3CC3-8F84-990B66F89680', 'x86_64: 798E
                    'x86_64h: DDBB2E46-7BCB-339B-883E-67B97A7614A3', 'x86_64h: DDBB2E46-7BCB-339B-883E-67B97A7614A3' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ __cg_png_cleanup_for_write_start_row, __cg_png_create_info_struct, 
                        __cg_png_create_read_struct, __cg_png_create_write_struct, 

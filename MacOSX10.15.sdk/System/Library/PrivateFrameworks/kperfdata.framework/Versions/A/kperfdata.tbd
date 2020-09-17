@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3B76BC89-5CAA-39AE-A070-802458E154BE', 'x86_64: 3B76BC89-5CAA-39AE-A070-802458E154BE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/kperfdata.framework/Versions/A/kperfdata'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _kpdecode_cursor_clearchunk, _kpdecode_cursor_create, _kpdecode_cursor_flush, 
                        _kpdecode_cursor_free, _kpdecode_cursor_get_stats, _kpdecode_cursor_next_record, 

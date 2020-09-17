@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 33C20D16-94A3-3B7D-8667-CC7D8AB8086D' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MediaPlayer.framework/Versions/A/MediaPlayer'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CGRectNormalizedRectFromSubRect, _CGRectSubRectWithNormalizedRect, 
                        _CopyProgressStringForSeconds, _HomeSharingML3DataProviderCredentialsDidChangeNotification, 

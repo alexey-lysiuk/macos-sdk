@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 562BB83A-179C-3B63-959F-354ED8C08316' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GraphKit.framework/Versions/A/GraphKit'
 current-version: 25
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GRAxesBackgroundColor, _GRAxesBezelBorder, _GRAxesBorderType, 
                        _GRAxesBottomMargin, _GRAxesCategoryAxis, _GRAxesDrawBackground, 

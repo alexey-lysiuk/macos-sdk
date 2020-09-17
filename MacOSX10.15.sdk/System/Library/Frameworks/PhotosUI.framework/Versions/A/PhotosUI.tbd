@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8361DAC2-D94F-32C4-913D-CE8933B10B73' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/PhotosUI.framework/Versions/A/PhotosUI'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PHProjectCategoryBook, _PHProjectCategoryCalendar, _PHProjectCategoryCard, 
                        _PHProjectCategoryOther, _PHProjectCategoryPrints, _PHProjectCategorySlideshow, 

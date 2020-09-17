@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/liblaunch.dylib'
 current-version: 1738.140.1
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __spawn_via_launchd, __vproc_get_last_exit_status, __vproc_grab_subset, 
                        __vproc_kickstart_by_label, __vproc_log, __vproc_log_error, 

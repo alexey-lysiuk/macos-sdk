@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F5FAA60C-45BF-3EB2-BD29-7E36C03ABF67', 'x86_64: F5FA
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderOutput.framework/Versions/A/ScreenReaderOutput'
 current-version: 390
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SCROBrailleCreateTranslatePrintBrailleToBrailleCode, _SCROBrailleDisplayHistoryIsHistoryString, 
                        _SCROBrailleDisplayHistoryIsStringUnread, _SCROSerializeWrapper, 

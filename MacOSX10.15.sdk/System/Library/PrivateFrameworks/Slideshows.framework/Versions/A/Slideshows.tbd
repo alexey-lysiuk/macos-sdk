@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Slideshows.framework/Versions/A/Slideshows'
 current-version: 4.5
 compatibility-version: 4.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _Antialias1D, _AppendIntToString, _Bounce, _CGPointFromCAMLString, 
                        _CGRectFromCAMLString, _CenterRectOverPoint, _CenterRectOverRect, 

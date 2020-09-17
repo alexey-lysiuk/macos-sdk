@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SafariCore.framework/Versions/A/SafariCore'
 current-version: 609.3.5
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _WBSABAddressProperty, _WBSABBirthdayProperty, _WBSABEmailProperty, 
                        _WBSABInstantMessageProperty, _WBSABOrganizationProperty, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C616977E-919B-3211-BC56-3803B3B2702E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilityBundles.framework/Versions/A/AccessibilityBundles'
 current-version: 12
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXBBundleManagerLoadAXBundles, _AXBBundleManagerLoadAXBundlesWithClientToken, 
                        _AXBBundleManagerLoadRequiredAXBundlesWithClientToken, _AXBComponentsJoinedByComma, 

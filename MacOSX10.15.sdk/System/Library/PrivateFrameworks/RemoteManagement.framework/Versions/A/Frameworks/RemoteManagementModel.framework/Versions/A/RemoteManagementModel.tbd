@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3DA1E514-3AF4-3E13-A7DF-BD69DCE572C7', 'x86_64: 3DA1E514-3AF4-3E13-A7DF-BD69DCE572C7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RemoteManagement.framework/Versions/A/Frameworks/RemoteManagementModel.framework/Versions/A/RemoteManagementModel'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RMModelAccountMailDeclaration_IncomingServer_AuthenticationMethod_CRAMMD5, 
                        _RMModelAccountMailDeclaration_IncomingServer_AuthenticationMethod_HTTPMD5, 

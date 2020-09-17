@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1523A1BF-A6BF-3E48-A9CF-C0AFAEAF69B2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DCERPC.framework/Versions/A/DCERPC'
 current-version: 69
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _dce_error_inq_text, _dcethread_SIGEMT_e, _dcethread_SIGIOT_e, 
                        _dcethread_SIGPIPE_e, _dcethread_SIGSYS_e, _dcethread_SIGTRAP_e, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0F49AA04-3400-349A-9096-6D4D7ED61027', 'x86_64: 0F49AA04-3400-349A-9096-6D4D7ED61027' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppSandbox.framework/Versions/A/AppSandbox'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AppSandboxProfileSnippetModificationDateKey, _AppSandboxProfileSnippetPathKey, 
                        _AppSandboxRequestContainer, _AppSandboxRequestContainerIdKey, 

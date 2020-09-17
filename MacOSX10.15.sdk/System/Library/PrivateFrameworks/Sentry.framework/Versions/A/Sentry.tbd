@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A5A755D5-D35A-38D2-A775-4FA6A50D3626' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Sentry.framework/Versions/A/Sentry'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HTConfigChangeNotificationToken, _HangTracerCollectOSSignposts, 
                        _STYAbsoluteTimeToMachContinuousTime, _STYDiagnosticsCollectorErrorDomain, 

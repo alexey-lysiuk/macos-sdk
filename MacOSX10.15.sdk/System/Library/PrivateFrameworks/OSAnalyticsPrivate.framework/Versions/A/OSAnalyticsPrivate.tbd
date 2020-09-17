@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9669DF26-8234-3D55-A99B-41CACE6CC471' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OSAnalyticsPrivate.framework/Versions/A/OSAnalyticsPrivate'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSAnalyticsPrivateVersionNumber, _OSAnalyticsPrivateVersionString ]
     objc-classes:    [ OSAEphemeralLog, OSAHttpSubmitter, OSALegacyXform, OSAStreamDeflater, 

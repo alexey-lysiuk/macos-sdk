@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 623CA2CF-0C8D-3EF0-87C9-744FAA72ADD6', 'x86_64: 623C
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotosImagingFoundation.framework/Versions/A/PhotosImagingFoundation'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CGAffineTransformDeterminant, _CGAffineTransformDot, _CGAffineTransformFixedPoint, 
                        _CGAffineTransformForMappingFromRectToRect, _CGAffineTransformHasRotation, 

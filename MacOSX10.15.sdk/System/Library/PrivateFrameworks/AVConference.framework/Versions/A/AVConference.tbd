@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 36E67E14-33DD-38B2-BA63-9686EF279D9D', 'x86_64: 36E67E14-33DD-38B2-BA63-9686EF279D9D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Versions/A/AVConference'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ACGKDecoderFactory, _ACGKEncoderFactory, _AVCKeyDaemonProcessInfoError, 
                        _AVCKeyDaemonProcessInfoUniquePID, _AVCMediaStreamNegotiatorVideoHeight, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: DFF4E22B-4020-3A9D-BB69-E6F2DA7EB0AA' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit'
 current-version: 25.37
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SKComponentRGBABlack, _SKComponentRGBABlue, _SKComponentRGBAClear, 
                        _SKComponentRGBAGreen, _SKComponentRGBARed, _SKComponentRGBAWhite, 

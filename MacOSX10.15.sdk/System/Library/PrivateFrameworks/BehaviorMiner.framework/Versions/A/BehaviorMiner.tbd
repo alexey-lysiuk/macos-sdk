@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1602F1CB-E750-3493-82DF-C3EFF0FEE8F6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BehaviorMiner.framework/Versions/A/BehaviorMiner'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BMCreateShortcutFilter, _BMErrorDomain, _BMIsNotAppExtension, 
                        _BMItemNormalizedValueFromValue, _BMItemValueFromNormalizedValue, 

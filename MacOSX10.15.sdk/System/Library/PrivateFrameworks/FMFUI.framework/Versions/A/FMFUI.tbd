@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3CB6FF6C-5404-38C1-B01A-632FE11551CC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FMFUI.framework/Versions/A/FMFUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ FMFLocationSharingViewController, FMFMapViewController ]
 ...

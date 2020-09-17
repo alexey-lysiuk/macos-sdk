@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D657EC20-2475-3D89-9F80-03F1F04B0B89', 'x86_64: D657
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/NLP.framework/Versions/A/NLP'
 current-version: 202
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NLEmojiPredictorCreate, _NLEmojiPredictorCreateCandidatesForString, 
                        _NLMessageConversationAddConversationTurn, _NLMessageConversationCopyConversationTurns, 

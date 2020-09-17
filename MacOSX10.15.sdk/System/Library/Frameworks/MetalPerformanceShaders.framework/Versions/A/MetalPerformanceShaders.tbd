@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F2921F9A-3041-3495-878D-64134267B847', 'x86_64: F292
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore', 
                        '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/Versions/A/MPSImage', 
@@ -20,7 +20,7 @@ uuids:           [ 'x86_64: 7EBAC15D-7837-395D-B405-1E29F7DA68FA', 'x86_64: 7EBA
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSImage, MPSMatrix, MPSNDArray, MPSNeuralNetwork, MPSParallelPrimitives, 
                          MPSRayIntersector, MetalPerformanceShaders ]
@@ -110,7 +110,7 @@ uuids:           [ 'x86_64: B424FE0C-6E90-3BFA-A6E7-DD86C735AE90', 'x86_64: B424
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/Versions/A/MPSImage'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSNeuralNetwork, MetalPerformanceShaders ]
     symbols:         [ _MPSSubTileEncode ]
@@ -142,7 +142,7 @@ uuids:           [ 'x86_64: 02006D92-E2AB-3892-A96B-37F6520C19BA', 'x86_64: 0200
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSNeuralNetwork, MetalPerformanceShaders ]
     symbols:         [ __Z21MPSDecrementReadCountP18MPSTemporaryMatrix, __Z21MPSDecrementReadCountP18MPSTemporaryVector ]
@@ -158,7 +158,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CAA5A368-DB71-34F6-AEF9-27A8BC298F53', 'x86_64: CAA5A368-DB71-34F6-AEF9-27A8BC298F53' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/Versions/A/MPSNDArray'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MetalPerformanceShaders ]
     objc-classes:    [ MPSNDArrayACos, MPSNDArrayACosGradient, MPSNDArrayACosh, MPSNDArrayACoshGradient, 
@@ -230,7 +230,7 @@ uuids:           [ 'x86_64: 05612E06-50CB-318F-9F8E-EF4D49FAB3B0', 'x86_64: 0561
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MetalPerformanceShaders ]
     symbols:         [ _DeadlockedBecauseTheCPUBasedWeightUpdateForThePreviousBatchOccursAtCompletionOfThisCmdBuf_TryGPUUpdateOrNewCmdBufInstead ]
@@ -336,7 +336,7 @@ uuids:           [ 'x86_64: B0B591F8-6875-351E-867F-8EB3CD38CD52', 'x86_64: B0B5
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MetalPerformanceShaders ]
     symbols:         [ _MPSAccelerationStructureBuilderCPU, _MPSAccelerationStructureBuilderGPU, 

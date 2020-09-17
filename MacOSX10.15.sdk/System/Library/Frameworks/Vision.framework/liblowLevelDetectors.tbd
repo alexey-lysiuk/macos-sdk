@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 333CDB63-B27F-3A1D-AEB6-F1DEE36E1987' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Vision.framework/liblowLevelDetectors.dylib'
 current-version: 3.0.97
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CCRectLowLevel, _createPerMeshForFFTSIZE, _horizonDetectionFFT, 
                        _horizonDetectionFFTAngles, _initializePerMesh ]

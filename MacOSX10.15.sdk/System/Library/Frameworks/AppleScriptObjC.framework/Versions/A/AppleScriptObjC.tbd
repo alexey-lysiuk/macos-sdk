@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A241DE30-3B7D-3905-AA72-1433C116CCFC' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AppleScriptObjC.framework/Versions/A/AppleScriptObjC'
 current-version: 35
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BACreateClassForOSAIDInComponent, _BAHandleEvent, _BAObjCIDForOSAIDInComponent ]
 ...

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 26D853B1-B1A1-3D60-844F-D087CEA549CB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SearchUICardKitProviderSupport.framework/Versions/A/SearchUICardKitProviderSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CRKAudioPlaybackCardSectionIgnoresMuteSwitch, _CRKMapCardSectionParameterSuffix, 
                        _CRKMapCardSectionPlacemarkData, _SUICKPProviderIdentifier, 

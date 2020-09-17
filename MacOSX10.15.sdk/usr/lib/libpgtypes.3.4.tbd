@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libpgtypes.3.dylib'
 current-version: 3.4
 compatibility-version: 3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PGTYPESdate_dayofweek, _PGTYPESdate_defmt_asc, _PGTYPESdate_fmt_asc, 
                        _PGTYPESdate_free, _PGTYPESdate_from_asc, _PGTYPESdate_from_timestamp, 

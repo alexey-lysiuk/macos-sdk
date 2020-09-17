@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 426DBDAA-8EC7-3994-9967-757F308BBB5A', 'x86_64: 426D
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ScreenReaderCore.framework/Versions/A/ScreenReaderCore'
 current-version: 390
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CPSPSNFromPSN, _SCRCAddInformationToCrashTracerLog, _SCRCArgumentParserRunWithClassName, 
                        _SCRCCGFloatAlmostEqual, _SCRCCopyStringToUChar32Array, _SCRCCopyStringToUniCharArray, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6CDD28A2-F20F-3A65-9FD4-958580A363EA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3802/Libraries/libGPUCompilerImpl.dylib'
 current-version: 802.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __Z14error_categoryv, __Z20createAIRUpgradePassv, __Z22createAIRLegalizerPassv, 
                        __Z30createAIRTargetInfoWrapperPassv, __ZN10llvm_utils17getMangledTypeStrEPN4llvm4TypeE, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A08E3D5B-33E0-3D3B-987F-73C51976D266' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/GameKit.framework/Versions/A/GameKit'
 current-version: 665.26
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa', 
                        '/System/Library/Frameworks/GameController.framework/Versions/A/GameController', 
@@ -24,7 +24,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 33BE428B-A35C-3673-81F8-0695BF5DDFA9', 'x86_64: 33BE428B-A35C-3673-81F8-0695BF5DDFA9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GKAbsoluteTimeAsWhenString, _GKAbsoluteTimeAsWhenStringWithOptions, 
                        _GKAcceptFriendRequestIDs, _GKAcceptGameInviteNotification, 
@@ -368,7 +368,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 17C74459-599A-37FE-9F52-9E2E1D0D10A3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUI.framework/Versions/A/GameCenterUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GKBubbleFlowTransitionPhaseName, _GKBubbleFlowTransitionTypeName, 
                        _GKBubbleTypeName, _GKCollectionColumnLayoutDividerKind, _GKCollectionLayoutTopHeaderKind, 
@@ -536,7 +536,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8DFC8DED-EEC4-3D70-BF34-600D4AD2A50D', 'x86_64: 8DFC8DED-EEC4-3D70-BF34-600D4AD2A50D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUICore.framework/Versions/A/GameCenterUICore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GKIsAvatarEditingSupported, _GKIsVoiceoverEnabled, _GKRectDivideYIntoThreeConsumingMiddle, 
                        _GKRectEnforceMinimumHeight, _GKRectsCenterXInRect, _GKRectsCenterYInRect, 

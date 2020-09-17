@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/swift/libswiftCore.dylib'
 current-version: 1103.8.25
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftCore.dylib', '$ld$install_name$os10.11$@rpath/libswiftCore.dylib', 
                        '$ld$install_name$os10.12$@rpath/libswiftCore.dylib', '$ld$install_name$os10.13$@rpath/libswiftCore.dylib', 

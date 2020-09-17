@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2BF1CF17-FF3D-38EF-80AB-D759AAF5D32E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotoPrintProduct.framework/Versions/A/PhotoPrintProduct'
 current-version: 685
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CGAffineTransformConcatPhotoOrientation, _CGContextDrawSelectionInRect, 
                        _CGContextDrawStringInRoundedRect, _CGContextMakeRoundedRect, 

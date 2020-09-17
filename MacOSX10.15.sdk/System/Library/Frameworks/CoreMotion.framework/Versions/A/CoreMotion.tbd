@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: EACCA10E-4A14-3143-AE98-B826E97B7431', 'x86_64: EACC
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreMotion.framework/Versions/A/CoreMotion'
 current-version: 2394.0.22
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CLAppResetChangedNotification, _CLAppStatusChangedNotification, 
                        _CLApplyArchivedAuthorizationDecisions, _CLAuthStatusChangedNotification, 

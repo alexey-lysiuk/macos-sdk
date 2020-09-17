@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5A5CD2B7-0EB3-3A00-8CB4-1F450735C513' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LimitAdTracking.framework/Versions/A/LimitAdTracking'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LimitAdTrackingVersionNumber, _LimitAdTrackingVersionString ]
     objc-classes:    [ ADOptInStatusClient ]

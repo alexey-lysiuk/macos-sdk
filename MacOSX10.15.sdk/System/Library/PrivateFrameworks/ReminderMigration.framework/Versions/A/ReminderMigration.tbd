@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: ED7EACAA-810C-3F89-AD40-B07E53C3DDCA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ReminderMigration.framework/Versions/A/ReminderMigration'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _kCalACAccountIDPlistKey, _kCalAccountIdentifierDictionaryKey, 
                        _kCalAccountTypeDictionaryKey, _kCalBackupFileName, _kCalCTagPlistKey, 

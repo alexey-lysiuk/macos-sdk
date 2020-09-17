@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore'
 current-version: 1217
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AudioToolbox, Foundation, Metadata ]
     symbols:         [ _AbsoluteDeltaToDuration, _AbsoluteDeltaToNanoseconds, _AbsoluteToDuration, 

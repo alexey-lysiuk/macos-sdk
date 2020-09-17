@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 2F68BF55-A964-3609-89D8-7008447F04FD' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/XPCService.framework/Versions/A/XPCService'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _XPCServiceBundleExtention, _XPCServiceBundleInfoDictionaryKey, 
                        _XPCServiceDictionaryAdditionalServicesKey, _XPCServiceDictionaryAllowedClientsKey, 

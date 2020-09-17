@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: ED7F55BC-D479-39A8-9993-E505651FF1EC', 'x86_64: ED7F55BC-D479-39A8-9993-E505651FF1EC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DataDetectorsNaturalLanguage.framework/Versions/A/DataDetectorsNaturalLanguage'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IPFeatureDataContextDateIsTimeOnlyAndReferrengingToSentDate, 
                        _IPFeatureDataContextDateOnlyContainsTimeInformation, _IPFeatureDataContextDateTimeFromIpsosOverlay, 

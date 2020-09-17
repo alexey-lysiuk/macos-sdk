@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: AA27A730-5E9D-39CE-ACA4-8371606B46A3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/Versions/A/PowerlogLiteOperators'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _KPSlope, _PLCAClientAddValueForPrefixScalarKey, _PLLogBH, 
                        _PeakForce, _PeakForceMajorRadius, _PeakForceMillimetersFromEdge, 

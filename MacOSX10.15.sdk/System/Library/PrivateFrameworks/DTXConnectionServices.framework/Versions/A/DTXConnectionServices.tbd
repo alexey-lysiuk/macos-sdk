@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 65ACA67F-A29E-3A7E-9DDE-30F012DC0BEF', 'x86_64: 65AC
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DTXConnectionServices.framework/Versions/A/DTXConnectionServices'
 current-version: 64535.52.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CFArrayCreateWithDTXPrimitiveArray, _CFDictionaryCreateWithDTXPrimitiveDictionary, 
                        _DTXConnectionServicesVersionNumber, _DTXConnectionServicesVersionString, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BE42ABAB-992F-30D0-9974-7DC5ED0276ED' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUAEHZoom.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UADEventHandlerGetVtable ]
 ...

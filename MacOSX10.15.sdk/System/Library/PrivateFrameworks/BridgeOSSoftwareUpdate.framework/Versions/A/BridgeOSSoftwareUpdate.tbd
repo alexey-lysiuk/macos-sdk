@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 320A6AC7-2514-3F0D-A06C-28355ECAC4E8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BridgeOSSoftwareUpdate.framework/Versions/A/BridgeOSSoftwareUpdate'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BOSU_Log_Init, _BridgeOSSoftwareUpdateErrorDomain, _BridgeOSSoftwareUpdateErrorKeyAMAuthInstallErrorCode, 
                        _BridgeOSSoftwareUpdateErrorKeyFullReplacementRequired, _BridgeOSSoftwareUpdateErrorKeyMSUErrorCode, 

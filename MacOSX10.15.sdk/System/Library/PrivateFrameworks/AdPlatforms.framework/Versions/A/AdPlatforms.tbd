@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 460DDDEE-EA88-3C7F-ABFB-E8E0E0469CDD', 'x86_64: 460DDDEE-EA88-3C7F-ABFB-E8E0E0469CDD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AdPlatforms.framework/Versions/A/AdPlatforms'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AdPlatformsVersionNumber, _AdPlatformsVersionString ]
     objc-classes:    [ ADAttribution, ADStatusConditionRateLimitedObject, ADStatusConditions, 

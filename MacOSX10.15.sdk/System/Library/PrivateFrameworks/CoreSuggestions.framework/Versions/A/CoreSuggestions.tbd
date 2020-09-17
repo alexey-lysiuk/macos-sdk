@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6F34A41F-04D1-35A5-8EBC-D5EBC2BCB3D6', 'x86_64: 6F34
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSuggestions.framework/Versions/A/CoreSuggestions'
 current-version: 1052.34
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreSuggestionsVersionNumber, _CoreSuggestionsVersionString, 
                        _SGBundleIdentifierAddressBook, _SGBundleIdentifierCalendar, 

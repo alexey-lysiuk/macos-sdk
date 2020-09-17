@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BB4A2125-860B-3FC5-97B0-CAAA0219344E' ]
 platform:        macosx
 install-name:    '/usr/lib/libktrace.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/ktrace.framework/Versions/A/ktrace' ]
 --- !tapi-tbd-v3
@@ -12,7 +12,7 @@ uuids:           [ 'x86_64: A4C811C6-8E5B-3037-A838-79103C6D8B91', 'x86_64: A4C8
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ktrace.framework/Versions/A/ktrace'
 current-version: 354.100.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CFArrayApplierTrampoline, _CFDictionaryApplierTrampoline, 
                        _CFSetApplierTrampoline, __Z25ktrace_address_space_sortP20ktrace_address_space, 

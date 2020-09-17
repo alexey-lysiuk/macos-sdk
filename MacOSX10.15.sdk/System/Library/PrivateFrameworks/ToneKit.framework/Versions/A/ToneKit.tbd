@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 15B82B6B-2253-30B3-A28C-F44075515DB6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ToneKit.framework/Versions/A/ToneKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TKFloatCeilForScale, _TKFloatEqualToFloat, _TKFloatFloorForScale, 
                        _TKFloatGetSafeScaleForValue, _TKFloatGreaterThanOrEqualToFloat, 

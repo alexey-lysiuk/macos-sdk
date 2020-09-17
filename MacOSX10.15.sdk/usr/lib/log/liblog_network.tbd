@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CF1DA3B7-09BC-3B63-8782-F07E020D5F1F', 'x86_64: CF1DA3B7-09BC-3B63-8782-F07E020D5F1F' ]
 platform:        zippered
 install-name:    '/usr/lib/log/liblog_network.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogCopyFormattedString ]
 ...

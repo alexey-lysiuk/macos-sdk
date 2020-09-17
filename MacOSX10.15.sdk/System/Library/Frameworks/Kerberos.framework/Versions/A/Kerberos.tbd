@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos'
 current-version: 6
 compatibility-version: 5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FSp_krb_get_svc_in_tkt, _FSp_profile_init, _FSp_profile_init_path, 
                        _FSp_put_svc_key, _FSp_read_service_key, _GSS_C_NT_ANONYMOUS, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 00BFFB9A-2FFE-3C24-896A-251BC61917FD', 'x86_64: 00BFFB9A-2FFE-3C24-896A-251BC61917FD' ]
 platform:        zippered
 install-name:    '/usr/lib/libbsm.0.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _au_bsm_to_domain, _au_bsm_to_errno, _au_bsm_to_fcntl_cmd, 
                        _au_bsm_to_socket_type, _au_close, _au_close_buffer, _au_close_token, 

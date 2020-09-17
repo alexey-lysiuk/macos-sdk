@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/WebCore'
 current-version: 609.3.5
 parent-umbrella: WebKit
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ WebCoreTestSupport, WebKitLegacy ]
     re-exports:      [ '/usr/lib/libobjc.A.dylib' ]

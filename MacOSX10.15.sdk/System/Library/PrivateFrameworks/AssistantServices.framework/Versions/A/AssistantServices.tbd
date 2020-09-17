@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 09232523-EE7D-3403-AEDA-EAEDBA8A13AB', 'x86_64: 09232523-EE7D-3403-AEDA-EAEDBA8A13AB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AssistantServices.framework/Versions/A/AssistantServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AFAccessibilityStateKey, _AFAccessibilitySupportsVibrationDisablement, 
                        _AFAceErrorCodeFromMRMediaRemoteCommandHandlerStatus, _AFActivationEventGetDescription, 

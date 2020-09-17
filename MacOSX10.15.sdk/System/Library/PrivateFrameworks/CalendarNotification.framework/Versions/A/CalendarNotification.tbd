@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E48D14FC-21F1-3D50-9376-380745E055BC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CalendarNotification.framework/Versions/A/CalendarNotification'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CALNDefaultCalendarDirectory, _CALNStringFromNotificationPresentationOptions, 
                        _EKEngineNS_Log, _EKEngineNS_Log_Nobo, _EKEngineNS_Log_Reminders, 

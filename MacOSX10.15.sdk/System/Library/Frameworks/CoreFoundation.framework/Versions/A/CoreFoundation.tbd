@@ -6,7 +6,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation'
 current-version: 1677.104
 compatibility-version: 150
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFObjCIsCollectable ]
   - archs:           [ x86_64, x86_64h ]

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 524B7BE7-AF0B-371E-948B-BA3C018D9638' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/VisionKit.framework/Versions/A/VisionKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DCScanWasDeletedNotification, _DCTransformFromImageOrientation, 
                        _dc_clockwiseRotationsFromUpToMatchOrientation, _dc_counterClockwiseRotationsFromUpToMatchOrientation, 

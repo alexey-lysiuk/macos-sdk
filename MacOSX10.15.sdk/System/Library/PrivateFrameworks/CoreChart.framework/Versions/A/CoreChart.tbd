@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A535CE36-E5C7-3627-8C9F-F5A7C20EB35B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreChart.framework/Versions/A/CoreChart'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CCBaseConfigApple, _CCBaseConfigVega, _CCChartViewBaseConfig, 
                        _CCChartViewCATransactionFromBackgroundThread, _CCChartViewDelegate, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B3CC56DE-61EF-31E5-A9EB-E854C03E974F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUAEHDisplay.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UADEventHandlerGetVtable ]
 ...

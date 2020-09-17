@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DFRDisplay.framework/Versions/A/DFRDisplay'
 current-version: 171.120.3
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DFRDisplayClearDisplay, _DFRDisplayClearWhite, _DFRDisplayCloseInterface, 
                        _DFRDisplayCreate, _DFRDisplayDraw, _DFRDisplayDrawAsync, 

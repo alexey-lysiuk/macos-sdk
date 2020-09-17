@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AE6069B8-7816-3F1D-8591-FB73F5757273' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/StoreFoundation.framework/Versions/A/StoreFoundation'
 current-version: 379
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CKAppStoreVersion, _CKBooksStoreVersion, _CKConfiguratorAppVersion, 
                        _CKCurrentUserIsGuestUser, _CKDefaultDownloadLocation, _CKDownloadLocationForAdamID, 

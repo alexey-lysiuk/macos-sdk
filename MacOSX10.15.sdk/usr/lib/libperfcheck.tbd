@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9D9C4879-8A80-34C4-B0D2-BE341FD6D321', 'x86_64: 9D9C4879-8A80-34C4-B0D2-BE341FD6D321' ]
 platform:        zippered
 install-name:    '/usr/lib/libperfcheck.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ep_session_begin, _ep_session_config_with_argstr, _ep_session_create, 
                        _ep_session_destroy, _ep_session_end, _ep_session_process, 

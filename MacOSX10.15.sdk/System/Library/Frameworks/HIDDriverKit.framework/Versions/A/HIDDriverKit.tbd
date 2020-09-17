@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E6A6B52C-0D93-3DA5-A12A-F18EBC4F4D28' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/HIDDriverKit.framework/Versions/A/HIDDriverKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HIDDriverKitVersionNumber, _HIDDriverKitVersionString, _IOHIDDevice_Class, 
                        _IOHIDDigitizerCollection_Class, _IOHIDElementContainer_Class, 

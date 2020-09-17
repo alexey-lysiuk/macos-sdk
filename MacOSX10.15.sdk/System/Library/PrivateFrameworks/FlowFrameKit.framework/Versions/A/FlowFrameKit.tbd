@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8177E910-8109-3422-BAA6-BB645D66CCE7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FlowFrameKit.framework/Versions/A/FlowFrameKit'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s10Controller12FlowFrameKit0bC15FactoryProtocolPTl', '_$s10Controller12FlowFrameKit0bC8ProtocolPTl', 
                        '_$s12FlowFrameKit03AnyB0C010underlyingB0ypvg', '_$s12FlowFrameKit03AnyB0C010underlyingB0ypvpMV', 

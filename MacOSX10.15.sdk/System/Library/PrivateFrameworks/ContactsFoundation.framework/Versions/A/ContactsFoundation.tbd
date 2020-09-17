@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D508D709-2D18-3BB7-9AD1-5FF4D114F8B8', 'x86_64: D508D709-2D18-3BB7-9AD1-5FF4D114F8B8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsFoundation.framework/Versions/A/ContactsFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ABImageDirectoryPathComponent, _ABMetadataDirectoryPathComponent, 
                        _ABSourcesDirectoryPathComponent, _CNAbstractMethodException, 

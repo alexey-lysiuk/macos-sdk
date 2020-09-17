@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EF0F766D-DAA8-3712-A151-3C41D026ED84' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/HealthKitUI.framework/Versions/A/HealthKitUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HKHealthKitUIFrameworkBundle, _HKScrollPerformanceOptionCategoryKey ]
     objc-classes:    [ HKActivityRingView ]

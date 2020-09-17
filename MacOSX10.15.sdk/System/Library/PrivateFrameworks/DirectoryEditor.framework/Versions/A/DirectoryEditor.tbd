@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DAA01EFF-676B-3D91-AE76-8ACF4549BB04' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DirectoryEditor.framework/Versions/A/DirectoryEditor'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ DirectoryEditorView ]
     objc-ivars:      [ DirectoryEditorView._authForLocalNode, DirectoryEditorView._controller, 

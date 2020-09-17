@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 83200CE7-9D5C-32B8-90B9-D762AC748D8B', 'x86_64: 83200CE7-9D5C-32B8-90B9-D762AC748D8B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Engram.framework/Versions/A/Engram'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ENCypherErrorDomain, _ENGroupContextErrorDomain, _ENGroupContextErrorItemKey, 
                        _ENGroupIDErrorDomain ]

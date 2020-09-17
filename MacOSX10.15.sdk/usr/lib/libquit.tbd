@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FB251B0B-CC47-3F99-81F6-95AE46E3D1C8', 'x86_64: FB251B0B-CC47-3F99-81F6-95AE46E3D1C8' ]
 platform:        zippered
 install-name:    '/usr/lib/libquit.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LQCachePort, _LQForceQuit, _LQReportCpuResource, _LQReportPotentialHang, 
                        _LQReportPotentialSpin, _LQReportStuckApp, _LQReportUnstuckApp, 

@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libsystem_c.dylib'
 current-version: 1353.100.2
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$weak$os10.11$_basename_r', '$ld$weak$os10.11$_clock_getres', 
                        '$ld$weak$os10.11$_clock_gettime', '$ld$weak$os10.11$_clock_settime', 

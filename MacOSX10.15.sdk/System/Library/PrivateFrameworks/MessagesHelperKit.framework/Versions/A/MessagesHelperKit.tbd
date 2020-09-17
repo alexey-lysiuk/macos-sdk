@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 389D81FD-ABD4-3322-BD90-961535B191E0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MessagesHelperKit.framework/Versions/A/MessagesHelperKit'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MessagesHelperKitVersionNumber, _MessagesHelperKitVersionString, 
                        _SOAControllerLastConnectionDiedNotification, _SOFaceTimeDNDMenuOptionsDidChangeNotification, 

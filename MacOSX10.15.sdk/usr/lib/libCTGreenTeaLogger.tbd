@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1C03695E-00F1-3A8B-B6FE-FF2AC0134718', 'x86_64: 1C03695E-00F1-3A8B-B6FE-FF2AC0134718' ]
 platform:        zippered
 install-name:    '/usr/lib/libCTGreenTeaLogger.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ct_green_tea_logger_create, _ct_green_tea_logger_create_static, 
                        _ct_green_tea_logger_destroy, _ct_green_tea_logging_enabled, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 770A5B96-936E-34E3-B006-B1CEC299B5A5', 'x86_64: 770A
 platform:        zippered
 install-name:    '/usr/lib/libcoretls.dylib'
 current-version: 167
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CipherSuiteCount, _CurvesCount, _KnownCipherSuites, _KnownCurves, 
                        _KnownSigAlgs, _SigAlgsCount, _Ssl3Callouts, _Tls12Callouts, 

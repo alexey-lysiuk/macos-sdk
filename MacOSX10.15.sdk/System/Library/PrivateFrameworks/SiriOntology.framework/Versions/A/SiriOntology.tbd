@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F9E09796-9A8D-347B-9076-79DDFC33F1C4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SiriOntology.framework/Versions/A/SiriOntology'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AudioFlowDelegatePlugin, AudioFlowDelegatePluginTests, ContactsFlowDelegatePlugin, 
                          ContactsFlowDelegatePlugin-Tests, ControlsFlowDelegatePlugin, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5CA517E3-4B92-30B1-96EF-77A7A2FBBEE4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SidecarUI.framework/Versions/A/SidecarUI'
 current-version: 209.40.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SidecarBundle, _SidecarDisplayMenuControllerMenuItemsChangedNotification, 
                        _SidecarLocalizedString, _SidecarRequestFromRepresentedObject ]

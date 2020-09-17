@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7CACD9CE-90E3-334A-A576-9A0C2C56EAD7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EAFirmwareUpdater.framework/Versions/A/EAFirmwareUpdater'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ EAFirmwareUpdater, FirmwareBundle, HSModel, iAUPServer ]
     objc-ivars:      [ EAFirmwareUpdater._accessory, EAFirmwareUpdater._appProtocol, 

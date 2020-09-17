@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon'
 current-version: 162
 compatibility-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
                        '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels', 
@@ -25,7 +25,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels'
 current-version: 101
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit ]
     symbols:         [ _CCP_FontPanelClose, _CCP_FontPanelGetSelection, _CCP_FontPanelIsVisible, 
@@ -59,7 +59,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox'
 current-version: 994.6
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AGL, AppKit, AppleShareClient, Backup, DesktopServices, 
                          DesktopServicesPriv, Dock, Finder, FinderKit, ImageKit, 
@@ -517,7 +517,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help'
 current-version: 71
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ PrintingUI ]
     symbols:         [ _AHGotoApplicationHelp, _AHGotoMainTOC, _AHGotoPage, _AHLookupAnchor, 
@@ -534,7 +534,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture'
 current-version: 5
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ICACloseSession, _ICAConvertJPEGDataToICADataInPlace, _ICAConvertTIFFDataToICADataInPlace, 
                        _ICACopyMatchingDeviceDictionaries, _ICACopyObjectData, _ICACopyObjectPropertyDictionary, 
@@ -646,7 +646,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink'
 current-version: 227
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _InkAddStrokeToCurrentPhrase, _InkIsPhraseInProgress, _InkSetApplicationRecognitionMode, 
                        _InkSetApplicationWritingMode, _InkSetDrawingMode, _InkSetPhraseTerminationMode, 
@@ -661,7 +661,7 @@ uuids:           [ 'x86_64: B6E28747-5FC7-3461-8A71-864A969ED022' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting'
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASCopySourceAttributes, _ASGetSourceStyleNames, _ASGetSourceStyles, 
                        _ASInit, _ASSetSourceAttributes, _ASSetSourceStyles, _OSAAddStorageType, 
@@ -718,7 +718,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI'
 current-version: 55008
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AppleShareClient ]
     symbols:         [ _DisposeURLNotifyUPP, _DisposeURLSystemEventUPP, _InvokeURLNotifyUPP, 
@@ -736,7 +736,7 @@ uuids:           [ 'x86_64: 9614A01E-8303-3422-A3BA-6CE27540E09A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition'
 parent-umbrella: Carbon
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, LatentSemanticMapping ]
     symbols:         [ _DisposeSRCallBackUPP, _InvokeSRCallBackUPP, _NewSRCallBackUPP, 

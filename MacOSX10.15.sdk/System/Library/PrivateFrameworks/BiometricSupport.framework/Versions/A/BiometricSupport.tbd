@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 667E55C4-EDC1-377D-BECC-912796D8F574' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BiometricSupport.framework/Versions/A/BiometricSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AppendCommentToPGM, _BKLogCode, _BKLogEvent, _DEFAULT_SNAPSHOT_TIME, 
                        _LoadRawImageAsPGM, _MCDMExtractMessageData, _RIESAdd, _RIESClear, 

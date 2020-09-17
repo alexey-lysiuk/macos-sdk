@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 855537EC-FD8A-3C05-8BE0-0AA41AF99BD6' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/Frameworks/libwebrtc.dylib'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ConvertToI420, __ZN3rtc10LogMessage10LogToDebugENS_15LoggingSeverityE, 
                        __ZN3rtc10LogMessage12SetLogOutputENS_15LoggingSeverityEPFvS1_PKcE, 

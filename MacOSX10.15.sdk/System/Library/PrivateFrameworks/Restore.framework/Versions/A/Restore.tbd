@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 680BC611-596B-3310-B669-9A0C427E9FD7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Restore.framework/Versions/A/Restore'
 current-version: 512.140.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RestoreOperation ]
     objc-classes:    [ RestoreHelper ]

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7440FF1B-6E6E-3100-9939-BD0CB574E33A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/FileProviderUI.framework/Versions/A/FileProviderUI'
 current-version: 29
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FPUIActionIdentifierAuthenticate, _FPUIActionViewControllerErrorDomain, 
                        _FPUIActionViewControllerNavigationBarDoneButtonIdentifier, 

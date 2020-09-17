@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6B899903-61C7-36E8-AC20-1C2A57C83573', 'x86_64: 6B899903-61C7-36E8-AC20-1C2A57C83573' ]
 platform:        zippered
 install-name:    '/usr/lib/libauditd.0.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _audit_quick_start, _audit_quick_stop, _auditd_close_dirs, 
                        _auditd_expire_trails, _auditd_gen_record, _auditd_new_curlink, 

@@ -5,7 +5,7 @@ uuids:           [ 'x86_64: 69118118-1CEC-3019-A36E-3EC2FF1CAD8F', 'x86_64: 6911
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/Libraries/libCGInterfaces.dylib'
 current-version: 524.2.1
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _Init_CGInterfaces ]
 ...

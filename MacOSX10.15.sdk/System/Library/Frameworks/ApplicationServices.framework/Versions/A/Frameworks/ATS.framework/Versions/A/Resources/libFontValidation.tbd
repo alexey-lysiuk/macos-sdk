@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 321FB24F-333B-309B-B8E9-E6B595F02D13' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontValidation.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ATSFontTestCopyAvailableTests, _ATSFontTestCreateReport, 
                        _kATSFontTestArrayKey, _kATSFontTestConsistencyTest, _kATSFontTestCoreTest, 

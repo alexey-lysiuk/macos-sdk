@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E692F14F-C65E-303B-9921-BB7E97D77855', 'x86_64: E692
 platform:        zippered
 install-name:    '/usr/lib/libc++abi.dylib'
 current-version: 902
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZNKSt10bad_typeid4whatEv, __ZNKSt11logic_error4whatEv, __ZNKSt13bad_exception4whatEv, 
                        __ZNKSt13runtime_error4whatEv, __ZNKSt20bad_array_new_length4whatEv, 

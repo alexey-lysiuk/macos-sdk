@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 31F90058-F6FC-3196-B4D8-26A63A7C41FC', 'x86_64: 31F9
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmailAddressing.framework/Versions/A/EmailAddressing'
 current-version: 3608.120.23
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EAAddressComment ]
     objc-classes:    [ EAEmailAddressGenerator, EAEmailAddressLists, EAEmailAddressParser, 

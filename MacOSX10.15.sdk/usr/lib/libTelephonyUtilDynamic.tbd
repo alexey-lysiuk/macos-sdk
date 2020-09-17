@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 174030B2-E35F-3F17-A9EF-DF8631F30CCF', 'x86_64: 174030B2-E35F-3F17-A9EF-DF8631F30CCF' ]
 platform:        zippered
 install-name:    '/usr/lib/libTelephonyUtilDynamic.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TelephonyCapabilitiesAccessoryDetectionForSupported, _TelephonyCapabilitiesAccessoryDetectionSupported, 
                        _TelephonyCapabilitiesAccessoryTypeDetectionForASupported, 

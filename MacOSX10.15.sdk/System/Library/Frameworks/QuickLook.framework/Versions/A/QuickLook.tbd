@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 959CE934-B541-3172-846F-4D1709353526' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/QuickLook.framework/Versions/A/QuickLook'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _QLAdaptSizeToRect, _QLBubbleControlIdentifierKey, _QLBubbleControlKeyEquivalentKey, 
                        _QLBubbleControlLeftAlignedKey, _QLBubbleControlShrinkableKey, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 15C8F3A5-7361-3379-A880-A6E233E161A6', 'x86_64: 15C8F3A5-7361-3379-A880-A6E233E161A6' ]
 platform:        zippered
 install-name:    '/usr/lib/libAppletTranslationLibrary.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ AppletTranslator ]
 ...

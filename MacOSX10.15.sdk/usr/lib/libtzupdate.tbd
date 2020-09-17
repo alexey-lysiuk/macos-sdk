@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7D8F920C-94F2-39EB-A6D6-FBDCE5F874BD' ]
 platform:        macosx
 install-name:    '/usr/lib/libtzupdate.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ TZUpdate ]
 ...

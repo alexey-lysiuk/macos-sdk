@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 45FE802D-918C-3198-80CB-52CF700B7E5D', 'x86_64: 45FE802D-918C-3198-80CB-52CF700B7E5D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RemoteConfiguration.framework/Versions/A/RemoteConfiguration'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSErrorRCAdditionsIsNetworkUnavailable, _NSErrorRCAdditionsShouldRetry, 
                        _RCAppBundleID, _RCAppVersion, _RCBlockConjunction, _RCBlockWithQualityOfService, 

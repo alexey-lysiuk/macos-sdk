@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 099DCA8D-7AB4-31E9-8032-44C70B7E0E3A' ]
 platform:        macosx
 install-name:    '/usr/lib/ssh-keychain.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _C_GetFunctionList ]
 ...

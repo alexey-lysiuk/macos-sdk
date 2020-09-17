@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F0798D40-2A7A-3ADD-AE82-AC1A934E7EB7' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Quartz'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/PDFKit.framework/Versions/A/PDFKit', 
                        '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit', 
@@ -17,7 +17,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5F086EE2-5745-3E28-B292-1DE5E0652E36' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IKAnimationDelayKey, _IKAnimationDurationKey, _IKAnimationFrameRateKey, 
                        _IKAnimationVelocityCurveKey, _IKBestRepresentationFromNSImageForPhysicalSize, 
@@ -231,7 +231,7 @@ uuids:           [ 'x86_64: 9C10ADF7-94B0-3779-AD44-5AF6394A32AF' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzComposer.framework/Versions/A/QuartzComposer'
 current-version: 168
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GFArrayFromArgumentList, _GFBacktrace, _GFDebug, _GFDebuggingLevel, 
                        _GFException, _GFFilterStringsWithKeywords, _GFGetDebugMessageCallback, 
@@ -364,7 +364,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 876E8B28-9500-34C6-B297-EA404D89C903' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzFilters.framework/Versions/A/QuartzFilters'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _QuartzFilterApplyToContext, _QuartzFilterCopyContextDict, 
                        _QuartzFilterCreateHostMatchingFilter, _QuartzFilterCreateImageCoverter, 
@@ -446,7 +446,7 @@ uuids:           [ 'x86_64: 7128FB8C-83B0-3250-BF86-E8A1772CF1F5' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuickLookUI.framework/Versions/A/QuickLookUI'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/QuickLook.framework/Versions/A/QuickLook' ]
     symbols:         [ _QLAXImageAndText_Image, _QLAXImageAndText_Text, _QLDisplayBundleDisplayStateCurrentPageKey, 

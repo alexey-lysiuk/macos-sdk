@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B3AA91BA-0BA1-3123-B642-81BB072715D0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudKitDaemon.framework/Versions/A/CloudKitDaemon'
 current-version: 867
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CKAdoptPersonaID, _CKCurrentPersonaID, _CKDAssetCacheDbSchema, 
                        _CKDMMCSRegisterOptionDescription, _CKDPDateStatisticsReadFrom, 

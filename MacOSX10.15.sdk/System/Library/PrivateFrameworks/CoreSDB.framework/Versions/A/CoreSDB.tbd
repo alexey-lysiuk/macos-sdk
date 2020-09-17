@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F6795BAA-1B66-378D-9062-7BF121F7329B', 'x86_64: F679
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSDB.framework/Versions/A/CoreSDB'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CSDBCheckResultWithStatement, _CSDBCreateDirectoriesToPath, 
                        _CSDBCreateDirectoriesToPathWithOwnership, _CSDBCreateThreadedRecordStore, 

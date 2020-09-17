@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1974939D-040B-3671-B937-1B6E32485074' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FlightUtilities.framework/Versions/A/FlightUtilities'
 current-version: 134
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FUFactoryProvider_Default, _FUFactoryProvider_FlightStats, 
                        _FUFactoryProvider_FlyteComm, _FUFactoryProvider_Parsec ]

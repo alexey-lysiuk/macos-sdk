@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MessageSecurity.framework/Versions/A/MessageSecurity'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MSCMSAttributeTypeAppleHashAgility, _MSCMSAttributeTypeCountersignature, 
                        _MSCMSAttributeTypeSigningTime, _MSCMSContentTypeAuthData, 

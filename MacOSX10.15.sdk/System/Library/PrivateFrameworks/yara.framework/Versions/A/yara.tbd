@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C7261F46-4F99-3444-9016-2F3D709DA1DF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/yara.framework/Versions/A/yara'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __yr_atoms_trim, __yr_bswap16, __yr_bswap32, __yr_bswap64, 
                        __yr_compiler_default_include_callback, __yr_compiler_define_variable, 

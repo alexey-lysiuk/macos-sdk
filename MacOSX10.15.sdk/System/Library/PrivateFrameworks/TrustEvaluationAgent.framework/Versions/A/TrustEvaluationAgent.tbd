@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 10E56F70-E234-31E0-9286-96D93A8ED17E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TrustEvaluationAgent.framework/Versions/A/TrustEvaluationAgent'
 current-version: 33
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TEACertificateChainAddCert, _TEACertificateChainCreate, _TEACertificateChainCreateWithData, 
                        _TEACertificateChainEnumerateWithBlock, _TEACertificateChainGetCertAtIndex, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5D759FB7-8C4E-3230-91A4-D18D09401C80', 'x86_64: 5D75
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libGPUCompilerImpl.dylib'
 current-version: 902.14.11
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __Z11getThreadIDRN4llvm8FunctionE, __Z12isTracepointRKN4llvm8FunctionE, 
                        __Z14getTraceBufferRN4llvm8FunctionE, __Z15forwardArgumentPN4llvm3air10AIArgumentEPNS_4TypeEj, 

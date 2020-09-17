@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CB4059EA-A8DF-31C2-B48E-5197A82A6E0A', 'x86_64: CB4059EA-A8DF-31C2-B48E-5197A82A6E0A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AudioServerApplication.framework/Versions/A/AudioServerApplication'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ ASAAudioDevice, ASAAudioFormat, ASABooleanControl, ASABox, 
                        ASAClockDevice, ASAControl, ASACoreAudio, ASALevelControl, 

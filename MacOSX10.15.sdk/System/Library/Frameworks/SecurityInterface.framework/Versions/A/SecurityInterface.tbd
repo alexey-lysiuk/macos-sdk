@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 3F834E36-6B8B-33F0-B36B-809DBCD1FE69' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/SecurityInterface.framework/Versions/A/SecurityInterface'
 current-version: 55139.120.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation' ]
     symbols:         [ '$ld$add$os10.3$.objc_class_name_SFCertificateData', '$ld$add$os10.4$.objc_class_name_SFCertificateData', 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5A01D730-DB70-3441-ADC1-D7DF17E39578', 'x86_64: 5A01D730-DB70-3441-ADC1-D7DF17E39578' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppStoreDaemon.framework/Versions/A/AppStoreDaemon'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASDAggregateClusterMappingDataReadFrom, _ASDAppLibraryServiceNotificationActionAppsRegistered, 
                        _ASDAppLibraryServiceNotificationActionAppsUnregistered, _ASDAppLibraryServiceNotificationActionRefresh, 

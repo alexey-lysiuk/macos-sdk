@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDaemon.framework/Versions/B/CoreDaemon'
 current-version: 3
 compatibility-version: 3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _XSCipherCopyCipherProperties, _XSCipherFromName, _XSCipherSpecParse, 
                        _XSCipherToName, _XSDHParamCreateFromFile, _XSDHParamGetSize, 

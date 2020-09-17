@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 52A6722C-B40F-3F89-BB2A-F9C1BF4BBD53' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PassKit.framework/Versions/A/PassKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/PassKitCore.framework/Versions/A/PassKitCore' ]
     symbols:         [ _PKExtensionAvailableExtensions, _PKExtensionAvailableExtensionsChangedNotification, 
@@ -17,7 +17,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5814828F-758B-38AC-8743-CCCA158CDAD6', 'x86_64: 5814828F-758B-38AC-8743-CCCA158CDAD6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PassKitCore.framework/Versions/A/PassKitCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AMPEnrollmentDismissedKeyForPass, _PDAccountServiceInterface, 
                        _PDApplePayTrustAllAccessEntitlement, _PDAssertionCoordinatorInterface, 

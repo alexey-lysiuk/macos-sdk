@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 739FD590-4962-3908-9115-3C2C8317AD0E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CDDataAccess.framework/Versions/A/CDDataAccess'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DAAccountFolderContentsChangedNotification, _DAAccountFolderHierarchyChangedNotification, 
                        _DAAccountFolderHierarchyNeedsUpdateNotification, _DAAccountFolderHierarchyNeedsUpdateRequireChangedFoldersNotification, 

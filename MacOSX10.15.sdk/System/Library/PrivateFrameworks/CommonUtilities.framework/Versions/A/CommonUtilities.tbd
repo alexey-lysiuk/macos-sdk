@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F4C97244-E5D8-3F7D-8D94-4B6841C5A4EC', 'x86_64: F4C9
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CommonUtilities.framework/Versions/A/CommonUtilities'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CUTAuditTokenTaskHasEntitlement, _CUTCreateDictionaryFromXPCObject, 
                        _CUTCreateXPCObjectFromDictionary, _CUTDataForPropertyList, 

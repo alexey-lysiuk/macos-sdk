@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 61A07A3A-B069-3BD0-9C3A-6C6A7076378E', 'x86_64: 61A07A3A-B069-3BD0-9C3A-6C6A7076378E' ]
 platform:        zippered
 install-name:    '/usr/lib/libIOAccessoryManager.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IOAccesoryManagerGetDigitalIDAccessoryVersionInfo, _IOAccesoryManagerGetDigitalIDInterfaceDeviceInfo, 
                        _IOAccessoryEAInterfaceCopyDeviceDockType, _IOAccessoryEAInterfaceCopyDeviceFirmwareRevision, 

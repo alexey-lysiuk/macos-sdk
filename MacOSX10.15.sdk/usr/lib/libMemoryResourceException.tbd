@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0350C4E8-DAA4-393B-89A4-05C7FCEF891D' ]
 platform:        macosx
 install-name:    '/usr/lib/libMemoryResourceException.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MREBundleStringForUnbundledProcess, _MREErrorDomain, _MREExceptionTypeToString, 
                        _RMECheckEntitlement, _ReportMemoryExceptionFromTask, _kMREOutputFormatterCategoryTotalKey, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A7249C4C-6C0A-3C14-BA27-DC966F6CC6A0', 'x86_64: A7249C4C-6C0A-3C14-BA27-DC966F6CC6A0' ]
 platform:        zippered
 install-name:    '/usr/lib/libAudioToolboxUtility.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AudioDiagnostics, AudioServerDriver, AudioToolbox, AudioToolboxCore, 
                          CAReportingService, CoreAudio, EmbeddedSystemAUs, VibeSynthEngine, 

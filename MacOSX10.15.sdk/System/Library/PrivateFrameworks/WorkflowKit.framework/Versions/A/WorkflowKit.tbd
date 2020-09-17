@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7388A65C-67F6-3EFC-8114-BA32EF762EE5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WorkflowKit.framework/Versions/A/WorkflowKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ICActionCapabilitySecureWebBrowser, _ICActionCapabilityWebBrowser, 
                        _ICActionClassKey, _ICActionDisableCallbackParameterKey, _ICAppRegistryInstalledAppsDidChangeNotification, 

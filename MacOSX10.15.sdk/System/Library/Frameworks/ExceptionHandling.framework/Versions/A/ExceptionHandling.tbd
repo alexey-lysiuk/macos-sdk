@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6ACFE4A2-6483-3F5B-A623-4DC606183E35' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ExceptionHandling.framework/Versions/A/ExceptionHandling'
 current-version: 13
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSExceptionHandlerResume, _NSStackTraceKey, _NSUncaughtRuntimeErrorException, 
                        _NSUncaughtSystemExceptionException ]

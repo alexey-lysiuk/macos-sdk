@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9B8488D1-3787-3E98-90AA-42B6FEEFE40B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/A/Libraries/libLLVMContainer.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ARMCompilationCallback, _ARMCompilationCallbackC, _ConvertUTF16toUTF32, 
                        _ConvertUTF16toUTF8, _ConvertUTF32toUTF16, _ConvertUTF32toUTF8, 

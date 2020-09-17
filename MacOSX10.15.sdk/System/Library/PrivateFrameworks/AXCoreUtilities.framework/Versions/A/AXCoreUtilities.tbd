@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7693F2BF-4DEB-3659-AA34-06322BAE38F8', 'x86_64: 7693F2BF-4DEB-3659-AA34-06322BAE38F8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AXCoreUtilities.framework/Versions/A/AXCoreUtilities'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASTLogCommon, _ASTLogMouse, _AXAccessibilityBundlesDirectory, 
                        _AXAccessibilityPrivateFrameworksDirectory, _AXBackgroundLog, 

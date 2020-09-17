@@ -6,7 +6,7 @@ platform:        zippered
 install-name:    '/usr/lib/libsqlite3.dylib'
 current-version: 308.5
 compatibility-version: 9
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ __sqlite3_apple_archive, __sqlite3_apple_archive_type, __sqlite3_apple_unarchive, 
                        __sqlite3_db_clone, __sqlite3_db_copy, __sqlite3_db_copy_compact, 

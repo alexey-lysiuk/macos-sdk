@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E21B4A50-7102-3C35-8852-338E7E3CC4E2', 'x86_64: E21B
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleLDAP.framework/Versions/A/AppleLDAP'
 current-version: 52
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LDAP_CRED_MECHANISM_CRAM_MD5, _LDAP_CRED_MECHANISM_DIGEST_MD5, 
                        _LDAP_CRED_MECHANISM_GSSAPI, _LDAP_CRED_MECHANISM_SIMPLE, 

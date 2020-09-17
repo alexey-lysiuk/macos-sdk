@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8DF21200-3351-3878-B396-101211F565E3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TimeMachine.framework/Versions/A/TimeMachine'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BackupItemsAreTheSame, _BackupShouldCompareXAttrNamed, _ChecksumComputeForFileDescriptor, 
                        _ChecksumXattrName, _CopyURLTypeProperties, _DIHLCopyResizeInfo_Synchronized, 

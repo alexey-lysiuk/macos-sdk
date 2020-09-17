@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 620BE17A-586B-3418-99A8-5F55026B5C75', 'x86_64: 620B
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIKitSystemAppServices.framework/Versions/A/UIKitSystemAppServices'
 current-version: 182.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UIKitSystemAppServicesVersionNumber, _UIKitSystemAppServicesVersionString, 
                        _USSAppManagerLog, _USSClientServiceLog, _USSCreateDeserializedNSSecureEncodableObjectOfClassFromXPCDictionaryWithKey, 

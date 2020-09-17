@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 74BA9546-AED1-321C-A769-FDACB2AD40AE', 'x86_64: 74BA9546-AED1-321C-A769-FDACB2AD40AE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CryptoKitCBridging.framework/Versions/A/CryptoKitCBridging'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CryptoKitCBridgingVersionNumber, _CryptoKitCBridgingVersionString, 
                        _SPAKE2Alishaz0Size, _SPAKE2CtxSize, _SSPBSecretShareReadFrom, 

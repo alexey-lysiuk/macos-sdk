@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D61F4A8D-56E6-3531-973B-4C1712FF4006' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WiFiPolicy.framework/Versions/A/WiFiPolicy'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MachTimeToSecs, _TBMacAddressFromString, _TBMacAdressFromLong, 
                        _TBPersistenceConfigurationCache, _TBPersistenceRemoteStoreServerServiceNameCache, 

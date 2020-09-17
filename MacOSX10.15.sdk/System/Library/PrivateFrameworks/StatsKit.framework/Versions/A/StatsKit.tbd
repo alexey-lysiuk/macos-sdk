@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BB243458-51A2-35B2-99DD-7CD6844CE5DF', 'x86_64: BB243458-51A2-35B2-99DD-7CD6844CE5DF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/StatsKit.framework/Versions/A/StatsKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _COM_APPLE_STATSKIT_SKCTL, _SKCopyFixedSigningIdentifierFromSelf, 
                        _SKCopyFixedSigningIdentifierFromTaskIfHasEntitlement, _SKCopySigningIdentifierFromSelf, 

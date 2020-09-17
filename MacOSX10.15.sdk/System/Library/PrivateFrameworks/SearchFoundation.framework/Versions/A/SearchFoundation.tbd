@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CB2F2349-36DB-31B3-82AF-1FC9949782B3', 'x86_64: CB2F2349-36DB-31B3-82AF-1FC9949782B3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SearchFoundation.framework/Versions/A/SearchFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SFFeedbackListenerRegister, _SFFeedbackListenerUnregister, 
                        _SFFeedbackNotify, _SFPropertyEntryKeyColorProfile, _SFPropertyEntryKeyFormat, 

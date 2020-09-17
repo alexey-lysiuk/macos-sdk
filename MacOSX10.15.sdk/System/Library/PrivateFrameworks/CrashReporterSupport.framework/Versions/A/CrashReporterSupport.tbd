@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: ADF138F0-0274-3BA2-A1D2-48B91577FE53', 'x86_64: ADF1
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport'
 current-version: 15016
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/usr/lib/libDiagnosticMessagesClient.dylib' ]
     symbols:         [ '$ld$add$os10.6$_msgtracer_domain_free', '$ld$add$os10.6$_msgtracer_domain_new', 

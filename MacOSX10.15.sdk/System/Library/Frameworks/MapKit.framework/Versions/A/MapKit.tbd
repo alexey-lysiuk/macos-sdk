@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D6398A85-72B6-37B5-A9CD-0B6CFB9AB01A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/MapKit.framework/Versions/A/MapKit'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ImageForShieldDataSourceTypeShouldBeFlipped, _MKAddressDictionaryFromCLPlacemark, 
                        _MKAddressDictionaryFromContactsDictionary, _MKAddressDictionaryFromPostalAddress, 

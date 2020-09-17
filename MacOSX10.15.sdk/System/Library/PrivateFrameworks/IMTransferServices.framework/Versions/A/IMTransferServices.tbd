@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B0240BBC-C836-3DB3-8C1B-594E014BA862', 'x86_64: B024
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IMTransferServices.framework/Versions/A/IMTransferServices'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IMTransferServicesErrorDomain ]
     objc-classes:    [ IMTransferServicesCompressionController, IMTransferServicesController ]

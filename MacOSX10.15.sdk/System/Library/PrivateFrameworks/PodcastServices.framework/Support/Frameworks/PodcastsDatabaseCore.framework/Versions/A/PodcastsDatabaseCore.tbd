@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A5197CA2-808B-3D62-B76F-9E9DB44616F3', 'x86_64: A5197CA2-808B-3D62-B76F-9E9DB44616F3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PodcastServices.framework/Support/Frameworks/PodcastsDatabaseCore.framework/Versions/A/PodcastsDatabaseCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MTEpisodeContextFromPersistentString, _MTEpisodeContextSortTypeFromPersistentString, 
                        _MTListStateUnknown, _MTLogCategoryAppRemoval, _MTLogCategoryArtworkDownload, 

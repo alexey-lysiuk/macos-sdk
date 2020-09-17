@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3EC3C6CC-57B0-3FE6-ADA5-3828DDBE7072' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SystemPolicy.framework/Versions/A/SystemPolicy'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SPErrorDomain, _SystemPolicyVersionNumber, _SystemPolicyVersionString, 
                        _URLisDirectory, _areGatekeeperOverridesDisabledByMDM, _checkBOOLSetting, 

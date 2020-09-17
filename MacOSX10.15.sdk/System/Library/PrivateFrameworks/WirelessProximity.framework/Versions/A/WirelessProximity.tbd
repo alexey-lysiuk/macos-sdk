@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9DB5B5A3-2A56-31CD-8115-6EA98697BECC', 'x86_64: 9DB5B5A3-2A56-31CD-8115-6EA98697BECC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessProximity.framework/Versions/A/WirelessProximity'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _WPAirPlaySoloAdvertisingMode, _WPAirPlaySoloKeyDeviceAddress, 
                        _WPAirPlaySoloKeyDeviceTime, _WPBeaconAdvInterval, _WPBeaconTX, 

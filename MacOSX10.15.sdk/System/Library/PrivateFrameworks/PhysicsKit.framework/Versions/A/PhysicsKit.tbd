@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 76BA237E-B940-3EEB-AB55-683678C8BB6E', 'x86_64: 76BA
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhysicsKit.framework/Versions/A/PhysicsKit'
 current-version: 28
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PKArrayFromB2ChainShape, _PKArrayFromB2PolygonShape, _PKArrayFromCGPath, 
                        _PKArrayFromPKPath, _PKCGPathCreateFromArray, _PKCGPointFromString, 

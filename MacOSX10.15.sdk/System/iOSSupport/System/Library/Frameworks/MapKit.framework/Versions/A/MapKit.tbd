@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B4345AAA-FBA5-3C7C-8DB2-75A7758E731D' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MapKit.framework/Versions/A/MapKit'
 current-version: 14
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CLLocationCoordinatesFromNSData, _ImageForShieldDataSourceTypeShouldBeFlipped, 
                        _MKAddressDictionaryFromCLPlacemark, _MKAddressDictionaryFromContactsDictionary, 

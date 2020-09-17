@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D7E743C6-094B-37B6-84D5-71D30228D3A1', 'x86_64: D7E7
                    'x86_64h: 7F53F2C2-0F2B-3308-9E90-F043F43DAB32', 'x86_64h: 7F53F2C2-0F2B-3308-9E90-F043F43DAB32' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ __cg_DGifCloseFile, __cg_DGifExtensionToGCB, __cg_DGifGetCode, 
                        __cg_DGifGetCodeNext, __cg_DGifGetExtension, __cg_DGifGetExtensionNext, 

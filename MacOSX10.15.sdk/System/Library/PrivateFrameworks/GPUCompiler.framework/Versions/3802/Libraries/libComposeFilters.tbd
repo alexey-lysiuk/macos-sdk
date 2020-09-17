@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 401C2C08-F421-3A9A-B829-717DA6627511' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3802/Libraries/libComposeFilters.dylib'
 current-version: 802.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _composeImageFilterFunctionsFromModulesSPI, _composeImageFilterFunctionsSPI ]
 ...

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D1EA2A4B-BC59-3FE2-BAA9-4448D6F8393F', 'x86_64: D1EA2A4B-BC59-3FE2-BAA9-4448D6F8393F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDSupportFramework.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AWDCFNetworkCacheMetricsReadFrom, _AWDCFNetworkStreamTaskTimingReadFrom, 
                        _AWDCFNetworkTaskMetricsReadFrom, _AWDCFNetworkTransactionMetricsReadFrom, 

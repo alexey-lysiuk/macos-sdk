@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A27AFC62-D05F-35BD-8885-C53C5218285D' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/WatchConnectivity.framework/Versions/A/WatchConnectivity'
 current-version: 187.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _WCApplicationContextFileName, _WCApplicationSupportURLInContainer, 
                        _WCCheckFileAndConsumeSandboxTokenForProcessID, _WCCheckFileAndCreateExtensionForProcess, 

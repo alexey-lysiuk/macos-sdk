@@ -5,7 +5,7 @@ uuids:           [ 'x86_64: 61CF1106-41C2-3971-9187-BD1D53C00343', 'x86_64: 61CF
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib'
 current-version: 735.140.1
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _VVACOS, _VVACOSF, _VVACOSF_, _VVACOSH, _VVACOSHF, _VVACOSHF_, 
                        _VVACOSH_, _VVACOS_, _VVASIN, _VVASINF, _VVASINF_, _VVASINH, 

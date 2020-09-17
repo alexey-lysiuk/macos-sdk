@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/RealityKit.framework/Versions/A/RealityKit'
 current-version: 31.255
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s10RealityKit025__SceneResourceLoadResultE7ContextVMa', 
                        '_$s10RealityKit025__SceneResourceLoadResultE7ContextVMn', 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C598ABA7-6985-36CF-8C5E-895BA7B0DD1C', 'x86_64: C598
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DiagnosticLogCollection.framework/Versions/A/DiagnosticLogCollection'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DLCAlertTitleKey, _DLCCollectLogs, _DLCCollectLogsWithCompletionHandler, 
                        _DLCDefaultRadarComponentKey, _DLCDefaultRadarComponentVersionKey, 

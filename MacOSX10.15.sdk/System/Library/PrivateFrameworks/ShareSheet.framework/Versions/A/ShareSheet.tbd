@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E0A29B96-5819-3B89-B04D-405CF2367048' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/ShareSheet.framework/Versions/A/ShareSheet'
 current-version: 1526.37
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ShareSheetVersionNumber, _ShareSheetVersionString, _UIActivityTypeAddToReadingList, 
                        _UIActivityTypeAirDrop, _UIActivityTypeAssignToContact, _UIActivityTypeCloudSharing, 

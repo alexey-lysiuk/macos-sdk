@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F17A232D-8A39-3A15-801E-13457D2A7AFE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreCDPUI.framework/Versions/A/CoreCDPUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreCDPUIVersionNumber, _CoreCDPUIVersionString, __CDPLogSystem, 
                        __CDPSignpostCreate, __CDPSignpostGetNanoseconds, __CDPSignpostLogSystem, 

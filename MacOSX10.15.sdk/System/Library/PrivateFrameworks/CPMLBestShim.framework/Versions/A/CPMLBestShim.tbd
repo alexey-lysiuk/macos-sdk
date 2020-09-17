@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 532BCECB-F2AB-3E74-B8D0-6A0C5E0C306F', 'x86_64: 532BCECB-F2AB-3E74-B8D0-6A0C5E0C306F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CPMLBestShim.framework/Versions/A/CPMLBestShim'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _kCPMLAppTitle, _kCPMLAppType, _kCPMLAppUsageTime, _kCPMLBTCondition, 
                        _kCPMLBundleID, _kCPMLChangeCount, _kCPMLConfidence, _kCPMLConnectStatus, 

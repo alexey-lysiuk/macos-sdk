@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0AC6FB62-2B0F-3E93-A931-E4DC4B1D757A', 'x86_64: 0AC6FB62-2B0F-3E93-A931-E4DC4B1D757A' ]
 platform:        zippered
 install-name:    '/usr/lib/libheimdal-asn1.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___crashreporter_info__, __asn1_bmember_isset_bit, __asn1_bmember_put_bit, 
                        __asn1_copy, __asn1_copy_top, __asn1_decode, __asn1_decode_top, 

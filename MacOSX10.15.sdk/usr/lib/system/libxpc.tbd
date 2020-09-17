@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libxpc.dylib'
 current-version: 1738.140.1
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _XPC_ACTIVITY_ALLOW_BATTERY, _XPC_ACTIVITY_APP_REFRESH, _XPC_ACTIVITY_CHECK_IN, 
                        _XPC_ACTIVITY_COMMUNICATES_WITH_PAIRED_DEVICE, _XPC_ACTIVITY_CPU_INTENSIVE, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1D2B352D-51F5-3142-80DB-0F6EB0046289', 'x86_64: 1D2B
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libThaiConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetThaiConverterDefinition ]
 ...

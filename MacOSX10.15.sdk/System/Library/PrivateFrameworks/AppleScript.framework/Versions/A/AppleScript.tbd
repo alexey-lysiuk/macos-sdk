@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F63810F7-9487-3B15-8F89-1E387933D48F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleScript.framework/Versions/A/AppleScript'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AppleScriptComponent, _AppletComponent, _GenericComponent, 
                        _OSAAppletExecute ]

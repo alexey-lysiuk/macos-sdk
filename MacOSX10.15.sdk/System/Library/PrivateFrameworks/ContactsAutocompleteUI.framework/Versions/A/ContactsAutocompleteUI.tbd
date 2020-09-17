@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B6B69FE6-43D3-3E9D-AE8F-3DC3938DFBD5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ContactsAutocompleteUI.framework/Versions/A/ContactsAutocompleteUI'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CNAutocompleteColumnAccount, _CNAutocompleteColumnIcon, _CNAutocompleteColumnIdentifier, 
                        _CNAutocompleteColumnName, _CNAutocompleteMinWindowWidth, 

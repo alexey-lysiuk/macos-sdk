@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E9A89CB9-27F1-3BA8-863C-DC681A9FF7C1', 'x86_64: E9A8
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaConversionService.framework/Versions/A/MediaConversionService'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MediaConversionServiceVersionNumber, _MediaConversionServiceVersionString, 
                        _PAMediaConversionNameForErrorCode, _PAMediaConversionNameForJobStatus, 

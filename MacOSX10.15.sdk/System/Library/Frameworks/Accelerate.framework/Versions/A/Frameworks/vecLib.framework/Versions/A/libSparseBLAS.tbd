@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: CFFEAA75-99FB-369E-80A1-4BC73ADEBEA9', 'x86_64: CFFE
                    'x86_64h: B147FEF6-A0DB-3830-BF06-45BEC58DB576', 'x86_64h: B147FEF6-A0DB-3830-BF06-45BEC58DB576' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparseBLAS.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     allowable-clients: [ Sparse, vecLib ]
     symbols:         [ _sparse_commit, _sparse_elementwise_norm_double, _sparse_elementwise_norm_float, 

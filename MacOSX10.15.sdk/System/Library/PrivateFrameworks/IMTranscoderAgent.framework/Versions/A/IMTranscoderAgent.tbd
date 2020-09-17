@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4C0D891E-9D11-37A9-9471-E6E3ECC27D26' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMTranscoderAgent.framework/Versions/A/IMTranscoderAgent'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IMTranscodeErrorDomain, __IMTranscoderLinkFile ]
     objc-classes:    [ IMEmbeddedHardwareJPEGTranscoder, IMFallbackTranscoder, IMFallbackTranscoder_AudioMessage, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CA2148F8-5E95-3A0F-95F6-5CC125BDD9E6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MLFoundation.framework/Versions/A/MLFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AllocateMomentumAndStatesForBatchNormalizationLayer, _CPU_BuildBNNSBatchNormalizationInputOutputParams, 
                        _CPU_BuildBNNSBatchNormalizationParams, _CPU_BuildBNNSConvolutionInputOutputParams, 

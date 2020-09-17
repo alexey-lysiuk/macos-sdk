@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D25487B3-68EE-3C65-B115-E344106FBC59' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/NotesUI.framework/Versions/A/NotesUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ICAccessibilityAnnotationLabelKey, _ICAccessibilityAnnotationLocationKey, 
                        _ICAccessibilityAnnotationTextAttribute, _ICAccessibilityElementToFocusForLayoutChangeKey, 

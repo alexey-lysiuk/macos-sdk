@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 92019C5F-2BE7-38A8-87D2-FF698B6461CC', 'x86_64: 92019C5F-2BE7-38A8-87D2-FF698B6461CC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DifferentialPrivacy.framework/Versions/A/DifferentialPrivacy'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DifferentialPrivacyVersionNumber, _DifferentialPrivacyVersionString, 
                        __DPDaemonInterface, __DPToolSupportedCommands, __kDPMaxRefillAmount, 

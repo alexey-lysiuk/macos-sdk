@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C68367BA-2225-31DD-B2D8-16AC0A44421F', 'x86_64: C68367BA-2225-31DD-B2D8-16AC0A44421F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/login.framework/Versions/A/login'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport' ]
     symbols:         [ _CreateSessionOwnerConnection, _JoinAuditSessionIfNeeded, 
@@ -97,7 +97,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 12F77885-27DC-3837-9CE9-A25EBA75F833', 'x86_64: 12F77885-27DC-3837-9CE9-A25EBA75F833' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DBLoggerMaxFlag, _DBLoggerStartFlag, _DBLoggingGetMaskForController, 
                        _DBLoggingLogWithFormat, _DBLoggingSetLogFileForController, 

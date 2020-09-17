@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5E1BAA9C-143B-39E9-9BFC-BEBAC04D0A04', 'x86_64: 5E1B
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SymptomReporter.framework/Versions/A/SymptomReporter'
 current-version: 1238.120.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _set_symptom_verbosity, _symptom_create, _symptom_framework_init, 
                        _symptom_framework_set_version, _symptom_framework_stats, 

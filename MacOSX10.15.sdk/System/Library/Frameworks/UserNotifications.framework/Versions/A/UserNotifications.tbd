@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8DB163D1-66F0-3B52-933F-48F945E3FF4D', 'x86_64: 8DB163D1-66F0-3B52-933F-48F945E3FF4D' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/UserNotifications.framework/Versions/A/UserNotifications'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UNDoubleIsZero, _UNEqualBools, _UNEqualDoubles, _UNEqualFloats, 
                        _UNEqualIntegers, _UNEqualObjects, _UNEqualStrings, _UNErrorDomain, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A7FEC0DC-D177-3E10-9EEC-7056FAF70731' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreMLTestFramework.framework/Versions/A/CoreMLTestFramework'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreMLTestFrameworkVersionNumber, _CoreMLTestFrameworkVersionString ]
     objc-classes:    [ _MLTBundleInferenceTest, _MLTError, _MLTFeatureTransformer, 

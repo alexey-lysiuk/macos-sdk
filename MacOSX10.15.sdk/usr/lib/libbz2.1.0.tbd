@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 14CC4988-B6D4-3879-AFC2-9A0DDC6388DE', 'x86_64: 14CC
 platform:        zippered
 install-name:    '/usr/lib/libbz2.1.0.dylib'
 current-version: 1.0.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BZ2_bzBuffToBuffCompress, _BZ2_bzBuffToBuffDecompress, _BZ2_bzCompress, 
                        _BZ2_bzCompressEnd, _BZ2_bzCompressInit, _BZ2_bzDecompress, 

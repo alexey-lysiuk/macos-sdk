@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FEAB6085-19D9-3EC2-99B1-C30AC0B820DC', 'x86_64: FEAB6085-19D9-3EC2-99B1-C30AC0B820DC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MapsSuggestions.framework/Versions/A/MapsSuggestions'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CLLocationCoordinate2DFromGEOLocationCoordinate2D, _CLLocationCoordinateFromNSData, 
                        _GEOComposedWaypointFromMapsSuggestionsEntry, _GEOConfigFromMapsSuggestionsEntryType, 

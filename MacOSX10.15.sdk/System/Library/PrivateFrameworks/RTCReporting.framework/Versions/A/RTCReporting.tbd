@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5EAFFF39-AF45-3083-BB43-D9294D3F96F5', 'x86_64: 5EAFFF39-AF45-3083-BB43-D9294D3F96F5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RTCReporting.framework/Versions/A/RTCReporting'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RTCReportingCreateHierarchyTokenFromParentToken, _RTCReportingFetchStatesWithUserInfo, 
                        _RTCReportingFlushMessages, _RTCReportingFlushMessagesWithCompletion, 

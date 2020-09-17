@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5F4988E6-45D7-31BE-9665-BBC3CBE790D3', 'x86_64: 5F49
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveEventTracker.framework/Versions/A/ProactiveEventTracker'
 current-version: 258.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PETAggregatedMessageReadFrom, _PETAggregationKeyReadFrom, 
                        _PETDistributionReadFrom, _PETMetadataReadFrom, _PETRawMessageReadFrom, 

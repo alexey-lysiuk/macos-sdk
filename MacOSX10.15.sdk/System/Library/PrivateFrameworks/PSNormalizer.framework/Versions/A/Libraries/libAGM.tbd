@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DC9D4D83-823D-366F-B013-73EE5C526351' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/Libraries/libAGM.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AGMApplyFunction, _AGMCleanup, _AGMColorSpaceAddRef, _AGMColorSpaceEqual, 
                        _AGMColorSpaceFillRange, _AGMColorSpaceGetBaseCs, _AGMColorSpaceGetComponents, 

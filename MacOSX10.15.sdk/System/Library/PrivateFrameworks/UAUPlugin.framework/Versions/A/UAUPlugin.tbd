@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 030BB585-4F2B-3025-857A-4D4FD5F7A086' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UAUPlugin.framework/Versions/A/UAUPlugin'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UAUPluginVersionNumber, _UAUPluginVersionString ]
     objc-classes:    [ UAULogging, UAUSession, UpdaterSessionParameters ]

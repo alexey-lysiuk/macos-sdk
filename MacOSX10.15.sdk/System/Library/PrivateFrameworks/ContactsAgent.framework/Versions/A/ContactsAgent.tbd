@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CBCB3A76-F9A8-353F-826F-D5D92F2DD026' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ContactsAgent.framework/Versions/A/ContactsAgent'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ABPredicateReferencedGroupUniqueIDs, _ContactsAgentVersionNumber, 
                        _ContactsAgentVersionString, _main ]

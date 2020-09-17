@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B1C92EB8-23B2-3A3A-938B-C041146457FD', 'x86_64: B1C92EB8-23B2-3A3A-938B-C041146457FD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDProtobufGCK.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN3awd7metrics19GCKLinkStatusReport10SharedCtorEv, __ZN3awd7metrics19GCKLinkStatusReport10SharedDtorEv, 
                        __ZN3awd7metrics19GCKLinkStatusReport15kPERFieldNumberE, __ZN3awd7metrics19GCKLinkStatusReport16default_instanceEv, 

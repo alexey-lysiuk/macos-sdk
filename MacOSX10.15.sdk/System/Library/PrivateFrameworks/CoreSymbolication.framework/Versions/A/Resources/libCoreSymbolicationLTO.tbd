@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 90B1E0EE-870F-32FB-9A64-3F20EA18C608', 'x86_64: 90B1
 platform:        zippered
 install-name:    '/libCoreSymbolicationLTO.dylib'
 current-version: 64535.33.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ '!' ]
     symbols:         [ _Create, _Dispose, _Handler, _Initialize ]

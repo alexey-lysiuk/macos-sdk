@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 02789B6B-4736-3951-9265-076679136AC4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BridgeOSInstallReporting.framework/Versions/A/BridgeOSInstallReporting'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BOSLogObject, _BOSLogSerial, _BOSShouldLogToInstallLog, _BOSShouldLogToStderr, 
                        _BridgeOSInstallReportingVersionNumber, _BridgeOSInstallReportingVersionString, 

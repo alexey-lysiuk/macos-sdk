@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 247A58CE-CAB0-36F3-AFD8-F585E6F6AB89', 'x86_64: 247A
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IDSHashPersistence.framework/Versions/A/IDSHashPersistence'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ IDSMessageHashStore ]
 ...

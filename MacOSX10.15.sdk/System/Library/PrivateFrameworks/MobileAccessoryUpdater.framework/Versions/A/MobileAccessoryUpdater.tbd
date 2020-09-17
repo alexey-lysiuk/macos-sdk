@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/Versions/A/MobileAccessoryUpdater'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FUDError, _FudLog, _FudLogCopyMessages, _FudLogInit, _FudLogSetMode, 
                        _FudLogger, _FudLogv, _MAUError, _addObjectToXpcDictionary, 

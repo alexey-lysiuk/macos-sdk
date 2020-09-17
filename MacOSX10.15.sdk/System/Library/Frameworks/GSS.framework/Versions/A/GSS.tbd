@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 2F3A67E6-D42A-3CF0-9041-A42C22D46F95', 'x86_64: 2F3A67E6-D42A-3CF0-9041-A42C22D46F95' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/GSS.framework/Versions/A/GSS'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GSSCheckNTLMReflection, _GSSCreateCredentialFromUUID, _GSSCreateError, 
                        _GSSCreateName, _GSSCredCopyName, _GSSCredGetLifetime, _GSSCredentialCopyName, 

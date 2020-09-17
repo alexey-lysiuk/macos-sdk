@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5E04A40A-3E45-3B56-ABA9-2145FBAAC436' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OSInstaller.framework/Versions/A/OSInstaller'
 current-version: 660
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSIProductTypeMainInstaller, _OSIProductTypeSoftwareUpdate, 
                        _OSIProductTypeUnwrapped, _OSIProductTypeWrapped, _OSISProductManagerIAMethod, 

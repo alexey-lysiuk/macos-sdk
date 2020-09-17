@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 48DBE34E-F05B-3B9B-9E01-1C1C6EE8BD9F' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/VisualTestKit.framework/Versions/A/VisualTestKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromVTKAssertID, _VTKID, ___VTKAddExclusionAreaAt, 
                        ___VTKAddHorizontalGuideAt, ___VTKAddSqureGuideAt, ___VTKAddVerticalGuideAt, 

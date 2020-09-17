@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 62E621B9-DA73-371A-9B39-FFDE54AED5B1', 'x86_64: 62E621B9-DA73-371A-9B39-FFDE54AED5B1' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDAV.framework/Versions/A/CoreDAV'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CDVAbstractMethod, _CDVAppleClientInfoString, _CDVCleanedStringsFromResponseHeaders, 
                        _CDVDefaultUserAgent, _CDVExtractValuesFromRedirectString, 

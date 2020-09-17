@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 765CC3DA-1D7B-345E-823A-C2DE9E638287' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityEvents.framework/Versions/A/AccessibilityEvents'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXEFixedGlyphForMacKeyCode, _AXEGlyphForMacKeyCode, _AXEGlyphForPureModifierFlags, 
                        _AXEHIDDeviceGetDeviceInfo, _AXEHIDDeviceGetDeviceInfoUsingCache, 

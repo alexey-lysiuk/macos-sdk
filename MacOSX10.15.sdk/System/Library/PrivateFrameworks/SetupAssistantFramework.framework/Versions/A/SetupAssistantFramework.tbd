@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4204E270-B1D5-346F-B7EC-C5CCE5834CB1' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SetupAssistantFramework.framework/Versions/A/SetupAssistantFramework'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SetupAssistantFrameworkVersionNumber, _SetupAssistantFrameworkVersionString, 
                        _kMBSetupUserUID, _kSetupAssistantWindowDataKey, _kSetupAssistantWindowScreenNumberKey, 

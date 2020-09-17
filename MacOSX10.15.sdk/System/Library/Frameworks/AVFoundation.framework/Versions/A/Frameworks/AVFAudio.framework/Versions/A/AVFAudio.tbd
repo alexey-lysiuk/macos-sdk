@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CAC3CA5F-FCF6-37EB-8F1A-090340E2C38E', 'x86_64: CAC3CA5F-FCF6-37EB-8F1A-090340E2C38E' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AVFoundation.framework/Versions/A/Frameworks/AVFAudio.framework/Versions/A/AVFAudio'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AVAudioBitRateStrategy_Constant, _AVAudioBitRateStrategy_LongTermAverage, 
                        _AVAudioBitRateStrategy_Variable, _AVAudioBitRateStrategy_VariableConstrained, 

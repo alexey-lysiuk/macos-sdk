@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/libboringssl.dylib'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BIO_find_type, _BIO_flush, _BIO_free, _BIO_free_all, _BIO_get_fd, 
                        _BIO_get_retry_reason, _BIO_hexdump, _BIO_indent, _BIO_method_type, 

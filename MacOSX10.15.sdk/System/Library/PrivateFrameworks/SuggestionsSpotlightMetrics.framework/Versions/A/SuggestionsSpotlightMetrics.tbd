@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0FA0432B-4535-38EC-9C2E-6D1CE72ED132', 'x86_64: 0FA0
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SuggestionsSpotlightMetrics.framework/Versions/A/SuggestionsSpotlightMetrics'
 current-version: 1052.34
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SGSM2ContactOpportunityInSpotlightReadFrom, _SGSM2ContactResultInSpotlightReadFrom, 
                        _SGSM2ContactResultSelectedInSpotlightReadFrom, _SGSM2EventOpportunityInSpotlightReadFrom, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9B324178-4FAA-3686-9E01-634607F38493' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ForceFeedback.framework/Versions/A/ForceFeedback'
 current-version: 1.0.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FFCreateDevice, _FFDeviceCreateEffect, _FFDeviceEscape, _FFDeviceGetForceFeedbackCapabilities, 
                        _FFDeviceGetForceFeedbackProperty, _FFDeviceGetForceFeedbackState, 

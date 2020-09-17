@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 27938761-0AAA-3B78-8A07-CCBE81968A7B' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/InstantMessage.framework/Versions/A/InstantMessage'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$add$os10.5$_AVChatChannelIDKey', '$ld$add$os10.5$_AVChatHasAudioKey', 
                        '$ld$add$os10.5$_AVChatHasVideoKey', '$ld$add$os10.5$_AVChatInfoNotification', 

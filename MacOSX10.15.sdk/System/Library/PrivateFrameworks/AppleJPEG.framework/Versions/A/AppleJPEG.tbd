@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6DE30A07-C627-319B-A0DE-EB7A832BEB88', 'x86_64: 6DE30A07-C627-319B-A0DE-EB7A832BEB88' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleJPEG.framework/Versions/A/AppleJPEG'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AJReducerCloseSource, _AJReducerCreate, _AJReducerDestinationBytesWritten, 
                        _AJReducerGetAPIVersionNumber, _AJReducerIsDataPacked, _AJReducerIsFilePacked, 

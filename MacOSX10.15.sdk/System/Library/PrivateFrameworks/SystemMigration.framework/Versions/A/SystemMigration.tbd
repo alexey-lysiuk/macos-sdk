@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 725024F9-6CAA-3779-98DD-7165F6E265C9' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SystemMigration.framework/Versions/A/SystemMigration'
 current-version: 866
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CopyPrimaryNetworkInterfaceHardwareAddressString, _LaunchTaskSync, 
                        _LaunchTaskSyncWithDelay, _PerformFinalServerCleanup, _SMBackgroundClientAPIVersion, 

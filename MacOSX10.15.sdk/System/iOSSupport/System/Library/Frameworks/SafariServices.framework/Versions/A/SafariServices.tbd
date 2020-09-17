@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9DDD2E1D-6755-39BC-A335-2E53DB03C39A' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/SafariServices.framework/Versions/A/SafariServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SFAuthenticationErrorDomain, _SFErrorDomain, _SSReadingListErrorDomain, 
                        __SFAllowMediaCaptureOnInsecureSites, __SFAppleConnectExtensionEnabledKey, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D20EF7DF-8508-3707-A9B3-B7D8190971F5', 'x86_64: D20E
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libcldcpuengine.dylib'
 current-version: 2.14
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___printf_cl, _barrier, _glrCompBuildProgram, _glrCompCloseDevice, 
                        _glrCompCompileProgram, _glrCompCopyStream, _glrCompCreateContext, 

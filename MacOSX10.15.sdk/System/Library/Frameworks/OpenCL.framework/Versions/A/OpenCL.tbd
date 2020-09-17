@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 293FE223-9186-320B-81A4-EC8104C38357', 'x86_64: 293FE223-9186-320B-81A4-EC8104C38357' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _clBuildProgram, _clCompileProgram, _clCreateBuffer, _clCreateCommandQueue, 
                        _clCreateCommandQueueWithPropertiesAPPLE, _clCreateContext, 

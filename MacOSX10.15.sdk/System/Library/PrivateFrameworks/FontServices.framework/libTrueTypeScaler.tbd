@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F8A27F0F-44B3-3A1E-8B75-2DFD4A90E1D4', 'x86_64: F8A27F0F-44B3-3A1E-8B75-2DFD4A90E1D4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/libTrueTypeScaler.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TTScalerOpen ]
 ...

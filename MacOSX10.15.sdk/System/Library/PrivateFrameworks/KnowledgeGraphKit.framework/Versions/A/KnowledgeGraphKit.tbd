@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2C4145F1-495F-3E63-863D-154E129A71E2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/KnowledgeGraphKit.framework/Versions/A/KnowledgeGraphKit'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ PhotoAnalysis, PhotosGraph, contextd ]
     symbols:         [ '_$s17KnowledgeGraphKit003xfhoiySdAA8MAMatrixV_ADtF', '_$s17KnowledgeGraphKit12MAFetchSliceC12contentNodesShySo6MANodeCGyF', 

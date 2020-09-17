@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1B320C83-9327-3706-A5D3-C4C2CD5F5AA8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/NeutrinoKit.framework/Versions/A/NeutrinoKit'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NUBoundingRectForRotatedRect, _NUEdgeInsetsInsetRect, _NUFitScaleForImageRectInRect, 
                        _NUMaxRectInRotatedRect, _NURectCenterRectInRect, _NURectGetMidpoint, 

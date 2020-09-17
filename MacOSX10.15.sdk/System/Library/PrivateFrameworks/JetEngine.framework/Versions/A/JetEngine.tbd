@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 631066D1-21BF-3ABA-BC36-5840F643551E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/JetEngine.framework/Versions/A/JetEngine'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ App Store, AppStoreKit, AppStoreKitMac, AppStoreKitMacTests, 
                          JetPreflight, JetPreflightTests, MacAppStore, MacAppStoreTests ]

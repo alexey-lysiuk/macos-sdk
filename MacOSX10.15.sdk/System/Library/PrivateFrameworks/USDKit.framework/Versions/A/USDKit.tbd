@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 87C9A7EE-017C-34C1-9E4C-3E2BBA20AAD0', 'x86_64: 87C9
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/USDKit.framework/Versions/A/USDKit'
 current-version: 24.50
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _USDKitAdditionalErrorsKey, _USDKitErrorDomain, _USDKitVersionNumber, 
                        _USDKitVersionString, _USKDataTypeAssetPath, _USKDataTypeBool, 

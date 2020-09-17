@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A9A8CF1A-6F51-3E07-86E8-F2188E657F02' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreWLANKit.framework/Versions/A/CoreWLANKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _kCWImageAlertTriangle, _kCWImageBattery0, _kCWImageBattery10, 
                        _kCWImageBattery100, _kCWImageBattery20, _kCWImageBattery30, 

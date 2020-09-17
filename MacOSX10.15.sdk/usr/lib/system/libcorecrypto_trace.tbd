@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libcorecrypto_trace.dylib'
 current-version: 866.140.1
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ cc_fips_test, corecrypto_test ]
     symbols:         [ _cc_abort, _cc_atfork_child, _cc_atfork_parent, _cc_atfork_prepare, 

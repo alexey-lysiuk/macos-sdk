@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2DB18AFD-581B-3A4A-BD22-58454EC89F69', 'x86_64: 2DB1
 platform:        zippered
 install-name:    '/usr/lib/libdscsym.dylib'
 current-version: 243.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _dscsym_buffer_iterate, _dscsym_buffer_iterate_binaries, _dscsym_copy_dscsym_files, 
                        _dscsym_generate_dscsym_file, _dscsym_iterate, _dscsym_iterate_binaries, 

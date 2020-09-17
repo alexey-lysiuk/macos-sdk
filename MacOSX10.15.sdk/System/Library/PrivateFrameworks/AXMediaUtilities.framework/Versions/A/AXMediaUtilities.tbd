@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BE959C1E-B581-3506-9773-EA040BB91A8E', 'x86_64: BE959C1E-B581-3506-9773-EA040BB91A8E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AXMediaUtilities.framework/Versions/A/AXMediaUtilities'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXColorMarkerMaximumDistanceHS, _AXColorMarkerMaximumDistanceHSB, 
                        _AXMActiveSoundPitchDefault, _AXMActiveSoundPitchMaximum, 

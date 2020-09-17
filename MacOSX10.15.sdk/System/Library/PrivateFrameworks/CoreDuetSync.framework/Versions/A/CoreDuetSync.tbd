@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A24DED9B-5294-3924-806D-8F609E944117', 'x86_64: A24DED9B-5294-3924-806D-8F609E944117' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDuetSync.framework/Versions/A/CoreDuetSync'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ _DKSync3Coordinator, _DKSyncCoordinatorFactory ]
 ...

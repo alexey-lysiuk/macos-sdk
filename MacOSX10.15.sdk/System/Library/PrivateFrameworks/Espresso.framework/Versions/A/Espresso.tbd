@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 70B1521B-1B24-3DA4-A41B-E727CF140F1F', 'x86_64: 70B1
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Espresso.framework/Versions/A/Espresso'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ETCallbackTypeBatch, _ETCallbackTypeEpoch, __Z13global_loggerv, 
                        __Z23espresso_vision_computeP15EspressoNetworkP15EspressoContextPK13vImage_BufferiPfPK12VimageParamsbii, 

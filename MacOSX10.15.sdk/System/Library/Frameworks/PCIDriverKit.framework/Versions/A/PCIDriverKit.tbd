@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1F8BC1A0-FB1E-344C-B3BE-43843BFC037C' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/PCIDriverKit.framework/Versions/A/PCIDriverKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IOPCIDevice_Class, __ZN11IOPCIDevice11MemoryRead8EhyPh, __ZN11IOPCIDevice12MemoryRead16EhyPt, 
                        __ZN11IOPCIDevice12MemoryRead32EhyPj, __ZN11IOPCIDevice12MemoryRead64EhyPy, 

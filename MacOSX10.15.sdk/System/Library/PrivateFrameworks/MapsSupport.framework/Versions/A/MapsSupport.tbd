@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9861C1CB-D8C2-31F5-B1B6-F2BF785E016E', 'x86_64: 9861C1CB-D8C2-31F5-B1B6-F2BF785E016E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MapsSupport.framework/Versions/A/MapsSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GEOConfigMSPClientRegistrationFetchPeriod, _GEOConfigMSPClientRegistrationUpdatePeriod, 
                        _GEOConfigMSPCloudSynchronizerDefaultDelayAfterError, _GEOConfigMSPCloudSynchronizerDelayAfterServiceOutage, 

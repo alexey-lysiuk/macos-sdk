@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: AD547A25-1A0B-3FA6-8676-82C37F267A4A', 'x86_64: AD547A25-1A0B-3FA6-8676-82C37F267A4A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/PushKit.framework/Versions/A/PushKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PKPushIncomingCallReportedNotification, _PKPushTypeFileProvider, 
                        _PKPushTypeUserNotifications ]

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0BF809E1-E9CD-30D3-974C-65E49DB88E1E', 'x86_64: 0BF809E1-E9CD-30D3-974C-65E49DB88E1E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/StoreServices.framework/Versions/A/StoreServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ProcessAssertionReasonBackgroundDownload, _ProcessAssertionReasonTaskCompletion, 
                        _SSAVAssetDownloadTokenDownloadComplete, _SSAccountDemoAccountBackingIdentifier, 

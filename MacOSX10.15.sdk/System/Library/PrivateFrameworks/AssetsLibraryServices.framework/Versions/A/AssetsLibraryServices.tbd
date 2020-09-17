@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8AA61DAF-533A-322F-B2A1-4843BDF6EA5A', 'x86_64: 8AA6
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AssetsLibraryServices.framework/Versions/A/AssetsLibraryServices'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ALGetLibrarySizes, _ALGetPhotosAndVideosCount, _ALPhotosAndVideosCountNotificationName, 
                        _ALRegisterForPhotosAndVideosCount, _ALSecondsNeededToMigrateStore, 

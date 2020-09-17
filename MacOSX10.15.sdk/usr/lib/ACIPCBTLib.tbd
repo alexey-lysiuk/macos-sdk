@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 703C6DC6-0E1B-3D32-AEDE-417C084CD79F' ]
 platform:        macosx
 install-name:    '/usr/lib/ACIPCBTLib.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN12ACIPCBTClass10writeAsyncEPKvjPFvPviS2_ES2_, __ZN12ACIPCBTClass12readRegisterEjPvPj, 
                        __ZN12ACIPCBTClass14clearIteratorsEv, __ZN12ACIPCBTClass14sendImageAsyncEPKvjPFvPviS2_S2_ES2_, 

@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libaprutil-1.0.dylib'
 current-version: 4
 compatibility-version: 4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __crypt_blowfish_rn, __crypt_gensalt_blowfish_rn, __crypt_output_magic, 
                        _apr_base64_decode, _apr_base64_decode_binary, _apr_base64_decode_len, 

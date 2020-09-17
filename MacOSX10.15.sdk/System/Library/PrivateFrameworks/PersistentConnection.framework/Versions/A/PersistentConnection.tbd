@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5B2D87A8-2641-3F6D-ACEA-96B00F85AAB5', 'x86_64: 5B2D87A8-2641-3F6D-ACEA-96B00F85AAB5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PersistentConnection.framework/Versions/A/PersistentConnection'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PCForceDemoMaxKeepAliveIntervalKey, _PCForceMinKeepAliveIntervalKey, 
                        _PCIntervalCacheAddressFamilyKey, _PCIntervalCacheChangedNotification, 

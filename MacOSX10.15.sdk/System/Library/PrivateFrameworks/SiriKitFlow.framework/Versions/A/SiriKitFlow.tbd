@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9F3FDF04-2F0D-33BA-8B0F-9238CD231DDF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SiriKitFlow.framework/Versions/A/SiriKitFlow'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AudioFlowDelegatePlugin, AudioFlowDelegatePluginTests, ContactsFlowDelegatePlugin, 
                          ContactsFlowDelegatePlugin-Tests, ControlsFlowDelegatePlugin, 

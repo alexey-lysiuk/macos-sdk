@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E928FCDE-5E66-3143-8D7B-5F2FC023D335', 'x86_64: E928
 platform:        zippered
 install-name:    '/System/Library/Frameworks/NaturalLanguage.framework/Versions/A/NaturalLanguage'
 current-version: 57
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NLAssetsHaveChangedNotification, _NLLanguageAmharic, _NLLanguageArabic, 
                        _NLLanguageArmenian, _NLLanguageBengali, _NLLanguageBulgarian, 

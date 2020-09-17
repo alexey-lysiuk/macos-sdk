@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D38AD2E7-4332-3DB9-BDB8-301CFA517695' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Hypervisor.framework/Versions/A/Hypervisor'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _hv_capability, _hv_vcpu_create, _hv_vcpu_destroy, _hv_vcpu_enable_native_msr, 
                        _hv_vcpu_flush, _hv_vcpu_get_exec_time, _hv_vcpu_interrupt, 

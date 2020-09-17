@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A3FF3AFC-8C1C-36E5-9179-66D8F075EE35', 'x86_64: A3FF3AFC-8C1C-36E5-9179-66D8F075EE35' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CM8021ASClockAddAWDLPort, _CM8021ASClockAddIPv4Port, _CM8021ASClockAddIPv4PortAndGetIdentity, 
                        _CM8021ASClockAddIPv6Port, _CM8021ASClockAddIPv6PortAndGetIdentity, 

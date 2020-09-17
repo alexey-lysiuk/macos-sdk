@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 272C1E22-0F32-3C25-912F-9DAE5AE882EC' ]
 platform:        macosx
 install-name:    '/usr/lib/log/liblog_location.dylib'
 current-version: 2394.0.22
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogCopyFormattedString, _OSStateCreateStringWithData, _liblog_locationVersionNumber, 
                        _liblog_locationVersionString ]

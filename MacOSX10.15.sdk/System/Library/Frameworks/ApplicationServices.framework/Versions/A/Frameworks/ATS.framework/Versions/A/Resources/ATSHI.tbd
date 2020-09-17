@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6E96BFE8-A3C7-35A1-9A79-B229D41D55B9', 'x86_64: 6E96BFE8-A3C7-35A1-9A79-B229D41D55B9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/ATSHI.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ATSCopyAutoActivationConfirmDialogResult, _ATSIsApplicationReadyForAutoFontActivation ]
 ...

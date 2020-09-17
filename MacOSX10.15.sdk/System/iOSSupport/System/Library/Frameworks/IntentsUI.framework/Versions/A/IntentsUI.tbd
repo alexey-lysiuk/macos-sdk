@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 57434444-5847-33E1-B971-63AF2A99C1BD' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/IntentsUI.framework/Versions/A/IntentsUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _INUIRemoteViewControllerErrorDomain, _INUIVoiceShortcutExtensionItemBundleURLKey, 
                        _INUIVoiceShortcutExtensionItemSandboxExtensionDataKey, _IntentsUIVersionNumber, 

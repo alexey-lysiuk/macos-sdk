@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1A537D56-9FF1-3AD8-B405-9BB4E372962F' ]
 platform:        macosx
 install-name:    '/usr/lib/libnfstorage.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _nfstorageVersionNumber, _nfstorageVersionString ]
     objc-classes:    [ ExpressESEEntity, ExpressIcfEntity, NFStorageController, NFStorageControllerESEExpress, 

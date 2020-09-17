@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 23FEA337-3090-38BD-A0B7-9C05ECA1499B' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libcl2module.dylib'
 current-version: 2.5.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _cl2module ]
 ...

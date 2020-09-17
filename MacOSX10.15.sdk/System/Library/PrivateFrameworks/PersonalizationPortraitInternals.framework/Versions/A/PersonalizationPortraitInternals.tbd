@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6C1D754C-B095-3763-8D2A-F10B7D4DF51E', 'x86_64: 6C1D
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PersonalizationPortraitInternals.framework/Versions/A/PersonalizationPortraitInternals'
 current-version: 1052.34
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PPCityNamesForContact, _PPCompactStringArrayAppendString, 
                        _PPCompactStringArrayCreate, _PPCompactStringArrayDestroy, 

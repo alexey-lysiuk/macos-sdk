@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 31D93EB1-0A20-3383-9680-090E441F25D8', 'x86_64: 31D9
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Versions/A/CoreTelephony'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CTCallAddressBlocked, _CTCallAnswer, _CTCallAnswerEndingActive, 
                        _CTCallAnswerEndingActiveWithSourceIdentifier, _CTCallAnswerEndingHeld, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CF67FF34-4238-3ECA-B4A4-EA04F18A0D36', 'x86_64: CF67FF34-4238-3ECA-B4A4-EA04F18A0D36' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___crashreporter_info__, __heim_scram_pairs_free, __heim_scram_parse, 
                        __heim_scram_unparse, _heim_apop_create, _heim_apop_verify, 

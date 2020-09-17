@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/libexec/SmartCardServices/drivers/ifd-ccid.bundle/Contents/MacOS/libccid.dylib'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IFDHCloseChannel, _IFDHControl, _IFDHCreateChannel, _IFDHCreateChannelByName, 
                        _IFDHGetCapabilities, _IFDHICCPresence, _IFDHPowerICC, _IFDHSetCapabilities, 

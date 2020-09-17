@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 033E3BF3-D904-37BE-BF1A-76D69FA506F9' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/APTransport.framework/Versions/A/APTransport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _APAdvertiserInfoCopy, _APAdvertiserInfoCopyAirPlayData, _APAdvertiserInfoCopyAirPlayP2PData, 
                        _APAdvertiserInfoCopyProperty, _APAdvertiserInfoCopyRAOPData, 

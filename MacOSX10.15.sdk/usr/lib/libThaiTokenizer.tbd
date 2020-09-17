@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4F4ADE99-0D09-3223-B7C0-C407AB6DE8DC', 'x86_64: 4F4ADE99-0D09-3223-B7C0-C407AB6DE8DC' ]
 platform:        zippered
 install-name:    '/usr/lib/libThaiTokenizer.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ThaiTokenizerAdvanceToNextToken, _ThaiTokenizerCreate, _ThaiTokenizerDestroy, 
                        _ThaiTokenizerGetCurrentTokenRange, _ThaiTokenizerGoToTokenAtIndex, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5D32F65D-2CD7-3204-975C-F4C9256E505F', 'x86_64: 5D32
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FaceCore.framework/Versions/A/FaceCore'
 current-version: 4.3.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FCRDetectionParamDetectionRegion, _FCRDetectionParamEnhancedEyesAndMouthLocalization, 
                        _FCRDetectionParamInitialAngle, _FCRExtractionParamEnhancedEyesAndMouthLocalization, 

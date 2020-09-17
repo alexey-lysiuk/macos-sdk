@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C6FF949C-1636-3D00-9BB7-FB5ACCE6CA3F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FMClient.framework/Versions/A/FMClient'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ FMIPClientXPCService, FMIPSiriBackendPlugin, FindMyiPhoneIntentsExtension, 
                          fmclienttool ]

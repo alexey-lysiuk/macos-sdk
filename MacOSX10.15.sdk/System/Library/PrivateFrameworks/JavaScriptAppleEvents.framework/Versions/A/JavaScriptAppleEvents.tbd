@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 13EC8851-90F4-3503-BBC6-5ED10C84D019' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/JavaScriptAppleEvents.framework/Versions/A/JavaScriptAppleEvents'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AEApplicationSendMessage, _CreateAEObjectContainer, _CreateJSAEArray, 
                        _CreateJSAEObjectSpecifier, _CurrentThreadIsMainOrCooperative, 

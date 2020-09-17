@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8E4AC9D7-04FF-3D4B-9C7E-DC92B5E0D535' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ConfigurationEngineModel.framework/Versions/A/ConfigurationEngineModel'
 current-version: 32.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CEMAccountLDAPDeclaration_LDAPSearchSettingsItem_LDAPSearchSettingScope_ldapSearchSettingScopeBase, 
                        _CEMAccountLDAPDeclaration_LDAPSearchSettingsItem_LDAPSearchSettingScope_ldapSearchSettingScopeOneLevel, 

@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MobileActivationMacOS.framework/Versions/A/MobileActivationMacOS'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MAEActivateMacOSWithError, _MAECreateActivationRequestMacOSWithError, 
                        _MAEDeactivateDeviceMacOSWithError, _MAEGetActivationStateMacOSWithError, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: F7C0BF01-2753-3801-B7C1-BEBEC7402AE8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WebDriver.framework/Versions/A/WebDriver'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DDExtractFileNameWithoutExtension, _DDIntersectionRange, 
                        _DDRangeCompare, _DDRangeFromString, _DDStringFromRange, _DDUnionRange, 

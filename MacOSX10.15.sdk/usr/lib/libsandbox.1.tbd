@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A19EDFBF-DD27-3A5D-8C25-4AF981E498A1', 'x86_64: A19EDFBF-DD27-3A5D-8C25-4AF981E498A1' ]
 platform:        zippered
 install-name:    '/usr/lib/libsandbox.1.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SANDBOX_BUILD_ID, ___crashreporter_info__, _sandbox_apply, 
                        _sandbox_apply_container, _sandbox_compile_entitlements, _sandbox_compile_file, 

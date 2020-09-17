@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 59A8239F-C28A-3B59-B8FA-11340DC85EDC', 'x86_64: 59A8
 platform:        zippered
 install-name:    '/usr/lib/libc++.1.dylib'
 current-version: 902.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZNKSt10bad_typeid4whatEv, __ZNKSt11logic_error4whatEv, __ZNKSt12bad_any_cast4whatEv, 
                        __ZNKSt12experimental15fundamentals_v112bad_any_cast4whatEv, 

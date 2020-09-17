@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C4831DFF-F282-35B8-92ED-F6F7CF8C9FFC', 'x86_64: C4831DFF-F282-35B8-92ED-F6F7CF8C9FFC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/TextToSpeech.framework/Versions/A/TextToSpeech'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXSpeechReplaceJapaneseElongationCharactersIfNeeded, _TTSAllCachedAvailableVoicesKey, 
                        _TTSAssetKeyCustomVoiceCompatibilityVersion, _TTSAssetKeyCustomVoiceFootprint, 

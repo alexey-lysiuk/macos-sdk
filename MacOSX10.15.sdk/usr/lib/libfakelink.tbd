@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libfakelink.dylib'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __fakelink_destination_void, _fakelink_get_property, _fakelink_group_add, 
                        _fakelink_group_free, _fakelink_group_iterate_mappings, _fakelink_group_iterate_mappings_with_filter, 

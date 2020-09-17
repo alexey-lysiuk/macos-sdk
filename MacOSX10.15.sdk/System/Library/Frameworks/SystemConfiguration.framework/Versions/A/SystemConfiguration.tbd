@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 84F9B3BB-F7AF-3B7C-8CD0-D3C22D19619F', 'x86_64: 84F9
 platform:        zippered
 install-name:    '/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration'
 current-version: 1061.141.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CNCopyCurrentNetworkInfo, _CNCopySupportedInterfaces, _CNMarkPortalOffline, 
                        _CNMarkPortalOnline, _CNSetSupportedSSIDs, _DHCPClientPreferencesCopyApplicationOptions, 

@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/swift/libswiftMapKit.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftMapKit.dylib', '$ld$install_name$os10.11$@rpath/libswiftMapKit.dylib', 
                        '$ld$install_name$os10.12$@rpath/libswiftMapKit.dylib', '$ld$install_name$os10.13$@rpath/libswiftMapKit.dylib', 

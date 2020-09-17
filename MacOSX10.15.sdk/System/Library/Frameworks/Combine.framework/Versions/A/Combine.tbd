@@ -6,7 +6,7 @@ install-name:    '/System/Library/Frameworks/Combine.framework/Versions/A/Combin
 current-version: 134.102
 compatibility-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s16SchedulerOptions7Combine0A0PTl', '_$s17SchedulerTimeType7Combine0A0PTl', 
                        '_$s25ObjectWillChangePublisher7Combine010ObservableA0PTl', 

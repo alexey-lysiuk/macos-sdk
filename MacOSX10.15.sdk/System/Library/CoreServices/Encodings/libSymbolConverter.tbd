@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 40AFFB4F-3A3C-3F78-ADAE-055D3F2B4B98', 'x86_64: 40AF
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libSymbolConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetSymbolConverterDefinition ]
 ...

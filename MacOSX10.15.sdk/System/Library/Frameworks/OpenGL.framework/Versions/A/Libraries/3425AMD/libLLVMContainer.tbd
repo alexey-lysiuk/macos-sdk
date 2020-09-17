@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 56EC6965-41AC-3A70-BDD5-F88B6AC00BEB' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/3425AMD/libLLVMContainer.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EnableARMEHABIDescriptors, _EnableBasePointer, _ForceStackAlign, 
                        _LLVMABIAlignmentOfType, _LLVMABISizeOfType, _LLVMAddAggressiveDCEPass, 

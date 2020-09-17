@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DiskImages.framework/Versions/A/DiskImages'
 current-version: 559.100.2
 compatibility-version: 1.0.8
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DIAddPermission, _DIAddRunToBLKX, _DIAttachDrive, _DIAttachImage, 
                        _DIAuthOpen, _DIBackingStoreAddRsrcFork, _DIBackingStoreAllowExpandability, 

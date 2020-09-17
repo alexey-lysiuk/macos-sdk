@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8FF12410-43CD-3066-AF6C-2D9B9D22451A' ]
 platform:        macosx
 install-name:    '/usr/lib/libQMIParserDynamic.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN3qmi11MessageBase13validateMsgIdEt, __ZN3qmi11MessageBase14validateBufferEv, 
                        __ZN3qmi11MessageBase20sParsingErrorHandlerE, __ZN3qmi11MessageBase22setParsingErrorHandlerEPFbttPKhmE, 

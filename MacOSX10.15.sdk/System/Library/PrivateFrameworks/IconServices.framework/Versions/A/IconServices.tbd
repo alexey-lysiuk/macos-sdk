@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0DADB4C3-46FF-3FDB-8A86-51E2067FC7F4', 'x86_64: 0DAD
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices'
 current-version: 438.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ISCreateCGImageFromBindingWithSizeScaleAndOptions, __ISCopyCacheContentsDescription, 
                        __ISCopyCachePath, __ISCopyICNSDataFromBinding, __ISCreateCGImageForTypeAtScaleInternal, 

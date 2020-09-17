@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 75F3B938-F5D5-3B1B-BEEE-26D9B8F5D74F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/PSNormalizer'
 current-version: 25.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PSNormalizeFromClientCallback, _PSNormalizeFromFile ]
 ...

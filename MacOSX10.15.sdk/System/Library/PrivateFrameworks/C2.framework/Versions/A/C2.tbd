@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 4A7E2A63-E19A-3936-92F5-03F2FD602172', 'x86_64: 4A7E
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/C2.framework/Versions/A/C2'
 current-version: 495
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _C2VersionNumber, _C2VersionString, _kServerTimeBeginning ]
     objc-classes:    [ C2DeviceInfo, C2Logging, C2Metric, C2MetricOperationGroupOptions, 

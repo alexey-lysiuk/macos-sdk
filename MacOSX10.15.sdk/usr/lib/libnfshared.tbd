@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 251C8E9F-85B5-38A6-8DB3-A980A153C771', 'x86_64: 251C8E9F-85B5-38A6-8DB3-A980A153C771' ]
 platform:        zippered
 install-name:    '/usr/lib/libnfshared.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AWDExpressTransactionTypeReadFrom, _AWDNFCCRSAuthExceptionEventReadFrom, 
                        _AWDNFCCRSAuthInitExceptionEventReadFrom, _AWDNFCCardIngestionReaderStateChangeEventReadFrom, 

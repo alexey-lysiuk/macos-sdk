@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Tcl.framework/Versions/8.5/Tcl'
 current-version: 8.5.9
 compatibility-version: 8.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TclAddLiteralObj, _TclAllocateFreeObjects, _TclBN_epoch, 
                        _TclBN_fast_s_mp_mul_digs, _TclBN_fast_s_mp_sqr, _TclBN_mp_add, 

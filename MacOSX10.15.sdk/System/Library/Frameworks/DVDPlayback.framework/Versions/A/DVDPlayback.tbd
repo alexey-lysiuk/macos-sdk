@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/DVDPlayback.framework/Versions/A/DVDPlayback'
 current-version: 5960
 compatibility-version: 5000
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DVDClearLastPlayBookmark, _DVDCloseMediaFile, _DVDCloseMediaVolume, 
                        _DVDCopyBuildVersion, _DVDDisableAllAudioFeatures, _DVDDisplayPopUpMenu, 

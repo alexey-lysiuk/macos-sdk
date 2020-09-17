@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AD45291A-740B-3DB8-8A90-7E82D9B09CC6', 'x86_64: AD45
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MusicLibrary.framework/Versions/A/MusicLibrary'
 current-version: 18
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CreateSQLExtensionsOnSqliteConnection, _DestroySQLExtensions, 
                        _ITDBPlaylistLimitFromSmartPlaylistLimit, _ITDBTrackOrderForTrackOrder, 

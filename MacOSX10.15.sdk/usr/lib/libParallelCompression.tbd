@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 44C95AB4-0523-370A-B907-1DD9F7D01B69', 'x86_64: 44C95AB4-0523-370A-B907-1DD9F7D01B69' ]
 platform:        zippered
 install-name:    '/usr/lib/libParallelCompression.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BXDiff5, _BXDiff5Large, _BXDiff5WithIndividualPatches, _BXPatch5, 
                        _BXPatch5InPlace, _BXPatch5Large, _BXPatch5WithFlags, _BXPatchFile, 

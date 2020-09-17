@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 62C8BD91-B11C-37C5-A395-45FE36415332', 'x86_64: 62C8BD91-B11C-37C5-A395-45FE36415332' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDProtobufBluetooth.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN3awd7metrics16BluetoothFWError10SharedCtorEv, __ZN3awd7metrics16BluetoothFWError10SharedDtorEv, 
                        __ZN3awd7metrics16BluetoothFWError14kFwFieldNumberE, __ZN3awd7metrics16BluetoothFWError16default_instanceEv, 

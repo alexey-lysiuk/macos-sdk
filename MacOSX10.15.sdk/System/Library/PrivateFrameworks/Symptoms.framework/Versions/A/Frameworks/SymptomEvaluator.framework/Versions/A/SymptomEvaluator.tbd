@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D0549BA7-9FE8-3658-A9B7-068817789752' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/Versions/A/SymptomEvaluator'
 current-version: 1238.120.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CLIPS_BASEBAND_BEDF_MODULE, _CLIPS_BASEBAND_MODULE, _CLIPS_BLUETOOTH_MODULE, 
                        _CLIPS_COMMON_MODULE, _CLIPS_HOMEKIT_MODULE, _CLIPS_MAIN_MODULE, 

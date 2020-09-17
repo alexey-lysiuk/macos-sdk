@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 58141383-3ED6-33D3-9DE3-85A93A56BC0C', 'x86_64: 58141383-3ED6-33D3-9DE3-85A93A56BC0C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/HearingUtilities.framework/Versions/A/HearingUtilities'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXHACHearingAidCapabilities, _AXHACHearingAidComplianceEnabled, 
                        _AXHACHearingAidComplianceSetEnabled, _AXHATrustChainReady, 

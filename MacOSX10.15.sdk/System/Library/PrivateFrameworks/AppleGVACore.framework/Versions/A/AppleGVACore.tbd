@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2BE0A64D-E820-3401-9622-727DFA3C4784' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleGVACore.framework/Versions/A/AppleGVACore'
 current-version: 10.0.20
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AVFPixelProcessCore_CreateInstance, _AVFPixelProcessCore_GetSupportedPixelFormats, 
                        _AVFPixelProcessCore_PrepareToTransferImages, _AVFPixelProcessCore_SetDestChromaLocation, 

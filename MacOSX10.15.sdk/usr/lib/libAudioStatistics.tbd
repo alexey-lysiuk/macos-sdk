@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 42CAC6A2-BCC3-391B-B1C1-D0AC69E99CF4', 'x86_64: 42CAC6A2-BCC3-391B-B1C1-D0AC69E99CF4' ]
 platform:        zippered
 install-name:    '/usr/lib/libAudioStatistics.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CAReporterProxyKeyReporterID, _CAReporterProxyKeyServiceType, 
                        _CAReportingApplicationName, _CAReportingClientCopyConfiguration, 

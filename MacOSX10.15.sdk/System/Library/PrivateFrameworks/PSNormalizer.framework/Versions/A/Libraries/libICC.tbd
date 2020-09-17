@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 20349EDE-AF81-361B-8CEE-27B3888BEC18' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/Libraries/libICC.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ICCConvertData, _ICCDisposeProfile, _ICCDisposeTransform, 
                        _ICCGetProfileData, _ICCGetProfileSpec, _ICCInitDISTICCUTILS, 

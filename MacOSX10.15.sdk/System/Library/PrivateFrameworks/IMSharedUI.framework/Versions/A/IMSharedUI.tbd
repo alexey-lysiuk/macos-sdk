@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EB7D9EF2-6E97-3039-BFE0-0D819504C451' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMSharedUI.framework/Versions/A/IMSharedUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IMAnonymizeContentAndContacts, _IMAnonymizeContentAndContactsDidChangeNotification, 
                        _IMAttachmentLogSubtype, _IMAudioSessionControllerSessionNotificationOptionsKey, 

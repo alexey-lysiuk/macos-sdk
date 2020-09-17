@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 23DBB313-A082-3C08-8E1F-2D31EE4247EF', 'x86_64: 23DBB313-A082-3C08-8E1F-2D31EE4247EF' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreBluetooth.framework/Versions/A/CoreBluetooth'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CBATTErrorDomain, _CBAdvOptionInstanceAddress, _CBAdvOptionInstanceRandomAddressBytes, 
                        _CBAdvOptionObjectLocatorOnThisInstance, _CBAdvOptionStopOnAdvertisingAddressChange, 

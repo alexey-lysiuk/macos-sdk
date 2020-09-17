@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 351F8586-EF5C-3FED-A0A0-A501BAFD834A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PackageKit.framework/Frameworks/PackageUIKit.framework/Versions/A/PackageUIKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PUKLogObject, _PackageUIKitVersionNumber, _PackageUIKitVersionString ]
     objc-classes:    [ PUKApplicationCloser, PUKProcessInfo, PUKUser ]

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 72F96C5E-294B-3418-A869-81E96BD1804B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PlacesKit.framework/Versions/A/PlacesKit'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PXMapStoreDefaultCapacityPerNode, _PXMapStoreMinimumRectWidth, 
                        _PXMapStoreStoreItemsInLeafNodesOnly, _PXQuadTreeNodeCanBeSubdivided, 

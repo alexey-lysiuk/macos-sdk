@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/PhotoAnalysis'
 current-version: 161.0.120
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ photoanalysisd ]
     symbols:         [ _CPDistributedOnDeviceMLErrorDomain, _PHAAspectRatioOfPixelDimensions, 

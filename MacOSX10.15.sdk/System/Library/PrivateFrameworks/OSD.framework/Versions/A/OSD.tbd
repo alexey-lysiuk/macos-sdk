@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D9083FF4-8B9E-322C-A7AD-C0FA751EE21F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OSD.framework/Versions/A/OSD'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ OSDManager ]
 ...

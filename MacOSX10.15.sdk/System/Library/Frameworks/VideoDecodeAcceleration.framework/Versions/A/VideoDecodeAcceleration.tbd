@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0A82ED75-4D48-3ADC-B889-4670CAD1F593' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/VideoDecodeAcceleration.framework/Versions/A/VideoDecodeAcceleration'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _VDADecoderCreate, _VDADecoderDecode, _VDADecoderDestroy, 
                        _VDADecoderFlush, _kVDADecoderConfiguration_Height, _kVDADecoderConfiguration_SourceFormat, 

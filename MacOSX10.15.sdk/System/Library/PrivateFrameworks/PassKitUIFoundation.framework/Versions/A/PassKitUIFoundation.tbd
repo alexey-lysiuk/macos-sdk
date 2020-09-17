@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 46C9B718-8A5D-344F-BF8B-895DB90C4627' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PassKitUIFoundation.framework/Versions/A/PassKitUIFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PKGlyphViewSize, _PKMatrixForRotationAroundXAxis, _PKMatrixForRotationAroundYAxis, 
                        _PKMatrixForScale, _PKMatrixIdentity ]

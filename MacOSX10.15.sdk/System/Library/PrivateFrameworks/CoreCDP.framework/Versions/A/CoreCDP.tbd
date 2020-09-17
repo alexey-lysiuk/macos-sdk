@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 02FAD776-F1F8-3581-AA78-30A0203BA3B5', 'x86_64: 02FAD776-F1F8-3581-AA78-30A0203BA3B5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreCDP.framework/Versions/A/CoreCDP'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CDPAuthProviderExportedInterface, _CDPCloudDataProtectionEnabledNotification, 
                        _CDPDaemonExportedInterface, _CDPDeviceClassToLocKey, _CDPFMIPRecoveryKey, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6AAFB3C8-C0E4-3571-9318-C1D62E008D80' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PowerlogDatabaseReader.framework/Versions/A/PowerlogDatabaseReader'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ PLDatabaseReader ]
 ...

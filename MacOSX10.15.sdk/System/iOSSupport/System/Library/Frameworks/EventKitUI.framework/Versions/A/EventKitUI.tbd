@@ -5,7 +5,7 @@ platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/EventKitUI.framework/Versions/A/EventKitUI'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AdjustedColorForBackgroundColor, _AdjustedColorForColor, 
                        _BackgroundColorForCalendarColorWithOpaqueForStyle, _BirthdayImage, 

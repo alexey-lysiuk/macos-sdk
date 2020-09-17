@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Perl/5.18/darwin-thread-multi-2level/CORE/libperl.dylib'
 current-version: 5.18.4
 compatibility-version: 5.18
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PL_No, _PL_Yes, _PL_bincompat_options, _PL_bitcount, _PL_block_type, 
                        _PL_charclass, _PL_check, _PL_check_mutex, _PL_core_reg_engine, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0FF56DB7-6799-3BD2-BC6B-FCCD9B79B975', 'x86_64: 0FF56DB7-6799-3BD2-BC6B-FCCD9B79B975' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLVMPlugin.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _cvmsPluginElementBuild, _cvmsPluginServiceInitialize, _cvmsPluginServiceTerminate, 
                        _oglCodeGenServiceGenerateIR, _oglCodeGenServiceInitialize, 

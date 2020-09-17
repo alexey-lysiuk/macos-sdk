@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8DFC8DED-EEC4-3D70-BF34-600D4AD2A50D', 'x86_64: 8DFC8DED-EEC4-3D70-BF34-600D4AD2A50D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUICore.framework/Versions/A/GameCenterUICore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GKIsAvatarEditingSupported, _GKIsVoiceoverEnabled, _GKRectDivideYIntoThreeConsumingMiddle, 
                        _GKRectEnforceMinimumHeight, _GKRectsCenterXInRect, _GKRectsCenterYInRect, 

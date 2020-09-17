@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 040AE30B-CF2C-3798-A289-0929B8CAB10D', 'x86_64: 040A
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols'
 current-version: 194
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DBGAddDSYMURL, _DBGAppID, _DBGBlockPath, _DBGCopyDSYMPropertyLists, 
                        _DBGCopyDSYMURLForUUID, _DBGCopyDSYMURLForUUIDWithOptions, 

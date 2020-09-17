@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 550C8ADB-9128-3FA4-ADA8-A6C45D6A61B3' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AutomaticAssessmentConfiguration.framework/Versions/A/AutomaticAssessmentConfiguration'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AEAssessmentErrorDomain, _AEError, _AEErrorUnderlyingError, 
                        _AEErrorUserInfo ]

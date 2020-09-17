@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F3461C05-0370-359B-9F03-5C1C1F7763EC', 'x86_64: F3461C05-0370-359B-9F03-5C1C1F7763EC' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistry.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _XTAuthenticateAsAdminFromExternalAuthorization, _XTCopyAutoActivatedFontURLs, 
                        _XTCopyAutoActivationSearchDirectories, _XTCopyAvailableFamilyNames, 

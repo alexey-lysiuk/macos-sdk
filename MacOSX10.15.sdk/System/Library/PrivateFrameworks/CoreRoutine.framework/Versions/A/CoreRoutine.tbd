@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 987C1847-9E1D-32DD-B36B-4ABAE3A7B12A', 'x86_64: 987C
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreRoutine.framework/Versions/A/CoreRoutine'
 current-version: 693.0.14
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RTConflictingItemIdentifierKey, _RTDetailedErrorsKey, _RTErrorDomain, 
                        _RTLocationsOfInterestDidChangeNotification, _RTMachServiceEvent, 

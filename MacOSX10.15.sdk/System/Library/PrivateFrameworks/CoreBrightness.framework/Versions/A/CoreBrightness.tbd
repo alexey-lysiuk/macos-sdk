@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DF800295-E1E4-34C0-B8AD-454B62AF0FBD', 'x86_64: DF800295-E1E4-34C0-B8AD-454B62AF0FBD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CBALCALSCopyALSServiceClient, _CBALCDisplayFeatureAvailable, 
                        _CBALCGetBoolPreferenceForKey, _CBALCGetDictPreferenceForKey, 

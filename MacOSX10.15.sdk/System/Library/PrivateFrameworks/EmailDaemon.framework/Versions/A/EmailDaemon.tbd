@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 0C548F93-F5ED-39E5-BACE-1B0B54E8208D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EmailDaemon.framework/Versions/A/EmailDaemon'
 current-version: 3608.120.23
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EDConversationFlagsChanged, _EDConversationFlagsChangedConversationIDKey, 
                        _EDConversationFlagsChangesKey, _EDConversationFlagsKey, _EDConversationFlagsOldFlags, 

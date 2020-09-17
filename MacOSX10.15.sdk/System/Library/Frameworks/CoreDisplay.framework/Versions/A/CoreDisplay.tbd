@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 213D7011-8180-3CF4-9BE7-FB8F75DCDB95' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay'
 current-version: 186.6.15
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CDNotificationRegisterCallbackBlock, _CDNotificationRegisterCallbackBlockOnQueue, 
                        _CDNotificationRegisterCallbackFunction, _CDNotificationRegisterCallbackFunctionOnQueue, 

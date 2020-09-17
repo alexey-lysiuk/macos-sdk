@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7355EC48-BA3B-333E-A2DD-C7622382FAE4', 'x86_64: 7355EC48-BA3B-333E-A2DD-C7622382FAE4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsAutocomplete.framework/Versions/A/ContactsAutocomplete'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CNALoggingContextDebug, _CNALoggingContextPerformance, _CNALoggingContextProbes, 
                        _CNALoggingContextSorting, _CNALoggingContextTriage, _CNAutocompleteAdditionalResultsKey, 

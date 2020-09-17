@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2FB9FD8C-DB06-3998-85C2-D69EB51D4808' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ParsecUI.framework/Versions/A/ParsecUI'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CeilToPixel, _ClientInfo, _CreateCredential, _DefaultStocksCountryCode, 
                        _DefaultStocksOverride, _DeviceInfo, _ExchangeLastUpdateTimeKey, 

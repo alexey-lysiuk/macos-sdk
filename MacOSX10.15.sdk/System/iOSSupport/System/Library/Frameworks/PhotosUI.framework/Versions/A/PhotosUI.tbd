@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E4E9B721-64A9-30E9-8B22-3AA67DABF936' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/PhotosUI.framework/Versions/A/PhotosUI'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PHDisplayVelocityZero, _PUAdjustPointsToBeWithinRect, _PUAffineTransformIsApproximatelyEqualToTransform, 
                        _PUAffineTransformToMatchRect, _PUAffineTransformWithAnchorPointTranslationRotationScale, 

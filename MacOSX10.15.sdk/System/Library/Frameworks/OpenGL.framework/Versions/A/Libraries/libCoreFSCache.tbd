@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E9A20E72-B17F-33D6-8894-41934A10B822', 'x86_64: E9A20E72-B17F-33D6-8894-41934A10B822' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _fscache_close, _fscache_element_get_data, _fscache_find_and_retain, 
                        _fscache_get_cache_keys, _fscache_insert_and_retain, _fscache_maps_async, 

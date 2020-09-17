@@ -6,7 +6,7 @@ flags:           [ not_app_extension_safe ]
 install-name:    '/System/Library/PrivateFrameworks/CoreKE.framework/CoreKE'
 current-version: 5.2
 compatibility-version: 1.7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IWvA5fm4IwMS88oQXDANCS, _JY0DfiUyFiVcNw89R4t ]
 ...

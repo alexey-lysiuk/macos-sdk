@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CB329853-68F3-3A8F-A286-C891DE194F74' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AirPlaySupport.framework/Versions/A/AirPlaySupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _APAudioFormatChooseFromPreferredAudioFormats, _APAudioFormatCopyPreferredBufferedAudioFormats, 
                        _APAudioFormatCopyPreferredRealTimeAudioFormats, _APAudioFormatCreateDescriptionArray, 

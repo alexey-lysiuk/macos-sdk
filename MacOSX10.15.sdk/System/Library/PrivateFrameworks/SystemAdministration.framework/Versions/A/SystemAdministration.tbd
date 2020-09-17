@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 087553CB-5BF3-3D3D-B620-CA36AD334D92' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SystemAdministration.framework/Versions/A/SystemAdministration'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NetworkTimeStartedNotification, _NetworkTimeStoppedNotification, 
                        _SafeCFBundleGetFunctionPointerForName, _canOpenAccountsPreferencePane, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 09575743-DA7A-3DDE-9C6D-2D59C4818F8E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TTYUtilities.framework/Versions/A/TTYUtilities'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AXTTYMessageKeyCallID, _AXTTYMessageKeyContactID, _AXTTYMessageKeyContactPathSearchAction, 
                        _AXTTYMessageKeyContactSearchAction, _AXTTYMessageKeyConversation, 

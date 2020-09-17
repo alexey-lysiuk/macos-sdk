@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 01D6E966-AA4F-3106-A648-5A0333B661A5', 'x86_64: 01D6E966-AA4F-3106-A648-5A0333B661A5' ]
 platform:        zippered
 install-name:    '/usr/lib/libcupolicy.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _network_usage_policy_create_client, _network_usage_policy_destroy_client, 
                        _network_usage_policy_get_WiFi_data_allowed_from_policy, _network_usage_policy_get_bundle_from_policy, 

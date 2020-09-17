@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B1F62335-CF95-3DBC-A42B-FAF079BD6694' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PersonaUI.framework/Versions/A/PersonaUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CGSizeFromPRLikenessCacheSize, _NSStringFromMD5, _NSStringFromPRLikenessCacheSize, 
                        _PRImageCreateCircularImageInRect, _PRImageCreateWithImageInRect, 

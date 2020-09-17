@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6348E236-7411-3F92-85DE-89DE07F833AA', 'x86_64: 6348E236-7411-3F92-85DE-89DE07F833AA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AggregateDictionaryHistory.framework/Versions/A/AggregateDictionaryHistory'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ADDatabaseUtilitiesCleanUpCorruption, _ADHistoryCalculateSummaryStatistics, 
                        _ADHistoryGetLinearHistogram, _ADHistoryGetLogHistogram, _ADIsInternalDevice ]

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E5983EF6-0462-3EB6-8F28-B14EAC3B7B63', 'x86_64: E598
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CalDAV.framework/Versions/A/CalDAV'
 current-version: 790.4.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CalDAVComplianceClass_AutoSchedule, _CalDAVComplianceClass_CalendarAudit, 
                        _CalDAVComplianceClass_CalendarAvailability, _CalDAVComplianceClass_CalendarHomeSync, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E15BB2B5-C1AE-3084-99C0-5F432D80CBC2', 'x86_64: E15B
 platform:        zippered
 install-name:    '/System/Library/Frameworks/EventKit.framework/Versions/A/EventKit'
 current-version: 1370.5.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _EKActionConfirmSuggestedEvent, _EKActionRejectSuggestedEvent, 
                        _EKAutoCommentPrefix, _EKAvailabilityCacheErrorDomain, _EKAvailabilitySpanTypeAsString, 

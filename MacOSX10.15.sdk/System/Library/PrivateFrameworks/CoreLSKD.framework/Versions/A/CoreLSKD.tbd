@@ -5,7 +5,7 @@ platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    '/System/Library/PrivateFrameworks/CoreLSKD.framework/CoreLSKD'
 current-version: 12.20.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BBdyFX9JObVXUh8aGhB0aD3, _Mym0f1araacCU5xeSFjr ]
 ...

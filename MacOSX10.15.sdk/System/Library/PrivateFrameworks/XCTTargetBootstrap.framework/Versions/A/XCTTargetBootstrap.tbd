@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4D2C7B80-3DE8-30BD-A6F0-D59C5E8F91D9', 'x86_64: 4D2C7B80-3DE8-30BD-A6F0-D59C5E8F91D9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/XCTTargetBootstrap.framework/Versions/A/XCTTargetBootstrap'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _XCTDispatchAssertQueue, _XCTDispatchAssertQueueNot, _XCTSetSharedDaemonConnectionProvider, 
                        _XCTSharedDaemonConnectionProvider, _XCTTBDefaultLog, _XCTTargetBootstrap, 

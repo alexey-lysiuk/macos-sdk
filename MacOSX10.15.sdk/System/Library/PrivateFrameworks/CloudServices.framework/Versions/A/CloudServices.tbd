@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5C7293BD-7F65-381E-A2F1-F47FE9183B79', 'x86_64: 5C7293BD-7F65-381E-A2F1-F47FE9183B79' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CloudServices.framework/Versions/A/CloudServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SecureBackupBackOffDateWithInfo, _SecureBackupDisableWithInfo, 
                        _SecureBackupEnableWithInfo, _SecureBackupGetAccountInfoWithInfo, 

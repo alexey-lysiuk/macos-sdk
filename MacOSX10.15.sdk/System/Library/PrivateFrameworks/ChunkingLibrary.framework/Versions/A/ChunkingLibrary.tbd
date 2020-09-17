@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5B09C30D-FD2B-3E98-8B64-C5EF470FC13C', 'x86_64: 5B09
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ChunkingLibrary.framework/Versions/A/ChunkingLibrary'
 current-version: 307
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CK2CalculateFileSignatureWithFlags, _CK2CalculateItemSignatureWithFlags, 
                        _CKBeginImport, _CKCalculateChunkSignatureAndEncryptionKey, 

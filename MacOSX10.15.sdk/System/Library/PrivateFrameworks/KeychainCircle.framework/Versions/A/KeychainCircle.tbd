@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6F655A32-F963-3A7E-B475-E460F4AC7D99', 'x86_64: 6F655A32-F963-3A7E-B475-E460F4AC7D99' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/KeychainCircle.framework/Versions/A/KeychainCircle'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ApplyScopeDictionaryForID, _ApplyScopeListForID, _ApplyScopeListForIDC, 
                        _CFDataCreateWithInitializer, _CFDataCreateWithRandomBytes, 

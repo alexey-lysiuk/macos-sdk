@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1F25CB6F-508C-3DB0-B311-8B3DB74297F2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUInfo.framework/Versions/A/GPUInfo'
 current-version: 1.2.75
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __Z10GetBoardIdv, __Z11ValidConfigv, __Z11getFUL_logsP14__CFDictionary, 
                        __Z13get_gpu_DevIDP16__GPUWranglerGPUP14__CFDictionary, __Z13get_gpu_RevIDP16__GPUWranglerGPUP14__CFDictionary, 

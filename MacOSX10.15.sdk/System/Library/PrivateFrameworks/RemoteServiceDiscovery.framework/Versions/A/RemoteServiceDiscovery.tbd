@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 39BB0182-215C-3CD8-AF2D-C8DC44286ED4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/RemoteServiceDiscovery.framework/Versions/A/RemoteServiceDiscovery'
 current-version: 1738.140.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _bridge_version_compare, _bridge_version_copy_current_string, 
                        _bridge_version_deserialize, _bridge_version_parse, _bridge_version_parse_components, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F3A64C55-9FE1-386C-96CE-0F304E54742A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ActionKit.framework/Versions/A/ActionKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ACCESS_DESCRIPTION_free, _ACCESS_DESCRIPTION_it, _ACCESS_DESCRIPTION_new, 
                        _ADMISSIONS_free, _ADMISSIONS_get0_admissionAuthority, _ADMISSIONS_get0_namingAuthority, 

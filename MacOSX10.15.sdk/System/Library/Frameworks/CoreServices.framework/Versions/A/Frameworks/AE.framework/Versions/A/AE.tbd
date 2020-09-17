@@ -6,7 +6,7 @@ install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/F
 current-version: 838.1
 compatibility-version: 0
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ DesktopServices, Foundation, HIServices, LaunchServices, 
                          PrintCore ]

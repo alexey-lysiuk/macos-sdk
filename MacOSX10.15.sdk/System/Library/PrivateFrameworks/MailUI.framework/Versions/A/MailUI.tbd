@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 767218F4-F719-3B29-8DEC-5FA4C9D78907' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MailUI.framework/Versions/A/MailUI'
 current-version: 3608.120.23
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ Mail, MailQuickLookExtension, MailShareExtension, MailUIWebBundle ]
     symbols:         [ _DefaultsKeyViewMessagesWithDarkBackgrounds, _MUIAddressPasteboardType, 

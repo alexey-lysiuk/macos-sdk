@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5E5DE3CB-30DD-34DC-AEF8-FE8536A85E96', 'x86_64: 5E5DE3CB-30DD-34DC-AEF8-FE8536A85E96' ]
 platform:        zippered
 install-name:    '/usr/lib/libCRFSuite.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _crf_content_copy, _crf_content_init, _crf_content_set, _crf_create_instance, 
                        _crf_data_append, _crf_data_finish, _crf_data_init, _crf_data_maxlength, 

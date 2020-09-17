@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 039E82ED-8F30-325F-921F-A3C6618050B2' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s10InsetShape7SwiftUI010InsettableB0PTl', '_$s10UIViewType7SwiftUI0A13RepresentablePTl', 
                        '_$s11Coordinator7SwiftUI19UIViewRepresentablePTl', '_$s11Coordinator7SwiftUI29UIViewControllerRepresentablePTl', 

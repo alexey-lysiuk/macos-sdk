@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FB3D2BF6-4543-3B9A-995D-5EEBABF64D1A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AirPlayReceiver.framework/Versions/A/AirPlayReceiver'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _APAdvertiserCopyProperty, _APAdvertiserCreate, _APAdvertiserDebugShow, 
                        _APAdvertiserGetMode, _APAdvertiserGetTypeID, _APAdvertiserInfoCopy, 

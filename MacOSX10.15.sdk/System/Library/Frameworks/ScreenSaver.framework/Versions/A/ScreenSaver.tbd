@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3CE831E8-6D28-3741-B835-74170383364D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ScreenSaver.framework/Versions/A/ScreenSaver'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogForCategory, _SSCenterRectInRect, _SSDBackground, _SSDBlackSaver, 
                        _SSDEngineDimTime, _SSDEngineLWModulePath, _SSDEngineModuleDict, 

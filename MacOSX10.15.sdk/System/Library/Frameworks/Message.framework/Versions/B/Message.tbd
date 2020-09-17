@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A4B3BE51-EED8-37A7-B503-906F4026C2A4' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Message.framework/Versions/B/Message'
 current-version: 1604
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MessageVersionNumber, _MessageVersionString ]
 ...

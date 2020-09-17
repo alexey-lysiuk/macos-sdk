@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 40ED1A74-3753-33E0-A922-04C53F54786D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACoreDAVGlue.framework/Versions/A/DACoreDAVGlue'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _coreDAVValidationErrorFromRawError ]
     objc-classes:    [ DACoreDAVLogger, DACoreDAVTaskManager ]

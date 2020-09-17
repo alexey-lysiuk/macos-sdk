@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8B441ED2-04A4-33C4-9E80-EFE5617F9BC3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HomeKitBackingStore.framework/Versions/A/HomeKitBackingStore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HMBCKErrorNoRetryDelay, _HMBCloudDatabaseConfigurationDefaultSourceApplicationBundleIdentifier, 
                        _HMBDefaultCKErrorRetryDelay, _HMBLocalSQLContextIndexSentinelIndex, 

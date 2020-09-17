@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1D823339-3030-307D-8BF4-0D025DC8926D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/Resources/ColorSyncDeprecated.dylib'
 current-version: 4.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CMCloneProfileRef, _CMCloseProfile, _CMConvertDoubleXYZToD50, 
                        _CMConvertRGBFloatBitmap, _CMConvertXYZFloatBitmap, _CMCopyProfile, 

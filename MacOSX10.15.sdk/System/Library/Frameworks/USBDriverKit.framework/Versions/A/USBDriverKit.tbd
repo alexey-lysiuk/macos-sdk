@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5F398ADE-A2BA-3C11-BEA9-BB66782DE3EB' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/USBDriverKit.framework/Versions/A/USBDriverKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IOUSBGetBillboardDescriptor, _IOUSBGetConfigurationMaxPowerMilliAmps, 
                        _IOUSBGetContainerIDDescriptor, _IOUSBGetEndpointAddress, 

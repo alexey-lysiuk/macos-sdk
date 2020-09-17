@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9F669D19-13AD-3961-B247-ED728B7BFA19' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Shortcut.framework/Versions/A/Shortcut'
 current-version: 106
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SCTHideHelpPointerForItem, _SCTInitShortcut, _SCTIsDefaultHelpBookSearchEnabled, 
                        _SCTRegisterSearchHandler, _SCTSetDefaultHelpBookSearchEnabled, 

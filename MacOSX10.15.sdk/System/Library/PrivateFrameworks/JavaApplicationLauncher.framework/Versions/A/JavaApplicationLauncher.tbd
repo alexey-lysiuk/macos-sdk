@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7B252582-7F1C-3CB3-9506-218F235D6732' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/JavaApplicationLauncher.framework/Versions/A/JavaApplicationLauncher'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GetJavaDictionaryFromInfoPlist, _MRJApplicationMain, _MRJApplicationMainArgs, 
                        _SetDockInformation, _launchFromPropertiesList, _launchJavaApplication, 

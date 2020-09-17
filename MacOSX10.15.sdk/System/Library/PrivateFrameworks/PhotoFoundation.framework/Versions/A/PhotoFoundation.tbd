@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 52819640-29DA-30AE-B8E3-AC9E0204B909', 'x86_64: 5281
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotoFoundation.framework/Versions/A/PhotoFoundation'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LastAddRemoveTaskState, _NSStringFromPFIntPoint, _NSStringFromPFIntRect, 
                        _NSStringFromPFIntSize, _PFAspectRatioToWholeLengths, _PFCMTimeDescription, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: BA659608-AB49-31F6-8B29-91E1B036561E', 'x86_64: BA65
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProofReader.framework/Versions/A/ProofReader'
 current-version: 492.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PRCopyAlternativesForPinyinInputString, _PRCopyCorrectionsForPinyinInputString, 
                        _PRCopyModificationsForPinyinInputString, _PRCopyModificationsForPinyinInputStringWithGeometryModelData, 

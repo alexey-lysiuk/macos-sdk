@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 31ECB5FD-7660-33DB-BC5B-2B2A2AA7C686', 'x86_64: 31ECB5FD-7660-33DB-BC5B-2B2A2AA7C686' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DSBrightnessExternalConvertLinearToNits, _DSBrightnessExternalConvertLinearToUser, 
                        _DSBrightnessExternalConvertNitsToLinear, _DSBrightnessExternalConvertNitsToUser, 

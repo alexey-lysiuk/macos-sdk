@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 434A4BBB-22EB-37A1-B387-0CE85E70A6EF' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/IOUSBHost.framework/Versions/A/IOUSBHost'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IOUSBGetBillboardDescriptor, _IOUSBGetConfigurationMaxPowerMilliAmps, 
                        _IOUSBGetContainerIDDescriptor, _IOUSBGetEndpointAddress, 

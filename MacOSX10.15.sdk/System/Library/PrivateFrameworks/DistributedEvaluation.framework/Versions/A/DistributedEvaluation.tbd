@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: D1DD933D-0E75-32A2-940D-412DFF8333F6', 'x86_64: D1DD
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DistributedEvaluation.framework/Versions/A/DistributedEvaluation'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DESAggregatorLogEvaluation, _DESAggregatorLogRecording, _DESAmendedRecordInfo, 
                        _DESApplyAsynchronousEnumerator, _DESApplyAsynchronousEnumeratorWithCompletion, 

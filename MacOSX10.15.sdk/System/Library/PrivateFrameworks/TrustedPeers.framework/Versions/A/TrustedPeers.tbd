@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B43E58F3-DD9B-3090-9CC8-F7F6D6C0B66C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TrustedPeers.framework/Versions/A/TrustedPeers'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TPErrorDomain, _TPMachineIDStatusToString, _TPMatcherErrorDomain, 
                        _TPModelLog, _TPPBAncientEpochReadFrom, _TPPBDictionaryMatchingRuleFieldExistsReadFrom, 

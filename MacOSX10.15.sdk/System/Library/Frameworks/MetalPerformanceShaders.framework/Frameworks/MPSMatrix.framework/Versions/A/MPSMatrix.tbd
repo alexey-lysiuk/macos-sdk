@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 02006D92-E2AB-3892-A96B-37F6520C19BA', 'x86_64: 0200
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSNeuralNetwork, MetalPerformanceShaders ]
     symbols:         [ __Z21MPSDecrementReadCountP18MPSTemporaryMatrix, __Z21MPSDecrementReadCountP18MPSTemporaryVector ]

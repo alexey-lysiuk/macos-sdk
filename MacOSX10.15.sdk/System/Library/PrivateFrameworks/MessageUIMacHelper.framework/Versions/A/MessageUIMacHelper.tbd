@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 4101B1D8-B6A9-3880-A5B9-CAB36761EF21' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MessageUIMacHelper.framework/Versions/A/MessageUIMacHelper'
 current-version: 3608.120.23
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CanSendMail, _CreateMailComposeViewControllerHelper, _CreateMessageComposeViewControllerHelper, 
                        _MFMessageComposeViewControllerAttachmentAlternateFilename, 

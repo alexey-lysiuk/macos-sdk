@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 376D2744-2816-3E24-952F-660F630B1AAF', 'x86_64: 376D2744-2816-3E24-952F-660F630B1AAF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDProtobufLocation.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __ZN3awd7metrics11MotionState10SharedCtorEv, __ZN3awd7metrics11MotionState10SharedDtorEv, 
                        __ZN3awd7metrics11MotionState16default_instanceEv, __ZN3awd7metrics11MotionState17default_instance_E, 

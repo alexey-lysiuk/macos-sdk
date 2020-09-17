@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C2D67667-FA0B-3DB6-AA34-6999EE4346A0', 'x86_64: C2D6
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreServicesStore.framework/Versions/A/CoreServicesStore'
 current-version: 1069.24
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CSMapAddMapTable, _CSMapGetHeader, _CSMapGetKeyAndValueForKeyData, 
                        _CSMapGetValue, _CSMapInit, _CSMapRemoveValue, _CSMapSetValue, 

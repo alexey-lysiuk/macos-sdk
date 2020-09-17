@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 97663D1C-57F8-390D-831D-CC3C98A9B91C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMDaemonCore.framework/Versions/A/IMDaemonCore'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CKRecordFileTransferAssetKey, _CKRecordFileTransferAttachmentCompressedMetadataKey, 
                        _CKRecordFileTransferAttachmentGuidKey, _CKRecordFileTransferAttachmentMetadataKey, 

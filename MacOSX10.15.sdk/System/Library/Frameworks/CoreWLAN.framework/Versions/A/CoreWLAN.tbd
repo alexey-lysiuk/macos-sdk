@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6C76A9E0-430F-3B3C-AE8A-3005F8E6FCFF', 'x86_64: 6C76A9E0-430F-3B3C-AE8A-3005F8E6FCFF' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreWLAN.framework/Versions/A/CoreWLAN'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ACInterfaceCreate, _ACInterfaceDeviceNameCopy, _ACInterfaceGetPower, 
                        _ACInterfaceSetPower, _ACNetworkAssociate, _ACNetworkCopyBroadcastScanResults, 

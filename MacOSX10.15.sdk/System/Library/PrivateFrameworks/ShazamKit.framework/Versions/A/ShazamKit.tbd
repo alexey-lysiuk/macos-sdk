@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: EE9F50D8-0917-3ED2-B408-AA95A63AB822', 'x86_64: EE9F50D8-0917-3ED2-B408-AA95A63AB822' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ShazamKit.framework/Versions/A/ShazamKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SHErrorDomain, _SHMediaKeyAdamID, _SHMediaKeyAppleMusicURL, 
                        _SHMediaKeyArtist, _SHMediaKeyArtworkURL, _SHMediaKeyExplicitContent, 

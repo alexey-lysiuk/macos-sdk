@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A71258EB-241C-3AB2-BA89-303192C2A151' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/QTKit.framework/Versions/A/QTKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _QTAddImageCodecQuality, _QTAddImageCodecType, _QTAlternates_AlternateTrack, 
                        _QTAlternates_FallbackTrack, _QTAlternates_LanguageCodeEncoding_ISO_639_2T, 

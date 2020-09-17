@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 796DC114-2049-3305-A504-D24915855724' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Uninstall.framework/Versions/A/Uninstall'
 current-version: 211
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DaemonStatus, _StatusUpdateDemux, _UNUninstallCantBeAbortedNotification, 
                        _UNUninstallDaemonCrashed, _UNUninstallDidBeginNotification, 

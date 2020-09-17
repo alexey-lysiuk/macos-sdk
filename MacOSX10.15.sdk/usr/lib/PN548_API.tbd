@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8280A0C1-905B-33FA-B413-271148AB9C6D' ]
 platform:        macosx
 install-name:    '/usr/lib/PN548_API.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GetManifestQuery_P73, _GetPresenceOfAttackLog, _NFCallbackMutexCreate, 
                        _NFCallbackMutexRelease, _NFCallbackMutexRetain, _NFCallbackMutexSetTimeout, 

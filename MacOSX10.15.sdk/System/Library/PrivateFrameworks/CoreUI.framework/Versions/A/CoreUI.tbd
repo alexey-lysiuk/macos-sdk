@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 788818B7-7EBC-316D-9464-D12E365E3791', 'x86_64: 7888
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI'
 current-version: 609.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CSIEqualMetrics, _CSIIllegalMetrics, _CUIBlendModeDescriptionFromCGBlendMode, 
                        _CUIBlendModeLSRDescriptionFromCGBlendMode, _CUICFArrayCreateWithCGRects, 

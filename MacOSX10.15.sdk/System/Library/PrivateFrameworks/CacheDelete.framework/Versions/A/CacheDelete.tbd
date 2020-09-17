@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3B6C89B7-5FE3-3729-874E-48B431CF84A6', 'x86_64: 3B6C89B7-5FE3-3729-874E-48B431CF84A6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CacheDelete.framework/Versions/A/CacheDelete'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CDGetLogHandle, _CDGetLowDiskSignpostHighSeverityLogHandle, 
                        _CDGetLowDiskSignpostLowSeverityLogHandle, _CDGetLowDiskSignpostMediumSeverityLogHandle, 

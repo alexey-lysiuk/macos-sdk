@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5E31B761-4B30-39A8-9084-97ECFD268B6F', 'x86_64: 5E31B761-4B30-39A8-9084-97ECFD268B6F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDuetDaemonProtocol.framework/Versions/A/CoreDuetDaemonProtocol'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CDAttributeAdmissionBypassUsageHistory, _CDDProtocolMessageXPCFieldBudgetOptions, 
                        _CDDProtocolMessageXPCFieldEndTimestamps, _CDDProtocolMessageXPCFieldStartTimestamps, 

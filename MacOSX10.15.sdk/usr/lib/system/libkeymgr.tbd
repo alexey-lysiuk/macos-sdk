@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: DB3337BE-01CA-3425-BD0C-87774FC0CDC0', 'x86_64: DB33
 platform:        zippered
 install-name:    '/usr/lib/system/libkeymgr.dylib'
 current-version: 30
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___keymgr_dwarf2_register_sections, ___keymgr_initializer, 
                        __keymgr_get_and_lock_processwide_ptr, __keymgr_get_and_lock_processwide_ptr_2, 

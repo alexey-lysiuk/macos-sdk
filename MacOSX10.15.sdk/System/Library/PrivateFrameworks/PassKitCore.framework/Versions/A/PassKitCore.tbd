@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5814828F-758B-38AC-8743-CCCA158CDAD6', 'x86_64: 5814828F-758B-38AC-8743-CCCA158CDAD6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PassKitCore.framework/Versions/A/PassKitCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AMPEnrollmentDismissedKeyForPass, _PDAccountServiceInterface, 
                        _PDApplePayTrustAllAccessEntitlement, _PDAssertionCoordinatorInterface, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 162DFCC0-8F48-3DD0-914F-FA8653E27B26', 'x86_64: 162DFCC0-8F48-3DD0-914F-FA8653E27B26' ]
 platform:        zippered
 install-name:    '/usr/lib/libenergytrace.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _entr_act_associate, _entr_act_begin, _entr_act_end, _entr_act_modify, 
                        _entr_act_set, _entr_act_setd, _entr_event, _entr_shouldtrace ]

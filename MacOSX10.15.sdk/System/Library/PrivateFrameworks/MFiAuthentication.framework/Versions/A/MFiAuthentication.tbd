@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FB01C04D-6D25-3D77-A350-89109C5C7DB3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MFiAuthentication.framework/Versions/A/MFiAuthentication'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AllocCapsFromAuthCert, _CanChargeHighVoltage, _CanChargeInductive, 
                        _CanUseAccPwrLoV, _CanUseAccPwrUHPM, _GetCertClass, _GetRandomDigest, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2C044425-27FC-373A-94EE-4C0370001432', 'x86_64: 2C04
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FrontBoardServices.framework/Versions/A/FrontBoardServices'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard', 
                        '/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices' ]
@@ -163,7 +163,7 @@ uuids:           [ 'x86_64: 10D0F3BB-E8F3-365E-8528-6AC996A9B0E7', 'x86_64: 10D0
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BSAbsoluteTimeFromMachTime, _BSActionClearResponseListenerWithToken, 
                        _BSActionCreateResponseListenerWithHandler, _BSActionErrorDomain, 
@@ -316,7 +316,7 @@ uuids:           [ 'x86_64: 95D829A0-6339-35F7-BC46-5A54AE62DB30' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ BSMutableServiceInterface, BSServiceConnection, BSServiceConnectionEndpoint, 
                        BSServiceConnectionEndpointInjector, BSServiceConnectionEndpointMonitor, 

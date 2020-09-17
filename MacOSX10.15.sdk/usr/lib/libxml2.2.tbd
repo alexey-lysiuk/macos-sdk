@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/libxml2.2.dylib'
 current-version: 10.9
 compatibility-version: 10
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UTF8ToHtml, _UTF8Toisolat1, ___docbDefaultSAXHandler, ___htmlDefaultSAXHandler, 
                        ___oldXMLWDcompatibility, ___xmlBufferAllocScheme, ___xmlDefaultBufferSize, 

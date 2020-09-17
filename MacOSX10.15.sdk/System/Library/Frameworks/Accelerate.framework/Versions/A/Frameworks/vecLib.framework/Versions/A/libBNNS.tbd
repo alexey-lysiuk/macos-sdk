@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 69FA0C4F-B59D-374A-9DCF-E9FA79F332FD', 'x86_64: 69FA
                    'x86_64h: 99C61C48-B14C-3DA6-8C31-6BF72DA0A3A9', 'x86_64h: 99C61C48-B14C-3DA6-8C31-6BF72DA0A3A9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     allowable-clients: [ vecLib ]
     symbols:         [ _BNNSApplyVectorActivationLayer, _BNNSBatchNormFilterApplyBackwardBatch, 

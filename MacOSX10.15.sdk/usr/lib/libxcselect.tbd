@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E2324619-42E5-38C7-82A2-17E639581E7F', 'x86_64: E2324619-42E5-38C7-82A2-17E639581E7F' ]
 platform:        zippered
 install-name:    '/usr/lib/libxcselect.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _xcselect_bundle_is_developer_tool, _xcselect_developer_dir_matches_path, 
                        _xcselect_find_developer_contents_from_path, _xcselect_get_developer_dir_path, 

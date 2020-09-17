@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1928B0F1-27DD-301F-8CFD-FD7FAFBB4967' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SiriFoundation.framework/Versions/A/SiriFoundation'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SRFBugReporterSubtypeConfigurationGuide, _SRFBugReporterSubtypeDismissalUnexpected, 
                        _SRFBugReporterSubtypeFault, _SRFBugReporterSubtypeInvocationSuppression, 

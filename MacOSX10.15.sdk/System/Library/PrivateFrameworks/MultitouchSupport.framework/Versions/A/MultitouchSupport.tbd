@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6794E1C8-9627-33DF-84F4-FDD02C97F383', 'x86_64: 6794
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport'
 current-version: 3440.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MTAbsoluteTimeGetCurrent, _MTActuationActuate, _MTActuationCreateFromDictionary, 
                        _MTActuatorActuate, _MTActuatorClose, _MTActuatorCreateFromDeviceID, 

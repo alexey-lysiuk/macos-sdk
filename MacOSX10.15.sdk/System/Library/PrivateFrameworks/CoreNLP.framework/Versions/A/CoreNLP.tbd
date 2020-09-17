@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E70E2505-8078-324E-BAE1-01A2DA980E2C', 'x86_64: E70E
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreNLP.framework/Versions/A/CoreNLP'
 current-version: 213
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NLCNNModelCopyFeatureRepresentation, _NLCNNModelCopyFeatureRepresentationLayers, 
                        _NLCNNModelCreateCharacterBasedModel, _NLCNNModelCreateWordBasedModel, 

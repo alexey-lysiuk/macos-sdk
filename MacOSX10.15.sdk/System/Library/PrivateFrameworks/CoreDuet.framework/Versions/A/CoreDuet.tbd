@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F899F217-FC31-3140-A0EB-92EAD22EEF71', 'x86_64: F899F217-FC31-3140-A0EB-92EAD22EEF71' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDuet.framework/Versions/A/CoreDuet'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CDDIsValidResponse, _CDPerfMetricEndTiming, _CDPerfMetricEndTimingAndIncrementErrorCount, 
                        _CDPerfMetricEndTimingAndSetResultCount, _CDPerfMetricEndTimingAndSetResultCountMaybeIncrementErrorCount, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 401D12C6-92FD-3BCD-BA37-8137F7AAD336' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OfficeImport.framework/Versions/A/OfficeImport'
 current-version: 276
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HTMLError, _HTMLHeight, _HTMLMainContent, _HTMLPageCount, 
                        _HTMLResources, _HTMLWidth, _OICopyHTMLForOfficeData, _OICopyHTMLFromFileAtURL, 

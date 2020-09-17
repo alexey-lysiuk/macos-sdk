@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 68F200AE-76AE-3253-9195-3D22AF48DC19' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpotlightDaemon.framework/Versions/A/SpotlightDaemon'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BulkDeleteAttributes, _CSIndexAgentMachServiceName, _CSIndexDelegateAgentMachServiceName, 
                        _SDEventMonitorErrorDomain, _SDTraceAdd, _SDTraceDescription, 

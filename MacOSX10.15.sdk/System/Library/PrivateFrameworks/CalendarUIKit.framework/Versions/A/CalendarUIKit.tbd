@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6B03E58E-796D-36E9-A061-A73EE532D705' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CalendarUIKit.framework/Versions/A/CalendarUIKit'
 current-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CUIKBundle, _CUIKCalendarNCDescriptionProfile, _CUIKCalendarNCTitleProfile, 
                        _CUIKCalendarNoboDescriptionProfile, _CUIKCalendarNoboTitleProfile, 

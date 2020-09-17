@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5620C3CE-582F-3409-A6E8-2BE4E9444A8A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/InputMethodKit.framework/Versions/A/InputMethodKit'
 current-version: 429
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IMKButtonCallbackKey, _IMKButtonCallbackObjectKey, _IMKCandidateControllerFunctionViewPadding, 
                        _IMKCandidateControllerPopoverCloseButtonWidth, _IMKCandidateControllerSingleRowMaxWidth, 

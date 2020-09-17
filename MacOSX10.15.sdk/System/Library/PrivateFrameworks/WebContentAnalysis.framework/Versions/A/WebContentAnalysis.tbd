@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5D9709E6-CB92-30B6-9C54-2409B9FB3BC4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WebContentAnalysis.framework/Versions/A/WebContentAnalysis'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ComposeDebugPage, _ComposeDebugPageSimple, _DecodeBase64, 
                        _DecodeBase64WithNewlines, _HolyInquisitionDebugPrint, _HolyInquisitionGetIPv4Proxy, 

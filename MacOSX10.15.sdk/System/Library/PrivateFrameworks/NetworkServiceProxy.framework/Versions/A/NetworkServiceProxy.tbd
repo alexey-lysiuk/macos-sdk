@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E2899FDC-105A-3A32-B39D-5E619DEF4AB8', 'x86_64: E2899FDC-105A-3A32-B39D-5E619DEF4AB8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/Versions/A/NetworkServiceProxy'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NPFlowProperty, _NPFlowPropertyFlag, _NPGetInternalQueue, 
                        _NetworkServiceProxyEnableForSessionTask, _NetworkServiceProxyEnableInParameters, 

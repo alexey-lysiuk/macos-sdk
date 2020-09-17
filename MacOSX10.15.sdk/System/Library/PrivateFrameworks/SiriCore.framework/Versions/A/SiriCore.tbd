@@ -6,7 +6,7 @@ install-name:    '/System/Library/PrivateFrameworks/SiriCore.framework/Versions/
 current-version: 0
 compatibility-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SiriCoreAceSerializationErrorDomain, _SiriCoreAceSerializationErrorUserInfoBytesAvailableKey, 
                        _SiriCoreAceSerializationErrorUserInfoBytesNeededKey, _SiriCoreAceSerializationErrorUserInfoPlistKey, 

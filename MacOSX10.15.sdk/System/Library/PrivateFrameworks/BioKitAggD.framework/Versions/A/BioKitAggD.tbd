@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FDF8DF25-8506-346A-8C49-13E6F5C6F0E2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BioKitAggD.framework/Versions/A/BioKitAggD'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BKADClientAddValueForScalarKey, _BKADClientClearDistributionKey, 
                        _BKADClientClearScalarKey, _BKADClientPushValueForDistributionKey, 

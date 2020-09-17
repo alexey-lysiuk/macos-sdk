@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: BD91392F-BA2C-33AE-9BC3-8BFA62B9A117' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/NearField.framework/Versions/A/NearField'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NFSecureElementManagerSessionECDSACertificateKey, _NFSecureElementManagerSessionRSAACertificateKey, 
                        _NFSignedPlatformData, _NFSignedPlatformSignatureBlob, _NfRestoreCopyUniqueFDRKey, 

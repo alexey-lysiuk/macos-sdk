@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E6DFBA36-E670-3F4D-BE60-29512C4606C0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/CommerceKit'
 current-version: 379
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Frameworks/CommerceCore.framework/Versions/A/CommerceCore' ]
     symbols:         [ _AMSBagKeyPasswordSettingsURL, _CKAcceptLanguageHeader, _CKAccountPasswordSettingsAlways, 
@@ -113,7 +113,7 @@ uuids:           [ 'x86_64: DB9B78C7-8DE2-32F7-A63F-571CE154F3A7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Frameworks/CommerceCore.framework/Versions/A/CommerceCore'
 current-version: 379
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CKAdoptionInfoPlistPath, _CKCheckBookDownloadQueue, _CKCreateCriticalUpdateTimeStamp, 
                        _CKCriticalUpdateTimeStamp, _CKDownloadDirectory, _CKInstallPathForIAP, 

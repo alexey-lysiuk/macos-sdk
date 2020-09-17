@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 7126AD65-3811-39B4-96BB-7F68BEE915CE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PassKitUI.framework/Versions/A/PassKitUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PKCreateGenericKeyValueFieldWithIdentifier, _PKDropPrivacySheet, 
                        _PKEaseInOutFunction, _PKEaseInOutOverFunction, _PKFlyUpEastFunction, 

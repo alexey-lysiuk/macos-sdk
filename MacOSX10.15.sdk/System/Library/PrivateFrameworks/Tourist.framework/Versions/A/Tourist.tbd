@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 331E672D-3192-36BD-B436-0BADACB810AF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Tourist.framework/Versions/A/Tourist'
 current-version: 1.0.65
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TouristDefinitionABTestCasesKey, _TouristDefinitionAllowQAPaths, 
                        _TouristDefinitionBoardIDKey, _TouristDefinitionBoardIDsKey, 

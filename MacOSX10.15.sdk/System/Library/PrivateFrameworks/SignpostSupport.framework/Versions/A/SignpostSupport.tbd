@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 82F1E9DF-8616-3B80-87E0-5FFEC6651D35', 'x86_64: 82F1
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SignpostSupport.framework/Versions/A/SignpostSupport'
 current-version: 42.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _IsPerfLoggingInterval, _PassesPerfLoggingWhitelist, _SSCAEventTypeForSignpost, 
                        _SSCAIntervalTypeForSignpostInterval, _SSCAIsCAMetadataSubsystemCategory, 

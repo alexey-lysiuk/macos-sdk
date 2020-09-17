@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 94AFA352-684B-3129-9361-E78DE4E8D388' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/IOBluetoothUI.framework/Versions/A/IOBluetoothUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BluetoothInquiryCacheTimeout, _BluetoothPreferencesChanged, 
                        _DeviceControllerHCIControllerNotificationHandler, _IOBluetoothAlertHCIControllerPublished, 

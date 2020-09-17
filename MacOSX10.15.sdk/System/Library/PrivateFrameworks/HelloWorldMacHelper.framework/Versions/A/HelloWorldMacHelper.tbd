@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C6E05DBD-DB36-32E5-9109-FD33B0EFD974', 'x86_64: C6E05DBD-DB36-32E5-9109-FD33B0EFD974' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/HelloWorldMacHelper.framework/Versions/A/HelloWorldMacHelper'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HelloWorldMacHelperVersionNumber, _HelloWorldMacHelperVersionString, 
                        _HelloWorldNewMacExtensionViewer ]

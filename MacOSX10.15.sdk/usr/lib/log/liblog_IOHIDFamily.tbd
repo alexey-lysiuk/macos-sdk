@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6E304EB3-5172-38AF-8A8B-F1CF2E192496' ]
 platform:        macosx
 install-name:    '/usr/lib/log/liblog_IOHIDFamily.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogCopyFormattedString, _getEventDescription ]
 ...

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A762450A-FE0A-3036-8C07-C9167C6AA6D6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LocalAuthenticationUI.framework/Versions/A/LocalAuthenticationUI'
 current-version: 693.140.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LAUIAuthenticationSheetAccountBlocked, _LAUIAuthenticationSheetBackoffTimeout ]
     objc-classes:    [ LAUIAuthenticationSheetController, LAUIAuthenticationView, 

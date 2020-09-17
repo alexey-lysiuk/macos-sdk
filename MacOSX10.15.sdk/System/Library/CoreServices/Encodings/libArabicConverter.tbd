@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E2F6FA1A-7207-39D3-96C1-F5868E5D7488', 'x86_64: E2F6
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libArabicConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetArabicConverterDefinition ]
 ...

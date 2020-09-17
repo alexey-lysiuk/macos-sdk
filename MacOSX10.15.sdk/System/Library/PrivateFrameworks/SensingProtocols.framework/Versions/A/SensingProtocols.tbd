@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 896F099A-F4DF-3B94-96AF-3B59EADE7EC9' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SensingProtocols.framework/Versions/A/SensingProtocols'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BinaryFrameReadFrom, _SensingProtocolsVersionNumber, _SensingProtocolsVersionString ]
     objc-classes:    [ BinaryFrame ]

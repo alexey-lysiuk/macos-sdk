@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 199B04D1-5228-3D8D-B887-1C92302CBCBE', 'x86_64: 199B04D1-5228-3D8D-B887-1C92302CBCBE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/OSAnalytics.framework/Versions/A/OSAnalytics'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSADateFormat, _OSANSDateFormat, _OSASanitizeOptionHomeDirectory, 
                        _OSASanitizeOptionKeepFilename, _OSASanitizeOptionMountedVolume, 

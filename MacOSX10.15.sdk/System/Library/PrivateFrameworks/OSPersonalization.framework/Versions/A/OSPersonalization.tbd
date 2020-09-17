@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AA526773-CF08-3719-BA37-B4F5137FC964' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OSPersonalization.framework/Versions/A/OSPersonalization'
 current-version: 72.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ACCESS_DESCRIPTION_free, _ACCESS_DESCRIPTION_it, _ACCESS_DESCRIPTION_new, 
                        _AES_cbc_encrypt, _AES_decrypt, _AES_encrypt, _AES_set_decrypt_key, 

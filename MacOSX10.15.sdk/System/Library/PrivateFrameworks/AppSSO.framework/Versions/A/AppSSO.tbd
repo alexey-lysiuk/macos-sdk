@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 660152F4-68DE-3909-AE65-EC6EFAACB44C', 'x86_64: 660152F4-68DE-3909-AE65-EC6EFAACB44C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppSSO.framework/Versions/A/AppSSO'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SOAuthorizationOptionInitiatingAction, _SOAuthorizationOptionInitiatorOrigin, 
                        _SOAuthorizationOptionUserActionInitiated, _SODebugConfigurationKeyAssociatedDomainsValidated, 

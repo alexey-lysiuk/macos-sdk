@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6619A9EE-9201-3712-8015-6B116CB428D4', 'x86_64: 6619
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FoundInAppsPlugins.framework/Versions/A/FoundInAppsPlugins'
 current-version: 1052.34
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FoundInAppsPluginsVersionNumber, _FoundInAppsPluginsVersionString ]
     objc-classes:    [ FIAPHistoricalDataRequest, FIAPResult ]

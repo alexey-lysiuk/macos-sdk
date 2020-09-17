@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A9D7FE63-BCE8-3A9B-A51D-C0E805087908' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DataDetectors.framework/Versions/A/DataDetectors'
 current-version: 410.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DDActionLogHandle, _DDActionsManagerDidRunActionNotification, 
                        _DDActionsManagerWillRunActionNotification, _DDHighlightCreateWithRectsInVisibleRect, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6D13D9BA-54EB-3130-8386-E3AD5D858BC0', 'x86_64: 6D13
                    'x86_64h: EAAE8D93-7C00-347A-BF6F-C262557C0A1C', 'x86_64h: EAAE8D93-7C00-347A-BF6F-C262557C0A1C' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ __cg_JP2CompressorProcessImage, __cg_JP2CompressorSetDisplayResolution, 
                        __cg_JP2CompressorSetup, __cg_JP2CompressorTearDown, __cg_JP2DecompressBand, 

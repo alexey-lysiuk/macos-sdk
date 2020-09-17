@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8E6483A5-BF62-3128-9B29-356F65934417', 'x86_64: 8E6483A5-BF62-3128-9B29-356F65934417' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/libType1Scaler.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _T1GetPSFontEncoding, _T1GetSynthesisData, _T1ReleaseSynthesisData, 
                        _Type1ScalerOpen ]

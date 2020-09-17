@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E1B147CE-9A4D-3802-9D60-FB2212EF5725', 'x86_64: E1B147CE-9A4D-3802-9D60-FB2212EF5725' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MTLCompiler.framework/Versions/3802/Libraries/libMTLCompilerHelper.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _createCompilerHelper, _deleteCompilerHelper ]
     weak-def-symbols: [ __ZTI26MTLCompilerHelperInterface, __ZTI28MTLCompilerBuiltInFileReader, 

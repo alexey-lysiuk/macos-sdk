@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/SyncServices.framework/Versions/A/SyncServices'
 current-version: 727
 compatibility-version: 48
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ISDArrayAsGlobalIds, _ISDAsGlobalId, _ISDAvailabilityChangedNotification, 
                        _ISDBadNewsException, _ISDCleanupExtraLogFiles, _ISDCleanupLogFiles, 

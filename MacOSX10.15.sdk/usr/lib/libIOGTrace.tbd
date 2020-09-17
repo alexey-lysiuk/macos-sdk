@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D24B4679-5DD8-30D1-A034-A36B72485180' ]
 platform:        macosx
 install-name:    '/usr/lib/libIOGTrace.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _createGTrace, _destroyGTrace, _formatToken, _getBreadcrumbBase, 
                        _getBufferID, _recordToken, _recordTokenNT, _recordTokenNow, 

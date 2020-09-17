@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 30EB0C39-6267-3650-BCCA-41E911D723C3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CalendarDraw.framework/Versions/A/CalendarDraw'
 current-version: 2380.2.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BirthdayCalendarColor, _BirthdayMonthCalendarColor, _CalCGColorConvertToRGBCopy, 
                        _CalCGColorCreateBlendedWithFraction, _CalCGColorGetConstantColor, 

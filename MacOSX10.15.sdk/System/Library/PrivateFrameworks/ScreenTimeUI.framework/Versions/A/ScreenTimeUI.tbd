@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5300628B-8AD8-3372-A6CE-329D877ABE15' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ScreenTimeUI.framework/Versions/A/ScreenTimeUI'
 current-version: 440
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ ChatKit, ContactsUI, DataDetectorsViewDebug, DataDetectorsViewService, 
                          FaceTime, FaceTimeNotificationCenterService, IMCore, LockoutUI, 

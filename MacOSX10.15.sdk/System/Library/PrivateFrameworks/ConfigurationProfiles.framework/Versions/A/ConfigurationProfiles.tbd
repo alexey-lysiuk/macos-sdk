@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 36C0E5C9-EA3D-3669-888E-E462375042DB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ConfigurationProfiles.framework/Versions/A/ConfigurationProfiles'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BZip2Compress, _BZip2Decompress, _CPCloudConfigInfoDidFail, 
                        _CPCloudConfigInfoDidSucceed, _CPCloudConfigIsMDMv2Notification, 

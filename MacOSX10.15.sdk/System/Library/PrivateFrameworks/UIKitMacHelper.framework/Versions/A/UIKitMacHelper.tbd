@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: DB59E2E6-78F9-36D0-A2C1-68DBE7D8B4D5', 'x86_64: DB59
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIKitMacHelper.framework/Versions/A/UIKitMacHelper'
 current-version: 61000
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSUIImageGetSystemImageForNSImageName, _UINSAppearanceGetApplicationAppearance, 
                        _UINSAppearanceGetDarkAppearance, _UINSAppearanceGetLightAppearance, 

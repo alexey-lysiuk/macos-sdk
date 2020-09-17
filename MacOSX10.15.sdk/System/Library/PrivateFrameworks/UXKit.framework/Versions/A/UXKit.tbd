@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8A368FEF-E5F1-3219-821C-D92409804F0F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UXKit.framework/Versions/A/UXKit'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AssetsLibraryServices, DCIMServices, Mondrian, PhotoPrintProduct, 
                          Photos, PhotosUI, PhotosUICore, PlacesKit ]

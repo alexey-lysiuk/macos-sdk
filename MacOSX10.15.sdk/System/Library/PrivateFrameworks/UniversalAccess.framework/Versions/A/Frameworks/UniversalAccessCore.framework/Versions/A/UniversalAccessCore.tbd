@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 17BB6F9F-DA6B-3667-86B2-A350D08F3F8B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UniversalAccessCore.framework/Versions/A/UniversalAccessCore'
 current-version: 236
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Libraries/libUAPreferences.dylib' ]
     symbols:         [ _UAAlternateMouseButtonsEnabled, _UAAlternateMouseButtonsSetEnabled, 
@@ -156,7 +156,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 54CB7D4E-FE0D-39FB-8EE1-00D9AEE61062' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Libraries/libUAPreferences.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UAAXShortcutExposedFeatures, _UAAlternateMouseButtonsEnabledKey, 
                        _UAAssistiveControlAutomaticShiftEnabledKey, _UAAssistiveControlAutomaticSpaceEnabledKey, 

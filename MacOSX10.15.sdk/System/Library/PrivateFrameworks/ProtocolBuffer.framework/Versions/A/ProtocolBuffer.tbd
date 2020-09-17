@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5A020941-C43C-303E-8DE8-230FC6A84DBC', 'x86_64: 5A02
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProtocolBuffer.framework/Versions/A/ProtocolBuffer'
 current-version: 274.24.9
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PBDataWriterPlaceMark, _PBDataWriterRecallMark, _PBDataWriterWriteBOOLField, 
                        _PBDataWriterWriteBareVarint, _PBDataWriterWriteDataField, 

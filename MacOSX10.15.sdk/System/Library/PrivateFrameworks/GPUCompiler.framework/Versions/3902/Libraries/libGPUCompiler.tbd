@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 40564000-6895-309D-8AFC-0313C328DC66', 'x86_64: 4056
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libGPUCompiler.dylib'
 current-version: 902.14.11
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LLVMExtraCreateBinary, _LLVMExtraCreateIRObjectFile, _LLVMExtraCreateMetalLibObjectFile, 
                        _LLVMExtraCreateObjectFile, _LLVMExtraDisposeBinary, _LLVMExtraDisposeIRObjectFile, 

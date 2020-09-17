@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9F7FB714-4FA5-3EC7-BF32-861FB0F248B0' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Social.framework/Versions/A/Social'
 current-version: 609
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CPFileBuildDirectoriesToPath, _SLErrorDomain, _SLFacebookEnvironmentDidChangeNotification, 
                        _SLFacebookErrorDomain, _SLFacebookGraphAPIShouldUseBetaKey, 

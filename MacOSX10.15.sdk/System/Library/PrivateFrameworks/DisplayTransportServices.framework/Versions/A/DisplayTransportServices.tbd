@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CEFEAA95-8B9C-3F68-8CBD-CE00A29DAEFC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DisplayTransportServices.framework/Versions/A/DisplayTransportServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DTSErrorDomain, _DTSI2CTransactionLengthLimit, _DTSNativeAUXTransactionLengthLimit, 
                        _DisplayTransportServicesVersionNumber, _DisplayTransportServicesVersionString ]

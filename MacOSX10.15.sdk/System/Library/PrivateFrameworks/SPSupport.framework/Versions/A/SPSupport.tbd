@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4551A643-74C5-3F62-BFFC-80007742AAAF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SPSupport.framework/Versions/A/SPSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __comparePropertyOrders ]
     objc-classes:    [ SPDevice, SPDocument, SPReporter ]

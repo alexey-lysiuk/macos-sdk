@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: CBDA0ADD-F1E7-3B06-9118-C5E183F0D3D6', 'x86_64: CBDA
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Sharing.framework/Versions/A/Sharing'
 current-version: 1526.37
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NSDataFromHexString, _NSStringLooksLikeBTAddress, _RPCompanionLinkDeviceIsEqualToSFDevice, 
                        _SDAutoUnlockManagerMetricAWDLBringUpKey, _SDAutoUnlockManagerMetricAWDLPeerFoundKey, 

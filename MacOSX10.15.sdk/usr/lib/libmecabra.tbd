@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: E31DE74D-1B88-377F-ACD3-D789D29C3AE7', 'x86_64: E31D
 platform:        zippered
 install-name:    '/usr/lib/libmecabra.dylib'
 current-version: 883.11
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BurstTrieCompile, _EmojiDictionaryCompile, _IndexedSearchDictionaryBuild, 
                        _MecabraAcceptCandidate, _MecabraAcceptInlineCandidates, _MecabraAdaptToTokenizedText, 

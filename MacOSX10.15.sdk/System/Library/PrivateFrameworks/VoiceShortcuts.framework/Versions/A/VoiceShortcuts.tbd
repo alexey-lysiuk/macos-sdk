@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 954EE624-380B-3805-92E0-227CB32FE79B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VoiceShortcuts.framework/Versions/A/VoiceShortcuts'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _VCAccessSyncServiceState, _VCAssertUniqueMessageTypes, _VCClearSyncServiceState, 
                        _VCDarwinNotificationStateUserInfoKey, _VCDescriptionForChange, 

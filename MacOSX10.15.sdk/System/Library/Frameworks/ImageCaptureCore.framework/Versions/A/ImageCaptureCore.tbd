@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 281CE141-B350-30E2-B345-FC7E7DF1AA3A', 'x86_64: 281CE141-B350-30E2-B345-FC7E7DF1AA3A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageCaptureCore.framework/Versions/A/ImageCaptureCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ICADevicesFrameworkPath, _ICButtonTypeCopy, _ICButtonTypeMail, 
                        _ICButtonTypePrint, _ICButtonTypeScan, _ICButtonTypeTransfer, 

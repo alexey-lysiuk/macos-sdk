@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 76928EED-CB07-3F03-A6EB-ADC7AAB33A60' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CardServices.framework/Versions/A/CardServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CardServicesVersionNumber, _CardServicesVersionString ]
     objc-classes:    [ CRSCardRequest, CRSCardResponse, CRSIdentifiedServiceRegistry, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 30F95EA5-8DB6-39D9-BF46-C486CAC7AA7B', 'x86_64: 30F95EA5-8DB6-39D9-BF46-C486CAC7AA7B' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreSpotlight.framework/Versions/A/CoreSpotlight'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CSAccountTypeExchangeActiveSync, _CSAccountTypeExchangeWebServices, 
                        _CSAccountTypeIMAP, _CSAccountTypeLocal, _CSAccountTypePOP, 

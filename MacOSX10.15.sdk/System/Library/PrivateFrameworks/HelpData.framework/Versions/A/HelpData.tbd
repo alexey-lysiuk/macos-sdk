@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A62E7DB6-8960-3470-8281-293711C166D8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HelpData.framework/Versions/A/HelpData'
 current-version: 199
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DDMAppleConnectEnvironmentAssetKey, _DDMAppleConnectEnvironmentContentKey, 
                        _DDMAppleConnectEnvironmentKey, _DDMAppleConnectEnvironmentsKey, 

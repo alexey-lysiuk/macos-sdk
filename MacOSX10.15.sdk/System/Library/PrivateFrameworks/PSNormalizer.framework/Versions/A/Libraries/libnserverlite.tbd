@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: AF184214-7EA5-3DF6-9271-3570C87EC515' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/Libraries/libnserverlite.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NormalizerDisableDistilling, _NormalizerEnableDistilling, 
                        _NormalizerServerInit, _NormalizerServerRunJob, _NormalizerServerShutdown ]

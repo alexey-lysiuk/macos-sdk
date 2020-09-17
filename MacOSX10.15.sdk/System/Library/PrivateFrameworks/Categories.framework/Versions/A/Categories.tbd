@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: BE99683D-352B-3CFA-A1D3-837A3FEEA75C', 'x86_64: BE99
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Categories.framework/Versions/A/Categories'
 current-version: 5.7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CTCategoriesDidChangeNotification, _CTCategoriesVersionIdentifierKey, 
                        _CTCategoriesVersionNumber, _CTCategoriesVersionString, _CTCategoryIdentifierCreativity, 

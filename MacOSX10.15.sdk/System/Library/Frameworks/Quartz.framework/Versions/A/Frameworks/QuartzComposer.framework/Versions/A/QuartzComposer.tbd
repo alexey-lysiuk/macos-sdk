@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 9C10ADF7-94B0-3779-AD44-5AF6394A32AF' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzComposer.framework/Versions/A/QuartzComposer'
 current-version: 168
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _GFArrayFromArgumentList, _GFBacktrace, _GFDebug, _GFDebuggingLevel, 
                        _GFException, _GFFilterStringsWithKeywords, _GFGetDebugMessageCallback, 

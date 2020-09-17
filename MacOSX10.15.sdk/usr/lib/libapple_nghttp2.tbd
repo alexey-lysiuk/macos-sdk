@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 07FEC48A-87CF-32A3-8194-FA70B361713A', 'x86_64: 07FE
 platform:        zippered
 install-name:    '/usr/lib/libapple_nghttp2.dylib'
 current-version: 1.39.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _nghttp2_check_header_name, _nghttp2_check_header_value, _nghttp2_hd_deflate_bound, 
                        _nghttp2_hd_deflate_change_table_size, _nghttp2_hd_deflate_del, 

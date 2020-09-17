@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libexslt.0.dylib'
 current-version: 9.15
 compatibility-version: 9
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _exsltCommonRegister, _exsltDateRegister, _exsltDateXpathCtxtRegister, 
                        _exsltDynRegister, _exsltFuncRegister, _exsltLibexsltVersion, 

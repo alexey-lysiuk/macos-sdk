@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 65F53A22-6B61-382C-AAC2-B2C53F8FFB44', 'x86_64: 65F5
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreServicesInternal.framework/Versions/A/CoreServicesInternal'
 current-version: 446.7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ CoreFoundation ]
     symbols:         [ __CFURLBookmarkDataCopyDescription, __CFURLBookmarkToAliasHandle, 

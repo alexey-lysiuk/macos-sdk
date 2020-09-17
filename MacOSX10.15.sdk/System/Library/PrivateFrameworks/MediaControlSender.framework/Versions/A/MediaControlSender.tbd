@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: AC095BC9-FE18-34E5-B256-EF292E6DC46B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MediaControlSender.framework/Versions/A/MediaControlSender'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _APAudioFormatToASBD, _AVRouteDescription_HasFeature, _AVSystemController_CopyProperty, 
                        _AVSystemController_GetAirPlayInfo, _AVSystemController_GetSharedController, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FB573327-774D-3971-90A6-D12EC4B7C73D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AudioDSPManager.framework/Versions/A/AudioDSPManager'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AudioDSPManagerCreate, _AudioDSPManagerErrorDomain, __ZN3adm15make_error_codeENS_5ErrorE, 
                        __ZN3adm5graph11SemanticSet3addENS0_12SemanticTypeE, __ZN3adm5graph11SemanticSet6removeENS0_12SemanticTypeE, 

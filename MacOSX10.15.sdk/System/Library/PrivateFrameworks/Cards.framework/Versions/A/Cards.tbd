@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 746632F6-98C8-3C24-901A-B3AE659EA99B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Cards.framework/Versions/A/Cards'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CRContextCards, _CRErrorCodeGetName, _CRErrorDomain, _CRJSContextErrorDomain, 
                        _CRJSObjectBackingObjectPropertyName, _CRLogContextCards, 

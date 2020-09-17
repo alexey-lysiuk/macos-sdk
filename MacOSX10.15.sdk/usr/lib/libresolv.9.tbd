@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: C57EDFEF-D36A-310B-8D14-8C68A625B1E8', 'x86_64: C57EDFEF-D36A-310B-8D14-8C68A625B1E8' ]
 platform:        zippered
 install-name:    '/usr/lib/libresolv.9.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___res_9_p_type_syms, __res_9_h_errno_set, __res_9_ns_flagdata, 
                        _dns_all_server_addrs, _dns_async_cancel, _dns_async_handle_reply, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 051EAA90-51B4-3AFA-9BBC-7B5EF6035F8B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HDRProcessing.framework/Versions/A/HDRProcessing'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ATFMTLfloat2half_rtz, _ATFMTLhalf2float, _ChromaVectorWeightDM31, 
                        _GetRelative_SDR_DOLBY, _GetRelative_YUV_TM, _GetToneMap_SDR_DOLBY, 

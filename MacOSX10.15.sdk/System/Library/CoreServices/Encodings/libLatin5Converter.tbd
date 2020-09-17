@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: EDB1E70D-DECF-3E94-AAEC-F897E352F565', 'x86_64: EDB1
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libLatin5Converter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetLatin5ConverterDefinition ]
 ...

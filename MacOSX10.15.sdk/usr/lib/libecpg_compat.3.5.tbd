@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libecpg_compat.3.dylib'
 current-version: 3.5
 compatibility-version: 3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ECPG_informix_get_var, _ECPG_informix_reset_sqlca, _ECPG_informix_set_var, 
                        _byleng, _decadd, _deccmp, _deccopy, _deccvasc, _deccvdbl, 

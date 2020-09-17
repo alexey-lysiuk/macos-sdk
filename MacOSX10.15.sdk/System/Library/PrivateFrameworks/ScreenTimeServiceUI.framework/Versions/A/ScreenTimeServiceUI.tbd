@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C39796A7-460F-32A5-9FAF-6FF94124BBBC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ScreenTimeServiceUI.framework/Versions/A/ScreenTimeServiceUI'
 current-version: 440
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, LockoutUI, ParentalControls, ScreenTime, ScreenTimeSettingsUI, 
                          ScreenTimeUI, ScreenTimeViewService ]

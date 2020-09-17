@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 03A7C84F-0219-318B-85A9-CEA402BE2FB2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Geode.framework/Versions/A/Geode'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CGPointOffset, _CGPointScale, _CGRectFlipInRect, _CGRectGrowInRect, 
                        _CGRectScale, _CGRectShrinkInRect, _CGSizeScale, _CGVectorOffset, 

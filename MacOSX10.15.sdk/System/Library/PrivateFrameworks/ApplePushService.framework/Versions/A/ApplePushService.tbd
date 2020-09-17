@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3ED300B6-43E3-31DC-B3C6-6A0FF41A2595', 'x86_64: 3ED300B6-43E3-31DC-B3C6-6A0FF41A2595' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ApplePushService.framework/Versions/A/ApplePushService'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _APSAlert, _APSBundleIdentifier, _APSCachedIPKey, _APSCarrierNameKey, 
                        _APSClientIdentityUpdatedNotification, _APSConnectionInitiateEntitlement, 

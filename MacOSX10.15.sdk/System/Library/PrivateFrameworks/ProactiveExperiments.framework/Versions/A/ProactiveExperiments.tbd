@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 4A3CF0BA-FA57-34C4-9FA5-A320E60FA305', 'x86_64: 4A3C
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveExperiments.framework/Versions/A/ProactiveExperiments'
 current-version: 1052.34
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PREAMEngagedResponseReadFrom, _PREAMResponseItemReadFrom, 
                        _PREAMResponseListGeneratedReadFrom, _PREMachTimeToMilliseconds, 

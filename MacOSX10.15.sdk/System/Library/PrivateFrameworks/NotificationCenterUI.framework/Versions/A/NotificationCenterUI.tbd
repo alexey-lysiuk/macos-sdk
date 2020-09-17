@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 306E9377-4192-39ED-AE85-C1070BEEF4E6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/NotificationCenterUI.framework/Versions/A/NotificationCenterUI'
 current-version: 845.40.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NCSnippetCreate, _NCSnippetDestroy ]
     objc-classes:    [ NCCardViewController, NCCustomAlert, NCCustomAlertBackgroundView ]

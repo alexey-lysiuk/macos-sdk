@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: AFA19D2C-8E77-3DDC-BB9F-4118953D58C0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ISSupport.framework/Versions/A/ISSupport'
 current-version: 58
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ISS_AYAbortError, _ISS_AYErrorDomain, _ISS_AYIOKitErrorDomain, 
                        _ISS_AYIPV4AddressType, _ISS_AYIPV6AddressType, _ISS_AYMarkNotification, 

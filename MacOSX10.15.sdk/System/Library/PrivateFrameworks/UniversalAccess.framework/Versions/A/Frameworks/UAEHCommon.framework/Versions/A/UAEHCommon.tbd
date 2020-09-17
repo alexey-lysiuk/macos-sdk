@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 03B6FAF8-9C34-320F-8293-2C78C68D075C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/UAEHCommon'
 current-version: 236
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ UAEHCommonDriver, UAEHCommonOverlayWindow ]
     objc-ivars:      [ UAEHCommonDriver._enableCaptureFunction, UAEHCommonDriver._safeToQuitFunction, 

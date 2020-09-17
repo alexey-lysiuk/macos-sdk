@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FE739C02-1000-36C8-9FAD-26FF3D8240CB' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/MediaPlayer.framework/Versions/A/MediaPlayer'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MPAVMRRouteDiscoveryModeFromDiscoveryMode, _MPAVRouteConnectionEndpointIdentifierUserInfoKey, 
                        _MPAVRouteConnectionErrorDomain, _MPAVRouteConnectionOutputDeviceIdentifierUserInfoKey, 

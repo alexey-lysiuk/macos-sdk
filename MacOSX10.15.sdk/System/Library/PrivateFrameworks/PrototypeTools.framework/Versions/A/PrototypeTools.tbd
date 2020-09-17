@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B7B382B9-A634-388A-967F-CA093E903B1B', 'x86_64: B7B382B9-A634-388A-967F-CA093E903B1B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PrototypeTools.framework/Versions/A/PrototypeTools'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PTClassIsPlistable, _PTDomainClientInterface, _PTDomainIdentifierKey, 
                        _PTDomainMachService, _PTDomainServerActiveTestRecipeChangedNotification, 

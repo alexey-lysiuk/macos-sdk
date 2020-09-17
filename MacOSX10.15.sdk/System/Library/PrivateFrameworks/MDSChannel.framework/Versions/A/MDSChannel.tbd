@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D3310543-9ADC-3E4F-A077-5CB92213BFB2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MDSChannel.framework/Versions/A/MDSChannel'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MDSChannelAccessTokenCreate, _MDSChannelCopyAccessToken, 
                        _MDSChannelCreate, _MDSChannelGetProperties, _MDSChannelHasCapability, 

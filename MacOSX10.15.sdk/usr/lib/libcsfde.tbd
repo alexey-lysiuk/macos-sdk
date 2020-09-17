@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: CEE22AEF-4E77-36B1-B007-00303819965F' ]
 platform:        macosx
 install-name:    '/usr/lib/libcsfde.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CSFDEActivateRecoveryAgentAsNeeded, _CSFDEAddExternalKeyUserEntry, 
                        _CSFDEAddOSUserEntry, _CSFDEAddPassphraseOnlyUserEntry, _CSFDEAddVolumeEncryption, 

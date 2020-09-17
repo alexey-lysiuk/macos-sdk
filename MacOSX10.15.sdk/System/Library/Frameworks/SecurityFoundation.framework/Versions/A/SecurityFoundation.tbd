@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7C69DF47-4017-3DF2-B55B-712B481654CB', 'x86_64: 7C69
 platform:        zippered
 install-name:    '/System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation'
 current-version: 55236.60.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/Security.framework/Versions/A/Security' ]
     symbols:         [ _SFAccessibilityMakeWithMode, _SFCertificateAuthorityInputParmKeyDestinationKeychain, 

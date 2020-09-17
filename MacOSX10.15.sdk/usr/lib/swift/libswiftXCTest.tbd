@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/swift/libswiftXCTest.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s6XCTest12XCTAssertNil__4file4lineyypSgyKXK_SSyXKs12StaticStringVSutF', 
                        '_$s6XCTest13XCTAssertTrue__4file4lineySbyKXK_SSyXKs12StaticStringVSutF', 

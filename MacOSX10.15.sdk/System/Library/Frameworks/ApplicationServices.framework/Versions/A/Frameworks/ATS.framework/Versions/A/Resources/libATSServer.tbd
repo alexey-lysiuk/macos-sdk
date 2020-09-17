@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0D0984FD-14EA-3254-803A-8B946BC858F0' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libATSServer.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ATSFontGlobalNotify, _ATSServerGenerateDB, _ATSServerIsReadyForXType, 
                        _ATSServerMain, _ATSServerShutdown, _ATSServerWorker, _CopyATSDumpFileInfo, 

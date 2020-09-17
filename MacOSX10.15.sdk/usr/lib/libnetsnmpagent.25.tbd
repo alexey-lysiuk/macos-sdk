@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libnetsnmpagent.25.dylib'
 current-version: 26.2
 compatibility-version: 26
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __init_default_iquery_session, __netsnmp_stash_cache_free, 
                        __netsnmp_stash_cache_load, __netsnmp_tdata_generate_index_oid, 

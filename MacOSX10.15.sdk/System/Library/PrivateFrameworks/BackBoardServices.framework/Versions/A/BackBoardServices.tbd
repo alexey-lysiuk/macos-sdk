@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 18DEEF47-BA8F-38B9-A49A-C56C2BACE1CC', 'x86_64: 18DEEF47-BA8F-38B9-A49A-C56C2BACE1CC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BackBoardServices.framework/Versions/A/BackBoardServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BKLogAlternateSystemApp, _BKLogBacklight, _BKLogCommon, _BKLogDetailed, 
                        _BKLogDisplay, _BKLogDisplayArchive, _BKLogEventDelivery, 

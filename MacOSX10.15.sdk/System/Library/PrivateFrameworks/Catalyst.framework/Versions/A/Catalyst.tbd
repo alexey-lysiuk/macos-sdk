@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: FC0822C4-C234-3543-9F47-3C0496E25A52', 'x86_64: FC08
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst'
 current-version: 6.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CATAssertIsNotQueue, _CATAssertIsQueue, _CATErrorDomain, 
                        _CATErrorWithCodeAndUserInfo, _CATErrorWithDomainCodeAndUserInfo, 

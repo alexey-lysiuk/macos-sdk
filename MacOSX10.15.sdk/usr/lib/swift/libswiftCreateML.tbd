@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2FCCB617-DC06-321A-B213-56CD3A631E40' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftCreateML.dylib'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftCreateML.dylib', 
                        '$ld$install_name$os10.11$@rpath/libswiftCreateML.dylib', 

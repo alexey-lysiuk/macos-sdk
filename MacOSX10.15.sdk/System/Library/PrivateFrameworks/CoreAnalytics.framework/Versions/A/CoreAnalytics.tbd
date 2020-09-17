@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: E6E3B6EA-A2BE-3752-B06D-BECCBA4E85B2', 'x86_64: E6E3B6EA-A2BE-3752-B06D-BECCBA4E85B2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreAnalytics.framework/Versions/A/CoreAnalytics'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AnalyticsIsEventUsed, _AnalyticsSendEvent, _AnalyticsSendEventLazy, 
                        _AnalyticsSetCallbackForQueriedEvent, _AnalyticsSetCallbackForQueriedEventWithQueue, 

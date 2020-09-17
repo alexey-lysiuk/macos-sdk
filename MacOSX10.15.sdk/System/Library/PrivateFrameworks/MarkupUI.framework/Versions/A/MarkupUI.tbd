@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A596E8D7-6DBD-3F01-89AD-B296C9D3B61E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MarkupUI.framework/Versions/A/MarkupUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MUCropToolEnabled, _MUEncryptPrivateMetadata ]
     objc-classes:    [ MUCGPDFAnnotationAdaptor, MUContentViewController, MUImageDownsamplingUtilities, 

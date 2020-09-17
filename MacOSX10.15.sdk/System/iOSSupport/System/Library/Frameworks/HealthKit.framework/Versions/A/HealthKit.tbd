@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 60E35DBB-ADD3-3C5D-9780-D7D3D2DE0ED3' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/HealthKit.framework/Versions/A/HealthKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _HDCloudSyncServerInterface, _HDHealthKitControlTaskServerIdentifier, 
                        _HDHealthRecordsPluginServerInterface, _HDHealthServicesServerInterface, 

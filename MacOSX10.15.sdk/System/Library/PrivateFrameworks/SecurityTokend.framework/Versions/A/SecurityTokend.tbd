@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 4FB86E4F-270D-3F6D-9128-14EE7BE11F35' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SecurityTokend.framework/Versions/A/SecurityTokend'
 current-version: 55113
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SecTokendMain ]
 ...

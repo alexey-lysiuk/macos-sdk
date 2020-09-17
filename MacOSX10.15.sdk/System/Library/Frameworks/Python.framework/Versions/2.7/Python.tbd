@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Python.framework/Versions/2.7/Python'
 current-version: 2.7.16
 compatibility-version: 2.7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AEDesc_Convert, _AEDesc_New, _AEDesc_NewBorrowed, _BMObj_Convert, 
                        _BMObj_New, _CFArrayRefObj_Convert, _CFArrayRefObj_New, _CFDictionaryRefObj_Convert, 

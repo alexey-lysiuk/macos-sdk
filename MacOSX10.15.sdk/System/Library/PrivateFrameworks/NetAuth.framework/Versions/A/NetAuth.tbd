@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B0C03C41-87A3-352B-B130-96E1A6F94B47', 'x86_64: B0C03C41-87A3-352B-B130-96E1A6F94B47' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/NetAuth.framework/Versions/A/NetAuth'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DictionaryCreateFromBytesAndLength, _GetNetAuthAuthAgentPort, 
                        _GetNetAuthUserAgentPort, _NAAA_GetCredentials_CloseSession, 

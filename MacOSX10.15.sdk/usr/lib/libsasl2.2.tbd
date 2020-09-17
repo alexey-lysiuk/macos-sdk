@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/libsasl2.2.dylib'
 current-version: 3.15
 compatibility-version: 3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ __plug_buf_alloc, __plug_challenge_prompt, __plug_decode, 
                        __plug_find_prompt, __plug_free_secret, __plug_free_string, 

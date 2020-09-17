@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 2ECA8369-582E-35CA-96EB-803189E8B9FD', 'x86_64: 2ECA8369-582E-35CA-96EB-803189E8B9FD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AdCore.framework/Versions/A/AdCore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ADAdConnectionGetStringForValue, _ADAdVectorReadFrom, _ADAdsOptions, 
                        _ADAnalyticsEventReadFrom, _ADAttributionRequestReadFrom, 

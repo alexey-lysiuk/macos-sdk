@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 47D63DCF-2BDB-3983-B2A2-E9C47AA2401D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/LDAP.framework/Versions/A/LDAP'
 current-version: 2.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ber_alloc, _ber_alloc_t, _ber_bprint, _ber_bvarray_add, _ber_bvarray_free, 
                        _ber_bvdup, _ber_bvecadd, _ber_bvecfree, _ber_bvfree, _ber_dump, 

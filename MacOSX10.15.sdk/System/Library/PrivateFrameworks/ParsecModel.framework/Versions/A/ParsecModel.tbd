@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 1D8AE0AF-68D5-3582-B18D-E8439C3690A7', 'x86_64: 1D8AE0AF-68D5-3582-B18D-E8439C3690A7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ParsecModel.framework/Versions/A/ParsecModel'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ParsecModelVersionNumber, _ParsecModelVersionString ]
     objc-classes:    [ PARCategory, PARCollectionStartEvent, PAREvent, PARFlushEvent, 

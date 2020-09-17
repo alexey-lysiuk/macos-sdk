@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 6FA20E0C-4C5C-3354-A389-22DBA288B9E3', 'x86_64: 6FA2
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity'
 current-version: 358
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UAAlwaysAdvertise, _UABestAppSuggestionManagerServiceName, 
                        _UAContinuityErrorDomain, _UAResumableActivitiesManagerServiceName, 

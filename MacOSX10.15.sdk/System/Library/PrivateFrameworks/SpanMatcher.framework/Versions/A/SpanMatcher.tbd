@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8B95D5C0-0CB4-36CB-A820-C444C3FC1535' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpanMatcher.framework/Versions/A/SpanMatcher'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SpanMatcherVersionNumber, _SpanMatcherVersionString, __isOneOf, 
                        __isVowel, __slavoGermanic, _cdb_bread, _cdb_find, _cdb_findinit, 

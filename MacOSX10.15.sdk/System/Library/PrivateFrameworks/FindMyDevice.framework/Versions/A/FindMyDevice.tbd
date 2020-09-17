@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 33DE360A-7AC9-3201-A2EA-413B269E129C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FindMyDevice.framework/Versions/A/FindMyDevice'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FMDFMIPManagerUnregisterErrorDomain, _FMDFMMManagerUnregisterErrorDomain, 
                        _fmdFMMLastOperationResult, _kAccessoriesChangedNotification, 

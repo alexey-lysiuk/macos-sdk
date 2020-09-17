@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 5C5A6128-4A9E-3FCB-8485-1AA32666F819' ]
 platform:        macosx
 install-name:    '/usr/lib/libXplugin.1.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _xp_api_version, _xp_attach_gl_context, _xp_composite_area_threshold, 
                        _xp_composite_pixels, _xp_configure_surface, _xp_configure_window, 

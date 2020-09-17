@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Plugins/PMBrowser.framework/Versions/A/PMBrowser'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CheckPrinterList, _ComputerLocation, _FilterDNSSDSuffix, 
                        _GetUSBDeviceCapabilities, _IOUSBDevInterface, _MatchNameAndQueueID, 

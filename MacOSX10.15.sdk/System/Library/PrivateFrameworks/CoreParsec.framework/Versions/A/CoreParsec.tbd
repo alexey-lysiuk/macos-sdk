@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DAB3F5C9-C6F5-3E66-B470-AE1A325AE53B', 'x86_64: DAB3F5C9-C6F5-3E66-B470-AE1A325AE53B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreParsec.framework/Versions/A/CoreParsec'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CoreParsecVersionNumber, _CoreParsecVersionString, _PARNewsAppBundleIdentifier, 
                        _PARSTSAppBundleIdentifier, _ParsecNWActivityDomain, __CPActionItemForFeedbackReadFrom, 

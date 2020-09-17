@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices'
 current-version: 1069.24
 parent-umbrella: CoreServices
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AlertSoundPlay, _AlertSoundPlayCustomSound, _BatteryCount, 
                        _CSGetDefaultIdentityAuthority, _CSGetLocalIdentityAuthority, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C535F0F0-3E32-3EFF-BE95-F669E4896554' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AssistiveControlSupport.framework/Versions/A/AssistiveControlSupport'
 current-version: 87
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ACAP_DOCUMENT_CURRENT_VERSION, _ACAP_DOCUMENT_TYPE_NAME, 
                        _ACAP_DOCUMENT_TYPE_NAME_OLD, _ACSHActionTypeFromString, _ACSHActionTypeToString, 

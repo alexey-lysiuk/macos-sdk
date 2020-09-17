@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8AB90783-C15D-3717-94E4-8A757C04CEB0', 'x86_64: 8AB9
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libCLVMCPUPlugin.dylib'
 current-version: 2.14
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _cvmsPluginElementBuild, _cvmsPluginServiceInitialize, _cvmsPluginServiceTerminate ]
 ...

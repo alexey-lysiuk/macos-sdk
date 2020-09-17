@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6DE4D3C3-2A44-382E-9FA6-7212AB5DCD54' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/RemoteCoreML.framework/Versions/A/RemoteCoreML'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RemoteCoreMLVersionNumber, _RemoteCoreMLVersionString, _g_inbound_connection, 
                        _kMLAckFailNetworkHeaderEncoding, _kMLAckSuccessNetworkHeaderEncoding, 

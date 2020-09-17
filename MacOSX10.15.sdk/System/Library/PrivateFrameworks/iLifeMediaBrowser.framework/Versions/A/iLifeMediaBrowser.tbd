@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 62B51C47-A5B2-3FE4-84EC-A70CBA375B33' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/iLifeMediaBrowser.framework/Versions/A/iLifeMediaBrowser'
 current-version: 787
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASL_LEVEL_ERR_STR, _ASL_LEVEL_INFO_STR, _ILApertureAlbumDotMacWebGalleryTypeIdentifier, 
                        _ILApertureAlbumFacebookTypeIdentifier, _ILApertureAlbumFlickrTypeIdentifier, 

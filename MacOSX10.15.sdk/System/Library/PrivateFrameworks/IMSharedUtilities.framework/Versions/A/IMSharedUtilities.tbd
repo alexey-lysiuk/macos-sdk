@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 38235642-07D7-360A-B5C7-FA39B1FD1427' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMSharedUtilities.framework/Versions/A/IMSharedUtilities'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AttachmentsAutomationLogMilestone, _AttachmentsAutomationLogMilestoneWithOptionFlags, 
                        _FZCreateIMMessageItemsFromSerializedArray, _FZCreateSerializedIMMessageItemsfromArray, 

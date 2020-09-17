@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D4A32969-A087-3E05-924B-02FFFD14692D', 'x86_64: D4A32969-A087-3E05-924B-02FFFD14692D' ]
 platform:        zippered
 install-name:    '/usr/lib/libDHCPServer.A.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DHCPSCopyDisabledInterfaces, _DHCPSDHCPLeaseListCreate, _DHCPSDHCPLeaseListNotificationKey, 
                        _DHCPSDisabledInterfacesNotificationKey, _DHCPSNetBootClientListCreate, 

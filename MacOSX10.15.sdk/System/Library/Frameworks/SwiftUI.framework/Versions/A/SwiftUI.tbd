@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: DBBE625B-F7CB-323D-96F5-B0DD6C5F0D74' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s10InsetShape7SwiftUI010InsettableB0PTl', '_$s10NSViewType7SwiftUI0A13RepresentablePTl', 
                        '_$s11Coordinator7SwiftUI19NSViewRepresentablePTl', '_$s11Coordinator7SwiftUI29NSViewControllerRepresentablePTl', 

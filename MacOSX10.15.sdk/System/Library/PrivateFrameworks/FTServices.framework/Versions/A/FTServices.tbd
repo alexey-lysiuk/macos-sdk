@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: EA744147-9CEF-3297-B084-10A6C29D3510', 'x86_64: EA74
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FTServices.framework/Versions/A/FTServices'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _FTCTRegistrationStatusCanRegisterKey, _FTCTRegistrationStatusChangedNotification, 
                        _FTCTRegistrationStatusIMSIKey, _FTCTRegistrationStatusPLMNKey, 

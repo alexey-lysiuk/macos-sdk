@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 4669F947-8CA5-3A1E-92F3-13DFC8D20B4A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DataDeliveryServices.framework/Versions/A/DataDeliveryServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AllowCellularOverride, _AssetCenterQueueName, _ClientQueueName, 
                        _ContentsKey, _DDSAssertionContentFile, _DDSAssertionContentFolder, 

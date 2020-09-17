@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: DFFAFF97-4284-3374-8711-571FEF915A20' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ScreenSharing.framework/Versions/A/ScreenSharing'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AskToCancelFileActiveFileTransfers, _AuthGetRandomBytes, 
                        _GetFlatInterfaceList, _InterfaceItemToSocketAddress, _RDCreateSemaphore, 

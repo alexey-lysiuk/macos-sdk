@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: F25AF002-525C-3B03-8E17-5313FC47D653', 'x86_64: F25AF002-525C-3B03-8E17-5313FC47D653' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsDonationFeedback.framework/Versions/A/ContactsDonationFeedback'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ContactsDonationFeedbackVersionNumber, _ContactsDonationFeedbackVersionString, 
                        _kCDFErrorDomain, _kCDFInsufficientValuesToHashError, _kCDFMissingIdentifierError, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1874AA53-2C73-3DB2-A98F-69D9BDB3ADC8' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _JSCheckScriptSyntax, _JSClassCreate, _JSClassRelease, _JSClassRetain, 
                        _JSContextCreateBacktrace, _JSContextGetGlobalContext, _JSContextGetGlobalObject, 

@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B49EC8B5-632E-3751-B783-10341A89D038' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3802/Libraries/libmetal_timestamp.dylib'
 current-version: 802.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _getMetalTimeStamp ]
 ...

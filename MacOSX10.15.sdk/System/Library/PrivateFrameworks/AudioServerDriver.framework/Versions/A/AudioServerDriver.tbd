@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0DB36CD3-203B-34CF-B1E3-752C5CB05F62' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AudioServerDriver.framework/Versions/A/AudioServerDriver'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASDStereoPanControlCenter, _ASDStereoPanControlFullLeft, 
                        _ASDStereoPanControlFullRight, _ASD_AddAudioDeviceRealTimeOperations, 

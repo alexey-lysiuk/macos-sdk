@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 6FE011DE-A794-3D82-9E35-7FE1D62DEE7E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LoginUIKit.framework/Versions/A/Frameworks/LoginUICore.framework/Versions/A/LoginUICore'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LUI2CButtonBack, _LUI2CButtonLogin, _LUICAvatarMask, _LUICAvatarOverlay, 
                        _LUICButtonBack, _LUICButtonCancel, _LUICButtonContinue, _LUICButtonExit, 

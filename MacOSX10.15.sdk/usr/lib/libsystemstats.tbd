@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B212CB16-03CD-3B13-A4A5-65A943DFF43B', 'x86_64: B212
 platform:        zippered
 install-name:    '/usr/lib/libsystemstats.dylib'
 current-version: 456.100.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SystemStatsLogCoreDuetEventsAggregate, _SystemStatsReportDiscretionaryBudgetForDuet, 
                        _SystemStatsReportTotalDiscretionaryEnergyCoreDuet, __systemstats_boot, 

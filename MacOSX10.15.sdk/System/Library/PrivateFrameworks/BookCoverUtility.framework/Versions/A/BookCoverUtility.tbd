@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BookCoverUtility.framework/Versions/A/BookCoverUtility'
 current-version: 1341
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BCUCoverEffectsFilterInfoAlternativeAppearanceKey, _BCUCoverEffectsFilterInfoContentRTLKey, 
                        _BCUCoverEffectsFilterInfoCoverEffectStyleKey, _BCUCoverEffectsFilterOptionMinificationFilter, 

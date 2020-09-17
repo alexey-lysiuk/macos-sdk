@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FFF93792-63EF-365F-AD2A-6DF61F9F39C3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DrawingKit.framework/Versions/A/DrawingKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CGPointIsUnrepresentable, _CGRectFromString, _CGRectIsUnrepresentable, 
                        _CGSizeFromString, _DKDistanceBetweenPoints, _DKDrawingIsValid, 

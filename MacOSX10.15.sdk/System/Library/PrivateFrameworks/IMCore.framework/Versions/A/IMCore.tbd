@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: B5BC3823-0FFA-3D6D-B995-5F674894BF3B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMCore.framework/Versions/A/IMCore'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/InstantMessage.framework/Versions/A/InstantMessage', 
                        '/System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation' ]
@@ -280,7 +280,7 @@ uuids:           [ 'x86_64: BAEB40B7-908F-3D97-9BE9-5EAB83930543', 'x86_64: BAEB
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation'
 current-version: 800
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CopyKeychainSearchList, _ExtractURLQueries, _FZAVErrorDomain, 
                        _FZRelayParameter_ConnectionID, _FZRelayParameter_PeerBlob, 

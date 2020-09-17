@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8FBA6A7B-B7EE-3F14-9D47-F491BF4E8C2F' ]
 platform:        macosx
 install-name:    '/usr/lib/libsysmon.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SYSMON_XPC_KEY_ATTRIBUTES, _SYSMON_XPC_KEY_CONNECTION, _SYSMON_XPC_KEY_FLAGS, 
                        _SYSMON_XPC_KEY_INTERVAL, _SYSMON_XPC_KEY_TYPE, _SYSMON_XPC_REPLY_KEY_HEADER, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 07E116E6-7EBC-39F2-B5B4-31BAB6BAF852', 'x86_64: 07E116E6-7EBC-39F2-B5B4-31BAB6BAF852' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MobileAsset.framework/Versions/A/MobileAsset'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASAttributeAutomaticUpdateDisabled, _ASAttributeCompatibilityVersion, 
                        _ASAttributeContentVersion, _ASAttributeDownloadSize, _ASAttributeEventRecordingServiceURL, 

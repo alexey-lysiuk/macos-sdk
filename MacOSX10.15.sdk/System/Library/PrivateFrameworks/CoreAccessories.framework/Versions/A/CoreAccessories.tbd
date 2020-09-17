@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 3B13F7D4-CCDE-3604-889A-CBEAE91CC175', 'x86_64: 3B13F7D4-CCDE-3604-889A-CBEAE91CC175' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreAccessories.framework/Versions/A/CoreAccessories'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ACCPlatformApplicationNotificationStateChanged, _ACCPlatformApplicationStateDisplayIDKey, 
                        _ACCPlatformApplicationStateKey, _ACCPlatformApplicationStateProcessIDKey, 

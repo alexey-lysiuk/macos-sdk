@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: ECC4E5F3-7AAE-3698-BDF1-E2029FE9AA17' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WeatherKit.framework/Versions/A/WeatherKit'
 current-version: 670.4.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _WMLocationCodingCity, _WMLocationCodingCountry, _WMLocationCodingCountryAbbreviation, 
                        _WMLocationCodingCounty, _WMLocationCodingCreationDate, _WMLocationCodingGeoLocation, 

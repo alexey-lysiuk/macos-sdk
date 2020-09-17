@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 49CAD098-1FB1-3A5C-BD56-4609DC1997DD' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EmbeddedSensingProtocols.framework/Versions/A/EmbeddedSensingProtocols'
 current-version: 2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BinaryFrame_fields, _EmbeddedSensingProtocolsVersionNumber, 
                        _EmbeddedSensingProtocolsVersionString, _pb_close_string_substream, 

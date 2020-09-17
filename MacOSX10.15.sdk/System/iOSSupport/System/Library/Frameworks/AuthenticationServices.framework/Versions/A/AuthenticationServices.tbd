@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 882962E1-6E3C-37FD-AE47-6EFF1075EE62' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/AuthenticationServices'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASAuthorizationAppleIDProviderCredentialRevokedNotification, 
                        _ASAuthorizationErrorDomain, _ASAuthorizationOperationImplicit, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9060722D-7263-3DB7-A116-A9C7A990FC24', 'x86_64: 9060722D-7263-3DB7-A116-A9C7A990FC24' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CallKit.framework/Versions/A/CallKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CXCallDirectoryDefaultHostBundleIdentifier, _CXCallDirectoryDefaultHostServiceName, 
                        _CXCallDirectoryMaintenanceHostBundleIdentifier, _CXCallDirectoryMaintenanceHostServiceName, 

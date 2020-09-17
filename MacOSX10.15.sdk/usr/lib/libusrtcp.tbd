@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 05346A91-737C-33D0-B21B-F040950DFB28', 'x86_64: 05346A91-737C-33D0-B21B-F040950DFB28' ]
 platform:        zippered
 install-name:    '/usr/lib/libusrtcp.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _nw_protocol_sfotcp_identifier, _nw_protocol_tcp_identifier, 
                        _tcp_next_mtu ]

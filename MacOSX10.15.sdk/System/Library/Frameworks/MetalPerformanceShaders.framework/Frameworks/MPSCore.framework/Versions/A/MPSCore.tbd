@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 7EBAC15D-7837-395D-B405-1E29F7DA68FA', 'x86_64: 7EBA
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore'
 current-version: 122.5.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSImage, MPSMatrix, MPSNDArray, MPSNeuralNetwork, MPSParallelPrimitives, 
                          MPSRayIntersector, MetalPerformanceShaders ]

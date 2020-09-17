@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 1CA673EE-EBE5-3228-B524-CBE87DCC9795', 'x86_64: 1CA6
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationFeed.framework/Versions/A/SymptomPresentationFeed'
 current-version: 1238.120.1
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _advisoryToString, _kDarwinNotificationHasAlternateAdvice, 
                        _kDarwinNotificationMaterialLinkQualityChange, _kEstTransferTimeConfidence, 

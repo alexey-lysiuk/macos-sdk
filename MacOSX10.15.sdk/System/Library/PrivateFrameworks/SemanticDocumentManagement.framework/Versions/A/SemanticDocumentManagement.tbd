@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 39E1D4D7-8944-36CE-B762-A7382E0E8EEA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SemanticDocumentManagement.framework/Versions/A/SemanticDocumentManagement'
 current-version: 2.0.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CreateCompressedDataWithData, _CreateDecompressedDataWithData, 
                        _ProcessFiles, _SemanticDocumentManagementIsAvailable, _SemanticDocumentManagementVersionNumber, 

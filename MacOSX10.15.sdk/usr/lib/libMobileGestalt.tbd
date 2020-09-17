@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 2BE94E6A-FA61-312F-84A1-F764D71B7E39', 'x86_64: 2BE94E6A-FA61-312F-84A1-F764D71B7E39' ]
 platform:        zippered
 install-name:    '/usr/lib/libMobileGestalt.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MGCancelNotifications, _MGCopyAnswer, _MGCopyAnswerWithError, 
                        _MGCopyMultipleAnswers, _MGGetBoolAnswer, _MGGetFloat32Answer, 

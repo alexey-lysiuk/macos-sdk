@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 3C1DAE0E-99D2-3F92-A6E6-0E1A802B5088' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3802/Libraries/libGPUCompiler.dylib'
 current-version: 802.6
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MTLGPUCompilerCompileAndSplitFromSource, _MTLGPUCompilerCompileFromSource, 
                        _MTLGPUCompilerCreate, _MTLGPUCompilerDestroy, _MTLGPUCompilerSpecializeFunction, 

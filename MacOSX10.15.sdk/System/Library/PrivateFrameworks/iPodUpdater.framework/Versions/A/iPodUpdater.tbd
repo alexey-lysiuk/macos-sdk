@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 23E03EFF-0148-3F03-BD94-FBD308501B59' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/iPodUpdater.framework/Versions/A/iPodUpdater'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _VVVCreatePodController, _VVVCreatePodWithID, _VVVDeletePod, 
                        _VVVDeletePodController, _VVVGetBreadCrumb, _VVVGetCompletionInstructions, 

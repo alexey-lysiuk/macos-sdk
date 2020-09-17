@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 640DBACE-B6EC-3C72-9F73-F484E891534E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DiskManagement.framework/Versions/A/DiskManagement'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DMDiskManagementToolDiedNotification, _DMLocalizedUserErrorString, 
                        _DMMediaTypeCDROM, _DMMediaTypeDVDROM, _DMMediaTypeGeneric, 

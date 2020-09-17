@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 89D6F60E-D5C3-35A6-8E5E-3E227BD2C800' ]
 platform:        macosx
 install-name:    '/usr/lib/libpam.1.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _dlfailure, _libopenpam, _misc_conv, _pam_acct_mgmt, _pam_authenticate, 
                        _pam_chauthtok, _pam_close_session, _pam_end, _pam_get_data, 

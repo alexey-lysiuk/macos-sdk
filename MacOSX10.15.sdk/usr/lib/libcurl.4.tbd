@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/libcurl.4.dylib'
 current-version: 9
 compatibility-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _curl_easy_cleanup, _curl_easy_duphandle, _curl_easy_escape, 
                        _curl_easy_getinfo, _curl_easy_init, _curl_easy_pause, _curl_easy_perform, 

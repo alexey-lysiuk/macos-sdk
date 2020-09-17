@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: A3F9CE45-4F7A-3F5D-865C-6EB9B6C3B3B4', 'x86_64: A3F9
 platform:        zippered
 install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/Versions/A/SharedUtils'
 current-version: 693.140.3
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ACMContextAddCredential, _ACMContextAddCredentialWithScope, 
                        _ACMContextContainsCredentialType, _ACMContextContainsCredentialTypeEx, 

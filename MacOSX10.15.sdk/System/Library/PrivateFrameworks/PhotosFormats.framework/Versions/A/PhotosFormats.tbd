@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 3CCBAA1E-8047-3FFF-A585-7822C3965D43', 'x86_64: 3CCB
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotosFormats.framework/Versions/A/PhotosFormats'
 current-version: 161.0.120
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CAMUserPreferenceCaptureEncodingBehavior, _CAMUserPreferenceSlomoConfiguration, 
                        _CAMUserPreferenceVideoConfiguration, _IPAMetadataLivePhotoMinimumClientVersion, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A645A92F-CAF9-3B72-B123-9DE970D4E03D', 'x86_64: A645A92F-CAF9-3B72-B123-9DE970D4E03D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SPFinder.framework/Versions/A/SPFinder'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SPFinderStateChangedNotification ]
     objc-classes:    [ SPAdvertisement, SPAdvertisementCache, SPAdvertisementCacheSearchCriteria, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 46D16A1F-D66F-3F63-B77E-50C10AD0CCCF', 'x86_64: 46D16A1F-D66F-3F63-B77E-50C10AD0CCCF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SiriTasks.framework/Versions/A/SiriTasks'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _STStringFromGenericIntentResponseCode, _STWorkoutErrorDomain ]
     objc-classes:    [ STAlarmAction, STAlarmModification, STAlarmShowAlarmAndPerformActionRequest, 

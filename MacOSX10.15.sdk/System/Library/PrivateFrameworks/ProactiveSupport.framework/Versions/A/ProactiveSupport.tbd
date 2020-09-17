@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 82C04814-76A3-394E-AA5F-921E25402B6B', 'x86_64: 82C0
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveSupport.framework/Versions/A/ProactiveSupport'
 current-version: 258.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PASScoreNotSet, _ProactiveSupportVersionNumber, _ProactiveSupportVersionString, 
                        __PASBuddyAllocatorAlloc, __PASBuddyAllocatorAllocZeros, __PASBuddyAllocatorBufferSizeForHeapOfSize, 

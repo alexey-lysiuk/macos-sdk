@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/libFosl_dynamic.dylib'
 current-version: 0
 compatibility-version: 0
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _fosl_filter_addChild, _fosl_filter_addLibraryFunction, _fosl_filter_assignRoot, 
                        _fosl_filter_createConstant, _fosl_filter_createCoordinateTransform, 

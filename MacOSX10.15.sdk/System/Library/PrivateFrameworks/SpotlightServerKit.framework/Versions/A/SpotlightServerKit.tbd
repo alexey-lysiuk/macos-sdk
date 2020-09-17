@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 8AA16596-8C38-30A7-9F9B-D9D403A0A9CD' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpotlightServerKit.framework/Versions/A/SpotlightServerKit'
 current-version: 2076.7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BWA_Create, _BWA_DataAllocate, _BWA_DataDeallocate, _CFDataCreateWithContentsOfURL, 
                        _CF_MaxRange, _CF_RangeIntersection, _CF_RangeUnion, _GetSystemBuildVersionString, 

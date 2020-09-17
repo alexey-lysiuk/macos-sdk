@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2089FCAB-CE3B-302C-8AF3-D48686BB1806' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/SceneKit.framework/Versions/A/SceneKit'
 current-version: 540.10
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _C3DGetFileDecryptionCallbacks, _C3DIOCreateCStringFromCFString, 
                        _C3DIOCreateOptionsForRealtimeViewer, _C3DImageGetAttribute, 

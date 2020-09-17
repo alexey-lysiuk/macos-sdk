@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 83983C65-0003-30E8-9720-5912C73C9E2F', 'x86_64: 8398
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SignpostMetrics.framework/Versions/A/SignpostMetrics'
 current-version: 42.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SignpostMetricsVersionNumber, _SignpostMetricsVersionString, 
                        __MXSignpostMetricsSnapshot ]

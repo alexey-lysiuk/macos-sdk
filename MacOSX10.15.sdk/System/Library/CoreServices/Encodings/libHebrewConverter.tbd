@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 73BD8A06-2DF4-3C51-8EC7-8E3D0837C60F', 'x86_64: 73BD
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libHebrewConverter.dylib'
 current-version: 76
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ ___CFStringEncodingGetHebrewConverterDefinition ]
 ...

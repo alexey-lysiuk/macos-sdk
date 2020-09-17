@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 3B92F249-4602-325F-984B-D2DE61EEE4E1', 'x86_64: 3B92
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData'
 current-version: 353.18
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _LDCreateMobileAssetType, _LDCreateSystemLexiconCompatibilityVersion, 
                        _LDEnumerateAssetDataItems, _kLDAssetTypeCharacterLanguageModel, 

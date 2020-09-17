@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/system/libsystem_kernel.dylib'
 current-version: 6153.141.1
 parent-umbrella: System
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _NDR_record, _____old_semwait_signal_nocancel, _____sigwait_nocancel, 
                        ____kernelVersionNumber, ____kernelVersionString, ___abort_with_payload, 

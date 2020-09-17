@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 03A972FA-1CE3-3C43-8CE5-CF0CAEA8E7B4', 'x86_64: 03A972FA-1CE3-3C43-8CE5-CF0CAEA8E7B4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/VideoProcessing.framework/Versions/A/VideoProcessing'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _MediaAnalysisActivityLevelResultsKey, _MediaAnalysisAdjustedFingerprintKey, 
                        _MediaAnalysisAnalysisTypesKey, _MediaAnalysisApplauseResultsKey, 

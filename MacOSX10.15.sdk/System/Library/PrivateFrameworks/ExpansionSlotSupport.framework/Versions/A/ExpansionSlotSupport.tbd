@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 952D901A-F846-37AE-A632-5A9A43CEA221' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ExpansionSlotSupport.framework/Versions/A/ExpansionSlotSupport'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BG_DI_GetDIMMType, _BG_DI_GetMemoryProperty, _BG_DI_GetNumberOfDIMMs, 
                        _BG_DI_GetNumberOfDIMMsPopulated, _BG_DI_GetSizeOfDIMMs, _BG_DI_InitializeIOUtils, 

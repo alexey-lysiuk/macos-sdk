@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B8D1A34A-B071-3DFF-AED6-2213EBA5A288' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AskPermission.framework/Versions/A/AskPermission'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _APCustomError, _APError, _APErrorDomain, _APGenerateLogKey, 
                        _APLogSubsystemAskPermission, _ConnectionServiceName, _KPRRequestInfoStoreSalableParent, 

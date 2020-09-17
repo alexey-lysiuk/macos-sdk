@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/libform.5.4.dylib'
 current-version: 5.4
 compatibility-version: 5.4
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _TYPE_ALNUM, _TYPE_ALPHA, _TYPE_ENUM, _TYPE_INTEGER, _TYPE_IPV4, 
                        _TYPE_NUMERIC, _TYPE_REGEXP, __nc_Copy_Argument, __nc_Copy_Type, 

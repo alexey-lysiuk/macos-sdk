@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 5EE3AABD-0468-37AD-9DC9-F5FE9B48523E', 'x86_64: 5EE3
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AddressBookAutocomplete.framework/Versions/A/AddressBookAutocomplete'
 current-version: 2421.27
-exports:         
+exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ ABAutocompleteContactPredicate, ABAutocompleteLocalContactResultTransformBuilder, 
                        ABAutocompleteLocalContactResultTransformer, ABAutocompleteLocalQuery, 

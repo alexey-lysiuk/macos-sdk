@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 60CD7919-A479-3636-AA83-D1E66E98827C', 'x86_64: 60CD7919-A479-3636-AA83-D1E66E98827C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PodcastServices.framework/Versions/A/PodcastServices'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _PODContentDomainITunesDatabase, _PODContentDomainSyncToApp, 
                        _PODContentDomainSyncToDevice, _PODContentDomainUnitTest, 

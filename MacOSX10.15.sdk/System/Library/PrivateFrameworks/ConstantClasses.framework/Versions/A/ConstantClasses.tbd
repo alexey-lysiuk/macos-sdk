@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 636422C5-6F3D-33A7-8BF7-54448B0D477A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ConstantClasses.framework/Versions/A/ConstantClasses'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CFStringHashNSString, _GetDataName, _TypeNameForClassOfObject, 
                        __NSConstantDictionaryKeyHash, _codeString, _gArrayDictionary, 

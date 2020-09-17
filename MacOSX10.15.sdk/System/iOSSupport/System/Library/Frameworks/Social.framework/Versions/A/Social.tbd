@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 2652FF0B-1493-38AA-BE21-63D6A131C638' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/Social.framework/Versions/A/Social'
 current-version: 87
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SLAttachmentPayloadIsAssetLibraryURL, _SLAttachmentPayloadIsVideoFileURL, 
                        _SLCreateThumbnailImageForImageData, _SLDownSampledImageData, 

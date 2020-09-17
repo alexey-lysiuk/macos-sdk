@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: 3938CD1B-E242-3474-8A7F-9F66D316AFF3', 'x86_64: 3938
                    'x86_64h: 64C91066-586D-38C0-A2F3-3E60A940F859', 'x86_64h: 64C91066-586D-38C0-A2F3-3E60A940F859' ]
 platform:        zippered
 install-name:    '/usr/lib/libcompression.dylib'
-exports:         
+exports:
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _compression_decode_buffer, _compression_decode_scratch_buffer_size, 
                        _compression_encode_buffer, _compression_encode_scratch_buffer_size, 

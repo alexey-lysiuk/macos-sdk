@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8F7BD342-FBD5-3D99-8CB5-96E9E36B259B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OpenDirectoryConfig.framework/Versions/A/OpenDirectoryConfig'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ODCActionErrorActionsKey, _ODCActionErrorDomain, _ODCActionFinishedNotification, 
                        _ODCActionStartedNotification, _ODCAddODServerStep1, _ODCAddODServerStep2, 

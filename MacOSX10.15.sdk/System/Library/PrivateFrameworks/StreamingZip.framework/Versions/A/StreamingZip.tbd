@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 72CA32F8-4C96-3264-A655-623329EB3A28', 'x86_64: 72CA32F8-4C96-3264-A655-623329EB3A28' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/StreamingZip.framework/Versions/A/StreamingZip'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SZArchiverConvertZipArchiveToStreamable, _SZArchiverCopyStatsDescriptions, 
                        _SZArchiverCopyStatsKeys, _SZArchiverCreateStreamableZip, 

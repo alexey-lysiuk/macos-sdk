@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C1A837FA-411B-313F-8CA0-DDFA1737F414' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PASampling.framework/Versions/A/PASampling'
 current-version: 243.2
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CopyDonatingUniqueIds, _CopyMountStatusData, _CountedStateForSampleThread, 
                        _CreateDsymSymbolOwnerForUUID, _CreatePAImageInfoArrayFromDyldImageInfos, 

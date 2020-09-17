@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: DC603013-A044-322C-BF39-9439FB0DE5DD' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FMNetworking.framework/Versions/A/FMNetworking'
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s12FMNetworking0A10URLSessionMp', '_$s12FMNetworking0A10URLSessionTL', 
                        '_$s12FMNetworking0A16PreferenceDomainSSvau', '_$s12FMNetworking0A16PreferenceDomainSSvp', 

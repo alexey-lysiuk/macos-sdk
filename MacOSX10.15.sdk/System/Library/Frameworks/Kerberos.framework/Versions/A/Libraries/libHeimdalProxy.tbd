@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 0A2905EE-9533-3345-AF9B-AAC71513BDFD', 'x86_64: 0A2905EE-9533-3345-AF9B-AAC71513BDFD' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Kerberos.framework/Versions/A/Libraries/libHeimdalProxy.dylib'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ Kerberos ]
     symbols:         [ _heim_com_right, _heim_com_right_r, _heim_gss_import_name, 

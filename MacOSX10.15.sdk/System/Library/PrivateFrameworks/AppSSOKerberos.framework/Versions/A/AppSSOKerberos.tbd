@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 34BD4AD2-D2A6-3A83-8B21-EEECBCAA5B01', 'x86_64: 34BD4AD2-D2A6-3A83-8B21-EEECBCAA5B01' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppSSOKerberos.framework/Versions/A/AppSSOKerberos'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _kSOKerberosAttributeValueNoSiteCode, _kSOKerberosNotificationADPasswordChanged, 
                        _kSOKerberosNotificationConnectionCompleted, _kSOKerberosNotificationGotNewCredential, 

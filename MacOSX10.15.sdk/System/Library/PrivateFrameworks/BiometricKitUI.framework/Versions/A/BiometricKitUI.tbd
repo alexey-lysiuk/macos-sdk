@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D062418D-3F99-3CDF-AD50-849A3C93FB5A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BiometricKitUI.framework/Versions/A/BiometricKitUI'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BiometricKitUIVersionNumber, _BiometricKitUIVersionString, 
                        _biometric_kit_ui_log ]

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 9C3CDEAB-D92B-34DC-84E7-5C150FAECF31' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/JavaLaunching.framework/Versions/A/JavaLaunching'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _JLCopyDefaultPrefForTaskAndKey, _JLCopyUserPrefForTaskAndKey, 
                        _JLCreateCompleteJVMListForTask, _JLCreateJVMListForTask, 

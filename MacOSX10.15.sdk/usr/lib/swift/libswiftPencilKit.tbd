@@ -5,7 +5,7 @@ platform:        macosx
 install-name:    '/usr/lib/swift/libswiftPencilKit.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s9PencilKit9PKDrawingV11transformed5usingACSo17CGAffineTransformV_tF', 
                        '_$s9PencilKit9PKDrawingV18dataRepresentation10Foundation4DataVyF', 

@@ -5,7 +5,7 @@ platform:        zippered
 install-name:    '/usr/lib/swift/libswiftCoreMIDI.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ '_$s8CoreMIDI30UnsafeMutableMIDIPacketPointerV10startIndexSivg', 
                        '_$s8CoreMIDI30UnsafeMutableMIDIPacketPointerV10startIndexSivpMV', 

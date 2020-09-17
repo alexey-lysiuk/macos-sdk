@@ -4,7 +4,7 @@ uuids:           [ 'x86_64: C5C769F3-3B47-3646-950C-9025EBF4E75F' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/iOSSupport/System/Library/PrivateFrameworks/WebCore.framework/Versions/A/WebCore', 
                        '/System/iOSSupport/System/Library/PrivateFrameworks/WebKitLegacy.framework/Versions/A/WebKitLegacy' ]
@@ -893,7 +893,7 @@ uuids:           [ 'x86_64: 9C5CAC60-DCB2-3013-A3AC-5262A68BC7D8' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/WebCore.framework/Versions/A/WebCore'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ Casablanca, DumpRenderTree, Remote, TVBooks, TestWebKitAPI, 
                          WebCoreTestSupport, WebKit, WebKitLegacy, WebKitTestRunner, 
@@ -6377,7 +6377,7 @@ uuids:           [ 'x86_64: 32660BA0-4F30-350D-92B1-9BCBC859455A' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/WebKitLegacy.framework/Versions/A/WebKitLegacy'
 current-version: 609.3.5
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _DOMEventException, _DOMException, _DOMRangeException, _DOMXPathException, 
                        _WAKViewDidScrollNotification, _WAKViewFrameSizeDidChangeNotification, 

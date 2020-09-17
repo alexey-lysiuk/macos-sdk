@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 669BCAF4-D9A0-357B-9B90-21FC36A61631', 'x86_64: 669BCAF4-D9A0-357B-9B90-21FC36A61631' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CRFrameworkVersionNumber, _CRFrameworkVersionString, _CRPropertyOneOf, 
                        _CRPropertyOneOfKey, _CRPropertyRegisterLatest, _CRPropertySet, 

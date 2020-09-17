@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D701066A-C75E-3605-B4DC-4B1DA8287973' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BridgeOSInstall.framework/Versions/A/BridgeOSInstall'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _BOSErrorDomain, _BOSErrorIsNetworkingRelated, _BOSErrorIsTATSUDeclinedAuthorization, 
                        _BOSErrorRecoverySuggestionURL, _BOSErrorUserInfoRecoverySuggestionURLKey, 

@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8F94505C-96C2-3694-BEC7-F3B5581A7AB9' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CorePDF.framework/Versions/A/CorePDF'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     symbols:         [ _CGPDFArchiveAddSelection, _CGPDFArchiveCreate, _CGPDFArchiveGetHTML, 
                        _CGPDFArchiveGetPlainText, _CGPDFArchiveGetRTFDData, _CGPDFArchiveGetStructuredString, 

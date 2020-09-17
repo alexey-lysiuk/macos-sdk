@@ -3,7 +3,7 @@ archs:           [ x86_64 ]
 uuids:           [ 'x86_64: D2F90705-A101-3BDD-BC03-26707A32B63F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MediaMiningKit.framework/Versions/A/MediaMiningKit'
-exports:         
+exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ PhotoAnalysis, PhotosGraph ]
     symbols:         [ _CLSAggregateLastWeeklyReportingTimestamp, _CLSBenchmarkGetMemory, 
