@@ -1,5 +1,0 @@
-framework module DiscRecording [system] {
-    umbrella header "DiscRecording.h"
-    export *
-    module * { export * }
-}

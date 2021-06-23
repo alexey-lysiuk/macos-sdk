@@ -1,8 +1,0 @@
-framework module PCSC [system] {
-    requires !swift
-
-    umbrella header "PCSC.h"
-
-    export *
-    module * { export * }
-}

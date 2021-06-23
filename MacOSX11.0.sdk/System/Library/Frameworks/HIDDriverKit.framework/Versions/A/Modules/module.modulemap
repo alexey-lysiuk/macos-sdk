@@ -1,6 +1,0 @@
-framework module HIDDriverKit {
-  umbrella header "HIDDriverKit.h"
-
-  export *
-  module * { export * }
-}

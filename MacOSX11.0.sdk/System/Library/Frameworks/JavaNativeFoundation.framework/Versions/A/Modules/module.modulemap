@@ -1,5 +1,0 @@
-framework module JavaNativeFoundation [extern_c] {
-    umbrella header "JavaNativeFoundation.h"
-    export *
-    module * { export * }
-}

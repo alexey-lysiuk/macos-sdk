@@ -1,5 +1,0 @@
-framework module OSAKit [system] {
-    umbrella header "OSAKit.h"
-    export *
-    module * { export * }
-}

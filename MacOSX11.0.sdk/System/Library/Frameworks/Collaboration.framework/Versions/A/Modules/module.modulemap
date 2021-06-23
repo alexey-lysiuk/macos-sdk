@@ -1,6 +1,0 @@
-framework module Collaboration [system] {
-    umbrella header "Collaboration.h"
-    
-    export *
-    module * { export * }
-}
