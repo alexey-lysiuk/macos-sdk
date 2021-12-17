@@ -1,1 +1,0 @@
-#error MJIT does not support '/System/Volumes/Data/SWE/macOS/BuildRoots/6b362bc7f6/Applications/Xcode.app/Contents/Developer/Toolchains/OSX12.0.xctoolchain/usr/bin/clang -arch arm64e' yet
