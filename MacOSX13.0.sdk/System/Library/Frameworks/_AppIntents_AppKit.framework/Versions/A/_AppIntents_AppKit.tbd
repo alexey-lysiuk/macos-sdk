@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           3D64171F-6C2C-3FC4-9BD3-ED9431B0F3BA
+  - target:          x86_64-maccatalyst
+    value:           3D64171F-6C2C-3FC4-9BD3-ED9431B0F3BA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           850996F0-B5B0-39C0-9DDD-B9327B8B30A0
+  - target:          arm64e-maccatalyst
+    value:           850996F0-B5B0-39C0-9DDD-B9327B8B30A0
+install-name:    '/System/Library/Frameworks/_AppIntents_AppKit.framework/Versions/A/_AppIntents_AppKit'
+current-version: 130.5
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s10AppIntents21DisplayRepresentationV5ImageV01_ab1_A3KitE10systemName9tintColor19symbolConfigurationAESgSS_So7NSColorCSgSo013NSImageSymbolL0CSgtcfC' ]
+...

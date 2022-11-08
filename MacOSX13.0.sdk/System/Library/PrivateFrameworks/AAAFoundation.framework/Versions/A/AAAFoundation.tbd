@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           B43BBF1D-5475-396E-BC51-CE8755229BF9
+  - target:          x86_64-maccatalyst
+    value:           B43BBF1D-5475-396E-BC51-CE8755229BF9
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           CDBA1059-0D7A-341A-86F0-2397E8B17AC1
+  - target:          arm64e-maccatalyst
+    value:           CDBA1059-0D7A-341A-86F0-2397E8B17AC1
+install-name:    '/System/Library/PrivateFrameworks/AAAFoundation.framework/Versions/A/AAAFoundation'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _AAAFoundationVersionNumber, _AAAFoundationVersionString, 
+                       _AAFSerializationErrorDomain, _AAFTTRErrorDomain, _AFUtilitiesAppleIDBundleID, 
+                       _AFUtilitiesBatteryBundleID, _AFUtilitiesFamilySharingBundleID, 
+                       _AFUtilitiesInternetAccountsBundleID, _AFUtilitiesMailAppBundleIdentifier, 
+                       _AFUtilitiesNetworkBundleID, _AFUtilitiesPhotosAppBundleIdentifier, 
+                       _AFUtilitiesScreenTimeBundleID, _AFUtilitiesSecurityBundleID, 
+                       _AFUtilitiesSharingBundleID, _AFUtilitiesSoftwareUpdateBundleIdentifier, 
+                       _AFUtilitiesStoreAppBundleIdentifier, _AFUtilitiesSystemSettingsPath, 
+                       _AFUtilitiesUsersAndGroupsBundleID, __AAFLogSystem, __AFTTRAutoDiagnosticsKey, 
+                       __AFTTRAutoDiagnosticsPhone, __AFTTRClassificationKey, __AFTTRClassificationSeriousBug, 
+                       __AFTTRComponentIDKey, __AFTTRComponentNameKey, __AFTTRComponentVersionKey, 
+                       __AFTTRDescriptionKey, __AFTTRHost, __AFTTRKeywordsKey, __AFTTRReproducibilityDidntTry, 
+                       __AFTTRReproducibilityKey, __AFTTRScheme, __AFTTRTitleKey, 
+                       _kAAFDisableCertPinningKey, _kAAFInternalSettingsDomain ]
+    objc-classes:    [ AAFCertificateTrustValidator, AAFDefaultSerializer, AAFDeviceInfo, 
+                       AAFImage, AAFJsonSerializer, AAFKeychainItem, AAFKeychainItemDescriptor, 
+                       AAFKeychainManager, AAFPlistSerializer, AAFPromise, AAFSerialization, 
+                       AAFService, AAFTapToRadarHelper, AAFTapToRadarRequest, AAFXPCSession, 
+                       AAFXPCSessionConfig, AFUtilities ]
+...

@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           4DE096F4-14D4-35F2-B7CC-223F46AA4381
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           8220A458-2208-3850-8860-21BFEA34C6A9
+install-name:    '/System/Library/PrivateFrameworks/iCloudQuotaUI.framework/Versions/A/iCloudQuotaUI'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s13iCloudQuotaUI0B6LoggerO2ui2os0D0Vvau', '_$s13iCloudQuotaUI0B6LoggerO2ui2os0D0VvgZ', 
+                       '_$s13iCloudQuotaUI0B6LoggerO2ui2os0D0VvpZ', '_$s13iCloudQuotaUI0B6LoggerOMa', 
+                       '_$s13iCloudQuotaUI0B6LoggerOMn', '_$s13iCloudQuotaUI0B6LoggerON', 
+                       _AMSMetricsOverlayMTTopicKey, _AMSMetricsOverlayMTTopicValue, 
+                       _ICQBackupInfoDidChangeNotification, _ICQCurrentInAppMessageChangedNotification, 
+                       _ICQInAppActionButtonTypeBanner, _ICQInAppActionButtonTypeKey, 
+                       _ICQInAppActionButtonTypePopover, _ICQInAppMessageKey, _ICQInternetPrivacyViewModelStatusDescription, 
+                       _ICQManageStorageBackupIdentifier, _ICQQuotaDidChangeNotification, 
+                       _ICQUIActionJoinFamilySharing, _ICQUIActionKey, _ICQUIActionLeaveFamilySharing, 
+                       _ICQUIActionStopFamilySharing, _ICQUIInAppMessageIdentifierAirplaneMode, 
+                       _ICQUIInAppMessageIdentifierServerUnreachable, _ICQUIPathChangeStoragePlan, 
+                       _ICQUIPathCurrentDeviceBackup, _ICQUIPathDeviceOffers, _ICQUIPathManageStorage, 
+                       _ICQUIPathPhotos, _ICQUIPathStorageUpgrade, _ICQUIQueryParamNameDeviceOffers, 
+                       _ICQUIQueryParamNameFramework, _ICQUIQueryParamNamePath, _ICQUIQueryParamNameRemotePresentation, 
+                       _ICQUIQueryParamValueFramework, _ICQUIQueryParamValueTrue, 
+                       _ICQUISpecifierKeyAccount, _ICQUniversalLinkWithQueryStart, 
+                       _NSPPrivacyProxyAccountTypeDescription, _NSPPrivacyProxyUserTierDecription ]
+    objc-classes:    [ ICQDynamicUIPresenter, ICQInAppAction, ICQInAppMessage, ICQInAppMessaging, 
+                       ICQInternetPrivacyBannerModel, ICQInternetPrivacyPrefPaneViewController, 
+                       ICQInternetPrivacyQuotaFetcher, ICQInternetPrivacyQuotaInfoResponse, 
+                       ICQInternetPrivacyRestrictions, ICQInternetPrivacyViewModel, 
+                       ICQLinkInAppAction, ICQPurchase, ICQUpgradeFlowManager, ICQiCloudPurchaseStorageController, 
+                       _ICQUIHelperFunctions ]
+...

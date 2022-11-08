@@ -1,0 +1,55 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           8675478D-16CF-3096-9BF7-6125BA9F8239
+  - target:          x86_64-maccatalyst
+    value:           8675478D-16CF-3096-9BF7-6125BA9F8239
+  - target:          arm64-macos
+    value:           C4EF404E-8134-3D62-99F1-7F475077F511
+  - target:          arm64-maccatalyst
+    value:           C4EF404E-8134-3D62-99F1-7F475077F511
+  - target:          arm64e-macos
+    value:           BB0949D3-A76E-3D9F-B3B8-9737D96B3076
+  - target:          arm64e-maccatalyst
+    value:           BB0949D3-A76E-3D9F-B3B8-9737D96B3076
+install-name:    '/usr/lib/libParallelCompression.dylib'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _BXDiff5, _BXDiff5GetPatchInfo, _BXDiff5WithIndividualPatches, 
+                       _BXPatch5, _BXPatch5FileWithFlags, _BXPatch5InPlace, _BXPatch5StreamWithFlags, 
+                       _BXPatch5WithFlags, _BXPatchFile, _DirectoryDiff, _DirectoryPatch, 
+                       _ISparseArchiveStreamCreate, _ISparseArchiveStreamDestroy, 
+                       _ISparseArchiveStreamRead, _PCompressFilter, _ParallelArchiveCheckAndFix, 
+                       _ParallelArchiveCombine, _ParallelArchiveConvert, _ParallelArchiveECCFixBuffer, 
+                       _ParallelArchiveECCFixFileSegment, _ParallelArchiveECCGenerateFromBuffer, 
+                       _ParallelArchiveECCGenerateFromFileSegment, _ParallelArchiveECCVerifyBuffer, 
+                       _ParallelArchiveECCVerifyFileSegment, _ParallelArchiveExtract, 
+                       _ParallelArchiveExtractClones, _ParallelArchiveExtractSubtree, 
+                       _ParallelArchiveGenerateBOM, _ParallelArchiveGenerateMSUBOM, 
+                       _ParallelArchiveGetPayloadSize, _ParallelArchiveOLDWriterAddEntry, 
+                       _ParallelArchiveOLDWriterCreate, _ParallelArchiveOLDWriterDestroy, 
+                       _ParallelArchiveRead, _ParallelArchiveReadMetadata, _ParallelArchiveSearch, 
+                       _ParallelArchiveSort, _ParallelArchiveVerifyDir, _ParallelArchiveWriteDirContents, 
+                       _ParallelArchiveWriteEntryData, _ParallelArchiveWriteEntryHeader, 
+                       _ParallelArchiveWriterCreate, _ParallelArchiveWriterCreateLegacy, 
+                       _ParallelArchiveWriterDestroy, _ParallelCompressionAFSCCompress, 
+                       _ParallelCompressionAFSCFixupMetadata, _ParallelCompressionAFSCGetMetadata, 
+                       _ParallelCompressionAFSCGetMetadataFD, _ParallelCompressionAFSCStreamClose, 
+                       _ParallelCompressionAFSCStreamOpen, _ParallelCompressionAFSCStreamWrite, 
+                       _ParallelCompressionAFSCUseMaxEmbeddedSize, _ParallelCompressionDecode, 
+                       _ParallelCompressionEncode, _ParallelCompressionEnterThreadErrorContext, 
+                       _ParallelCompressionFileClose, _ParallelCompressionFileOpen, 
+                       _ParallelCompressionFileRead, _ParallelCompressionFileSeek, 
+                       _ParallelCompressionFileWrite, _ParallelCompressionGetCompressedSize, 
+                       _ParallelCompressionIStreamAbort, _ParallelCompressionIStreamCreate, 
+                       _ParallelCompressionIStreamDestroy, _ParallelCompressionIStreamRead, 
+                       _ParallelCompressionLeaveThreadErrorContext, _ParallelCompressionOStreamAbort, 
+                       _ParallelCompressionOStreamCreate, _ParallelCompressionOStreamDestroy, 
+                       _ParallelCompressionOStreamWrite, _ParallelCompressionUpdateError, 
+                       _ParallelCompressionUpdateWarning, _RawImageDiff, _RawImageGetPatchInfo, 
+                       _RawImagePatch ]
+...

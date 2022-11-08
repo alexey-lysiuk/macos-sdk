@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           2B25921B-D82B-3EB9-93BB-742D0E56ED25
+  - target:          x86_64-maccatalyst
+    value:           2B25921B-D82B-3EB9-93BB-742D0E56ED25
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           93A95A4B-A483-3EFA-83CF-6DAF93F9EE0F
+  - target:          arm64e-maccatalyst
+    value:           93A95A4B-A483-3EFA-83CF-6DAF93F9EE0F
+install-name:    '/System/Library/PrivateFrameworks/InAppMessagesCore.framework/Versions/A/InAppMessagesCore'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _IAMApplicationDidBecomeActiveEventName, _IAMLogCategoryDefault, 
+                       _IAMLogCategoryDefault_Oversize, _IAMWebProcessShouldDismissPresentationBeforeOpen, 
+                       _IAMWebProcessShouldDismissPresentationBeforePerformingAction, 
+                       _InAppMessagesCoreVersionNumber, _InAppMessagesCoreVersionString ]
+    objc-classes:    [ IAMAction, IAMApplicationDidBecomeActiveEvent, IAMContent, 
+                       IAMCountableEvent, IAMEvent, IAMFigaroEvent, IAMImage, IAMImpression, 
+                       IAMMessage, IAMPresentationPolicy, IAMTempTestMessages, IAMValueEvent ]
+...

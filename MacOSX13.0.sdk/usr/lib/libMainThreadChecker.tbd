@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           78718E2F-C507-3ABB-A412-3A9CEE1C3CA4
+  - target:          x86_64-maccatalyst
+    value:           78718E2F-C507-3ABB-A412-3A9CEE1C3CA4
+  - target:          arm64e-macos
+    value:           16E09149-CCDD-3BAB-AE9A-99C768B0C692
+  - target:          arm64e-maccatalyst
+    value:           16E09149-CCDD-3BAB-AE9A-99C768B0C692
+install-name:    '/usr/lib/libMainThreadChecker.dylib'
+...

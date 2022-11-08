@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           D6FC47CA-573F-3541-AE5C-38BB8913C9F6
+  - target:          x86_64-maccatalyst
+    value:           D6FC47CA-573F-3541-AE5C-38BB8913C9F6
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B86A5E69-A4D0-3E3A-8675-5A4905B11484
+  - target:          arm64e-maccatalyst
+    value:           B86A5E69-A4D0-3E3A-8675-5A4905B11484
+install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/LegacyHandle.framework/Versions/A/LegacyHandle'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _CheckInHandleDebug, _CheckOutHandleDebug, _CloseAllHandles, 
+                       _CreateHandle, _FindHandle, _GetNumHandles ]
+...

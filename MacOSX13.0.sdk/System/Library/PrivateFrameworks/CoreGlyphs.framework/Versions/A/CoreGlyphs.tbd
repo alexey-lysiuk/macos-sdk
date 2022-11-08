@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           D807FD42-5313-3E86-B011-E8A278C42709
+  - target:          x86_64-maccatalyst
+    value:           D807FD42-5313-3E86-B011-E8A278C42709
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           3054C93A-C56A-3245-A1DE-B2E14F2B8E2F
+  - target:          arm64e-maccatalyst
+    value:           3054C93A-C56A-3245-A1DE-B2E14F2B8E2F
+install-name:    '/System/Library/PrivateFrameworks/CoreGlyphs.framework/Versions/A/CoreGlyphs'
+current-version: 98
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s10CoreGlyphs12name_aliasesSDyS2SGvg', '_$s10CoreGlyphs12symbol_orderSaySSGvg', 
+                       '_$s10CoreGlyphs14nofill_to_fillSDyS2SGvg', '_$s10CoreGlyphs20private_name_aliasesSDyS2SGvg', 
+                       '_$s10CoreGlyphs20private_symbol_orderSaySSGvg', '_$s10CoreGlyphs22private_nofill_to_fillSDyS2SGvg', 
+                       _CoreGlyphsVersionNumber, _CoreGlyphsVersionString, _kCoreGlyphsNameAliases, 
+                       _kCoreGlyphsNoFillToFill, _kCoreGlyphsPrivateNameAliases, 
+                       _kCoreGlyphsPrivateNoFillToFill, _kCoreGlyphsPrivateSymbolOrder, 
+                       _kCoreGlyphsSymbolOrder ]
+...

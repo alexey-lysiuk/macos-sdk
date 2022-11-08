@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           A0E6433E-7059-37A5-8E35-C5407F6C8B83
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           D3084043-E6DA-3060-A519-17424928C775
+install-name:    '/System/Library/PrivateFrameworks/USDLib_FormatLoaderProxy.framework/Versions/A/USDLib_FormatLoaderProxy'
+current-version: 20.1.3
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _USDLib_FormatLoaderProxyVersionNumber, _USDLib_FormatLoaderProxyVersionString ]
+...

@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           AD8CF30A-6223-3957-9370-0AB57A192CA1
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           4E14A35F-EB3D-32B6-905E-9C2DEC7DA388
+install-name:    '/System/Library/PrivateFrameworks/AvailabilityKit.framework/Versions/A/AvailabilityKit'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AKAvailabilityStatusTypeIdentifier ]
+    objc-classes:    [ AKAvailability, AKAvailabilityInvitation ]
+...

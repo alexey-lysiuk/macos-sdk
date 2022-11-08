@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           1BAB4DC8-7BB9-39A4-8C9A-FE67FFED6940
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           0CE9609F-59CA-3F0C-8DC9-CA3280B5FEB6
+install-name:    '/System/Library/PrivateFrameworks/GridDataServices.framework/Versions/A/GridDataServices'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _GridDataServicesVersionNumber, _GridDataServicesVersionString, 
+                       _kAverageKey, _kGDSFakeDataDomain, _kGDSFakeForecastKey, _kHMAC_DEV_SECRET, 
+                       _kHMAC_PROD_SECRET, _kHMAC_SECRET, _kHMAC_SECRET_VERSION, 
+                       _kHMAC_TEST_SECRET, _kMarginalKey ]
+    objc-classes:    [ _GDSBalancingAuthority, _GDSBalancingAuthorityOutput, _GDSEmissionForecast, 
+                       _GDSEmissionHistory, _GDSHMACGenerator, _GDSManager, _GDSServerConnection ]
+...

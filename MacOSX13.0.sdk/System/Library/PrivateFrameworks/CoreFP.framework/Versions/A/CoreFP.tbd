@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           84CF6C3F-0E3B-38A4-AA98-26E378FAF4D4
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           C44F2A72-E239-30D3-91E1-80F216E753FD
+flags:           [ not_app_extension_safe ]
+install-name:    '/System/Library/PrivateFrameworks/CoreFP.framework/CoreFP'
+current-version: 3.10
+compatibility-version: 2.2.19
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _WIn9UJ86JKdV4dM, _X46O5IeS, _YlCJ3lg, _dku592fbFAj, _fdjkDSAFjklaf2s, 
+                       _lxpgvVMLd0S7uRl ]
+...

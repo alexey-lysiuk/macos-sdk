@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-maccatalyst
+    value:           43E80904-DE96-38A7-B6DB-5CE70046C6D7
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-maccatalyst
+    value:           5AFBCADB-9D08-32DB-AE9F-ADB7AB2838E5
+install-name:    '/System/iOSSupport/System/Library/Frameworks/CoreLocationUI.framework/Versions/A/CoreLocationUI'
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ _CoreLocationUIVersionNumber, _CoreLocationUIVersionString ]
+    objc-classes:    [ CLLocationButton, CLLocationButtonDrawing, CLLocationButtonTag ]
+...

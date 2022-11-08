@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           00AF11BD-7B03-339D-A142-7F575A043CE6
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           2E2DB5A5-FAAF-3A4C-B339-DA91C564E3AF
+install-name:    '/System/Library/PrivateFrameworks/AccessibilityPlatformTranslation.framework/Versions/A/AccessibilityPlatformTranslation'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AXPConvertValue, _AXPCustomActionIdentifier, _AXPCustomActionName, 
+                       _AXPCustomRotorDirection, _AXPCustomRotorName, _AXPCustomRotorSystemType, 
+                       _AXPCustomRotorTargetElement, _AXPCustomRotorTargetRange, 
+                       _AXPCustomRotorUUID, _AXPFontAttributeName, _AXPForegroundColorAttributeName, 
+                       _AXPIsCatalyst, _AXPIsGoodOldAppleCatalystApp, _AXPIsiOSAppOnMac, 
+                       _AXPLinkedOnOrAfterGozul, _AXPNilOrEmptyString, _AXPOriginalFontAttributeName, 
+                       _AXPParagraphStyleAttributeName, _AXPSearchStartElementKey, 
+                       _AXPShadowAttributeName, _AXPTextAlternativesAttributeName, 
+                       _AXPTextEffectAttributeName, __AXPActionToString, __AXPAttributeToString, 
+                       __AXPNotificationToString ]
+    objc-classes:    [ AXPMacPlatformElement, AXPTranslationObject, AXPTranslator, 
+                       AXPTranslatorRequest, AXPTranslatorResponse ]
+...

@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           8507139D-B400-39E4-A653-93B4C280EA38
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           BB5F6949-4823-3B0C-8F02-67992BF0AB14
+install-name:    '/System/Library/PrivateFrameworks/ContextKit.framework/Versions/A/ContextKit'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CKContextKitNotification_ConfigurationUpdate, _CKContextTagTypeAddress, 
+                       _CKContextTagTypeDateTime, _CKContextTagTypeHMAccessory, _CKContextTagTypeHMHome, 
+                       _CKContextTagTypeHMRoom, _CKContextTagTypeLiveText, _CKContextTagTypePersonReal, 
+                       _CKContextTagTypePhoneNumber, _CKContextTagTypePlainTextLabel, 
+                       _CKContextTagTypeTitle, _CKContextTagTypeURL, _ContextKitErrorDomain, 
+                       _ContextKitVersionNumber, _ContextKitVersionString ]
+    objc-classes:    [ CKContextClient, CKContextCompleter, CKContextCountedItem, 
+                       CKContextFingerprint, CKContextFingerprintMinHash, CKContextGlobals, 
+                       CKContextRequest, CKContextResponse, CKContextResult, CKContextSemaphore, 
+                       CKContextXPCClient ]
+...

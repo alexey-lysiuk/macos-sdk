@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           ED2FA719-5D91-3F94-80B3-C19743E9C398
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           73475A2E-AA4B-36F6-B181-5B58AF0A81D1
+install-name:    '/System/Library/PrivateFrameworks/IOPlatformPluginFamily.framework/Versions/A/IOPlatformPluginFamily'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _EOFToken, _EndOfFile, _ErrorToken, _Errors, _IOPPFGetDiagProperty, 
+                       _IOPPFGetDiagPropertyFromDict, _IOPPFGetHandler, _IOPPFGetProperty, 
+                       _IOPPFPrintTest, _IOPPFSetFanThrottleMode, _IOPPFSetProperties, 
+                       _Opcodes, _SpecialTokens, _SymbolTable, _WordTokens, _curIndex, 
+                       _curState, _curSubState, _debug, _encounteredErrors, _error_string, 
+                       _iblen, _iboffset, _inputBuf, _inputFile, _inputFileName, 
+                       _lineNum, _listSymbolTable, _main, _outputFileName, _outputReport, 
+                       _savedToken ]
+...

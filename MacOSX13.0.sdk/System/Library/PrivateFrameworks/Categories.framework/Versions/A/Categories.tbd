@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           69838189-7149-388C-93C5-D6F722492BA4
+  - target:          x86_64-maccatalyst
+    value:           69838189-7149-388C-93C5-D6F722492BA4
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           0F94D229-2C50-37D2-AB45-0733177A6DA2
+  - target:          arm64e-maccatalyst
+    value:           0F94D229-2C50-37D2-AB45-0733177A6DA2
+install-name:    '/System/Library/PrivateFrameworks/Categories.framework/Versions/A/Categories'
+current-version: 31
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _CTCategoriesDidChangeNotification, _CTCategoriesVersionIdentifierKey, 
+                       _CTCategoriesVersionNumber, _CTCategoriesVersionString, _CTCategoryIdentifierCreativity, 
+                       _CTCategoryIdentifierEducation, _CTCategoryIdentifierEntertainment, 
+                       _CTCategoryIdentifierGames, _CTCategoryIdentifierHealthAndFitness, 
+                       _CTCategoryIdentifierOther, _CTCategoryIdentifierProductivity, 
+                       _CTCategoryIdentifierReadingAndReference, _CTCategoryIdentifierShoppingAndFood, 
+                       _CTCategoryIdentifierSocialNetworking, _CTCategoryIdentifierSystemBlockable, 
+                       _CTCategoryIdentifierSystemHidden, _CTCategoryIdentifierSystemUnblockable, 
+                       _CTCategoryIdentifierTravel, _CTCategoryIdentifierUtilities, 
+                       _CTErrorDomain, _CTErrorKeyHTTPResponse, _CTErrorKeyHTTPResponseData, 
+                       _CTOSPlatformAll, _CTOSPlatformCurrent, _CTOSPlatformiOS, 
+                       _CTOSPlatformmacOS, _CTOSPlatformtvOS, _CTOSPlatformwatchOS ]
+    objc-classes:    [ CTCategories, CTCategory, CTError, CTLogging, CTUtilities ]
+...

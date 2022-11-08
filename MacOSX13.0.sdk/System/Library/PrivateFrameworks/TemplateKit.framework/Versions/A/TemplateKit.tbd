@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           FDBB37FA-1B95-349D-9956-61CF1EC520A4
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           83315C05-231E-33CB-9317-7A5A2782519C
+install-name:    '/System/Library/PrivateFrameworks/TemplateKit.framework/Versions/A/TemplateKit'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _TLKContentSizeCategoryDidChangeNotification, _TLKMinimumHorizontalSpacingBetweenImageAndText, 
+                       _TLKMinimumHorizontalSpacingBetweenSmallImageAndText, _TLKMinimumHorizontalSpacingBetweenText, 
+                       _TLKMinimumVerticalSpacingBetweenTextBaselineAndImage, _TLKStandardBaselineSpacingBetweenText, 
+                       _TemplateKitVersionNumber, _TemplateKitVersionString ]
+    objc-classes:    [ TLKActivityIndicatorView, TLKAppearance, TLKAuxilliaryTextView, 
+                       TLKButton, TLKButtonView, TLKDescriptionView, TLKDetailsSection, 
+                       TLKDetailsView, TLKEmbossedLabel, TLKEnlargedTitleView, TLKFontUtilities, 
+                       TLKFormattedText, TLKFormattedTextItem, TLKGridLayoutManager, 
+                       TLKGridRowView, TLKHeaderView, TLKIcon, TLKImage, TLKImageAttachment, 
+                       TLKImageView, TLKImagesView, TLKInlineImage, TLKInlineRoundedText, 
+                       TLKKeyValueTuple, TLKKeyValueView, TLKLabel, TLKLayoutUtilities, 
+                       TLKMediaInfoView, TLKMultilineText, TLKObject, TLKPassThroughScrollView, 
+                       TLKProminenceView, TLKRichText, TLKRoundedCornerLabel, TLKSButton, 
+                       TLKSectionHeaderView, TLKSelectableGridTuple, TLKSelectableGridView, 
+                       TLKSimpleRowView, TLKSplitHeaderView, TLKStackView, TLKStars, 
+                       TLKStoreButton, TLKTableCellView, TLKTableColumnAlignment, 
+                       TLKTableHeaderRow, TLKTableRow, TLKTableViewController, TLKTextAreaView, 
+                       TLKTextButton, TLKTextView, TLKTitleContainerView, TLKUtilities, 
+                       TLKView ]
+...

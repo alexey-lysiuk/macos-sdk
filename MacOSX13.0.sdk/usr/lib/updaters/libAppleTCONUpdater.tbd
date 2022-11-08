@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64-macos, arm64e-macos ]
+uuids:
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           3A0A7AD0-F806-302D-BB9B-28E5EE9A541B
+install-name:    '/usr/lib/updaters/libAppleTCONUpdater.dylib'
+exports:
+  - targets:         [ arm64-macos, arm64e-macos ]
+    symbols:         [ _AppleTCONUpdaterCreate, _AppleTCONUpdaterExecCommand, _AppleTCONUpdaterIsDone ]
+...

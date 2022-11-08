@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           EB9A8E4F-8675-3DBD-8C32-6AEAFF1D3DD4
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           E077C148-9870-3A90-8EC7-0AFA33047363
+install-name:    '/System/Library/PrivateFrameworks/ContainerManagerUser.framework/Versions/A/ContainerManagerUser'
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ ContainerManagerSystem, ContainerManagerUser, ContainerMigrator, 
+                       MobileContainerManager, containermanagerd ]
+...

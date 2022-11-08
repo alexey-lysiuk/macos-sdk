@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           BB9DC84C-BC4D-3F7F-B97D-C15C6E1DF72E
+  - target:          x86_64-maccatalyst
+    value:           BB9DC84C-BC4D-3F7F-B97D-C15C6E1DF72E
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           A8D5BE06-5FA8-3E91-BEC9-99E8BF006C2D
+  - target:          arm64e-maccatalyst
+    value:           A8D5BE06-5FA8-3E91-BEC9-99E8BF006C2D
+install-name:    '/System/Library/Frameworks/SafetyKit.framework/Versions/A/SafetyKit'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _SAClientInterface, _SACrashDetectionEntitlement, _SACrashDetectionEventTimeoutDefault, 
+                       _SAEmergencyResponseVoiceCallTimeoutDefault, _SAErrorDomain, 
+                       _SALoggingSubsystem, _SAMachServiceName, _SAServerInterface, 
+                       _sa_default_log ]
+    objc-classes:    [ SAAuthorization, SAAuthorizationInFlight, SABundleManager, 
+                       SABundleManagerApp, SAClient, SACrashDetectionEvent, SACrashDetectionManager, 
+                       SACriticalNotification, SAEmergencyResponseManager, SAEntitlement, 
+                       SAError, SAGestalt, SALocationManager, SAPhoneApplicationLauncher, 
+                       SAServer, SATelephonyManager, SAWatchApplicationLauncher ]
+...

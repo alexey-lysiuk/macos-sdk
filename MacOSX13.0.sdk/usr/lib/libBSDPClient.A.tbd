@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           76306E61-FF2F-3B0E-BF9D-E7D8CF71910B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           CC79B8A4-C20F-3959-A0E8-CBF114CAE855
+install-name:    '/usr/lib/libBSDPClient.A.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _BSDPClientCreate, _BSDPClientCreateWithInterface, _BSDPClientCreateWithInterfaceAndAttributes, 
+                       _BSDPClientFree, _BSDPClientList, _BSDPClientSelect, _BSDPImageDescriptionIdentifierImageKind, 
+                       _BSDPImageDescriptionIdentifierIsInstall, _BSDPImageDescriptionIdentifierIsServerLocal, 
+                       _BSDPImageDescriptionIndexIsServerLocal, _BSPPClientSelect ]
+...

@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           4B0A00F4-EEBC-39E5-90CC-B0B8C43DD3BA
+  - target:          x86_64-maccatalyst
+    value:           4B0A00F4-EEBC-39E5-90CC-B0B8C43DD3BA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           A6A60785-5544-3C78-92D4-80100AF83387
+  - target:          arm64e-maccatalyst
+    value:           A6A60785-5544-3C78-92D4-80100AF83387
+install-name:    '/System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement'
+current-version: 2462.41.2
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _SMAppServiceUpdateDispositionSync_4BTM, _SMAppServiceUpdateDisposition_4BTM, 
+                       _SMCopyAllJobDictionaries, _SMCopyEnabledLoginItems_4BTM, 
+                       _SMJobBless, _SMJobCopyDictionary, _SMJobIsEnabled, _SMJobRemove, 
+                       _SMJobSetEnabled, _SMJobSubmit, _SMLaunchdPlistSetUserAllowed_4BTM, 
+                       _SMLoginItemSetEnabled, _SMLoginItemSetUserAllowed_4BTM, __SMLoginItemSetEnabledWithURL, 
+                       __launch_job_routine, __launch_job_routine_async, __launch_server_test_routine, 
+                       __xpc_domain_routine, __xpc_service_routine, _kSMDomainLocalLaunchd, 
+                       _kSMDomainSystemLaunchd, _kSMDomainUserLaunchd, _kSMErrorDomainFramework, 
+                       _kSMErrorDomainIPC, _kSMErrorDomainLaunchd, _kSMInfoKeyAuthorizedClients, 
+                       _kSMInfoKeyPrivilegedExecutables, _xpc_create_from_ce_der, 
+                       _xpc_create_from_ce_der_with_key ]
+    objc-classes:    [ SMAppService ]
+...

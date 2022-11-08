@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           19CDA078-2CE6-3F83-9B9B-3B22E3258EFA
+  - target:          x86_64-maccatalyst
+    value:           19CDA078-2CE6-3F83-9B9B-3B22E3258EFA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F5294A9B-12BE-3F96-BE9F-1B460DFA52CE
+  - target:          arm64e-maccatalyst
+    value:           F5294A9B-12BE-3F96-BE9F-1B460DFA52CE
+install-name:    '/System/Library/PrivateFrameworks/AddressBookAutocomplete.framework/Versions/A/AddressBookAutocomplete'
+current-version: 2535
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    objc-classes:    [ ABAutocompleteContactPredicate, ABAutocompleteLocalContactResultTransformBuilder, 
+                       ABAutocompleteServerSearch, ABAutocompleteServerSearchObservable, 
+                       CNAutocompleteContactFetchPredicateFactory, CNAutocompleteContactFilterPredicateFactory, 
+                       CNAutocompleteContactPredicateFactory ]
+...

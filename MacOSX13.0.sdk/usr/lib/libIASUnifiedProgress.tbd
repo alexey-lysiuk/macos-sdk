@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           ED203CA1-6F3D-3D3D-83F3-C0D132B7EB2F
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           58DFE475-E6BA-3EE0-8BE5-FFF0B64C3573
+install-name:    '/usr/lib/libIASUnifiedProgress.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ IASUnifiedProgressClient, IASUnifiedProgressManager ]
+...

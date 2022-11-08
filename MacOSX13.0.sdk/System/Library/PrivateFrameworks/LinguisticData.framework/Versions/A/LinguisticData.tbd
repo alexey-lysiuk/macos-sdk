@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           64B80E83-6168-3330-9A18-106E9009625A
+  - target:          x86_64-maccatalyst
+    value:           64B80E83-6168-3330-9A18-106E9009625A
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           5448BBE9-2D17-3E17-B235-007D0D00E2DF
+  - target:          arm64e-maccatalyst
+    value:           5448BBE9-2D17-3E17-B235-007D0D00E2DF
+install-name:    '/System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData'
+current-version: 399
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _LDCopyLocaleIdentifierOverrideForLocaleIdentifier, _LDCreateMobileAssetType, 
+                       _LDCreateSystemLexiconCompatibilityVersion, _LDEnumerateAssetDataItems, 
+                       _kLDAssetTypeCharacterLanguageModel, _kLDAssetTypeContinuousPathModel, 
+                       _kLDAssetTypeDeltaLexicon, _kLDAssetTypeDifferentialPrivacyHuffmanCoder, 
+                       _kLDAssetTypeEventDetectionModel, _kLDAssetTypeIntentDetectionModel, 
+                       _kLDAssetTypeLanguageIdentificationModel, _kLDAssetTypeLanguageModel, 
+                       _kLDAssetTypeLexicon, _kLDAssetTypeMorphologicalAnalyzer, 
+                       _kLDAssetTypeMultilingualModel, _kLDAssetTypeNaturalLanguageSearchModel, 
+                       _kLDAssetTypePOSTaggingModel, _kLDAssetTypePolarityModel, 
+                       _kLDAssetTypeProactiveGrammar, _kLDAssetTypeProactiveStatementGrammar, 
+                       _kLDAssetTypeQueryParserModel, _kLDAssetTypeSearchQueryLanguageModel, 
+                       _kLDAssetTypeSpellcheckerData, _kLDAssetTypeTokenizationModel, 
+                       _kLDAssetTypeTransliterationModel ]
+...

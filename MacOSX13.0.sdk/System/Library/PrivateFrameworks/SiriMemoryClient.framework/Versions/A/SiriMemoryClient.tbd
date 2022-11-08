@@ -1,0 +1,54 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           6BA81CD2-5019-30BC-A3E0-6D33B3BF83A7
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           0AC90CF2-507B-36E6-A15B-CF7F52E60674
+install-name:    '/System/Library/PrivateFrameworks/SiriMemoryClient.framework/Versions/A/SiriMemoryClient'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s16SiriMemoryClient33ConversationContextStoreXPCClientC5query4keys3for17completionHandlerySaySSG_SSySDySS10Foundation4DataVGctFTj', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientC5query4keys3for17completionHandlerySaySSG_SSySDySS10Foundation4DataVGctFTq', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientC6donate4data3key3for17completionHandlery10Foundation4DataV_S2SySbctFTj', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientC6donate4data3key3for17completionHandlery10Foundation4DataV_S2SySbctFTq', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientC6remove3key3for17completionHandlerySS_SSySbctFTj', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientC6remove3key3for17completionHandlerySS_SSySbctFTq', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCACycfC', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCACycfCTj', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCACycfCTq', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCACycfc', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCMa', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCMm', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCMn', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCMo', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCMu', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCN', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCfD', 
+                       '_$s16SiriMemoryClient33ConversationContextStoreXPCClientCfd', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientC12listEntities3for17completionHandlerySS_ySDySS10Foundation4DataVGctFTj', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientC12listEntities3for17completionHandlerySS_ySDySS10Foundation4DataVGctFTq', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientC12pullEntities3for17completionHandlerySS_ySbctFTj', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientC12pullEntities3for17completionHandlerySS_ySbctFTq', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientC14deleteEntities7forKeys0J017completionHandlerySaySSG_SSySbctFTj', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientC14deleteEntities7forKeys0J017completionHandlerySaySSG_SSySbctFTq', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientC14updateEntities4with3for17completionHandlerySDySS10Foundation4DataVG_SSySbctFTj', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientC14updateEntities4with3for17completionHandlerySDySS10Foundation4DataVG_SSySbctFTq', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCACycfC', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCACycfCTj', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCACycfCTq', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCACycfc', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCMa', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCMm', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCMn', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCMo', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCMu', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCN', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCfD', 
+                       '_$s16SiriMemoryClient33ReferenceResolutionStoreXPCClientCfd', 
+                       _SiriMemoryClientVersionNumber, _SiriMemoryClientVersionString ]
+...

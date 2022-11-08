@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           07AC64A3-A319-381F-A303-16405E39ED5C
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           DA11AE70-5B7A-3D4C-B311-971E098C05D7
+install-name:    '/System/Library/PrivateFrameworks/QuickLookThumbnailGeneration.framework/Versions/A/QuickLookThumbnailGeneration'
+current-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _QuickLookThumbnailGenerationVersionNumber, _QuickLookThumbnailGenerationVersionString ]
+    objc-classes:    [ QLTextThumbnailRenderer ]
+...

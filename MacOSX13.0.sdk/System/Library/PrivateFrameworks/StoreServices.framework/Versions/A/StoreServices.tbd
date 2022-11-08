@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           DB5371C6-03B4-353D-9282-209BB54ED10F
+  - target:          x86_64-maccatalyst
+    value:           DB5371C6-03B4-353D-9282-209BB54ED10F
+  - target:          arm64e-macos
+    value:           FEC7E1C5-3A25-3E8B-A411-625BD9AB7F45
+  - target:          arm64e-maccatalyst
+    value:           FEC7E1C5-3A25-3E8B-A411-625BD9AB7F45
+install-name:    '/System/Library/PrivateFrameworks/StoreServices.framework/Versions/A/StoreServices'
+...

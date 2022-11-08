@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           19D06CFD-067C-37BE-9E79-42B78A326875
+  - target:          x86_64-maccatalyst
+    value:           19D06CFD-067C-37BE-9E79-42B78A326875
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           FA9E7E12-9A56-3882-B70F-11AC55786866
+  - target:          arm64e-maccatalyst
+    value:           FA9E7E12-9A56-3882-B70F-11AC55786866
+install-name:    '/System/Library/PrivateFrameworks/AudioPasscode.framework/Versions/A/AudioPasscode'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _AudioPasscodeVersionNumber, _AudioPasscodeVersionString ]
+    objc-classes:    [ APCCodecInfo, APCDecoderProcessor, APCEncoderProcessor, APCListener, 
+                       APCListenerResultData, APCPlayer, APCPlayerEmbedInfo, AUPasscodeCodecCapability, 
+                       AUPasscodeCodecCommandLineOption, AUPasscodeCodecConfiguration ]
+...

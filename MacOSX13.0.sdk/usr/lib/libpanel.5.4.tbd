@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           41A8BE48-2BCF-3356-AEDB-2C23C7EFB51B
+  - target:          x86_64-maccatalyst
+    value:           41A8BE48-2BCF-3356-AEDB-2C23C7EFB51B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           07F30715-9705-3F70-A851-D5E5212F1531
+  - target:          arm64e-maccatalyst
+    value:           07F30715-9705-3F70-A851-D5E5212F1531
+install-name:    '/usr/lib/libpanel.5.4.dylib'
+current-version: 5.4
+compatibility-version: 5.4
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _bottom_panel, _del_panel, _hide_panel, _move_panel, _new_panel, 
+                       _panel_above, _panel_below, _panel_hidden, _panel_userptr, 
+                       _panel_window, _replace_panel, _set_panel_userptr, _show_panel, 
+                       _top_panel, _update_panels ]
+...

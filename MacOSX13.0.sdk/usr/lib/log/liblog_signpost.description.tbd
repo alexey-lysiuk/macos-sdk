@@ -1,0 +1,11 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           9945BA88-F238-328F-B933-30DDA9E54BF0
+  - target:          arm64e-macos
+    value:           3ADB8359-A550-3907-BD75-109D6C738E43
+install-name:    '/usr/lib/log/liblog_signpost.description.dylib'
+current-version: 90
+...

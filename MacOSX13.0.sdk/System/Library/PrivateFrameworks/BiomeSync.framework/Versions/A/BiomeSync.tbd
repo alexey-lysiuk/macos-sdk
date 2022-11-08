@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           EB41D161-0646-3BB6-876E-204CB65CDBF3
+  - target:          x86_64-maccatalyst
+    value:           EB41D161-0646-3BB6-876E-204CB65CDBF3
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           40CF640D-EDD1-3D35-8A2A-786E4BD4C397
+  - target:          arm64e-maccatalyst
+    value:           40CF640D-EDD1-3D35-8A2A-786E4BD4C397
+install-name:    '/System/Library/PrivateFrameworks/BiomeSync.framework/Versions/A/BiomeSync'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _BMSyncErrorDomain ]
+    objc-classes:    [ BMSyncService ]
+...

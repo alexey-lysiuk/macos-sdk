@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           443885C2-EFC0-358C-B71C-6D60A84A4AAB
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F90CA007-C75F-3BC6-91DD-4E5600AF1F93
+install-name:    '/System/Library/PrivateFrameworks/MSUDataAccessor.framework/Versions/A/MSUDataAccessor'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _kMSUDAErrorDomain, _lookupPathForPersistentData, _lookupPathForPersonalizedData ]
+    objc-classes:    [ MSUDataAccessor ]
+...

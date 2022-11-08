@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           8453EF81-DD1E-30E5-9319-70DDEEB00B12
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           488EA08D-3D5B-395C-9DBD-D23B22979359
+install-name:    '/System/Library/PrivateFrameworks/IntlPreferences.framework/Versions/A/IntlPreferences'
+current-version: 396
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _IPAllowToChangeEnablingStatePropertyKey, _IPAppleLanguagesSchemaVersionCurrent, 
+                       _IPAppleLanguagesSchemaVersionGoldzulA, _IPAppleLanguagesSchemaVersionJazzkonA, 
+                       _IPAppleLanguagesSchemaVersionJazzkonA_1, _IPAppleLanguagesSchemaVersionSydroA, 
+                       _IPBackstopLanguage, _IPBackstopLocale, _IPBackstopRegion, 
+                       _IPBundleIDPropertyKey, _IPDateFormatStringISO8601Like, _IPEnabledPropertyKey, 
+                       _IPFormatOptionCustom, _IPFormatOptionISO8601Like, _IPFormatOptionLanguage, 
+                       _IPFormatOptionLocale, _IPIconImagePropertyKey, _IPInputSourceIDPropertyKey, 
+                       _IPInputSourceObjectsPropertyKey, _IPLanguageCodePropertyKey, 
+                       _IPLanguageCodeUndefined, _IPLocalizedInputSourceNamePropertyKey, 
+                       _IPLocalizedLanguagePropertyKey, _IPMetaDataPropertyKey, _IPSystemProvidedPropertyKey, 
+                       _NSPersonNameDefaultDisplayNameOrderKey, _NSPersonNameDefaultNamePreferencesDomain, 
+                       _NSPersonNameDefaultShortNameEnabledKey, _NSPersonNameDefaultShortNameFormatKey, 
+                       _NSPersonNameDefaultShouldPreferNicknamesKey, _NSPersonNamePreferencesDidChangeNotification, 
+                       _kAppleLanguagesKey, _kAppleLocaleKey ]
+    objc-classes:    [ IPAddInputSourceSheetController, IPAddLanguageSheetController, 
+                       IPDateFormat, IPFormat, IPInflectionSettingsButtonController, 
+                       IPInputSource, IPInternationalAnalytics, IPKeyboardLayoutWebView, 
+                       IPLanguage, IPLanguageCellView, IPLanguageListGenerator, IPLanguageListManager, 
+                       IPLanguageTextFieldCell, IPSettingsUtilities, IPSystemDefaultsManager, 
+                       IP_HK_MO_yue_Hant_migrator, IP_Zawgyi_migrator, IP_advancedSettings_migrator, 
+                       IP_pa_Arab_to_pa_Aran_migrator, ISMigrator, ISRootMigrator, 
+                       IntlUtility, NSPersonNameComponentsFormatterPreferences ]
+    objc-ivars:      [ IntlUtility.mBidiLanguagesArray, IntlUtility.mBidiTestedLanguagesArray ]
+...

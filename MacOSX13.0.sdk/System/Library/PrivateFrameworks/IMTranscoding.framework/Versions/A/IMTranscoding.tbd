@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           54E2FB34-D149-35A9-9717-B52D8EB2C994
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           41A056C6-F226-3CE2-BEBB-BE7ECA8F012F
+install-name:    '/System/Library/PrivateFrameworks/IMTranscoding.framework/Versions/A/IMTranscoding'
+current-version: 800
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _IMTranscodeContextResponseDuration, _IMTranscodeErrorDomain ]
+    objc-classes:    [ IMTranscodeController ]
+...

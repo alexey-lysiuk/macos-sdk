@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           2F28E8F3-E61D-3C15-A859-04E74443F4C3
+  - target:          x86_64-maccatalyst
+    value:           2F28E8F3-E61D-3C15-A859-04E74443F4C3
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B530603E-9603-396D-837D-638260F0C39E
+  - target:          arm64e-maccatalyst
+    value:           B530603E-9603-396D-837D-638260F0C39E
+install-name:    '/System/Library/Frameworks/DeviceCheck.framework/Versions/A/DeviceCheck'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _DCBAASignerErrorDomain, _DCErrorDomain ]
+    objc-classes:    [ DCAppAttestService, DCContext, DCDevice, DCDeviceMetadataDaemonConnection, 
+                       DCDeviceMetadataInterface ]
+...

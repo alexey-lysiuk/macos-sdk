@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           4C1B043B-4A57-349F-BFD6-42BB98EE6AF5
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           045C8154-2CE6-391B-8998-63504334576E
+install-name:    '/System/Library/PrivateFrameworks/CoreFollowUpUI.framework/Versions/A/CoreFollowUpUI'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CoreFollowUpUIVersionNumber, _CoreFollowUpUIVersionString, 
+                       _FollowUpSettingsPrefix, _FollowUpSettingsSingleActionPrefix ]
+    objc-classes:    [ FLExtensionContext, FLExtensionViewController, FLFollowUpActionHandler, 
+                       FLFollowUpSystemSettingsController, FLHostViewController, 
+                       FLHostViewService, FLViewExtensionLoader ]
+...

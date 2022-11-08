@@ -1,0 +1,52 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           AE705982-33AA-39BB-97AB-E11BCE8D6093
+  - target:          x86_64-maccatalyst
+    value:           AE705982-33AA-39BB-97AB-E11BCE8D6093
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           2FE5EEC8-DD06-32A6-8EDB-81361B21F5D2
+  - target:          arm64e-maccatalyst
+    value:           2FE5EEC8-DD06-32A6-8EDB-81361B21F5D2
+install-name:    '/System/Library/PrivateFrameworks/Synapse.framework/Versions/A/Synapse'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _SYBacklinkIndicatorAppBundleIdentifier, _SYContentItemLinkPreviewDidFinishLoadingNotification, 
+                       _SYContentItemSourceIdentifierWeb, _SYContentItemUTI, _SYDefaultsDomain, 
+                       _SYDefaultsIndicatorCoverageKey, _SYEquivalentUserActivities, 
+                       _SYErrorDomain, _SYIsLinkableUserActivity, _SYIsPhone, _SYIsQuickNoteAvailable, 
+                       _SYIsQuickNoteOnPhoneEnabled, _SYMakeEditNoteUserActivity, 
+                       _SYNotesActivationServiceName, _SYNotesUserActivityInfoKeyDomainID, 
+                       _SYNotesUserActivityInfoKeyNoteID, _SYNotesUserActivityKeyAutoInsertLinkToCurrentUserActivity, 
+                       _SYNotesUserActivityKeyContentItemData, _SYNotesUserActivityKeyContentItemImageData, 
+                       _SYNotesUserActivityKeyContentItemImageFileURLs, _SYNotesUserActivityKeyContentItemURLs, 
+                       _SYNotesUserActivityKeyPreferNewDocument, _SYNotesUserActivityTypeCreateLink, 
+                       _SYNotesUserActivityTypeEditNote, _SYNotesUserActivityTypeInsertData, 
+                       _SYNotesUserActivityTypeInsertImage, _SYNotesUserActivityTypeShowBacklink, 
+                       _SYRemoteBacklinkIndicatorShouldHideNotification, _SYSearchableItemCustomKeyIsLinkItem, 
+                       _SYSystemPaperActivationMethodAddHighlight, _SYSystemPaperActivationMethodBacklink, 
+                       _SYSystemPaperActivationMethodHotCorner, _SYSystemPaperActivationMethodKeyboard, 
+                       _SYSystemPaperActivationMethodNewHighlight, _SYSystemPaperActivationMethodSwipe, 
+                       _SYSystemPaperActivationMethodSwipeFinger, _SYSystemPaperActivationMethodSwipePencil, 
+                       _SYSystemPaperActivationMethodSwipeWithPIP, _SYSystemPaperActivationMethodSwipeWithPIPFinger, 
+                       _SYSystemPaperActivationMethodSwipeWithPIPPencil, _SYSystemPaperDismissMethodDone, 
+                       _SYSystemPaperDismissMethodHotCorner, _SYSystemPaperDismissMethodKeyboard, 
+                       _SYSystemPaperDismissMethodReturnToApp, _SYSystemPaperDismissMethodSwipe, 
+                       _SYSystemPaperDismissMethodTimeout ]
+    objc-classes:    [ SYActivityObserver, SYActivityObserverContext, SYAddLinkContextClient, 
+                       SYAddLinkContextService, SYBacklinkIndicatorClient, SYBacklinkIndicatorService, 
+                       SYBacklinkIndicatorUsage, SYBacklinkMonitor, SYBacklinkMonitorClient, 
+                       SYBacklinkMonitorService, SYContentItem, SYContentItemManager, 
+                       SYDefaults, SYDefaultsClient, SYFeatureEligibility, SYItemIndexingManager, 
+                       SYLinkContextClient, SYLinkContextService, SYLinkableContentItemFinder, 
+                       SYNotesActivationCommand, SYNotesActivationObserver, SYNotesActivationRequest, 
+                       SYNotesActivationService, SYSystemPaperAnalytics ]
+...

@@ -1,0 +1,77 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           7486DF1D-1F04-3B35-AEA2-9E7E153E7382
+  - target:          x86_64-maccatalyst
+    value:           7486DF1D-1F04-3B35-AEA2-9E7E153E7382
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           09EB2CCF-9CB4-39FD-92E9-406C1D820F6F
+  - target:          arm64e-maccatalyst
+    value:           09EB2CCF-9CB4-39FD-92E9-406C1D820F6F
+install-name:    '/usr/lib/libnfshared.dylib'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _GetElapsedTimeInMillisecondsFromMachTime, _NFBootUUID, _NFBuildVersion, 
+                       _NFDataAppend, _NFDataAppendBytes, _NFDataAsHexString, _NFDataCreateWithBytes, 
+                       _NFDataCreateWithBytesNoCopy, _NFDataCreateWithFile, _NFDataCreateWithHexString, 
+                       _NFDataCreateWithLength, _NFDataPrintAsHexString, _NFDataRelease, 
+                       _NFDataRetain, _NFDataScannerCreateWithData, _NFDataScannerEOF, 
+                       _NFDataScannerRead, _NFDataScannerRead16, _NFDataScannerRead32, 
+                       _NFDataScannerRead8, _NFDataScannerReadData, _NFDataScannerRelease, 
+                       _NFDataScannerRetain, _NFGetOrCreateRootQueue, _NFGetProductType, 
+                       _NFGetRootQueue, _NFGetThreadPriority, _NFIsChinaSku, _NFIsGreenTea, 
+                       _NFIsInternalBuild, _NFIsProductType, _NFIsRestoreOS, _NFIsSimulator, 
+                       _NFIsUIBuild, _NFLogGetLogger, _NFLogSetLogger, _NFProductGetName, 
+                       _NFProductHasB0LPKey, _NFProductHasNFCRadio, _NFProductHasThermistor, 
+                       _NFProductIsASMac, _NFProductIsBridge, _NFProductIsDevBoard, 
+                       _NFProductIsMac, _NFProductIsPad, _NFProductIsPhone, _NFProductIsWatch, 
+                       _NFProductSupportsAC, _NFProductSupportsNFCReader, _NFReaderPurposeStringKey, 
+                       _NFSetThreadPriority, _NFSharedDumpTransport, _NFSharedLogGetLogger, 
+                       _NFSharedLogTransport, _NFSharedMiddlewareSignpostLog, _NFSharedSignpostLog, 
+                       _NFSimulateCrash, _NFThermalMonitorProvidedBySMC, _NF_isFeatureSupported, 
+                       _TLVCreateWithData, _TLVCreateWithDataMixed, _TLVCreateWithFirstChild, 
+                       _TLVCreateWithValue, _TLVRelease, _TLVRetain, _postAWDDynamicRFChangedEvent, 
+                       _postAWDHardwareExceptionEvent, _postAWDLPCDStatistic, _postAWDMainSERemovedEvent, 
+                       _postAWDMiddlewareExceptionEvent, _postAnalyticsHardwareExceptionEvent, 
+                       _postAnalyticsMainSERemovedEvent, _postAnalyticsMiddlewareExceptionEvent, 
+                       _postCADynamicRFChangedEvent, _resetAWDLoadStackExceptionCount ]
+    objc-classes:    [ ChipAuthenticationInfo, NFAWDAPNReceived, NFAWDActivityTimeout, 
+                       NFAWDCRSActivationTimerExpired, NFAWDCRSAuthException, NFAWDCRSAuthInit, 
+                       NFAWDCRSAuthInitException, NFAWDCRSAuthorize, NFAWDCRSAuthorizeECommerce, 
+                       NFAWDCRSDeAuthorize, NFAWDCardIngestionReaderStateChangeEvent, 
+                       NFAWDCardIngestionSessionStateChangeEvent, NFAWDEndOfTransaction, 
+                       NFAWDEndOfTransactionException, NFAWDEndOfTransactionV2, NFAWDExpressFelicaEndedEvent, 
+                       NFAWDExpressFelicaStartedEvent, NFAWDExpressTransactionEndedEvent, 
+                       NFAWDExpressTransactionStartedEvent, NFAWDFelicaStateChange, 
+                       NFAWDFieldOff, NFAWDFieldOn, NFAWDHCEEndEvent, NFAWDHCEStartEvent, 
+                       NFAWDHCEStateChangeEvent, NFAWDHardwareException, NFAWDJCOPRestrictedMode, 
+                       NFAWDLogger, NFAWDMiddlewareException, NFAWDMobileSoftwareUpdateExcetpion, 
+                       NFAWDPTOperation, NFAWDPeerPaymentEnrolled, NFAWDPeerPaymentRequest, 
+                       NFAWDReaderModeExceptionEvent, NFAWDReaderModeIngestionSessionEnded, 
+                       NFAWDReaderModeIngestionSessionStarted, NFAWDReaderSessionBurnoutTimerInvoked, 
+                       NFAWDReaderSessionEnded, NFAWDReaderSessionPollingStarted, 
+                       NFAWDReaderSessionStarted, NFAWDReaderSessionTagFound, NFAWDReaderSessionTagRead, 
+                       NFAWDSEOSRemoved, NFAWDSEOSRestrictedMode, NFAWDSERemoved, 
+                       NFAWDSERestrictedModeEntered, NFAWDSelect, NFAWDStartOfTransaction, 
+                       NFAWDStartOfTransactionException, NFAWDStartOfTransactionV2, 
+                       NFAWDTSMConnectivityException, NFAWDTSMEnd, NFAWDTSMStart, 
+                       NFAWDTransactionEndOfOperation, NFAWDTransactionLastRADPU, 
+                       NFAWDVASGetData, NFAWDVASSelect, NFAWDVASTransactionException, 
+                       NFAWDVersionInfo, NFBackgroundActivityScheduler, NFCALogger, 
+                       NFCommandAPDU, NFCurrency, NFExceptionsCALogger, NFGeneralStatisticsCALogger, 
+                       NFJSONEncoder, NFLPCDStatisticsCALogger, NFMSEIParser, NFMemoryObserver, 
+                       NFNSCheckedDecoder, NFNdefMessageInternal, NFNdefRecordInternal, 
+                       NFPowerAssertion, NFPowerObserver, NFPreferenceObserver, NFReaderModeCardIngestionCALogger, 
+                       NFReaderSessionConfig, NFResponseAPDU, NFRunScriptParametersInternal, 
+                       NFSecureXPCEventPublisher, NFServiceWhitelistChecker, NFTLV, 
+                       NFTagInternal, NFTimer, NFVASPassConfig, NFXPCEventPublisher, 
+                       PaceInfo, SecurityInfo ]
+...

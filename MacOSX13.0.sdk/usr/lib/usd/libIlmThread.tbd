@@ -1,0 +1,52 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           E0474390-0F89-3F9E-9013-8ABEF88E73A3
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           20B8983F-5AF5-38DA-81BD-56D191C11FE0
+install-name:    '/usr/lib/usd/libIlmThread.dylib'
+current-version: 20.1.3
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos ]
+    weak-symbols:    [ __ZTIN7Iex_2_36ArgExcE, __ZTSN7Iex_2_36ArgExcE ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ __ZN13IlmThread_2_310ThreadPool13addGlobalTaskEPNS_4TaskE, 
+                       __ZN13IlmThread_2_310ThreadPool13setNumThreadsEi, __ZN13IlmThread_2_310ThreadPool16globalThreadPoolEv, 
+                       __ZN13IlmThread_2_310ThreadPool17setThreadProviderEPNS_18ThreadPoolProviderE, 
+                       __ZN13IlmThread_2_310ThreadPool4DataC1Ev, __ZN13IlmThread_2_310ThreadPool4DataC2Ev, 
+                       __ZN13IlmThread_2_310ThreadPool4DataD1Ev, __ZN13IlmThread_2_310ThreadPool4DataD2Ev, 
+                       __ZN13IlmThread_2_310ThreadPool7addTaskEPNS_4TaskE, __ZN13IlmThread_2_310ThreadPoolC1Ej, 
+                       __ZN13IlmThread_2_310ThreadPoolC2Ej, __ZN13IlmThread_2_310ThreadPoolD0Ev, 
+                       __ZN13IlmThread_2_310ThreadPoolD1Ev, __ZN13IlmThread_2_310ThreadPoolD2Ev, 
+                       __ZN13IlmThread_2_315supportsThreadsEv, __ZN13IlmThread_2_318ThreadPoolProviderC2Ev, 
+                       __ZN13IlmThread_2_318ThreadPoolProviderD0Ev, __ZN13IlmThread_2_318ThreadPoolProviderD1Ev, 
+                       __ZN13IlmThread_2_318ThreadPoolProviderD2Ev, __ZN13IlmThread_2_34Task5groupEv, 
+                       __ZN13IlmThread_2_34TaskC2EPNS_9TaskGroupE, __ZN13IlmThread_2_34TaskD0Ev, 
+                       __ZN13IlmThread_2_34TaskD1Ev, __ZN13IlmThread_2_34TaskD2Ev, 
+                       __ZN13IlmThread_2_36Thread5startEv, __ZN13IlmThread_2_36ThreadC2Ev, 
+                       __ZN13IlmThread_2_36ThreadD0Ev, __ZN13IlmThread_2_36ThreadD1Ev, 
+                       __ZN13IlmThread_2_36ThreadD2Ev, __ZN13IlmThread_2_39Semaphore4postEv, 
+                       __ZN13IlmThread_2_39Semaphore4waitEv, __ZN13IlmThread_2_39Semaphore7tryWaitEv, 
+                       __ZN13IlmThread_2_39SemaphoreC1Ej, __ZN13IlmThread_2_39SemaphoreC2Ej, 
+                       __ZN13IlmThread_2_39SemaphoreD0Ev, __ZN13IlmThread_2_39SemaphoreD1Ev, 
+                       __ZN13IlmThread_2_39SemaphoreD2Ev, __ZN13IlmThread_2_39TaskGroup13finishOneTaskEv, 
+                       __ZN13IlmThread_2_39TaskGroup4Data10removeTaskEv, __ZN13IlmThread_2_39TaskGroup4Data7addTaskEv, 
+                       __ZN13IlmThread_2_39TaskGroup4DataC1Ev, __ZN13IlmThread_2_39TaskGroup4DataC2Ev, 
+                       __ZN13IlmThread_2_39TaskGroup4DataD1Ev, __ZN13IlmThread_2_39TaskGroup4DataD2Ev, 
+                       __ZN13IlmThread_2_39TaskGroupC1Ev, __ZN13IlmThread_2_39TaskGroupC2Ev, 
+                       __ZN13IlmThread_2_39TaskGroupD1Ev, __ZN13IlmThread_2_39TaskGroupD2Ev, 
+                       __ZNK13IlmThread_2_310ThreadPool10numThreadsEv, __ZNK13IlmThread_2_39Semaphore5valueEv, 
+                       __ZTIN13IlmThread_2_310ThreadPoolE, __ZTIN13IlmThread_2_318ThreadPoolProviderE, 
+                       __ZTIN13IlmThread_2_34TaskE, __ZTIN13IlmThread_2_36ThreadE, 
+                       __ZTIN13IlmThread_2_39SemaphoreE, __ZTSN13IlmThread_2_310ThreadPoolE, 
+                       __ZTSN13IlmThread_2_318ThreadPoolProviderE, __ZTSN13IlmThread_2_34TaskE, 
+                       __ZTSN13IlmThread_2_36ThreadE, __ZTSN13IlmThread_2_39SemaphoreE, 
+                       __ZTVN13IlmThread_2_310ThreadPoolE, __ZTVN13IlmThread_2_318ThreadPoolProviderE, 
+                       __ZTVN13IlmThread_2_34TaskE, __ZTVN13IlmThread_2_36ThreadE, 
+                       __ZTVN13IlmThread_2_39SemaphoreE ]
+...

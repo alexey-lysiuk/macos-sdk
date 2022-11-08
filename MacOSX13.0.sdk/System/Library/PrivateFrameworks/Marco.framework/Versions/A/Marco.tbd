@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           083D8C8A-C99B-3810-A771-B61D4660CBA5
+  - target:          x86_64-maccatalyst
+    value:           083D8C8A-C99B-3810-A771-B61D4660CBA5
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           864E0379-3DCB-3FA7-90C5-7648CC0B09A5
+  - target:          arm64e-maccatalyst
+    value:           864E0379-3DCB-3FA7-90C5-7648CC0B09A5
+install-name:    '/System/Library/PrivateFrameworks/Marco.framework/Versions/A/Marco'
+current-version: 800
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _MarcoAction, _MarcoActionWithUserInfo, _MarcoAddCallMetric, 
+                       _MarcoAddCallMetric_Double, _MarcoAddCallMetric_Float, _MarcoAddCallMetric_Int, 
+                       _MarcoAddCallMetric_Short, _MarcoAddLogFile, _MarcoBeginSession, 
+                       _MarcoCanLogMadridMessageBodies, _MarcoCanLogMadridMessageBodiesCF, 
+                       _MarcoConnect, _MarcoDiconnect, _MarcoEndSession, _MarcoEvent, 
+                       _MarcoLog, _MarcoLogCallInfo, _MarcoLogLocalPreview, _MarcoLogLocalPreviewEvent, 
+                       _MarcoLogMadrid, _MarcoLogMadridCF, _MarcoLogMadridCF_V, _MarcoLogMadridEvent, 
+                       _MarcoLogMadridEventCF, _MarcoLogMadridEventCF_V, _MarcoLogMadridLevel, 
+                       _MarcoLogMadridLevelCF_V, _MarcoLogRegistration, _MarcoLoggingStringForMessageData, 
+                       _MarcoMadridLogLevel, _MarcoNoteCheckpoint, _MarcoNoteQuality, 
+                       _MarcoPerformSnapshot, _MarcoPulse, _MarcoSetFailureReason, 
+                       _MarcoSetInitiator, _MarcoSetRecipient, _MarcoShouldLog, _MarcoShouldLogCallMetric, 
+                       _MarcoShouldLogCheckpoints, _MarcoShouldLogLocalPreview, _MarcoShouldLogMadrid, 
+                       _MarcoShouldLogMadridCF, _MarcoShouldLogMadridEvent, _MarcoShouldLogMadridEventCF, 
+                       _MarcoShouldLogMadridLevel, _MarcoShouldLogMadridLevelCF, 
+                       _MarcoShouldLogQuality, _MarcoShouldLogRegistration, _MarcoStartPing, 
+                       _MarcoSyncLoggingsPreferences, _MarcoWarnLocalPreview, _MarcoWarnMadrid, 
+                       _MarcoWarnMadridCF, _MarcoWarnMadridCF_V, _MarcoWarnRegistration ]
+...

@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           8D412469-C725-3C29-9A15-422C02A06310
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           A04A983E-0D70-3F20-BA41-B75C5636603C
+install-name:    '/System/Library/PrivateFrameworks/ShareServicesCore.framework/Versions/A/ShareServicesCore'
+current-version: 511.0.170
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SBLDontAllowRAWForSharingService, _SBLFileURLFromFileURLs, 
+                       _SBLNeedsLivePhotoBundleForSharingService, _SBLShareKitPlaceholderImageSize, 
+                       _SBLShareKitShareableItemErrorDomain, _SBLShareKitSharingParameterBounds, 
+                       _SBLShareKitSharingParameterImage, _SBLSharingServiceNameAddToNotes, 
+                       _SBLSharingServiceNameCreateReminder, _SBLSharingServiceNameSendToSimulator, 
+                       _SBLShouldProvideImageForAsset, _SBLShouldProvideMovieForAsset, 
+                       _SBLSubsystemShareKit, _SBLTemporaryExportURLFromURL, _SBLVariantFromVariants, 
+                       _SBLVideoSharingServicePrefix, _ShareServicesCoreVersionNumber, 
+                       _ShareServicesCoreVersionString, _kCompletedUnitCountProperty, 
+                       _kSBLItemKey, _kSBLPreSharingAlertCancelButtonTitle, _kSBLPreSharingAlertConfirmButtonTitle, 
+                       _kSBLPreSharingAlertMessage, _kSBLPreSharingAlertNeeded, _kSBLPreSharingAlertTitle, 
+                       _kSBLProgressDelayShowingUntilNonZeroProgress, _kSBLProgressFormatKey, 
+                       _kSBLProgressSamplesPerUnitKey, _kSBLProgressTotalCountKey, 
+                       _kSBLSelectionCustomThumbnailKey, _kSBLSelectionTitleKey, 
+                       _kSBLShareKitFullscreenKey, _kSBLShareKitPublishLocationKey, 
+                       _kSBLShareKitScreenInfoKey, _kSBLShareKitSessionErrorDomain, 
+                       _kSBLShareKitSharedAlbumActionKey, _kSBLShareKitWindowKey ]
+    objc-classes:    [ SBLAssetsShareKitManager, SBLDebugShareKitManager, SBLDownloadProvidersOperation, 
+                       SBLFullfillProvidersOperation, SBLPrepareProvidersOperation, 
+                       SBLProvidersOperation, SBLReconnectProvidersOperation, SBLSetDesktopSharingService, 
+                       SBLShareKitManager, SBLShareKitSession, SBLShareKitShareableAssetItem, 
+                       SBLShareKitShareableItem, SBLShareKitShareableStoryItem, SBLSharedAlbumsSharingService, 
+                       SBLVideoStabilizationInternalService, SharingServiceString ]
+    objc-ivars:      [ SBLShareKitShareableItem._didPrepare, SBLShareKitShareableItem._prepareLock ]
+...

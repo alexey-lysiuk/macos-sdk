@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           0625CC32-B79F-3A87-84C1-1670A42CFCAD
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           EB1CFD73-6EDC-3AD6-84C7-9C2351A69DF2
+install-name:    '/System/Library/PrivateFrameworks/MessagesKit.framework/Versions/A/MessagesKit'
+current-version: 800
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SOAccountPropertyIMAccountUniqueIDKey, _SOAlertsAddressMeKey, 
+                       _SOAlertsChatGuidKey, _SOAlertsMessageDeliveryErrorKey, _SOAlertsMessageDeliveryErrorNotification, 
+                       _SOAlertsMessageGuidKey, _SOAlertsPlaySoundsKey, _SODefaultsChangedKey, 
+                       _SOFaceTimeDNDMenuOptionsDidChangeNotification, _SOFaceTimeFavoritesDNDEnabledKey, 
+                       _SOFaceTimeFavoritesKey, _SOFaceTimeFavoritesMenuOptionsKey, 
+                       _SOFaceTimeFavoritesSelectedMenuOptionKey, _SOFaceTimeTwoTimeCallthroughEnabledKey, 
+                       _SOHelperDefaultsChangedNotification, _SOUnreadChatCountKey, 
+                       _SOUnreadChatDateKey, _SOUnreadChatGUIDKey, _SOUnreadChatGuidKey, 
+                       _SOUnreadChatNamesKey, _SOUnreadChatUpdatedNotification, _SOUnreadCountChatGUIDKey, 
+                       _SOUnreadCountUpdatedNotification ]
+    objc-classes:    [ SOAlertsHelper, SOFavoritesHelper, SOFileTransferHelper, SOHelper, 
+                       SOHelperCenter, SOHelperReceiver, SOMessageHelper, SOUnreadCountHelper ]
+...

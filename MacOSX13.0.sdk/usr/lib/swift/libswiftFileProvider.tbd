@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           7D089E5F-5467-343B-9B42-04064ED4DE9C
+  - target:          x86_64-maccatalyst
+    value:           7D089E5F-5467-343B-9B42-04064ED4DE9C
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           CA409F9D-4C60-3B99-9873-33424EC1F5E1
+  - target:          arm64e-maccatalyst
+    value:           CA409F9D-4C60-3B99-9873-33424EC1F5E1
+install-name:    '/usr/lib/swift/libswiftFileProvider.dylib'
+current-version: 730.40.50
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo27NSFileProviderDomainVersionC04FileB0E1loiySbAB_ABtFZ', 
+                       '_$sSo27NSFileProviderDomainVersionCSL04FileB0Mc', '__swift_FORCE_LOAD_$_swiftFileProvider' ]
+...

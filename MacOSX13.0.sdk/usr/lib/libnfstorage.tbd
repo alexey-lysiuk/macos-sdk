@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           3608C0D0-70DB-359E-91CE-89EEE49487A0
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           A7197B18-0DB2-329D-B674-495FE806C4D7
+install-name:    '/usr/lib/libnfstorage.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ NFStorageController, NFStorageControllerApplet, NFStorageControllerESEExpress ]
+...

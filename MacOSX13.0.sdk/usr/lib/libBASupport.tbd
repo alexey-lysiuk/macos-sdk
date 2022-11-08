@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           3395B955-69A8-3E8E-A1E0-E39244DA621A
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           7B31DAC8-0C29-328C-8510-9F6C5CE1EBAD
+install-name:    '/usr/lib/libBASupport.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _ba_is_current_process_extension, _ba_is_process_extension, 
+                       _ba_is_process_extension_ls ]
+...

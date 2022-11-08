@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           647D6898-B0D9-391D-8538-A0181B4A34A4
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           6FFB18C0-AA3C-3B49-B94F-BE3AF3C7E6D1
+install-name:    '/usr/lib/system/libsystem_darwindirectory.dylib'
+parent-umbrella:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    umbrella:        System
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _DarwinDirectoryCreateRecordStore, _DarwinDirectoryRecordStoreApply, 
+                       _DarwinDirectoryRecordStoreDeserialize, _DarwinDirectoryRecordStoreFindByID, 
+                       _DarwinDirectoryRecordStoreFindByName, _DarwinDirectoryRecordStoreFindByUUID ]
+...

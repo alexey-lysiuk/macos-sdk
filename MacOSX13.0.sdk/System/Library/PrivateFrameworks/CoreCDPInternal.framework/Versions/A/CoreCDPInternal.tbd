@@ -1,0 +1,56 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           EE0AEBDE-9D5D-3B15-B785-6433550ADDBB
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           4D589681-3FCA-3882-B57F-3FD4D3813678
+install-name:    '/System/Library/PrivateFrameworks/CoreCDPInternal.framework/Versions/A/CoreCDPInternal'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CDPBackupMetadataDeviceColorKey, _CDPBackupMetadataDeviceEnclosureColorKey, 
+                       _CDPBackupMetadataDeviceModelClassKey, _CDPBackupMetadataDeviceModelKey, 
+                       _CDPBackupMetadataDeviceModelVersionKey, _CDPBackupMetadataDeviceNameKey, 
+                       _CDPBackupMetadataDevicePlatformKey, _CDPBackupMetadataMIDKey, 
+                       _CDPBackupMetadataPasswordResetKey, _CDPDConnectionInvalidatedNotification, 
+                       _CoreCDPInternalVersionNumber, _CoreCDPInternalVersionString, 
+                       _kCDPCADidAttemptEscrowPreRecord, _kCDPCADidChangeLocalSecret, 
+                       _kCDPCADidRemoveLocalSecret, _kCDPCAErrorCode, _kCDPCAErrorDomain, 
+                       _kCDPCAEscrowPreRecordResult, _kCDPCAEventEscrowPreRecord, 
+                       _kCDPCAEventLocalSecret, _kCDPCALocalSecretResult, _kCDPCAPreRecordIdentifier, 
+                       _kCDPCAWasSuccess, _kConfirmExistingSecretActionContinue, 
+                       _kConfirmExistingSecretIdentifier, _kDismissFollowup, _kOfflineLocalSecretChangeActionContinue, 
+                       _kOfflineLocalSecretChangeItemIdentifier, _kOfflineLocalSecretCreateActionContinue, 
+                       _kRegenerateRecoveryKeyIdentifier, _kRepairCDPStateActionContinue, 
+                       _kRepairCDPStateActionRecoveryKey, _kRepairCDPStateItemIdentifier, 
+                       _kSecureTermsActionContinue, _kSecureTermsIdentifier, _kSetupBiometricsFaceIDIdentifier, 
+                       _kSetupBiometricsFlowSkipIdentifier, _kSetupBiometricsIdentifier, 
+                       _kSetupBiometricsTouchIDIdentifier, _kSetupBiometricsURL ]
+    objc-classes:    [ CDPAuthenticationHelper, CDPBroadcaster, CDPCABackupRecoveryReporter, 
+                       CDPCAEscrowRecoveryInfo, CDPCAEscrowRepairReporter, CDPCAEscrowReporter, 
+                       CDPCAICSCRecoverabiltyReporter, CDPCAICSCRecoveryReporter, 
+                       CDPCALocalSecretReporter, CDPCAReporter, CDPDAccount, CDPDAccountRecoveryValidator, 
+                       CDPDAuthObserver, CDPDAuthProxyImpl, CDPDBackupErrorProviderImpl, 
+                       CDPDBackupFMIPResultsParser, CDPDBackupIDMSErrorProvider, 
+                       CDPDBackupIDMSResultsParser, CDPDBackupInfoRecoveryFlowController, 
+                       CDPDCircleController, CDPDCircleJoinResult, CDPDCircleStateObserver, 
+                       CDPDClientHandler, CDPDDeviceSecretValidator, CDPDFollowUpController, 
+                       CDPDFollowUpFactory, CDPDKeychainSync, CDPDLocalDeviceSecretProxyImpl, 
+                       CDPDLocalSecretController, CDPDLocalSecretFollowUpProviderImpl, 
+                       CDPDLockAssertion, CDPDNetworkObserver, CDPDNetworkObserverClient, 
+                       CDPDOctagonTrustProxyImpl, CDPDPCSController, CDPDRecoveryFlowController, 
+                       CDPDRecoveryKeyController, CDPDRecoveryKeyValidatorImpl, CDPDRecoveryOption, 
+                       CDPDRecoveryValidatedJoinFlowController, CDPDRemoteDeviceSecretValidator, 
+                       CDPDRemoteSecretValidationResult, CDPDSecureBackupConfiguration, 
+                       CDPDSecureBackupContext, CDPDSecureBackupController, CDPDSecureBackupProxyImpl, 
+                       CDPDSecureChannelContext, CDPDSecureChannelController, CDPDStateMachine, 
+                       CDPDTermsInfoBackupController, CDPDXPCEventObserver, CDPDXPCListener, 
+                       CDPDataPrivacyAppleAccountProxy, CDPInternalDataPrivacyController, 
+                       CDPMobileGestaltWrapper, CDPPiggybackingChannel, CDPPiggybackingPayloadProvider, 
+                       CDPStateHandlerResult, CDPTTSUChannel, CDPTTSUPayloadProvider ]
+    objc-ivars:      [ CDPDBackupErrorProviderImpl._context, CDPDBackupErrorProviderImpl._prevailingSecret, 
+                       CDPDBackupErrorProviderImpl._uiProvider ]
+...

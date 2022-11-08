@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           A31D5AA3-F9EA-3D92-8C51-AA959C2BB449
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           15A08FD8-0CDB-3ADF-8CED-C1D2D601E9C9
+install-name:    '/usr/lib/swift/libswiftVirtualization.dylib'
+current-version: 104.7
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo16VZVirtualMachineC14VirtualizationE5pause17completionHandleryys6ResultOyyts5Error_pGc_tF', 
+                       '_$sSo16VZVirtualMachineC14VirtualizationE5start17completionHandleryys6ResultOyyts5Error_pGc_tF', 
+                       '_$sSo16VZVirtualMachineC14VirtualizationE6resume17completionHandleryys6ResultOyyts5Error_pGc_tF', 
+                       '_$sSo20VZVirtioSocketDeviceC14VirtualizationE7connect6toPort17completionHandlerys6UInt32V_ys6ResultOySo0aB10ConnectionCs5Error_pGctF', 
+                       '__swift_FORCE_LOAD_$_swiftVirtualization' ]
+  - targets:         [ arm64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo16VZMacOSInstallerC14VirtualizationE7install17completionHandleryys6ResultOyyts5Error_pGc_tF', 
+                       '_$sSo19VZMacOSRestoreImageC14VirtualizationE20fetchLatestSupported17completionHandleryys6ResultOyABs5Error_pGc_tFZ', 
+                       '_$sSo19VZMacOSRestoreImageC14VirtualizationE4load4from17completionHandlery10Foundation3URLV_ys6ResultOyABs5Error_pGctFZ' ]
+...

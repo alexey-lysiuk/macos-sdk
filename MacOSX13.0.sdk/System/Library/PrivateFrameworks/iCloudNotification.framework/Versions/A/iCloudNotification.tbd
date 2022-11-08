@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           AF473EA4-BEEC-35D5-AADE-BD93607E82EC
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           5C867E98-FF76-3F08-9FC4-A926BC0436ED
+install-name:    '/System/Library/PrivateFrameworks/iCloudNotification.framework/Versions/A/iCloudNotification'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _INCreateError, _INCreateErrorWithKeychainError, _INCreateErrorWithMessage, 
+                       _INDaemonBundleIdentifierKey, _INDaemonMachServiceName, _INErrorDomain, 
+                       _INFamilyDidChangeNotification, _INFileLoggingEnabledKey, 
+                       _INNextDelayedOfferFailsafeDateKey, _INNextFreshmintRefreshDateKey, 
+                       _INNextHeartbeatDateKey, _INSyslogOutputLevelKey, __INLogSystem ]
+    objc-classes:    [ INDaemonConnection, INDaemonInterface, INDiagnosticReport, 
+                       INManagedDefaults ]
+...

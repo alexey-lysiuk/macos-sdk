@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64-macos, arm64e-macos ]
+uuids:
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           AB90BA09-30D6-3D83-98C4-EF85155AD213
+install-name:    '/usr/lib/libAHTRestore.dylib'
+current-version: 6400.40
+exports:
+  - targets:         [ arm64-macos, arm64e-macos ]
+    symbols:         [ _AHTRestoreCreateDeviceList, _AHTRestoreUpdateDevice, _AHTRestoreUpdateDeviceWithOverrides ]
+...

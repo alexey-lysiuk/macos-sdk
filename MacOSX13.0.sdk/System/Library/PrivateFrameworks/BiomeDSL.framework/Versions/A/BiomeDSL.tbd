@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           53E2E86D-016F-3D49-8BBD-DA17D60CEEDA
+  - target:          x86_64-maccatalyst
+    value:           53E2E86D-016F-3D49-8BBD-DA17D60CEEDA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           EDB5F462-5F2B-36DC-8934-D8EBC1D443C6
+  - target:          arm64e-maccatalyst
+    value:           EDB5F462-5F2B-36DC-8934-D8EBC1D443C6
+install-name:    '/System/Library/PrivateFrameworks/BiomeDSL.framework/Versions/A/BiomeDSL'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _BMDSLJSONTransformerNameFromEncodingDescriptor, _BMDSLRegisterJSONTransformerNameFromEncodingDescriptor, 
+                       _BMDSLValidateDictionary, _BMDSLValueForKeyPath, _BiomeDSLVersionNumber, 
+                       _BiomeDSLVersionString, _kBMDSLName, _kBMDSLUpstream, _kBMDSLVersion ]
+    objc-classes:    [ BMDSL, BMDSLAggregator, BMDSLArgumentTransform, BMDSLArray, 
+                       BMDSLBaseCodable, BMDSLClassTransform, BMDSLClasses, BMDSLCollect, 
+                       BMDSLFilter, BMDSLGraphValidator, BMDSLInstanceTransform, 
+                       BMDSLJSONAllowedClasses, BMDSLJSONArchiver, BMDSLJSONCoder, 
+                       BMDSLJSONUnarchiver, BMDSLKeyPathSelector, BMDSLKeyPathTransform, 
+                       BMDSLMap, BMDSLMerge, BMDSLMultiKeyPathsTransform, BMDSLOrderedMerge, 
+                       BMDSLState, BMDSLSubscribeOn, BMDSLSubscriber, BMDSLTransformInvocation, 
+                       BMDSLTransforms, BMDSLTumblingWindowAssigner, BMDSLWindowAssigner, 
+                       BMDSLWindower, _BMDSLStatePublisher, _BMDSLStatePublisherInner, 
+                       _BPSSubscribeOnInner ]
+...

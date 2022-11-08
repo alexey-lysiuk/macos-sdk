@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           4980B7EB-0DF1-3454-9F7F-31B85625A0B2
+  - target:          arm64-macos
+    value:           D83B6CAD-7863-3114-8665-82CF1C07B72C
+  - target:          arm64e-macos
+    value:           0F2622FB-EF53-397C-8BB0-E339CFE11DA2
+install-name:    '/System/Library/PrivateFrameworks/GPUToolsTransport.framework/Versions/A/GPUToolsTransport'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _GPUToolsTransportVersionNumber, _GPUToolsTransportVersionString, 
+                       _GTTransportErrorDomain, _TransportVersionNumber, _TransportVersionString, 
+                       __xpc_copy_sysctl_string, _allServicesForDevice, _allServicesForDeviceUUID, 
+                       _error_string, _filteredArrayByPID, _filteredArrayByProcessEnvironment, 
+                       _filteredArrayByService, _newConnectionForClient, _newConnectionForClientFromEndpoint, 
+                       _newConnectionForService, _newSetWithArrayMinusArray, _registerService, 
+                       _xpc_dictionary_get_nsarray, _xpc_dictionary_get_nsarray_any, 
+                       _xpc_dictionary_get_nsdata, _xpc_dictionary_get_nsdata_nocopy, 
+                       _xpc_dictionary_get_nsdictionary, _xpc_dictionary_get_nsdictionary_any, 
+                       _xpc_dictionary_get_nsobject, _xpc_dictionary_get_nsobject_classes, 
+                       _xpc_dictionary_set_nsdata, _xpc_dictionary_set_nsobject ]
+    objc-classes:    [ DYFSStreamerServiceXPCDispatcher, DYFSStreamerServiceXPCProxy, 
+                       DYGTCAMetalLayerInfo, DYGTDeviceInfo, DYGTGPUToolsVersionInfo, 
+                       DYGTMTLCaptureScopeInfo, DYGTMTLCommandQueueInfo, DYMTLDeviceProfile, 
+                       GTCallstackFrame, GTCapturableObject, GTCaptureCompletionState, 
+                       GTCaptureDescriptor, GTCaptureObjects, GTCommandBufferIssue, 
+                       GTDataProviderClient, GTDataProviderServiceXPCDispatcher, 
+                       GTDataProviderServiceXPCProxy, GTDataProviderStore, GTDeviceCapabilitiesXPCDispatcher, 
+                       GTDeviceCapabilitiesXPCProxy, GTDeviceProperties, GTDiagnosticsIssue, 
+                       GTFaultingEncoder, GTFileChunk, GTFileEntry, GTFileWriterServiceXPCDispatcher, 
+                       GTFileWriterServiceXPCProxy, GTLaunchServiceXPCDispatcher, 
+                       GTLaunchServiceXPCProxy, GTLocalXPCConnection, GTMTLCaptureServiceXPCDispatcher, 
+                       GTMTLCaptureServiceXPCProxy, GTMTLDiagnosticsServiceXPCDispatcher, 
+                       GTMTLDiagnosticsServiceXPCProxy, GTMTLReplayServiceXPCDispatcher, 
+                       GTMTLReplayServiceXPCProxy, GTNotificationKey, GTProcessInfo, 
+                       GTProcessService, GTRemoteDeviceBrowserXPCDispatcher, GTRemoteDeviceBrowserXPCProxy, 
+                       GTRemoteXPCConnection, GTServiceConnection, GTServiceProperties, 
+                       GTServiceProviderXPCDispatcher, GTServiceProviderXPCProxy, 
+                       GTURLAccessProviderXPCDispatcher, GTURLAccessProviderXPCProxy, 
+                       GTUnsupportedFenumInfo, GTXPCDispatcher ]
+...

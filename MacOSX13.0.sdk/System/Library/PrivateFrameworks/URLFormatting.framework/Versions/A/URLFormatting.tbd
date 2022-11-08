@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           C1B6440A-2ABB-3B37-B816-C5C327DABEF6
+  - target:          x86_64-maccatalyst
+    value:           C1B6440A-2ABB-3B37-B816-C5C327DABEF6
+  - target:          arm64e-macos
+    value:           11CCD8AF-9BCA-36BF-860B-50A06048DF2D
+  - target:          arm64e-maccatalyst
+    value:           11CCD8AF-9BCA-36BF-860B-50A06048DF2D
+install-name:    '/System/Library/PrivateFrameworks/URLFormatting.framework/Versions/A/URLFormatting'
+current-version: 212.9
+...

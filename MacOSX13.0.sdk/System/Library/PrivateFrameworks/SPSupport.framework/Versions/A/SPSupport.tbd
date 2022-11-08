@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           71C0C4B1-F7E2-3864-933F-D2A2EC657CC4
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           5F3BE018-C9BB-34E6-BDEB-EEBB40F89EAF
+install-name:    '/System/Library/PrivateFrameworks/SPSupport.framework/Versions/A/SPSupport'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _OSLogForCategory, __comparePropertyOrders ]
+    objc-classes:    [ SPDevice, SPDocument, SPReporter ]
+    objc-ivars:      [ SPDevice.children, SPDevice.entry ]
+...

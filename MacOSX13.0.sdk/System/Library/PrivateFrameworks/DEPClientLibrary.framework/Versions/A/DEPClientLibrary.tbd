@@ -1,0 +1,57 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           97B973E9-E618-3994-B5D2-F78390C525DC
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           35CE45BE-5973-3545-8A03-A37537F2C81B
+install-name:    '/System/Library/PrivateFrameworks/DEPClientLibrary.framework/Versions/A/DEPClientLibrary'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CCConfigurationDidChangeNotification, _DEPClientLibraryVersionNumber, 
+                       _DEPClientLibraryVersionString, _DEPCloudConfigErrorDomain, 
+                       _DEPErrorArray, _DEPErrorTypeFatal, _DEPErrorTypeKey, _DEPLocalizedString, 
+                       _DEPLogObjects, _DEPUSEnglishString, _kCCAllowPairingKey, 
+                       _kCCAnchorCertificatesKey, _kCCAttemptedFaceTimeSignInKey, 
+                       _kCCAutoAdvanceSetup, _kCCAwaitDeviceConfiguredKey, _kCCCloudConfigurationUICompleteKey, 
+                       _kCCCloudConfigurationWasAppliedKey, _kCCConfigurationSourceKey, 
+                       _kCCConfigurationURLKey, _kCCConfigurationWebURLKey, _kCCDeviceConfiguredKey, 
+                       _kCCEnrollmentAnchorCertificatesKey, _kCCEnrollmentServerKey, 
+                       _kCCEnrollmentURLKey, _kCCFakeDEPJSONResponsePath, _kCCIsMDMUnremovable, 
+                       _kCCIsMandatoryKey, _kCCIsMultiUserKey, _kCCIsSupervisedKey, 
+                       _kCCLanguageKey, _kCCLanguageScriptKey, _kCCMAIDHasCredentialKey, 
+                       _kCCMAIDUsernameKey, _kCCMDMProtocolVersionKey, _kCCOrganizationAddressKey, 
+                       _kCCOrganizationAddressLine1Key, _kCCOrganizationAddressLine2Key, 
+                       _kCCOrganizationAddressLine3Key, _kCCOrganizationCityKey, 
+                       _kCCOrganizationCountryKey, _kCCOrganizationDepartmentKey, 
+                       _kCCOrganizationEmailKey, _kCCOrganizationMagicKey, _kCCOrganizationNameKey, 
+                       _kCCOrganizationPhoneKey, _kCCOrganizationRegionKey, _kCCOrganizationShortNameKey, 
+                       _kCCOrganizationSupportEmailKey, _kCCOrganizationSupportPhoneKey, 
+                       _kCCOrganizationZipCodeKey, _kCCPostSetupProfileWasInstalledKey, 
+                       _kCCProvisionalEnrollmentExpiryKey, _kCCRegionKey, _kCCRemoteManagementAccountIdentifierKey, 
+                       _kCCServiceEntitlement, _kCCServiceName, _kCCSkipSetupKey, 
+                       _kCCSupervisorHostCertificatesKey, _kCCSupportedDeviceAuthenticationKey, 
+                       _kCCSupportedFeaturesKey, _kCCSupportedUserAuthenticationKey, 
+                       _kCCURLUserDefaultsKey, _kDEPDeviceUploadApproverDsidKey, 
+                       _kDEPDeviceUploadApproverNameKey, _kDEPDeviceUploadApproversKey, 
+                       _kDEPDeviceUploadColorKey, _kDEPDeviceUploadCookieHeaderKey, 
+                       _kDEPDeviceUploadDeviceAdditionDEPEnabledKey, _kDEPDeviceUploadDeviceAdditionGbiEnabledKey, 
+                       _kDEPDeviceUploadDeviceDetailsKey, _kDEPDeviceUploadDeviceDetailsResponseKey, 
+                       _kDEPDeviceUploadErrorMessageKey, _kDEPDeviceUploadIdmsRemoveDeviceEnabledKey, 
+                       _kDEPDeviceUploadIdmsWhitelistingEnabledKey, _kDEPDeviceUploadModelKey, 
+                       _kDEPDeviceUploadOrgIdKey, _kDEPDeviceUploadOrgNameKey, _kDEPDeviceUploadOrganizationsKey, 
+                       _kDEPDeviceUploadPartNumberKey, _kDEPDeviceUploadProductDescriptionKey, 
+                       _kDEPDeviceUploadProductFamilyKey, _kDEPDeviceUploadRequestIdKey, 
+                       _kDEPDeviceUploadRequestStatusKey, _kDEPDeviceUploadRequestTypeKey, 
+                       _kDEPDeviceUploadScreenSizeKey, _kDEPDeviceUploadSerialNumberKey, 
+                       _kDEPDeviceUploadSkipItrackCheckKey, _kDEPDeviceUploadSoldToIdKey, 
+                       _kDEPDeviceUploadSoldToIdsKey, _kDEPDeviceUploadStatusKey, 
+                       _kDEPDeviceUploadStorageSizeKey, _kDEPDeviceUploadSubmitterDsidKey, 
+                       _kDEPDeviceUploadSubmitterNameKey, _kDEPDeviceUploadUserDsidHeaderKey ]
+    objc-classes:    [ DEPClient, DEPDeviceUploadCredentials, DEPDeviceUploadDeviceDetails, 
+                       DEPDeviceUploadOrganization, DEPDeviceUploadRequestType, DEPDeviceUploadSubmissionResponse, 
+                       DEPDeviceUploadSubmitDeviceRequestPayload, DEPDeviceUploadUser ]
+...

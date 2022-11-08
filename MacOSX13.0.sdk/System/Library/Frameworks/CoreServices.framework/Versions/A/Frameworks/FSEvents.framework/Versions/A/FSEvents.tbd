@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           4E6D6D07-738A-3EF6-ABF4-92742958C9EE
+  - target:          x86_64-maccatalyst
+    value:           4E6D6D07-738A-3EF6-ABF4-92742958C9EE
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           EEFBB039-9737-333A-A2FA-6D242FB99F70
+  - target:          arm64e-maccatalyst
+    value:           EEFBB039-9737-333A-A2FA-6D242FB99F70
+install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents'
+current-version: 1355
+parent-umbrella:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    umbrella:        CoreServices
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _FSEventStreamCopyDescription, _FSEventStreamCopyPathsBeingWatched, 
+                       _FSEventStreamCreate, _FSEventStreamCreateRelativeToDevice, 
+                       _FSEventStreamFlushAsync, _FSEventStreamFlushSync, _FSEventStreamGetDeviceBeingWatched, 
+                       _FSEventStreamGetLatestEventId, _FSEventStreamInvalidate, 
+                       _FSEventStreamRelease, _FSEventStreamRetain, _FSEventStreamScheduleWithRunLoop, 
+                       _FSEventStreamSetDispatchQueue, _FSEventStreamSetExclusionPaths, 
+                       _FSEventStreamShow, _FSEventStreamStart, _FSEventStreamStop, 
+                       _FSEventStreamUnscheduleFromRunLoop, _FSEventsCopyUUIDForDevice, 
+                       _FSEventsGetCurrentEventId, _FSEventsGetLastEventIdForDeviceBeforeTime, 
+                       _FSEventsPurgeEventsForDeviceUpToEventId ]
+...

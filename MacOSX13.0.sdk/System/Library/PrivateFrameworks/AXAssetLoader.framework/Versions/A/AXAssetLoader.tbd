@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           EBD5915A-3F91-3BEA-8BCA-656A01436A9E
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F9A7BF65-AAE8-3190-8D2E-55E0B46A2D9A
+install-name:    '/System/Library/PrivateFrameworks/AXAssetLoader.framework/Versions/A/AXAssetLoader'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AXAssetBundle, _AXAssetLoaderVersionNumber, _AXAssetLoaderVersionString, 
+                       _AXAssetLocalizedString, _AXAssetMakeErrorForDownloadResult, 
+                       _AXAssetMakeErrorForPurgeResult, _AXAssetMakeErrorForQueryResult, 
+                       _AXAssetMakeError_, __AXAssetMakeError, __AXCreateAXAssetsServiceInterface, 
+                       _kAXCharacterFaceDefaultsDomain, _kAXImageCaptionModelAssetType, 
+                       _kAXImageCaptionModelInfoKeyModel, _kAXTTSResourceAssetType ]
+    objc-classes:    [ AXAsset, AXAssetController, AXAssetMetadataStore, AXAssetPolicy, 
+                       AXAssetUpdateMonitor, AXAssetsService, AXCharacterVoiceAssetPolicy, 
+                       AXComfortSoundsAssetPolicy, AXElementVisionModelAssetPolicy, 
+                       AXIconVisionModelAssetPolicy, AXImageCaptionModel, AXImageCaptionModelAssetAssertion, 
+                       AXImageCaptionModelAssetPolicy, AXLaunchActivityPolicy, AXPhoenixAssetPolicy, 
+                       AXTTSLegacyCombinedVocalizerAssetPolicy, AXTTSLegacyMacinTalkAssetPolicy, 
+                       AXTTSResourceAssetPolicy ]
+...

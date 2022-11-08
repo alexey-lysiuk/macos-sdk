@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           C0960797-F2ED-3292-8528-33E0BBD12B7B
+  - target:          x86_64-maccatalyst
+    value:           C0960797-F2ED-3292-8528-33E0BBD12B7B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F9A98425-83C4-3E6A-9C2E-3153BA4A9140
+  - target:          arm64e-maccatalyst
+    value:           F9A98425-83C4-3E6A-9C2E-3153BA4A9140
+install-name:    '/System/Library/Frameworks/MailKit.framework/Versions/A/MailKit'
+current-version: 3731.200.110
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _MEComposeSessionErrorDomain, _MEContentBlockerMangerReload, 
+                       _MEMailAppExtensionsEnabledStateChanged, _MEMailExtensionCapabilitiesKey, 
+                       _MEMailExtensionCapabilityComposeSession, _MEMailExtensionCapabilityContentBlocking, 
+                       _MEMailExtensionCapabilityMessageActions, _MEMailExtensionCapabilityMessageSecurity, 
+                       _MEMailExtensionErrorDomain, _MEMailExtensionErrorExtensionIdentifierKey, 
+                       _MEMailExtensionsLog, _MEMessageSecurityErrorDomain, _MEVisibleMessagesReload ]
+    objc-classes:    [ MEAddressAnnotation, MEAppExtensionsController, MEComposeContext, 
+                       MEComposeExtensionValidationError, MEComposeExtensionsHelper, 
+                       MEComposeSession, MEContentRuleListManager, MEDecodedMessage, 
+                       MEDecodedMessageBanner, MEEmailAddress, MEEncodedOutgoingMessage, 
+                       MEExtensionHostContext, MEExtensionManager, MEMailComposeToolbarItemInfo, 
+                       MEMessage, MEMessageAction, MEMessageActionDecision, MEMessageActionDestination, 
+                       MEMessageActionFlagChange, MEMessageEncodingResult, MEMessageRecipients, 
+                       MEMessageSecurityInformation, MEMessageSigner, MEOutgoingMessageEncodingStatus, 
+                       MERemoteExtension, MERemoteExtensionContext ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ MEExtensionViewController, MESecureMessageCompositionHandler ]
+...

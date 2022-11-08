@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           D961B854-48E6-32A7-9263-EAC664AB17EC
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           12AEE240-F584-3E0B-8307-4EF965573758
+install-name:    '/usr/lib/libmrc.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _mrc_dns_proxy_activate, _mrc_dns_proxy_create, _mrc_dns_proxy_invalidate, 
+                       _mrc_dns_proxy_parameters_add_input_interface, _mrc_dns_proxy_parameters_create, 
+                       _mrc_dns_proxy_parameters_enumerate_input_interfaces, _mrc_dns_proxy_parameters_get_force_aaaa_synthesis, 
+                       _mrc_dns_proxy_parameters_get_output_interface, _mrc_dns_proxy_parameters_set_force_aaaa_synthesis, 
+                       _mrc_dns_proxy_parameters_set_nat64_prefix, _mrc_dns_proxy_parameters_set_output_interface, 
+                       _mrc_dns_proxy_set_event_handler, _mrc_dns_proxy_set_queue, 
+                       _mrc_dns_proxy_state_inquiry_activate, _mrc_dns_proxy_state_inquiry_create, 
+                       _mrc_dns_proxy_state_inquiry_invalidate, _mrc_dns_proxy_state_inquiry_set_handler, 
+                       _mrc_dns_proxy_state_inquiry_set_queue, _mrc_release, _mrc_retain ]
+...

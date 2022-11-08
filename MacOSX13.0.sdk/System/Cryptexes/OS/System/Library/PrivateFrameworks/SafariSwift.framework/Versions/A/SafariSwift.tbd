@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           B3D5E932-E7BB-3FC8-B003-EF571B32C3A6
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           DBC08502-C3F1-3DB3-9640-AAB958C72953
+install-name:    '/System/Library/PrivateFrameworks/SafariSwift.framework/Versions/A/SafariSwift'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s11SafariSwift19SiriLinkCoordinatorCACycfC', '_$s11SafariSwift19SiriLinkCoordinatorCACycfc', 
+                       '_$s11SafariSwift19SiriLinkCoordinatorCMa', '_$s11SafariSwift19SiriLinkCoordinatorCMn', 
+                       '_$s11SafariSwift19SiriLinkCoordinatorCMo', '_$s11SafariSwift19SiriLinkCoordinatorCN', 
+                       '_$s11SafariSwift19SiriLinkCoordinatorCfD' ]
+    objc-classes:    [ SiriLinkCoordinator, _SiriLinkCoordinator ]
+...

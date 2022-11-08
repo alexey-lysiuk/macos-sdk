@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           B680A27B-D6A5-3A51-8E91-A531C0CC2DD8
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           1AADAAB9-BAAF-3F83-904D-55A1D6B643D8
+install-name:    '/System/Library/PrivateFrameworks/StreamingExtractor.framework/Versions/A/StreamingExtractor'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _STAEAExtractorOptionsArchiveID, _STAEAExtractorOptionsAsymmetricDecryptionKey, 
+                       _STAEAExtractorOptionsSigningPublicKey, _STAEAExtractorOptionsSourceDirectory, 
+                       _STAEAExtractorOptionsSourceDirectorySandboxExtension, _STAEAExtractorOptionsSymmetricDecryptionKey, 
+                       _STExtractorErrorDomain, _STRemoteExtractorOptionsDoesConsumeExtractedData, 
+                       _STRemoteExtractorOptionsPluginBundleName, _STRemoteExtractorOptionsPluginBundlePath, 
+                       _STRemoteExtractorOptionsPluginDirectory, _STRemoteExtractorOptionsSessionID, 
+                       _STRemoteExtractorOptionsSuppressCompletionsDuringShutdown, 
+                       _StreamingExtractorVersionNumber, _StreamingExtractorVersionString ]
+    objc-classes:    [ STRemoteExtractor ]
+...

@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           4ED28FF4-71BA-3957-AC08-A59373729043
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F824D471-48D8-39FE-842F-2D3467515808
+install-name:    '/System/Library/PrivateFrameworks/ServerInformation.framework/Versions/A/ServerInformation'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SICopyLocalizedServerProductName, _SICopyMinimumServerVersion, 
+                       _SICopyServerBuildVersion, _SICopyServerVersion, _SIGetServerInstallPathPrefix, 
+                       _SIGetServerPerformanceModeEnabled, _SIIsOSXServerVolume, 
+                       _SIIsOSXServerVolumeConfigured, _SIIsServerHardware, _SIIsXsanCapable, 
+                       _SISetServerPerformanceModeEnabled, __SIIsOSXVolumeVersionEqualToOrGreater, 
+                       _kSIServerPerformanceModeDidChangeNotication ]
+    objc-classes:    [ ServerInformationComputerModelInfo ]
+...

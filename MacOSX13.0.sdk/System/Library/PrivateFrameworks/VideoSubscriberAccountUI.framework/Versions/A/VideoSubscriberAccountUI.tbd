@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           0425E580-BDCD-32AD-A8B5-4F2148E7D529
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           62440F29-6D8A-3E47-B118-0EC44B5B9B98
+install-name:    '/System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/Versions/A/VideoSubscriberAccountUI'
+current-version: 453.10.10
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _VSAppSettingsFacadeAppsDidChangeNotification, _VSWLKAppInstallationOperationNotificationUserInfoAppAdamIDKey, 
+                       _VSWLKAppInstallationOperationNotificationUserInfoInstallProgressKey, 
+                       _VSWLKAppInstallationOperationProgressDidChange, _kVSDeveloperTwoCharCode ]
+    objc-classes:    [ VSAMSStorefrontFetchAllOperation, VSAppDescription, VSAppSettingsFacade, 
+                       VSAppSettingsViewModel, VSFetchAllSupportedAppsOperation, 
+                       VSFontCenter, VSIdentityProviderFetchAllOperation, VSIdentityProviderFetchAppsOperation, 
+                       VSIdentityProviderFetchOperation, VSIdentityProviderFilter, 
+                       VSIdentityProviderRequest, VSIdentityProviderRequestManager, 
+                       VSIdentityProviderStorefrontCollection, VSIdentityProviderStorefrontParser, 
+                       VSImageLoadOperation, VSLoadAllAppIconsOperation, VSMultiAppInstallUtility, 
+                       VSNonChannelAppDecider, VSStorefront, VSStorefrontFilter, 
+                       VSTopShelfPurger, VSViewControllerFactory, VSWLKAppInstallationOperation ]
+...

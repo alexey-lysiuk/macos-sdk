@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           AB5DF7D7-0F4C-3C68-B831-35F13CE47F0B
+  - target:          x86_64-maccatalyst
+    value:           AB5DF7D7-0F4C-3C68-B831-35F13CE47F0B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           28A0E821-CEF7-34AA-B31E-7C503CD99852
+  - target:          arm64e-maccatalyst
+    value:           28A0E821-CEF7-34AA-B31E-7C503CD99852
+install-name:    '/usr/lib/swift/libswiftVision.dylib'
+current-version: 2.1.2
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftVision.dylib', '$ld$install_name$os10.11$@rpath/libswiftVision.dylib', 
+                       '$ld$install_name$os10.12$@rpath/libswiftVision.dylib', '$ld$install_name$os10.13$@rpath/libswiftVision.dylib', 
+                       '$ld$install_name$os10.14$@rpath/libswiftVision.dylib', '$ld$install_name$os10.9$@rpath/libswiftVision.dylib' ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo16VNRecognizedTextC6VisionE11boundingBox3forSo22VNRectangleObservationCSgSnySS5IndexVG_tKF', 
+                       '_$sSo17VNFaceObservationC6VisionE18faceCaptureQualitySfSgvg', 
+                       '_$sSo17VNFaceObservationC6VisionE18faceCaptureQualitySfSgvpMV', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE13pointsInImage9imageSizeSaySo7CGPointVGSo6CGSizeV_tF', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE16normalizedPointsSaySo7CGPointVGvg', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE16normalizedPointsSaySo7CGPointVGvpMV', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE26precisionEstimatesPerPointSaySfGSgvg', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE26precisionEstimatesPerPointSaySfGSgvpMV', 
+                       '_$sSo9VNContourC6VisionE16normalizedPointsSays5SIMD2VySfGGvg', 
+                       '_$sSo9VNContourC6VisionE16normalizedPointsSays5SIMD2VySfGGvpMV', 
+                       '__swift_FORCE_LOAD_$_swiftVision' ]
+...

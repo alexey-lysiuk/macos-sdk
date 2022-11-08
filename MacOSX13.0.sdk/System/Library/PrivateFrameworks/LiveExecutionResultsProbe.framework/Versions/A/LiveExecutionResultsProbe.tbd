@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           07A3ADC3-64B3-3C0D-AF7F-F712A0FE14A8
+  - target:          x86_64-maccatalyst
+    value:           07A3ADC3-64B3-3C0D-AF7F-F712A0FE14A8
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           D1627E80-292B-3E9D-908E-D4D6D2C4D0AA
+  - target:          arm64e-maccatalyst
+    value:           D1627E80-292B-3E9D-908E-D4D6D2C4D0AA
+install-name:    '/System/Library/PrivateFrameworks/LiveExecutionResultsProbe.framework/Versions/A/LiveExecutionResultsProbe'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _LiveExecutionResultsProbeVersionNumber, _LiveExecutionResultsProbeVersionString ]
+...

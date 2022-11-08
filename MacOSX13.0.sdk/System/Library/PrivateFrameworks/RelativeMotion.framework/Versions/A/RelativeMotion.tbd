@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           B2D645AE-5A96-3E65-A56D-9B5EC03B3E3A
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           57D9E3E9-9273-3B3F-A88C-A16E211E8BC5
+install-name:    '/System/Library/PrivateFrameworks/RelativeMotion.framework/Versions/A/RelativeMotion'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _kRMErrorDomain ]
+    objc-classes:    [ RMAttitude, RMAudioListenerPoseManager, RMDummyData, RMDummyDataManager, 
+                       RMInternalServiceClient, RMLogItem, RMMediaSession, RMMediaSessionObserver, 
+                       RMMediaSessionOptions, RMMediaSessionStatus, RMPose, RMRelativeMotionManager ]
+...

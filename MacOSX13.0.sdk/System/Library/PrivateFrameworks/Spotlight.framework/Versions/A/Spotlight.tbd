@@ -1,0 +1,47 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           D70AFE95-ED2D-3484-BFAB-F094053257CF
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B98C6B0D-D4B4-3B83-B2E4-790DD95D7040
+install-name:    '/System/Library/PrivateFrameworks/Spotlight.framework/Versions/A/Spotlight'
+current-version: 2230.2
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SPAppDelegatePreferencesChanged, _SPBodyColor, _SPBodyFont, 
+                       _SPDescriptionBodyColorOfWeight, _SPDescriptionBodyFontOfWeightSize, 
+                       _SPDescriptionBodyLineSpacingOfSize, _SPDescriptionTitleColorOfWeight, 
+                       _SPDescriptionTitleFontOfWeight, _SPHeaderColor, _SPHeaderFont, 
+                       _SPLinkColor, _SPLogInit, _SPMessageTracingSearchSessionOpenMethodClearedPreviousSearch, 
+                       _SPMessageTracingSearchSessionOpenMethodKeyboardShortcut, 
+                       _SPMessageTracingSearchSessionOpenMethodMenuBarItem, _SPMicroFont, 
+                       _SPQuaternaryColor, _SPRowKeyColorOfWeight, _SPRowKeyFontOfWeight, 
+                       _SPRowValueColorOfWeight, _SPRowValueFontOfWeight, _SPSecondaryColor, 
+                       _SPSecondaryFont, _SPSecondaryTextAttributes, _SPSmallHeaderColor, 
+                       _SPSmallHeaderFont, _SPTertiaryColor, _SPTextAttributesForFontAndColor, 
+                       _SPTextColumnsBodyColorOfWeight, _SPTextColumnsBodyFontOfWeight, 
+                       _SPTextColumnsTitleColorOfWeight, _SPTextColumnsTitleFontOfWeight, 
+                       _SPTinyFont, _SPWebSearchURLFromQueryWithHandler, _SpotlightVersionNumber, 
+                       _SpotlightVersionString, _areExplicitBooksForbidden, _bootDriveIsFast, 
+                       _spotlightPrefsId ]
+    objc-classes:    [ PRSCalculationResult, PRSCalculatorResult, PRSConversion, 
+                       PRSConversionResult, PRSCurrencyConversionResult, PRSDictionaryAsyncCard, 
+                       PRSDictionaryResult, PRSPurchaseHistoryManager, PRSUnitConversionResult, 
+                       SPAppDefaults, SPApplicationQuery, SPApplicationQueryResult, 
+                       SPClientSession, SPCoreSpotlightQuery, SPCoreSpotlightResult, 
+                       SPDefaults, SPFileRadarSupport, SPFolderQuery, SPGroupHeadingResult, 
+                       SPKCalculatorQuery, SPKCoreParsecInterface, SPKDictionaryQuery, 
+                       SPKParsecQuery, SPMessageTracing, SPMessageTracingSearchSession, 
+                       SPMetadataGroupHeadingResult, SPMetadataQuery, SPMetadataResult, 
+                       SPParsecGroupHeadingResult, SPPhotoUtilities, SPPreviewController, 
+                       SPQueryTask, SPSearchSuggestionsBuilder, SPShortcuts, SPSuggestionCardSection, 
+                       SPTTRResult, SPUISearchModel, SPUISearchModelGeneral, SPURLQuery, 
+                       SPURLResult, _SPResultsArrays ]
+    objc-ivars:      [ SPQueryTask._queryStartTime, SPQueryTask._shortcutResultChecked, 
+                       SPQueryTask._topHitSection ]
+...

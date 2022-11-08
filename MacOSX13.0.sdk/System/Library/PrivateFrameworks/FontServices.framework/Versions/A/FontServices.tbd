@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           982108E9-DBBC-3AE6-AC06-9E420C4ED6FF
+  - target:          x86_64-maccatalyst
+    value:           982108E9-DBBC-3AE6-AC06-9E420C4ED6FF
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           8E9D2B4D-920E-307A-9179-E11967C5862E
+  - target:          arm64e-maccatalyst
+    value:           8E9D2B4D-920E-307A-9179-E11967C5862E
+install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/Versions/A/FontServices'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _FSGetMaxSupportedFontAssetCompatibilityVersion, _FontServicesVersionNumber, 
+                       _FontServicesVersionString, _kFSFontAssetType ]
+...

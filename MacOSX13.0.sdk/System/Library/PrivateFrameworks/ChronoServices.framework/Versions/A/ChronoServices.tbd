@@ -1,0 +1,91 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           A03D2EE6-53D5-3767-AD34-F5DD0CA0ABEC
+  - target:          x86_64-maccatalyst
+    value:           A03D2EE6-53D5-3767-AD34-F5DD0CA0ABEC
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           5736B23D-F365-347E-90B4-F503B21AAAA8
+  - target:          arm64e-maccatalyst
+    value:           5736B23D-F365-347E-90B4-F503B21AAAA8
+install-name:    '/System/Library/PrivateFrameworks/ChronoServices.framework/Versions/A/ChronoServices'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _CHSChronoServicesStartupNotification, _CHSDefaultTestFamily, 
+                       _CHSDefaultTestFamilyMaskMultiple, _CHSDefaultTestFamilyMaskSingle, 
+                       _CHSDescriptionForWidgetVisibility, _CHSEdgeInsetsDescription, 
+                       _CHSEdgeInsetsFromRect, _CHSEdgeInsetsZero, _CHSErrorDomain, 
+                       _CHSFlushPowerlog, _CHSInlineTextParametersDefaultDateFormat, 
+                       _CHSIsWidgetExtensionPoint, _CHSLogChronoServices, _CHSLogClientSnapshots, 
+                       _CHSNSURLSessiondServiceInfoKeyIsHighPriority, _CHSNSURLSessiondServiceInfoKeySessionIdentifier, 
+                       _CHSOpenApplicationDebugOptionKeyWidgetFamily, _CHSOpenApplicationDebugOptionKeyWidgetKind, 
+                       _CHSRectFromEdgeInsets, _CHSScreenshotColorSchemeDescription, 
+                       _CHSTintFilterStyleSupportsVibrancy, _CHSWidgetEnvironmentDataForBundleIdentifier, 
+                       _CHSWidgetEventServicePublisherEntitlement, _CHSWidgetFamilyDescription, 
+                       _CHSWidgetFamilyFromString, _CHSWidgetFamilyIsAccessory, _CHSWidgetFamilyIsComplication, 
+                       _CHSWidgetFamilyIsValid, _CHSWidgetFamilyMaskContainsFamily, 
+                       _CHSWidgetFamilyMaskDescription, _CHSWidgetFamilyMaskEnumerateFamilies, 
+                       _CHSWidgetFamilyMaskFromWidgetFamily, _CHSWidgetFontStyleDescription, 
+                       _CHSWidgetFontStyleFromTextSizeAdjustment, _CHSWidgetLocationDescription, 
+                       _CHSWidgetTextSizeAdjustmentDescription, _CHSWidgetTextSizeAdjustmentFromFontStyle, 
+                       _CHSWidgetVisibilityKey, _ChronoLoggingSubsystem, _ChronoServicesVersionNumber, 
+                       _ChronoServicesVersionString, _NSStringFromWidgetFamily, _NSStringFromWidgetLocation, 
+                       __CHSRestartChronod, _chs_debugDescriptionForErrorCode ]
+    objc-classes:    [ CHSApplicationProcessStateChangeConsumer, CHSArrayBox, CHSAvocadoDescriptor, 
+                       CHSBaseDescriptor, CHSChronoEventServiceListener, CHSChronoServicesConnection, 
+                       CHSChronoWidgetServiceSpecification, CHSConfiguredWidgetContainerDescriptor, 
+                       CHSConfiguredWidgetContainerDescriptorsBox, CHSConfiguredWidgetDescriptor, 
+                       CHSDictionaryBox, CHSFontSpecification, CHSFontSpecificationFontFeature, 
+                       CHSGaugeParameters, CHSInlineTextParameters, CHSIntentRecommendation, 
+                       CHSMutableAvocadoDescriptor, CHSMutableConfiguredWidgetDescriptor, 
+                       CHSMutableScreenshotPresentationAttributes, CHSMutableSessionPlatterDescriptor, 
+                       CHSMutableWidgetConfiguration, CHSMutableWidgetDescriptor, 
+                       CHSMutableWidgetExtensionInfo, CHSMutableWidgetMetricsSpecification, 
+                       CHSMutableWidgetTintParameters, CHSNSURLSessiondService, CHSPlaceholderRequest, 
+                       CHSScreenshotManager, CHSScreenshotPresentationAttributes, 
+                       CHSSessionPlatterDescriptor, CHSSnapshotContext, CHSTimelineController, 
+                       CHSTimelineReloadRequest, CHSToolServiceConnection, CHSToolServiceSpecification, 
+                       CHSToolSupportService, CHSURLSessionToken, CHSWatchComplicationsCurvedLabelMetrics, 
+                       CHSWidget, CHSWidgetConfiguration, CHSWidgetConfigurationHostsBox, 
+                       CHSWidgetConfigurationReader, CHSWidgetDescriptor, CHSWidgetDescriptorProvider, 
+                       CHSWidgetDescriptorsBox, CHSWidgetEventServiceListener, CHSWidgetEventServicePublisher, 
+                       CHSWidgetEventServiceSpecification, CHSWidgetExtensionInfo, 
+                       CHSWidgetHost, CHSWidgetKey, CHSWidgetKeysBox, CHSWidgetMetrics, 
+                       CHSWidgetMetricsSpecification, CHSWidgetTintParameters, _CHSWidgetConfigurationHost ]
+    objc-ivars:      [ CHSBaseDescriptor._backgroundStyle, CHSBaseDescriptor._containerBundleIdentifier, 
+                       CHSBaseDescriptor._displayName, CHSBaseDescriptor._eventMachServiceName, 
+                       CHSBaseDescriptor._extensionBundleIdentifier, CHSBaseDescriptor._localeToken, 
+                       CHSBaseDescriptor._nativeContainerBundleIdentifier, CHSBaseDescriptor._supportedFamilies, 
+                       CHSBaseDescriptor._supportsVibrantContent, CHSBaseDescriptor._version, 
+                       CHSBaseDescriptor._widgetDescription, CHSConfiguredWidgetDescriptor._showsWidgetLabel, 
+                       CHSConfiguredWidgetDescriptor._suggestion, CHSConfiguredWidgetDescriptor._supportsTinting, 
+                       CHSConfiguredWidgetDescriptor._systemConfigured, CHSScreenshotPresentationAttributes._additionalSettingsContext, 
+                       CHSScreenshotPresentationAttributes._allowsPrivacySensitiveContent, 
+                       CHSScreenshotPresentationAttributes._colorScheme, CHSScreenshotPresentationAttributes._tintParameters, 
+                       CHSSessionPlatterDescriptor._activityAttributesType, CHSWidgetConfiguration._containerDescriptors, 
+                       CHSWidgetConfiguration._metricsSpecification, CHSWidgetDescriptor._defaultIntent, 
+                       CHSWidgetDescriptor._defaultIntentProvider, CHSWidgetDescriptor._fetchDefaultIntentCompletions, 
+                       CHSWidgetDescriptor._intentRecommendations, CHSWidgetDescriptor._intentType, 
+                       CHSWidgetDescriptor._kind, CHSWidgetDescriptor._widgetVisibility, 
+                       CHSWidgetExtensionInfo._allowsMixedLocalizations, CHSWidgetExtensionInfo._availableLocalizations, 
+                       CHSWidgetExtensionInfo._bundleIdentifier, CHSWidgetExtensionInfo._bundleURL, 
+                       CHSWidgetExtensionInfo._configurations, CHSWidgetExtensionInfo._containerBundleIdentifier, 
+                       CHSWidgetExtensionInfo._containerURL, CHSWidgetExtensionInfo._dataProtectionLevel, 
+                       CHSWidgetExtensionInfo._descriptors, CHSWidgetExtensionInfo._entitlements, 
+                       CHSWidgetExtensionInfo._isDevelopmentExtension, CHSWidgetExtensionInfo._lastModifiedDate, 
+                       CHSWidgetExtensionInfo._nominatedContainerBundleIdentifiers, 
+                       CHSWidgetExtensionInfo._placeholderURLs, CHSWidgetExtensionInfo._snapshotURLs, 
+                       CHSWidgetExtensionInfo._systemDataContainerURL, CHSWidgetExtensionInfo._timelineURLs, 
+                       CHSWidgetExtensionInfo._version, CHSWidgetExtensionInfo._wantsLocation, 
+                       CHSWidgetTintParameters._accentedAlternateBackground, CHSWidgetTintParameters._fallbackFilterStyle, 
+                       CHSWidgetTintParameters._filterStyle, CHSWidgetTintParameters._fraction, 
+                       CHSWidgetTintParameters._primaryTintColor, CHSWidgetTintParameters._secondaryTintColor ]
+...

@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-maccatalyst
+    value:           67C665D1-B9E6-3354-8848-29B010F4E96D
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-maccatalyst
+    value:           A9587F15-659F-31FF-91D3-05B7DB93F36B
+install-name:    '/System/iOSSupport/usr/lib/swift/libswiftMediaPlayer.dylib'
+current-version: 4019.130.110
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ '_$sSo27MPMusicPlayerPlayParametersC05MediaB0E4fromABs7Decoder_p_tKcfC', 
+                       '_$sSo27MPMusicPlayerPlayParametersC05MediaB0E4fromABs7Decoder_p_tKcfc', 
+                       '_$sSo27MPMusicPlayerPlayParametersC05MediaB0E6encode2toys7Encoder_p_tKF', 
+                       '_$sSo27MPMusicPlayerPlayParametersCSE05MediaB0Mc', '_$sSo27MPMusicPlayerPlayParametersCSe05MediaB0Mc', 
+                       '__swift_FORCE_LOAD_$_swiftMediaPlayer' ]
+...

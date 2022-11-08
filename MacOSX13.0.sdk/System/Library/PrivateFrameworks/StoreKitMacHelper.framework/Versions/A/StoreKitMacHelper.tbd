@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           2F49700D-890F-3768-BDB9-A60034A5B6C0
+  - target:          x86_64-maccatalyst
+    value:           2F49700D-890F-3768-BDB9-A60034A5B6C0
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           878CF15A-838A-349C-9801-623A2FE99A64
+  - target:          arm64e-maccatalyst
+    value:           878CF15A-838A-349C-9801-623A2FE99A64
+install-name:    '/System/Library/PrivateFrameworks/StoreKitMacHelper.framework/Versions/A/StoreKitMacHelper'
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ StoreKit ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _SKRemoteEngagementCatalystHelper, _StoreProductPageNewHelper ]
+...

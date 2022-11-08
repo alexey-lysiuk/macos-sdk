@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           A4FD429A-EAB8-3797-843A-C5F66EB9521E
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           BF05E8EF-97EF-3782-88CE-5D873BA448A0
+install-name:    '/System/Library/PrivateFrameworks/RegulatoryDomain.framework/Versions/A/RegulatoryDomain'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _RDClearCacheData, _RDKickstartDaemon, _RDUpdateCountryCodeFromLocation, 
+                       _RDUpdateCountryCodeFromMCC, _RDUpdateCountryCodeFromPeer, 
+                       _RDUpdateCountryCodeFromPeerData, _RDUpdateCountryCodeFromWiFiAPs, 
+                       _kRegulatoryDomainUpdateNotification ]
+    objc-classes:    [ RDCachedData, RDEstimate ]
+...

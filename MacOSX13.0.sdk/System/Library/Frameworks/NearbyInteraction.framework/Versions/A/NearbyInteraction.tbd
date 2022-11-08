@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           BA9049AB-66D8-39F2-BAB7-62A2D7C04EFA
+  - target:          x86_64-maccatalyst
+    value:           BA9049AB-66D8-39F2-BAB7-62A2D7C04EFA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           09D0BD5B-4B4D-39D5-AA79-A257EB0A511C
+  - target:          arm64e-maccatalyst
+    value:           09D0BD5B-4B4D-39D5-AA79-A257EB0A511C
+install-name:    '/System/Library/Frameworks/NearbyInteraction.framework/Versions/A/NearbyInteraction'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _NIAlgorithmConvergenceStatusReasonDescription, _NIAlgorithmConvergenceStatusReasonDescription_Private, 
+                       _NIAlgorithmConvergenceStatusReasonInsufficientHorizontalSweep, 
+                       _NIAlgorithmConvergenceStatusReasonInsufficientLighting, _NIAlgorithmConvergenceStatusReasonInsufficientMovement, 
+                       _NIAlgorithmConvergenceStatusReasonInsufficientSignalStrength, 
+                       _NIAlgorithmConvergenceStatusReasonInsufficientVerticalSweep, 
+                       _NIErrorDomain, _NINearbyObjectAngleNotAvailable, _NINearbyObjectAngleNotAvailable_Private, 
+                       _NINearbyObjectAzimuthNotAvailable, _NINearbyObjectDirectionNotAvailable, 
+                       _NINearbyObjectDirectionNotAvailable_Private, _NINearbyObjectDistanceNotAvailable, 
+                       _NINearbyObjectDistanceNotAvailable_Private, _NINearbyObjectElevationNotAvailable, 
+                       _NINearbyObjectQuaternionNotAvailable, _NINearbyObjectRangeBiasEstimateNotAvailable, 
+                       _NINearbyObjectRangeUncertaintyNotAvailable, _NINearbyObjectRemoteTxAntennaMaskNotAvailable, 
+                       _NINearbyObjectSignalStrengthNotAvailable, _NINearbyObjectSignalStrengthNotAvailable_Private, 
+                       _NINearbyObjectWorldTransformNotAvailable, _NINearbyObjectWorldTransformNotAvailable_Private, 
+                       _NINotifySystemShutdownWithReason, _NITruthTagLabelKey, _NITruthTagSourceClientApp, 
+                       _NITruthTagSourceDirectUserInput, _NITruthTagSourceKey, _kNISystemShutdownCompletionTimeoutSeconds ]
+    objc-classes:    [ NIAlgorithmConvergence, NIAlgorithmConvergenceState, NIBluetoothSample, 
+                       NICarKeyConfiguration, NICarKeyEventNotifier, NIConfiguration, 
+                       NIDevicePresenceConfiguration, NIDevicePresenceNotifier, NIDiscoveryToken, 
+                       NIHomeDeviceConfiguration, NINearbyAccessoryConfiguration, 
+                       NINearbyObject, NINearbyPeerConfiguration, NIRangingAuthConfiguration, 
+                       NIRegionPredicate, NISession, NISpatialBrowsingConfiguration, 
+                       NIVisionInput, _NIWiFiRangingTestConfiguration ]
+...

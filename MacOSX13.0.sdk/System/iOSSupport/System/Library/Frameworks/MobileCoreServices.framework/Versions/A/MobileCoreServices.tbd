@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-maccatalyst
+    value:           25843A95-6891-34C1-9844-544DC7D99597
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-maccatalyst
+    value:           1CFB17AE-1100-3D1E-9EF8-8552C3359265
+install-name:    '/System/iOSSupport/System/Library/Frameworks/MobileCoreServices.framework/Versions/A/MobileCoreServices'
+current-version: 1228
+reexported-libraries:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    libraries:       [ '/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices' ]
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ _MobileCoreServicesVersionNumber, _MobileCoreServicesVersionString ]
+...

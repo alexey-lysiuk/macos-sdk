@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           83368AE0-90C0-3BE5-A807-CD068E9DA518
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           AD958A4B-0C96-394E-8739-14CD31A2C9CC
+install-name:    '/System/Library/PrivateFrameworks/UARPiCloud.framework/Versions/A/UARPiCloud'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _InternalStorageDirectoryPath, _UARPiCloudVersionNumber, _UARPiCloudVersionString, 
+                       _getCachedAccessories, _getEntryForKey, _getMultiValueHash, 
+                       _getSuperBinaryVersionForAsset, _kUARPDefaultPersonalizationServer, 
+                       _mobileAssetStateToString, _saveEntryForKey, _uarpFilepathForRemotePath ]
+    objc-classes:    [ CHIPAccessoriesRecord, CHIPAccessoryFirmwareRecord, CHIPAttestationCertificateRecord, 
+                       UARPiCloudAccessory, UARPiCloudAccessoryRecord, UARPiCloudAssetManager, 
+                       UARPiCloudContainer, UARPiCloudManager, UARPiCloudZone ]
+    objc-ivars:      [ UARPiCloudAssetManager._accessories, UARPiCloudAssetManager._assetManager, 
+                       UARPiCloudAssetManager._cloudManager, UARPiCloudAssetManager._log, 
+                       UARPiCloudAssetManager._workQueue ]
+...

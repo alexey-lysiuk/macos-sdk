@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           64000F3A-84DF-38C8-897D-CB7F9325F296
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           E7CADF05-2C6B-3061-8DCC-6C796FE89C49
+install-name:    '/System/Library/PrivateFrameworks/AppleRestoreUtils.framework/Versions/A/AppleRestoreUtils'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _ARUContextSetApTicket, _ARUContextSetCallbackContext, _ARUContextSetLocalFDR, 
+                       _ARUContextSetProvisioningData, _ARUContextSetRemoteFDR, _ARUContextSetRestoreOptions, 
+                       _ARUContextSetTrustObjectData, _ARUCopyHttpStatistics, _ARUCreateContext, 
+                       _ARUExecutePostFDRSealingTasks, _ARUExecutePreFDRSealingTasks, 
+                       _ARUExecuteTask, _ARUGetRestoreContext, _ARUSetCreateLocalPolicyCallback, 
+                       _ARUSetCreateSsoServiceTicketCallback, _ARUSetLogHandler ]
+...

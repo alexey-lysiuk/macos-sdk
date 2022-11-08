@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           910DB089-A07B-3C90-B977-9372739FE261
+  - target:          x86_64-maccatalyst
+    value:           910DB089-A07B-3C90-B977-9372739FE261
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           0590E43D-C9F3-3348-A398-480FB5FB832E
+  - target:          arm64e-maccatalyst
+    value:           0590E43D-C9F3-3348-A398-480FB5FB832E
+install-name:    '/System/Library/PrivateFrameworks/OAuth.framework/Versions/A/OAuth'
+current-version: 25
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _OAAuthTokenKey, _OAConsumerKeyKey, _OANonceKey, _OASignatureKey, 
+                       _OASignatureMethodKey, _OATimestampKey, _OAVersionKey, _oauth_version ]
+    objc-classes:    [ OACredential, OAHMAC_SHA1Signer, OAPlainTextSigner, OAURLRequestSigner ]
+    objc-ivars:      [ OACredential._consumerKey, OACredential._consumerSecret, OACredential._oauthToken, 
+                       OACredential._oauthTokenSecret, OAURLRequestSigner._credential, 
+                       OAURLRequestSigner._signatureMethod ]
+...

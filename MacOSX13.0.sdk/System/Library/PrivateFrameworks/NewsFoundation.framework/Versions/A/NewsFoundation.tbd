@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           A0E8192C-EFD6-3FAC-AE0F-7EA2EDA4EA49
+  - target:          x86_64-maccatalyst
+    value:           A0E8192C-EFD6-3FAC-AE0F-7EA2EDA4EA49
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F605CBF8-B765-3DB6-853C-866F586E2133
+  - target:          arm64e-maccatalyst
+    value:           F605CBF8-B765-3DB6-853C-866F586E2133
+install-name:    '/System/Library/PrivateFrameworks/NewsFoundation.framework/Versions/A/NewsFoundation'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _NFDeviceHasExtendedColorDisplay, _NFDeviceIsA7, _NFDeviceIsA8, 
+                       _NFDeviceModelString, _NFDeviceOSVersion, _NFDevicePlatform, 
+                       _NFGeneralDeviceString, _NFInternalBuild, _NFLockSync, _NFPromiseInvokeOnQueue, 
+                       _NFSeedBuild, _NFStateMachineErrorDomain, _NFStoreDemoMode, 
+                       _NewsFoundationVersionNumber, _NewsFoundationVersionString, 
+                       __UIValueCGRectValue, _kNFPromiseSealingErrorCode, _kNFPromiseSealingErrorName, 
+                       _kNFReachabilityChangedNotification, _zalgo, _zalgoIfMain ]
+    objc-classes:    [ NFArchiver, NFEventManager, NFEventTrigger, NFLazy, NFMultiDelegate, 
+                       NFMutexLock, NFPendingPromise, NFPromise, NFPromiseSeal, NFReachability, 
+                       NFStateMachine, NFStateMachineEvent, NFStateMachineState, 
+                       NFStateMachineTransition, NFUnfairLock, NFVoid ]
+...

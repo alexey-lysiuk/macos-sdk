@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           411627B2-7A0E-3BFC-B5B8-BD425D237D41
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           925D0E50-5E41-3B8D-91BA-4118BE70D4FF
+install-name:    '/System/Library/PrivateFrameworks/iPod.framework/Versions/A/iPod'
+current-version: 26
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _iPodAquireLock, _iPodCopyConnected, _iPodCopyConnectedWithOptions, 
+                       _iPodCopyMountpoint, _iPodCopyName, _iPodCopyPreferences, 
+                       _iPodCopyRevision, _iPodCreate, _iPodGetLockCount, _iPodGetTypeID, 
+                       _iPodGetUniqueID, _iPodIsDiskAniPod, _iPodPreferenceGetTypeID, 
+                       _iPodPreferenceGetValue, _iPodPreferenceSetValue, _iPodRegisterServer, 
+                       _iPodRegisterWithServer, _iPodRegisterWithServerWithOptions, 
+                       _iPodReleaseLock, _iPodServerBroadcastMessage, _iPodServerRegister, 
+                       _iPodSetPreferences, _iPodUnregisterFromServer ]
+...

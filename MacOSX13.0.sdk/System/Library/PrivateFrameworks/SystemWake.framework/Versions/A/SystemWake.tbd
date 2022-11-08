@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           BA959808-CAE8-3E44-AD7F-0F7B584FA8CB
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           8E733BF9-1386-3E2C-9334-54A63ADE88F2
+install-name:    '/System/Library/PrivateFrameworks/SystemWake.framework/Versions/A/SystemWake'
+current-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SWLogPower, _SWLogTimer, _SWSystemWakeVersionNumber, _SWSystemWakeVersionString, 
+                       _sw_kernel_wake_mach_absolute_time, _sw_kernel_wake_mach_continuous_time ]
+    objc-classes:    [ SWDeclareSystemActivityResult, SWPreventSystemSleepAssertion, 
+                       SWScheduledSystemWake, SWSystemActivityAcquisitionDetails, 
+                       SWSystemActivityAssertion, SWSystemActivityProvider, SWSystemSleepAssertionProvider, 
+                       SWSystemSleepMonitor, SWSystemSleepMonitorProvider, SWWakingTimer ]
+...

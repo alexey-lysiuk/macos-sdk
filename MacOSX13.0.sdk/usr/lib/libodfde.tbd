@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           DFA9478A-F699-3904-8C5D-6BE37F629BD8
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           5AA9BA6F-2E9A-30E8-B77D-F4C730B28E85
+install-name:    '/usr/lib/libodfde.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _ODFDEAddUser, _ODFDEResetPassword, _ODFDESynchronizeUsers, 
+                       _ODFDESynchronizeUsersOnVolume, ___odfdeVersionNumber, ___odfdeVersionString ]
+...

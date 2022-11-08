@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           E2DB44EB-B3CF-36DF-B430-D0A119A70712
+  - target:          x86_64-maccatalyst
+    value:           E2DB44EB-B3CF-36DF-B430-D0A119A70712
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           C576B903-3BDC-3853-9FDF-A8D753E91343
+  - target:          arm64e-maccatalyst
+    value:           C576B903-3BDC-3853-9FDF-A8D753E91343
+install-name:    '/System/Library/PrivateFrameworks/NetAppsUtilities.framework/Versions/A/NetAppsUtilities'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _NACancelableCancel, _NAEmptyResult, _NAEqualObjects, _NAErrorDomain, 
+                       _NAFutureCallbackStack, _NAStringFromBOOL, _NSStringFromNADiffOperationType, 
+                       __NADictionaryOfMetrics, __NAPopScopedDescriptor, __NAPushScopedDescriptor, 
+                       _kNAIdentityBuilderDefaultComparisonBlock, _kNAIdentityBuilderDefaultDoubleComparisionBlock, 
+                       _kNAIdentityBuilderDefaultFloatComparisionBlock, _kNAIdentityBuilderDefaultHashBlock, 
+                       _kNAIdentityBuilderDefaultNSNumberComparisonBlock, _kNAIdentityBuilderPointerComparisonBlock, 
+                       _kNAIdentityBuilderPointerHashBlock ]
+    objc-classes:    [ NACancelationToken, NADeallocationSentinel, NADecayingTimer, 
+                       NADelegateDispatcher, NADelegateMethodLogSettings, NADescriptionBuilder, 
+                       NAFuture, NAGroupDiffOperation, NAGroupedItemDiff, NAIdentity, 
+                       NAIdentityBuilder, NAItemDiffOperation, NAMutableTreeNode, 
+                       NAPair, NAPromise, NAQueue, NAScheduler, NASimpleDiffableItemGroup, 
+                       NATreeNode, NAUniqueArrayDiff, NAUniqueArrayDiffOptions, NAValueThrottler ]
+...

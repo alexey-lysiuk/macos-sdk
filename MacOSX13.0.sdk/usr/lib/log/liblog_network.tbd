@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           570B27F2-EB64-3128-BC77-7ACF1BD87F29
+  - target:          x86_64-maccatalyst
+    value:           570B27F2-EB64-3128-BC77-7ACF1BD87F29
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           CBF6B0A8-B044-3DB5-B0EE-19B041E2E352
+  - target:          arm64e-maccatalyst
+    value:           CBF6B0A8-B044-3DB5-B0EE-19B041E2E352
+install-name:    '/usr/lib/log/liblog_network.dylib'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _OSLogCopyFormattedString ]
+...

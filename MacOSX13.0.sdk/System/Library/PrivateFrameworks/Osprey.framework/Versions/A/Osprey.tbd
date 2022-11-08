@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           A5FCC84C-BD52-3589-849E-46ECC3D6FC01
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           E58C98E3-654C-3146-9CF6-F0D1C8CE6D53
+install-name:    '/System/Library/PrivateFrameworks/Osprey.framework/Versions/A/Osprey'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ OspreyChannel, OspreyConnectionConfiguration, OspreyConnectionMetrics, 
+                       OspreyConnectionPool, OspreyConnectionPreferences, OspreyGRPCStreamingContext, 
+                       OspreyKeychain, OspreyMessageProducer, OspreyMethodCall, OspreyMutableRequest, 
+                       OspreyPreferences, OspreyRequest, OspreyService, OspreyServiceConfiguration, 
+                       OspreyUnaryMethodCall ]
+...

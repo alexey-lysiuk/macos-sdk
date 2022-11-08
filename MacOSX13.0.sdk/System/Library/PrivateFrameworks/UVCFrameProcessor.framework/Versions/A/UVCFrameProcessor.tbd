@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           FB8A8249-ACED-3B0B-9250-CBB050738A37
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           2DFBD61A-D34C-329B-B83B-8E9191DA9AB5
+install-name:    '/System/Library/PrivateFrameworks/UVCFrameProcessor.framework/Versions/A/UVCFrameProcessor'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _UVCFrameProcessorLog, _UVCFrameProcessorVersionNumber, _UVCFrameProcessorVersionString, 
+                       _createPixelBufferPool, _createRenderReadySampleBuffer ]
+    objc-classes:    [ UVCFrameProcessorBase, UVCFrameProcessorDecode, UVCFrameProcessorH264Decode, 
+                       UVCFrameProcessorMJPEGDecode, UVCFrameProcessorMJPEGDecodeGVA, 
+                       UVCFrameProcessorNative, UVCFrameProcessorRotate, UVCNativeFrame ]
+...

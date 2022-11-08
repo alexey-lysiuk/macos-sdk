@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           C9532D8D-648B-3556-B8D5-5EA972297E3D
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           122461FF-D684-3F51-A5A9-5035CDB27E09
+install-name:    '/System/Library/PrivateFrameworks/AppState.framework/Versions/A/AppState'
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ ASMessagesProvider, App Store, AppInstallExtension, AppStore, 
+                       AppStoreTests, AppStoreTopShelfExtension, AppStoreWidgetsExtension, 
+                       Arcade, ArcadeTopShelfExtension, MacAppStore, MacAppStoreTests, 
+                       NanoAppStore, NanoAppStoreTests, NanoAppStoreUITests, ProductPageExtension, 
+                       SubscribePageExtension, TVAppStore, TVAppStoreTests ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AppStateVersionNumber, _AppStateVersionString ]
+...

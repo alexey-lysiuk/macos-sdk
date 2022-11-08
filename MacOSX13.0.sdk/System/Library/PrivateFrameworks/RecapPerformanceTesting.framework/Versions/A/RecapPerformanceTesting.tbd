@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           75A75D63-DF61-34BC-BF1D-3142758CDFDF
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           0B8EB85C-C5FA-326A-A54B-80DCBE25CE8E
+install-name:    '/System/Library/PrivateFrameworks/RecapPerformanceTesting.framework/Versions/A/RecapPerformanceTesting'
+current-version: 17
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _RPTAmplitudeFromPagesOfView, _RPTAxisFromScrollDirection, 
+                       _RPTCGPointAdvanceInDirectionByAmount, _RPTCGRectGetMidpoint, 
+                       _RPTCGRectGetMidpointAlongSide, _RPTContentSizeAlongAxis, 
+                       _RPTContentSizeInDirection, _RPTConvertPointInViewToScreenSpace, 
+                       _RPTDefaultScrollDirection, _RPTExcludeSystemRegionsFromRect, 
+                       _RPTExcludeSystemRegionsFromView, _RPTGetBoundsForView, _RPTOppositeDirectionFrom, 
+                       _RPTPredominantAxisOfContentOf, _RPTSizeAlongAxis, _RPTViewFrameInScreenSpace, 
+                       __RPTAmplitudeFromPagesOfView, __RPTAxisFromScrollDirection, 
+                       __RPTScrollDirectionFromUIScrollDirection, __UIScrollDirectionFromRPTScrollDirection ]
+    objc-classes:    [ RPTActivationInteraction, RPTActivationTestParameters, RPTBlockInteraction, 
+                       RPTCoordinateSpaceConverter, RPTDirectionalCrownTestParameters, 
+                       RPTDirectionalSwipeTestParameters, RPTDockGestureInteraction, 
+                       RPTDragInteraction, RPTDragTestParameters, RPTGroupScrollTestParameters, 
+                       RPTInteractionOptions, RPTPagingScrollTestParameters, RPTResizeInteraction, 
+                       RPTResizeTestParameters, RPTScrollViewTestParameters, RPTTestRunner ]
+...

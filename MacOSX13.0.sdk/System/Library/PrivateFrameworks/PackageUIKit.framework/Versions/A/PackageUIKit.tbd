@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           5999138A-1C22-3037-9235-0B4883CF2D9D
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           6CBA65CB-0AD1-3AA7-AF78-004D1C772850
+install-name:    '/System/Library/PrivateFrameworks/PackageUIKit.framework/Versions/A/PackageUIKit'
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _PackageUIKitVersionNumber, _PackageUIKitVersionString ]
+    objc-classes:    [ PUKApplicationCloser ]
+...

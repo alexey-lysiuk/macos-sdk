@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           9250CDFB-C1B2-30BE-B3A0-A044FD507FC8
+  - target:          x86_64-maccatalyst
+    value:           9250CDFB-C1B2-30BE-B3A0-A044FD507FC8
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           0B8A2C34-EC65-3848-9608-CFDAF7DA00A1
+  - target:          arm64e-maccatalyst
+    value:           0B8A2C34-EC65-3848-9608-CFDAF7DA00A1
+install-name:    '/System/Library/PrivateFrameworks/MLRuntime.framework/Versions/A/MLRuntime'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _MLRSanitizeError, _MLRuntimeVersionNumber, _MLRuntimeVersionString, 
+                       _kMLRTrialTaskMinInterval ]
+    objc-classes:    [ MLRExtensionPrincipalClass, MLRExtensionRemoteContext, MLRExtensionService_Subsystem, 
+                       MLRInternalTrialTask, MLRInternalTrialTaskResult, MLROnDemandConnectionHandler, 
+                       MLROnDemandPlugin, MLRTask, MLRTaskAttachments, MLRTaskParameters, 
+                       MLRTaskResult, MLRTrialDediscoRecipe, MLRTrialDediscoTaskResult, 
+                       MLRTrialTask, MLRTrialTaskResult, MLRTrialTaskSchedulingPolicy ]
+...

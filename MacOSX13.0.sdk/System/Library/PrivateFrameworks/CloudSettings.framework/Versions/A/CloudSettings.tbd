@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           2CC36972-6058-3DD7-A5F3-54F1B634A760
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           C4BA2667-8C07-3CCB-A83D-9369B79A2DE8
+install-name:    '/System/Library/PrivateFrameworks/CloudSettings.framework/Versions/A/CloudSettings'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CloudSettingsVersionNumber, _CloudSettingsVersionString ]
+    objc-classes:    [ CloudSettingsDispatchingMediator, CloudSettingsManager, CloudSettingsService, 
+                       CloudSettingsServiceDelegate, CloudSettingsStore ]
+...

@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           FCF6A6E1-4159-368A-87DC-3F5E807E3005
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           A466AC6F-5EF5-351D-8FFB-DBB3F41C13B8
+install-name:    '/System/Library/PrivateFrameworks/SpeechRecognitionCore.framework/Versions/A/SpeechRecognitionCore'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _RXAdLibCreate, _RXEngineTypeForLocaleIdentifier, _RXGetAssetFallbackLocaleIdentifier, 
+                       _RXGetAssetFallbackLocales, _RXGetSupportedNashvilleLocaleIdentifiers, 
+                       _RXGetSupportedQuasarLocaleIdentifiers, _RXGlobalSetDownloadProgressCallback, 
+                       _RXIsLocaleWithNoSpaceInPostITN, _RXIsLocaleWithSpecialHyphenHandling, 
+                       _RXLanguageModelCreate, _RXLanguageModelCreateWithURL, _RXLanguageModelWriteToURL, 
+                       _RXLanguageObjectAddObject, _RXLanguageObjectAddPhrase, _RXLanguageObjectAddPhraseAndAlternatives, 
+                       _RXLanguageObjectApplyBlock, _RXLanguageObjectGetCount, _RXLanguageObjectGetObjectAtIndex, 
+                       _RXLanguageObjectGetType, _RXLanguageObjectGetTypeID, _RXLanguageObjectRemoveObjectAtIndex, 
+                       _RXLanguageObjectSetObjectAtIndex, _RXLocalesSupportingSpellingMode, 
+                       _RXLocalizedStringForSpacebar, _RXObjectCopyProperty, _RXObjectCopyPropertyWithLocale, 
+                       _RXObjectSetProperty, _RXPathCreate, _RXRecognitionSystemAddLeadingContext, 
+                       _RXRecognitionSystemAddOtherContext, _RXRecognitionSystemAddTraining, 
+                       _RXRecognitionSystemCreate, _RXRecognitionSystemGetTypeID, 
+                       _RXRecognitionSystemReset, _RXRecognitionSystemSaveUserProfileToFile, 
+                       _RXRecognitionSystemSetResetMode, _RXRecognizerCreate, _RXRecognizerGetTypeID, 
+                       _RXReplaceHyphensWithSpace, _RXSignpostLog, _RXVocabularyCreateWithLocale, 
+                       _RXVocabularyCreateWithURL, _RXVocabularyGetTypeID, _RXWordCreate, 
+                       _kRXRecognitionSystemTrainingCategory_Contact, _kRXRecognitionSystemTrainingCategory_Default ]
+...

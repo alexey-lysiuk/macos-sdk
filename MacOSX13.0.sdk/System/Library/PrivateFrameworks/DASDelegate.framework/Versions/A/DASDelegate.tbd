@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           A19123B7-0D36-3C31-A220-25805304CB8A
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           0DE979A7-835F-3F9B-B1A2-2C6891E73208
+install-name:    '/System/Library/PrivateFrameworks/DASDelegate.framework/Versions/A/DASDelegate'
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ DuetActivitySchedulerDaemonTests, DuetActivitySchedulerDaemonTests_bni, 
+                       dasd, dastestd, dastool ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _DASDelegateVersionNumber, _DASDelegateVersionString ]
+    objc-classes:    [ DASDelegate ]
+...

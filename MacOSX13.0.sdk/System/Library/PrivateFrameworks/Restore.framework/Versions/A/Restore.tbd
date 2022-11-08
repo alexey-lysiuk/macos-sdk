@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           23132807-F2C3-3CEF-BD2F-2806331D3F39
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           51DACCFF-37A2-3A7F-8FAA-DB122BD6FF20
+install-name:    '/System/Library/PrivateFrameworks/Restore.framework/Versions/A/Restore'
+current-version: 601.40.2
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _RestoreOperation ]
+    objc-classes:    [ RestoreHelper ]
+    objc-ivars:      [ RestoreHelper._authRef, RestoreHelper._authorization, RestoreHelper._completionFn, 
+                       RestoreHelper._connection, RestoreHelper._context, RestoreHelper._operation, 
+                       RestoreHelper._startTimer, RestoreHelper._statusFn ]
+...

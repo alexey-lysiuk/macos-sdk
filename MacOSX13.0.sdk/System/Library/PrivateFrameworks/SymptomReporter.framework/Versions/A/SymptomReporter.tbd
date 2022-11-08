@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           60AED12A-4167-3B0B-BDA8-72562D53BFE3
+  - target:          x86_64-maccatalyst
+    value:           60AED12A-4167-3B0B-BDA8-72562D53BFE3
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           7DA96FA0-77AF-3F27-A217-99D3133DD21E
+  - target:          arm64e-maccatalyst
+    value:           7DA96FA0-77AF-3F27-A217-99D3133DD21E
+install-name:    '/System/Library/PrivateFrameworks/SymptomReporter.framework/Versions/A/SymptomReporter'
+current-version: 1732
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _set_symptom_verbosity, _symptom_create, _symptom_framework_init, 
+                       _symptom_framework_set_version, _symptom_framework_stats, 
+                       _symptom_new, _symptom_send, _symptom_send_immediate, _symptom_set_additional_digest, 
+                       _symptom_set_additional_qualifier, _symptom_set_qualifier ]
+...

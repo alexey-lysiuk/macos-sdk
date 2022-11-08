@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           E3DECD22-073B-3398-B037-9D7B039BD817
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           717CCDFF-12B2-3432-AAC5-A8FEAD162683
+install-name:    '/System/Library/PrivateFrameworks/FeatureStore.framework/Versions/A/FeatureStore'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _FSFCurareInteractionStreamErrorDomain, _FSFCurareInteractionStreamErrorDomainInvalidInput, 
+                       _FSFSwitchToMobile, _FeatureStoreVersionNumber, _FeatureStoreVersionString, 
+                       _maxStreamAgeInSec ]
+    objc-classes:    [ FSFBMStringData, FSFBiomeFeatureStore, FSFBiomeFeatureStoreStream, 
+                       FSFCallKitUtil, FSFCurareEvaluationFeature, FSFCurareInteractionAsDict, 
+                       FSFCurareInteractionAsJsonStr, FSFCurareInteractionAsProto, 
+                       FSFCurareInteractionStream, FSFDeviceInfo, FSFErrorHandler, 
+                       FSFNLUFeature, FSFNluRequestFeature, FSFNluResponseFeature, 
+                       FSFNluUserParseFeature, FSFSchema, FSFSiriPreferenceUtil, 
+                       FSFStreamRegistry, FSFUtils, _CurareInternalBiomeFeature ]
+...

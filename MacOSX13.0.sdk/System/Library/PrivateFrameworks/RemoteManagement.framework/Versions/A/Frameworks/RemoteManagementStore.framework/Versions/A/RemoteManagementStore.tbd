@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           00F6651C-982B-3AB6-86E9-13F268562076
+  - target:          x86_64-maccatalyst
+    value:           00F6651C-982B-3AB6-86E9-13F268562076
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           72B61BAC-38B2-30D3-95E7-1F3B8A7CF3BD
+  - target:          arm64e-maccatalyst
+    value:           72B61BAC-38B2-30D3-95E7-1F3B8A7CF3BD
+install-name:    '/System/Library/PrivateFrameworks/RemoteManagement.framework/Versions/A/Frameworks/RemoteManagementStore.framework/Versions/A/RemoteManagementStore'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _RMObserverStoreStoreDidChangeNotification, _RMStoreOptionAccountIdentifier, 
+                       _RMStoreOptionDescription, _RMStoreOptionName, _RMStoreOptionPersonaIdentifier, 
+                       _RMStoreXPCAgentMachServiceName, _RMStoreXPCDaemonMachServiceName ]
+    objc-classes:    [ RMBaseStore, RMConfigurationSubscriberClient, RMConfigurationSubscriberDelegate, 
+                       RMConfigurationSubscriberDescription, RMConfigurationSubscriberEventStream, 
+                       RMConfigurationSubscriberService, RMConfigurationSubscriberXPCListenerDelegate, 
+                       RMDeclarationManifest, RMDeclarationManifestItem, RMObserverStore, 
+                       RMProviderStore, RMStatusPublisherDelegate, RMStatusPublisherDescription, 
+                       RMStoreLog, RMStoreResolvedAsset, RMStoreUnresolvedAsset, 
+                       RMStoreUtility, RMStoreXPCConnection, RMStoreXPCProxy, RMSubscribedConfigurationReference, 
+                       RMSubscriberStore ]
+...

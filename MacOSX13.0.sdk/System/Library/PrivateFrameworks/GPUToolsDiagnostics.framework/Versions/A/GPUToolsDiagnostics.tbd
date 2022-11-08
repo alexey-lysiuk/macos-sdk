@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           BF99A9DC-BE39-31EC-BDB8-8D0AFC86268F
+  - target:          arm64-macos
+    value:           26A475D7-3680-3A62-827A-6C9D792AEC60
+  - target:          arm64e-macos
+    value:           CCEFA110-A523-3352-A206-0208566FB963
+install-name:    '/System/Library/PrivateFrameworks/GPUToolsDiagnostics.framework/Versions/A/GPUToolsDiagnostics'
+current-version: 0
+compatibility-version: 0
+...

@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           0CD59665-DEA3-3995-84BC-485D4EA42680
+  - target:          x86_64-maccatalyst
+    value:           0CD59665-DEA3-3995-84BC-485D4EA42680
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           79AD0FC1-4F88-3589-A602-45F2AA482B59
+  - target:          arm64e-maccatalyst
+    value:           79AD0FC1-4F88-3589-A602-45F2AA482B59
+install-name:    '/usr/lib/system/libcopyfile.dylib'
+parent-umbrella:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    umbrella:        System
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _copyfile, _copyfile_state_alloc, _copyfile_state_free, _copyfile_state_get, 
+                       _copyfile_state_set, _fcopyfile, _xattr_flags_from_name, _xattr_intent_with_flags, 
+                       _xattr_name_with_flags, _xattr_name_without_flags, _xattr_preserve_for_intent ]
+...

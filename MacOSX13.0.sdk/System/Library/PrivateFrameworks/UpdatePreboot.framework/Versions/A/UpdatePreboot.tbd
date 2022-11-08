@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           FC0CCE91-B592-385F-9948-1126F5FF83E8
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           D13CF6D4-8841-31C8-AFD3-CA14739BA35D
+install-name:    '/System/Library/PrivateFrameworks/UpdatePreboot.framework/Versions/A/UpdatePreboot'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _UpdatePrebootVersionNumber, _UpdatePrebootVersionString ]
+    objc-classes:    [ UpdatePreboot ]
+...

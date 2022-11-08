@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           26C3D2AC-A5B7-3712-9804-C740F8BC6E17
+  - target:          x86_64-maccatalyst
+    value:           26C3D2AC-A5B7-3712-9804-C740F8BC6E17
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F5EB8257-AC3A-3098-BAD2-27538AFACDED
+  - target:          arm64e-maccatalyst
+    value:           F5EB8257-AC3A-3098-BAD2-27538AFACDED
+install-name:    '/System/Library/PrivateFrameworks/MTLSimDriver.framework/Versions/A/MTLSimDriver'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _MTLCreateSimulatorDevice ]
+...

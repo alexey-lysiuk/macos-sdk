@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           8A0BF34D-BB10-331B-AF08-0CCFAC76A285
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           35FB8E76-269A-3720-813B-FE85A928FF35
+install-name:    '/System/Library/PrivateFrameworks/AppleFlatBuffers.framework/Versions/A/AppleFlatBuffers'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AFBErrorDomain, _AFBIsValidUTF8, _AFBMisuseException, _AFBUnicodeDecodeException, 
+                       _AppleFlatBuffersVersionNumber, _AppleFlatBuffersVersionString ]
+    objc-classes:    [ AFBArray, AFBBufRef, AFBBufferBuilder, AFBDictionary ]
+...

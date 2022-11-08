@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-maccatalyst
+    value:           355F6AAE-8B1F-3184-8C49-37D6699801E2
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-maccatalyst
+    value:           D9358465-7EF6-3D22-9A48-344F440DAE42
+install-name:    '/System/iOSSupport/System/Library/Frameworks/IntentsUI.framework/Versions/A/IntentsUI'
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ _INUIRemoteViewControllerErrorDomain, _INUIVoiceShortcutExtensionItemBundleURLKey, 
+                       _INUIVoiceShortcutExtensionItemSandboxExtensionDataKey, _IntentsUIVersionNumber, 
+                       _IntentsUIVersionString, __INUIRemoteViewControllerErrorDomain, 
+                       __INUIUtilitiesBestFittingSizeForSizeBySystemVersionDictionary ]
+    objc-classes:    [ INUIAddVoiceShortcutButton, INUIAddVoiceShortcutViewController, 
+                       INUIAppIntentDeliverer, INUIAppIntentForwardingActionExecutor, 
+                       INUIEditVoiceShortcutViewController, INUIExtensionRequestInfo, 
+                       INUIExtensionViewControllerConfiguration, INUIImageLoader, 
+                       INUIImageServiceConnection, INUIImageSizeProvider, INUIInterfaceSection, 
+                       INUIPortableImageLoaderHelper, INUIRemoteViewController, INUISearchFoundationImageAdapter, 
+                       INUIVoiceShortcutXPCInterface, _INUIExtensionContextState ]
+...

@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           68915A3E-F4DD-358B-9FB8-1B42E7885C1E
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           2E1917E0-B7A5-31B5-8815-8266D4273335
+install-name:    '/System/Library/Frameworks/ExposureNotification.framework/Versions/A/ExposureNotification'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _ENAEMCrypt, _ENAEMKDerive, _ENCloneFileToTemporaryDirectory, 
+                       _ENCompareDiagnosisReportTypes, _ENCopyPublicKeyFromBase64String, 
+                       _ENDaemonBundle, _ENDataVaultPath, _ENDataVaultURL, _ENDefaultExpirationDate, 
+                       _ENDiagnosisMetadataKeyDiagnosisReportType, _ENDiagnosisMetadataKeyHasSymptoms, 
+                       _ENDiagnosisMetadataKeyIncludeTravelerStatus, _ENDiagnosisMetadataKeyIsUserVaccinated, 
+                       _ENDiagnosisMetadataKeySymptomOnsetDate, _ENDiagnosisMetadataKeyUserDidTravel, 
+                       _ENErrorDomain, _ENErrorF, _ENErrorMetricTypeToString, _ENErrorUserInfoKeyAppBundleIdentifier, 
+                       _ENLocalizedString, _ENNestedErrorF, _ENRPIDerive, _ENRPIDeriveBatch, 
+                       _ENRPIKDerive, _ENRPIMetadataDeserialize, _ENRPIMetadataSerialize, 
+                       _ENSecondaryIdentifierForURLSessions, _ENTEKGenerate, _ENTestResultErrorDomain, 
+                       _ENUICreateRemotePresentationController, _ENUIHostViewControllerInterface, 
+                       _ENUIRemoteViewControllerInterface, _ENValidateRegionCodeISO, 
+                       _ENWriteTemporaryExposureKeysCSV, _ENXPCDecodeSecureObject, 
+                       _ENXPCDecodeSecureObjectIfPresent, _ENXPCEncodeSecureObject, 
+                       _ENXPCGetNextClientID ]
+    objc-classes:    [ ENArchive, ENEntity, ENExposureClassification, ENExposureConfiguration, 
+                       ENExposureDaySummary, ENExposureDetectionClientSession, ENExposureDetectionHistoryCheck, 
+                       ENExposureDetectionHistoryFile, ENExposureDetectionHistorySession, 
+                       ENExposureDetectionSession, ENExposureDetectionSummary, ENExposureInfo, 
+                       ENExposureNotification, ENExposureSummaryItem, ENExposureWindow, 
+                       ENFile, ENFileSession, ENManager, ENProtobufCoder, ENRegion, 
+                       ENRegionConfiguration, ENRegionServerAgencyConfiguration, 
+                       ENRegionServerAgencyExposureNotificationConfiguration, ENRegionServerAgencyLocalizedConfiguration, 
+                       ENRegionServerConfiguration, ENRegionServerExposureClassificationCriteria, 
+                       ENRegionServerExposureConfiguration, ENRegionServerNKDConfiguration, 
+                       ENRegionTravelerServerDownloadConfiguration, ENRegionUserConsent, 
+                       ENRegionVisit, ENRemotePresentationRequest, ENScanInstance, 
+                       ENSignature, ENSignatureFile, ENTemporaryExposureKey, ENTextMessage, 
+                       ENUserAlert, ENUserAuthorization, ENXPCServiceClient ]
+...

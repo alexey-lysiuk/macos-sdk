@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           CC00F097-3111-3FE3-A5E1-3581D6C28F01
+  - target:          x86_64-maccatalyst
+    value:           CC00F097-3111-3FE3-A5E1-3581D6C28F01
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           2DEA7C48-2DC7-3566-879A-5287EA5FC6C7
+  - target:          arm64e-maccatalyst
+    value:           2DEA7C48-2DC7-3566-879A-5287EA5FC6C7
+install-name:    '/System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/BrailleTranslation.framework/Versions/A/BrailleTranslation'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _BRLTFlagsForMode, _BRLTLog, _BRLTModeDescription, _BRLTModeForFlags, 
+                       _BRLTSConnectionHasEntitlement, _BRLTTranslationServiceClientInterface, 
+                       _BRLTTranslationServiceInterface, _BRLTTranslatorClassIsValid, 
+                       _kBRLTTranslationServiceIdentifier, _kBTDuxburyServiceIdentifier, 
+                       _kBTLiblouisServiceIdentifier ]
+    objc-classes:    [ BRLTBrailleBuffer, BRLTBrailleChar, BRLTBrailleStateManager, 
+                       BRLTBrailleString, BRLTEmojiPrintPreprocessor, BRLTPreprocessorHelper, 
+                       BRLTSLoopbackTranslationService, BRLTSTranslationService, 
+                       BRLTSTranslator, BRLTScriptString, BRLTTable, BRLTTableEnumerator, 
+                       BRLTTokenRange, BRLTTranslationParameters, BRLTTranslationService, 
+                       BRLTUnicodePrintPreprocessor ]
+...
