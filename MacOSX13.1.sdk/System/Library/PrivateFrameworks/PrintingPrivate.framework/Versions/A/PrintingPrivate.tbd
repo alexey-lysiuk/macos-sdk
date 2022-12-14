@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           4F57C7AE-8E43-3DE4-A2B6-A846AE5AEF3D
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           D71C82D4-CF2B-35A0-A261-07B2139B14E3
+install-name:    '/System/Library/PrivateFrameworks/PrintingPrivate.framework/Versions/A/PrintingPrivate'
+current-version: 223.1
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CreateTemporaryFile, _HttpConnectionFromURI, _LoadAndGetPMPrinterInfoBundle, 
+                       _LoadAndGetPrintCocoaUIBundle, _LoadAndGetPrintingUIBundle, 
+                       _PKPrinterBonjourDomain, _PKPrinterInterfaceIndex, _PKPrinterIsLocal, 
+                       _PKPrinterRegistrationType, _PMCopyUsersDesktopPathPrivate, 
+                       _PMCopyUsersDocumentFolderURLPrivate, _PMCreatePrinterInfoControllerPrivate, 
+                       _PMCreatePrinterSupplyControllerPrivate, _PMGetOrientationImage, 
+                       _PMPaperCreatePaperSizeStringPrivate, _PMPrepareAppKitPageSetupDialogWithPrintInfoPrivate, 
+                       _PMPrepareAppKitPrintDialogWithThumbnailPrivate, _PMPrepareAppKitPrintPanelPrivate, 
+                       _PMPrintPanelSetAppThumbnailViewPrivate, _RequestPrinterAttributes, 
+                       _ValidatePrinterIconData, _WriteICNSFile, _createPaperSizeCFString ]
+    objc-classes:    [ PK2Printer, PKBrowser, PKNode, PKQueueCreationController, 
+                       PKServer, PMInkView, PMXPCSupport ]
+    objc-ivars:      [ PK2Printer._dnssdName, PK2Printer._identifier, PK2Printer._isManagedPrinter, 
+                       PK2Printer._power, PK2Printer._printerURL, PK2Printer._txts, 
+                       PKQueueCreationController._cancelButton, PKQueueCreationController._delegate, 
+                       PKQueueCreationController._isCancelled, PKQueueCreationController._printer, 
+                       PKQueueCreationController._progressIndicator, PKQueueCreationController._progressTextField, 
+                       PKQueueCreationController._progressView, PKQueueCreationController._queueID, 
+                       PKQueueCreationController._topLevelNibObjects, PKQueueCreationController._xpc ]
+...

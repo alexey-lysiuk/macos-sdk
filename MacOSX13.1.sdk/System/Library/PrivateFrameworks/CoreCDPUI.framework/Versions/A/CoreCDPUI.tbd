@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           C97E33A2-EF72-3DD6-968E-C75E357A712B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           A8DD2CBC-419D-377E-8FE1-6C874B12DC84
+install-name:    '/System/Library/PrivateFrameworks/CoreCDPUI.framework/Versions/A/CoreCDPUI'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CoreCDPUIVersionNumber, _CoreCDPUIVersionString, __CDPLogSystem, 
+                       __CDPSignpostCreate, __CDPSignpostGetNanoseconds, __CDPSignpostLogSystem, 
+                       _kiCDPLocalizedAlertMessageKey, _kiCDPLocalizedAlertTitleKey ]
+    objc-classes:    [ CDPEnrollViewController, CDPICAWebKitViewController, CDPOption, 
+                       CDPPrintBorderView, CDPQuotaStorageAppListRequest, CDPQuotaStorageAppListWebViewController, 
+                       CDPRPDConfirmationFlow, CDPRecoveryKeyPrintController, CDPRecoveryKeySheetBaseController, 
+                       CDPRecoveryKeySheetController, CDPStateBaseUIController, CDPStateUIController, 
+                       CDPStateiCloudPrefUIController, CDPTrustedDeviceViewItem, 
+                       CDPUIAccessCodeEntryTextField, CDPUIDeviceToDeviceEncryptionCancelCreateViewModel, 
+                       CDPUIDeviceToDeviceEncryptionFlowContext, CDPUIDeviceToDeviceEncryptionHelper, 
+                       CDPUIDeviceToDeviceEncryptionIneligibilityAlertViewModel, 
+                       CDPUIDeviceToDeviceEncryptionMessagingViewModel, CDPUIDeviceToDeviceEncryptionUIProviderImp, 
+                       CDPUIDeviceToDeviceEncryptionUpgradeMessageViewModel, CDPUIInfoViewModel, 
+                       CDPUIInheritanceUIProviderImpl, CDPUIStatusChangeController, 
+                       CDPUIWalrusLocalPasscodeVerificationController, CDPUIWalrusStatusChangeModel, 
+                       CDPUIWebAccessStatusChangeModel, CDPiCloudPrefRecoveryKeyController, 
+                       iCDPEnrollDevice ]
+...

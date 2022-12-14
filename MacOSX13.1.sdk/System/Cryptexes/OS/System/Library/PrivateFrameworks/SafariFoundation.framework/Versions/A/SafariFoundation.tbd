@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           172C54DC-7261-3D62-989D-C577B85A72B7
+  - target:          x86_64-maccatalyst
+    value:           172C54DC-7261-3D62-989D-C577B85A72B7
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           E5649D80-BEC1-3713-9188-1583318DA228
+  - target:          arm64e-maccatalyst
+    value:           E5649D80-BEC1-3713-9188-1583318DA228
+install-name:    '/System/Library/PrivateFrameworks/SafariFoundation.framework/Versions/A/SafariFoundation'
+current-version: 614.3.7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _SFAutoFillFromAddressBookPreferenceKey, _SFCredentialIdentityStoreIdentifierCreateWithApplication, 
+                       _SFCredentialIdentityStoreIdentifierCreateWithAuditToken, 
+                       _SFCredentialIdentityStoreIdentifierCreateWithConnectionToExtension, 
+                       _SFCredentialIdentityStoreIdentifierCreateWithExtension, _SFCredentialIdentityStoreIdentifierGetPathComponentRepresentation, 
+                       _SFCredentialProviderDeveloperEntitlement, _SFCredentialProviderExtensionPointIdentifier, 
+                       _SFCredentialProviderShowsConfigurationUIKey, _SFCredentialProviderSystemEntitlement, 
+                       _SFCreditCardCardholderNameKey, _SFCreditCardExpirationDateKey, 
+                       _SFCreditCardNameKey, _SFCreditCardNumberKey, _SFCreditCardSecurityCodeKey, 
+                       _SFExternalCredentialIdentityStoreErrorDomain, _SFPasswordCredentialIdentityInvalidRowIdentifier, 
+                       _SFPasswordGenerationNoLengthLimit, _SFSharablePasswordURLSchemeForAirDrop, 
+                       _maximumNumberOfWebCredentialEntriesToReturnForAppID ]
+    objc-classes:    [ SFAppAutoFillOneTimeCodeProvider, SFAppAutoFillPasskeyProvider, 
+                       SFAutoFillFeatureManager, SFAutoFillOneTimeCode, SFAutoFillOneTimeCodeEmbeddedDomainPair, 
+                       SFAutoFillPasskey, SFAutoFillPasskeyIdentifier, SFCredentialProviderExtensionHelperProxy, 
+                       SFCredentialProviderExtensionManager, SFCredentialProviderExtensionState, 
+                       SFDomainAssociationUtilities, SFExternalCredentialIdentityStore, 
+                       SFExternalCredentialIdentityStoreManager, SFPasswordCredentialIdentity, 
+                       SFSafariCredential, SFSafariCredentialStore, SFSafariCreditCardStore, 
+                       SFSharablePassword, SFSharablePasswordReceiver, SFSharedWebCredentialsDatabaseEntry, 
+                       SFStrongPasswordGenerator, SFSuggestedUser, SFSuggestedUserProvider, 
+                       TOTPGeneratorSnapshot, _SFSharablePasswordEncryptionInformation ]
+...

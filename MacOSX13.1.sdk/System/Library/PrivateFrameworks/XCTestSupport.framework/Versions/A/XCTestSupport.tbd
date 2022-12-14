@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           9E1A3EA3-9414-3F9F-87CE-7B5810DF6BD9
+  - target:          x86_64-maccatalyst
+    value:           9E1A3EA3-9414-3F9F-87CE-7B5810DF6BD9
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F13BE26F-0472-3BFF-9C96-746C8EAB6528
+  - target:          arm64e-maccatalyst
+    value:           F13BE26F-0472-3BFF-9C96-746C8EAB6528
+install-name:    '/System/Library/PrivateFrameworks/XCTestSupport.framework/Versions/A/XCTestSupport'
+current-version: 21240.1.2
+compatibility-version: 0
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ XCTAutomationSupport ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _dummyFunctionForTAPIXCTestSupport ]
+...

@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           831D0C9F-0F5F-3588-9D04-C8DFCFE33680
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           6B954691-1E44-3FA2-8EA2-BCAF60AE6F57
+install-name:    '/usr/lib/libtzupdate.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ TZUpdate ]
+...

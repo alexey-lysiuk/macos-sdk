@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           0D14D29C-A118-3905-A38C-E8FDFEE8B0BA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           1B958867-0D52-3227-BC1E-0223D2FCAF5D
+install-name:    '/usr/lib/libFDRDecode.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AMFDRDecodeCertificate, _AMFDRDecodeCheckCertRevocation, 
+                       _AMFDRDecodeCheckProducerIDRevocation, _AMFDRDecodeCombined, 
+                       _AMFDRDecodeCreateCertificate, _AMFDRDecodeCreateCertificateChain, 
+                       _AMFDRDecodeDestoryCertificate, _AMFDRDecodeDestoryCertificateChain, 
+                       _AMFDRDecodeEvaluateTrust, _AMFDRDecodeEvaluateTrustCombined, 
+                       _AMFDRDecodeEvaluateTrustCombinedWithSik, _AMFDRDecodeEvaluateTrustOffline, 
+                       _AMFDRDecodeEvaluateTrustWithSik, _AMFDRDecodeFDR2Data, _AMFDRDecodeGetImg4Manifest, 
+                       _AMFDRDecodeGetImg4RawData, _AMFDRDecodeGetPubkey, _AMFDRDecodeGetRawCertificate, 
+                       _AMFDRDecodeGetTbsCertExtensions, _AMFDRDecodeGetTbsCertSubject, 
+                       _AMFDRDecodeImage4Certificate, _AMFDRDecodeIterateCertChainBegin, 
+                       _AMFDRDecodeIterateCertChainNext, _AMFDRDecodeIterateProducerIDBegin, 
+                       _AMFDRDecodeIterateProducerIDNext, _AMFDRDecodeIterateSysconfigBegin, 
+                       _AMFDRDecodeIterateSysconfigDestroy, _AMFDRDecodeIterateSysconfigPayloadNext, 
+                       _AMFDRDecodeIterateTrustObjectRevokedBegin, _AMFDRDecodeIterateTrustObjectRevokedNext, 
+                       _AMFDRDecodeIterateTrustObjectSslRootBegin, _AMFDRDecodeIterateTrustObjectSslRootNext, 
+                       _AMFDRDecodeIterateTrustObjectTrustedBegin, _AMFDRDecodeIterateTrustObjectTrustedKeyBegin, 
+                       _AMFDRDecodeIterateTrustObjectTrustedKeyNext, _AMFDRDecodeIterateTrustObjectTrustedNext, 
+                       _AMFDRDecodeLogSetHandler, _AMFDRDecodeManifestBody, _AMFDRDecodeManifestBodyDestroy, 
+                       _AMFDRDecodeManifestBodyNext, _AMFDRDecodeMetaProperty, _AMFDRDecodeMetadata, 
+                       _AMFDRDecodeMultiResponse, _AMFDRDecodeMultiSealingResponse, 
+                       _AMFDRDecodeOfflineBlob, _AMFDRDecodeParseDERLengthFromBuffer, 
+                       _AMFDRDecodePublicKey, _AMFDRDecodeSealingRequest, _AMFDRDecodeTrustEvaluation, 
+                       _AMFDRDecodeTrustObject, _AMFDRDecodeVerifyCertIssuer, _AMFDRDecodeVerifyCertIssuerNoRevocation, 
+                       _AMFDRDecodeVerifySealingManifest, _AMFDRDecodeVerifySealingRequest ]
+...

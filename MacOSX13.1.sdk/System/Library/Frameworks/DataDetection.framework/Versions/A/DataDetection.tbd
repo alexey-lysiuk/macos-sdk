@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           C5527E6D-F7E1-3659-AFD3-ECD20D92865A
+  - target:          x86_64-maccatalyst
+    value:           C5527E6D-F7E1-3659-AFD3-ECD20D92865A
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           58AAACF6-410C-38DA-8318-840214BCCAD4
+  - target:          arm64e-maccatalyst
+    value:           58AAACF6-410C-38DA-8318-840214BCCAD4
+install-name:    '/System/Library/Frameworks/DataDetection.framework/Versions/A/DataDetection'
+current-version: 727
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    objc-classes:    [ DDMatch, DDMatchCalendarEvent, DDMatchEmailAddress, DDMatchFlightNumber, 
+                       DDMatchLink, DDMatchMoneyAmount, DDMatchPhoneNumber, DDMatchPostalAddress, 
+                       DDMatchShipmentTrackingNumber ]
+...

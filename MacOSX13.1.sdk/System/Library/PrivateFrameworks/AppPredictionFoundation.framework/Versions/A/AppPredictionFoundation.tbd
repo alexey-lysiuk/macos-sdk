@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           422B210D-70B6-35A3-BD68-898491A991D6
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           10A64FA6-1A3A-3769-A3EA-4CEA365A5A57
+install-name:    '/System/Library/PrivateFrameworks/AppPredictionFoundation.framework/Versions/A/AppPredictionFoundation'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _ATXAppPredictionPanelWidgetBundleIdentifier, _ATXAppPredictionPreviewIdentifier2x4, 
+                       _ATXBucketDoubleBetweenValues, _ATXBucketUInt32BetweenValuesWithRounding, 
+                       _ATXCacheFileJoinChunks, _ATXCacheFileRead, _ATXCacheFileSplitChunks, 
+                       _ATXCacheFileWrite, _ATXCacheFileWriteChunks, _ATXCachedDefaultTVWidgetSuggestionAppLaunchCountKey, 
+                       _ATXCachedDefaultTVWidgetSuggestionAzulFKey, _ATXCachedDefaultTVWidgetSuggestionIntentDonationCountKey, 
+                       _ATXCachedDefaultTVWidgetSuggestionUpcomingMediaCountKey, 
+                       _ATXDefaultSuggestedPagesAppModeAffinityThresholdKey, _ATXDefaultSuggestedPagesBypassGenreThresholdsKey, 
+                       _ATXDefaultSuggestedPagesWidgetModeAffinityThresholdKey, _ATXDefaultTVWidgetSuggestionAcceptanceTimestamp, 
+                       _ATXDefaultTVWidgetSuggestionRejectionTimestamp, _ATXDefaultTVWidgetSuggestionResponseKey, 
+                       _ATXDetailedActionLoggingEnabled, _ATXLocalizationNotNeeded, 
+                       _ATXMemoryPressureTypeToString, _ATXSuggestionsWidgetBundleIdentifier, 
+                       _ATXSuggestionsWidgetPreviewIdentifier2x2, _ATXSuggestionsWidgetPreviewIdentifier2x4, 
+                       _ATXSuggestionsWidgetPreviewIdentifier4x4, _ATXUniversalSearchZKWEnabled, 
+                       _AppPredictionFoundationVersionNumber, _AppPredictionFoundationVersionString, 
+                       __ATXDomain, __ATXTimelineRelevanceMetricsDomain, __kATXAzulHomescreenWidgetStatusDefaultsKey, 
+                       __kATXFirstAddedWidgetsOnHomescreenDateDefaultsKey, __kATXHasHadWidgetsOnHomeScreenDefaultsKey, 
+                       __kATXHistoricallyConfiguredDNDModeSemanticTypesArrayKey, 
+                       __kATXIgnoreDailyWidgetSuggestionLimitKey, __kATXLastMajorOSUpgradeApproximateTimestampDefaultsKey, 
+                       __kATXLastMajorOSUpgradeMajorVersionDefaultsKey, __kATXNumFirstTenSeenSuggestedSGKey, 
+                       __kATXNumFirstTenSeenSuggestedSGTappedKey, __kATXSawWidgetOnboardingDefaultsKey, 
+                       __kATXSkyUpgradeDateDefaultsKey, __kATXTimeOfMostRecentUserWakeupDefaultsKey, 
+                       __kATXUseFastHomeScreenSuggestionClientSuppressionTimerKey, 
+                       __kATXWidgetOnboardingRemovedDateDefaultsKey, __kATXWidgetOnboardingResultDefaultsKey, 
+                       __kATXWidgetOnboardingSuggestionsWerePersonalizedDefaultsKey, 
+                       _kATXColoringBookWasSeenForModeIdentifiersKey, _kATXFaceGallerySeenKey, 
+                       _kATXFaceGallerySourceOverrideKey, _kATXMockDescriptorScoresKey, 
+                       _kATXPosterConfigurationsLastActiveDatesInPastWeekKey ]
+    objc-classes:    [ ATXBMBookmark, ATXBMStoreEvent, ATXGenericFileBasedCache, 
+                       ATXMemoryPressureMonitor, ATXPETEventTracker2Logger, ATXPaths, 
+                       ATXReservoirSampler, ATXRingBuffer, ATXSecureCodedTuple, ATXSigtermListener, 
+                       ATXTimer, ATXTypes ]
+...

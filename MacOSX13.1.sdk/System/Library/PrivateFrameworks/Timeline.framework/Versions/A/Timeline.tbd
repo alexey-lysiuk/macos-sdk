@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           3A9AF20A-24A8-3ED7-B11B-6DFB3D29FF5D
+  - target:          x86_64-maccatalyst
+    value:           3A9AF20A-24A8-3ED7-B11B-6DFB3D29FF5D
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           4EE1E506-B3E0-32F5-AD84-B865D61E67A8
+  - target:          arm64e-maccatalyst
+    value:           4EE1E506-B3E0-32F5-AD84-B865D61E67A8
+install-name:    '/System/Library/PrivateFrameworks/Timeline.framework/Versions/A/Timeline'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _TLLoggingObjectForDomain, _TimelineVersionNumber, _TimelineVersionString ]
+    objc-classes:    [ TLOperation, TLPreviewTimelineError, TLPreviewTimelineSelectableRegion, 
+                       TLTimeline, TLTimelineBlobEntry, TLTimelineEntryNode, TLTimelineEntryNodeRecycleBin, 
+                       TLTimelineExtendOperation, TLTimelineNode, TLTimelineOperation, 
+                       TLTimelineSegment, TLTimelineSessionOperation, TLTimelineSetupOperation, 
+                       TLTimelineUtilities, TLTimelineWindow ]
+...

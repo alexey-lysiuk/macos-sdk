@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           5F9C3073-F46C-38C9-8B45-AEF5338BD632
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           FB48528C-49D0-3B39-B16F-7FB2455E93C3
+install-name:    '/System/Library/PrivateFrameworks/ExchangeSyncExpress.framework/Versions/A/ExchangeSyncExpress'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _ESDCalendarDirectorySearchRecordType_Groups, _ESDCalendarDirectorySearchRecordType_Locations, 
+                       _ESDCalendarDirectorySearchRecordType_Resources, _ESDCalendarDirectorySearchRecordType_Users, 
+                       _ESECalendarAvailabilityTypeAsString, _ESErrorDomain, _ExchangeSyncDaemonShutdownRequestNoteName, 
+                       _ExchangeSyncExpressVersionNumber, _ExchangeSyncExpressVersionString, 
+                       _kESDPortName, _kESExchangeAccountWipeOnly, _kESExchangeDeviceID, 
+                       _kESExchangeUserEnrollmentMode, _kESMailChangeNotification ]
+    objc-classes:    [ ESDAMContainerIDCacheKey, ESDConnection, ESDownloadContext, 
+                       ESECalendarAvailabilityContext, ESECalendarAvailabilitySpan, 
+                       ESECalendarDirectorySearchContext, ESECalendarDirectorySearchResult, 
+                       ESEGrantedDelegate, ESEGrantedDelegateContext, ESEGrantedDelegatesListContext, 
+                       ESSharedCalendarContext ]
+...

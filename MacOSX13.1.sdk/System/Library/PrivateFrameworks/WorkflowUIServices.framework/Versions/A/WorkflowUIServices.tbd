@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           E9C5230F-C3F2-322B-93E5-FCA87F774014
+  - target:          arm64-macos
+    value:           6377639E-78B6-366D-A532-1E0E661B953C
+  - target:          arm64e-macos
+    value:           6AF07142-C57D-3488-84CA-0C023E8E2E7E
+install-name:    '/System/Library/PrivateFrameworks/WorkflowUIServices.framework/Versions/A/WorkflowUIServices'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _WFCGColorIsPerceivedLight, _WFCGColorPerceivedLightness, 
+                       _WFFocusConfigurationHostXPCInterface, _WFFocusConfigurationServiceXPCInterface, 
+                       _WFLogCategoryFocusConfiguration, _WFLogCategoryWidgetConfiguration, 
+                       _WFRecentDocumentsKey, _WFWidgetColorsFromBundle, _WFWidgetConfigurationHostXPCInterface, 
+                       _WFWidgetConfigurationServiceXPCInterface, _WFWidgetGetDefaultColors, 
+                       _getWFFocusConfigurationLogObject, _getWFWidgetConfigurationLogObject ]
+    objc-classes:    [ WFDockTileMenu, WFFloatingLayer, WFFloatingViewConfiguration, 
+                       WFFocusConfigurationButton, WFFocusConfigurationContextualActionOptions, 
+                       WFFocusConfigurationOptions, WFFocusConfigurationRequest, 
+                       WFFocusConfigurationUIState, WFFocusConfigurationViewController, 
+                       WFRecentDocumentsController, WFRecentDocumentsMenu, WFWidgetConfigurationCardView, 
+                       WFWidgetConfigurationContainerView, WFWidgetConfigurationOptions, 
+                       WFWidgetConfigurationRequest, WFWidgetConfigurationResponse, 
+                       WFWidgetConfigurationView, WFWidgetConfigurationViewController ]
+...

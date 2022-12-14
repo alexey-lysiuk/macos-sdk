@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           C0BB5092-868B-3A85-8C56-E1FFEBC3E165
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B725F0BC-C29A-33B4-8498-5253700B94FB
+install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUADaemon.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _UADHandleEvent, _UADHandleMessage, _UADHandleXPCEvent, _UADInitialize, 
+                       _UADIsHandlerLoadedForEventType, _UADLoadHandlerForEventType, 
+                       _UADReadPreferences, _UADSafeToQuitForEventType, _UADSendMessageToLibraries, 
+                       _UADSetEnableCaptureFunctPtr, _UADSetSafeToQuitFunctPtr, _UADShouldStop, 
+                       _UADUpdateSettingsForEventType, _UADUserSessionDidChange ]
+...

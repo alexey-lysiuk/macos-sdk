@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           68E336D4-40B0-327A-9B5C-3D18351DC4CA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           DF228352-E83D-37A3-B6B2-97643AA72D23
+install-name:    '/System/Library/PrivateFrameworks/SetupAssistantSupportUI.framework/Versions/A/SetupAssistantSupportUI'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SetupAssistantSupportUIVersionNumber, _SetupAssistantSupportUIVersionString ]
+    objc-classes:    [ SASBezierCurve, SASCursiveTextPath, SASCursiveTextView, SASCursiveTextWindow, 
+                       SASLogging, SASPathPoint ]
+    objc-ivars:      [ SASCursiveTextPath._boundingBoxOfPath, SASCursiveTextPath._duration, 
+                       SASCursiveTextPath._finalWeight, SASCursiveTextPath._initialWeight, 
+                       SASCursiveTextPath._length, SASCursiveTextPath._pathDefinition, 
+                       SASCursiveTextPath._rampTime, SASCursiveTextPath._resolution, 
+                       SASCursiveTextView.dismissButtonImageView, SASCursiveTextView.dismissButtonLabel, 
+                       SASCursiveTextView.eventMonitor, SASCursiveTextView.textLayer, 
+                       SASCursiveTextView.textPath, SASCursiveTextView.textTransform ]
+...

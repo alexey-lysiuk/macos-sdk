@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           CAFA7B9A-C7CE-38E7-AAC1-54451B71C02E
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           72C3F854-9E20-371D-AC05-2CE26E24EAE3
+install-name:    '/usr/lib/libCoreStorage.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CoreStorageAddPhysicalVolume, _CoreStorageAddVolumeExtentsForConversion, 
+                       _CoreStorageAddVolumeForConversion, _CoreStorageCalcMinResizeDeltaForPhysicalVolume, 
+                       _CoreStorageCanRevertVolume, _CoreStorageClearIOErrorForVolume, 
+                       _CoreStorageCommitVolumeFamily, _CoreStorageCopyFamilyProperties, 
+                       _CoreStorageCopyFamilyPropertiesForMount, _CoreStorageCopyFamilyUUIDForMount, 
+                       _CoreStorageCopyGroupFreeExtents, _CoreStorageCopyLVGProperties, 
+                       _CoreStorageCopyLVGStatistics, _CoreStorageCopyListOfLVGs, 
+                       _CoreStorageCopyMessageTracerUUID, _CoreStorageCopyPVWipeKeyUUID, 
+                       _CoreStorageCopyPhysicalVolumeProperties, _CoreStorageCopyRawLVGLabel, 
+                       _CoreStorageCopyVolumeDescription, _CoreStorageCopyVolumeExtents, 
+                       _CoreStorageCopyVolumeProperties, _CoreStorageCopyVolumesForLVG, 
+                       _CoreStorageCreateDictForFamily, _CoreStorageCreateDictForVolume, 
+                       _CoreStorageCreateLVG, _CoreStorageCreateLVGTemplate, _CoreStorageCreateLogicalVolume, 
+                       _CoreStorageCreateVolume, _CoreStorageDebugPortal, _CoreStorageDecryptVolume, 
+                       _CoreStorageDestroyLVG, _CoreStorageDestroyVolume, _CoreStorageDisableNotifications, 
+                       _CoreStorageEnableNotifications, _CoreStorageEncryptVolume, 
+                       _CoreStorageFinishBackgroundConversionForVolume, _CoreStorageFreezeLVG, 
+                       _CoreStorageGetGroupSparseState, _CoreStorageGetUsableSize, 
+                       _CoreStorageGetUsableSizeCheck, _CoreStorageGetVolumeRevertRequirements, 
+                       _CoreStorageInPassthroughMode, _CoreStorageLockFamily, _CoreStorageLogConversionFinished, 
+                       _CoreStorageModifyFamily, _CoreStorageModifyLVG, _CoreStorageModifyVolume, 
+                       _CoreStoragePinExtentsToFastDevice, _CoreStoragePinUnpinExtents, 
+                       _CoreStorageRemoveHeaders, _CoreStorageRemovePhysicalVolume, 
+                       _CoreStorageResizeLogicalVolume, _CoreStorageResizePhysicalVolume, 
+                       _CoreStorageResizeVolume, _CoreStorageResumeBackgroundConversionForVolume, 
+                       _CoreStorageRevertVolume, _CoreStorageSetGroupSparse, _CoreStorageSetPunchHoleOnTrim, 
+                       _CoreStorageSetSystemPowerState, _CoreStorageStopBackgroundConversionForVolume, 
+                       _CoreStorageThawLVG, _CoreStorageUnlockFamilyWithKEK, _CoreStorageUnpinExtentsFromFastDevice, 
+                       _CoreStorageUpdateLVG, _CoreStorageUpdateVolume, _CoreStorageUsePassthroughMode, 
+                       _CoreStorageVolumeResizeRequiresRestart, _CoreStorageVolumeRevertRequiresRestart ]
+...

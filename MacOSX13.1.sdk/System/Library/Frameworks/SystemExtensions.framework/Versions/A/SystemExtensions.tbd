@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           A737EF15-E411-38E9-BEE5-7BAA9718D385
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           8F8EB41D-9B34-3B40-A9D4-B6322972D4B7
+install-name:    '/System/Library/Frameworks/SystemExtensions.framework/Versions/A/SystemExtensions'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _NSSystemExtensionUsageDescriptionKey, _OSBundleUsageDescriptionKey, 
+                       _OSRelatedKernelExtensionKey, _OSSystemExtensionCategoryIdentifierCoreMediaIO, 
+                       _OSSystemExtensionCategoryIdentifierDriverExtension, _OSSystemExtensionCategoryIdentifierEndpointSecurity, 
+                       _OSSystemExtensionCategoryIdentifierNetworkExtension, _OSSystemExtensionErrorDomain, 
+                       __systemextensions_fake_server_listener_connection, __systemextensions_framework_testing_active, 
+                       _applicationDisplayNameForExecutable ]
+    objc-classes:    [ OSSystemExtensionClient, OSSystemExtensionInfo, OSSystemExtensionMDMClient, 
+                       OSSystemExtensionManager, OSSystemExtensionPointListener, 
+                       OSSystemExtensionProperties, OSSystemExtensionRequest ]
+...

@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           D0715FD6-737C-3CCE-BF1B-B532EB4E8B5F
+  - target:          x86_64-maccatalyst
+    value:           D0715FD6-737C-3CCE-BF1B-B532EB4E8B5F
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           DE237AEA-DE32-35E0-A120-77D6F674DB77
+  - target:          arm64e-maccatalyst
+    value:           DE237AEA-DE32-35E0-A120-77D6F674DB77
+install-name:    '/System/Library/PrivateFrameworks/PassKitMacHelper.framework/Versions/A/PassKitMacHelper'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    objc-classes:    [ PKPaymentAuthorizationController, PKPaymentAuthorizationViewController, 
+                       PKPaymentButton, PassKitMacHelper ]
+...

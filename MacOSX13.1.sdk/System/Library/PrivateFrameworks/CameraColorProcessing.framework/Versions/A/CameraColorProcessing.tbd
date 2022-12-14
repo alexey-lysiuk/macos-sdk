@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           B0F82478-D09C-3C2C-804F-544D52A10245
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           284A0697-CA0C-32D2-A1F1-DAD5795D9D84
+install-name:    '/System/Library/PrivateFrameworks/CameraColorProcessing.framework/Versions/A/CameraColorProcessing'
+exports:
+  - targets:         [ x86_64-macos ]
+    weak-symbols:    [ __ZTI26CStrobeWhitePointProjector, __ZTS26CStrobeWhitePointProjector ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ AWBIBPParams, AWBProcessor, LTMIBPParams, LTMProcessor ]
+...

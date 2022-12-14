@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           85F41C13-FA8C-3E8C-94E5-FA2127B6E1E8
+  - target:          x86_64-maccatalyst
+    value:           85F41C13-FA8C-3E8C-94E5-FA2127B6E1E8
+  - target:          arm64e-macos
+    value:           95842FCF-8ED7-37C6-86F9-C8CD36CCF438
+  - target:          arm64e-maccatalyst
+    value:           95842FCF-8ED7-37C6-86F9-C8CD36CCF438
+install-name:    '/System/Library/PrivateFrameworks/CombineCocoa.framework/Versions/A/CombineCocoa'
+current-version: 310
+...

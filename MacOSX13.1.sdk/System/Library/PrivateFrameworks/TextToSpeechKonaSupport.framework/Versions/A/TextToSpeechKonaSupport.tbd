@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           07D23351-814D-332F-988B-6A5E433F966B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           A81A2A16-FBC1-3BA5-BCB0-78FB10B577B3
+install-name:    '/System/Library/PrivateFrameworks/TextToSpeechKonaSupport.framework/Versions/A/TextToSpeechKonaSupport'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _TextToSpeechKonaSupportVersionNumber, _TextToSpeechKonaSupportVersionString ]
+    objc-classes:    [ AXKonaBuffer, AXKonaConfiguration, AXKonaMarker, AXKonaParameters, 
+                       AXKonaSpeechEngine, AXKonaSpeechSegment, AXKonaVoice ]
+...

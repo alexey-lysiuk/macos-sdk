@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           9520A509-7E2B-3FAC-99AE-616D87AC3BFD
+  - target:          arm64e-macos
+    value:           3FC00931-8DCA-342E-A87A-BDCDAEA4B8AE
+install-name:    '/System/Library/PrivateFrameworks/iCloudDriveService.framework/Versions/A/iCloudDriveService'
+current-version: 1177.60.73
+compatibility-version: 0
+...

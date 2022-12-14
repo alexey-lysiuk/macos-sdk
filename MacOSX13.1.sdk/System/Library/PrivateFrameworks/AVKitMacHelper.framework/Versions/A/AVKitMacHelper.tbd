@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           F8B88AE2-4950-30E2-B52A-58C8600039E4
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B62A8D6F-7A17-3F9D-BCB0-6169ABDB7C1F
+install-name:    '/System/Library/PrivateFrameworks/AVKitMacHelper.framework/Versions/A/AVKitMacHelper'
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ AVKit ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AVCatalystWindowProxyMake, _AVFullscreenPlayerMacHelperMake, 
+                       _AVPictureInPictureControllerMacHelperMake, _AVRoutePickerViewMacHelperMake, 
+                       _AVTouchBarMacHelperMake, _AVUIViewHostMacHelperMake ]
+    objc-classes:    [ AVFullscreenTransitionConfigurationMacHelper ]
+...

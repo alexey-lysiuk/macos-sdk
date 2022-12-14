@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           5C94632D-DFC1-3F2B-9CD4-A49CA9A3DB63
+  - target:          x86_64-maccatalyst
+    value:           5C94632D-DFC1-3F2B-9CD4-A49CA9A3DB63
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           ED903789-57BE-377E-9E42-06A3CAF83510
+  - target:          arm64e-maccatalyst
+    value:           ED903789-57BE-377E-9E42-06A3CAF83510
+install-name:    '/usr/lib/swift/libswiftCryptoTokenKit.dylib'
+current-version: 602.60.5
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftCryptoTokenKit.dylib', 
+                       '$ld$install_name$os10.11$@rpath/libswiftCryptoTokenKit.dylib', 
+                       '$ld$install_name$os10.12$@rpath/libswiftCryptoTokenKit.dylib', 
+                       '$ld$install_name$os10.13$@rpath/libswiftCryptoTokenKit.dylib', 
+                       '$ld$install_name$os10.14$@rpath/libswiftCryptoTokenKit.dylib', 
+                       '$ld$install_name$os10.9$@rpath/libswiftCryptoTokenKit.dylib' ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo11TKSmartCardC14CryptoTokenKitE11withSessionyxxyKcKlF', 
+                       '_$sSo11TKSmartCardC14CryptoTokenKitE4send3ins2p12p24data2le5replyys5UInt8V_A2L10Foundation4DataVSgSiSgyAP_s6UInt16Vs5Error_pSgtctF', 
+                       '_$sSo11TKSmartCardC14CryptoTokenKitE4send3ins2p12p24data2les6UInt16V2sw_10Foundation4DataV8responsets5UInt8V_A2rOSgSiSgtKF', 
+                       '__swift_FORCE_LOAD_$_swiftCryptoTokenKit' ]
+...

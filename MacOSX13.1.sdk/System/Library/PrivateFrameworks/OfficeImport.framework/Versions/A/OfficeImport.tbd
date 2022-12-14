@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           27CD280C-F09C-3ED6-946F-6A126C6B8B4E
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           887AC9B3-317B-351F-9F58-039D6BD13B5F
+install-name:    '/System/Library/PrivateFrameworks/OfficeImport.framework/Versions/A/OfficeImport'
+current-version: 298
+exports:
+  - targets:         [ x86_64-macos ]
+    weak-symbols:    [ __ZTISt11logic_error, __ZTISt12length_error, __ZTISt9exception, 
+                       __ZTSSt11logic_error, __ZTSSt12length_error, __ZTSSt9exception ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _HTMLError, _HTMLHeight, _HTMLMainContent, _HTMLPageCount, 
+                       _HTMLResources, _HTMLWidth, _OICopyHTMLForOfficeData, _OICopyHTMLFromFileAtURL, 
+                       _OICopyHTMLThumbnailForOfficeData, _OICopyHTMLThumbnailFromFileAtURL, 
+                       _OICopyPrecomputedThumbnailDataFromFileAtURLIfPresent, _OIErrorDomain, 
+                       _OIPreviewProcessWithData, _OIPreviewProcessWithDataAndOptions, 
+                       _OIPreviewProcessWithURL, _OIPreviewProcessWithURLAndOptions, 
+                       _kOIPreviewOptionsNoDecorations, _kOIPreviewOptionsPassphrase ]
+    objc-classes:    [ OISpotlightImporter ]
+...

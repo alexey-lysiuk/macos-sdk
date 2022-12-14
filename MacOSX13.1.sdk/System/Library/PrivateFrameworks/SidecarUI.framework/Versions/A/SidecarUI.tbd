@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           B4BFFB2E-45C2-3AE5-8054-9B36F16D1A0C
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           DD8A182C-12A0-3043-A8A6-36C930CCF6F4
+install-name:    '/System/Library/PrivateFrameworks/SidecarUI.framework/Versions/A/SidecarUI'
+current-version: 280.3
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SidecarDisplayMenuControllerMenuItemsChangedNotification, 
+                       _SidecarLocalizedWirelessString, _SidecarRequestFromRepresentedObject ]
+    objc-classes:    [ SidecarAlertController, SidecarDisplayMenuController, SidecarMenuController, 
+                       SidecarPopover ]
+...

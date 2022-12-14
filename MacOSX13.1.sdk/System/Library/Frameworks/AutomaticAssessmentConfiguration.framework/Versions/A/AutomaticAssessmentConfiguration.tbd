@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           456E1722-70A9-3FDE-8C08-AD3377D5736C
+  - target:          x86_64-maccatalyst
+    value:           456E1722-70A9-3FDE-8C08-AD3377D5736C
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F2BBC981-4D17-3552-8953-0E7AE890F379
+  - target:          arm64e-maccatalyst
+    value:           F2BBC981-4D17-3552-8953-0E7AE890F379
+install-name:    '/System/Library/Frameworks/AutomaticAssessmentConfiguration.framework/Versions/A/AutomaticAssessmentConfiguration'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _AEAssessmentErrorDomain ]
+    objc-classes:    [ AEAssessmentApplication, AEAssessmentConfiguration, AEAssessmentParticipantConfiguration, 
+                       AEAssessmentSession ]
+...

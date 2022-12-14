@@ -1,0 +1,274 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           9315ADAA-3FEA-3166-BC9C-BEA92A80701C
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           A84A8CBD-AE65-314B-883A-F5155412FE76
+install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/AccessibilitySupport'
+current-version: 0
+compatibility-version: 0
+reexported-libraries:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    libraries:       [ '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityEvents.framework/Versions/A/AccessibilityEvents', 
+                       '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityFoundation.framework/Versions/A/AccessibilityFoundation', 
+                       '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityKit.framework/Versions/A/AccessibilityKit', 
+                       '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityVisuals.framework/Versions/A/AccessibilityVisuals' ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AccessibilitySupportVersionNumber, _AccessibilitySupportVersionString ]
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           3698191C-D414-3F32-A7C6-9E67FB551BFF
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           FBAE522F-65E5-36C5-8771-C97F6B347BDD
+install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityEvents.framework/Versions/A/AccessibilityEvents'
+current-version: 2
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AXEFixedGlyphForMacKeyCode, _AXEGlyphForMacKeyCode, _AXEGlyphForPureModifierFlags, 
+                       _AXEHIDDeviceGetDeviceInfo, _AXEHIDDeviceGetDeviceInfoUsingCache, 
+                       _AXEHIDDeviceHidServiceIDKey, _AXEHIDDeviceInfoKeys, _AXEIsSynthesizedEvent, 
+                       _AXEIsSynthesizedIgnoreEvent, _AXEMacKeyCodeFromUSBKeyCode, 
+                       _AXEMacKeyCodeIsModifier, _AXEMacKeyCodesForPureModifierFlags, 
+                       _AXEMenuGlyphForMacKeyCode, _AXEModifierFlagsForMacKeyCode, 
+                       _AXESynthesizedEventSourceID, _AXESynthesizedIgnoreEventSourceID, 
+                       _AXETrackingHoldGestureRecognizerAllowInstabilityBeforeHoldDefault, 
+                       _AXETrackingHoldGestureRecognizerMaximumHoldDeviationDefault, 
+                       _AXETrackingHoldGestureRecognizerMinimumHoldDurationDefault, 
+                       _AXETrackingHoldGestureRecognizerMinimumPreHoldStabilizationDurationDefault, 
+                       _AXETrackingHoldGestureRecognizerPreHoldTapCountDefault, _AXETrackingSplitTapGestureRecognizerMaximumTapDownDeviationDefault, 
+                       _AXETrackingTapGestureRecognizerMaximumTapDownDeviationDefault, 
+                       _AXETrackingTapGestureRecognizerMaximumTapDownDurationDefault, 
+                       _AXETrackingTapGestureRecognizerMaximumTapIntervalDefault, 
+                       _AXETrackingTwoFingerGestureRecognizerMinimumPanDistanceDefault, 
+                       _AXETrackingTwoFingerGestureRecognizerMinimumPinchSeparationDeviationDefault, 
+                       _AXETrackingTwoFingerGestureRecognizerMinimumRotateAngleDeviationDefault, 
+                       _AXEUSBKeyCodeFromMacKeyCode ]
+    objc-classes:    [ AXEDFRDevice, AXEEventTapManager, AXEGestureEvent, AXEHIDDevice, 
+                       AXEHIDDeviceDetector, AXEHIDDeviceManager, AXEHIDEvent, AXEHIDGamePadDevice, 
+                       AXEHIDJoystickDevice, AXEKeyboard, AXEKeyboardEvent, AXEMathUtilities, 
+                       AXEMockTimerFactory, AXEMouseEvent, AXEPhysicalKeyboard, AXEPhysicalMouse, 
+                       AXETimerFactory, AXETrackingFlickGestureRecognizer, AXETrackingGestureEvent, 
+                       AXETrackingGestureRecognizerTestsFingerSimulator, AXETrackingHoldGestureRecognizer, 
+                       AXETrackingSplitTapGestureRecognizer, AXETrackingTapGestureRecognizer, 
+                       AXETrackingTouchEvent, AXETrackingTrackpadDevice, AXETrackingTwoFingerGestureRecognizer, 
+                       AXEVirtualKeyboard ]
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           B25A6969-E026-3DA2-A41B-8232D1FE39CC
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           294EFA4D-6186-36FB-A44C-AB1646C9611E
+install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityFoundation.framework/Versions/A/AccessibilityFoundation'
+current-version: 2
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AXEGetLog, _AXFAnnouncementRequestedNotification, _AXFApplicationActivatedNotification, 
+                       _AXFApplicationDeactivatedNotification, _AXFApplicationHiddenNotification, 
+                       _AXFApplicationIdentifierControlCenter, _AXFApplicationIdentifierDashboard, 
+                       _AXFApplicationIdentifierDock, _AXFApplicationIdentifierFinder, 
+                       _AXFApplicationIdentifierIWorkPrefix, _AXFApplicationIdentifierMail, 
+                       _AXFApplicationIdentifierNotificationCenterUI, _AXFApplicationIdentifierSpotlight, 
+                       _AXFApplicationIdentifierSystemUIServer, _AXFApplicationIdentifierTerminal, 
+                       _AXFApplicationIdentifierWindowManager, _AXFApplicationInfoIconKey, 
+                       _AXFApplicationInfoIconSizeKey, _AXFApplicationInfoNameKey, 
+                       _AXFApplicationShownNotification, _AXFBundleIdentifierFromPID, 
+                       _AXFBundlePathFromPID, _AXFContainerTypeFromiOSAXContainerType, 
+                       _AXFCopyProcessIDForWindowID, _AXFCopyStringToUChar32Array, 
+                       _AXFCopyStringToUniCharArray, _AXFCreateLog, _AXFCreatedNotification, 
+                       _AXFCursorIsUsingCustomCursors, _AXFCursorRegisterAll, _AXFCursorSetAndReturnSeed, 
+                       _AXFCursorUnregisterAll, _AXFDebugPrintHierarchy, _AXFDrawerCreatedNotification, 
+                       _AXFElementBusyChangedNotification, _AXFElementTransportKey, 
+                       _AXFFeatureIsVoiceOverBooksExperienceV2Enabled, _AXFFilter, 
+                       _AXFFlatMap, _AXFFocusedUIElementChangedNotification, _AXFFocusedWindowChangedNotification, 
+                       _AXFFormattedString, _AXFGZIPData, _AXFGeometryAngleFromXAxisToSegmentConnectingPoints, 
+                       _AXFGeometryCenterOfRect, _AXFGeometryCentroidOfPoints, _AXFGeometryClosestRectToPointInRects, 
+                       _AXFGeometryClosestRectToRectInRects, _AXFGeometryDenormalizePointRelativeToRect, 
+                       _AXFGeometryDistanceBetweenPoints, _AXFGeometryDistanceBetweenRectAndPoint, 
+                       _AXFGeometryDistanceBetweenRects, _AXFGeometryDistributeSpaceOfRects, 
+                       _AXFGeometryEqualPointsWithThreshold, _AXFGeometryEqualRectsWithThreshold, 
+                       _AXFGeometryEqualSizesWithThreshold, _AXFGeometryIsRectVerticallyAlignedWithRectWithThreshold, 
+                       _AXFGeometryIsValidRect, _AXFGeometryMidpointBetweenPoints, 
+                       _AXFGeometryNormalizePointRelativeToRect, _AXFGeometryOffsetPointByDelta, 
+                       _AXFGeometryOffsetPointByDeltaComponents, _AXFGeometryPackRects, 
+                       _AXFGeometryRectIntersectsRectWithThreshold, _AXFGeometryRectWithCenterAndSize, 
+                       _AXFGeometryRemapPoint, _AXFGeometryScaleRectAboutCenterByFactor, 
+                       _AXFGeometryScaleRectAboutPointByFactor, _AXFGeometryShiftPointFullyWithinContainerRect, 
+                       _AXFGeometryShiftPointFullyWithinRegionDefinedByRects, _AXFGeometryShiftPointFullyWithinRegionDefinedByRectsConsideringPriorPoint, 
+                       _AXFGeometryShiftRectFullyWithinContainerRect, _AXFGeometryShiftRectFullyWithinRegionDefinedByRects, 
+                       _AXFGeometryShiftRectFullyWithinRegionDefinedByRectsConsideringPriorRect, 
+                       _AXFGeometryShiftRectToContainPoint, _AXFGeometrySnapPointToClosestIntegralPoint, 
+                       _AXFGeometrySnapRectToClosestIntegralBoundaries, _AXFGeometrySnapRectToGridWithSpacing, 
+                       _AXFGeometrySortRects, _AXFGeometryStandardDeviationOfPoints, 
+                       _AXFGeometryStandardDeviationOfPointsWithPrecalculatedCentroid, 
+                       _AXFGeometryVectorFromPointToPoint, _AXFGetLog, _AXFHasLoadedUnitTestsReturningRunningCurrently, 
+                       _AXFHeadingAttribute, _AXFHelpTagCreatedNotification, _AXFIsDebuggerAttached, 
+                       _AXFIsRunningAsRootOrInRootSession, _AXFIsRunningOutsideLoggedInSession, 
+                       _AXFKeyPathFromSelectors, _AXFLayoutChangedNotification, _AXFLocalizedString, 
+                       _AXFLocalizedStringForComposedCharacter, _AXFLocalizedStringWithTable, 
+                       _AXFLocalizedStringWithTableAndBundle, _AXFLocalizedTableLiteralOutput, 
+                       _AXFMainWindowChangedNotification, _AXFMap, _AXFMenuClosedNotification, 
+                       _AXFMenuItemSelectedNotification, _AXFMenuOpenedNotification, 
+                       _AXFMovedNotification, _AXFPSNFromPID, _AXFPSNIsEqualToPSN, 
+                       _AXFPerformPrivilegedAttributedStringTransformation, _AXFPerformPrivilegedAttributedStringTransformations, 
+                       _AXFResizedNotification, _AXFRowCollapsedNotification, _AXFRowCountChangedNotification, 
+                       _AXFRowExpandedNotification, _AXFScreenCaptureBorderFrameKey, 
+                       _AXFScreenCaptureDisplayNativeScaleKey, _AXFScreenCaptureImageDataKey, 
+                       _AXFScreenManagerPointOffsetEpsilon, _AXFSearchAllElementsCount, 
+                       _AXFSearchAnyTypePredicateKey, _AXFSearchBlockquotePredicateKey, 
+                       _AXFSearchBlockquoteSameLevelPredicateKey, _AXFSearchBoldFontPredicateKey, 
+                       _AXFSearchButtonPredicateKey, _AXFSearchCheckBoxPredicateKey, 
+                       _AXFSearchControlPredicateKey, _AXFSearchDifferentTypePredicateKey, 
+                       _AXFSearchDirectionNextPredicateValue, _AXFSearchDirectionPredicateKey, 
+                       _AXFSearchDirectionPreviousPredicateValue, _AXFSearchFontChangePredicateKey, 
+                       _AXFSearchFontColorChangePredicateKey, _AXFSearchFramePredicateKey, 
+                       _AXFSearchGraphicsPredicateKey, _AXFSearchHeadingPredicateKey, 
+                       _AXFSearchHeadingSameLevelPredicateKey, _AXFSearchItalicFontPredicateKey, 
+                       _AXFSearchKeyPredicateKey, _AXFSearchKeyboardFocusablePredicateKey, 
+                       _AXFSearchLandmarkPredicateKey, _AXFSearchLevel1PredicateKey, 
+                       _AXFSearchLevel2PredicateKey, _AXFSearchLevel3PredicateKey, 
+                       _AXFSearchLevel4PredicateKey, _AXFSearchLevel5PredicateKey, 
+                       _AXFSearchLevel6PredicateKey, _AXFSearchLinkPredicateKey, 
+                       _AXFSearchListPredicateKey, _AXFSearchLiveRegionPredicateKey, 
+                       _AXFSearchMisspelledWordPredicateKey, _AXFSearchPlainTextPredicateKey, 
+                       _AXFSearchRadioGroupPredicateKey, _AXFSearchResultsLimitPredicateKey, 
+                       _AXFSearchSameTypePredicateKey, _AXFSearchStartElementPredicateKey, 
+                       _AXFSearchStaticTextPredicateKey, _AXFSearchStyleChangePredicateKey, 
+                       _AXFSearchTablePredicateKey, _AXFSearchTableSameLevelPredicateKey, 
+                       _AXFSearchTextFieldPredicateKey, _AXFSearchTextPredicateKey, 
+                       _AXFSearchUnderlinePredicateKey, _AXFSearchUnvisitedLinkPredicateKey, 
+                       _AXFSearchVisibleOnlyPredicateKey, _AXFSearchVisitedLinkPredicateKey, 
+                       _AXFSelectedCellsChangedNotification, _AXFSelectedChildrenChangedNotification, 
+                       _AXFSelectedChildrenMovedNotification, _AXFSelectedColumnsChangedNotification, 
+                       _AXFSelectedRowsChangedNotification, _AXFSelectedTextChangedNotification, 
+                       _AXFSheetCreatedNotification, _AXFStopInDebugger, _AXFSynthesizedEventSourceID, 
+                       _AXFTitleChangedNotification, _AXFUIElementDestroyedNotification, 
+                       _AXFUTF16Encoding, _AXFUTF32Encoding, _AXFUnGZIPData, _AXFUnitsChangedNotification, 
+                       _AXFValueChangedNotification, _AXFWMStageManagerLayoutKey, 
+                       _AXFWMStageManagerLayoutStatusKey, _AXFWMStageManagerLayoutWindowIDKey, 
+                       _AXFWMStageManagerStateKey, _AXFWebAreaRole, _AXFWindowCreatedNotification, 
+                       _AXFWindowDeminiaturizedNotification, _AXFWindowMiniaturizedNotification, 
+                       _AXFWindowMovedNotification, _AXFWindowResizedNotification, 
+                       _AXKGetLog, _AXVGetLog, _AccessibilityLoggingSubsystem, _KAGetLog, 
+                       _SCGetLog, _SCRAXElementsEqual, _SCRUIElementSetThreadCacheKey, 
+                       _VOGetLog, _ZMGetLog, __AXFGeometryCreateCGRegionFromRects, 
+                       __AXFGeometrySubregionRectsFromRegion, _kSCRBrailleOverrideAXLabelKey, 
+                       _kSCRBrailleOverrideAXRoleDescriptionKey, _kSCRDoNotFetchAXChildrenKey, 
+                       _kSCRRotorLabelUnspecified, _kSCRRotorsKey, _kSCRUIInvalidPoint ]
+    objc-classes:    [ AXFApplicationInfoProvider, AXFApplicationManager, AXFComposedCharacter, 
+                       AXFConcurrentDictionary, AXFCountedQueue, AXFDialectMap, AXFDiscontinuousArray, 
+                       AXFDispatchGroup, AXFDispatchQueue, AXFDispatchSemaphore, 
+                       AXFDispatchWorkItem, AXFLanguageManager, AXFLanguageMap, AXFLanguageTag, 
+                       AXFLanguageTagger, AXFMarshal, AXFMonoTimbralSampler, AXFMouse, 
+                       AXFMouseCursorImage, AXFMouseTest, AXFMutableDiscontinuousArray, 
+                       AXFMutableSortedArray, AXFObserver, AXFObserverManager, AXFProcessInfo, 
+                       AXFProcessManager, AXFRemoteSearchManager, AXFRotorItemResult, 
+                       AXFRotorManager, AXFRunLoopThread, AXFScreen, AXFScreenCaptureManager, 
+                       AXFScreenManager, AXFScreenSourceTest, AXFSortedArray, AXFStackQueue, 
+                       AXFStageManagerStageUIElement, AXFStageManagerWindowUIElement, 
+                       AXFTargetSelector, AXFTextPosition, AXFTextRange, AXFThrottler, 
+                       AXFUIElement, AXFUserSessionObserver, AXFWindowManagerController, 
+                       SCRFaultingArray, SCRFaultingElementArray, SCRImageImitationUIElement, 
+                       SCRImitationUIElement, SCRMutableTextMarker, SCRTextMarker, 
+                       SCRTextMarkerRange, SCRUIElement, _AXFAttributedStringProxy, 
+                       _AXFEventProvider, _AXFFaultingArray, _AXFLaunchServicesProvider, 
+                       _AXFMouseCursorGenerator, _AXFMouseCursorGeneratorStyleInfo, 
+                       _AXFSelectorMap, _AXFUIElementDataProvider, _AXFUIElementDataProviderIPC, 
+                       _AXFUIElementDataProviderTest ]
+    objc-ivars:      [ _AXFFaultingArray._elements ]
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           F9AB6A80-FF3B-36F1-906E-C95916205FE9
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           856FCE00-3DB0-3BAA-A505-19ACA22787EA
+install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityKit.framework/Versions/A/AccessibilityKit'
+current-version: 2
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AXKAreDifferentFonts, _AXKAreDifferentTextStyles, _AXKBundle, 
+                       _AXKCmyk2rgb, _AXKContrastRatioForColor, _AXKDebugPrintHierarchy, 
+                       _AXKDisableTRMStateIfNeeded, _AXKDisableTRMStateIfNeededWithCompletionBlock, 
+                       _AXKEnumerateEmojiDescriptionsInString, _AXKFullKeyboardAccessAvailableCommands, 
+                       _AXKGrayscale2rgb, _AXKHasBoldFont, _AXKHasItalicFont, _AXKHasPlainFont, 
+                       _AXKHsv2rgb, _AXKLocalizedString, _AXKLuminanceForColor, _AXKRecommendedColorForColors, 
+                       _AXKRgb2cmyk, _AXKRgb2grayscale, _AXKRgb2hsv, _AXKShouldShowDisableTRMDialog, 
+                       _AXKStringByReplacingEmojiWithDescriptions, _AXKThreadingCheckAssertCurrentQueueIsAppQueueForApp, 
+                       _AXKThreadingCheckAssertCurrentQueueIsAppQueueForElement, 
+                       _AXKThreadingCheckAssertCurrentQueueIsAppQueueForUIElement, 
+                       _AXKThreadingCheckAssertCurrentQueueIsEqual, _AXKThreadingCheckAssertCurrentQueueIsMain, 
+                       _AXKThreadingCheckAssertCurrentQueueNotMain, _kAXKBackgroundColorAttribute, 
+                       _kAXKFontAttribute, _kAXKFontNameAttribute, _kAXKFontSizeAttribute, 
+                       _kAXKForegroundColorAttribute, _kAXKRecommendedColorContrastRatioEnhanced, 
+                       _kAXKRecommendedColorContrastRatioLight, _kAXKRecommendedColorContrastRatioMedium, 
+                       _kAXKRecommendedColorContrastRatioMinimum ]
+    objc-classes:    [ AXKAlertWindowController, AXKAndAction, AXKApplicationController, 
+                       AXKAttributedStringParser, AXKBaseAction, AXKClickAction, 
+                       AXKCompositeAction, AXKElementBasedTextProvider, AXKElementController, 
+                       AXKElementDescriber, AXKElementDescriberConfiguration, AXKFocusManager, 
+                       AXKFoundationAction, AXKInputMarkingSessionTracker, AXKKeyboardFocusListenerSharedKeyboardFocusElementInfo, 
+                       AXKKeyboardFocusTracker, AXKOrAction, AXKRemoteSearchManager, 
+                       AXKResourceManager, AXKScreenReadingElementTraversalStrategy, 
+                       AXKSearchManager, AXKSimpleStringTextProvider, AXKStringTokenizer, 
+                       AXKSystemStatus, AXKTextElementEditListenerElementInfo, AXKTextElementEditTracker, 
+                       AXKTextNavigator, AXKUserDefaultsOverrider, AXKWorkspaceManager, 
+                       _AXKClassRegistrar ]
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           E5AEBA58-A552-3891-A151-F9F7525C28CF
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F597E0A7-361A-3F7D-B238-B7CB4E966064
+install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityVisuals.framework/Versions/A/AccessibilityVisuals'
+current-version: 2
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AXVAccessibilityVisualsSpaceUUID, _AXVBrailleTransliterationAttribute, 
+                       _AXVBundle, _AXVCaptionWindowLevel, _AXVCreateIconWithImageMask, 
+                       _AXVDefaultVoiceOverStyleBorderWidth, _AXVFiniteRectForRect, 
+                       _AXVGetIdealFont, _AXVGetIdealSizeForFont, _AXVImageRepresentationFileExtension, 
+                       _AXVLocalizedString, _AXVScrollDeltaEqual, _AXVScrollDirectionNull, 
+                       _AXVTintImage, _AXVisualsAgentDelegateXPCInterface, _AXVisualsAgentXPCInterface ]
+    objc-classes:    [ AXVAHUDFeature, AXVBorderedLayer, AXVBorderedView, AXVBorderedWindow, 
+                       AXVBorderedWindowController, AXVBorderedZoomWindow, AXVBrailleInfo, 
+                       AXVBrailleWindow, AXVCGFullscreenZoomController, AXVCaptionWindow, 
+                       AXVCutoutWindow, AXVCutoutWindowController, AXVFileManager, 
+                       AXVFullscreenZoomController, AXVHighlightCurtainView, AXVHighlightOutlineHintViewController, 
+                       AXVHighlightOutlineView, AXVHighlightPointView, AXVHighlightView, 
+                       AXVLabelHighlightView, AXVLabeledElement, AXVLayoutConstraintUtilities, 
+                       AXVLiveCaptionsEnablementAlertController, AXVMenuInfo, AXVMenuItem, 
+                       AXVMenuItemView, AXVMenuWindow, AXVMouseCursor, AXVMouseCursorManager, 
+                       AXVMutableWindowSpace, AXVNumberedLabeledElementsOverlayController, 
+                       AXVOverlayWindow, AXVProgressIndicatorView, AXVRotorInfo, 
+                       AXVRotorWindow, AXVScreenCaptureManager, AXVScrollMenu, AXVScrollMenuItem, 
+                       AXVScrollMenuSuggestedEventPayload, AXVSearchDropDownWindow, 
+                       AXVSearchTextField, AXVSearchWindow, AXVSpeechMenuWindow, 
+                       AXVSpeechStyleWindow, AXVStyledMenu, AXVStyledMenuItem, AXVStyledMenuView, 
+                       AXVTitleWindow, AXVTitledHighlightView, AXVView, AXVVoiceOverStyleWindow, 
+                       AXVWindow, AXVWindowManager, AXVWindowSpace ]
+...

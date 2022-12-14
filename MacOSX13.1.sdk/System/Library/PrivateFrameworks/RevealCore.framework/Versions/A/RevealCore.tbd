@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           A064B9AA-E9C8-3A18-BE52-EBAF37AC30C5
+  - target:          x86_64-maccatalyst
+    value:           A064B9AA-E9C8-3A18-BE52-EBAF37AC30C5
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           88425707-3E22-3876-AD32-CAB413C14378
+  - target:          arm64e-maccatalyst
+    value:           88425707-3E22-3876-AD32-CAB413C14378
+install-name:    '/System/Library/PrivateFrameworks/RevealCore.framework/Versions/A/RevealCore'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _RVContextTypeSceneThumbnailKey, _RVReportAnIssueMetadataPreviewImage, 
+                       _RevealCoreVersionNumber, _RevealCoreVersionString ]
+    objc-classes:    [ RVDocumentContext, RVItem, RVQuery, RVSelection ]
+...

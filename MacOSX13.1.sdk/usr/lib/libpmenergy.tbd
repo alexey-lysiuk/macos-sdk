@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           6366A8A5-4145-35D0-AE2B-889A6820D318
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           62CA5063-1BEC-360E-8683-A4631243BA5C
+install-name:    '/usr/lib/libpmenergy.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _pm_energy_impact, _pm_energy_impact_internal, _pm_mach_time_to_ns, 
+                       _pm_task_add, _pm_task_subtract ]
+...

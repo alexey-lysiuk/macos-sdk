@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           D0C9BF88-ADCE-31D4-8776-008FF21473B2
+  - target:          x86_64-maccatalyst
+    value:           D0C9BF88-ADCE-31D4-8776-008FF21473B2
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           2CBEA4E9-4C35-3AEB-AEAF-B4F1F05481D8
+  - target:          arm64e-maccatalyst
+    value:           2CBEA4E9-4C35-3AEB-AEAF-B4F1F05481D8
+install-name:    '/System/Library/PrivateFrameworks/AggregateDictionaryHistory.framework/Versions/A/AggregateDictionaryHistory'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    objc-classes:    [ ADHistory, ADHistoryDistributionEnumerator ]
+...

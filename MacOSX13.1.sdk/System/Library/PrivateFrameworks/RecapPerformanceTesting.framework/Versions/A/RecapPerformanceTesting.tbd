@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           4881AC44-6265-3B7E-81F7-8146EAD7339F
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           EFD1B880-97FC-3AC1-8538-560145D566DB
+install-name:    '/System/Library/PrivateFrameworks/RecapPerformanceTesting.framework/Versions/A/RecapPerformanceTesting'
+current-version: 17
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _RPTAmplitudeFromPagesOfView, _RPTAxisFromScrollDirection, 
+                       _RPTCGPointAdvanceInDirectionByAmount, _RPTCGRectGetMidpoint, 
+                       _RPTCGRectGetMidpointAlongSide, _RPTContentOffsetOf, _RPTContentSizeAlongAxis, 
+                       _RPTContentSizeInDirection, _RPTConvertPointInViewToScreenSpace, 
+                       _RPTDefaultScrollDirection, _RPTExcludeSystemRegionsFromRect, 
+                       _RPTExcludeSystemRegionsFromView, _RPTGetBoundsForView, _RPTOppositeDirectionFrom, 
+                       _RPTPredominantAxisOfContentOf, _RPTSizeAlongAxis, _RPTViewFrameInScreenSpace, 
+                       __RPTAmplitudeFromPagesOfView, __RPTAxisFromScrollDirection, 
+                       __RPTScrollDirectionFromUIScrollDirection, __UIScrollDirectionFromRPTScrollDirection ]
+    objc-classes:    [ RPTActivationInteraction, RPTActivationTestParameters, RPTBlockInteraction, 
+                       RPTCoordinateSpaceConverter, RPTDirectionalCrownTestParameters, 
+                       RPTDirectionalSwipeTestParameters, RPTDockGestureInteraction, 
+                       RPTDragInteraction, RPTDragTestParameters, RPTGroupScrollTestParameters, 
+                       RPTInteractionOptions, RPTPagingScrollTestParameters, RPTResizeInteraction, 
+                       RPTResizeTestParameters, RPTScrollViewTestParameters, RPTTestRunner ]
+...

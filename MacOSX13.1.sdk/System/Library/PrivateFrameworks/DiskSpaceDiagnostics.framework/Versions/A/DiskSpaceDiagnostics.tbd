@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           18F38DC5-332B-3070-9AF5-91DC6E4FF6A7
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           9B739584-9F19-3D53-B620-BC3C9CB246CE
+install-name:    '/System/Library/PrivateFrameworks/DiskSpaceDiagnostics.framework/Versions/A/DiskSpaceDiagnostics'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _DiskSpaceDiagnosticsVersionNumber, _DiskSpaceDiagnosticsVersionString, 
+                       _kDSFilesystemMetadataSnapshotErrorDomain, _kDSFilesystemMetadataSnapshotOptionMountPointsAllowListArrayKey, 
+                       _kDSFilesystemMetadataSnapshotOptionShouldHashVolumeListingsKey, 
+                       _kDSFilesystemMetadataSnapshotServiceName ]
+...

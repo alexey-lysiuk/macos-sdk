@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           8D7C4BB9-7C92-387E-8632-4632B2B0A9EA
+  - target:          x86_64-maccatalyst
+    value:           8D7C4BB9-7C92-387E-8632-4632B2B0A9EA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F920411D-AD30-3DA0-B32F-76F1D6C760C2
+  - target:          arm64e-maccatalyst
+    value:           F920411D-AD30-3DA0-B32F-76F1D6C760C2
+install-name:    '/System/Library/PrivateFrameworks/CryptoKitCBridging.framework/Versions/A/CryptoKitCBridging'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _CryptoKitCBridgingVersionNumber, _CryptoKitCBridgingVersionString, 
+                       _SPAKE2Alishaz0Size, _SPAKE2CtxSize, _SSPBSecretShareReadFrom, 
+                       _ccss_sizeof_parameters_fix, _getCMACContextSize, _getContextSizeForECBMode, 
+                       _getDigestSizeForDigestInfo, _getGCMCtxSize, _getHMACContextSizeForDigestInfo, 
+                       _getccec_full_ctx_size, _getccec_pub_ctx_size, _init_ccec_ctx_full, 
+                       _init_ccec_ctx_pub, _keyIsCompactRepresentable ]
+    objc-classes:    [ CKCBCorecryptoECPoint, CKCBCorecryptoECScalar, CKSSShare, 
+                       SEPUtils, SSPBSecretShare ]
+    objc-ivars:      [ CKSSShare._share, CKSSShare._share_size, SSPBSecretShare._associatedData, 
+                       SSPBSecretShare._ciphertext, SSPBSecretShare._has, SSPBSecretShare._iv, 
+                       SSPBSecretShare._shareX, SSPBSecretShare._shareY, SSPBSecretShare._tag, 
+                       SSPBSecretShare._threshold, SSPBSecretShare._version ]
+...

@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, x86_64h-macos, x86_64h-maccatalyst, 
+                   arm64-macos, arm64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           844FE029-66C4-30F5-A674-138693037872
+  - target:          x86_64-maccatalyst
+    value:           844FE029-66C4-30F5-A674-138693037872
+  - target:          x86_64h-macos
+    value:           E50E5B6E-698A-325B-B80B-EB49D0838D59
+  - target:          x86_64h-maccatalyst
+    value:           E50E5B6E-698A-325B-B80B-EB49D0838D59
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           6C1AADB5-726B-332F-9E00-A0CB2BF0C1E4
+  - target:          arm64e-maccatalyst
+    value:           6C1AADB5-726B-332F-9E00-A0CB2BF0C1E4
+install-name:    '/usr/lib/libate.dylib'
+current-version: 3.0.7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, x86_64h-macos, x86_64h-maccatalyst, 
+                       arm64-macos, arm64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _at_block_format_convert_to_MTLPixelFormat, _at_block_format_to_MTLPixelFormat, 
+                       _at_block_get_features, _at_encoder_compress_texels, _at_encoder_create, 
+                       _at_encoder_decompress_texels, _at_encoder_get_block_address, 
+                       _at_encoder_get_block_alpha, _at_encoder_get_block_counts, 
+                       _at_encoder_get_block_dimensions, _at_encoder_get_block_format, 
+                       _at_encoder_get_block_size, _at_encoder_get_texel_alpha, _at_encoder_get_texel_format, 
+                       _at_encoder_get_version, _at_encoder_is_compression_monolithic, 
+                       _at_encoder_is_decompression_monolithic, _at_encoder_set_capabilities_mask, 
+                       _at_texel_format_to_MTLPixelFormat ]
+...

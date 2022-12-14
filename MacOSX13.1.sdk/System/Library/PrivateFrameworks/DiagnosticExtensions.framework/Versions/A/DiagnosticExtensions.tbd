@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           E4577563-128D-32B5-AA5E-D35A688249BF
+  - target:          x86_64-maccatalyst
+    value:           E4577563-128D-32B5-AA5E-D35A688249BF
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           9AEAF5A3-49FD-3DDF-B573-7988076F82A4
+  - target:          arm64e-maccatalyst
+    value:           9AEAF5A3-49FD-3DDF-B573-7988076F82A4
+install-name:    '/System/Library/PrivateFrameworks/DiagnosticExtensions.framework/Versions/A/DiagnosticExtensions'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _DEExtensionTrackerEarliestExpirationDateKey, _DEExtensionTrackerExpirationDateKey, 
+                       _DEExtensionTrackerSessionsKey, _DEExtensionTrackerUserDefaultsKey, 
+                       _DEExtensionTrackerXPCActivityDateKey, _DEExtensionTrackerXPCActivityKey, 
+                       _DEUtilsValidateConnection, _DEUtilsValidateDestination, _DiagnosticExtensionsVersionNumber, 
+                       _DiagnosticExtensionsVersionString, _pgrep, _signal_USR2 ]
+    objc-classes:    [ DEArchive, DEArchiveReader, DEArchiver, DEAttachmentGroup, 
+                       DEAttachmentItem, DEAttachmentItemSandboxExtensionHandle, 
+                       DECollectionProgress, DEExtension, DEExtensionContext, DEExtensionHostContext, 
+                       DEExtensionManager, DEExtensionProvider, DEExtensionTracker, 
+                       DELogMover, DELogging, DELoggingPreferences, DEUtils, DiagnosticExtensions_Subsystem ]
+...

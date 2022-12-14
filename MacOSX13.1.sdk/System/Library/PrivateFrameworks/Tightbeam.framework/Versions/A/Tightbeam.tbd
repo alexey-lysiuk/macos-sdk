@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           46D59A45-7316-3815-884D-FC8CEC6674BC
+  - target:          x86_64-maccatalyst
+    value:           46D59A45-7316-3815-884D-FC8CEC6674BC
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B08319DE-668D-3FD4-9532-A2F058889C8A
+  - target:          arm64e-maccatalyst
+    value:           B08319DE-668D-3FD4-9532-A2F058889C8A
+install-name:    '/System/Library/PrivateFrameworks/Tightbeam.framework/Versions/A/Tightbeam'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _tb_connection_send_query_and_wait_for_reply, _tb_mach_transport_create, 
+                       _tb_message_complete, _tb_message_compose_scalars, _tb_message_construct, 
+                       _tb_message_create, _tb_message_decode_s16, _tb_message_decode_s32, 
+                       _tb_message_decode_s64, _tb_message_decode_s8, _tb_message_decode_u16, 
+                       _tb_message_decode_u32, _tb_message_decode_u64, _tb_message_decode_u8, 
+                       _tb_message_decompose_scalars, _tb_message_destruct, _tb_message_encode_s16, 
+                       _tb_message_encode_s32, _tb_message_encode_s64, _tb_message_encode_s8, 
+                       _tb_message_encode_u16, _tb_message_encode_u32, _tb_message_encode_u64, 
+                       _tb_message_encode_u8, _tb_message_quantify_scalars ]
+...

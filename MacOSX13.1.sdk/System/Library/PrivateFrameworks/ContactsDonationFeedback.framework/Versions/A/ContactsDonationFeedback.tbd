@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           53F2F952-C6BB-3F8C-98FB-70FA75FBA22B
+  - target:          x86_64-maccatalyst
+    value:           53F2F952-C6BB-3F8C-98FB-70FA75FBA22B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B0135DA7-680D-307C-B1C5-E387040CA028
+  - target:          arm64e-maccatalyst
+    value:           B0135DA7-680D-307C-B1C5-E387040CA028
+install-name:    '/System/Library/PrivateFrameworks/ContactsDonationFeedback.framework/Versions/A/ContactsDonationFeedback'
+current-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _ContactsDonationFeedbackVersionNumber, _ContactsDonationFeedbackVersionString, 
+                       _kCDFErrorDomain, _kCDFInsufficientValuesToHashError, _kCDFMissingIdentifierError, 
+                       _kCDFUnhandledValueTypeError ]
+    objc-classes:    [ CDFDonationFeedbackStore, CNDFDonationStringCollector ]
+...

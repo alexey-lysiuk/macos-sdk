@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           268964B0-B224-3E0E-B73E-797A205B16E1
+  - target:          x86_64-maccatalyst
+    value:           268964B0-B224-3E0E-B73E-797A205B16E1
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           5F313A89-C8A7-3175-9086-BA8A7EF601BE
+  - target:          arm64e-maccatalyst
+    value:           5F313A89-C8A7-3175-9086-BA8A7EF601BE
+install-name:    '/usr/lib/swift/libswiftFoundation.dylib'
+current-version: 120.100
+reexported-libraries:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    libraries:       [ '/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation' ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os10.11$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os10.12$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os10.13$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os10.14$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os10.9$@rpath/libswiftFoundation.dylib' ]
+...

@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           E89BB43E-E25F-3589-8C62-CF42CCA47D0D
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           62122170-6548-34D8-895F-86EAB4DFB830
+install-name:    '/System/Library/Frameworks/MetalFX.framework/Versions/A/MetalFX'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ MFXSpatialScalingEffectDescriptor, MFXTemporalScalingEffectDescriptor, 
+                       MTLFXSpatialScalerDescriptor, MTLFXTemporalScalerDescriptor, 
+                       _MTLFXSpatialScaler, _MTLFXTemporalScaler ]
+...

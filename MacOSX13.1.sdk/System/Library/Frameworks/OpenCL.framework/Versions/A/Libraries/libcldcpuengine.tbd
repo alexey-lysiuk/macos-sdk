@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           0868E6FE-2154-3846-BFB4-3B3D154942D9
+  - target:          x86_64-maccatalyst
+    value:           0868E6FE-2154-3846-BFB4-3B3D154942D9
+install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libcldcpuengine.dylib'
+current-version: 3.1
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst ]
+    symbols:         [ ___printf_cl, _barrier, _glrCompBuildProgram, _glrCompCloseDevice, 
+                       _glrCompCompileProgram, _glrCompCopyStream, _glrCompCreateContext, 
+                       _glrCompCreateKernel, _glrCompCreateProgram, _glrCompCreateStream, 
+                       _glrCompDeleteContext, _glrCompDeleteEvent, _glrCompDeleteKernel, 
+                       _glrCompDeleteProgram, _glrCompDeleteStream, _glrCompEnqueueMarker, 
+                       _glrCompExecuteCallback, _glrCompExecuteKernel, _glrCompExecuteNativeKernel, 
+                       _glrCompFillStream, _glrCompFinish, _glrCompFlush, _glrCompGetDeviceConfig, 
+                       _glrCompGetEventStatus, _glrCompGetImageFormats, _glrCompGetKernelArgInfo, 
+                       _glrCompGetKernelInfo, _glrCompGetKernelNames, _glrCompLinkProgram, 
+                       _glrCompLoadBinary, _glrCompOpenDevice, _glrCompReadStream, 
+                       _glrCompSetContextProperties, _glrCompWaitForEvent, _glrCompWriteStream ]
+...

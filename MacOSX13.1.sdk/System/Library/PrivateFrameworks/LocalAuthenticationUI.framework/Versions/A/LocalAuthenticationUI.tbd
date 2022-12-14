@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           ED0814EA-593E-3C63-BF69-88AC6E2295D8
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           7C9E1436-A5D1-39EE-BA76-DD1571EDBC1D
+install-name:    '/System/Library/PrivateFrameworks/LocalAuthenticationUI.framework/Versions/A/LocalAuthenticationUI'
+current-version: 1131.60.22
+exports:
+  - targets:         [ x86_64-macos ]
+    weak-symbols:    [ __ZTISt11logic_error, __ZTISt12length_error, __ZTISt9exception, 
+                       __ZTSSt11logic_error, __ZTSSt12length_error, __ZTSSt9exception ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _LAUIAuthenticationSheetAccountBlocked, _LAUIAuthenticationSheetBackoffTimeout, 
+                       _LAUIUseAlwaysOnPasswordField, _LAUIUserPasswordViewControllerHorizontalHuggingPriority, 
+                       __LAUIAuthenticationDialogInit, __LAUIAuthenticationIconForPath, 
+                       __LAUIAuthenticationIconNamed, __LAUIAuthenticationIconShouldBeShownForPath ]
+    objc-classes:    [ LAUIAuthenticationSheetController, LAUIAuthenticationView, 
+                       LAUIAuthenticationViewController, LAUIAuthorizationSheetController, 
+                       LAUIAuthorizationSheetOptionsBuilder, LAUICheckmarkLayer, 
+                       LAUIPKGlyphWrapper, LAUIPasswordField, LAUIUserPasswordViewController ]
+...

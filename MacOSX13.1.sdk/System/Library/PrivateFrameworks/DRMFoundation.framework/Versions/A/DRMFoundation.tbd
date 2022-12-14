@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           6575D411-4E27-37C4-967E-15A64B0E8FE5
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           4F309512-A9A6-3892-9CE0-1392FA320909
+install-name:    '/System/Library/PrivateFrameworks/DRMFoundation.framework/Versions/A/DRMFoundation'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _DRMFoundationVersionNumber, _DRMFoundationVersionString ]
+    objc-classes:    [ _OSBatchingQueue, _OSPriorityQueue ]
+...

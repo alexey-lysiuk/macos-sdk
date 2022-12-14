@@ -1,0 +1,74 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           C63B00EF-C555-3F87-90F5-C5130704BEBA
+  - target:          x86_64-maccatalyst
+    value:           C63B00EF-C555-3F87-90F5-C5130704BEBA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           A5BCE73C-4572-37E2-AA20-ACD98D67698D
+  - target:          arm64e-maccatalyst
+    value:           A5BCE73C-4572-37E2-AA20-ACD98D67698D
+install-name:    '/usr/lib/libmis.dylib'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _MISAppApprovalState, _MISArrayAllowsEntitlementValue, _MISBlacklistOverriddenByUser, 
+                       _MISBlacklistSetOverride, _MISCopyErrorStringForErrorCode, 
+                       _MISCopyErrorStringForErrorCodeUnlocalized, _MISCopyInstalledProvisioningProfiles, 
+                       _MISCopyProvisioningProfile, _MISCopyProvisioningProfileWithConnection, 
+                       _MISEntitlementDictionaryAllowsEntitlementValue, _MISEnumerateInstalledProvisioningProfiles, 
+                       _MISEnumerateMatchingProfiles, _MISEnumerateMatchingProfilesUnauthoritative, 
+                       _MISEnumerateTrustedUPPs, _MISExistsIndeterminateApps, _MISExistsIndeterminateAppsByUPP, 
+                       _MISInstallProvisioningProfile, _MISPing, _MISProfileCopyPayload, 
+                       _MISProfileCopySignerSubjectSummary, _MISProfileCreate, _MISProfileCreateDataRepresentation, 
+                       _MISProfileCreateForProvisioning, _MISProfileCreateMutableCopy, 
+                       _MISProfileCreateWithData, _MISProfileCreateWithFile, _MISProfileEnumerationFlagDefault, 
+                       _MISProfileEnumerationFlagLegacy, _MISProfileGetTypeID, _MISProfileGetValue, 
+                       _MISProfileIsDEREncoded, _MISProfileIsMutable, _MISProfileRemoveValue, 
+                       _MISProfileSetPayload, _MISProfileSetValue, _MISProfileSignWithKeyAndCertificates, 
+                       _MISProfileSignWithRSACallBack, _MISProfileValidateSignature, 
+                       _MISProfileValidateSignatureWithAnchors, _MISProfileValidateSignatureWithAnchorsAndPolicy, 
+                       _MISProfileWriteToFile, _MISProvisioningProfileAddDeveloperCertificate, 
+                       _MISProvisioningProfileAddEntitlement, _MISProvisioningProfileAddProvisionedDevice, 
+                       _MISProvisioningProfileCheckValidity, _MISProvisioningProfileCopyApplicationIdentifierPrefixes, 
+                       _MISProvisioningProfileCreateMutableCopy, _MISProvisioningProfileGetCreationDate, 
+                       _MISProvisioningProfileGetDeveloperCertificates, _MISProvisioningProfileGetDeveloperCertificatesHashes, 
+                       _MISProvisioningProfileGetEmbeddedDER, _MISProvisioningProfileGetEntitlements, 
+                       _MISProvisioningProfileGetExpirationDate, _MISProvisioningProfileGetName, 
+                       _MISProvisioningProfileGetProvisionedDevices, _MISProvisioningProfileGetProvisioningCDHashes, 
+                       _MISProvisioningProfileGetRawEntitlements, _MISProvisioningProfileGetTeamIdentifier, 
+                       _MISProvisioningProfileGetUUID, _MISProvisioningProfileGetVersion, 
+                       _MISProvisioningProfileGrantsEntitlement, _MISProvisioningProfileHasPPQRequirement, 
+                       _MISProvisioningProfileIncludesDevice, _MISProvisioningProfileIncludesPlatform, 
+                       _MISProvisioningProfileIsAppleInternalProfile, _MISProvisioningProfileIsForBetaDeployment, 
+                       _MISProvisioningProfileIsForLocalProvisioning, _MISProvisioningProfileProvisionsAllDevices, 
+                       _MISProvisioningProfileSetApplicationIdentifierPrefixes, _MISProvisioningProfileSetDeveloperCertificates, 
+                       _MISProvisioningProfileSetName, _MISProvisioningProfileSetProvisionsAllDevices, 
+                       _MISProvisioningProfileSetTimeToLive, _MISProvisioningProfileValidateSignature, 
+                       _MISQueryBlacklistForBundle, _MISQueryBlacklistForCdHash, 
+                       _MISRemoveProvisioningProfile, _MISSetUPPTrust, _MISUPPTrusted, 
+                       _MISValidateSignature, _MISValidateSignatureAndCopyInfo, _MISValidateSignatureAndCopyInfoWithProgress, 
+                       _MISValidateUPP, _MISValidationCopySignatureVersion, _kMISAppApprovalStateReportIndeterminateSoon, 
+                       _kMISFutureMinSupportedSignatureVersion, _kMISMinSupportedSignatureVersion, 
+                       _kMISValidationInfoCDVersion, _kMISValidationInfoCdHash, _kMISValidationInfoEntitlements, 
+                       _kMISValidationInfoIsNativeForPlatform, _kMISValidationInfoProfileUUID, 
+                       _kMISValidationInfoSignerCertificate, _kMISValidationInfoSignerType, 
+                       _kMISValidationInfoSigningID, _kMISValidationInfoSigningTime, 
+                       _kMISValidationInfoTeamID, _kMISValidationInfoValidatedByLocalProfile, 
+                       _kMISValidationInfoValidatedByProfile, _kMISValidationInfoValidatedByUniversalProfile, 
+                       _kMISValidationOptionAllowAdHocSigning, _kMISValidationOptionAuthoritativeLaunch, 
+                       _kMISValidationOptionDetachedSignature, _kMISValidationOptionExpectedHash, 
+                       _kMISValidationOptionHonorBlacklist, _kMISValidationOptionHonorBlocklist, 
+                       _kMISValidationOptionLogResourceErrors, _kMISValidationOptionOnlineAuthorization, 
+                       _kMISValidationOptionOnlineCheckType, _kMISValidationOptionRespectUppTrustAndAuthorization, 
+                       _kMISValidationOptionSkipProfileIdentifierPolicy, _kMISValidationOptionTrustCacheOnly, 
+                       _kMISValidationOptionUnauthoritativeLaunch, _kMISValidationOptionUniversalFileOffset, 
+                       _kMISValidationOptionUseSoftwareSigningCert, _kMISValidationOptionValidateSignatureOnly ]
+...

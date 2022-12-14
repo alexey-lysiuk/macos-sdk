@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           AE79CBD4-9151-3BB0-A986-077EB9B9D07E
+  - target:          x86_64-maccatalyst
+    value:           AE79CBD4-9151-3BB0-A986-077EB9B9D07E
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F5342A0B-2DD5-3E8E-82F9-2A0AF88264BB
+  - target:          arm64e-maccatalyst
+    value:           F5342A0B-2DD5-3E8E-82F9-2A0AF88264BB
+install-name:    '/System/Library/PrivateFrameworks/IOAccelMemoryInfo.framework/Versions/A/IOAccelMemoryInfo'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _IOAccelMemoryInfoErrorDomain, _IOAccelMemoryInfoIOKitDriverKey, 
+                       _IOAccelMemoryInfoProcessIDKey ]
+    objc-classes:    [ IOAccelMemoryInfo, IOAccelMemoryMapInfo, IOAccelMemoryOpenCLInfo, 
+                       IOAccelMemoryOpenGLInfo, IOAccelMemoryPoolTotals, IOAccelMemorySurfaceInfo ]
+...

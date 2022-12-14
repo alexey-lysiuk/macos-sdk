@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           C56D25DA-D728-3DEE-832E-BD8163651601
+  - target:          x86_64-maccatalyst
+    value:           C56D25DA-D728-3DEE-832E-BD8163651601
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F2C965A0-2DB3-3258-98D2-DF0EE69D419E
+  - target:          arm64e-maccatalyst
+    value:           F2C965A0-2DB3-3258-98D2-DF0EE69D419E
+install-name:    '/System/Library/PrivateFrameworks/SPFinder.framework/Versions/A/SPFinder'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _SPFinderDisabledReasonBlockedDeviceRegion, _SPFinderDisabledReasonCannotPublishAnonymously, 
+                       _SPFinderDisabledReasonCompanionNearby, _SPFinderDisabledReasonFindMyiPhoneOff, 
+                       _SPFinderDisabledReasonLocationServices, _SPFinderDisabledReasonLocationServicesFindMyFramework, 
+                       _SPFinderDisabledReasonLowAccountSecurity, _SPFinderDisabledReasonNone, 
+                       _SPFinderDisabledReasonServiceDisabled, _SPFinderDisabledReasonUserOptOut, 
+                       _SPFinderDisabledReasoniCloudSignedOut, _SPFinderStateChangedNotification ]
+    objc-classes:    [ SPAdvertisement, SPAdvertisementCache, SPAdvertisementCacheSearchCriteria, 
+                       SPAdvertisementCacheSearchResult, SPBeaconAdvertisement, SPBeaconPayload, 
+                       SPBeaconPayloadCacheSearchCriteria, SPBeaconPayloadCacheSearchResult, 
+                       SPEstimatedLocation, SPFinderInterface, SPFinderStateInfo, 
+                       SPFinderStateManager, SPScheduler, SPSchedulerInformation, 
+                       SPSearchResultMarker ]
+...

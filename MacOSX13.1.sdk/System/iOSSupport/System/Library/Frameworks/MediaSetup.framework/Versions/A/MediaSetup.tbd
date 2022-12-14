@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-maccatalyst
+    value:           D4BBC768-C461-3E71-818F-91DE7AD87CB9
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-maccatalyst
+    value:           4D65EF5B-3A5D-3223-8E61-938234C68BF4
+install-name:    '/System/iOSSupport/System/Library/Frameworks/MediaSetup.framework/Versions/A/MediaSetup'
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ _MSCloudKitErrorDomain, _MSErrorDomain, _MSServiceSetupErrorDomain, 
+                       _MSUserInfoErrorStringKey, _MediaSetupVersionNumber, _MediaSetupVersionString, 
+                       _kAPSDelegatePort, _kAPSTopic, _kAddServiceTransactionIdentifier, 
+                       _kAppleMusicApplicationIdentifier, _kAppleMusicBundleIdentifier, 
+                       _kAppleMusicServiceIdentifier, _kAppleMusicServiceType, _kBackgroundActivityDataRefreshTaskIdentifier, 
+                       _kBackgroundActivityPublicDatabaseRefreshTaskIdentifier, _kBackgroundActivityUserShareRetryTaskIdentifier, 
+                       _kCKDatabaseAccessUserInfoHomeIDKey, _kCKDatabaseAccessUserInfoHomeUserIDKey, 
+                       _kCloudMediaServicesBundleIdentifier, _kHomeMultiUserStatusChangedNotification, 
+                       _kHomeUserCloudShareChangedNotification, _kMediaSetupCloudKitContainerIdentifier, 
+                       _kMediaSetupDeveloperUserDefaultsDomain, _kMediaSetupExtensionIdentifier, 
+                       _kMediaSetupInterfaceEntitlementKey, _kMediaSetupKeyHostBundleID, 
+                       _kMediaSetupKeyMediaService, _kMediaSetupKeyTestUIFlags, _kMediaSetupMachServiceName, 
+                       _kMediaSetupPublicCloudKitContainerIdentifier, _kMediaSetupServiceEntitlement, 
+                       _kMediaSetupServicesChanged, _kMediaSetupSettingsDomain, _kMediaSetupTestingProfileDefaultsIdentifier, 
+                       _kMediaSetupUserDefaultsDomain, _kOverrideAppleMusicSubscriptionStatus, 
+                       _kOverrideAppleMusicSubscriptionStatusAllUsers, _kPodcastsBundleIdentifier ]
+    objc-classes:    [ MSServiceAccount, MSSetupSession ]
+...

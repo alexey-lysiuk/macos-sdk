@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, x86_64h-macos, x86_64h-maccatalyst, 
+                   arm64-macos, arm64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           ED40E3EC-98E3-3369-AE4B-40633EB2CF6F
+  - target:          x86_64-maccatalyst
+    value:           ED40E3EC-98E3-3369-AE4B-40633EB2CF6F
+  - target:          x86_64h-macos
+    value:           5D06670A-2E23-35FE-BC66-4F601CC8F31A
+  - target:          x86_64h-maccatalyst
+    value:           5D06670A-2E23-35FE-BC66-4F601CC8F31A
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           BE414A95-6FE1-3F7F-A74A-785B9FBEC4E9
+  - target:          arm64e-maccatalyst
+    value:           BE414A95-6FE1-3F7F-A74A-785B9FBEC4E9
+install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/Libraries/libCGInterfaces.dylib'
+current-version: 575
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, x86_64h-macos, x86_64h-maccatalyst, 
+                       arm64-macos, arm64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _Init_CGInterfaces ]
+...

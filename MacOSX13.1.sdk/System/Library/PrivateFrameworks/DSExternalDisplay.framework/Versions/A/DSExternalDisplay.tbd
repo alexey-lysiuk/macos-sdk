@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           0B39A1A6-0C42-3B6F-A018-60237F6F35F3
+  - target:          x86_64-maccatalyst
+    value:           0B39A1A6-0C42-3B6F-A018-60237F6F35F3
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           89DD1E44-1258-334C-A9C9-A56779158A04
+  - target:          arm64e-maccatalyst
+    value:           89DD1E44-1258-334C-A9C9-A56779158A04
+install-name:    '/System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _DSBrightnessExternalConvertLinearToNits, _DSBrightnessExternalConvertLinearToUser, 
+                       _DSBrightnessExternalConvertNitsToLinear, _DSBrightnessExternalConvertNitsToUser, 
+                       _DSBrightnessExternalConvertUserToLinear, _DSBrightnessExternalConvertUserToNits, 
+                       _DSBrightnessExternalCreate, _DSBrightnessExternalGetLinearBrightness, 
+                       _DSBrightnessExternalGetNitsBrightness, _DSBrightnessExternalGetRanges, 
+                       _DSBrightnessExternalGetUserBrightness, _DSBrightnessExternalRelease, 
+                       _DSBrightnessExternalSetLinearBrightness, _DSBrightnessExternalSetNitsBrightness, 
+                       _DSBrightnessExternalSetUserBrightness ]
+...

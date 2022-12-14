@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           782E595B-D97E-382C-B0AA-4317547A79AE
+  - target:          x86_64-maccatalyst
+    value:           782E595B-D97E-382C-B0AA-4317547A79AE
+  - target:          arm64e-macos
+    value:           668B68DA-F3FD-33A3-ADF4-56F8378EA0D2
+  - target:          arm64e-maccatalyst
+    value:           668B68DA-F3FD-33A3-ADF4-56F8378EA0D2
+install-name:    '/System/Library/PrivateFrameworks/CloudKitCodeProtobuf.framework/Versions/A/CloudKitCodeProtobuf'
+current-version: 2030.20
+swift-abi-version: 7
+...

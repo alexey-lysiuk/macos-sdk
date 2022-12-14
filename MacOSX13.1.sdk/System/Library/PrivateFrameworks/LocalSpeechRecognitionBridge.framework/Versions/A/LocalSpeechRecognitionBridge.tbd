@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           546D40D4-116F-3741-AC62-1683AF5F9A2D
+  - target:          x86_64-maccatalyst
+    value:           546D40D4-116F-3741-AC62-1683AF5F9A2D
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           44B4AF1F-5211-30A4-9B4B-98D74D26AF7E
+  - target:          arm64e-maccatalyst
+    value:           44B4AF1F-5211-30A4-9B4B-98D74D26AF7E
+install-name:    '/System/Library/PrivateFrameworks/LocalSpeechRecognitionBridge.framework/Versions/A/LocalSpeechRecognitionBridge'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _LBErrorDomain, _LBLocalSpeechServiceDelegateGetXPCInterface, 
+                       _LBLocalSpeechServiceGetXPCInterface, _LBLocalSpeechServiceName, 
+                       _LBLogContextFacilityLocalSRBridge, _LBLogInitIfNeeded, _LBLoggingSubsystem, 
+                       _kLBLocalSpeechRecognizerMaximumLocalRecognitionDuration, 
+                       _kLBLoggingContextFramework ]
+    objc-classes:    [ LBLocalSpeechRecognitionSettings, LBLocalSpeechRecognizerClient ]
+...

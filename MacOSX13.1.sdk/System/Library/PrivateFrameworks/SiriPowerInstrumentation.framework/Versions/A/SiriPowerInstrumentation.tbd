@@ -1,0 +1,62 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           863883AE-6538-3D26-8ADF-794A868A9A4A
+  - target:          x86_64-maccatalyst
+    value:           863883AE-6538-3D26-8ADF-794A868A9A4A
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           51E7E5FA-9E59-3B96-B22F-5480B129B027
+  - target:          arm64e-maccatalyst
+    value:           51E7E5FA-9E59-3B96-B22F-5480B129B027
+install-name:    '/System/Library/PrivateFrameworks/SiriPowerInstrumentation.framework/Versions/A/SiriPowerInstrumentation'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _POWSchemaProvisionalPOWClientEventReadFrom, _POWSchemaProvisionalPOWProcessUsageReadFrom, 
+                       _POWSchemaProvisionalPOWUsageReadFrom, _SiriPowerInstrumentationVersionNumber, 
+                       _SiriPowerInstrumentationVersionString, _processNameToTypeMapping, 
+                       _qname_POWSchemaProvisionalPOWClientEvent_WhichEvent_Type_None, 
+                       _qname_POWSchemaProvisionalPOWClientEvent_WhichEvent_Type_usage ]
+    objc-classes:    [ POWSchemaProvisionalPOWClientEvent, POWSchemaProvisionalPOWProcessUsage, 
+                       POWSchemaProvisionalPOWUsage, SPIAsrAssetLoadEndedEventContext, 
+                       SPIAsrAssetLoadStartedOrChangedEventContext, SPIAsrAudioPacketArrivalEndedEventContext, 
+                       SPIAsrAudioPacketArrivalStartedOrChangedEventContext, SPIAsrEventContext, 
+                       SPIAsrFinalResultGeneratedEventContext, SPIAsrFirstAudioPacketProcessedEventContext, 
+                       SPIAsrInitializationEndedEventContext, SPIAsrInitializationStartedOrChangedEventContext, 
+                       SPIAsrPartialResultGeneratedEventContext, SPIAsrPreheatEndedAlreadyDoneEventContext, 
+                       SPIAsrPreheatEndedSuccessEventContext, SPIAsrPreheatFailedEventContext, 
+                       SPIAsrPreheatStartedOrChangedEventContext, SPIAsrRequestEndedOrFailedOrCancelledEventContext, 
+                       SPIAsrRequestStartedOrChangedEventContext, SPIEventContext, 
+                       SPIOrchAsrCallEndedEventContext, SPIOrchAsrCallFailedEventContext, 
+                       SPIOrchAsrCallStartedEventContext, SPIOrchCdmRequestEndedEventContext, 
+                       SPIOrchCdmRequestFailedEventContext, SPIOrchCdmRequestStartedEventContext, 
+                       SPIOrchEventContext, SPIOrchExecutionEndedEventContext, SPIOrchExecutionFailedEventContext, 
+                       SPIOrchExecutionRequestReceivedEventContext, SPIOrchPommesRequestEndedEventContext, 
+                       SPIOrchPommesRequestFailedEventContext, SPIOrchPommesRequestStartedEventContext, 
+                       SPIOrchRequestCancelledEventContext, SPIOrchRequestEndedEventContext, 
+                       SPIOrchRequestFailedEventContext, SPIOrchRequestStartedEventContext, 
+                       SPIPowerLogger, SPIPowerLoggerSnapshot, SPIProcessEndedEventContext, 
+                       SPIProcessStartedEventContext, SPIProcessUtils, SPISELFMessageBuilder, 
+                       SPISELFProcessAdapter, SPISiriActivatedEventContext, SPISiriDismissedEventContext, 
+                       SPISiriEventContext, SPISiriStateTransitionEventContext, SPISiriUUFRShownEventContext, 
+                       SPITestingEventContext, SPITtsEventContext, SPITtsRequestReceivedEventContext, 
+                       SPITtsSpeechCancelledEventContext, SPITtsSpeechEndedEventContext, 
+                       SPITtsSpeechFailedEventContext, SPITtsSpeechStartedOrChangedEventContext, 
+                       SPIUeiEventContext, SPIUeiInvocationEventContext, SPIUeiLaunchEndedEventContext, 
+                       SPIUeiRequestCategorizationEventContext, SPIUeiTextToSpeechBeginEventContext, 
+                       SPIUeiTextToSpeechEndEventContext, SPIUeiUiStateTransitionEventContext, 
+                       SPIUeiUufrSaidEventContext ]
+    objc-ivars:      [ POWSchemaProvisionalPOWClientEvent._link, POWSchemaProvisionalPOWClientEvent._usage, 
+                       POWSchemaProvisionalPOWProcessUsage._cpuCycles, POWSchemaProvisionalPOWProcessUsage._cpuInstructions, 
+                       POWSchemaProvisionalPOWProcessUsage._gpuCycles, POWSchemaProvisionalPOWProcessUsage._has, 
+                       POWSchemaProvisionalPOWProcessUsage._memoryFootprint, POWSchemaProvisionalPOWUsage._context, 
+                       POWSchemaProvisionalPOWUsage._has, POWSchemaProvisionalPOWUsage._process, 
+                       POWSchemaProvisionalPOWUsage._processUsage ]
+...

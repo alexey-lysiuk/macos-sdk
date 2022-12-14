@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           CDD58F9F-F5E7-3A5F-96E2-EFC95CD4DBB7
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           4C000306-CF9E-3451-9E2B-CF28CD1D5BB3
+install-name:    '/System/Library/PrivateFrameworks/SystemAdministrationInterface.framework/Versions/A/SystemAdministrationInterface'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _LAContextClass ]
+    objc-classes:    [ ADMAddRecordController, ADMAutoLoginController, ADMChangePasswordController, 
+                       ADMIndefiniteGracePeriodHandler, SysAdminUIUtilities ]
+    objc-ivars:      [ ADMAddRecordController.mAccountNameView, ADMAddRecordController.mAccountType, 
+                       ADMAddRecordController.mAccountTypeCaption, ADMAddRecordController.mAccountTypeViewHeight, 
+                       ADMAddRecordController.mAccountTypeViewHeightConstraint, ADMAddRecordController.mCancelButton, 
+                       ADMAddRecordController.mCreateButton, ADMAddRecordController.mFVTMWarning, 
+                       ADMAddRecordController.mLoginPrefs, ADMAddRecordController.mNewUserFullName, 
+                       ADMAddRecordController.mNewUserFullNameCaption, ADMAddRecordController.mNewUserHint, 
+                       ADMAddRecordController.mNewUserName, ADMAddRecordController.mNewUserNameCaption, 
+                       ADMAddRecordController.mNewUserNameSubLabel, ADMAddRecordController.mNewUserPassword, 
+                       ADMAddRecordController.mNewUserPasswordAssistantButton, ADMAddRecordController.mNewUserPasswordVerify, 
+                       ADMAddRecordController.mNewUserProgressIndicator, ADMAddRecordController.mNewUserProgressIndicatorTM, 
+                       ADMAddRecordController.mNewUserSheet, ADMAddRecordController.mPasswordAssistant, 
+                       ADMAddRecordController.mPasswordView, ADMAddRecordController.mPasswordViewFirstLabel, 
+                       ADMAddRecordController.mStackView, ADMAddRecordController.mUserTextEditor, 
+                       ADMAddRecordController.mVendedAddUserView ]
+...

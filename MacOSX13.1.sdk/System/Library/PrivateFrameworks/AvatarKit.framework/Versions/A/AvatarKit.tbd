@@ -1,0 +1,60 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           E3E2911D-C41C-3458-85D7-40BD06105A2C
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           C516B3F7-003F-374D-8472-E9D5A4FB0505
+install-name:    '/System/Library/PrivateFrameworks/AvatarKit.framework/Versions/A/AvatarKit'
+current-version: 325.205
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AVTAnimojiThumbnailCameraKey, _AVTAnimojiThumbnailLargeSizeKey, 
+                       _AVTAvatarKitSnapshotVersionNumber, _AVTAvatarKitSnapshotVersionNumberFromString, 
+                       _AVTAvatarKitSnapshotVersionString, _AVTAvatarKitVersionNumber, 
+                       _AVTColorCategoryFromString, _AVTEditorMetadata, _AVTEnumeratePresetCategories, 
+                       _AVTFramingModeAudioLeft, _AVTFramingModeAudioRight, _AVTFramingModeCamera, 
+                       _AVTFramingModeCheek, _AVTFramingModeChin, _AVTFramingModeDefault, 
+                       _AVTFramingModeEarringsLeft, _AVTFramingModeEarringsRight, 
+                       _AVTFramingModeEars, _AVTFramingModeEyes, _AVTFramingModeFace, 
+                       _AVTFramingModeFrontFace, _AVTFramingModeFunCamCarousel, _AVTFramingModeGrid, 
+                       _AVTFramingModeHairstyle, _AVTFramingModeHeadwear, _AVTFramingModeLockScreen, 
+                       _AVTFramingModeMouth, _AVTFramingModeNose, _AVTFramingModeOutfit, 
+                       _AVTFramingModeProsthesisLeft, _AVTFramingModeProsthesisRight, 
+                       _AVTFramingModeRightEye, _AVTFramingModeSideburns, _AVTFramingModeTongue, 
+                       _AVTIdentifierOfUpgradedColorPresetForAssetPresetIdentifier, 
+                       _AVTInitializeShaderCache, _AVTLocalizedEditorString, _AVTLocalizedPaletteString, 
+                       _AVTLocalizedPresetPairString, _AVTLocalizedPresetString, 
+                       _AVTLocalizedStickerName, _AVTMakeColorPresetLocalizableKey, 
+                       _AVTMakePresetLocalizableKey, _AVTMakePresetPairLocalizableKey, 
+                       _AVTMovieCodecKey, _AVTMovieGenerateAlphaMask, _AVTMovieRateKey, 
+                       _AVTMovieSizeKey, _AVTMovieTransparentBackground, _AVTPrereleaseStickerPackForStickerPack, 
+                       _AVTPresetCategoriesPairs, _AVTPresetCategoryFromString, _AVTPresetCategoryIsOnLeftInPair, 
+                       _AVTPresetCategoryIsOnRightInPair, _AVTPresetCategoryIsPairable, 
+                       _AVTPresetCategoryPairToString, _AVTPresetCategoryToColorCategoryString, 
+                       _AVTPresetCategoryToString, _AVTRendererOptionInitiallyConfigureForARMode, 
+                       _AVTRenderingCacheFolderURL, _AVTSnapshotAnimatedKey, _AVTSnapshotAnimationDurationKey, 
+                       _AVTSnapshotAntialiasedKey, _AVTSnapshotAsH264Key, _AVTSnapshotBackgroundColorKey, 
+                       _AVTSnapshotDestinationPathKey, _AVTSnapshotFramingMode, _AVTSnapshotMemojiColorPresetSubstitutions, 
+                       _AVTSnapshotMemojiPresetSubstitutions, _AVTSnapshotMemojiSecondaryColorPresetSubstitutions, 
+                       _AVTSnapshotMemojiThirdColorPresetSubstitutions, _AVTSnapshotPose, 
+                       _AVTSnapshotPoseAnimation, _AVTSnapshotRateKey, _AVTSnapshotShaderCollectorNeverCopyKey, 
+                       _AVTSnapshotSizeKey, _AVTSnapshotUpscaleKey, _AVTUpgradeColorPresetIdentifierIfNeeded, 
+                       _AVTUpgradePairedPresetCategoriesIfNeeded, _AVTUpgradePresetIdentifierIfNeeded, 
+                       _AVTViewSnapshotDisableSuperSamplingFactorKey, _kAVTBodyPosePackMemojiEditor, 
+                       _kAVTStickerPackAllStickers, _kAVTStickerPackDefault, _kAVTStickerPackDefaultPrerelease, 
+                       _kAVTStickerPackMemojiEditor, _kAVTStickerPackMemojiEditorThumbnails, 
+                       _kAVTStickerPackMemojiEditor_Poses, _kAVTStickerPackPoses, 
+                       _kAVTStickerPackPosesPrerelease, _kAVTStickerPackPrerelease ]
+    objc-classes:    [ AVTAnimatedImage, AVTAnimoji, AVTAnimojiDescriptor, AVTAvatar, 
+                       AVTAvatarBodyPose, AVTAvatarDescriptor, AVTAvatarPhysicalizedPose, 
+                       AVTAvatarPhysicsState, AVTAvatarPose, AVTAvatarPoseAnimation, 
+                       AVTClassicPresentationConfiguration, AVTColorPreset, AVTFaceTrackingInfo, 
+                       AVTImageUtilities, AVTLockscreenCoordinator, AVTMemoji, AVTMemojiDescriptor, 
+                       AVTPresentationConfiguration, AVTPreset, AVTRecordView, AVTRenderer, 
+                       AVTSnapshotBuilder, AVTStickerConfiguration, AVTStickerGenerator, 
+                       AVTStickerGeneratorOptions, AVTVariantBatchSnapshotter, AVTView ]
+...

@@ -1,0 +1,60 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           3AA20003-9E5F-37FB-9B41-F4EC8FFCEDB8
+  - target:          x86_64-maccatalyst
+    value:           3AA20003-9E5F-37FB-9B41-F4EC8FFCEDB8
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           DC4E4FDE-6573-3D61-B31D-E0BCCEBC5EC3
+  - target:          arm64e-maccatalyst
+    value:           DC4E4FDE-6573-3D61-B31D-E0BCCEBC5EC3
+install-name:    '/usr/lib/swift/libswiftShazamKit.dylib'
+current-version: 195.10
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s22UniformTypeIdentifiers6UTTypeV9ShazamKitE15shazamSignatureACvgZ', 
+                       '_$s22UniformTypeIdentifiers6UTTypeV9ShazamKitE19shazamCustomCatalogACvgZ', 
+                       '_$sSo11SHMediaItemC9ShazamKitE10propertiesSDySo0aB8PropertyaypGvg', 
+                       '_$sSo11SHMediaItemC9ShazamKitE10propertiesSDySo0aB8PropertyaypGvpMV', 
+                       '_$sSo11SHMediaItemC9ShazamKitE10timeRangesSaySnySdGGvg', 
+                       '_$sSo11SHMediaItemC9ShazamKitE10timeRangesSaySnySdGGvpMV', 
+                       '_$sSo11SHMediaItemC9ShazamKitE19frequencySkewRangesSaySnySfGGvg', 
+                       '_$sSo11SHMediaItemC9ShazamKitE19frequencySkewRangesSaySnySfGGvpMV', 
+                       '_$sSo11SHMediaItemC9ShazamKitE5songsSay05MusicD04SongVGvg', 
+                       '_$sSo11SHMediaItemC9ShazamKitE5songsSay05MusicD04SongVGvpMV', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesV17makeAsyncIteratorAE0I0VyF', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesV8IteratorV4nextSo11SHSignatureC_SaySo11SHMediaItemCGtSgyYaF', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesV8IteratorV4nextSo11SHSignatureC_SaySo11SHMediaItemCGtSgyYaFTu', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesV8IteratorVMa', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesV8IteratorVMn', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesV8IteratorVN', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesV8IteratorVScIACMc', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesVMa', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesVMn', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesVN', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19ReferenceSignaturesVSciACMc', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19referenceSignaturesAbCE09ReferenceF0Vvg', 
+                       '_$sSo15SHCustomCatalogC9ShazamKitE19referenceSignaturesAbCE09ReferenceF0VvpMV', 
+                       '_$sSo19SHMediaItemPropertya9ShazamKitE10timeRangesABvgZ', 
+                       '_$sSo19SHMediaItemPropertya9ShazamKitE19frequencySkewRangesABvgZ', 
+                       '_$sSo9SHSessionC9ShazamKitE6ResultOMa', '_$sSo9SHSessionC9ShazamKitE6ResultOMn', 
+                       '_$sSo9SHSessionC9ShazamKitE6ResultON', '_$sSo9SHSessionC9ShazamKitE6result4fromAbCE6ResultOSo11SHSignatureC_tYaF', 
+                       '_$sSo9SHSessionC9ShazamKitE6result4fromAbCE6ResultOSo11SHSignatureC_tYaFTu', 
+                       '_$sSo9SHSessionC9ShazamKitE7ResultsV17makeAsyncIteratorAE0G0VyF', 
+                       '_$sSo9SHSessionC9ShazamKitE7ResultsV8IteratorV4nextAbCE6ResultOSgyYaF', 
+                       '_$sSo9SHSessionC9ShazamKitE7ResultsV8IteratorV4nextAbCE6ResultOSgyYaFTu', 
+                       '_$sSo9SHSessionC9ShazamKitE7ResultsV8IteratorVMa', '_$sSo9SHSessionC9ShazamKitE7ResultsV8IteratorVMn', 
+                       '_$sSo9SHSessionC9ShazamKitE7ResultsV8IteratorVN', '_$sSo9SHSessionC9ShazamKitE7ResultsV8IteratorVScIACMc', 
+                       '_$sSo9SHSessionC9ShazamKitE7ResultsVMa', '_$sSo9SHSessionC9ShazamKitE7ResultsVMn', 
+                       '_$sSo9SHSessionC9ShazamKitE7ResultsVN', '_$sSo9SHSessionC9ShazamKitE7ResultsVSciACMc', 
+                       '_$sSo9SHSessionC9ShazamKitE7resultsAbCE7ResultsVvg', '_$sSo9SHSessionC9ShazamKitE7resultsAbCE7ResultsVvpMV', 
+                       '__swift_FORCE_LOAD_$_swiftShazamKit' ]
+...

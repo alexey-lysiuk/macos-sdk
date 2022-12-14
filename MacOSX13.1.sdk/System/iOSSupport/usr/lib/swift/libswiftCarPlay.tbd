@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-maccatalyst
+    value:           706FFA83-CD72-377A-8AAE-2E6F337B880B
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-maccatalyst
+    value:           42D1210E-8028-327D-ACA6-9A611BAD7C84
+install-name:    '/System/iOSSupport/usr/lib/swift/libswiftCarPlay.dylib'
+current-version: 209.19
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ '__swift_FORCE_LOAD_$_swiftCarPlay' ]
+...

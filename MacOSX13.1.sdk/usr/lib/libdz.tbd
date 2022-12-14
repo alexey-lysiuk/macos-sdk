@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           948F2497-1F09-3F0E-B3A4-59584833A514
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           F683FD58-911A-30BF-90A7-74EABCF97A31
+install-name:    '/usr/lib/libdz.dylib'
+current-version: 258.60.2
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ __dz_init, __dzglobals, _dz_check_policy_exec, _dz_check_policy_kext_load, 
+                       _dz_notify_ethcheck, _dz_notify_kext_load, _dz_notify_kext_load_v2, 
+                       _dz_notify_kextcache_update, _dz_notify_kextcache_update_v2, 
+                       _dz_notify_launchd_load, _dz_notify_launchd_spawn, _dz_notify_loginwindow_load, 
+                       _dz_notify_mrt_event, _dz_notify_profile_activity, _dz_notify_xprotect_deny ]
+...

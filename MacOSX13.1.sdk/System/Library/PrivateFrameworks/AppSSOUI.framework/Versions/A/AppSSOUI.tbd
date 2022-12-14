@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           40CECCD2-4F92-31A9-B095-CAA26EFAE951
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           34A414AE-4383-353F-9039-3B7F358A3C93
+install-name:    '/System/Library/PrivateFrameworks/AppSSOUI.framework/Versions/A/AppSSOUI'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ SOUIAuthorizationViewController ]
+...

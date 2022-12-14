@@ -1,0 +1,42 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           49A55EC9-0D63-3DD1-BA68-90C0E0D2B923
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           9C8A6606-65CF-3B95-8ADA-2D37BBA1F6D4
+install-name:    '/System/Library/PrivateFrameworks/ScreenTimeSettingsUI.framework/Versions/A/ScreenTimeSettingsUI'
+current-version: 502.2.3
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC011sendSkippedG5EventyyYbF', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC011sendSkippedG5EventyyYbFTq', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC020sendSelectedAgeRangeG5Event10lowerBound05upperN0ySi_SitYbF', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC020sendSelectedAgeRangeG5Event10lowerBound05upperN0ySi_SitYbFTq', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC025sendChooseAgeButtonTappedG5EventyyYbF', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC025sendChooseAgeButtonTappedG5EventyyYbFTq', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC026sendResetAgePresetSelectedG5EventyyYbF', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC026sendResetAgePresetSelectedG5EventyyYbFTq', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC04sendf6ViewedG5Event14isInitialSetupySb_tYbF', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC04sendf6ViewedG5Event14isInitialSetupySb_tYbFTq', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC28sendEnabledRestrictionsEvent13selectionType10lowerBound05upperO0ySo0ef9SelectionM0V_So8NSNumberCSgALtYbF', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC28sendEnabledRestrictionsEvent13selectionType10lowerBound05upperO0ySo0ef9SelectionM0V_So8NSNumberCSgALtYbFTq', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC9sessionIdACSS_tcfC', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC9sessionIdACSS_tcfCTq', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsC9sessionIdACSS_tcfc', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsCACycfC', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsCACycfc', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsCMa', '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsCMn', 
+                       '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsCN', '_$s20ScreenTimeSettingsUI21STAgePresetsAnalyticsCfD' ]
+    objc-classes:    [ STAlwaysAllowedController, STAlwaysAllowedItem, STContentAndPrivacyController, 
+                       STControlProtection, STDowntimeCommunicationViewController, 
+                       STKeyValuePair, STMacOSAlertPresenter, STProtectedButton, 
+                       STProtectedDatePicker, STProtectedPopUpButton, STProtectedSegmentedControl, 
+                       STRequestItem, STRequestsController, STScreenTimeCommunicationViewController, 
+                       STTimeAllowancesCompatibilityController, STUsersImageController, 
+                       _TtC20ScreenTimeSettingsUI21STAgePresetsAnalytics ]
+...

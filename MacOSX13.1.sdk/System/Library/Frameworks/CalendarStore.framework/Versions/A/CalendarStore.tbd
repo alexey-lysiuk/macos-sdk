@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           4D306F42-C858-3F59-A1B2-75F16100D0DB
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           74F6F3BC-989E-33EA-954F-FE44247FE375
+install-name:    '/System/Library/Frameworks/CalendarStore.framework/Versions/A/CalendarStore'
+current-version: 2051
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CalAlarmActionDisplay, _CalAlarmActionEmail, _CalAlarmActionProcedure, 
+                       _CalAlarmActionSound, _CalAttendeeStatusAccepted, _CalAttendeeStatusDeclined, 
+                       _CalAttendeeStatusNeedsAction, _CalAttendeeStatusTentative, 
+                       _CalCalendarStoreErrorDomain, _CalCalendarTypeBirthday, _CalCalendarTypeCalDAV, 
+                       _CalCalendarTypeExchange, _CalCalendarTypeIMAP, _CalCalendarTypeLocal, 
+                       _CalCalendarTypeSubscription, _CalCalendarsChangedExternallyNotification, 
+                       _CalCalendarsChangedNotification, _CalDefaultRecurrenceInterval, 
+                       _CalDeletedRecordsKey, _CalEventsChangedExternallyNotification, 
+                       _CalEventsChangedNotification, _CalInsertedRecordsKey, _CalSenderProcessIDKey, 
+                       _CalStoreAPI_NS_Log, _CalTasksChangedExternallyNotification, 
+                       _CalTasksChangedNotification, _CalUpdatedRecordsKey, _CalUserUIDKey ]
+    objc-classes:    [ CalAlarm, CalAttendee, CalCalendar, CalCalendarItem, CalCalendarStore, 
+                       CalEvent, CalNthWeekDay, CalRecurrenceEnd, CalRecurrenceRule, 
+                       CalTask ]
+...

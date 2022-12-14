@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           D6586858-CF21-334C-93CF-ADB262079C33
+  - target:          x86_64-maccatalyst
+    value:           D6586858-CF21-334C-93CF-ADB262079C33
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           8789DED9-52CF-3F78-96F1-BF3696EE93AE
+  - target:          arm64e-maccatalyst
+    value:           8789DED9-52CF-3F78-96F1-BF3696EE93AE
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication'
+current-version: 1131.60.22
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _LAAuthenticationInterfaceForProtocol, _LAAvailableMechanisms, 
+                       _LABiometryDatabaseHash, _LACopyExternalizedContext, _LAEnabledBiometryUsers, 
+                       _LAErrorDomain, _LAErrorInfoBiometryType, _LAErrorInfoTCCServerPrompt, 
+                       _LAErrorInfoTCCService, _LAErrorSubcodeKey, _LAPasswordRetryTime, 
+                       _LAStorageErrorDomain, _LATouchIDAuthenticationMaximumAllowableReuseDuration, 
+                       _kAPKekPassword, _kAPMasterKey ]
+    objc-classes:    [ LAAuthentication, LAAuthenticationEntry, LAAuthenticationMethod, 
+                       LAAuthenticationMethods, LAAuthenticationProvider, LAAuthenticationRequirement, 
+                       LAAuthenticationServerProtocolRequest, LAAuthenticationServerProtocolResponse, 
+                       LAAuthenticationUsers, LABiometryFallbackRequirement, LAContext, 
+                       LANotification, LANotificationOfBooleanState, LAPersistedRight, 
+                       LAPrivateKey, LAPublicKey, LARight, LARightStore, LASecret, 
+                       LAStorage ]
+...

@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           B349B71E-C003-3C97-913F-D5E72755A6BA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           406CC571-C2F1-3836-A071-989B777F5ADF
+install-name:    '/System/Library/PrivateFrameworks/OSD.framework/Versions/A/OSD'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ OSDManager ]
+...

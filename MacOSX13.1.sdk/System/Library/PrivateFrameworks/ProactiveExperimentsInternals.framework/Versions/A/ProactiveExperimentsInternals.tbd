@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           5B71D952-8473-3A03-8D7B-CAA458A8E3AA
+  - target:          x86_64-maccatalyst
+    value:           5B71D952-8473-3A03-8D7B-CAA458A8E3AA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           20180100-DFDC-3153-9AB4-1BC0D122C77A
+  - target:          arm64e-maccatalyst
+    value:           20180100-DFDC-3153-9AB4-1BC0D122C77A
+install-name:    '/System/Library/PrivateFrameworks/ProactiveExperimentsInternals.framework/Versions/A/ProactiveExperimentsInternals'
+current-version: 1193.8.6
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _PREServerSideErrorDomain, _PREServerSideErrorInfoKey, _ProactiveExperimentsInternalsVersionNumber, 
+                       _ProactiveExperimentsInternalsVersionString, _pre_sv_responses_handle, 
+                       _pre_sv_xpc_handle ]
+    objc-classes:    [ PREResponsesServerDelegate, PREResponsesServerRequestHandler, 
+                       PREXPCServer, PREXPCServerHelper ]
+...

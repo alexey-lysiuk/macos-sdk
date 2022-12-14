@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           C114C84E-BE5E-3F63-AC98-AF1A1EBBF6BA
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           A45CCBF5-E159-32EB-8BC2-0078B500FE85
+install-name:    '/usr/lib/libThreadExternalCommissioner.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _kBorderAgentNotificationExistingCommissioner ]
+    objc-classes:    [ BorderAgentConnector, BorderAgentFinder ]
+...

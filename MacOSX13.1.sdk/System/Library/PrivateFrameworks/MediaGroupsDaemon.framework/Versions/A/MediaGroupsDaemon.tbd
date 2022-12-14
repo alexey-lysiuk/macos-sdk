@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           A5B5237F-7E59-303F-A300-D9965CEF3D2B
+  - target:          x86_64-maccatalyst
+    value:           A5B5237F-7E59-303F-A300-D9965CEF3D2B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           710A6B33-295B-3C99-8C0C-F4B24A1C5DDE
+  - target:          arm64e-maccatalyst
+    value:           710A6B33-295B-3C99-8C0C-F4B24A1C5DDE
+install-name:    '/System/Library/PrivateFrameworks/MediaGroupsDaemon.framework/Versions/A/MediaGroupsDaemon'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    objc-classes:    [ MGDaemon ]
+...

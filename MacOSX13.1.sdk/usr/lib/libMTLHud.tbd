@@ -1,0 +1,10 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           55646550-F0E0-3664-A3C5-1C6A8812F482
+  - target:          arm64e-macos
+    value:           562019DF-43EC-3DF9-BE2B-58E78C754A9E
+install-name:    '/usr/lib/libMTLHud.dylib'
+...

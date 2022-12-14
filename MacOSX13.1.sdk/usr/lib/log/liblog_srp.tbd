@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           4FC203DB-6105-3291-AFB5-70BF05FBCA0D
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           30C7C53B-2D90-31A3-8313-86B6B7AFF908
+install-name:    '/usr/lib/log/liblog_srp.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _DNSComputeDNSKeyTag, _DNSMessageCollapse, _DNSMessageExtractDomainName, 
+                       _DNSMessageExtractDomainNameString, _DNSMessageExtractQuestion, 
+                       _DNSMessageExtractRecord, _DNSMessageGetAnswerSection, _DNSMessageGetOptRecord, 
+                       _DNSMessagePrintObfuscatedIPv4Address, _DNSMessagePrintObfuscatedIPv6Address, 
+                       _DNSMessagePrintObfuscatedString, _DNSMessageToString, _DNSMessageWriteQuery, 
+                       _DNSRCodeFromString, _DNSRCodeToString, _DNSRecordDataToStringEx, 
+                       _DNSRecordTypeStringToValue, _DNSRecordTypeValueToString, 
+                       _DomainLabelEqual, _DomainNameAppendDomainName, _DomainNameAppendString, 
+                       _DomainNameDupEx, _DomainNameEqual, _DomainNameFromString, 
+                       _DomainNameLabelCount, _DomainNameLength, _DomainNameToString, 
+                       _OSLogCopyFormattedString ]
+...

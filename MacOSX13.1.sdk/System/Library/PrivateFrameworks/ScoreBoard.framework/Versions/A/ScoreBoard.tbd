@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           7819A415-CB24-3791-931A-CC146133AA5A
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           C049A239-1CAA-38B9-A33E-2BF2011ACFC8
+install-name:    '/System/Library/PrivateFrameworks/ScoreBoard.framework/Versions/A/ScoreBoard'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SCRDASActivityStateString, _SCRErrorDomain, _SCRGenerateRandomIdentifier, 
+                       _SCRIdentifier, _SCRIdentifierWithPrefix, _SCRIsUnitTest, 
+                       _SCRLogCommon, _SCRShortRandomIdentifier, _SCRTokenBucketBudgetErrorDomain, 
+                       _ScoreBoardVersionNumber, _ScoreBoardVersionString ]
+    objc-classes:    [ SCRActivity, SCRActivityScheduler, SCRApprovalCoordinator, 
+                       SCRCompositeGovernor, SCRDASActivityMetadata, SCRDASActivityScheduler, 
+                       SCRIsolatedActivityScheduler, SCRMutableSchedulingConfiguration, 
+                       SCRSchedulingConfiguration, SCRStateMachine, SCRStateTransitionContext, 
+                       SCRTask, SCRTaskAdministrator, SCRTaskHandler, SCRTaskIdentifier, 
+                       SCRTaskScheduler, SCRTaskSession, SCRTaskTargetConfiguration, 
+                       SCRTokenBucketBudget ]
+...

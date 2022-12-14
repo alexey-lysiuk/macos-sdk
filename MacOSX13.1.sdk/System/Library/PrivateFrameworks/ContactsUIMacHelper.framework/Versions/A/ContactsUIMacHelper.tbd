@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           848C06E6-2B9C-33B7-8951-DD48CCF4CC37
+  - target:          x86_64-maccatalyst
+    value:           848C06E6-2B9C-33B7-8951-DD48CCF4CC37
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           D0C6483A-D127-3129-8B13-B1B78EE82D78
+  - target:          arm64e-maccatalyst
+    value:           D0C6483A-D127-3129-8B13-B1B78EE82D78
+install-name:    '/System/Library/PrivateFrameworks/ContactsUIMacHelper.framework/Versions/A/ContactsUIMacHelper'
+current-version: 2538.1
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ ChatKit, ContactsUI, ContactsUIMacHelperTester, Contester, 
+                       Messages, MessagesAppKitBridge ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _ContactsUIMacHelperVersionNumber, _ContactsUIMacHelperVersionString ]
+    objc-classes:    [ CNMHContactPickerHelper, CNMHContactPickerRemoteViewController, 
+                       CNMHEmojiPickerHelper ]
+...

@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           2FA2949B-61AA-3A37-A803-1ECE6B7A1DA2
+  - target:          x86_64-maccatalyst
+    value:           2FA2949B-61AA-3A37-A803-1ECE6B7A1DA2
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           65C748BD-9CCB-37B7-814A-64459177FE8D
+  - target:          arm64e-maccatalyst
+    value:           65C748BD-9CCB-37B7-814A-64459177FE8D
+install-name:    '/System/Library/PrivateFrameworks/PhotoFoundation.framework/Versions/A/PhotoFoundation'
+current-version: 520.0.240
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _PFBackendGetLog, _PFCount, _PFExists, _PFFilter, _PFFind, 
+                       _PFMap, _PFMapDictionary, _PFMapIndexes, _PFMethodNotImplementedException, 
+                       _PFObjc_classIsSubclassOfClass, _PFObjc_enumerateClassNamesForImageHeader, 
+                       _PFObjc_enumerateSubclassesForHeader, _PFObjc_implementingClassForInstanceMethod, 
+                       _PFObjc_implementsClassMethod, _PFObjc_implementsInstanceMethod, 
+                       _PFPhotoFoundationBinaryImageUUID, _PFReduce, _PFReduceF, 
+                       _PFStateCaptureGetLog, _PLPhotosBackendLogSubsystem, _PhotoFoundationVersionNumber, 
+                       _PhotoFoundationVersionString, __PFAssertContinueHandler, 
+                       __PFAssertFailHandler ]
+    objc-classes:    [ PFAssertionHandler, PFAssertionInfo, PFAssertionPolicyAbort, 
+                       PFAssertionPolicyAlert, PFAssertionPolicyAlertRadar, PFAssertionPolicyComposite, 
+                       PFAssertionPolicyCrashReport, PFAssertionPolicyDebuggerFatal, 
+                       PFAssertionPolicyDebuggerWarning, PFAssertionPolicyLog, PFAssertionPolicyThrow, 
+                       PFAssertionPolicyThrowAlways, PFAssertionPolicyUnique, PFAssertionPolicyUnitTest, 
+                       PFCoalescer, PFCoalescerActivityToken, PFCoalescerContext, 
+                       PFMutualExclusionAssertion, PFStateCaptureHandler ]
+...

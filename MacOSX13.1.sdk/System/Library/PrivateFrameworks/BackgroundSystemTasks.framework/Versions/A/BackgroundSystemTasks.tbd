@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           608447A0-EFBB-3900-A7E5-8902D1D010D0
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           9110A60D-3C36-3905-B98D-6244CEF7FEA5
+install-name:    '/System/Library/PrivateFrameworks/BackgroundSystemTasks.framework/Versions/A/BackgroundSystemTasks'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _BGSystemTaskSchedulerErrorDomain ]
+    objc-classes:    [ BGNonRepeatingSystemTask, BGNonRepeatingSystemTaskRequest, 
+                       BGRepeatingSystemTask, BGRepeatingSystemTaskRequest, BGSystemTask, 
+                       BGSystemTaskRequest, BGSystemTaskScheduler, BGSystemTaskStatus ]
+...

@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           EBD366F2-5CA8-3F50-BDEE-3310D0AC5684
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           BEBA3616-96C1-3D37-83EC-1B754FAF2A23
+install-name:    '/System/Library/PrivateFrameworks/SystemStatusUI.framework/Versions/A/SystemStatusUI'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SystemStatusUIVersionNumber, _SystemStatusUIVersionString ]
+    objc-classes:    [ STUIDataAccessAttribution, STUIDataAccessStatusDomain, STUIDataAccessStatusDomainData, 
+                       STUIMutableDataAccessStatusDomainData ]
+...

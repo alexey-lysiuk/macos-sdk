@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           0164721D-6D6A-3CB6-841F-8B492B983B47
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           6017813E-FEC2-3108-850D-F9191E5F2611
+install-name:    '/System/Library/PrivateFrameworks/SiriMemoryService.framework/Versions/A/SiriMemoryService'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s17SiriMemoryService0aB7ManagerC13createModulesyyFTj', 
+                       '_$s17SiriMemoryService0aB7ManagerC13createModulesyyFTq', 
+                       '_$s17SiriMemoryService0aB7ManagerCACycfC', '_$s17SiriMemoryService0aB7ManagerCACycfc', 
+                       '_$s17SiriMemoryService0aB7ManagerCMa', '_$s17SiriMemoryService0aB7ManagerCMn', 
+                       '_$s17SiriMemoryService0aB7ManagerCMo', '_$s17SiriMemoryService0aB7ManagerCMu', 
+                       '_$s17SiriMemoryService0aB7ManagerCN', '_$s17SiriMemoryService0aB7ManagerCfD', 
+                       _SiriMemoryServiceVersionNumber, _SiriMemoryServiceVersionString ]
+    objc-classes:    [ SiriMemoryManager, SiriMemoryManagerInternal ]
+...

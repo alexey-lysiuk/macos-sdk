@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           D283CCDE-8A1D-3EDF-BADC-57E1BF73657C
+  - target:          x86_64-maccatalyst
+    value:           D283CCDE-8A1D-3EDF-BADC-57E1BF73657C
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           0EC55A3D-B55A-30A6-8981-52313855BEE9
+  - target:          arm64e-maccatalyst
+    value:           0EC55A3D-B55A-30A6-8981-52313855BEE9
+install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64e-macos ]
+    symbols:         [ _glgCompress, _glgConvertPixelHeightToBlocks, _glgConvertPixelWidthToBlocks, 
+                       _glgConvertPixels, _glgConvertType, _glgCreateProcessor, _glgDecompress, 
+                       _glgDestroyProcessor, _glgGetCompressedBlockBytes, _glgGetCompressedBlockHeight, 
+                       _glgGetCompressedBlockWidth, _glgGetCompressedImageBytes, 
+                       _glgGetCompressedMinBlockDimensions, _glgGetPixelSize, _glgInitializeLibrary, 
+                       _glgPixelCenters, _glgProcessPixelsWithProcessor, _glgSaveImageToFile, 
+                       _glgSaveImageToFileGLG, _glgSetTakeLock, _glgTerminateLibrary ]
+...

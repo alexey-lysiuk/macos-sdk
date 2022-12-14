@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           2C023F37-E752-3B2E-B195-31F4A3D7EE2A
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           DAFF8C88-A4D8-388C-A307-73B59D2E4855
+install-name:    '/System/Library/PrivateFrameworks/PlatformSSOUI.framework/Versions/A/PlatformSSOUI'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ POAgentWindow, POAgentWindowController, POUIAuthenticationDialog, 
+                       POUIAuthenticationViewController, POWindowController ]
+...

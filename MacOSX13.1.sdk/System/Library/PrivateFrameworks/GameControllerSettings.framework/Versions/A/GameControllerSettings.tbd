@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           FECCCE8B-7886-3A95-983E-BB6BF416D9B7
+  - target:          x86_64-maccatalyst
+    value:           FECCCE8B-7886-3A95-983E-BB6BF416D9B7
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B1C78A21-A950-32C3-B52C-CC5DA9DCE4E8
+  - target:          arm64e-maccatalyst
+    value:           B1C78A21-A950-32C3-B52C-CC5DA9DCE4E8
+install-name:    '/System/Library/PrivateFrameworks/GameControllerSettings.framework/Versions/A/GameControllerSettings'
+current-version: 10.3.5
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _gcs_isInternalBuild, _getGCSLogger ]
+    objc-classes:    [ GCSController, GCSControllersCollection, GCSCopilotFusedController, 
+                       GCSCopilotFusedControllersCollection, GCSDirectionPadMapping, 
+                       GCSElement, GCSElementMapping, GCSGame, GCSGamesCollection, 
+                       GCSProfile, GCSProfilesCollection, GCSSettingsStore, GCSTombstone, 
+                       GCSTombstonesCollection ]
+...

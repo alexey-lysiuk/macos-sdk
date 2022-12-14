@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           8ADC8C34-EF31-3A0C-9B70-157DB1EB026C
+  - target:          x86_64-maccatalyst
+    value:           8ADC8C34-EF31-3A0C-9B70-157DB1EB026C
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           4CA21DF5-CCC4-3D9B-9AD3-E2CE23690E46
+  - target:          arm64e-maccatalyst
+    value:           4CA21DF5-CCC4-3D9B-9AD3-E2CE23690E46
+install-name:    '/System/Library/PrivateFrameworks/AACCore.framework/Versions/A/AACCore'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _AACLoggingSubsystem, _AEAssessmentStateDidChangeNotificationName, 
+                       _AEAssessmentStatePublisherRegisteringMachServiceName, _AECoreError, 
+                       _AECoreErrorDomain, _AECoreErrorUserInfo, _AELocalizedStringFromTableInBundle, 
+                       _AEPolicySessionFailedToActivateSubsystemsKey, _AEPolicySessionFailedToDeactivateSubsystemsKey ]
+    objc-classes:    [ AEActivePolicySession, AEAssessmentApplicationDescriptor, 
+                       AEAssessmentIndividualConfiguration, AEAssessmentModeGestalt, 
+                       AEAssessmentState, AEAssessmentStatePublishingProxy, AEAssessmentStatePublishingXPCInterfaceFactory, 
+                       AEAssessmentStateSourceRegisteringProxy, AEAssessmentStateSourceRegisteringXPCInterfaceFactory, 
+                       AEFeatureFlagsProvider, AEFileSystem, AELifecycleEventHandlingProxy, 
+                       AELifecycleEventHandlingXPCInterfaceFactory, AELocalizedErrorDescriptions, 
+                       AEOSGestalt, AEOptionMirror, AEPerformancePrimitivesProvider, 
+                       AEPolicyBundle, AEPreferencesProvider ]
+...

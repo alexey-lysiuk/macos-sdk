@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           211E79D1-22B3-3863-90C8-B79CA3E37CDE
+  - target:          x86_64-maccatalyst
+    value:           211E79D1-22B3-3863-90C8-B79CA3E37CDE
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B9CF3094-8867-3AAC-BD00-DB2004F142F0
+  - target:          arm64e-maccatalyst
+    value:           B9CF3094-8867-3AAC-BD00-DB2004F142F0
+install-name:    '/System/Library/PrivateFrameworks/FeedbackLogger.framework/Versions/A/FeedbackLogger'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _FLErrorDomain, _FLGetBootSessionUUID, _FLSignpostLoggingInit, 
+                       _FLUploadHeadersKey, _FLUploadImmediately, _FL_LOG_SIGNPOSTS, 
+                       _FeedbackLoggerVersionNumber, _FeedbackLoggerVersionString, 
+                       _flLogForObject, _kMaxBatchContinuesDuration, _tryGetDataProperty, 
+                       _tryGetDateProperty, _tryGetTextProperty ]
+    objc-classes:    [ BatchMetadata, FLLogger, FLLoggingContext, FLSQLiteDatabaseConnection, 
+                       FLSQLitePersistence, FeedbackLoggerFBFClient, UploadRecord ]
+...

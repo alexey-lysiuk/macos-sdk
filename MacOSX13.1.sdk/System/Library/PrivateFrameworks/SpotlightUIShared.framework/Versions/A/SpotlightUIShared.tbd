@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           F0304335-2663-3F72-87A3-706D54BEA6FD
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           FA9E2143-394E-304A-9D93-0009C8AB0C10
+install-name:    '/System/Library/PrivateFrameworks/SpotlightUIShared.framework/Versions/A/SpotlightUIShared'
+current-version: 42.2.1
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SpotlightUISharedVersionNumber, _SpotlightUISharedVersionString ]
+    objc-classes:    [ SUISRadarUtilities, SUISpotlightController ]
+...

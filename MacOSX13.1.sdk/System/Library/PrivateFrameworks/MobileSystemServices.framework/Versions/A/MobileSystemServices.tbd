@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           8985EA50-59C3-3136-BEAB-E33174CE5815
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           AEC24F13-3E7A-3595-AD72-2BA5A4F0BABE
+install-name:    '/System/Library/PrivateFrameworks/MobileSystemServices.framework/Versions/A/MobileSystemServices'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _MOCreateCFTypeFromSerializedBuffer, _MOCreateSerializedData, 
+                       _MOLogClose, _MOLogEnableDiskLogging, _MOLogGetLogLevel, _MOLogOpen, 
+                       _MOLogSetLogLevel, _MOLogWrite, _MOLogWriteV ]
+    objc-classes:    [ MOSplunkLogger ]
+...

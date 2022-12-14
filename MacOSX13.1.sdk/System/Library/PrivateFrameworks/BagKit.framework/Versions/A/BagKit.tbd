@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           ED20E558-812A-3A87-94DA-91B2F5BCF346
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B01AD1B4-5049-3098-9B75-F4AC8B9D08A1
+install-name:    '/System/Library/PrivateFrameworks/BagKit.framework/Versions/A/BagKit'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _BAGIsValidConfigKeyType, _BAGIsValidLoadState, _BAGIsValidResourceType, 
+                       _BAGResourceLoadStateToString, _BAGResourceTypeToString, _BAGResourceVendorErrorDomain ]
+    objc-classes:    [ BAGConfig, BAGFile, BAGLog, BAGResourceOptions, BAGResourceUpdateContext, 
+                       BAGResourceVendor, BAGXPCInterface ]
+...

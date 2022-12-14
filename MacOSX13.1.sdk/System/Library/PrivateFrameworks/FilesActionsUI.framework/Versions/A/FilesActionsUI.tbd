@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           48338622-A3C4-3A80-8BA8-86FFDAF719B6
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           5789806F-CE9A-34D7-B0B3-60A9BC8D5A21
+install-name:    '/System/Library/PrivateFrameworks/FilesActionsUI.framework/Versions/A/FilesActionsUI'
+current-version: 44
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _FAUICreatePDFFromDocumentURLs, _FAUICreateTempFileURLInTemporaryDirectory, 
+                       _FAUICreateTemporaryFolderURLAppropriateForURL, _FAUIInitLogging, 
+                       _FAUIRotateImage, _FAUIRotateImages, _FAUIRotateMovies, _FilesActionsUIVersionNumber, 
+                       _FilesActionsUIVersionString, __AppendDocumentToDocument, 
+                       __AppendImageToDocument, __CleanupTemporaryImage, __CreateTemporaryImageFileURL, 
+                       __CreateTemporaryPDFFileURL, __DownsampleImage, __FAUICreatePDFFromDocumentURLs, 
+                       __FAUIRotateMovie, __FAUIRotationDirectionToRadians, __FormattedDate, 
+                       __NewDocumentFileName, __SortedFileURLsUsingStandardSort, 
+                       _fauiLogHandle ]
+...

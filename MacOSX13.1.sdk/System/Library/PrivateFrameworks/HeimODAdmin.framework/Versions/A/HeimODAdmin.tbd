@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           0E72993B-A727-36CC-A8C2-E6AB4851AA72
+  - target:          x86_64-maccatalyst
+    value:           0E72993B-A727-36CC-A8C2-E6AB4851AA72
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           EBF2386D-BF33-38E2-9723-2D70F6DFB16D
+  - target:          arm64e-maccatalyst
+    value:           EBF2386D-BF33-38E2-9723-2D70F6DFB16D
+install-name:    '/System/Library/PrivateFrameworks/HeimODAdmin.framework/Versions/A/HeimODAdmin'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _HeimODAddAppleIDAlias, _HeimODAddCertificate, _HeimODAddCertificateSubjectAndTrustAnchor, 
+                       _HeimODAddServerAlias, _HeimODAddSubjectAltCertName, _HeimODAddSubjectAltCertSHA1Digest, 
+                       _HeimODClearACL, _HeimODClearKerberosFlags, _HeimODCopyACL, 
+                       _HeimODCopyDefaultEnctypes, _HeimODCopyKerberosFlags, _HeimODCopyServerAliases, 
+                       _HeimODCopySubjectAltNames, _HeimODCreatePrincipalData, _HeimODCreateRealm, 
+                       _HeimODCreateSRPKeys, _HeimODDumpHdbEntry, _HeimODDumpRecord, 
+                       _HeimODGetKerberosMaxLife, _HeimODGetKerberosMaxRenewable, 
+                       _HeimODKeysetToString, _HeimODLoadRecord, _HeimODModifyKeys, 
+                       _HeimODRemoveAppleIDAlias, _HeimODRemoveCertificateSubjectAndTrustAnchor, 
+                       _HeimODRemovePrincipalData, _HeimODRemoveServerAlias, _HeimODRemoveSubjectAltElement, 
+                       _HeimODSetACL, _HeimODSetKerberosFlags, _HeimODSetKerberosMaxLife, 
+                       _HeimODSetKerberosMaxRenewable, _HeimODSetKeys, _HeimODSetVerifiers ]
+...

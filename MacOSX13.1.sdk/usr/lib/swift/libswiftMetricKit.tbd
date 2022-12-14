@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           62600758-047F-30E2-AD47-320FB9AA759B
+  - target:          x86_64-maccatalyst
+    value:           62600758-047F-30E2-AD47-320FB9AA759B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           74D4749E-ED01-3897-956E-4A881BE7DD25
+  - target:          arm64e-maccatalyst
+    value:           74D4749E-ED01-3897-956E-4A881BE7DD25
+install-name:    '/usr/lib/swift/libswiftMetricKit.dylib'
+current-version: 6
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s9MetricKit10mxSignpost_3dso3log4name10signpostID__ySo03os_H7_type_ta_SVSo03OS_j1_F0Cs12StaticStringV0J0010OSSignpostI0VALSays7CVarArg_pGtF', 
+                       '_$s9MetricKit32mxSignpostAnimationIntervalBegin3dso3log4name10signpostID__ySV_So06OS_os_I0Cs12StaticStringV0N0010OSSignpostL0VAJSays7CVarArg_pGtF', 
+                       '__swift_FORCE_LOAD_$_swiftMetricKit' ]
+...

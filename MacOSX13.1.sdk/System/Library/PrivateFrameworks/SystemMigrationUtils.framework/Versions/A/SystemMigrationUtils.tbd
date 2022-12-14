@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           B2C663B1-6AC5-3D6B-AA07-F9CFC983C014
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           36B9FEEF-2FF6-3D87-BB00-7FDF4265FA86
+install-name:    '/System/Library/PrivateFrameworks/SystemMigrationUtils.framework/Versions/A/SystemMigrationUtils'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SMAnalyticsCAEventPayloadKeyApplicationsCopyDuration, _SMAnalyticsCAEventPayloadKeyApplicationsTotalSize, 
+                       _SMAnalyticsCAEventPayloadKeyAverageTransferRate, _SMAnalyticsCAEventPayloadKeyBetaReEnrollmentFeature, 
+                       _SMAnalyticsCAEventPayloadKeyEnginePhase, _SMAnalyticsCAEventPayloadKeyError, 
+                       _SMAnalyticsCAEventPayloadKeyErrorSignature, _SMAnalyticsCAEventPayloadKeyFinalResult, 
+                       _SMAnalyticsCAEventPayloadKeyHomeDirectoriesCopyDuration, 
+                       _SMAnalyticsCAEventPayloadKeyHomeDirectoriesTotalSize, _SMAnalyticsCAEventPayloadKeyMHPostLoginErrorCount, 
+                       _SMAnalyticsCAEventPayloadKeyMHPostLoginErrorDescriptions, 
+                       _SMAnalyticsCAEventPayloadKeyMHPostLoginErrorIdentity, _SMAnalyticsCAEventPayloadKeyMHPostLoginPerfTotalDuration, 
+                       _SMAnalyticsCAEventPayloadKeyMigrationID, _SMAnalyticsCAEventPayloadKeyODSTIssuingSuccess, 
+                       _SMAnalyticsCAEventPayloadKeyODSTRetries, _SMAnalyticsCAEventPayloadKeyOriginatingApp, 
+                       _SMAnalyticsCAEventPayloadKeyOriginatingApplication, _SMAnalyticsCAEventPayloadKeyOverallThroughput, 
+                       _SMAnalyticsCAEventPayloadKeyPath, _SMAnalyticsCAEventPayloadKeyPathingDuration, 
+                       _SMAnalyticsCAEventPayloadKeyPhase, _SMAnalyticsCAEventPayloadKeyPreferredTransferMode, 
+                       _SMAnalyticsCAEventPayloadKeyRequestState, _SMAnalyticsCAEventPayloadKeyRequestState_1, 
+                       _SMAnalyticsCAEventPayloadKeyResult, _SMAnalyticsCAEventPayloadKeySizeExpected, 
+                       _SMAnalyticsCAEventPayloadKeySizeTransferred, _SMAnalyticsCAEventPayloadKeySourceConnectionMedium, 
+                       _SMAnalyticsCAEventPayloadKeySourceModelID, _SMAnalyticsCAEventPayloadKeySourceOSType, 
+                       _SMAnalyticsCAEventPayloadKeySourceType, _SMAnalyticsCAEventPayloadKeySourceType_1, 
+                       _SMAnalyticsCAEventPayloadKeySourceVersion, _SMAnalyticsCAEventPayloadKeyTimeExpected, 
+                       _SMAnalyticsCAEventPayloadKeyTimeTaken, _SMAnalyticsCAEventPayloadKeyTotalDataSize, 
+                       _SMAnalyticsCAEventPayloadKeyTotalDuration, _SMAnalyticsCAEventPayloadKeyWireThroughput, 
+                       _SMAnalyticsCAEventPayloadKeyWireThroughputExpected, _SMUDTFirmlinkDestinationKey, 
+                       _SMUDTFirmlinkSourceKey, _SMUDTTemplateReceiptIdentifier, 
+                       _SMUDataTemplateErrorDomain, _SystemMigrationUtilsVersionNumber, 
+                       _SystemMigrationUtilsVersionString, _getPairedVolumeWithRole, 
+                       _logBatteryState ]
+    objc-classes:    [ SMAnalyticsConstantsTransformer, SMAnalyticsManager, SMConnectionFamilyIcons, 
+                       SMLogging, SMPathSizer, SMSystemConfiguration, SMSystem_FileManager_DiskBased, 
+                       SMSystem_FileManager_ROSV, SMSystem_FileManager_Traditional, 
+                       SMSystem_FileManager_macOS, SMTask, SMToolBox, SMUDataTemplateCopier, 
+                       SMUDataTemplateUtilities, SMUPaneIdentifiersTransformer, SMUVersion, 
+                       SMUtilities ]
+...

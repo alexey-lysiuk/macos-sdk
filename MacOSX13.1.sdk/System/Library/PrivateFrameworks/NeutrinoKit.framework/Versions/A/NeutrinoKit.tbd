@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           BF55CD90-469C-39F1-BD05-1D3E3DB73FFE
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           EA0BE399-33D6-3BED-8393-A1E40E1BC0F2
+install-name:    '/System/Library/PrivateFrameworks/NeutrinoKit.framework/Versions/A/NeutrinoKit'
+current-version: 520.0.240
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _NSStringFromCATransform3D, _NUBoundingRectForRotatedRect, 
+                       _NUEdgeInsetsInsetRect, _NUFitScaleForImageRectInRect, _NUMaxRectInRotatedRect, 
+                       _NURectCenterRectInRect, _NURectGetMidpoint, _NeutrinoKitVersionNumber, 
+                       _NeutrinoKitVersionString, __NUViewCommonInit, __commonInit, 
+                       _stringFromTransform ]
+    objc-classes:    [ NUAVPlayerController, NUAVPlayerView, NUClipView, NUDebugRenderView, 
+                       NUMediaView, NUMediaViewRenderer, NURenderView, NUScrollView, 
+                       NUTileLayer, NUTiledImageLayer, NUViewGeometry, NUViewport, 
+                       NUViewportRegionPolicy, _NUAVPlayerItemObservation, _NUClipView, 
+                       _NUTiledBackfillLayer, _NUTiledROILayer ]
+...

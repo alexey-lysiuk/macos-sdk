@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           BE66BA30-FD54-3AF0-A2C8-8511278F5E88
+  - target:          x86_64-maccatalyst
+    value:           BE66BA30-FD54-3AF0-A2C8-8511278F5E88
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           48C9435D-614B-3437-976F-24CA00DEC73B
+  - target:          arm64e-maccatalyst
+    value:           48C9435D-614B-3437-976F-24CA00DEC73B
+install-name:    '/System/Library/PrivateFrameworks/IntentsServices.framework/Versions/A/IntentsServices'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _INSAssistantErrorDomain, _INSExtensionServiceTraceCompletionHandlerWithCode, 
+                       _INSGetAceVersionNumberFromString, _INSJSONEncodedIntent, 
+                       _INSJSONEncodedIntentResponse, _INSJSONEncodedSlotResolutionResult, 
+                       _INSSiriAceErrorDomain, _INSSiriSerializedUserActivityKey, 
+                       _IntentsServicesVersionNumber, _IntentsServicesVersionString ]
+    objc-classes:    [ INSAnalytics, INSDeviceInfo, INSExtensionService ]
+...

@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           5CA20E75-F49F-3B96-B516-1FF5FB29B2D3
+  - target:          x86_64-maccatalyst
+    value:           5CA20E75-F49F-3B96-B516-1FF5FB29B2D3
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           ECF5D9A2-B2EE-3ABD-81F2-C52BAD340CA4
+  - target:          arm64e-maccatalyst
+    value:           ECF5D9A2-B2EE-3ABD-81F2-C52BAD340CA4
+install-name:    '/System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Versions/A/BackgroundTaskManagement'
+current-version: 104
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _AttributionInfoForLabelAndTeamID, _AttributionsByLabel, _AttributionsContainsLabelOrAttributionValue, 
+                       _BTMConfigArguments, _BTMConfigBundleIdentifiers, _BTMConfigBundleProgram, 
+                       _BTMConfigExecutablePath, _BTMConfigLabel, _BTMDispositionDescription, 
+                       _BTMDispositionIsLaunchable, _BTMErrorDomain, _BTMErrorString, 
+                       _BTMErrorWithCode, _BTMItemTypeDescription, _BTMUserDataDidChangeNotification, 
+                       _BackgroundTaskManagementVersionNumber, _BackgroundTaskManagementVersionString, 
+                       _CodeSigningIdentifiersForURL, _CuratedAssociatedBundleIdentifiersForLabelAndTeamID, 
+                       _CuratedDeveloperNameForLabelAndTeamID, _CuratedInternalAssociatedBundleIdentifiersForLabel, 
+                       _CuratedInternalNameForLabel, _DesignatedRequirementForAuditToken, 
+                       _DesignatedRequirementForURL, _DeveloperNameForAuditToken, 
+                       _DeveloperNameForPath, _DeveloperNameForURL, _InternalAttributionsByLabel, 
+                       _ItemIdentifierForURLAndType, _ItemIdentifierWithRegistrationInfo, 
+                       _ItemNameForLaunchdPlist, _ItemNameForURL, _LabelForLaunchdPlist, 
+                       _SecCodeGetSigningIdentifiers, _ServiceInterfaceV2, _URLForAuditToken, 
+                       _copyDeveloperName, _kBTMBackgroundItemsChangeNotification ]
+    objc-classes:    [ BTMAgentConnection, BTMBackgroundItem, BTMBackgroundItemController, 
+                       BTMBackgroundTaskManager, BTMItem, BTMList, BTMLoginItem, 
+                       BTMLoginItemController, BTMManager, BTMUserSettings ]
+...

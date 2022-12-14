@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           51C60D1E-FB2B-3F8C-A73F-900FB41B0863
+  - target:          x86_64-maccatalyst
+    value:           51C60D1E-FB2B-3F8C-A73F-900FB41B0863
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           C52F7437-CA16-3268-B50C-E44ACB976EFA
+  - target:          arm64e-maccatalyst
+    value:           C52F7437-CA16-3268-B50C-E44ACB976EFA
+install-name:    '/System/Library/PrivateFrameworks/PreviewsUIKitMacHelper.framework/Versions/A/PreviewsUIKitMacHelper'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _PUNSActivateAppAndMakeSceneFrontmostAndKey, _PUNSIsAgentProcess, 
+                       _PUNSSetAppActiveAppearance, _PUNSSetSceneUtilities, _PUNSWindowNotificationUISceneKey, 
+                       _PUNSWindowRequestZoomNotification ]
+...

@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           E5E36F08-DEE3-3B63-97EB-F009D214DF96
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           60D85273-2C34-3702-80B8-240D089AECE6
+install-name:    '/System/Library/PrivateFrameworks/MessagesCloudSync.framework/Versions/A/MessagesCloudSync'
+current-version: 800
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s17MessagesCloudSync0C11CoordinatorC012startInitialC08delegateySo010IMDMessagecD8Delegate_pSg_tKFZ', 
+                       '_$s17MessagesCloudSync0C11CoordinatorCACycfC', '_$s17MessagesCloudSync0C11CoordinatorCACycfc', 
+                       '_$s17MessagesCloudSync0C11CoordinatorCMa', '_$s17MessagesCloudSync0C11CoordinatorCMn', 
+                       '_$s17MessagesCloudSync0C11CoordinatorCMo', '_$s17MessagesCloudSync0C11CoordinatorCN', 
+                       '_$s17MessagesCloudSync0C11CoordinatorCfD', '_$s17MessagesCloudSync0C17TelemetryReporterC11postMessage7payload8categoryySDySSypG_AC14ReportCategoryOtKFTj', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterC11postMessage7payload8categoryySDySSypG_AC14ReportCategoryOtKFTq', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterC14ReportCategoryO8rawValueAESgSi_tcfC', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterC14ReportCategoryO8rawValueSivg', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterC14ReportCategoryO8rawValueSivpMV', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterC14ReportCategoryOMa', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterC14ReportCategoryOMn', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterC14ReportCategoryON', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterC14ReportCategoryOSHAAMc', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterC14ReportCategoryOSQAAMc', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterC14ReportCategoryOSYAAMc', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterCACycfC', '_$s17MessagesCloudSync0C17TelemetryReporterCACycfc', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterCMa', '_$s17MessagesCloudSync0C17TelemetryReporterCMn', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterCMo', '_$s17MessagesCloudSync0C17TelemetryReporterCMu', 
+                       '_$s17MessagesCloudSync0C17TelemetryReporterCN', '_$s17MessagesCloudSync0C17TelemetryReporterCfD', 
+                       _MessagesCloudSyncVersionNumber, _MessagesCloudSyncVersionString ]
+    objc-classes:    [ IMDMessagesSyncCoordinator, IMDMessagesSyncCoordinatorInternal, 
+                       IMDSyncTelemetryReporter, IMDSyncTelemetryReporterInternal ]
+...

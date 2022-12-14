@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           31DA0AB5-7577-39EC-99F2-EBC0C29233D7
+  - target:          x86_64-maccatalyst
+    value:           31DA0AB5-7577-39EC-99F2-EBC0C29233D7
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           E4C28F04-99F3-305F-B904-18A421047FCD
+  - target:          arm64e-maccatalyst
+    value:           E4C28F04-99F3-305F-B904-18A421047FCD
+install-name:    '/System/Library/PrivateFrameworks/IMTransferServices.framework/Versions/A/IMTransferServices'
+current-version: 800
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _IMTransferServicesErrorDomain ]
+    objc-classes:    [ IMTransferServicesCompressionController, IMTransferServicesController ]
+    objc-ivars:      [ IMTransferServicesCompressionController._blockMap ]
+...

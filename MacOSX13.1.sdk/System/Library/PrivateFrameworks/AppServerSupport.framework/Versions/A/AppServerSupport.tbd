@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           E37D4966-D3DA-3CAD-831D-5C29BCB52013
+  - target:          x86_64-maccatalyst
+    value:           E37D4966-D3DA-3CAD-831D-5C29BCB52013
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           3936365A-16B6-39D9-989E-47469A78C3E8
+  - target:          arm64e-maccatalyst
+    value:           3936365A-16B6-39D9-989E-47469A78C3E8
+install-name:    '/System/Library/PrivateFrameworks/AppServerSupport.framework/Versions/A/AppServerSupport'
+current-version: 2462.60.15
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ __launch_get_last_exit_reason_4SB, _launch_get_running_pid_4SB ]
+    objc-classes:    [ LASSProperties4RB, OSLaunchdDomain, OSLaunchdError, OSLaunchdJob, 
+                       OSLaunchdJobExitStatus, OSLaunchdJobInfo, OSLaunchdJobInstanceProperties ]
+...

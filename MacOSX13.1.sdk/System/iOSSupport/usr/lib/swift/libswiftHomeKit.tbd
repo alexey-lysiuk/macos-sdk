@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-maccatalyst
+    value:           579AB726-86F2-3162-A462-11340C86273B
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-maccatalyst
+    value:           444A94F1-4BA4-363E-9A60-FF893D6B57DD
+install-name:    '/System/iOSSupport/usr/lib/swift/libswiftHomeKit.dylib'
+current-version: 946.3.9
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ '_$s7HomeKit49HMCharacteristicPropertySupportsEventNotificationSSvg', 
+                       '_$sSo11HMAccessoryC7HomeKitE12matterNodeIDs6UInt64VSgvg', 
+                       '_$sSo11HMAccessoryC7HomeKitE12matterNodeIDs6UInt64VSgvpMV', 
+                       '__swift_FORCE_LOAD_$_swiftHomeKit' ]
+...

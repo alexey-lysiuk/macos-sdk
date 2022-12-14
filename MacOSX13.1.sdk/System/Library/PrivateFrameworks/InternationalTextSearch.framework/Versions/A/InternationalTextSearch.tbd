@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           382E2905-1E10-3E34-BB3E-E55A28208685
+  - target:          x86_64-maccatalyst
+    value:           382E2905-1E10-3E34-BB3E-E55A28208685
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           0162D2AE-393C-3B1B-9A0B-3D6E267E313E
+  - target:          arm64e-maccatalyst
+    value:           0162D2AE-393C-3B1B-9A0B-3D6E267E313E
+install-name:    '/System/Library/PrivateFrameworks/InternationalTextSearch.framework/Versions/A/InternationalTextSearch'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _ITSCollationContextFreeContextForDatabaseHandle, _ITSCopyFTSTableCreateStatementUsingCurrentLanguage, 
+                       _ITSCopyFTSTableCreateStatementWithLanguageAndCollator, _ITSCopySearchCollatorForLanguage, 
+                       _ITSCopyUserLanguage, _ITSCreateCollator, _ITSCreateCollatorWithPreferredLocale, 
+                       _ITSCreateSortKey, _ITSFTSIsEnabled, _ITSRegisterSQLiteICUTokenizer, 
+                       _ITSSetCollatorOverrideForDatabaseConnectionHandle, _ITSSetLocaleOverrideForDatabaseConnectionHandle, 
+                       _ITSTokenListCopyEscapedTokenAtIndex, _ITSTokenListCreate, 
+                       _ITSTokenListDestroy, _ITSTokenListGetCount, _ITSTokenListGetTokenAtIndex, 
+                       _ITSTokenListGetTokenCollationKeyAtIndex, _ITSTokenListGetTokenCollationKeyLengthAtIndex, 
+                       _ITSTokenListGetTokenEndByteOffsetAtIndex, _ITSTokenListGetTokenRangeAtIndex, 
+                       _ITSTokenListGetTokenStartByteOffsetAtIndex, _ITSTokenListPopulateFromString, 
+                       _ITSTokenListRemoveAllTokens, _InternationalTextSearchVersionNumber, 
+                       _InternationalTextSearchVersionString ]
+...

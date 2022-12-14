@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           D53A565C-CE69-3DE5-B066-D90110534C41
+  - target:          x86_64-maccatalyst
+    value:           D53A565C-CE69-3DE5-B066-D90110534C41
+  - target:          arm64e-macos
+    value:           0AA2AA53-60BE-312E-81BF-A6D250F8674A
+  - target:          arm64e-maccatalyst
+    value:           0AA2AA53-60BE-312E-81BF-A6D250F8674A
+install-name:    '/usr/lib/libBacktraceRecording.dylib'
+...

@@ -1,0 +1,10 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           FFB70512-1C4F-3494-9015-0D7A3822E1AD
+  - target:          arm64e-macos
+    value:           70C78534-BFCD-39EF-A56C-863CC48367FD
+install-name:    '/usr/lib/libRPAC.dylib'
+...

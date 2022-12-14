@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           96AC942A-D580-322D-8D3D-841E6002BA60
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           87D5ADDD-947C-3BA0-BB72-B4FC09F6E6BE
+install-name:    '/System/Library/PrivateFrameworks/AppleDisplayTCONControl.framework/Versions/A/AppleDisplayTCONControl'
+current-version: 51
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AppleDisplayTCONControlVersionNumber, _AppleDisplayTCONControlVersionString ]
+    objc-classes:    [ ADIOReportingInterface ]
+...

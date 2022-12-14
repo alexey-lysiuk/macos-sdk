@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           486ECBD9-4961-3D05-B666-164D36C55BB4
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           DE5EF8EF-6189-3427-ADFF-27AFBFBDC283
+install-name:    '/System/Library/PrivateFrameworks/CardServices.framework/Versions/A/CardServices'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CardServicesVersionNumber, _CardServicesVersionString ]
+    objc-classes:    [ CRSCardRequest, CRSCardResponse, CRSIdentifiedServiceRegistry, 
+                       CRSRequest, CRSResponse, _CRSCardServiceBundle, _CRSCardServiceBundleManager, 
+                       _CRSPassthroughService, _CRSServiceBundle, _CRSServiceBundleManager ]
+...

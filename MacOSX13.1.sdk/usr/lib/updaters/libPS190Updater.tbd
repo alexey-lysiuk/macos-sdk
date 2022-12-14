@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           B2A36322-09B8-321F-9DC4-519B31F7AEE2
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           E4F5ED25-1B20-3F27-A4CA-F426810D4BDC
+install-name:    '/usr/lib/updaters/libPS190Updater.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _PS190UpdaterCreate, _PS190UpdaterExecCommand, _PS190UpdaterIsDone ]
+...

@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           CFD316B0-FCBC-3C63-96BA-07FF1EDF77EF
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           0EC4203F-6230-3C70-A4A6-B0B24195A138
+install-name:    '/System/Library/PrivateFrameworks/ManagedClient.framework/Versions/A/ManagedClient'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _MCXLW_LaunchMCXD, _MCXLW_NetworkChange, _MCXLW_QuitMCXD, 
+                       _MCX_Composite, _MCX_FindNodesForComputer, _MCX_FindNodesForGroup, 
+                       _MCX_GetCurrentWorkgroup, _MCX_Recomposite, _MCX_RecompositeWithAuthentication ]
+...

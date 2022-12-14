@@ -1,0 +1,43 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           F9AB6A80-FF3B-36F1-906E-C95916205FE9
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           856FCE00-3DB0-3BAA-A505-19ACA22787EA
+install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityKit.framework/Versions/A/AccessibilityKit'
+current-version: 2
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AXKAreDifferentFonts, _AXKAreDifferentTextStyles, _AXKBundle, 
+                       _AXKCmyk2rgb, _AXKContrastRatioForColor, _AXKDebugPrintHierarchy, 
+                       _AXKDisableTRMStateIfNeeded, _AXKDisableTRMStateIfNeededWithCompletionBlock, 
+                       _AXKEnumerateEmojiDescriptionsInString, _AXKFullKeyboardAccessAvailableCommands, 
+                       _AXKGrayscale2rgb, _AXKHasBoldFont, _AXKHasItalicFont, _AXKHasPlainFont, 
+                       _AXKHsv2rgb, _AXKLocalizedString, _AXKLuminanceForColor, _AXKRecommendedColorForColors, 
+                       _AXKRgb2cmyk, _AXKRgb2grayscale, _AXKRgb2hsv, _AXKShouldShowDisableTRMDialog, 
+                       _AXKStringByReplacingEmojiWithDescriptions, _AXKThreadingCheckAssertCurrentQueueIsAppQueueForApp, 
+                       _AXKThreadingCheckAssertCurrentQueueIsAppQueueForElement, 
+                       _AXKThreadingCheckAssertCurrentQueueIsAppQueueForUIElement, 
+                       _AXKThreadingCheckAssertCurrentQueueIsEqual, _AXKThreadingCheckAssertCurrentQueueIsMain, 
+                       _AXKThreadingCheckAssertCurrentQueueNotMain, _kAXKBackgroundColorAttribute, 
+                       _kAXKFontAttribute, _kAXKFontNameAttribute, _kAXKFontSizeAttribute, 
+                       _kAXKForegroundColorAttribute, _kAXKRecommendedColorContrastRatioEnhanced, 
+                       _kAXKRecommendedColorContrastRatioLight, _kAXKRecommendedColorContrastRatioMedium, 
+                       _kAXKRecommendedColorContrastRatioMinimum ]
+    objc-classes:    [ AXKAlertWindowController, AXKAndAction, AXKApplicationController, 
+                       AXKAttributedStringParser, AXKBaseAction, AXKClickAction, 
+                       AXKCompositeAction, AXKElementBasedTextProvider, AXKElementController, 
+                       AXKElementDescriber, AXKElementDescriberConfiguration, AXKFocusManager, 
+                       AXKFoundationAction, AXKInputMarkingSessionTracker, AXKKeyboardFocusListenerSharedKeyboardFocusElementInfo, 
+                       AXKKeyboardFocusTracker, AXKOrAction, AXKRemoteSearchManager, 
+                       AXKResourceManager, AXKScreenReadingElementTraversalStrategy, 
+                       AXKSearchManager, AXKSimpleStringTextProvider, AXKStringTokenizer, 
+                       AXKSystemStatus, AXKTextElementEditListenerElementInfo, AXKTextElementEditTracker, 
+                       AXKTextNavigator, AXKUserDefaultsOverrider, AXKWorkspaceManager, 
+                       _AXKClassRegistrar ]
+...

@@ -1,0 +1,54 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           CF9EE68A-02CC-3392-8519-6EA60D573D93
+  - target:          x86_64-maccatalyst
+    value:           CF9EE68A-02CC-3392-8519-6EA60D573D93
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           FC0F4B19-3CE1-3289-B15D-4752D36C873C
+  - target:          arm64e-maccatalyst
+    value:           FC0F4B19-3CE1-3289-B15D-4752D36C873C
+install-name:    '/System/Library/PrivateFrameworks/BluetoothManager.framework/Versions/A/BluetoothManager'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _AddressForBTDevice, _BluetoothAccessibilityHeadTrackChanged, 
+                       _BluetoothAccessoryAACPCapabilitiesReceived, _BluetoothAccessoryInEarStatusNotification, 
+                       _BluetoothAccessorySealValueStatusNotification, _BluetoothAccessorySettingsChanged, 
+                       _BluetoothAdvertisingStateChangedNotification, _BluetoothAvailabilityChangedNotification, 
+                       _BluetoothConnectabilityChangedNotification, _BluetoothConnectionStatusChangedNotification, 
+                       _BluetoothDenylistStateChangedNotification, _BluetoothDeviceBatteryChangedNotification, 
+                       _BluetoothDeviceChangedNotification, _BluetoothDeviceConnectFailedNotification, 
+                       _BluetoothDeviceConnectSuccessNotification, _BluetoothDeviceDisconnectFailedNotification, 
+                       _BluetoothDeviceDisconnectSuccessNotification, _BluetoothDeviceDiscoveredNotification, 
+                       _BluetoothDeviceRemovedNotification, _BluetoothDeviceSupportsContactSyncNotification, 
+                       _BluetoothDeviceSupportsMAPClientNotification, _BluetoothDeviceUnpairedNotification, 
+                       _BluetoothDeviceUpdatedNotification, _BluetoothDiscoveryStateChangedNotification, 
+                       _BluetoothDiscoveryStoppedNotification, _BluetoothErrorKey, 
+                       _BluetoothFirstDeviceUnlockCompleted, _BluetoothHandsfreeEndedVoiceCommand, 
+                       _BluetoothHandsfreeInitiatedVoiceCommand, _BluetoothHeadTrackingAvailable, 
+                       _BluetoothHighPowerDisabled, _BluetoothHighPowerEnabled, _BluetoothMagicPairedDeviceNameChangedNotification, 
+                       _BluetoothNotificationNameKey, _BluetoothPairedStatusChangedNotification, 
+                       _BluetoothPairingPINRequestNotification, _BluetoothPairingPINResultFailedNotification, 
+                       _BluetoothPairingPINResultSuccessNotification, _BluetoothPairingPassKeyDisplayNotification, 
+                       _BluetoothPairingUserConfirmationNotification, _BluetoothPairingUserNumericComparisionNotification, 
+                       _BluetoothPowerChangedNotification, _BluetoothStateChangedNotification, 
+                       _sharedBluetoothManagerLogComponent ]
+    objc-classes:    [ BluetoothDevice, BluetoothManager, RemoteDeviceManager ]
+    objc-ivars:      [ BluetoothDevice._address, BluetoothDevice._connectingServiceMask, 
+                       BluetoothDevice._device, BluetoothDevice._name, BluetoothDevice._productName, 
+                       BluetoothManager._accessoryManager, BluetoothManager._airplaneMode, 
+                       BluetoothManager._audioConnected, BluetoothManager._available, 
+                       BluetoothManager._btAddrDict, BluetoothManager._btDeviceDict, 
+                       BluetoothManager._discoveryAgent, BluetoothManager._localDevice, 
+                       BluetoothManager._pairingAgent, BluetoothManager._scanningEnabled, 
+                       BluetoothManager._scanningInProgress, BluetoothManager._scanningServiceMask, 
+                       BluetoothManager._session, BluetoothManager._state ]
+...

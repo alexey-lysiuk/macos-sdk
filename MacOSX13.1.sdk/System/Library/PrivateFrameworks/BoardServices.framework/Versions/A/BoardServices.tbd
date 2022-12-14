@@ -1,0 +1,50 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           EEF4A9B5-2A80-32E8-B855-0D829F9D8A4B
+  - target:          x86_64-maccatalyst
+    value:           EEF4A9B5-2A80-32E8-B855-0D829F9D8A4B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           C1FAE60C-189F-3DB6-8990-93956F8F74A4
+  - target:          arm64e-maccatalyst
+    value:           C1FAE60C-189F-3DB6-8990-93956F8F74A4
+install-name:    '/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices'
+current-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _BSBoardServicesVersionNumber, _BSBoardServicesVersionString, 
+                       _BSServiceBootstrapLog, _BSServiceConnectionEndpointInstanceKey, 
+                       _BSServiceConnectionEndpointServiceKey, _BSServiceConnectionEndpointTargetDescriptionForAnonymousDomain, 
+                       _BSServiceConnectionEndpointTargetDescriptionForMachName, 
+                       _BSServiceConnectionErrorCreate, _BSServiceConnectionErrorCreateWithInfo, 
+                       _BSServiceConnectionErrorDomain, _BSServiceEndpointGrantNamespace, 
+                       _BSServiceInjectionLog, _BSServiceLog, _BSServiceMethodNameErrorKey, 
+                       _BSServiceXPCErrorsLog, _BSServiceXPCLog, _BSXPCServiceConnectionExecuteCallOut, 
+                       _NSStringFromBSServiceConnectionErrorCode, _NSStringFromBSServiceDomainStartType ]
+    objc-classes:    [ BSMutableServiceInterface, BSNSXPCTransport, BSService, BSServiceConnection, 
+                       BSServiceConnectionEndpoint, BSServiceConnectionEndpointInjector, 
+                       BSServiceConnectionEndpointMonitor, BSServiceConnectionListener, 
+                       BSServiceDomain, BSServiceDomainSpecification, BSServiceInterface, 
+                       BSServiceManager, BSServiceQuality, BSServiceSpecification, 
+                       BSServicesConfiguration, BSXPCServiceConnection, BSXPCServiceConnectionActivationMessage, 
+                       BSXPCServiceConnectionChildContext, BSXPCServiceConnectionContext, 
+                       BSXPCServiceConnectionEventHandler, BSXPCServiceConnectionListener, 
+                       BSXPCServiceConnectionMessage, BSXPCServiceConnectionMessageReply, 
+                       BSXPCServiceConnectionNullContext, BSXPCServiceConnectionPeer, 
+                       BSXPCServiceConnectionProxy, BSXPCServiceConnectionRootClientEndpointContext, 
+                       BSXPCServiceConnectionRootContext, BSXPCServiceConnectionRootServerContext, 
+                       _BSServiceConnectionConfiguration, _BSServiceDispatchingQueueImpl, 
+                       _BSServiceOutgoingEndpoint ]
+    objc-ivars:      [ BSServiceInterface._client, BSServiceInterface._clientWaitsForActivation, 
+                       BSServiceInterface._identifier, BSServiceInterface._server, 
+                       BSXPCServiceConnectionMessage._handshake, BSXPCServiceConnectionMessage._sendFlag, 
+                       BSXPCServiceConnectionMessage._targetQueue ]
+...

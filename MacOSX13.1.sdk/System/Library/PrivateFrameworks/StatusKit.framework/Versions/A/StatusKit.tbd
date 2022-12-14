@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           4527E6B1-49E4-36E8-9D00-1D350C5D547E
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           E7B0AF13-EA13-3848-A0BF-3F9B1683AF80
+install-name:    '/System/Library/PrivateFrameworks/StatusKit.framework/Versions/A/StatusKit'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SKPresenceErrorDomain, _SKStatusPublishingErrorDomain, _SKStatusSubscriptionErrorDomain ]
+    objc-classes:    [ SKHandle, SKHandleInvitability, SKInvitationPayload, SKPresence, 
+                       SKPresenceDaemonConnection, SKPresencePayload, SKPresentDevice, 
+                       SKPublishedStatus, SKStatusPayload, SKStatusPublishRequest, 
+                       SKStatusPublishingDaemonConnection, SKStatusPublishingService, 
+                       SKStatusSubscription, SKStatusSubscriptionDaemonConnection, 
+                       SKStatusSubscriptionMetadata, SKStatusSubscriptionService, 
+                       SKSubscriptionValidationTokens ]
+...

@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           9886B748-3F72-3BB3-B437-18D2EBBFC224
+  - target:          x86_64-maccatalyst
+    value:           9886B748-3F72-3BB3-B437-18D2EBBFC224
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           5C607F01-14A4-3C2F-B249-E561966F6688
+  - target:          arm64e-maccatalyst
+    value:           5C607F01-14A4-3C2F-B249-E561966F6688
+install-name:    '/System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/Resources/libCoreSymbolicationLTO.dylib'
+current-version: 64555.110.1
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ '!' ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _Create, _Dispose, _Handler, _Initialize ]
+...

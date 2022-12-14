@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           954B5E6A-7B5A-37BC-BE68-DD8CC347088D
+  - target:          x86_64-maccatalyst
+    value:           954B5E6A-7B5A-37BC-BE68-DD8CC347088D
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           26955FF9-B951-3E40-9BBE-D5441F5E66D7
+  - target:          arm64e-maccatalyst
+    value:           26955FF9-B951-3E40-9BBE-D5441F5E66D7
+install-name:    '/System/Library/PrivateFrameworks/WindowManagement.framework/Versions/A/WindowManagement'
+current-version: 61.9
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _WindowManagementVersionNumber, _WindowManagementVersionString ]
+    objc-classes:    [ WMClientWindowManager, WMStage, WMWindowAgentPropertySnapshot, 
+                       WMWindowOrderingInfo, WMWindowPropertySnapshot, WMWindowPropertySnapshotChildWindowInfo, 
+                       WMWindowPropertySnapshotDesktopIconRectInfo, WMWindowTransaction, 
+                       WMWindowTransactionAction, WMXPCInterface, WMXPCWindowTransaction, 
+                       WMXPCWindowTransactionAction, _WMOrderAllWindowsFrontActionInfo, 
+                       _WMProposeKeyWindowActionInfo, _WMRemoveWindowFromUserSetActionInfo, 
+                       _WMReplaceWindowSetWindowActionInfo, _WMWindow, _WMWindowChildInfo, 
+                       _WMWindowDesktopIconRectInfo, _WMWindowOrderingInfo, _WMWindowShadowProperties ]
+...

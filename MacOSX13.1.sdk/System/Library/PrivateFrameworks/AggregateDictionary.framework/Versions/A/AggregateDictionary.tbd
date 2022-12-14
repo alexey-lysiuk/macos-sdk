@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           BAEC7086-B1B1-359F-907F-C3A5E480798F
+  - target:          x86_64-maccatalyst
+    value:           BAEC7086-B1B1-359F-907F-C3A5E480798F
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           748E24FD-470E-342D-82CC-13434F10DDFC
+  - target:          arm64e-maccatalyst
+    value:           748E24FD-470E-342D-82CC-13434F10DDFC
+install-name:    '/System/Library/PrivateFrameworks/AggregateDictionary.framework/Versions/A/AggregateDictionary'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _ADClientAddValueForScalarKey, _ADClientBatchKeys, _ADClientCheckpoint, 
+                       _ADClientClearDistributionKey, _ADClientClearScalarKey, _ADClientCommit, 
+                       _ADClientIsEnabled, _ADClientPushValueForDistributionKey, 
+                       _ADClientSetValueForDistributionKey, _ADClientSetValueForScalarKey, 
+                       _ADClientSignificantTimeChanged, _ADDaysSince1970, _ADMonotonicTimeGetCurrent, 
+                       _ADPushTimeIntervalForDistributionKeySinceStartTime, _ADPushTimeIntervalForDistributionKeyTimingBlock ]
+...

@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           FE66B56D-ABA1-3620-9A46-84E20E5E0BF6
+  - target:          x86_64-maccatalyst
+    value:           FE66B56D-ABA1-3620-9A46-84E20E5E0BF6
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           AEE98640-6548-30E7-B8F8-211148ED4E23
+  - target:          arm64e-maccatalyst
+    value:           AEE98640-6548-30E7-B8F8-211148ED4E23
+install-name:    '/System/Library/PrivateFrameworks/CoreCaptureControl.framework/Versions/A/CoreCaptureControl'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _CoreCaptureControlCapture, _CoreCaptureControlCaptureWithComponentDirectory, 
+                       _CoreCaptureControlConfigurePipe, _CoreCaptureControlConfigureProfile, 
+                       _CoreCaptureControlConfigureStream, _CoreCaptureControlCreate, 
+                       _CoreCaptureControlStart, _CoreCaptureControlStop ]
+...

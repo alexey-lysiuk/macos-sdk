@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           3E73FB67-AEE3-3AA8-A7CE-31CED14D78E8
+  - target:          x86_64-maccatalyst
+    value:           3E73FB67-AEE3-3AA8-A7CE-31CED14D78E8
+  - target:          arm64e-macos
+    value:           EAAE3896-DD3E-3B09-B338-D7E81C1BE3EF
+  - target:          arm64e-maccatalyst
+    value:           EAAE3896-DD3E-3B09-B338-D7E81C1BE3EF
+install-name:    '/usr/lib/libFaultOrdering.dylib'
+...

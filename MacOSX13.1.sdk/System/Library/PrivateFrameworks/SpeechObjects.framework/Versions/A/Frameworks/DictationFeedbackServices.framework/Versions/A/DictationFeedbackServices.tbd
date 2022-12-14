@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           8A5F9429-CAF5-3929-8FDA-331A2687C78E
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           3DB76EF0-9193-3A63-9B40-3886034D8B04
+install-name:    '/System/Library/PrivateFrameworks/SpeechObjects.framework/Versions/A/Frameworks/DictationFeedbackServices.framework/Versions/A/DictationFeedbackServices'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _DFSCreateDeserializedDFRButtonEventDictionary, _DFSCreateDeserializedRecognizedStringDictionary, 
+                       _DFSCreateDeserializedRecognizerInformationDictionary, _DFSCreateSerializedDFRButtonEventDictionary, 
+                       _DFSCreateSerializedHandleMissingLanguageParametersDictionary, 
+                       _DFSCreateSerializedRecognizedStringDictionary, _DFSCreateSerializedRecognizerInformationDictionary, 
+                       _DFSDictationFeedbackServicesVersionNumber, _DFSDictationFeedbackServicesVersionString, 
+                       _DFSHandleDFRButtonEvent, _DFSHandleMissingLanguage, _DFSSetRecognizedString, 
+                       _DFSSetRecognizerInformation, _kDFSFeedbackService, _kDFSKeyMessage, 
+                       _kDFSKeyPayload, _kDFSStartupService ]
+...

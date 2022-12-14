@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           FCC5DAD0-0C76-333F-B83D-1885702677EB
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           02075C45-E3C4-3D3E-9842-A3A4E78A4C5D
+install-name:    '/System/Library/PrivateFrameworks/Marrs.framework/Versions/A/Marrs'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos ]
+    weak-symbols:    [ __ZTINSt3__113basic_fstreamIcNS_11char_traitsIcEEEE, __ZTSNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s5Marrs11SampleClassC13getHelloWorldSSyF', '_$s5Marrs11SampleClassC13getHelloWorldSSyFTq', 
+                       '_$s5Marrs11SampleClassCACycfC', '_$s5Marrs11SampleClassCACycfc', 
+                       '_$s5Marrs11SampleClassCMa', '_$s5Marrs11SampleClassCMn', 
+                       '_$s5Marrs11SampleClassCN', '_$s5Marrs11SampleClassCfD', '_$sSo15SampleClassObjCC5MarrsE13getHelloWorldSo8NSStringCyF', 
+                       '_$sSo21ContextualSpanMatcherC5MarrsE8getSpans7requestSo048SIRINLUINTERNALCONTEXTUAL_SPAN_MATCHERContextualbC8ResponseCSgSo0h1_i1_jbC7RequestC_tF' ]
+    objc-classes:    [ ContextualSpanMatcher, MRRMultimodalMentionDetector, MRRMultimodalMentionResolver, 
+                       QueryRewriter, SampleClassObjC, _TtC5Marrs11SampleClass ]
+...

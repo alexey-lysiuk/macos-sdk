@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           64B44FFB-6B2E-3FCB-8A68-F9FD7180CD5B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           4314BD70-65C0-3073-A981-97FEA3E11A3E
+install-name:    '/System/Library/PrivateFrameworks/IMAssistantCore.framework/Versions/A/IMAssistantCore'
+current-version: 800
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _IMAssistantChatIdentifierFromConversationIdentifier, _IMAssistantContinuityChatsKey, 
+                       _IMAssistantContinuityHandlesKey, _IMAssistantMessageHandlerErrorDomain, 
+                       __IMAssistantCoreGeneralSignpostLogHandle, __IMAssistantCoreSearchForMessageSignpostLogHandle, 
+                       __IMAssistantCoreSendMessageSignpostLogHandle ]
+    objc-classes:    [ IMAssistantAudioPlayer, IMAssistantChatParticipant, IMAssistantCommSafetyManager, 
+                       IMAssistantHandleFromContact, IMAssistantINMessageConverter, 
+                       IMAssistantIntentHandler, IMAssistantMessageAttributeOptions, 
+                       IMAssistantMessageHandler, IMAssistantMessagePlayAudioHandler, 
+                       IMAssistantMessagePlayMessageSoundHandler, IMAssistantMessageQueryHandler, 
+                       IMAssistantMessageReadAttributeSanitizer, IMAssistantMessageSearchHandler, 
+                       IMAssistantMessageSendHandler, IMAssistantMessageSetAttributeHandler, 
+                       IMAssistantRelevantChatMatchingRecipients, IMAssistantUnsendMessagesHandler ]
+...

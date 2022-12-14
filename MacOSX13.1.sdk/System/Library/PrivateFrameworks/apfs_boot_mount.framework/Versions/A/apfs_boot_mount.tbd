@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           A1AD41CC-60BA-3ABF-B657-C8084AE6BF5E
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           14914947-453E-3A82-9C0C-31551C3EB706
+install-name:    '/System/Library/PrivateFrameworks/apfs_boot_mount.framework/Versions/A/apfs_boot_mount'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _abm_get_isc_device_node, _abm_get_isc_device_path, _abm_get_recovery_device_node, 
+                       _abm_get_recovery_device_path ]
+...

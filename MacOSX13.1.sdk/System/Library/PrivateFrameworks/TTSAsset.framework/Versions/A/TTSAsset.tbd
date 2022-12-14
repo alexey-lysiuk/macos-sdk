@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           C1CC79DE-7240-3CBF-989C-E6538E9E50DC
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           B0600DCC-8164-37CE-BA54-8EE2BA014E26
+install-name:    '/System/Library/PrivateFrameworks/TTSAsset.framework/Versions/A/TTSAsset'
+current-version: 3202.3.1
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _TTSAssetVersionNumber, _TTSAssetVersionString ]
+...

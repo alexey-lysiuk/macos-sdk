@@ -1,0 +1,43 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           B641B797-3CA9-3D8B-9984-354BB0A4BE58
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           DA9DB4EC-FEF1-3EA8-BE01-7356CCCE4ED7
+install-name:    '/System/Library/PrivateFrameworks/FindMyDevice.framework/Versions/A/FindMyDevice'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _FMDFMIPManagerUnregisterErrorDomain, _FMDFMMManagerUnregisterErrorDomain, 
+                       _FMDLostModeExitAuthCompleteNotification, _FMDSecureLocationsReceivedCommandNotification, 
+                       _FMDSecureLocationsReceivedPayloadNotification, _fmdFMMLastOperationResult, 
+                       _kAccessoriesChangedNotification, _kActivationLockAllowedMayHaveChangedNotification, 
+                       _kActivationLockStateDidChangeNotification, _kFMDAccessoryPlaySoundErrorDomain, 
+                       _kFMDActivationLockInfoDescriptionKey, _kFMDActivationLockInfoTitleKey, 
+                       _kFMDActivationLockStateChangedNotification, _kFMDErrorDomain, 
+                       _kFMDFMIPAccountNameKey, _kFMDFMIPAccountPersonIDKey, _kFMDFMMNeedsLostModeExitAuth, 
+                       _kFMDFMMUAServicesAccessEntitlement, _kFMDFMMUserAgentAccessEntitlement, 
+                       _kFMDLocalActivationLockInfoChangedNotification, _kFMDLogPrefsChangedDarwinNotification, 
+                       _kFMDNotBackedUpMagSafePrefDomain, _kFMDNotBackedUpPrefDomain, 
+                       _kFMDOfflineFindingInfoChangedNotification, _kFMDPlaySoundStartedDarwinNotification, 
+                       _kFMDPlaySoundStoppedDarwinNotification, _kFMDPostWipePrefDomain, 
+                       _kFMDPrefDomain, _kFMDPublicNotBackedUpPrefDomain, _kFMDSecureLocationModeLive, 
+                       _kFMDSecureLocationModeOwnerProactive, _kFMDSecureLocationModeProactive, 
+                       _kFMDSecureLocationModeProactiveShallow, _kFMDStartupCompleteNotification, 
+                       _kFMDUserAgentPrefDomain, _kFMDWatchNotBackedUpPrefDomain, 
+                       _kFMDWatchPrefDomain, _kFMIPAppBundleIdentifier, _kFMIPLowBatteryLocateStateDidChangeNotification, 
+                       _kFMIPStateDidChangeNotification, _kFMMActivationLockEnabledPrefKey, 
+                       _kFMMAuthRight, _kFMMEnabledPrefDomain, _kFMMEnabledPrefKey, 
+                       _kFMMLocateAlertPendingNotification, _kFMMRemoveAuthRight, 
+                       _kFMMUCRTUnlockPendingPrefKey, _kFMWEnabledNotification, _kFindMyDeviceEmergencyCallInfoPublisherXPCInterfaceErrorDomain, 
+                       _kFindMyDeviceIdentityXPCInterfaceErrorDomain, _kLostModeChangedNotification, 
+                       _kStopLostModeAlarmNotification ]
+    objc-classes:    [ FMDAccessoryIdentifier, FMDActivationLockContext, FMDActivationLockInfo, 
+                       FMDAudioAccessoryInfo, FMDBAAAttestation, FMDDeviceIdentityFactory, 
+                       FMDEraseOptions, FMDEraseProxy, FMDFMMAccountInfo, FMDFMMManager, 
+                       FMDIdentitySigningRequest, FMDVolatileMetaDataRecord, FMNSXPCConnection, 
+                       FMNSXPCConnectionCache, FMNSXPCConnectionConfiguration ]
+...

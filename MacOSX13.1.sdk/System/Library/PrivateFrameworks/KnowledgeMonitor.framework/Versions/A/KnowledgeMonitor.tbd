@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           50C2E576-0950-3F7C-A9BE-68919792DABD
+  - target:          x86_64-maccatalyst
+    value:           50C2E576-0950-3F7C-A9BE-68919792DABD
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           9F2B75E7-8399-3F5E-B936-7341BD94F0B8
+  - target:          arm64e-maccatalyst
+    value:           9F2B75E7-8399-3F5E-B936-7341BD94F0B8
+install-name:    '/System/Library/PrivateFrameworks/KnowledgeMonitor.framework/Versions/A/KnowledgeMonitor'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _KnowledgeMonitorVersionNumber, _KnowledgeMonitorVersionString, 
+                       __DKApplicationIsForegroundType, __DKApplicationIsTrackableType, 
+                       __DKUserIsActiveByActivityState ]
+    objc-classes:    [ _DKApplicationMonitor, _DKApplicationUsageMonitor, _DKAssertionsPreventingRestartMonitor, 
+                       _DKBacklightMonitor, _DKBatteryMonitor, _DKBluetoothMonitor, 
+                       _DKCPUUsageMonitor, _DKDeviceActivityLevelMonitor, _DKDoNotDisturbMonitor, 
+                       _DKLocationCoordinatesMonitor, _DKLocationMonitor, _DKLowPowerModeMonitor, 
+                       _DKMonitor, _DKNetworkQualityMonitor, _DKNotificationScreenLockMonitor, 
+                       _DKNowPlayingMonitor, _DKPeriod, _DKPluggedInMonitor, _DKScreenSharingMonitor, 
+                       _DKSunriseSunsetMonitor, _DKTemporalNumericState, _DKThermalPressureMonitor, 
+                       _DKUserNearbyMonitor, _DKWakeRequestMonitor, _DKWifiNetworkQualityMonitor, 
+                       _DKWiredNetworkQualityMonitor ]
+...

@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-maccatalyst
+    value:           5CAEB19E-BB74-3879-879B-9A5451207320
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-maccatalyst
+    value:           C8172932-2AA7-3B67-8C6F-4B66A9B887E2
+install-name:    '/System/iOSSupport/System/Library/Frameworks/PhotosUI.framework/Versions/A/PhotosUI'
+current-version: 520.0.240
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ _PHLimitedLibraryPickerClientApplicationIdentifier, _PHLimitedLibraryPickerCompletionBlock, 
+                       _PHLimitedLibraryPickerModeEnabled, _PHLimitedLibraryPickerWaitForDismissal, 
+                       _PHPickerConfigurationAssetRepresentationModeMax, _PHPickerConfigurationAssetRepresentationModeMin, 
+                       _PHPickerConfigurationSelectionMax, _PHPickerConfigurationSelectionMin, 
+                       _PHPickerConfigurationSelectionPeople, _PUEditingInitialPayloadTypeIdentifier, 
+                       _PUPhotoPickerCropRectData, _PUPhotoPickerGIFPath, _PUPhotoPickerGIFPathSandboxExtensionToken, 
+                       _PUPhotoPickerLivePhotoExists, _PUPhotoPickerLivePhotoImagePath, 
+                       _PUPhotoPickerLivePhotoImagePathSandboxExtensionToken, _PUPhotoPickerLivePhotoVideoPath, 
+                       _PUPhotoPickerLivePhotoVideoPathSandboxExtensionToken, _PUPhotoPickerMediaPath, 
+                       _PUPhotoPickerMediaPathSandboxExtensionToken, _PUPhotoPickerOriginalImagePath, 
+                       _PUPhotoPickerOriginalImagePathSandboxExtensionToken, _PUPhotoPickerOriginalIrisVideoFilePath, 
+                       _PUPhotoPickerOriginalIrisVideoFilePathSandboxExtensionToken, 
+                       _PUPhotoPickerReferencePath, _PUPhotoPickerResizeTargetMaxDimension, 
+                       _PUPhotoPickerSavingOptions, _PUPickerFilterAvailableClasses, 
+                       _PUPickerItemProviderUserInfoLocalIdentifierKey ]
+    objc-classes:    [ PHEditingExtensionContext, PHLimitedLibraryPicker, PHLivePhotoView, 
+                       PHPickerConfiguration, PHPickerFilter, PHPickerResult, PHPickerViewController, 
+                       PUEditingExtensionHostContext, PUEditingExtensionUndoAdapter, 
+                       PUEditingExtensionUndoProxyExtensionSide, PUEditingExtensionUndoProxyHostSide, 
+                       PUEditingInitialPayload, PUImagePickerCameraViewController, 
+                       PUPhotoPickerAbstractExtensionContext, PUPhotoPickerRemoteViewControllerRequestOptions, 
+                       PUPhotosFileProviderItemProvider, PUPickerAssetMediaSubtypeFilter, 
+                       PUPickerAssetMediaTypeFilter, PUPickerAssetPlaybackStyleFilter, 
+                       PUPickerCompoundFilter, PUPickerExtensionContext, PUPickerExtensionHostContext, 
+                       PUPickerExtensionVendorContext, PUPickerUnavailableViewController, 
+                       _PHPickerCollectionConfiguration ]
+...

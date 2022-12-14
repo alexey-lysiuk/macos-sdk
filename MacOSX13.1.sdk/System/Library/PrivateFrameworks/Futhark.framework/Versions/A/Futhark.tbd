@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           F3F9635A-B8F3-39A8-AF12-F52D61481E68
+  - target:          x86_64-maccatalyst
+    value:           F3F9635A-B8F3-39A8-AF12-F52D61481E68
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           5398974D-74E8-30ED-B184-8B492B093A6D
+  - target:          arm64e-maccatalyst
+    value:           5398974D-74E8-30ED-B184-8B492B093A6D
+install-name:    '/System/Library/PrivateFrameworks/Futhark.framework/Versions/A/Futhark'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _FKCCMatchGetConfidence, _FKComponentPrint, _FKGetBuildAPIVersion, 
+                       _FKGetBuildGitHash, _FKGetBuildTimestamp, _FKGetFrameworkVersion, 
+                       _FKPrintLinesegList, _FKPrintRender, _FKRecognizeConcomp, 
+                       _FKSeqMatchGetConfidence, _FutharkVersionNumber, _FutharkVersionString ]
+    objc-classes:    [ FKTextCandidate, FKTextDetector, FKTextFeature ]
+    objc-ivars:      [ FKTextDetector._memoryUsage, FKTextDetector._recognizer, FKTextDetector._roi, 
+                       FKTextDetector._sessions, FKTextDetector._size, FKTextDetector._timeBinarizer, 
+                       FKTextDetector._timeConcomps, FKTextDetector._timeDownscale, 
+                       FKTextDetector._timeRecognizer, FKTextDetector._timeSequences, 
+                       FKTextFeature._backingIndex, FKTextFeature._scale, FKTextFeature._session ]
+...

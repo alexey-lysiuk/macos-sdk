@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           4677E56C-7C62-388B-B358-DDDD6C1BBE62
+  - target:          x86_64-maccatalyst
+    value:           4677E56C-7C62-388B-B358-DDDD6C1BBE62
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           E1AA8D9B-CCD5-32E6-B796-3B5AD3CACA8F
+  - target:          arm64e-maccatalyst
+    value:           E1AA8D9B-CCD5-32E6-B796-3B5AD3CACA8F
+install-name:    '/System/Library/PrivateFrameworks/SecCodeWrapper.framework/Versions/A/SecCodeWrapper'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    objc-classes:    [ CodeIdentity, CodeRequirement, DynamicCodeIdentity, StaticCodeIdentity ]
+    objc-ivars:      [ CodeIdentity._cached_entitlements, CodeIdentity._haveCheckedValidity, 
+                       CodeIdentity._secCodeRef, CodeRequirement._data, CodeRequirement._secRequirementRef, 
+                       CodeRequirement._text, DynamicCodeIdentity._token, StaticCodeIdentity._secStaticCodeRef ]
+...

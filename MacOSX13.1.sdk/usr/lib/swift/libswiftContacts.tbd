@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           9E64E40A-DC23-3A3B-A5FE-BD459FEA3DB0
+  - target:          x86_64-maccatalyst
+    value:           9E64E40A-DC23-3A3B-A5FE-BD459FEA3DB0
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           4D28CC39-11A8-3614-A3FF-FB1E224FD0DC
+  - target:          arm64e-maccatalyst
+    value:           4D28CC39-11A8-3614-A3FF-FB1E224FD0DC
+install-name:    '/usr/lib/swift/libswiftContacts.dylib'
+current-version: 3
+swift-abi-version: 7
+reexported-libraries:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    libraries:       [ '/System/Library/Frameworks/Contacts.framework/Versions/A/Contacts' ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftContacts.dylib', 
+                       '$ld$install_name$os10.11$@rpath/libswiftContacts.dylib', 
+                       '$ld$install_name$os10.12$@rpath/libswiftContacts.dylib', 
+                       '$ld$install_name$os10.13$@rpath/libswiftContacts.dylib', 
+                       '$ld$install_name$os10.14$@rpath/libswiftContacts.dylib', 
+                       '$ld$install_name$os10.9$@rpath/libswiftContacts.dylib' ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '__swift_FORCE_LOAD_$_swiftContacts' ]
+...

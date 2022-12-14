@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           BF7CA557-EBB9-3A75-9BE1-579D2D09EC0B
+  - target:          x86_64-maccatalyst
+    value:           BF7CA557-EBB9-3A75-9BE1-579D2D09EC0B
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           ED658BC5-9EDA-3C82-A38A-7A8A7153CB00
+  - target:          arm64e-maccatalyst
+    value:           ED658BC5-9EDA-3C82-A38A-7A8A7153CB00
+install-name:    '/System/Library/PrivateFrameworks/NewsDaemon.framework/Versions/A/NewsDaemon'
+current-version: 3256
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _NDAnalyticsMachServiceName, _NDDownloadMachServiceName, _NDDownloadServiceHasUnfinishedWorkKey, 
+                       _NDDownloadServiceXPCConnection, _NDDownloadServiceXPCInterface, 
+                       _NDNewsdDataContainerClass, _NDNewsdDataContainerIdentifier, 
+                       _NDNewsdProcessName, _NDSharedClientLog, _NDSharedServiceLog, 
+                       _NDTodayMachServiceName, _NDURLResolutionMachServiceName, 
+                       _NewsDaemonVersionNumber, _NewsDaemonVersionString ]
+    objc-classes:    [ NDANFImageResource, NDANFParsingService, NDANFResource, NDDownloadRequest, 
+                       NDNewsDaemonContext, NDNewsServiceConnection, NDNewsServiceConnectionClientProxy ]
+...

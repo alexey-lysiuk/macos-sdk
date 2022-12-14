@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           B9804FF8-A5C4-32B8-B8E8-2EEB5E00E4DC
+  - target:          x86_64-maccatalyst
+    value:           B9804FF8-A5C4-32B8-B8E8-2EEB5E00E4DC
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           C9F7EB2C-627D-385C-A6CF-C00C380FA442
+  - target:          arm64e-maccatalyst
+    value:           C9F7EB2C-627D-385C-A6CF-C00C380FA442
+install-name:    '/System/Library/PrivateFrameworks/CoreDuetContext.framework/Versions/A/CoreDuetContext'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _CoreDuetContextVersionNumber, _CoreDuetContextVersionString, 
+                       __CDCircularRegionsDidChangeNotification, __CDClientContextConnectionInterrupted, 
+                       __CDClientContextContextChanged, __CDClientContextContextChangedInfoKey, 
+                       __CDClientContextContextChangedRegistrationIdentifierKey, 
+                       __CDContextDataMetadataKey, __CDContextFirstKPValueAfterRebootKey, 
+                       __CDContextServiceName, __CDContextTransitionDateMetadataKey, 
+                       __CDContextualChangeRegistrationEntityName, __CDContextualKeyPathEntityName, 
+                       __CDInformativeContextualChangeInsertion, __CDInformativeContextualChangeKeyPathKey, 
+                       __CDInformativeContextualChangeKindKey, __CDInformativeContextualChangeNewValueKey, 
+                       __CDInformativeContextualChangeOldValueKey, __CDInformativeContextualChangeRemoval, 
+                       __CDInformativeContextualChangeReplacement, __CDMDCSEventPublisherEventStreamName, 
+                       __CDMDCSProxyTokenUpdated, __CDNotificationEventPublisherEventStreamName, 
+                       __CDRedactedObjectForKeyPath, __CDSystemTimeCallbackDateKey, 
+                       __CDSystemTimeCallbackNotification ]
+    objc-classes:    [ _CDClientContext, _CDContextMonitorManager, _CDContextPredictionQueries, 
+                       _CDContextQueries, _CDContextValue, _CDContextualChangeRegistration, 
+                       _CDContextualChangeRegistrationMO, _CDContextualKeyPath, _CDContextualKeyPathAndValue, 
+                       _CDContextualKeyPathMO, _CDContextualLocationRegistrationMonitor, 
+                       _CDContextualPredicate, _CDCoreDataContextPersisting, _CDDevice, 
+                       _CDInMemoryContext, _CDInMemoryUserContext, _CDMDCSContextualPredicate, 
+                       _CDNetworkContext, _CDPolicyBasedPersisting, _CDPredicateValidator, 
+                       _CDSharedMemoryContextPersisting, _CDSystemTimeCallbackScheduler, 
+                       _CDUserContextQueries, _CDUserContextServerClient, _CDUserContextService, 
+                       _CDXPCContextCodecs ]
+...

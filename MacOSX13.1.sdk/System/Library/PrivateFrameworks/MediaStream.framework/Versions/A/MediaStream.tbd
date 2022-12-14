@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           8DB83B42-7847-3F86-9117-0D49E0222EA1
+  - target:          x86_64-maccatalyst
+    value:           8DB83B42-7847-3F86-9117-0D49E0222EA1
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           AE850757-32A5-3489-A479-535114093E22
+  - target:          arm64e-maccatalyst
+    value:           AE850757-32A5-3489-A479-535114093E22
+install-name:    '/System/Library/PrivateFrameworks/MediaStream.framework/Versions/A/MediaStream'
+current-version: 520.0.240
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _MSAlbumSharingInitialize, _MSMSLocalizedString, _MSMediaStreamInitialize, 
+                       _MediaStreamVersionNumber, _MediaStreamVersionString, _XPCSetLogBlocks, 
+                       __MSASSetDaemon, __MSSetDaemon, __XPCLog, __XPCShouldLog, 
+                       _kMSASConnectionErrorDomain, _kMSASServiceName, _kMSAuthenticationManagerDidReceiveAuthenticationChangeNotification, 
+                       _kMSBatteryPowerMonitorExternalPowerSourceChangedNotification, 
+                       _kMSCServerSideConfigurationDidChangeNotification, _kMSCXPCReplyError, 
+                       _kMSCXPCReplyRetval, _kMSIDSFacility, _kMSIdleStateDidChangeNotification, 
+                       _kMSMMCSFacility, _kMSMachServiceName, _kMSPerfFacility, _kMSPhotoStreamFacility, 
+                       _kMSPowerBudgetDidBeginAllowingFileTransferNotification, _kMSPowerBudgetDidEndAllowingFileTransferNotification, 
+                       _kMSServerSideConfigurationDidChangeNotification, _kMSSharedStreamFacility, 
+                       _kMSmstreamdErrorDomain, _kMSmstreamdFacility, _kXPCSequenceKey ]
+    objc-classes:    [ MSAMNotificationInfo, MSASConnection, MSASPlatformImplementation, 
+                       MSAlertManager, MSAuthenticationManager, MSBatteryPowerMonitor, 
+                       MSClientSidePauseContext, MSConnection, MSMSPlatform, MSPBTimerContext, 
+                       MSPauseManager, MSPowerAssertionManager, MSPowerBudget, XPCClientConnection, 
+                       XPCNSClientConnection, XPCNSRequest, XPCNSServiceConnection, 
+                       XPCNSServiceListener, XPCRequest, XPCServiceConnection, XPCServiceListener ]
+...

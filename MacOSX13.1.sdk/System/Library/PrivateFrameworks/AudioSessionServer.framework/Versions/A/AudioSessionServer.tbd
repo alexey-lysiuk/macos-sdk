@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           17EA6884-242F-36A7-A9B4-65D3D470CA6C
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           FE441E84-B931-3D02-B5DB-5A6525215699
+install-name:    '/System/Library/PrivateFrameworks/AudioSessionServer.framework/Versions/A/AudioSessionServer'
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ AudioToolbox, coreaudiod ]
+exports:
+  - targets:         [ x86_64-macos ]
+    weak-symbols:    [ __ZTINSt3__112bad_weak_ptrE, __ZTINSt3__117bad_function_callE, 
+                       __ZTISt11logic_error, __ZTISt12length_error, __ZTISt13runtime_error, 
+                       __ZTISt16invalid_argument, __ZTISt9exception, __ZTSNSt3__112bad_weak_ptrE, 
+                       __ZTSNSt3__117bad_function_callE, __ZTSSt11logic_error, __ZTSSt12length_error, 
+                       __ZTSSt13runtime_error, __ZTSSt16invalid_argument, __ZTSSt9exception ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ AVAudioSessionServerFactory ]
+...

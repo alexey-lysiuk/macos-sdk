@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+uuids:
+  - target:          x86_64-macos
+    value:           3868A81E-3EA4-3B1C-B9DC-34E93E4D0DEE
+  - target:          x86_64-maccatalyst
+    value:           3868A81E-3EA4-3B1C-B9DC-34E93E4D0DEE
+  - target:          arm64-macos
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-maccatalyst
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64e-macos
+    value:           D9BACACC-E548-3BCF-9FA6-1B2EF5656F85
+  - target:          arm64e-maccatalyst
+    value:           D9BACACC-E548-3BCF-9FA6-1B2EF5656F85
+install-name:    '/usr/lib/swift/libswiftSoundAnalysis_Private.dylib'
+current-version: 144.2.104
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s21SoundAnalysis_Private12SNKShotLabelO2eeoiySbAC_ACtFZ', 
+                       '_$s21SoundAnalysis_Private12SNKShotLabelO4hash4intoys6HasherVz_tF', 
+                       '_$s21SoundAnalysis_Private12SNKShotLabelO8negativeyA2CmFWC', 
+                       '_$s21SoundAnalysis_Private12SNKShotLabelO8positiveyA2CmFWC', 
+                       '_$s21SoundAnalysis_Private12SNKShotLabelO9hashValueSivg', 
+                       '_$s21SoundAnalysis_Private12SNKShotLabelO9hashValueSivpMV', 
+                       '_$s21SoundAnalysis_Private12SNKShotLabelOMa', '_$s21SoundAnalysis_Private12SNKShotLabelOMn', 
+                       '_$s21SoundAnalysis_Private12SNKShotLabelON', '_$s21SoundAnalysis_Private12SNKShotLabelOSHAAMc', 
+                       '_$s21SoundAnalysis_Private12SNKShotLabelOSQAAMc', '_$sSo17SNKShotFeaturizerC21SoundAnalysis_PrivateE9featurize4urls20hallucinatorModelURL13resultHandlerSo0A29FeaturizationStreamCompletionCSay10Foundation0J0VG_ALySo0amN6ResultCctYaKFZ', 
+                       '_$sSo17SNKShotFeaturizerC21SoundAnalysis_PrivateE9featurize4urls20hallucinatorModelURL13resultHandlerSo0A29FeaturizationStreamCompletionCSay10Foundation0J0VG_ALySo0amN6ResultCctYaKFZTu', 
+                       '_$sSo32SNKShotFeaturizationStreamResultC21SoundAnalysis_PrivateE5labelAC0A5LabelOvg', 
+                       '_$sSo32SNKShotFeaturizationStreamResultC21SoundAnalysis_PrivateE5labelAC0A5LabelOvpMV', 
+                       '__swift_FORCE_LOAD_$_swiftSoundAnalysis_Private' ]
+...

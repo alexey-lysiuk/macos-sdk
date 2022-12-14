@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+uuids:
+  - target:          x86_64-macos
+    value:           92569DDD-5247-3CB2-ACA8-D9B5BCBC17E9
+  - target:          arm64e-macos
+    value:           E3A385CA-1B79-322D-A7B2-90445CE5C5CB
+install-name:    '/System/Library/PrivateFrameworks/StorageManagementService.framework/Versions/A/StorageManagementService'
+current-version: 0
+compatibility-version: 0
+...
