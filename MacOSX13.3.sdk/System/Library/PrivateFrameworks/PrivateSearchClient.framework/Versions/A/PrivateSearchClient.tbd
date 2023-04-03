@@ -1,0 +1,11 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/PrivateSearchClient.framework/Versions/A/PrivateSearchClient'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s19PrivateSearchClient0C0V11dummyMethodyyFZ', '_$s19PrivateSearchClient0C0VMa', 
+                       '_$s19PrivateSearchClient0C0VMn', '_$s19PrivateSearchClient0C0VN', 
+                       _PrivateSearchClientVersionNumber, _PrivateSearchClientVersionString ]
+...

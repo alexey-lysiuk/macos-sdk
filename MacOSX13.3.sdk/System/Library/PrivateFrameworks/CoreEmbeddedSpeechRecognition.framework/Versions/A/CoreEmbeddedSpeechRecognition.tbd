@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreEmbeddedSpeechRecognition.framework/Versions/A/CoreEmbeddedSpeechRecognition'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CESRAssetModelStatusAutoPunctuation, _CESRAssetModelStatusContinuousListening, 
+                       _CESRAssetModelStatusEmojiRecognition, _CESRAssetModelStatusOfflineOnly, 
+                       _CESRAssetModelStatusOnDeviceSearch, _CESRAssetModelStatusPreferOverServer, 
+                       _CESRAssetTypeToString, _CESRCorrectionPronunciationReadFrom, 
+                       _CESRMappedLocaleForSpeechProfile, _CESRModelPropertiesKey, 
+                       _CESRSpeechParametersKey, _CESRSpeechProfileBuilderServiceGetXPCInterface, 
+                       _CESRSpeechServiceDelegateGetXPCInterface, _CESRSpeechServiceGetXPCInterface, 
+                       _CESRSpeechServiceName, _CESRUserCorrectionsProfileEntryReadFrom, 
+                       _CESRUserDataContactFirstKey, _CESRUserDataContactFirstPhoneticKey, 
+                       _CESRUserDataContactLastKey, _CESRUserDataContactLastPhoneticKey, 
+                       _CESRUserDataContactMiddleKey, _CESRUserDataContactMiddlePhoneticKey, 
+                       _CoreEmbeddedSpeechRecognitionVersionNumber, _CoreEmbeddedSpeechRecognitionVersionString, 
+                       _CoreEmbeddedSpeechRecognizerGetIsHighPriorityFromInstanceUUID, 
+                       _CoreEmbeddedSpeechRecognizerGetQoSClassFromInstanceUUID, 
+                       _CoreEmbeddedSpeechRecognizerInstanceUUIDBackground, _CoreEmbeddedSpeechRecognizerInstanceUUIDInteractive, 
+                       _CoreEmbeddedSpeechRecognizerSourceAssistant, _CoreEmbeddedSpeechRecognizerSourceDictation, 
+                       _CoreEmbeddedSpeechRecognizerTaskBeto, _CoreEmbeddedSpeechRecognizerTaskBetoDictation, 
+                       _CoreEmbeddedSpeechRecognizerTaskDictation, _CoreEmbeddedSpeechRecognizerTaskSearchOrMessaging, 
+                       _CoreEmbeddedSpeechRecognizerTaskSiriDictation, _CoreEmbeddedSpeechRecognizerTaskTshot, 
+                       _CoreEmbeddedSpeechRecognizerTaskVoiceMail, _CoreEmbeddedSpeechRecognizerTaskWebSearch, 
+                       _MAX_SAMPLED_REQUESTS_SELECTED_PER_DAY ]
+    objc-classes:    [ CESRAssetConfig, CESRAssistantOnDeviceSampling, CESRAudioSamplingConfig, 
+                       CESRAudioSamplingConfigManager, CESRAudioSamplingPolicy, CESRAudioSamplingUtilities, 
+                       CESRContextualData, CESRCorrectionPronunciation, CESRDictationOnDeviceSampling, 
+                       CESRFormatter, CESRModelProperties, CESRSamplingDimension, 
+                       CESRSignpostHelper, CESRSpeechParameters, CESRSpeechProfileBuilder, 
+                       CESRTrialAssetManager, CESRUserCorrectionsProfileEntry, CESRUserData, 
+                       CESRUserDataContactWord, CESRUtilities, CESRVocabularyCategory, 
+                       CESRXPCActivity, CoreEmbeddedSpeechRecognizer, TrialNamespaceProjectPair, 
+                       _CESRModelPropertiesMutation, _CESRSpeechParametersMutation ]
+    objc-ivars:      [ CESRCorrectionPronunciation._apgId, CESRCorrectionPronunciation._asrPronunciationData, 
+                       CESRCorrectionPronunciation._has, CESRCorrectionPronunciation._language, 
+                       CESRCorrectionPronunciation._orthography, CESRCorrectionPronunciation._tokenOffset, 
+                       CESRCorrectionPronunciation._ttsPronunciations, CESRCorrectionPronunciation._ttsVersion, 
+                       CESRUserCorrectionsProfileEntry._alternativesCorrectionsCount, 
+                       CESRUserCorrectionsProfileEntry._correctedText, CESRUserCorrectionsProfileEntry._has, 
+                       CESRUserCorrectionsProfileEntry._pronunciationData, CESRUserCorrectionsProfileEntry._spellingCorrectionsCount, 
+                       CESRUserCorrectionsProfileEntry._tap2editCorrectionsCount ]
+...

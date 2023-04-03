@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/PowerUI.framework/Versions/A/PowerUI'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _PowerUIErrorDomain, _PowerUISmartChargeClientCallisto, _PowerUISmartChargeClientPTOTool, 
+                       _PowerUISmartChargeClientSettings, _PowerUISmartChargeStatusHasChangedNote, 
+                       _PowerUIVersionNumber, _PowerUIVersionString, _kAnalyticsAbsoluteShouldHaveEngaged, 
+                       _kAnalyticsActualUsableEligibleDuration, _kAnalyticsEligibleForIdleBatteryLevelKey, 
+                       _kAnalyticsEstimatedUsableEligibleDuration, _kAnalyticsFullChargeDurationKey, 
+                       _kAnalyticsIdleBatteryLevelKey, _kAnalyticsIdleDurationKey, 
+                       _kAnalyticsPluginDate, _kAnalyticsPluginDurationKey, _kAnalyticsRecentlyInterruptedKey, 
+                       _kAnalyticsShouldHaveEngaged, _kAnalyticsTopOffDurationKey, 
+                       _kAnalyticsTotalEligibleDuration, _kAnalyticsUnderChargeAvoidable, 
+                       _kAnalyticsUnderChargeTLC, _kAnalyticsUnderChargeUnavoidable, 
+                       _kAnalyticsVersionKey, _kContextSyncClientName, _kControllerClientStateCECEngaged, 
+                       _kControllerClientStateCECNotEngaged, _kControllerClientStateNotSet, 
+                       _kControllerClientStateOBCEngaged, _kControllerClientStateOBCNotEngaged, 
+                       _kControllerClientStateTestOverride, _kDefaultPredictionBuffer, 
+                       _kIdlingFloorCheckInterval, _kLocationPredictionDeadlineOverride, 
+                       _kMaximumPredictedDuration, _kMinDurationForDesktopEvaluation, 
+                       _kMinWaitInterval, _kMinimumPredictedDuration, _kMinimumVisitsForLOIPrediction, 
+                       _kOBCDefaultsDomain, _kPendingSyncDuration, _kPendingSyncStateDefaultsKey, 
+                       _kRemoteOBCDeadlineKey, _kRemoteOBCOriginalDeadlineKey, _kStartingRemoteLocationKey, 
+                       _kTestModeKey ]
+    objc-classes:    [ PowerUIBatteryMitigationManager, PowerUICECGridDataManager, 
+                       PowerUICECManager, PowerUICECPredictedTimeManager, PowerUICalendarSignalMonitor, 
+                       PowerUIChargingController, PowerUIDefines, PowerUIDesktopModePredictor, 
+                       PowerUIIntelligenceManager, PowerUILocationSignalMonitor, 
+                       PowerUIMLAudioAccessoryModelPredictor, PowerUIMLMacPredictor, 
+                       PowerUIMLPhonePredictor, PowerUIMLRelevantDrainPredictor, 
+                       PowerUIMLTwoStageModelPredictor, PowerUIMLWatchPredictor, 
+                       PowerUIModelPredictionContainer, PowerUINotificationManager, 
+                       PowerUIPredictorHelper, PowerUIRelevantDrainPredictionResult, 
+                       PowerUIRemoteLocationMonitor, PowerUISleepBasedPredictor, 
+                       PowerUISleepWakeMonitor, PowerUISmartChargeClient, PowerUISmartChargeManager, 
+                       PowerUISmartChargeManagerUnsupported, PowerUISmartChargeUtilities, 
+                       PowerUITrialManager, PowerUIWakeRequestSignalMonitor ]
+...

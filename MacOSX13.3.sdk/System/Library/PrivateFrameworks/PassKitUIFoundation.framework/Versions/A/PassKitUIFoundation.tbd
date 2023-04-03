@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/PassKitUIFoundation.framework/Versions/A/PassKitUIFoundation'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _PKGlyphViewSize, _PKTextureLoaderResultCreateDefaultPrivate2DTexture, 
+                       _PKTextureLoaderResultGetSRGBMatchedFormat, _PKUserInterface ]
+    objc-classes:    [ PKAppleBalanceCardView, PKAppleCashCardView, PKAppleHomeKeyCardView, 
+                       PKAuthenticator, PKAuthenticatorEvaluationContext, PKAuthenticatorEvaluationRequest, 
+                       PKAuthenticatorPreflightContext, PKAuthenticatorSharedRootContext, 
+                       PKCategoryVisualizationCardView, PKFingerprintGlyphView, PKGlyphView, 
+                       PKMetalRenderLoop, PKPassFaceViewCategoryVisualizationRendererState, 
+                       PKPassFaceViewRendererState, PKPayLaterCardRenderer, PKPayLaterCardRendererInstance, 
+                       PKPayLaterCardView, PKPaymentRemoteInstrumentThumbnailView, 
+                       PKPaymentSetupAssistantCredential, PKPaymentSetupAssistantProvisioningContext, 
+                       PKPeerPayment3DCharacter, PKPeerPayment3DScene, PKPeerPayment3DStore, 
+                       PKPeerPayment3DTextView, PKPhoneGlyphLayer, PKRenderLoop, 
+                       PKTextureLoadDescriptor, PKTextureLoader, PKTexturedCardRenderer, 
+                       PKTexturedCardView, PKUISpringAnimationFactory ]
+    objc-ivars:      [ PKRenderLoop._delegate, PKRenderLoop._drawing, PKRenderLoop._invalidated ]
+...

@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/FlightUtilitiesCore.framework/Versions/A/FlightUtilitiesCore'
+current-version: 148
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _FUFactoryProvider_Default, _FUFactoryProvider_Parsec ]
+    objc-classes:    [ FUAirline, FUAirport, FUFlight, FUFlightFactory, FUFlightLeg, 
+                       FUFlightStep, FUStepTime, FUUtils ]
+    objc-ivars:      [ FUFlightStep._delayFromSchedule ]
+...

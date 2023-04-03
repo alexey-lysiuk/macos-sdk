@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/IconFoundation.framework/Versions/A/IconFoundation'
+current-version: 552
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _IFImageSpecificationTagAll, _IFImageSpecificationTagAppStore, 
+                       _IFImageSpecificationTagHomeScreen, _IFImageSpecificationTagInternal, 
+                       _IFImageSpecificationTagOptional, _IFImageSpecificationTagPrivate, 
+                       _IFImageSpecificationTagRecomended, _IFImageSpecificationTagRequired, 
+                       _IFImageSpecificationTagiPad, _IFImageSpecificationTagiPhone ]
+    objc-classes:    [ IFBundle, IFCacheImage, IFColor, IFConcreteImage, IFGraphicSymbolDefaults, 
+                       IFGraphicSymbolDescriptor, IFGraphicsContext, IFIconSpecification, 
+                       IFImage, IFImageBag, IFImageSpecification, IFPDFDocument, 
+                       IFPDFPage, IFPlaceholderImage, IFResourceMetadata, IFSymbol, 
+                       IFSymbolImage, IFSymbolImageDescriptor, ISCGImageBlockSet, 
+                       ISImage, ISPlaceholderImage, ISSymbolImage, ISVariantIconSpecification ]
+...

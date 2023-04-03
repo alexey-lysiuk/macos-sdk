@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+install-name:    '/System/iOSSupport/System/Library/Frameworks/SafariServices.framework/Versions/A/SafariServices'
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ _SFAuthenticationErrorDomain, _SFContentBlockerErrorDomain, 
+                       _SFErrorDomain, _SFExtensionMessageKey, _SSReadingListErrorDomain, 
+                       __SFDeviceRegionCodeIsChina, __SFDeviceRegionCodeIsRussia, 
+                       __SFPreferredLanguagesIncludesAnyLanguage, __SFReaderExtractorErrorDomain, 
+                       __SFReaderPageGroupIdentifier, __SFReaderURLScheme, __SFSafariResourceScheme, 
+                       __SFSearchEngineControllerDefaultSearchEngineDidChangeNotification, 
+                       __SFSearchEngineControllerInstanceDidFinishPopulatingSearchEnginesNotification, 
+                       __SFSearchEngineStringDefaultsKey, __SFShouldShowChineseFeatures, 
+                       __SFShouldShowRussianFeatures ]
+    objc-classes:    [ SFAuthenticationSession, SFContentBlockerManager, SFContentBlockerState, 
+                       SFSafariViewController, SFSafariViewControllerActivityButton, 
+                       SFSafariViewControllerConfiguration, SFSafariViewControllerDataStore, 
+                       SFSafariViewControllerPrewarmingToken, SSReadingList, _SFFeatureAvailability, 
+                       _SFFormMetadataController, _SFReaderController, _SFReaderCustomProtocols, 
+                       _SFReaderExtractedData, _SFReaderExtractor, _SFReaderWebProcessPlugInPageController, 
+                       _SFSearchEngineController, _SFSearchEngineInfo, _SFSyntheticClickContext, 
+                       _SFWebClipMetadataFetcher, _SFWebProcessPlugIn, _SFWebProcessPlugInReaderEnabledPageController, 
+                       _SFWebProcessSharingLinkExtractor ]
+...

@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/PhotosUI.framework/Versions/A/PhotosUI'
+current-version: 541.0.110
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _PHPickerConfigurationAssetRepresentationModeMax, _PHPickerConfigurationAssetRepresentationModeMin, 
+                       _PHPickerConfigurationSelectionMax, _PHPickerConfigurationSelectionMin, 
+                       _PHPickerConfigurationSelectionPeople, _PHProjectCategoryBook, 
+                       _PHProjectCategoryCalendar, _PHProjectCategoryCard, _PHProjectCategoryOther, 
+                       _PHProjectCategoryPrints, _PHProjectCategorySlideshow, _PHProjectCategoryUndefined, 
+                       _PHProjectCategoryWallDecor, _PHProjectTypeUndefined, _PUEditingInitialPayloadTypeIdentifier, 
+                       _PUErrorDomain, _PUPickerFilterAvailableClasses, _PUPickerItemProviderUserInfoLocalIdentifierKey, 
+                       _PUProjectExtensionPointIdentifier ]
+    objc-classes:    [ PHEditingExtensionContext, PHEditingRemoteViewController, 
+                       PHEditingServiceViewController, PHExtensionHostViewPreferredSizes, 
+                       PHExtensionRemoteViewController, PHExtensionServiceViewController, 
+                       PHLivePhotoBadge, PHLivePhotoView, PHPickerConfiguration, 
+                       PHPickerFilter, PHPickerResult, PHPickerViewController, PHProjectAssetElement, 
+                       PHProjectElement, PHProjectExtensionContext, PHProjectExtensionRemoteViewController, 
+                       PHProjectInfo, PHProjectJournalEntryElement, PHProjectMapElement, 
+                       PHProjectMapElementAnnotation, PHProjectRegionOfInterest, 
+                       PHProjectSection, PHProjectSectionContent, PHProjectTextElement, 
+                       PHProjectTypeDescription, PHProjectTypeDescriptionSourceClient, 
+                       PHProjectTypeDescriptionSourceInvalidatorProxy, PHProjectTypeDescriptionSourceService, 
+                       PHProjectTypeDescriptionStaticDataSource, PUEditingExtensionHostContext, 
+                       PUEditingExtensionUndoAdapter, PUEditingExtensionUndoProxyExtensionSide, 
+                       PUEditingExtensionUndoProxyHostSide, PUEditingInitialPayload, 
+                       PUPhotosFileProviderItemProvider, PUPickerAssetMediaSubtypeFilter, 
+                       PUPickerAssetMediaTypeFilter, PUPickerAssetPlaybackStyleFilter, 
+                       PUPickerCompoundFilter, PUPickerExtensionContext, PUPickerExtensionHostContext, 
+                       PUPickerExtensionVendorContext, PUPickerUnavailableViewController, 
+                       PUProjectExtensionHostContext, _PHPickerCollectionConfiguration ]
+...

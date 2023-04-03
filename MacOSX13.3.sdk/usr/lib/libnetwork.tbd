@@ -1,0 +1,8 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/usr/lib/libnetwork.dylib'
+reexported-libraries:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    libraries:       [ '/System/Library/Frameworks/Network.framework/Versions/A/Network' ]
+...

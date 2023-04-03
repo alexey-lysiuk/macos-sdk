@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/RemoteManagement.framework/Versions/A/Frameworks/RemoteManagementStore.framework/Versions/A/RemoteManagementStore'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _RMObserverStoreStoreDidChangeNotification, _RMStoreOptionAccountIdentifier, 
+                       _RMStoreOptionDescription, _RMStoreOptionName, _RMStoreOptionPersonaIdentifier, 
+                       _RMStoreXPCAgentMachServiceName, _RMStoreXPCDaemonMachServiceName ]
+    objc-classes:    [ RMBaseStore, RMConfigurationSubscriberClient, RMConfigurationSubscriberDelegate, 
+                       RMConfigurationSubscriberDescription, RMConfigurationSubscriberEventStream, 
+                       RMConfigurationSubscriberService, RMConfigurationSubscriberXPCListenerDelegate, 
+                       RMDeclarationManifest, RMDeclarationManifestItem, RMObserverStore, 
+                       RMProviderStore, RMStatusPublisherDelegate, RMStatusPublisherDescription, 
+                       RMStoreLog, RMStoreResolvedAsset, RMStoreUnresolvedAsset, 
+                       RMStoreUtility, RMStoreXPCConnection, RMStoreXPCProxy, RMSubscribedConfigurationReference, 
+                       RMSubscriberStore ]
+...

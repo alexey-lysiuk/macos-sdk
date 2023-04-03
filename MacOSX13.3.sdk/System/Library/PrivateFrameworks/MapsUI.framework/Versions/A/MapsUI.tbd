@@ -1,0 +1,47 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/MapsUI.framework/Versions/A/MapsUI'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _MUConfigureMeasurementFormatter, _MUConvertedFormattedString, 
+                       _MUFactoidImpericalMeasurementFormatterForValue, _MUFactoidMeasurementFormatterForValue, 
+                       _MUHighlightedAttributionString, _MUPlaceSectionHeaderLeadingSpacingForInitialOffset, 
+                       _MapsUIConfig_AmenityNumberOfInlineItemsBeforeSeeAll, _MapsUIConfig_DefaultVisibilityThresholdForPlaceCardModuleImpressions, 
+                       _MapsUIConfig_EnableARPPhotoCreditOnPhotoSlider, _MapsUIConfig_EnableARPRatingsCountAnimation, 
+                       _MapsUIConfig_EnableInlineRatingsOnPlacecard, _MapsUIConfig_EnableManifestDrivenAttributionVisibilityForPhotoViewerHeader, 
+                       _MapsUIConfig_EnablePlaceCardImpressionLogging, _MapsUIConfig_EnhancedPlaceHeaderLogoEndTransition, 
+                       _MapsUIConfig_EnhancedPlaceHeaderLogoStartTransition, _MapsUIConfig_ForceSeparatorPlacecardStyle, 
+                       _MapsUIConfig_MakeRatingScoreAndCallToActionRibbonItemsMutuallyExclusive, 
+                       _MapsUIConfig_MaximumNumberOfItemsToShowInPhotoSlider, _MapsUIConfig_MaximumNumberOfPhotosInSliderToShowFullScreenPhotoViewer, 
+                       _MapsUIConfig_MaximumSizeForCachedAdamIdAMSResults, _MapsUIConfig_MaximumSizeForCachedBundleIdAMSResults, 
+                       _MapsUIConfig_MaximumSizeForOfficialAppMediaServicesCache, 
+                       _MapsUIConfig_MaximumSizeForQuickActionTrayArtworkCache, _MapsUIConfig_MinimumNumberOfAlbumsNeededToShowMoreButtonInPhotoSlider, 
+                       _MapsUIConfig_MinimumNumberOfRatingsToDisplayPercentage, _MapsUIConfig_PlaceHoursModuleInDetailsSection, 
+                       _MapsUIConfig_PlaceRibbonMinimumThresholdOfItems, _MapsUIConfig_RelatedPlaceSectionNumberOfInlineItems, 
+                       _MapsUIConfig_RelatedPlaceSectionSeeAllThreshold, _MapsUIConfig_ServiceHoursNumberOfInlineItemsBeforeSeeAll, 
+                       _MapsUIConfig_StubPlacecard, _MapsUIConfig_SuppressDedicatedAttributionModule, 
+                       _MapsUIConfig_TimeToLiveInSecondsForCachedAdamIdAMSResults, 
+                       _MapsUIConfig_TimeToLiveInSecondsForCachedBundleIdAMSResults, 
+                       _MapsUIConfig_TimeToLiveInSecondsForOfficialAppMediaServicesCache, 
+                       _MapsUIConfig_TimeToLiveInSecondsForQuickActionTrayArtworkCache, 
+                       _kMUApplePaySymbolName, _kMUHorizontalPlatterDefaultWidth, 
+                       _kMUHorizontalTileDefaultWidth, _kMUNFCSymbolName, _kMUPlaceAnimationDurationShort, 
+                       _kMUPlaceHorizontalMarginSpacing, _kMUPlaceHorizontalPlatterVerticalEdgeSpacing, 
+                       _kMUPlaceHorizontalStackInsets, _kMUPlaceHorizontalStackSpacing, 
+                       _kMUPlacePlatterButtonLength, _kMUPlacePlatterContentDirectionalInsets, 
+                       _kMUPlacePlatterContentInsets, _kMUPlacePlatterCornerRadius, 
+                       _kMUPlacePlatterPadding, _kMUPlaceSectionVerticalSpacing, 
+                       _kMUPlaceSystemSpacing ]
+    objc-classes:    [ MUCoordinateStringFormatter, MUCoordinateViewModel, MUFactoidViewModel, 
+                       MUImpressionElement, MUImpressionsCalculator, MUImpressionsCalculatorConfiguration, 
+                       MUImpressionsLogger, MUInfoCardStyle, MULRUCache, MULinkView, 
+                       MUPassthroughView, MUPlaceCardAnalyticsController, MUPlaceHeaderETAFormatter, 
+                       MUPlaceSectionController, MUPlaceSectionFooterViewModel, MUPlaceSectionHeaderView, 
+                       MUPlaceSectionHeaderViewModel, MUPlaceSectionView, MUPlaceViewController, 
+                       MUPlaceViewControllerConfiguration, MUPlatterConfigurator, 
+                       MUPlatterView, MUPresentationOptions, MUScrollViewImpressionsCalculator, 
+                       MUScrollableStackView, MUStackView, MUTextFactoidViewModel, 
+                       MUTimeExpirableLRUCache, MUVendorLinkSortParameters, MUVendorLinkSorter, 
+                       MUVendorLinkViewModel, MapsUIUtilities ]
+...

@@ -1,0 +1,9 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print'
+current-version: 272
+parent-umbrella:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    umbrella:        Carbon
+...

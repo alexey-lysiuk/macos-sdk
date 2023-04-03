@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ScreenTimeUI.framework/Versions/A/ScreenTimeUI'
+current-version: 502.3.4
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _STBlockingViewDidHideNotification, _STIconCacheDidUpdateNotificationName, 
+                       _STIconCacheDidUpdatePersonImageNotificationName, _STNotificationKeyBundleIdentifier, 
+                       _STNotificationKeyDSID, _STNotificationKeyImage, _STNotificationKeyPINSuccess, 
+                       _STRestrictionsPINControllerDidFinishNotification ]
+    objc-classes:    [ STBlockingViewController, STIconCache, STLockoutRestrictionsPINController, 
+                       STLockoutViewController, STRemotePasscodeController ]
+...

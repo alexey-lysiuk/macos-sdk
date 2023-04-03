@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/CalendarDaemon.framework/Versions/A/CalendarDaemon'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _CADAccountActionDescription, _CADCopyEntityInDatabase, _CADDatabaseStorageUsageAttachmentsKey, 
+                       _CADDatabaseStorageUsageEventsKey, _CADEKPersistentEventDefaultPropertiesToLoad, 
+                       _CADEKPersistentEventMinimumDefaultPropertiesToLoad, _CADEntityCopyObjectID, 
+                       _CADEntityCopyObjectIDUnlocked, _CADEntityExistsInDatabaseAndIsAccessible, 
+                       _CADEntityIsInManagedStore, _CADEntityIsInRestrictedStore, 
+                       _CADLogHandle, _CADLogInitIfNeeded, _CADMCLogHandle, _CADNotificationLogHandle, 
+                       _CADOwningEntity, _CADPredicateSignpostsHandle, _CADStatsCalendarEventName, 
+                       _CADStatsCollectWithAllStatCollectorsAndContext, _CADStatsCollectWithStatCollectorsAndContext, 
+                       _CADStatsEventEventName, _CADStatsOccurrenceEventName, _CADStatsPreferencesEventName, 
+                       _CADStatsRegisterCollectionCallback, _CADStatsStoreEventName, 
+                       _CADTTLLocationAuthorizationStatusChangedNotification, _CalEntityCopyProperty, 
+                       _CalEntityCopyPropertyValues, _CalFetchedObjectDictionary, 
+                       _CalGetEntityIDFromFetchedObjectDictonary, _CalGetValuesFromFetchedObjectDictionary, 
+                       _GetSharedXPCInterfaceForCADClientInterface, _GetSharedXPCInterfaceForCADInterface, 
+                       __CADDaemonStartedNotification, __CADDeleteEntity, __CADGetEntity, 
+                       __CalEntitySetProperty ]
+    objc-classes:    [ CADAccountAccessHandler, CADCalendarDatabaseRedactor, CADCalendarItemsWithExternalIdentifierPredicate, 
+                       CADChangeTrackingClientId, CADCompoundFilter, CADContactEventsPredicate, 
+                       CADDatabaseInitializationOptions, CADDefaultPermissionValidator, 
+                       CADEntityWrapper, CADEventCreatedFromSuggestionPredicate, 
+                       CADEventEntityWrapper, CADEventPredicate, CADEventTimeWindowPredicate, 
+                       CADEventsForAssistantSearchPredicate, CADEventsForConferenceURLPredicate, 
+                       CADExcludeDelegatesAccountAccessHandler, CADFilter, CADGenerationStampedObjectID, 
+                       CADGroupedAccountAccessHandler, CADIdleChangeTrackingCleanupInfo, 
+                       CADInMemoryChangeTimestamp, CADNaturalLanguageSuggestedEventsSearchPredicate, 
+                       CADNonRecurringEventsPredicate, CADNotifiableEventsPredicate, 
+                       CADNotificationCenterVisibleEventsPredicate, CADOperationGroup, 
+                       CADOperationProxy, CADPredicate, CADPropertyFilter, CADPropertySearchPredicate, 
+                       CADRespondedEventsPredicate, CADRouteHypothesis, CADSequenceToken, 
+                       CADServer, CADStatCollectionContext, CADStatCollector, CADStatsCalendars, 
+                       CADStatsCallback, CADStatsEvents, CADStatsOccurrences, CADStatsPreferences, 
+                       CADStatsStores, CADSubscribedCalendarEventsPredicate, CADSyntheticRouteHypothesizerCache, 
+                       CADTravelEventsPredicate, CADUnacknowledgedEventsPredicate, 
+                       CADUnalertedEventsPredicate, CADUpNextEventsPredicate, CADUpcomingEventsPredicate, 
+                       CADXPCProxyHelper, CalDAVLogScrubber, ClientConnection, EKAlarmOccurrence, 
+                       EKMasterEventsPredicate, EKPredicate, EKScheduleAgentClientEventsPredicate ]
+    objc-ivars:      [ CADOperationGroup._conn, EKPredicate._timeZone, EKPredicate._uuid ]
+...

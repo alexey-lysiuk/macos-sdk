@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/FileProviderDaemon.framework/Versions/A/FileProviderDaemon'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _FPDAppStoreServiceName, _FPDAppStoreServiceXPCInterface, 
+                       _defaultsKeyForErrorInjectionCategory, _errorInjectionCategoryByName ]
+    objc-classes:    [ FPDAccessControlStore, FPDActionOperation, FPDActionOperationQueue, 
+                       FPDAppMonitor, FPDConfigurationStore, FPDDomain, FPDDomainCleanupResult, 
+                       FPDDomainExtensionBackend, FPDDomainIndexer, FPDDomainIndexerSchedulerAssertion, 
+                       FPDDownloadOperation, FPDDownloader, FPDExtension, FPDFetchAppLibraryIconOperation, 
+                       FPDMoveAtom, FPDMoveOperation, FPDMoveReader, FPDMoveWriter, 
+                       FPDProcessMonitor, FPDProvider, FPDProviderDescriptor, FPDRTCReportingSession, 
+                       FPDRTCReportingSessionManager, FPDRequest, FPDServer, FPDSharedScheduler, 
+                       FPDVolume, FPDVolumeManager ]
+...

@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/usr/lib/usd/libHalf.dylib'
+current-version: 20.105.7
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ __Z9printBitsPc4half, __Z9printBitsPcf, __Z9printBitsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEE4half, 
+                       __Z9printBitsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEEf, 
+                       __ZN4half5_eLutE, __ZN4half7convertEi, __ZN4half8_toFloatE, 
+                       __ZN4half8overflowEv, __ZlsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEE4half, 
+                       __ZrsRNSt3__113basic_istreamIcNS_11char_traitsIcEEEER4half ]
+...

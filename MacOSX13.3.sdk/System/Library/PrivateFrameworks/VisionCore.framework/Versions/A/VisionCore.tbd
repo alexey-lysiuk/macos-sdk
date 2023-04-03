@@ -1,0 +1,6 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/VisionCore.framework/Versions/A/VisionCore'
+current-version: 0.0.1
+...

@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Seeding'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SDBrainAssetType, _SDErrorForBetaManagerErrorType, _SDIsInternalInstall, 
+                       _SDMachServiceName, _SDPlatformAll, _SDPlatformFromString, 
+                       _SDPlatformNone, _SDPreferenceAppID, _SDPreferenceMemberEnrolled, 
+                       _SDPreferenceOriginalBrain, _SDPreferenceOriginalUpdate, _SDPreferenceSeedProgram, 
+                       _SDPreferenceServerURL, _SDSeedProfileIdentifier, _SDSeedProgramIsValidSeedProgram, 
+                       _SDSeedProgramMetadataKeyAssetAudience, _SDSeedProgramMetadataKeyProgram, 
+                       _SDSeedProgramStringCustomerSeed, _SDSeedProgramStringDeveloperSeed, 
+                       _SDSeedProgramStringPublicSeed, _SDStringArrayFromPlatforms, 
+                       _SDUpdateAssetType, _SeedingVersionNumber, _SeedingVersionString, 
+                       _kSeedEnrollmentCookiePath ]
+    objc-classes:    [ SDAnalytics, SDBetaManager, SDBetaProgram, SDBuildInfo, SDCatalogUtilities, 
+                       SDConstants, SDDaemon, SDDaemonClient, SDDaemonCommon, SDDevice, 
+                       SDHTTPClient, SDKeyValueStore, SDLegalDoc, SDProfileUtilities, 
+                       SDSeedProgramManager, SDSeedProgramMigrator, SDSeedingConfiguration, 
+                       SDSeedingLogging ]
+...

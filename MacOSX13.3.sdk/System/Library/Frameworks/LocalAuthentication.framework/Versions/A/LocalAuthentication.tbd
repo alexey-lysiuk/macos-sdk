@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication'
+current-version: 1132.100.131
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _LAAuthenticationInterfaceForProtocol, _LAAvailableMechanisms, 
+                       _LABiometryDatabaseHash, _LACopyExternalizedContext, _LAEnabledBiometryUsers, 
+                       _LAErrorDomain, _LAErrorInfoBiometryType, _LAErrorInfoTCCServerPrompt, 
+                       _LAErrorInfoTCCService, _LAErrorSubcodeKey, _LAPasswordRetryTime, 
+                       _LAStorageErrorDomain, _LATouchIDAuthenticationMaximumAllowableReuseDuration, 
+                       _kAPKekPassword, _kAPMasterKey ]
+    objc-classes:    [ LAAuthentication, LAAuthenticationEntry, LAAuthenticationMethod, 
+                       LAAuthenticationMethods, LAAuthenticationProvider, LAAuthenticationRequirement, 
+                       LAAuthenticationServerProtocolRequest, LAAuthenticationServerProtocolResponse, 
+                       LAAuthenticationUsers, LABiometryFallbackRequirement, LAContext, 
+                       LANotification, LANotificationOfBooleanState, LAPersistedRight, 
+                       LAPrivateKey, LAPublicKey, LARight, LARightStore, LASecret, 
+                       LAStorage ]
+...

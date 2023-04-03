@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/DeviceActivityConductor.framework/Versions/A/DeviceActivityConductor'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _DACLifecycleServiceResetNotificationName, _DACLifecycleServiceServiceName, 
+                       _DACRoleServiceResetNotificationName, _DACRoleServiceServiceName, 
+                       _DeviceActivityConductorVersionNumber, _DeviceActivityConductorVersionString ]
+    objc-classes:    [ DACActivityDescriptor, DACActivityList, DACDeviceRole, DACLifecycleManager, 
+                       DACRoleManager, DACUnknownActivityPolicy ]
+...

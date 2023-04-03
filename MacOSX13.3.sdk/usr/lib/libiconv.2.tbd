@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/usr/lib/libiconv.2.dylib'
+current-version: 7
+compatibility-version: 7
+reexported-libraries:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    libraries:       [ '/usr/lib/libcharset.1.dylib' ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ __libiconv_version, _iconv, _iconv_canonicalize, _iconv_close, 
+                       _iconv_open, _iconvctl, _iconvlist, _libiconv_set_relocation_prefix ]
+...

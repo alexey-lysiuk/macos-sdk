@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/StatusKitAgentCore.framework/Versions/A/StatusKitAgentCore'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SKAAccountProviderErrorDomain, _SKAChannelManagerErrorDomain, 
+                       _SKAChannelManagerErrorRetryIntervalKey, _SKPushManagerErrorDomain ]
+    objc-classes:    [ SKAAccountProvider, SKAChannelManager, SKADatabaseChannel, 
+                       SKADatabaseInvitedUser, SKADatabaseManager, SKADatabasePendingPublishRequest, 
+                       SKADatabaseProvider, SKADatabaseReceivedInvitation, SKADatabaseRemovedUser, 
+                       SKADatabaseStatus, SKADatabaseSubscriptionAssertion, SKADatabaseTransientSubscriptionHistory, 
+                       SKAGeneratedEncryptionKey, SKAInvitationManager, SKAMessagingProvider, 
+                       SKAOutgoingInvitationState, SKAPresenceClient, SKAPresenceClientConnection, 
+                       SKAPresenceManager, SKAPushManager, SKAStatusEncryptionManager, 
+                       SKAStatusPublishingManager, SKAStatusPublishingServiceClient, 
+                       SKAStatusPublishingServiceClientConnection, SKAStatusReceivingManager, 
+                       SKAStatusServer, SKAStatusSubscriptionManager, SKAStatusSubscriptionServiceClient, 
+                       SKAStatusSubscriptionServiceClientConnection, SKAStatusUnencryptedEnvelope, 
+                       SKASystemMonitor ]
+...

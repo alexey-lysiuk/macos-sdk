@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/Nexus.framework/Versions/A/Nexus'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s5Nexus11NXPublisherCMa', '_$s5Nexus11NXPublisherCMm', 
+                       '_$s5Nexus11NXPublisherCMn', '_$s5Nexus11NXPublisherCMo', 
+                       '_$s5Nexus11NXPublisherCMu', '_$s5Nexus11NXPublisherCN', '_$s5Nexus11NXPublisherCfD', 
+                       '_$s5Nexus11NXPublisherCfd' ]
+...

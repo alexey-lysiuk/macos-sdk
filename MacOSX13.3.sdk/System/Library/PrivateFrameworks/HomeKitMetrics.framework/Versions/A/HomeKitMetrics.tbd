@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/HomeKitMetrics.framework/Versions/A/HomeKitMetrics'
+current-version: 983.5.13
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _HMDTaggedLoggingCreateDictionary, _HMMLogTagActivityWithError, 
+                       _HMMLogTagActivityWithErrorAndField, _HMMLogTagWithError, 
+                       _HMMLogTagWithErrorAndField, _HMMSafeHomeUUIDFromLogEvent, 
+                       _HMM_ERROR_CODE, _HMM_ERROR_DOMAIN, _HMM_UNDERLYING_ERROR_CODE, 
+                       _HMM_UNDERLYING_ERROR_DOMAIN ]
+    objc-classes:    [ HMMHomeLogEvent, HMMInterval, HMMIntervalMapper, HMMLogEvent, 
+                       HMMLogEventDispatcher, HMMLogEventTagProcessor, HMMStateData, 
+                       HMMStateTracker, HMMTagDispatcher, HMMTagManager, HMMTagProcessorCreatorObserver, 
+                       HMMTagSessionProcessorList, HMMTaggedEvent ]
+...

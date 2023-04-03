@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/GPUToolsTransport.framework/Versions/A/GPUToolsTransport'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _GTTransportServiceDaemonConnectAndConfirm, _GTTransportServiceDaemonConnectionNew, 
+                       _allServicesForDevice, _filteredArrayByPort, _filteredArrayByService, 
+                       _newConnectionForService, _registerService, _xpc_dictionary_get_nsarray, 
+                       _xpc_dictionary_set_nsobject ]
+    objc-classes:    [ DYGTCAMetalLayerInfo, DYGTDeviceInfo, DYGTGPUToolsVersionInfo, 
+                       DYGTMTLCaptureScopeInfo, DYGTMTLCommandQueueInfo, DYMTLDeviceProfile, 
+                       GTBulkDataService, GTBulkDataServiceXPCDispatcher, GTBulkDataServiceXPCProxy, 
+                       GTCallstackFrame, GTCapturableObject, GTCaptureCompletionState, 
+                       GTCaptureDescriptor, GTCaptureObjects, GTCaptureProgress, 
+                       GTCommandBufferIssue, GTDiagnosticsIssue, GTFaultingEncoder, 
+                       GTLaunchServiceXPCProxy, GTLocalXPCConnection, GTLoopbackService, 
+                       GTLoopbackServiceXPCDispatcher, GTLoopbackServiceXPCProxy, 
+                       GTMTLCaptureServiceXPCDispatcher, GTMTLDiagnosticsService, 
+                       GTMTLDiagnosticsServiceXPCDispatcher, GTMTLReplayServiceXPCDispatcher, 
+                       GTMTLReplayServiceXPCProxy, GTProcessInfo, GTProcessService, 
+                       GTServiceProperties, GTServiceProviderXPCProxy, GTTransportClient, 
+                       GTURLAccessProviderXPCProxy, GTUnsupportedFenumInfo ]
+...

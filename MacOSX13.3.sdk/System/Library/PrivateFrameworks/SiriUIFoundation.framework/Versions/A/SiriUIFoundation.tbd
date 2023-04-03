@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SiriUIFoundation.framework/Versions/A/SiriUIFoundation'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SRUIFConstructLaunchContextForLaunchStarted, _SRUIFConversationErrorDomain, 
+                       _SRUIFFileURLForConversationWithIdentifier, _SRUIFGetLanguageCode, 
+                       _SRUIFGetLocale, _SRUIFInvokeOnMainQueue, _SRUIFLanguageCodeDidChangeNotification, 
+                       _SRUIFPopulateSendCommandWithInstrumentationTurn, _SRUIFPreviousConversationIdentifier, 
+                       _SRUIFResponseModeToSISchemaResponseMode, _SRUIFSetLanguageCode, 
+                       _SRUIFShouldInstrumentLaunchContextForAceCommand, _SRUIFSiriSessionEventGetDescription, 
+                       _SRUIFSiriSessionStateGetDescription, _SRUIFStringForUserAttentionGainEvent, 
+                       _SRUIFStringForUserAttentionLossEvent, _SiriUIFoundationVersionNumber, 
+                       _SiriUIFoundationVersionString, _kLastStoredUUIDTurnIdentifier, 
+                       _kPreferencesDefaultDomain ]
+    objc-classes:    [ SRUIFAceCommandRecord, SRUIFAceCommandRecords, SRUIFAlternativeInfo, 
+                       SRUIFAnalyticsSupplement, SRUIFCachedPreferences, SRUIFCardLoader, 
+                       SRUIFCardLoadingMonitor, SRUIFChildConversationItemList, SRUIFCoercion, 
+                       SRUIFConversation, SRUIFConversationError, SRUIFConversationInsertion, 
+                       SRUIFConversationItem, SRUIFConversationStore, SRUIFConversationTransaction, 
+                       SRUIFDataStore, SRUIFDebugLog, SRUIFDelayedActionCommandCache, 
+                       SRUIFDialogPhase, SRUIFDictionarySchema, SRUIFImagePNGData, 
+                       SRUIFInstrumentationManager, SRUIFLocalization, SRUIFMutableConversationItem, 
+                       SRUIFMutableStack, SRUIFPlatformHostingInstrumentationHandler, 
+                       SRUIFSiriSessionInfo, SRUIFSiriSessionStateHandler, SRUIFSpeechRecognitionHypothesis, 
+                       SRUIFSpeechRequestHandler, SRUIFStack, SRUIFStateMachine, 
+                       SRUIFTreeNode, SRUIFTreeNodePropertyListSerialization, SRUIFUtilities, 
+                       _SRUIFAssertingDelayedActionCommand, _SRUIFDataStoreEntry ]
+...

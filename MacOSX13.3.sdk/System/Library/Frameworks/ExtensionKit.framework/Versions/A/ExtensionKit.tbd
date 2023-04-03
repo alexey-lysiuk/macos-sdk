@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/ExtensionKit.framework/Versions/A/ExtensionKit'
+current-version: 97
+reexported-libraries:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    libraries:       [ '/System/Library/Frameworks/ExtensionFoundation.framework/Versions/A/ExtensionFoundation' ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ EXAppExtensionBrowserViewController, EXHostViewController, 
+                       _EXAppExtensionBrowserViewController, _EXExtensionViewController, 
+                       _EXHostViewController, _EXHostViewControllerConfiguration, 
+                       _EXNSExtensionUIShimExtension, _EXRunningUIExtension, _EXRunningUISceneExtension, 
+                       _EXRunningUIViewServiceExtension, _EXViewControllerSceneConfiguration ]
+...

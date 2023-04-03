@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData'
+current-version: 483.10
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _LDCopyLocaleIdentifierOverrideForLocaleIdentifier, _LDCreateMobileAssetType, 
+                       _LDCreateSystemLexiconCompatibilityVersion, _LDEnumerateAssetDataItems, 
+                       _kLDAssetTypeCharacterLanguageModel, _kLDAssetTypeContinuousPathModel, 
+                       _kLDAssetTypeDeltaLexicon, _kLDAssetTypeDifferentialPrivacyHuffmanCoder, 
+                       _kLDAssetTypeEventDetectionModel, _kLDAssetTypeIntentDetectionModel, 
+                       _kLDAssetTypeLanguageIdentificationModel, _kLDAssetTypeLanguageModel, 
+                       _kLDAssetTypeLexicon, _kLDAssetTypeMorphologicalAnalyzer, 
+                       _kLDAssetTypeMultilingualModel, _kLDAssetTypeNaturalLanguageSearchModel, 
+                       _kLDAssetTypePOSTaggingModel, _kLDAssetTypePolarityModel, 
+                       _kLDAssetTypeProactiveGrammar, _kLDAssetTypeProactiveStatementGrammar, 
+                       _kLDAssetTypeQueryParserModel, _kLDAssetTypeSearchQueryLanguageModel, 
+                       _kLDAssetTypeSpellcheckerData, _kLDAssetTypeTokenizationModel, 
+                       _kLDAssetTypeTransliterationModel ]
+...

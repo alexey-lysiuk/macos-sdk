@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SPFinder.framework/Versions/A/SPFinder'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _SPFinderDisabledReasonBlockedDeviceRegion, _SPFinderDisabledReasonCannotPublishAnonymously, 
+                       _SPFinderDisabledReasonCompanionNearby, _SPFinderDisabledReasonFindMyiPhoneOff, 
+                       _SPFinderDisabledReasonLocationServices, _SPFinderDisabledReasonLocationServicesFindMyFramework, 
+                       _SPFinderDisabledReasonLowAccountSecurity, _SPFinderDisabledReasonNone, 
+                       _SPFinderDisabledReasonServiceDisabled, _SPFinderDisabledReasonUserOptOut, 
+                       _SPFinderDisabledReasoniCloudSignedOut, _SPFinderStateChangedNotification ]
+    objc-classes:    [ SPAdvertisement, SPAdvertisementCache, SPAdvertisementCacheSearchCriteria, 
+                       SPAdvertisementCacheSearchResult, SPBeaconAdvertisement, SPBeaconPayload, 
+                       SPBeaconPayloadCacheSearchCriteria, SPBeaconPayloadCacheSearchResult, 
+                       SPEstimatedLocation, SPFinderInterface, SPFinderStateInfo, 
+                       SPFinderStateManager, SPScheduler, SPSchedulerInformation, 
+                       SPSearchResultMarker ]
+...

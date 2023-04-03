@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/usr/lib/libspindump.dylib'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _SPCachePort, _SPCheckHIDResponseTime, _SPExpectedHIDResponseDelayUntil, 
+                       _SPGenerateSpindump, _SPHIDResponseDelayThreshold, _SPNotifyLeavingFullWake, 
+                       _SPPauseMonitoringHIDResponsiveness, _SPReportCPUUsageResource, 
+                       _SPReportCPUWakeupsResource, _SPReportDiskWritesResource, 
+                       _SPReportFileDescriptorExhaustion, _SPReportFileDescriptorExhaustion_FatalPort, 
+                       _SPReportHIDResponseDelay, _SPReportPortExhaustion, _SPReportPortExhaustion_FatalPort, 
+                       _SPReportStuckProcess, _SPReportStuckProcessWithCallback, 
+                       _SPReportUnstuckProcess, _SPResumeMonitoringHIDResponsiveness ]
+...

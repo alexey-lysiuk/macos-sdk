@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/Translation.framework/Versions/A/Translation'
+current-version: 218.7
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ __LTBuildVersion, __LTDeviceName, __LTIsInternalInstall, __LTIsSeedInstall, 
+                       __LTLanguageCodeToSupportedLocale, __LTLocaleMappedForTTS, 
+                       __LTObjectMappedForKey, __LTProductName, __LTProductType, 
+                       __LTProductVersion, __LTTextTranslationServiceXPCInterface, 
+                       __LTTranslationErrorDomain, __LTTranslationModelTaskString, 
+                       __LTTranslationServiceDelegateXPCInterface, __LTTranslationServiceXPCInterface, 
+                       _kLTUnknownLanguageCode ]
+    objc-classes:    [ _LTASRStateEventLog, _LTActivityLogger, _LTAlignment, _LTBatchEventLog, 
+                       _LTBatchTextTranslationRequest, _LTCombinedEngine, _LTCombinedRouteParagraphTranslationRequest, 
+                       _LTDaemon, _LTInstallRequest, _LTInvocationEventContext, _LTInvocationEventLog, 
+                       _LTLanguageDetectionResult, _LTLanguageDetector, _LTLanguageDetectorFeatureCombinationModel, 
+                       _LTLanguageInstallationStatus, _LTLanguageManager, _LTLanguagePairOfflineAvailability, 
+                       _LTLocalePair, _LTParagraphTranslationRequest, _LTSafariLatencyLoggingRequest, 
+                       _LTSpeakRequest, _LTSpeechLIDLoggingRequest, _LTSpeechRecognitionBin, 
+                       _LTSpeechRecognitionResult, _LTSpeechRecognitionSausage, _LTSpeechRecognitionTokensAlternative, 
+                       _LTSpeechTranscription, _LTSpeechTranslationRequest, _LTTextLanguageDetectionResult, 
+                       _LTTextLanguageDetector, _LTTextToSpeechTranslationRequest, 
+                       _LTTextTranslationRequest, _LTTranslationCandidate, _LTTranslationContext, 
+                       _LTTranslationFeedback, _LTTranslationGenderAlternative, _LTTranslationParagraph, 
+                       _LTTranslationRange, _LTTranslationRequest, _LTTranslationResult, 
+                       _LTTranslationSense, _LTTranslationSensesLoggingRequest, _LTTranslationSession, 
+                       _LTTranslationSpan, _LTTranslationStatistics, _LTTranslationToken, 
+                       _LTTranslator, _LTWordTimingInfo ]
+...

@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/RemoteTextInput.framework/Versions/A/RemoteTextInput'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _RTIInputSessionWillChangeToNewProcessNotification, _RTIInputUIServiceMachNameiOS, 
+                       _RTIInputUIServiceName, _RTILogFacility, _RTIServiceAnonymousName, 
+                       _RTIServiceIOSMacName, _RTIServiceMediaRemoteName, _RTIServiceRapportName, 
+                       _RTIServiceSharingName, _RTIServiceSharingSafariName, _RTIServiceTVControlServicesName, 
+                       _RemoteTextInputVersionNumber, _RemoteTextInputVersionString, 
+                       __RTI_NSStringFromCGRect, _kRTISupplementalItemIconDataType_CodedNSImage, 
+                       _kRTISupplementalItemIconDataType_CodedUIImage ]
+    objc-classes:    [ RTIAssistantItem, RTIBarButtonGroup, RTIColor, RTIDataPayload, 
+                       RTIDocumentRequest, RTIDocumentState, RTIDocumentTraits, RTIInputOperation, 
+                       RTIInputSourceState, RTIInputSystemClient, RTIInputSystemClientSession, 
+                       RTIInputSystemDataPayload, RTIInputSystemService, RTIInputSystemServiceSession, 
+                       RTIInputSystemSession, RTIInputSystemSourceSession, RTIInputSystemUIClient, 
+                       RTIInputSystemUIService, RTIInputViewInfo, RTIKeyedArchiver, 
+                       RTIKeyedUnarchiver, RTISessionOptions, RTIStyledIntermediateText, 
+                       RTISupplementalItemIcon, RTISupplementalLexicon, RTITextOperations, 
+                       RTITextStyling, RTIUtilities, _RTIWeakProxy ]
+...
