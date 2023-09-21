@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ExchangeSync.framework/Versions/A/ExchangeSync'
+current-version: 2007
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _ExchangeSyncVersionNumber, _ExchangeSyncVersionString, _kEWSFolderClassCalendar, 
+                       _kEWSFolderClassContacts, _kEWSFolderClassNote, _kEWSFolderClassTasks, 
+                       _kEWSLegacyFolderClassNote, _kExchangeAccountUpgraderActivityIdentifier, 
+                       _kExchangeAuthMigrationCoreAnalyticsEventName, _kExchangeBasicAccountMigrationLastAttemptDate, 
+                       _kExchangeBasicAccountMigrationRetryInterval, _kExchangeBasicAccountMigrationStatus, 
+                       _kExchangeFirstRunActivityIdentifier, _kExchangeMigrationConfigurationURLString, 
+                       _kExchangeRenewCredentialsShouldTriggerMigrationKey, _kExchangeSyncD_SyncNowNotification, 
+                       _machTimebaseForLiveMachine ]
+    objc-classes:    [ EXSAccount, EXSAccountAction, EXSAccountAuthUpgrader, EXSAccountManager, 
+                       EXSAccountMetadata, EXSAlarm, EXSAttachment, EXSAttachmentIDType, 
+                       EXSAttendee, EXSBaseProperties, EXSCalendarItemProperties, 
+                       EXSChangeItem, EXSDataConsumerInstance, EXSDataConsumerPlugin, 
+                       EXSDataConsumerProperties, EXSDataManager, EXSEWSAddDelegateOperation, 
+                       EXSEWSAvailabilityRequest, EXSEWSCreateAttachmentOperation, 
+                       EXSEWSCreateCalendarItemOperation, EXSEWSCreateFolderOperation, 
+                       EXSEWSCreateNoteOperation, EXSEWSCreateResponseOperation, 
+                       EXSEWSCreateTaskOperation, EXSEWSDeleteAttachmentOperation, 
+                       EXSEWSDeleteFolderOperation, EXSEWSDeleteItemOperation, EXSEWSForwardMeetingOperation, 
+                       EXSEWSGetAttachmentOperation, EXSEWSGetAttachmentRequest, 
+                       EXSEWSGetAttachmentRequestXPCCallbackInfo, EXSEWSGetDelegateFolderPermissionsOperation, 
+                       EXSEWSGetGrantedDelegatesOperation, EXSEWSGetMeetingRequestItemsOperation, 
+                       EXSEWSGetUserAvailabilityOperation, EXSEWSGrantedDelegateRequest, 
+                       EXSEWSMoveFolderOperation, EXSEWSMoveItemOperation, EXSEWSOperation, 
+                       EXSEWSRemoveDelegateOperation, EXSEWSRemoveMeetingRequestOperation, 
+                       EXSEWSSearchDirectoryOperation, EXSEWSSearchDirectoryRequest, 
+                       EXSEWSSyncProtocol, EXSEWSSyncUtils, EXSEWSUpdateCalendarItemOperation, 
+                       EXSEWSUpdateDelegatePermissionsOperation, EXSEWSUpdateFolderOperation, 
+                       EXSEWSUpdateItemOperation, EXSEmailAddress, EXSFeatureFlagManager, 
+                       EXSFolder, EXSFolderProperties, EXSGlobalDataManager, EXSIDNADecoder, 
+                       EXSIDNAEncoder, EXSItem, EXSItemIDType, EXSItemProperties, 
+                       EXSLogging, EXSMain, EXSMaintenanceActivity, EXSNetworkController, 
+                       EXSNotesItemProperties, EXSNotificationController, EXSOccurrence, 
+                       EXSPersonaPersistenceLayoutManager, EXSRecurrenceProperties, 
+                       EXSSyncEngine, EXSSyncEngineInstance, EXSSyncProtocol, EXSSyncProtocolFactory, 
+                       EXSTaskItemProperties, EXSTimeChangeType, EXSTimeZoneType, 
+                       EXSXPCInterfaceImplementation, EXSXPCServiceDelegate ]
+...

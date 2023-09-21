@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/FindMyCommon.framework/Versions/A/FindMyCommon'
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ FindMyCommonTests, FindMyCrypto, FindMyLocate, FindMyLocateObjCWrapper, 
+                       FindMyStorage, findmybeaconingd, findmylocateagent, findmylocated, 
+                       findmylocatedTests ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s12FindMyCommon14ReferenceClockO12timeIntervalSdvgZ', '_$s12FindMyCommon14ReferenceClockO14calibrationAgeSdvgZ', 
+                       '_$s12FindMyCommon14ReferenceClockO3now10Foundation4DateVvgZ', 
+                       '_$s12FindMyCommon14ReferenceClockO7convert02toD0S2d_tFZ', 
+                       '_$s12FindMyCommon14ReferenceClockO7convert8toSystemS2d_tFZ', 
+                       '_$s12FindMyCommon14ReferenceClockO9calibrateyyFZ', '_$s12FindMyCommon14ReferenceClockOMa', 
+                       '_$s12FindMyCommon14ReferenceClockOMn', '_$s12FindMyCommon14ReferenceClockON', 
+                       '_$s13NonModularSPI18TMGetReferenceTimeySbSpySdGSg_ADSpys5Int32VGSgtF', 
+                       '_$s13NonModularSPI24TMIsAutomaticTimeEnabledSbyF' ]
+...

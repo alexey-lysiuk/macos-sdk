@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/usr/lib/libScreenReader.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ __SCRMessageProcessCopyInfo, __SCRSignalProcessWithStartUpOptions, 
+                       __SCRSignalProcessWithStopOptions, __ScreenReaderCopyAudioIntroPath, 
+                       __ScreenReaderCopyElement, __ScreenReaderCopyFocusedElement, 
+                       __ScreenReaderCopyInfo, __ScreenReaderCopyKeyboardFocusedElement, 
+                       __ScreenReaderCopyOuterFocusedElement, __ScreenReaderGetEFIAudioFileData, 
+                       __ScreenReaderIsDisabledByManagedPreferences, __ScreenReaderIsRunning, 
+                       __ScreenReaderSendCommand, __ScreenReaderSetEnabledInPreferences, 
+                       __ScreenReaderStart, __ScreenReaderStartWithTarget, __ScreenReaderStop, 
+                       __ScreenReaderSupportsCurrentLocale, __ScreenReaderToggleEnabled, 
+                       __kScreenReaderCopyInfoErrorDomain, __kScreenReaderEFIAudioCharacterTypedKey, 
+                       __kScreenReaderEFIAudioPasswordKey, __kScreenReaderEFIAudioUsernameKey, 
+                       __kScreenReaderEFIAudioUsernameOrPasswordIncorrectKey, __kScreenReaderEFIAudioVoiceOverOffKey, 
+                       __kScreenReaderEFIAudioVoiceOverOnKey, __kUniversalAccessImagePath, 
+                       __kVoiceOverTrainingBundlePath ]
+...

@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/icloudMCCKit.framework/Versions/A/icloudMCCKit'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _MCCSecretAgentEncryptionCertIdKey, _MCCSecretAgentMachService, 
+                       _MCCSecretAgentSigningCertIdKey, __MCCLogSystem, _icloudMCCKitVersionNumber, 
+                       _icloudMCCKitVersionString ]
+    objc-classes:    [ MCCSecretAgentConnection, MCCSecretAgentContext, MCCSecretAgentController, 
+                       MCCSecretAgentInterface, MCCSigningAndEncryptionMessagesStatus ]
+...

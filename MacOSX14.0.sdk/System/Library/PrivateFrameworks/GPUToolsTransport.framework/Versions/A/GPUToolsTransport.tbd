@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/GPUToolsTransport.framework/Versions/A/GPUToolsTransport'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _GTBulkDataCompress, _GTBulkDataDecompress, _GTFileTransferCompressionAlgorithmToNSDataCompressionAlgorithm, 
+                       _GTFileWriterTransferFileEntries, _GTTelemetryErrorDomain, 
+                       _GTTransportEnvironment_init, _GTTransportErrorDomain, _GTTransportServiceDaemonConnectAndConfirm, 
+                       _GTTransportServiceDaemonConnectIfVersionNotOlderThan, _GTTransportServiceDaemonConnectionNew, 
+                       _MessagePathEndsWith, _MessageSetHasReply, _allServices, _allServicesForDevice, 
+                       _filteredArrayByPort, _filteredArrayByService, _newConnectionForService, 
+                       _registerService, _xpc_dictionary_get_nsarray, _xpc_dictionary_set_flag, 
+                       _xpc_dictionary_set_nsobject ]
+    objc-classes:    [ DYGTCAMetalLayerInfo, DYGTDeviceInfo, DYGTGPUToolsVersionInfo, 
+                       DYGTMTLCaptureScopeInfo, DYGTMTLCommandQueueInfo, DYGTMTLDeviceProfile, 
+                       GTBulkDataService, GTBulkDataServiceXPCDispatcher, GTBulkDataServiceXPCProxy, 
+                       GTBulkDataTransferOptions, GTBulkDataUploadDescriptor, GTCallstackFrame, 
+                       GTCaptureCompletionState, GTCaptureConfiguration, GTCaptureDescriptor, 
+                       GTCaptureObjects, GTCaptureProgress, GTCaptureProgressStatistics, 
+                       GTCaptureQueryCapturables, GTCaptureQueryConfiguration, GTCaptureResponse, 
+                       GTCaptureUpdateConfiguration, GTCaptureUpdateHighlight, GTCommandBufferIssue, 
+                       GTDeviceProperties, GTDiagnosticsIssue, GTFaultingEncoder, 
+                       GTFileEntry, GTFileTransferOptions, GTFileWriterSession, GTLaunchRequest, 
+                       GTLaunchServiceXPCProxy, GTLocalXPCConnection, GTLoopbackService, 
+                       GTLoopbackServiceXPCDispatcher, GTLoopbackServiceXPCProxy, 
+                       GTMTLCaptureServiceXPCDispatcher, GTMTLDiagnosticsService, 
+                       GTMTLDiagnosticsServiceXPCDispatcher, GTMTLReplayServiceXPCDispatcher, 
+                       GTMTLReplayServiceXPCProxy, GTMTLTelemetryServiceXPCDispatcher, 
+                       GTObservableService, GTProcessInfo, GTProcessService, GTReplayRequestToken, 
+                       GTReplaySessionInfo, GTServiceProperties, GTServiceProviderXPCProxy, 
+                       GTTelemetryConfiguration, GTTelemetryDeviceObject, GTTelemetryLayerObject, 
+                       GTTelemetryQueryConfiguration, GTTelemetryQueryStatistics, 
+                       GTTelemetryQueueObject, GTTelemetryRecordObject, GTTelemetryResponse, 
+                       GTTelemetryStatistics, GTTelemetryUpdateConfiguration, GTTransportClient, 
+                       GTURLAccessProviderXPCProxy, GTUnsupportedFenumInfo ]
+...

@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/OSIntelligence.framework/Versions/A/OSIntelligence'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _OSIntelligenceVersionNumber, _OSIntelligenceVersionString, 
+                       _kInvalidPredictedDuration ]
+    objc-classes:    [ OSIUtilities, _OSBatteryDrainPredictor, _OSBatteryLowSOCPredictorOutput, 
+                       _OSBatteryPredictor, _OSChargingPredictor, _OSChargingPredictorOutput, 
+                       _OSInactivityPredictionClient, _OSInactivityPredictorBackupHourEntry, 
+                       _OSInactivityPredictorBackupHourEntry_v1, _OSInactivityPredictorBackupHourEntry_v2, 
+                       _OSInactivityPredictorMetadata, _OSInactivityPredictorOutput, 
+                       _dayDrainInfo ]
+...

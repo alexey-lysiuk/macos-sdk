@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/CollectionViewCore.framework/Versions/A/CollectionViewCore'
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ AppKit, UIKitCore ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _UICollectionLayoutSectionOrthogonalScrollingDecelerationRateAutomatic, 
+                       _UICollectionLayoutSectionOrthogonalScrollingDecelerationRateFast, 
+                       _UICollectionLayoutSectionOrthogonalScrollingDecelerationRateNormal ]
+    objc-classes:    [ NSCollectionLayoutAnchor, NSCollectionLayoutBoundarySupplementaryItem, 
+                       NSCollectionLayoutDecorationItem, NSCollectionLayoutDimension, 
+                       NSCollectionLayoutEdgeSpacing, NSCollectionLayoutGroup, NSCollectionLayoutGroupCustomItem, 
+                       NSCollectionLayoutItem, NSCollectionLayoutSection, NSCollectionLayoutSize, 
+                       NSCollectionLayoutSpacing, NSCollectionLayoutSupplementaryItem, 
+                       UICollectionLayoutSectionOrthogonalScrollingProperties ]
+...

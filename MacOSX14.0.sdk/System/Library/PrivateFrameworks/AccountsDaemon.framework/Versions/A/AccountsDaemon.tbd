@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/AccountsDaemon.framework/Versions/A/AccountsDaemon'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _ACAccountSyncClientID, _ACAccountSyncDataclassKeychainExtension, 
+                       _ACAccountSyncDevices, _ACAccountSyncHostnameKeychainExtension, 
+                       _ACAccountSyncKeychainExtension, _ACAccountSyncMailClassKey, 
+                       _ACAccountSyncMailProtocolKey, _ACAccountSyncModificationDate, 
+                       _ACAccountSyncQualifiedUsername, _ACDAccountSyncAccountIsSyncable, 
+                       _ACDAccountSyncDevices, _ACDAccountSyncEnabled, _ACDAccountSyncMarkAccountCreated, 
+                       _ACDAccountSyncMarkAccountDeleted, _ACDAccountSyncRemoveTombstones, 
+                       _ACDLogAccessRequest, _ACDPersistentAccountTypeCredentialProtectionPolicy, 
+                       _ACDPersistentAccountTypeCredentialType, _ACDPersistentAccountTypeDisplayName, 
+                       _ACDPersistentAccountTypeSupportedDataclasses, _ACDPersistentAccountTypeSupportsAuthentication, 
+                       _ACDPersistentAccountTypeSupportsMultipleAccounts, _ACDPersistentAccountTypeSyncableDataclasses, 
+                       _ACDPersistentAccountTypeVisibility, _ACDStringFromChangeType, 
+                       _ACDisableAccountSync, _ACErrorAccountSyncDomain, _ACOneTimeMigrateAccountSync, 
+                       _ACOneTimeSMTPFixAccountSync, _CopyAccountNamesEnabledForDataType, 
+                       _CopyExternalSourcesEnabledForDataType, _GetTetheredSyncingDisabledForDataType, 
+                       _SetAccountNameEnabledForDataType, _SetExternalSourceEnabledForDataType, 
+                       _SetTetheredSyncingDisabledForDatatype, __ACDConnectionLogSystem, 
+                       __ACDLogSystem, _kACDSyncDataTypeBookmarks, _kACDSyncDataTypeCalendars, 
+                       _kACDSyncDataTypeContacts, _kACDSyncDataTypeMailAccounts, 
+                       _kACDSyncDataTypeNotes, _syncDataTypeForDataclass, _tetheredSyncSourceTypeForDataType ]
+    objc-classes:    [ ACDAccessPluginManager, ACDAccountCache, ACDAccountNotifier, 
+                       ACDAccountStore, ACDAccountSync, ACDAuthenticationPluginManager, 
+                       ACDClient, ACDClientAuthorization, ACDClientAuthorizationManager, 
+                       ACDClientProvider, ACDDatabase, ACDDatabaseBackupActivity, 
+                       ACDDatabaseInitializer, ACDDatabasePersistentConfiguration, 
+                       ACDDataclassOwnersManager, ACDDataclassOwnersManagerInterface, 
+                       ACDEventLedger, ACDKeychain, ACDKeychainCache, ACDKeychainCleanupActivity, 
+                       ACDKeychainLock, ACDKeychainManager, ACDLazyArray, ACDOAuthSigner, 
+                       ACDPluginLoader, ACDPreferences, ACDQueueDictionary, ACDServer, 
+                       ACDTCCUtilities, ACDTestManager, ACDTimeMachineAccountStore, 
+                       ACDTransientDatabase, ACDUserNotification, ACRemoteDeviceProxy ]
+...

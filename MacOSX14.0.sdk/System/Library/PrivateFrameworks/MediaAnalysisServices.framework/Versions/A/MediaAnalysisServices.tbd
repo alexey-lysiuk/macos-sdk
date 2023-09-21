@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/MediaAnalysisServices.framework/Versions/A/MediaAnalysisServices'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _MADSignpostLog, _MADVIDomainArt, _MADVIDomainMedia, _MADVIDomainPackagedProducts, 
+                       _MADVIFeatureARKitThirdParty, _MADVISuggestionTypeAutomatic, 
+                       _MADVISuggestionTypeGlyph, _MADVISuggestionTypeHighlightedSubject, 
+                       _MADVISuggestionTypeInfoPanel, _MediaAnalysisServicesVersionNumber, 
+                       _MediaAnalysisServicesVersionString ]
+    objc-classes:    [ MADCaptionResult, MADEmbeddingGenerationRequest, MADEmbeddingGenerationResult, 
+                       MADImageCaptionRequest, MADImageSafetyClassificationRequest, 
+                       MADImageSafetyClassificationResult, MADMLScalingRequest, MADMLScalingResult, 
+                       MADPersonIdentificationRequest, MADPersonIdentificationResult, 
+                       MADPersonIdentificationResultItem, MADRemoveBackgroundMaskRequest, 
+                       MADRemoveBackgroundMaskResult, MADRemoveBackgroundMatteRequest, 
+                       MADRemoveBackgroundMatteResult, MADRequest, MADResult, MADService, 
+                       MADServicePrivate, MADServiceProxy, MADServicePublic, MADVIDocumentRecognitionRequest, 
+                       MADVIDocumentRecognitionResult, MADVIFaceRequest, MADVIFaceResult, 
+                       MADVIMachineReadableCodeDetectionRequest, MADVIMachineReadableCodeDetectionResult, 
+                       MADVIMachineReadableCodeDetectionResultItem, MADVIRectangleDetectionRequest, 
+                       MADVIRectangleDetectionResult, MADVIRemoveBackgroundRequest, 
+                       MADVIRemoveBackgroundResult, MADVISceneClassificationRequest, 
+                       MADVISceneClassificationResult, MADVITextLookupRequest, MADVITextLookupResult, 
+                       MADVIUserFeedbackRequest, MADVIUserFeedbackResult, MADVIVisualSearchGatingDomainInfo, 
+                       MADVIVisualSearchGatingRequest, MADVIVisualSearchGatingResult, 
+                       MADVIVisualSearchGatingResultItem, MADVIVisualSearchRegionAttributes, 
+                       MADVIVisualSearchRequest, MADVIVisualSearchResult, MADVIVisualSearchResultItem, 
+                       MADVIVisualSearchThirdPartyObject, MADVideoRemoveBackgroundPreviewFrame, 
+                       MADVideoRemoveBackgroundPreviewRequest, MADVideoRemoveBackgroundPreviewResult, 
+                       MADVideoRemoveBackgroundRequest, MADVideoRemoveBackgroundResult, 
+                       MADVideoRequest, MADVideoResult, MADVideoResultsPayload, MADVideoSafetyClassificationRequest, 
+                       MADVideoSafetyClassificationResult, MADVideoSafetyFrameSampling ]
+...

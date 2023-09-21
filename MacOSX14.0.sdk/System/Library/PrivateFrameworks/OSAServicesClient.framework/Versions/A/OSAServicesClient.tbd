@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/OSAServicesClient.framework/Versions/A/OSAServicesClient'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _DiagnosticMonitorLog, _OSADiagnosticMonitorClientInterface, 
+                       _OSADiagnosticMonitorServerInterface, _OSAServicesClientVersionNumber, 
+                       _OSAServicesClientVersionString, _kOSADiagnosticMonitorMachService ]
+    objc-classes:    [ EventObserver, OSADiagnosticMonitor, OSADiagnosticMonitorClient, 
+                       OSALogEvent, OSALogIdentity, OSALogWriteResult, OSAServicesClient, 
+                       ObserverShim, WriteObserver ]
+...

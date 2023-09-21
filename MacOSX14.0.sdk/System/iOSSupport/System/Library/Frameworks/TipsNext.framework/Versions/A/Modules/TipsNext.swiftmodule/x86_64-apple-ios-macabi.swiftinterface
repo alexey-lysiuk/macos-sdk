@@ -1,0 +1,775 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.203 clang-1500.0.37.1)
+// swift-module-flags: -target x86_64-apple-ios17.0-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -library-level api -enable-experimental-concurrency -enable-experimental-concurrency -library-level api -module-name TipsNext
+// swift-module-flags-ignorable: -target-min-inlining-version min -enable-bare-slash-regex -user-module-version 55
+import Foundation
+import Observation
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+infix operator ++ : DefaultPrecedence
+infix operator +- : DefaultPrecedence
+infix operator -- : DefaultPrecedence
+infix operator -+ : DefaultPrecedence
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  public struct Event<Donation> : TipsNext.TipEventQuerying {
+    public init(id: Swift.String) where Donation : Swift.Decodable, Donation : Swift.Encodable, Donation : Swift.Sendable
+    public init(id: Swift.String) where Donation == Swift.Never
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Event {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func donate(with donation: Donation) async where Donation : Swift.Decodable, Donation : Swift.Encodable, Donation : Swift.Sendable
+  #endif
+  #if compiler(>=5.3) && $Sendable
+  public func donate(with donation: Donation, _ completion: (@Sendable () -> Swift.Void)? = nil) where Donation : Swift.Decodable, Donation : Swift.Encodable, Donation : Swift.Sendable
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func donate() async where Donation == Swift.Never
+  #endif
+  #if compiler(>=5.3) && $Sendable
+  public func donate(_ completion: (@Sendable () -> Swift.Void)? = nil) where Donation == Swift.Never
+  #endif
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  public typealias EventDonation = Swift.Codable & Swift.Sendable
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Event {
+  public struct QueryModifier<Donation> : TipsNext.TipEventQuerying {
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipEventQuerying {
+  public func date(maxAge duration: Swift.Duration) -> TipsNext.TipsNextType.Event<Self.Donation>.QueryModifier<Self.Donation>
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipEventQuerying where Self.Donation : Swift.Decodable, Self.Donation : Swift.Encodable, Self.Donation : Swift.Sendable {
+  public func excluding<Value>(_ keyPath: Swift.KeyPath<Self.Donation, Value>, _ value: Value) -> TipsNext.TipsNextType.Event<Self.Donation>.QueryModifier<Self.Donation> where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Equatable, Value : Swift.Sendable
+  public func matching<Value>(_ keyPath: Swift.KeyPath<Self.Donation, Value>, _ value: Value) -> TipsNext.TipsNextType.Event<Self.Donation>.QueryModifier<Self.Donation> where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Equatable, Value : Swift.Sendable
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipEventQuerying where Self.Donation : Swift.Decodable, Self.Donation : Swift.Encodable, Self.Donation : Swift.Sendable {
+  public func maxSubset<Value>(groupedBy keyPath: Swift.KeyPath<Self.Donation, Value>) -> TipsNext.TipsNextType.Event<Self.Donation>.QueryModifier<Self.Donation> where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Hashable, Value : Swift.Sendable
+  public func minSubset<Value>(groupedBy keyPath: Swift.KeyPath<Self.Donation, Value>) -> TipsNext.TipsNextType.Event<Self.Donation>.QueryModifier<Self.Donation> where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Hashable, Value : Swift.Sendable
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+public protocol TipEventQuerying : Swift.Sendable {
+  associatedtype Donation
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Event {
+  public struct QueryRequest<Value> : Swift.Sendable where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable {
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipEventQuerying {
+  public func count() -> TipsNext.TipsNextType.Event<Self.Donation>.QueryRequest<Swift.Int>
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  @propertyWrapper public struct Parameter<Value> : Swift.Sendable where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable {
+    public var wrappedValue: Value {
+      get
+      set
+    }
+    public var projectedValue: TipsNext.TipsNextType.Parameter<Value> {
+      get
+    }
+    public init(wrappedValue: Value, _ id: Swift.String)
+    public init(_ id: Swift.String, initialValue: Value)
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  public typealias ParameterValue = Swift.Codable & Swift.Sendable
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  public struct Rule : Swift.Sendable {
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Rule {
+  public static func and(_ subrules: [TipsNext.TipsNextType.Rule]) -> TipsNext.TipsNextType.Rule
+  public static func or(_ subrules: [TipsNext.TipsNextType.Rule]) -> TipsNext.TipsNextType.Rule
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Rule {
+  public static func equal<Donation, Value>(_ request: TipsNext.TipsNextType.Event<Donation>.QueryRequest<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Equatable, Value : Swift.Sendable
+  public static func notEqual<Donation, Value>(_ request: TipsNext.TipsNextType.Event<Donation>.QueryRequest<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Equatable, Value : Swift.Sendable
+  public static func greaterThan<Donation, Value>(_ request: TipsNext.TipsNextType.Event<Donation>.QueryRequest<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Comparable, Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable
+  public static func greaterThanOrEqual<Donation, Value>(_ request: TipsNext.TipsNextType.Event<Donation>.QueryRequest<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Comparable, Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable
+  public static func lessThan<Donation, Value>(_ request: TipsNext.TipsNextType.Event<Donation>.QueryRequest<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Comparable, Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable
+  public static func lessThanOrEqual<Donation, Value>(_ request: TipsNext.TipsNextType.Event<Donation>.QueryRequest<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Comparable, Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Rule {
+  public static func equal<Value>(_ parameter: TipsNext.TipsNextType.Parameter<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Equatable, Value : Swift.Sendable
+  public static func notEqual<Value>(_ parameter: TipsNext.TipsNextType.Parameter<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Equatable, Value : Swift.Sendable
+  public static func exists<Value>(_ parameter: TipsNext.TipsNextType.Parameter<Value>, in values: [Value]) -> TipsNext.TipsNextType.Rule where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Equatable, Value : Swift.Sendable
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Rule {
+  public static func greaterThan<Value>(_ parameter: TipsNext.TipsNextType.Parameter<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Comparable, Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable
+  public static func greaterThanOrEqual<Value>(_ parameter: TipsNext.TipsNextType.Parameter<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Comparable, Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable
+  public static func lessThan<Value>(_ parameter: TipsNext.TipsNextType.Parameter<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Comparable, Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable
+  public static func lessThanOrEqual<Value>(_ parameter: TipsNext.TipsNextType.Parameter<Value>, _ value: Value) -> TipsNext.TipsNextType.Rule where Value : Swift.Comparable, Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Rule {
+  public static func `true`(_ parameter: TipsNext.TipsNextType.Parameter<Swift.Bool>) -> TipsNext.TipsNextType.Rule
+  public static func `false`(_ parameter: TipsNext.TipsNextType.Parameter<Swift.Bool>) -> TipsNext.TipsNextType.Rule
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Rule {
+  public static func isNil<Value>(_ parameter: TipsNext.TipsNextType.Parameter<Value>) -> TipsNext.TipsNextType.Rule where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable
+  public static func isNotNil<Value>(_ parameter: TipsNext.TipsNextType.Parameter<Value>) -> TipsNext.TipsNextType.Rule where Value : Swift.Decodable, Value : Swift.Encodable, Value : Swift.Sendable
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+@_typeEraser(AnyTip) public protocol Tip : Swift.Identifiable, Swift.Sendable {
+  var id: Swift.String { get }
+  var asset: SwiftUI.Image { get }
+  @TipsNext.TipsNextType.TextBuilder var title: SwiftUI.Text { get }
+  @TipsNext.TipsNextType.TextBuilder var message: SwiftUI.Text { get }
+  @TipsNext.TipsNextType.ActionBuilder var actions: [Self.Action] { get }
+  var rules: [Self.Rule] { get }
+  var options: [Self.Option] { get }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.Tip {
+  public var status: Self.Status {
+    get
+  }
+  public var shouldDisplay: Swift.Bool {
+    get
+  }
+  public var statusUpdates: _Concurrency.AsyncStream<Self.Status> {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public var shouldDisplayUpdates: _Concurrency.AsyncMapSequence<_Concurrency.AsyncStream<Self.Status>, Swift.Bool> {
+    get
+  }
+  #endif
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.Tip {
+  public func invalidate(with reason: Self.InvalidationReason)
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.Tip {
+  public var id: Swift.String {
+    get
+  }
+  public var title: SwiftUI.Text {
+    get
+  }
+  public var message: SwiftUI.Text {
+    get
+  }
+  public var asset: SwiftUI.Image {
+    get
+  }
+  public var rules: [Self.Rule] {
+    get
+  }
+  public var actions: [Self.Action] {
+    get
+  }
+  public var options: [Self.Option] {
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  @_functionBuilder public struct ActionBuilder {
+    @inlinable public static func buildExpression(_ element: TipsNext.TipsNextType.Action) -> [TipsNext.TipsNextType.Action] {
+            [element]
+        }
+    @inlinable public static func buildExpression(_ component: [TipsNext.TipsNextType.Action]) -> [TipsNext.TipsNextType.Action] {
+            component
+        }
+    @inlinable public static func buildPartialBlock(first: [TipsNext.TipsNextType.Action]) -> [TipsNext.TipsNextType.Action] {
+            first
+        }
+    @inlinable public static func buildPartialBlock(accumulated: [TipsNext.TipsNextType.Action], next: [TipsNext.TipsNextType.Action]) -> [TipsNext.TipsNextType.Action] {
+            accumulated + next
+        }
+    @inlinable public static func buildArray(_ components: [[TipsNext.TipsNextType.Action]]) -> [TipsNext.TipsNextType.Action] {
+            components.reduce(into: [], { $0.append(contentsOf: $1) })
+        }
+    @inlinable public static func buildEither(first component: [TipsNext.TipsNextType.Action]) -> [TipsNext.TipsNextType.Action] {
+            component
+        }
+    @inlinable public static func buildEither(second component: [TipsNext.TipsNextType.Action]) -> [TipsNext.TipsNextType.Action] {
+            component
+        }
+    @inlinable public static func buildLimitedAvailability(_ component: [TipsNext.TipsNextType.Action]) -> [TipsNext.TipsNextType.Action] {
+            component
+        }
+    @inlinable public static func buildOptional(_ component: [TipsNext.TipsNextType.Action]?) -> [TipsNext.TipsNextType.Action] {
+            component ?? []
+        }
+    @inlinable public static func buildFinalResult(_ component: [TipsNext.TipsNextType.Action]) -> [TipsNext.TipsNextType.Action] {
+            component
+                .enumerated()
+                .map({ idx, action in action.with(index: idx) })
+        }
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  public struct Action : Swift.Identifiable {
+    public let id: Swift.String
+    public let index: Swift.Int?
+    public init(id: Swift.String? = nil, disabled: Swift.Bool = false, perform handler: (() -> Swift.Void)? = nil, _ label: @escaping () -> SwiftUI.Text)
+    public init(id: Swift.String? = nil, title: some StringProtocol, disabled: Swift.Bool = false, perform handler: (() -> Swift.Void)? = nil)
+    @usableFromInline
+    internal func with(index: Swift.Int) -> TipsNext.TipsNextType.Action
+    public typealias ID = Swift.String
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Action {
+  @available(*, deprecated, renamed: "init(id:disabled:perform:_:)")
+  public init(id: Swift.String? = nil, isDisabled: Swift.Bool = false, action handler: (() -> Swift.Void)? = nil, _ label: @escaping () -> SwiftUI.Text)
+  @available(*, deprecated, renamed: "init(id:title:disabled:perform:)")
+  public init(id: Swift.String? = nil, label: some StringProtocol, isDisabled: Swift.Bool = false, action handler: (() -> Swift.Void)? = nil)
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+public struct AnyTip : TipsNext.Tip {
+  public var id: Swift.String {
+    get
+  }
+  public var title: SwiftUI.Text {
+    get
+  }
+  public var message: SwiftUI.Text {
+    get
+  }
+  public var asset: SwiftUI.Image {
+    get
+  }
+  public var actions: [TipsNext.AnyTip.Action] {
+    get
+  }
+  public var rules: [TipsNext.AnyTip.Rule] {
+    get
+  }
+  public var options: [TipsNext.AnyTip.Option] {
+    get
+  }
+  public init(_ tip: some Tip)
+  public init(erasing tip: some Tip)
+  public typealias ID = Swift.String
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  public struct InvalidationReason : Swift.Equatable, Swift.Sendable {
+    public static func == (a: TipsNext.TipsNextType.InvalidationReason, b: TipsNext.TipsNextType.InvalidationReason) -> Swift.Bool
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.InvalidationReason {
+  public static let userClosedTip: TipsNext.TipsNextType.InvalidationReason
+  public static let userPerformedAction: TipsNext.TipsNextType.InvalidationReason
+  public static let maxDisplayCountExceeded: TipsNext.TipsNextType.InvalidationReason
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  public struct Option : Swift.Sendable {
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Option {
+  public static func ignoresFrequencyControl(_ ignoresFrequencyControl: Swift.Bool) -> TipsNext.TipsNextType.Option
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Option {
+  public static func maxDisplayCount(_ maxDisplayCount: Swift.Int?) -> TipsNext.TipsNextType.Option
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  public struct Options : Swift.Sendable {
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Options : Swift.ExpressibleByArrayLiteral {
+  public init(arrayLiteral elements: TipsNext.TipsNextType.Options...)
+  public typealias ArrayLiteralElement = TipsNext.TipsNextType.Options
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Options {
+  @available(*, deprecated, message: "Please update your tip options to `var options: [Option]`.")
+  public static func ignoresFrequencyControl(_ value: Swift.Bool) -> TipsNext.TipsNextType.Options
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Options {
+  @available(*, deprecated, message: "Please update your tip options to `var options: [Option]`.")
+  public static func maxDisplayCount(_ value: Swift.Int) -> TipsNext.TipsNextType.Options
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  public struct Status : Swift.Equatable, Swift.Sendable {
+    public var shouldDisplay: Swift.Bool {
+      get
+    }
+    public var isInvalidated: Swift.Bool {
+      get
+    }
+    public static func == (a: TipsNext.TipsNextType.Status, b: TipsNext.TipsNextType.Status) -> Swift.Bool
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType.Status {
+  public static let pending: TipsNext.TipsNextType.Status
+  public static let available: TipsNext.TipsNextType.Status
+  public static let invalidated: TipsNext.TipsNextType.Status
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  @_functionBuilder public struct TextBuilder {
+    @inlinable public static func buildExpression(_ string: some StringProtocol) -> SwiftUI.Text? {
+            Text(LocalizedStringResource(stringLiteral: String(string)))
+        }
+    @inlinable public static func buildExpression(_ component: SwiftUI.Text) -> SwiftUI.Text? {
+            component
+        }
+    @inlinable public static func buildPartialBlock(first: SwiftUI.Text?) -> SwiftUI.Text? {
+            first
+        }
+    @inlinable public static func buildEither(first component: SwiftUI.Text?) -> SwiftUI.Text? {
+            component
+        }
+    @inlinable public static func buildEither(second component: SwiftUI.Text?) -> SwiftUI.Text? {
+            component
+        }
+    @inlinable public static func buildLimitedAvailability(_ component: SwiftUI.Text?) -> SwiftUI.Text? {
+            component
+        }
+    @inlinable public static func buildOptional(_ component: SwiftUI.Text??) -> SwiftUI.Text? {
+            component ?? nil
+        }
+    @inlinable public static func buildPartialBlock(accumulated: SwiftUI.Text?, next: SwiftUI.Text?) -> SwiftUI.Text? {
+            guard let next else {
+                return accumulated
+            }
+            guard let accumulated else {
+                return next
+            }
+            return accumulated + Text("\n") + next
+        }
+    @inlinable public static func buildArray(_ components: [SwiftUI.Text?]) -> SwiftUI.Text? {
+            components
+                .compactMap({
+                    $0
+                })
+                .reduce(nil, { accumulated, next in
+                    guard let accumulated else {
+                        return next
+                    }
+                    return accumulated + Text("\n") + next
+                })
+        }
+    @inlinable public static func buildFinalResult(_ component: SwiftUI.Text?) -> SwiftUI.Text {
+            component ?? Text(verbatim: String())
+        }
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.Tip {
+  public typealias Status = TipsNext.TipsNextType.Status
+  public typealias InvalidationReason = TipsNext.TipsNextType.InvalidationReason
+  public typealias TextBuilder = TipsNext.TipsNextType.TextBuilder
+  public typealias Action = TipsNext.TipsNextType.Action
+  public typealias ActionBuilder = TipsNext.TipsNextType.ActionBuilder
+  public typealias Option = TipsNext.TipsNextType.Option
+  public typealias Options = TipsNext.TipsNextType.Options
+  public typealias Rule = TipsNext.TipsNextType.Rule
+  public typealias Parameter = TipsNext.TipsNextType.Parameter
+  public typealias ParameterValue = TipsNext.TipsNextType.ParameterValue
+  public typealias Event = TipsNext.TipsNextType.Event
+  public typealias EventDonation = TipsNext.TipsNextType.EventDonation
+  public typealias EventQuerying = TipsNext.TipEventQuerying
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+@dynamicMemberLookup public protocol TipView : SwiftUI.View {
+  subscript<T>(dynamicMember member: Self.PropertyKey) -> T? { get set }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipView {
+  public typealias PropertyKey = TipsNext.TipsNextType.ViewPropertyKey
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, xrOS 1.0, watchOS 10.0, *)
+@available(tvOS, unavailable, message: "Action buttons are not supported on tvOS.")
+extension TipsNext.TipView {
+  public func onAction(_ perform: @escaping (TipsNext.TipsNextType.Action) -> Swift.Void) -> some TipsNext.TipView
+  
+  public func onAction(_ perform: @escaping (Swift.Int, TipsNext.TipsNextType.Action) -> Swift.Void) -> some TipsNext.TipView
+  
+  public func onAction(at index: Swift.Int, _ perform: @escaping (TipsNext.TipsNextType.Action) -> Swift.Void) -> some TipsNext.TipView
+  
+  public func onAction(id: Swift.String, _ perform: @escaping (TipsNext.TipsNextType.Action) -> Swift.Void) -> some TipsNext.TipView
+  
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipView {
+  public func onAppear(perform action: (() -> Swift.Void)? = nil) -> some TipsNext.TipView
+  
+  public func onDisappear(perform action: (() -> Swift.Void)? = nil) -> some TipsNext.TipView
+  
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipView {
+  public func assetSize(_ size: CoreFoundation.CGSize) -> some TipsNext.TipView
+  
+  public func assetStyle(_ style: (some ShapeStyle)?) -> some TipsNext.TipView
+  
+  public func cornerRadius(_ cornerRadius: Swift.Double, antialiased: Swift.Bool = true) -> some TipsNext.TipView
+  
+  public func tint(_ tint: (some ShapeStyle)?) -> some TipsNext.TipView
+  
+  @_disfavoredOverload public func tint(_ tint: SwiftUI.Color?) -> some TipsNext.TipView
+  
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipView {
+  public func background(_ style: some ShapeStyle, ignoresSafeAreaEdges edges: SwiftUI.Edge.Set = .all) -> some TipsNext.TipView
+  
+  @available(*, deprecated, renamed: "background(_:)")
+  public func backgroundStyle(_ style: some ShapeStyle) -> some TipsNext.TipView
+  
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsNextType {
+  public struct ViewPropertyKey : Swift.Equatable, Swift.ExpressibleByStringLiteral {
+    public init(stringLiteral value: Swift.StringLiteralType)
+    public static func == (a: TipsNext.TipsNextType.ViewPropertyKey, b: TipsNext.TipsNextType.ViewPropertyKey) -> Swift.Bool
+    public typealias ExtendedGraphemeClusterLiteralType = Swift.StringLiteralType
+    public typealias StringLiteralType = Swift.StringLiteralType
+    public typealias UnicodeScalarLiteralType = Swift.StringLiteralType
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.MiniTipView {
+  public subscript<T>(dynamicMember member: TipsNext.MiniTipView.PropertyKey) -> T? {
+    get
+    set
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+public protocol TipViewHosting : AnyObject {
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipViewHosting {
+  public var assetSize: CoreFoundation.CGSize {
+    get
+    set
+  }
+  public var assetStyle: (any SwiftUI.ShapeStyle)? {
+    get
+    set
+  }
+  public var backgroundStyle: (style: any SwiftUI.ShapeStyle, ignoresSafeAreaEdges: SwiftUI.Edge.Set)? {
+    get
+    set
+  }
+  public var cornerRadius: (value: Swift.Double, antialiased: Swift.Bool) {
+    get
+    set
+  }
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+@available(tvOS, unavailable, message: "Action buttons are not supported on tvOS.")
+extension TipsNext.TipViewHosting {
+  public func addActionHandler(_ perform: @escaping (TipsNext.TipsNextType.Action) -> Swift.Void)
+  public func addActionHandler(_ perform: @escaping (Swift.Int, TipsNext.TipsNextType.Action) -> Swift.Void)
+  public func addActionHandler(at index: Swift.Int, _ perform: @escaping (TipsNext.TipsNextType.Action) -> Swift.Void)
+  public func addActionHandler(id: Swift.String, _ perform: @escaping (TipsNext.TipsNextType.Action) -> Swift.Void)
+}
+#if compiler(>=5.3) && $Actors
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+public actor TipsCenter {
+  nonisolated final public let name: Swift.String
+  public init(name: Swift.String)
+  @objc deinit
+  @available(iOS 17.0, tvOS 17.0, watchOS 10.0, macOS 14.0, macCatalyst 17.0, xrOS 1.0, *)
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+#endif
+#if compiler(>=5.3) && $Actors
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsCenter {
+  #if compiler(>=5.3) && $Sendable
+  nonisolated public func configure(options: [TipsNext.TipsCenter.Option] = [], completion: (@Sendable ((any Swift.Error)?) -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func configure(options: [TipsNext.TipsCenter.Option] = []) async throws
+  #endif
+}
+#endif
+#if compiler(>=5.3) && $Actors
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsCenter {
+  public struct Option : Swift.Sendable {
+  }
+}
+#endif
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsCenter.Option {
+  #if compiler(>=5.3) && $Actors
+  public static func frequencyControl(_ frequencyControl: TipsNext.TipsCenter.Option.FrequencyControl) -> TipsNext.TipsCenter.Option
+  #endif
+  #if compiler(>=5.3) && $Actors
+  public struct FrequencyControl : Swift.Equatable, Swift.Sendable {
+    public static var none: TipsNext.TipsCenter.Option.FrequencyControl {
+      get
+    }
+    public static var hourly: TipsNext.TipsCenter.Option.FrequencyControl {
+      get
+    }
+    public static var daily: TipsNext.TipsCenter.Option.FrequencyControl {
+      get
+    }
+    public static func custom(duration: Swift.Duration) -> TipsNext.TipsCenter.Option.FrequencyControl
+    public static func == (a: TipsNext.TipsCenter.Option.FrequencyControl, b: TipsNext.TipsCenter.Option.FrequencyControl) -> Swift.Bool
+  }
+  #endif
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsCenter.Option {
+  #if compiler(>=5.3) && $Actors
+  public static func storeLocation(_ storeLocation: TipsNext.TipsCenter.Option.StoreLocation) -> TipsNext.TipsCenter.Option
+  #endif
+  #if compiler(>=5.3) && $Actors
+  public struct StoreLocation : Swift.Equatable, Swift.Sendable {
+    public static let applicationSupport: TipsNext.TipsCenter.Option.StoreLocation
+    public static func groupContainer(groupIdentifier: Swift.String, directoryName: Swift.String? = nil) -> TipsNext.TipsCenter.Option.StoreLocation
+    public static func url(_ url: Foundation.URL) -> TipsNext.TipsCenter.Option.StoreLocation
+    public static func == (a: TipsNext.TipsCenter.Option.StoreLocation, b: TipsNext.TipsCenter.Option.StoreLocation) -> Swift.Bool
+  }
+  #endif
+}
+#if compiler(>=5.3) && $Actors
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsCenter {
+  public struct Options : Swift.Sendable, Swift.ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: TipsNext.TipsCenter.Options...)
+    public typealias ArrayLiteralElement = TipsNext.TipsCenter.Options
+  }
+}
+#endif
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsCenter.Options {
+  #if compiler(>=5.3) && $Actors
+  @available(*, deprecated, message: "Please update your TipsCenter options to `TipsCenter.Option`.")
+  public static func frequencyControl(_ frequencyControl: TipsNext.TipsCenter.Options.FrequencyControl) -> TipsNext.TipsCenter.Options
+  #endif
+  #if compiler(>=5.3) && $Actors
+  @available(*, deprecated, message: "Please update your TipsCenter options to `TipsCenter.Option`.")
+  public struct FrequencyControl : Swift.Equatable, Swift.Sendable {
+    public static let none: TipsNext.TipsCenter.Options.FrequencyControl
+    public static let hourly: TipsNext.TipsCenter.Options.FrequencyControl
+    public static let daily: TipsNext.TipsCenter.Options.FrequencyControl
+    public static func custom(duration: Swift.Duration) -> TipsNext.TipsCenter.Options.FrequencyControl
+    public static func == (a: TipsNext.TipsCenter.Options.FrequencyControl, b: TipsNext.TipsCenter.Options.FrequencyControl) -> Swift.Bool
+  }
+  #endif
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsCenter.Options {
+  #if compiler(>=5.3) && $Actors
+  @available(*, deprecated, message: "Please update your TipsCenter options to `TipsCenter.Option`.")
+  public static func storeLocation(_ storeLocation: TipsNext.TipsCenter.Options.StoreLocation) -> TipsNext.TipsCenter.Options
+  #endif
+  #if compiler(>=5.3) && $Actors
+  @available(*, deprecated, message: "Please update your TipsCenter options to `TipsCenter.Option`.")
+  public struct StoreLocation : Swift.Equatable, Swift.Sendable {
+    public static let applicationSupport: TipsNext.TipsCenter.Options.StoreLocation
+    public static func groupContainer(groupIdentifier: Swift.String, directoryName: Swift.String? = nil) -> TipsNext.TipsCenter.Options.StoreLocation
+    public static func url(_ url: Foundation.URL) -> TipsNext.TipsCenter.Options.StoreLocation
+    public static func == (a: TipsNext.TipsCenter.Options.StoreLocation, b: TipsNext.TipsCenter.Options.StoreLocation) -> Swift.Bool
+  }
+  #endif
+}
+#if compiler(>=5.3) && $Actors
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension TipsNext.TipsCenter {
+  public static let shared: TipsNext.TipsCenter
+}
+#endif
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+public enum TipsNextType {
+}
+@_inheritsConvenienceInitializers @available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+@available(*, deprecated, renamed: "MiniTipUICollectionReusableView")
+@_Concurrency.MainActor(unsafe) final public class TipCollectionReusableView<TipType> : UIKit.UICollectionReusableView where TipType : TipsNext.Tip {
+  @_Concurrency.MainActor(unsafe) final public var tipView: (any TipsNext.TipView)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override final public func prepareForReuse()
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) final public func configureReusableView(tip: TipType, arrowEdge: SwiftUI.Edge? = nil) -> TipsNext.TipCollectionReusableView<TipType>
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+@available(*, deprecated, renamed: "MiniTipUICollectionViewCell")
+@_Concurrency.MainActor(unsafe) final public class MiniTipCollectionViewCell<TipType> : UIKit.UICollectionViewCell where TipType : TipsNext.Tip {
+  @_Concurrency.MainActor(unsafe) final public var tipView: (any TipsNext.TipView)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public func awakeFromNib()
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) final public func configureCell(tip: TipType, arrowEdge: SwiftUI.Edge? = nil) -> TipsNext.MiniTipCollectionViewCell<TipType>
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) final public func backgroundColor(_ color: UIKit.UIColor) -> TipsNext.MiniTipCollectionViewCell<TipType>
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+@available(*, deprecated, renamed: "MiniTipUIView")
+@_Concurrency.MainActor(unsafe) final public class MiniTipHostingView<TipType> : UIKit.UIView where TipType : TipsNext.Tip {
+  @_Concurrency.MainActor(unsafe) final public var tipView: (any TipsNext.TipView)? {
+    get
+    set
+  }
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) convenience public init(tip: TipType, arrowEdge: SwiftUI.Edge? = nil)
+  @objc deinit
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+@available(*, deprecated, renamed: "MiniTipUIPopoverViewController")
+@_Concurrency.MainActor(unsafe) final public class MiniTipPopoverViewController<TipType> : SwiftUI.UIHostingController<TipsNext.MiniTipView> where TipType : TipsNext.Tip {
+  @_Concurrency.MainActor(unsafe) final public var tipView: any TipsNext.TipView {
+    get
+    set
+  }
+  @available(*, deprecated, renamed: "popoverPresentationController.sourceItem")
+  @_Concurrency.MainActor(unsafe) final public var barButtonItem: UIKit.UIBarButtonItem? {
+    get
+    set
+  }
+  @available(*, deprecated, renamed: "popoverPresentationController.sourceItem")
+  @_Concurrency.MainActor(unsafe) final public var sourceView: UIKit.UIView? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var popoverPresentationController: UIKit.UIPopoverPresentationController? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) convenience public init(tip: TipType, presentationDelegate: (any UIKit.UIPopoverPresentationControllerDelegate)? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) override public init(rootView: TipsNext.MiniTipView)
+  @_Concurrency.MainActor(unsafe) override public init?(coder aDecoder: Foundation.NSCoder, rootView: TipsNext.MiniTipView)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 17.0, macCatalyst 17.0, xrOS 1.0, *)
+@_Concurrency.MainActor(unsafe) public class MiniTipUICollectionReusableView : UIKit.UICollectionReusableView, TipsNext.TipViewHosting {
+  @available(*, deprecated, message: "Please use the view properties on MiniTipUICollectionReusableView directly.")
+  @_Concurrency.MainActor(unsafe) public var tipView: (any TipsNext.TipView)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func prepareForReuse()
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) public func configureReusableView(tip: some Tip, arrowEdge: SwiftUI.Edge? = nil) -> Self
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 17.0, macCatalyst 17.0, xrOS 1.0, *)
+@_Concurrency.MainActor(unsafe) public class MiniTipUICollectionViewCell : UIKit.UICollectionViewCell, TipsNext.TipViewHosting {
+  @available(*, deprecated, message: "Please use the view properties on MiniTipUICollectionViewCell directly.")
+  @_Concurrency.MainActor(unsafe) public var tipView: (any TipsNext.TipView)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) public func configureCell(tip: some Tip, arrowEdge: SwiftUI.Edge? = nil) -> Self
+  @available(*, deprecated, renamed: "background")
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) public func backgroundColor(_ color: UIKit.UIColor) -> Self
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@available(iOS 17.0, macCatalyst 17.0, xrOS 1.0, *)
+@_Concurrency.MainActor(unsafe) public class MiniTipUIPopoverViewController : SwiftUI.UIHostingController<TipsNext.MiniTipView>, TipsNext.TipViewHosting {
+  @available(*, deprecated, message: "Please use the view properties on MiniTipUIPopoverViewController directly.")
+  @_Concurrency.MainActor(unsafe) public var tipView: any TipsNext.TipView {
+    get
+    set
+  }
+  @available(*, deprecated, renamed: "popoverPresentationController.sourceItem")
+  @_Concurrency.MainActor(unsafe) public var barButtonItem: UIKit.UIBarButtonItem? {
+    get
+    set
+  }
+  @available(*, deprecated, renamed: "popoverPresentationController.sourceItem")
+  @_Concurrency.MainActor(unsafe) public var sourceView: UIKit.UIView? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var popoverPresentationController: UIKit.UIPopoverPresentationController? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) convenience public init(tip: some Tip, presentationDelegate: (any UIKit.UIPopoverPresentationControllerDelegate)? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) override public init(rootView: TipsNext.MiniTipView)
+  @_Concurrency.MainActor(unsafe) override public init?(coder aDecoder: Foundation.NSCoder, rootView: TipsNext.MiniTipView)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @available(iOS 17.0, macCatalyst 17.0, xrOS 1.0, *)
+@_Concurrency.MainActor(unsafe) public class MiniTipUIView : UIKit.UIView, TipsNext.TipViewHosting {
+  @available(*, deprecated, message: "Please use the view properties on MiniTipUIView directly.")
+  @_Concurrency.MainActor(unsafe) public var tipView: (any TipsNext.TipView)? {
+    get
+    set
+  }
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) convenience public init(tip: some Tip, arrowEdge: SwiftUI.Edge? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func willMove(toWindow newWindow: UIKit.UIWindow?)
+  @objc deinit
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+public struct MiniTipView : TipsNext.TipView {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public init(tip: some Tip, arrowEdge: SwiftUI.Edge? = nil)
+  public typealias Body = @_opaqueReturnTypeOf("$s8TipsNext11MiniTipViewV4bodyQrvp", 0) __
+}
+@available(macOS 14.0, iOS 17.0, macCatalyst 17.0, tvOS 17.0, xrOS 1.0, watchOS 10.0, *)
+extension SwiftUI.View {
+  @available(iOS 17.0, macCatalyst 17.0, xrOS 1.0, *)
+  public func popoverMiniTip(tip: some Tip, on edges: SwiftUI.Edge.Set = .all, actionHandler: ((Swift.Int, TipsNext.TipsNextType.Action) -> Swift.Void)? = nil) -> some SwiftUI.View
+  
+  @available(tvOS 17.0, *)
+  public func popoverMiniTip(tip: some Tip, on edges: SwiftUI.Edge.Set = .all) -> some SwiftUI.View
+  
+}

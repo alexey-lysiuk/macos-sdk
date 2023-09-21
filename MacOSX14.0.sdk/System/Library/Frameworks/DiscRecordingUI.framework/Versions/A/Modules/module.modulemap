@@ -1,0 +1,6 @@
+framework module DiscRecordingUI {
+	requires !macabi
+    umbrella header "DiscRecordingUI.h"
+    export *
+    module * { export * }
+}

@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/MediaExtension.framework/Versions/A/MediaExtension'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _MEVideoDecoderErrorDomain, _MEVideoDecoderReadyForMoreMediaDataDidChangeNotification, 
+                       _MediaExtensionErrorDomain ]
+    objc-classes:    [ MEByteSource, MEDecodeFrameOptions, MEEstimatedSampleLocation, 
+                       MEFileInfo, MEFormatReaderConnectionHandler, MEFormatReaderInstantiationOptions, 
+                       MEHEVCDependencyInfo, MESampleCursorChunk, MESampleLocation, 
+                       METrackInfo, MEVideoDecoderConnectionHandler, MEVideoDecoderPixelBufferManager ]
+...

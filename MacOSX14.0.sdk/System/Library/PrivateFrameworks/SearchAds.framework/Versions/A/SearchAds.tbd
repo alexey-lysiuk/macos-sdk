@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SearchAds.framework/Versions/A/SearchAds'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CreatePerformanceDiagnosticReport, _SearchAdsVersionNumber, 
+                       _SearchAdsVersionString ]
+    objc-classes:    [ ADAppAdvertisement, ADAppRepresentation, ADCapService, ADDESRecordsManager, 
+                       ADDaemonMetricsHelper, ADDataObject, ADFCapSettings, ADInstallAttributionData, 
+                       ADLocationManager, ADMetricManager, ADNewCapService, ADParameterFactory, 
+                       ADResponseData, ADSearchAdsSettings, ADSearchCriteria, ADSearchObject, 
+                       ADSearchSession, ADUnfairLock ]
+...

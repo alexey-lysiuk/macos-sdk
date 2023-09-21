@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/GPUToolsDiagnostics.framework/Versions/A/GPUToolsDiagnostics'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _GTCoreAlloc, _GTCoreAllocatorInit, _GTCoreAllocatorIsHiddingMemory, 
+                       _GTCoreFree, _GTCoreLogInit, _GTCoreLogTagEnabled, _g_signpostLog, 
+                       _gt_default_log, _gt_tagged_log ]
+...

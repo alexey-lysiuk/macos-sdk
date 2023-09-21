@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/Calculate.framework/Versions/A/Calculate'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CalculateExpression, _CalculateExpressionError, _CalculateInternationalExpression, 
+                       _CalculateKeyAllowConversions, _CalculateKeyAllowPartialExpressions, 
+                       _CalculateKeyAllowUnits, _CalculateKeyAutoScientificNotation, 
+                       _CalculateKeyConvertTrivial, _CalculateKeyEngine, _CalculateKeyExpectedUnitTypes, 
+                       _CalculateKeyFlexibleFractionDigits, _CalculateKeyIgnoreProbableSearches, 
+                       _CalculateKeyLocales, _CalculateKeyLocalizeUnit, _CalculateKeyMaximumConversions, 
+                       _CalculateKeyNumberFormatter, _CalculateKeyPreferMixedUnits, 
+                       _CalculatePerformExpression ]
+    objc-classes:    [ Calculate, CalculateRequest, CalculateResult, CalculateTerm, 
+                       CalculateUnit, Converter, CurrencyCache ]
+    objc-ivars:      [ Converter._additionalResults, Converter._conversionType, Converter._currencyUpdateTimeOut, 
+                       Converter._inputString, Converter._inputUnit, Converter._inputValue, 
+                       Converter._isCurrency, Converter._localizedInputValueAndUnit, 
+                       Converter._localizedOutputUnit, Converter._localizedOutputValue, 
+                       Converter._localizedOutputValueAndUnit, Converter._outputUnit, 
+                       Converter._outputValue, CurrencyCache._currencyData, CurrencyCache._currentCurrency, 
+                       CurrencyCache._currentRate, CurrencyCache._currentString, 
+                       CurrencyCache._lastRefreshDate, CurrencyCache._mutableCurrencyCache, 
+                       CurrencyCache._refreshInterval, CurrencyCache._serializer, 
+                       CurrencyCache._timeout, CurrencyCache._uuid ]
+...

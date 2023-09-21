@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/HealthDiagnosticExtensionCore.framework/Versions/A/HealthDiagnosticExtensionCore'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ __HKCloudSyncObserverStatusToString ]
+    objc-classes:    [ HDCloudSyncDiagnosticOperation, HDDaemonDiagnosticOperation, 
+                       HDDatabaseDiagnosticOperation, HDDiagnosticExtension, HDDiagnosticOperation, 
+                       HDFeatureStatusDiagnosticOperation, HDNanoSyncDiagnosticOperation, 
+                       HDNotificationSyncDiagnosticOperation, HDOntologyDiagnosticOperation, 
+                       HDSummarySharingDiagnosticOperation, HDWorkoutCondenserDiagnosticOperation ]
+...

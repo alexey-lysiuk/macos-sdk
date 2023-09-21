@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreSceneUnderstanding.framework/Versions/A/CoreSceneUnderstanding'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _CSUErrorDomain ]
+    objc-classes:    [ CSUDetectionPrintNetwork, CSUDetectionPrintNetworkConfiguration, 
+                       CSUDetectionPrintNetworkOutput, CSUDetectionPrintShape, CSUError, 
+                       CSUEspressoBuffer, CSUKnowledgeEntity, CSUKnowledgeEntityStore, 
+                       CSULabelAttributes, CSUMetricOperatingPointCurve, CSUObjectDetectionResult, 
+                       CSUPixelBufferDescriptor, CSUSceneNetV5, CSUSceneNetV5AestheticsTaxonomy, 
+                       CSUSceneNetV5Configuration, CSUSceneNetV5CustomClassifier, 
+                       CSUSceneNetV5CustomClassifierConfiguration, CSUSceneNetV5CustomClassifierNetworkOutput, 
+                       CSUSceneNetV5CustomClassifierTaxonomy, CSUSceneNetV5DetectionTaxonomy, 
+                       CSUSceneNetV5NetworkOutput, CSUSceneNetV5SceneLabelAttributes, 
+                       CSUSceneNetV5SceneTaxonomy, CSUTaxonomy ]
+...

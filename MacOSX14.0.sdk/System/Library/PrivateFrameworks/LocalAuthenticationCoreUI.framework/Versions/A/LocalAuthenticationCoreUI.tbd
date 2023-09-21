@@ -1,0 +1,74 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/LocalAuthenticationCoreUI.framework/Versions/A/LocalAuthenticationCoreUI'
+current-version: 1391.0.4
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ '-allowable_client', CoreAuthUI, LATester, LocalAuthenticationCoreUITests, 
+                       LocalAuthenticationEmbeddedUI, LocalAuthenticationTests ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V0gD00F0AAMc', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V0gD019NSViewRepresentableAAMc', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V10$viewModel0gD014ObservedObjectV7WrapperVyAA0efI0C_Gvg', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V10$viewModel0gD014ObservedObjectV7WrapperVyAA0efI0C_GvpMV', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V10makeNSView7contextSo0I0C0gD00I20RepresentableContextVyACG_tF', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V12updateNSView_7contextySo0I0C_0gD00I20RepresentableContextVyACGtF', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V9viewModelAA0efI0CvM', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V9viewModelAA0efI0Cvg', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V9viewModelAA0efI0CvpMV', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V9viewModelAA0efI0Cvs', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V9viewModelAcA0efI0C_tcfC', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0VAA22LACUIViewRepresentableAAMc', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0VAA22LACUIViewRepresentableAAWP', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0VMa', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0VMn', 
+                       '_$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0VN', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5colorSo7NSColorCvMTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5colorSo7NSColorCvMTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5colorSo7NSColorCvgTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5colorSo7NSColorCvgTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5colorSo7NSColorCvpMV', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5colorSo7NSColorCvsTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5colorSo7NSColorCvsTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5stateSo0eF5StateVvMTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5stateSo0eF5StateVvMTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5stateSo0eF5StateVvgTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5stateSo0eF5StateVvgTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5stateSo0eF5StateVvpMV', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5stateSo0eF5StateVvsTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC5stateSo0eF5StateVvsTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$color7Combine9PublishedV9PublisherVySo7NSColorC_GvMTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$color7Combine9PublishedV9PublisherVySo7NSColorC_GvMTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$color7Combine9PublishedV9PublisherVySo7NSColorC_GvgTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$color7Combine9PublishedV9PublisherVySo7NSColorC_GvgTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$color7Combine9PublishedV9PublisherVySo7NSColorC_GvpMV', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$color7Combine9PublishedV9PublisherVySo7NSColorC_GvsTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$color7Combine9PublishedV9PublisherVySo7NSColorC_GvsTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$state7Combine9PublishedV9PublisherVySo0eF5StateV_GvMTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$state7Combine9PublishedV9PublisherVySo0eF5StateV_GvMTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$state7Combine9PublishedV9PublisherVySo0eF5StateV_GvgTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$state7Combine9PublishedV9PublisherVySo0eF5StateV_GvgTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$state7Combine9PublishedV9PublisherVySo0eF5StateV_GvpMV', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$state7Combine9PublishedV9PublisherVySo0eF5StateV_GvsTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC6$state7Combine9PublishedV9PublisherVySo0eF5StateV_GvsTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelC7Combine16ObservableObjectAAMc', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCACycfC', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCACycfCTj', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCACycfCTq', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCACycfc', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCMa', '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCMm', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCMn', '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCMo', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCMu', '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCN', 
+                       '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCfD', '_$s25LocalAuthenticationCoreUI18LACUILockViewModelCfd', 
+                       '_$s25LocalAuthenticationCoreUI22LACUIViewRepresentableMp', 
+                       '_$s25LocalAuthenticationCoreUI22LACUIViewRepresentableP05SwiftD006NSViewF0Tb', 
+                       '_$s25LocalAuthenticationCoreUI22LACUIViewRepresentableTL', 
+                       _LACUILayerFindSublayerWithName, _LACUILayerScaleToFitInRect, 
+                       _LACUILockViewStateNameFromState, _NSStringFromLACUILockViewState ]
+    objc-classes:    [ LACUIAuthenticationViewModel, LACUILockView, LACUIPackagedView, 
+                       LACUIPackagedViewPlatformStateController, LACUIPackagedViewStateController, 
+                       LACUIPackagedViewStateTransition ]
+...

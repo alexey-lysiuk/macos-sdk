@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/USTBridge.framework/Versions/A/USTBridge'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s9USTBridge19USTRequestProcessorCMa', '_$s9USTBridge19USTRequestProcessorCMm', 
+                       '_$s9USTBridge19USTRequestProcessorCMn', '_$s9USTBridge19USTRequestProcessorCMo', 
+                       '_$s9USTBridge19USTRequestProcessorCMs', '_$s9USTBridge19USTRequestProcessorCMu', 
+                       '_$s9USTBridge19USTRequestProcessorCfD', '_$s9USTBridge19USTRequestProcessorCfd', 
+                       '_$s9USTBridge19USTRequestProcessorCyACSS_10Foundation4UUIDVS2S16SiriMessageTypes0G10Publishing_pSo32AFRequestDispatcherServiceHelper_ptcfC', 
+                       '_$s9USTBridge19USTRequestProcessorCyACSS_10Foundation4UUIDVS2S16SiriMessageTypes0G10Publishing_pSo32AFRequestDispatcherServiceHelper_ptcfc', 
+                       '_$s9USTBridgeAAC8withName16messagePublisher13serviceHelper11bridgeQueue28conversationSessionsManaging35autoRegisterStartRequestMessageBase6loggerABSS_04SiriQ5Types0Q10Publishing_pSo026AFRequestDispatcherServiceG0_pSo17OS_dispatch_queueCAJ012ConversationkL0_pSb2os6LoggerVtcfC', 
+                       '_$s9USTBridgeAAC8withName16messagePublisher13serviceHelper11bridgeQueue28conversationSessionsManaging35autoRegisterStartRequestMessageBase6loggerABSS_04SiriQ5Types0Q10Publishing_pSo026AFRequestDispatcherServiceG0_pSo17OS_dispatch_queueCAJ012ConversationkL0_pSb2os6LoggerVtcfc', 
+                       '_$s9USTBridgeAACMa', '_$s9USTBridgeAACMm', '_$s9USTBridgeAACMn', 
+                       '_$s9USTBridgeAACMo', '_$s9USTBridgeAACMs', '_$s9USTBridgeAACMu', 
+                       '_$s9USTBridgeAACfD', '_$s9USTBridgeAACfd', '_$s9USTBridgeAACyABSS_16SiriMessageTypes0C10Publishing_pSo32AFRequestDispatcherServiceHelper_pSo17OS_dispatch_queueCAC28ConversationSessionsManaging_p2os6LoggerVtcfC', 
+                       '_$s9USTBridgeAACyABSS_16SiriMessageTypes0C10Publishing_pSo32AFRequestDispatcherServiceHelper_pSo17OS_dispatch_queueCAC28ConversationSessionsManaging_p2os6LoggerVtcfc', 
+                       _USTBridgeVersionNumber, _USTBridgeVersionString ]
+...

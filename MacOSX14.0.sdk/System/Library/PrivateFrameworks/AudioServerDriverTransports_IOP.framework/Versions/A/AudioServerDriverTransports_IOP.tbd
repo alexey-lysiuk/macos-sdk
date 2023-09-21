@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/AudioServerDriverTransports_IOP.framework/Versions/A/AudioServerDriverTransports_IOP'
+exports:
+  - targets:         [ arm64-macos, arm64e-macos ]
+    symbols:         [ __ZN4ASDT8IOPAudio5LPMic10UserClient13SetSampleRateEj, __ZN4ASDT8IOPAudio5LPMic10UserClient15GetControlValueEN8IOPAudio11LPMicDevice7ControlERj, 
+                       __ZN4ASDT8IOPAudio5LPMic10UserClient15MapEngineStatusERPNS1_12EngineStatusE, 
+                       __ZN4ASDT8IOPAudio5LPMic10UserClient15SetControlValueEN8IOPAudio11LPMicDevice7ControlEj, 
+                       __ZN4ASDT8IOPAudio5LPMic10UserClient21GetEnabledChannelMaskERj, 
+                       __ZN4ASDT8IOPAudio5LPMic10UserClient21SetEnabledChannelMaskEj, 
+                       __ZN4ASDT8IOPAudio5LPMic10UserClient23GetSupportedChannelMaskERj, 
+                       __ZN4ASDT8IOPAudio5LPMic10UserClient6StopIOEv, __ZN4ASDT8IOPAudio5LPMic10UserClient7StartIOEv, 
+                       __ZN4ASDT8IOPAudio5LPMic10UserClientaSEj, __ZN4ASDT8IOPAudio8IOBuffer10UserClient11MapIOBufferERNS1_16BufferDescriptorE, 
+                       __ZN4ASDT8IOPAudio8IOBuffer10UserClientaSEj, __ZNK4ASDT8IOPAudio5LPMic10UserClient14CopyIdentifierEv, 
+                       __ZNK4ASDT8IOPAudio5LPMic10UserClient14GetClockDomainEv, __ZNK4ASDT8IOPAudio5LPMic10UserClient17GetRingBufferSizeEv, 
+                       __ZNK4ASDT8IOPAudio5LPMic10UserClient20GetStreamDescriptionERNS1_17StreamDescriptionE, 
+                       __ZNK4ASDT8IOPAudio5LPMic10UserClient24GetHistoricDataSupportedEv, 
+                       __ZNK4ASDT8IOPAudio5LPMic10UserClient24GetZeroTimeStampIntervalEv, 
+                       __ZNK4ASDT8IOPAudio5LPMic12EngineStatus8SnapshotEv, __ZNK4ASDT8IOPAudio8IOBuffer10UserClient14CopyIdentifierEv, 
+                       _kASDTIOPAudioConfigKeyIdentifier, _kASDTIOPAudioConfigLPMicDeviceUID ]
+    objc-classes:    [ ASDTIOPAudioIOBufferDevice, ASDTIOPAudioIOBufferServiceManager, 
+                       ASDTIOPAudioLPMicDevice, ASDTIOPAudioLPMicDeviceFactory, ASDTIOPAudioLPMicServiceManager, 
+                       ASDTIOPAudioLPMicStream, ASDTIOPAudioLPMicUInt32Property ]
+...

@@ -1,0 +1,1 @@
+#error MJIT does not support '/AppleInternal/Library/BuildRoots/98ed8ad3-3356-11ee-9b53-aead88ae2785/Applications/Xcode.app/Contents/Developer/Toolchains/OSX14.0.xctoolchain/usr/bin/clang -arch arm64e' yet

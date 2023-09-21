@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/TypistFramework.framework/Versions/A/TypistFramework'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _TYLog, _TYLogFramework, _TYLoggingSubsystem, _TYLogl, _TYMakeArabicCharacter, 
+                       _TypistFrameworkVersionNumber, _TypistFrameworkVersionString, 
+                       __TYLogl ]
+    objc-classes:    [ TYLogger, TYRecapCommand, TYTextDirectionAnnotation, TYUsagePairs, 
+                       TypistArabicSyllable, TypistHWKeyboard, TypistHWKeyboard_Deprecated, 
+                       TypistKeyboard, TypistKeyboardData, TypistKeyboardDataInProcess, 
+                       TypistKeyboardDataInputUIClient, TypistKeyboardUtilities, 
+                       TypistKeyplane, TypistKoreanHangulJamo, TypistKoreanHangulSyllable, 
+                       TypistThaiSyllable ]
+...

@@ -1,0 +1,68 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SiriCalendarIntents.framework/Versions/A/SiriCalendarIntents'
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ CalendarFlowDelegatePlugin, CalendarUIPlugin, SiriCalendarIntentsTests ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s11SiriKitFlow11DisplayHintV0A15CalendarIntentsE11descriptionSSvg', 
+                       '_$s11SiriKitFlow11DisplayHintV0A15CalendarIntentsE11descriptionSSvpMV', 
+                       '_$s11SiriKitFlow11DisplayHintVs23CustomStringConvertible0A15CalendarIntentsMc', 
+                       '_$s19SiriCalendarIntents0B10EventModelV4fromACs7Decoder_p_tKcfC', 
+                       '_$s19SiriCalendarIntents0B10EventModelV4viewAA0bD4ViewVvg', 
+                       '_$s19SiriCalendarIntents0B10EventModelV4viewAA0bD4ViewVvpMV', 
+                       '_$s19SiriCalendarIntents0B10EventModelV6encode2toys7Encoder_p_tKF', 
+                       '_$s19SiriCalendarIntents0B10EventModelVAA012CustomCanvasE0AAMc', 
+                       '_$s19SiriCalendarIntents0B10EventModelVAA012CustomCanvasE0AAWP', 
+                       '_$s19SiriCalendarIntents0B10EventModelVAA15CATSerializableAAMc', 
+                       '_$s19SiriCalendarIntents0B10EventModelVAA15CATSerializableAAWP', 
+                       '_$s19SiriCalendarIntents0B10EventModelVMa', '_$s19SiriCalendarIntents0B10EventModelVMn', 
+                       '_$s19SiriCalendarIntents0B10EventModelVN', '_$s19SiriCalendarIntents0B10EventModelVSEAAMc', 
+                       '_$s19SiriCalendarIntents0B10EventModelVSeAAMc', '_$s19SiriCalendarIntents0B12FlowProviderV04findD4ForX5parse0a3KitD00D12SearchResultVAF5ParseO_tF', 
+                       '_$s19SiriCalendarIntents0B12FlowProviderVACycfC', '_$s19SiriCalendarIntents0B12FlowProviderVMa', 
+                       '_$s19SiriCalendarIntents0B12FlowProviderVMn', '_$s19SiriCalendarIntents0B12FlowProviderVN', 
+                       '_$s19SiriCalendarIntents0B9EventViewV4bodyQrvg', '_$s19SiriCalendarIntents0B9EventViewV4bodyQrvpMV', 
+                       '_$s19SiriCalendarIntents0B9EventViewV4bodyQrvpQOMQ', '_$s19SiriCalendarIntents0B9EventViewV5modelAA0bD5ModelVvpfP', 
+                       '_$s19SiriCalendarIntents0B9EventViewV7SwiftUI0E0AAMc', '_$s19SiriCalendarIntents0B9EventViewV8_context33_0B2D8396700F1773E3771CB1BBAFA06FLL7SwiftUI17EnvironmentObjectVy07SnippetN07ContextCGvpfi', 
+                       '_$s19SiriCalendarIntents0B9EventViewVMa', '_$s19SiriCalendarIntents0B9EventViewVMn', 
+                       '_$s19SiriCalendarIntents0B9EventViewVN', '_$s19SiriCalendarIntents15CATSerializableMp', 
+                       '_$s19SiriCalendarIntents15CATSerializablePAAE31serializedBase64SpeakableString0A12DialogEngine0gH0VyKF', 
+                       '_$s19SiriCalendarIntents15CATSerializableTL', '_$s19SiriCalendarIntents17CustomCanvasModelMp', 
+                       '_$s19SiriCalendarIntents17CustomCanvasModelPAA15CATSerializableTb', 
+                       '_$s19SiriCalendarIntents17CustomCanvasModelPAASeRzSERzrlE14serializedData10Foundation0H0VyKF', 
+                       '_$s19SiriCalendarIntents17CustomCanvasModelPAASeRzSERzrlE4nameSSvgZ', 
+                       '_$s19SiriCalendarIntents17CustomCanvasModelPAASeRzSERzrlEyx10Foundation4DataVKcfC', 
+                       '_$s19SiriCalendarIntents17CustomCanvasModelTL', '_$s19SiriCalendarIntents30CreateEventCATPatternsExecutorC11templateDir7options7globalsAC10Foundation3URLVSg_0A12DialogEngine9CATOptionVAK10CATGlobalsCSgtcfC', 
+                       '_$s19SiriCalendarIntents30CreateEventCATPatternsExecutorC11templateDir7options7globalsAC10Foundation3URLVSg_0A12DialogEngine9CATOptionVAK10CATGlobalsCSgtcfc', 
+                       '_$s19SiriCalendarIntents30CreateEventCATPatternsExecutorCMa', 
+                       '_$s19SiriCalendarIntents30CreateEventCATPatternsExecutorCMm', 
+                       '_$s19SiriCalendarIntents30CreateEventCATPatternsExecutorCMn', 
+                       '_$s19SiriCalendarIntents30CreateEventCATPatternsExecutorCMo', 
+                       '_$s19SiriCalendarIntents30CreateEventCATPatternsExecutorCMs', 
+                       '_$s19SiriCalendarIntents30CreateEventCATPatternsExecutorCfD', 
+                       '_$s19SiriCalendarIntents30CreateEventCATPatternsExecutorCfd', 
+                       '_$s2os6LoggerV19SiriCalendarIntentsE16calendarUIPluginACvau', 
+                       '_$s2os6LoggerV19SiriCalendarIntentsE16calendarUIPluginACvgZ', 
+                       '_$s2os6LoggerV19SiriCalendarIntentsE16calendarUIPluginACvpZ', 
+                       '_$s32SiriReferenceResolutionDataModel8RREntityV0A15CalendarIntentsE16isConversationalSbvg', 
+                       '_$s32SiriReferenceResolutionDataModel8RREntityV0A15CalendarIntentsE16isConversationalSbvpMV', 
+                       '_$sSo15INCalendarEventC19SiriCalendarIntentsE1loiySbAB_ABtFZ', 
+                       '_$sSo15INCalendarEventC19SiriCalendarIntentsE2idSSvg', '_$sSo15INCalendarEventC19SiriCalendarIntentsE2idSSvpMV', 
+                       '_$sSo15INCalendarEventCSL19SiriCalendarIntentsMc', '_$sSo15INCalendarEventCs12Identifiable19SiriCalendarIntentsMc', 
+                       '_$sSo24INEventParticipantStatusV19SiriCalendarIntentsE11descriptionSSvg', 
+                       '_$sSo24INEventParticipantStatusV19SiriCalendarIntentsE11descriptionSSvpMV', 
+                       '_$sSo24INEventParticipantStatusVs23CustomStringConvertible19SiriCalendarIntentsMc', 
+                       '_$sSo33_INPBParticipantUnsupportedReasonV19SiriCalendarIntentsE11descriptionSSvg', 
+                       '_$sSo33_INPBParticipantUnsupportedReasonV19SiriCalendarIntentsE11descriptionSSvpMV', 
+                       '_$sSo33_INPBParticipantUnsupportedReasonVs23CustomStringConvertible19SiriCalendarIntentsMc', 
+                       '_$sSo33_INPBTargetEventUnsupportedReasonV19SiriCalendarIntentsE11descriptionSSvg', 
+                       '_$sSo33_INPBTargetEventUnsupportedReasonV19SiriCalendarIntentsE11descriptionSSvpMV', 
+                       '_$sSo33_INPBTargetEventUnsupportedReasonVs23CustomStringConvertible19SiriCalendarIntentsMc', 
+                       '_$sSo7EKEventC19SiriCalendarIntentsE1loiySbAB_ABtFZ', '_$sSo7EKEventCSL19SiriCalendarIntentsMc', 
+                       '_$sSo8INPersonC19SiriCalendarIntentsE2idSSvg', '_$sSo8INPersonC19SiriCalendarIntentsE2idSSvpMV', 
+                       '_$sSo8INPersonCs12Identifiable19SiriCalendarIntentsMc', _SiriCalendarIntentsVersionNumber, 
+                       _SiriCalendarIntentsVersionString ]
+...

@@ -1,0 +1,5 @@
+framework module Hypervisor [extern_c] {
+  umbrella "Headers"
+  module * { export * }
+  export *
+}

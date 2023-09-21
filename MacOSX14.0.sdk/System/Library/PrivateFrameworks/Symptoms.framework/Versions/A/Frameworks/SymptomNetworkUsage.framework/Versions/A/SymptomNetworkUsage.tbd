@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Versions/A/Frameworks/SymptomNetworkUsage.framework/Versions/A/SymptomNetworkUsage'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _attributionReasonImpliesBundleName, _attributionReasonImpliesProcessName, 
+                       _kNWSelectAllFlows, _kNWSelectAllFlowsAndSubFlows, _kNWSelectClosed, 
+                       _kNWSelectConnEvents, _kNWSelectConnHasNetAccess, _kNWSelectDescription, 
+                       _kNWSelectDestinationDirectlyReachable, _kNWSelectEffectiveUser, 
+                       _kNWSelectFirstInstance, _kNWSelectFlowEvents, _kNWSelectFlowUsesChannels, 
+                       _kNWSelectFlowUsesSockets, _kNWSelectHasCellTraffic, _kNWSelectHasCellTrafficDelta, 
+                       _kNWSelectHasMinimumAge, _kNWSelectHasTraffic, _kNWSelectHasTrafficDelta, 
+                       _kNWSelectHasWiFiTraffic, _kNWSelectHasWiFiTrafficDelta, _kNWSelectHasWiredTraffic, 
+                       _kNWSelectHasWiredTrafficDelta, _kNWSelectInterfaceAWDL, _kNWSelectInterfaceCellular, 
+                       _kNWSelectInterfaceCellularViaFallback, _kNWSelectInterfaceCompanionLink, 
+                       _kNWSelectInterfaceExpensive, _kNWSelectInterfaceFlowswitchValueError, 
+                       _kNWSelectInterfaceIndex, _kNWSelectInterfaceLoopback, _kNWSelectInterfaceRouteValueError, 
+                       _kNWSelectInterfaceUnknown, _kNWSelectInterfaceWiFi, _kNWSelectInterfaceWired, 
+                       _kNWSelectQUIC, _kNWSelectSelf, _kNWSelectSkipNoChangeConnOnClose, 
+                       _kNWSelectSkipNoChangeConnOnPoll, _kNWSelectStartupConnHasNetAccess, 
+                       _kNWSelectTCP, _kNWSelectUDP, _kNWSelectUDPSubFlows, _kNWSelectUserlandConnections, 
+                       _kNWUsageLookupEUUIDCoalitionID, _kNWUsageLookupEUUIDCoreServices, 
+                       _kNWUsageLookupEUUIDCoreServicesDynamic, _kNWUsageLookupEUUIDNEHelper, 
+                       _kNWUsageLookupEUUIDProcessName, _kNWUsageLookupEUUIDStatic, 
+                       _kNWUsageLookupUUIDCoalitionID, _kNWUsageLookupUUIDCoreServices, 
+                       _kNWUsageLookupUUIDCoreServicesDynamic, _kNWUsageLookupUUIDNEHelper, 
+                       _kNWUsageLookupUUIDProcessName, _kNWUsageLookupUUIDStatic, 
+                       _kNWUsageOptimizeCPU, _kNWUsageOptimizeLatency, _kNWUsageParameterAcceptCell, 
+                       _kNWUsageParameterAncestralNECPClientTLV, _kNWUsageParameterDomainInfo, 
+                       _kNWUsageParameterHandlesRNF, _kNWUsageParameterMappingAppStateMonitoring, 
+                       _kNWUsageParameterMappingAvoidCoalitions, _kNWUsageParameterMappingDebugMode, 
+                       _kNWUsageParameterMappingFlavorSymptoms, _kNWUsageParameterMappingLSDynamic, 
+                       _kNWUsageParameterMappingLSDynamicCacheMaxSize, _kNWUsageParameterMappingLSDynamicCacheMissRetainTime, 
+                       _kNWUsageParameterMappingLSDynamicCachePruneSize, _kNWUsageParameterMappingUseCoalitions, 
+                       _kNWUsageParameterMappingUseNEHelper, _kNWUsageParameterMappingUseNEHelperForSet, 
+                       _kNWUsageParameterMappingUseProcessPrefixForSet, _kNWUsageParameterNECPClientTLV, 
+                       _kNWUsageParameterNoZeroLength, _kNWUsageParameterTargetOpimization, 
+                       _kNWUsageParameterTargetSelector, _kNWUsageParameterThresholds, 
+                       _kNWUsageParameterTraceFD ]
+    objc-classes:    [ NWConnProperties, NWUsageConnSnapshot, NWUsageManager, NWUsageMonitor, 
+                       NWUsageProtocolSnapshot, NWUsageQUICSnapshot, NWUsageSnapshot, 
+                       NWUsageTCPSnapshot, NWUsageTargetSelector, NWUsageUDPSnapshot ]
+...

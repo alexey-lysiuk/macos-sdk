@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/ShazamCore.framework/Versions/A/ShazamCore'
+current-version: 236
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$sSD10ShazamCoreE7mapKeysySDyqd__q_Gqd__xKXEKSHRd__lF', 
+                       _SHAnalyticsActionAppleMusic, _SHAnalyticsActionNotificationTap, 
+                       _SHAnalyticsEventMusicRecognitionAlert, _SHAnalyticsEventMusicRecognitionEnabled, 
+                       _SHAnalyticsEventMusicRecognitionHistory, _SHAnalyticsEventMusicRecognitionList, 
+                       _SHAnalyticsEventMusicRecognitionResult, _SHAnalyticsEventMusicRecognitionResultAction, 
+                       _SHAnalyticsEventMusicRecognitionResultExpanded, _SHAnalyticsPayloadActionKey, 
+                       _SHAnalyticsPayloadEnabledKey, _SHAnalyticsPayloadErrorCodeKey, 
+                       _SHAnalyticsPayloadMatchKey, _SHAnalyticsPayloadNumberShazamsKey, 
+                       _SHAnalyticsPayloadSecureAccountKey, _SHAnalyticsPayloadSourceKey, 
+                       _SHCampaignTokenDefaultCampaignValue, _SHCoreErrorDomain, 
+                       _SHDefaultWorkerTimeout, _SHLookupDefaultMaxAgeValue, _SHRecordingIntermissionDefaultValue, 
+                       _SHShazamKitInternalClientEntitlement, _SHShazamKitTCCEntitlement, 
+                       _SHShazamKitTCCEntitlementMediaLibrary, _SHShazamKitTCCEntitlementMicrophone, 
+                       _sh_log_object ]
+    objc-classes:    [ SHAnalytics, SHBagContract, SHCacheValues, SHCampaignTokens, 
+                       SHCompression, SHCoreError, SHDefaultConfigurationValues, 
+                       SHEndpoints, SHEntitlements, SHFeatureFlags, SHHost, SHJSONLFileReader, 
+                       SHJSONLFileWriter, SHLocalization, SHMusicSubscriptionStatus, 
+                       SHOffers, SHRecorderConfiguration, SHRemoteConfiguration, 
+                       SHStorefront, SHTokenizedURL ]
+...

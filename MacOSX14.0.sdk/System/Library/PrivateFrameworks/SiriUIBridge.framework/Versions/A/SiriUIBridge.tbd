@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SiriUIBridge.framework/Versions/A/SiriUIBridge'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s12SiriUIBridge0B0CMa', '_$s12SiriUIBridge0B0CMm', '_$s12SiriUIBridge0B0CMn', 
+                       '_$s12SiriUIBridge0B0CMo', '_$s12SiriUIBridge0B0CMs', '_$s12SiriUIBridge0B0CMu', 
+                       '_$s12SiriUIBridge0B0CfD', '_$s12SiriUIBridge0B0Cfd', '_$s12SiriUIBridge0B0CyACSS_0A12MessageTypes0C10Publishing_pSo32AFRequestDispatcherServiceHelper_pSo17OS_dispatch_queueCAD28ConversationSessionsManaging_pSo26AFBridgeConnectionListenerC2os6LoggerVtcfC', 
+                       '_$s12SiriUIBridge0B0CyACSS_0A12MessageTypes0C10Publishing_pSo32AFRequestDispatcherServiceHelper_pSo17OS_dispatch_queueCAD28ConversationSessionsManaging_pSo26AFBridgeConnectionListenerC2os6LoggerVtcfc', 
+                       '_$s12SiriUIBridge0B0CyACSS_0A12MessageTypes0C10Publishing_pSo32AFRequestDispatcherServiceHelper_pSo17OS_dispatch_queueCAD28ConversationSessionsManaging_pSo26AFBridgeConnectionListenerCtcfC', 
+                       '_$s12SiriUIBridge0B0CyACSS_0A12MessageTypes0C10Publishing_pSo32AFRequestDispatcherServiceHelper_pSo17OS_dispatch_queueCAD28ConversationSessionsManaging_pSo26AFBridgeConnectionListenerCtcfc', 
+                       '_$s12SiriUIBridge0B7ServiceC12siriPromptedyyFTj', '_$s12SiriUIBridge0B7ServiceC12siriPromptedyyFTq', 
+                       '_$s12SiriUIBridge0B7ServiceC13siriDismissedyyFTj', '_$s12SiriUIBridge0B7ServiceC13siriDismissedyyFTq', 
+                       '_$s12SiriUIBridge0B7ServiceC13stopAttending4withySo010AFUIBridgeE10StopReasonV_tFTj', 
+                       '_$s12SiriUIBridge0B7ServiceC13stopAttending4withySo010AFUIBridgeE10StopReasonV_tFTq', 
+                       '_$s12SiriUIBridge0B7ServiceC14siriWillPromptyyFTj', '_$s12SiriUIBridge0B7ServiceC14siriWillPromptyyFTq', 
+                       '_$s12SiriUIBridge0B7ServiceC14startAttendingyyFTj', '_$s12SiriUIBridge0B7ServiceC14startAttendingyyFTq', 
+                       '_$s12SiriUIBridge0B7ServiceC21connectionInterruptedyyFTj', 
+                       '_$s12SiriUIBridge0B7ServiceC21connectionInterruptedyyFTq', 
+                       '_$s12SiriUIBridge0B7ServiceC21connectionInvalidatedyyFTj', 
+                       '_$s12SiriUIBridge0B7ServiceC21connectionInvalidatedyyFTq', 
+                       '_$s12SiriUIBridge0B7ServiceC7preheatyyFTj', '_$s12SiriUIBridge0B7ServiceC7preheatyyFTq', 
+                       '_$s12SiriUIBridge0B7ServiceCACycfC', '_$s12SiriUIBridge0B7ServiceCACycfc', 
+                       '_$s12SiriUIBridge0B7ServiceCMa', '_$s12SiriUIBridge0B7ServiceCMn', 
+                       '_$s12SiriUIBridge0B7ServiceCMo', '_$s12SiriUIBridge0B7ServiceCMu', 
+                       '_$s12SiriUIBridge0B7ServiceCN', '_$s12SiriUIBridge0B7ServiceCfD', 
+                       '_$s12SiriUIBridge14SignpostLoggerMp', '_$s12SiriUIBridge14SignpostLoggerP3endyy2os12OSSignpostIDV_s12StaticStringVtFZTj', 
+                       '_$s12SiriUIBridge14SignpostLoggerP3endyy2os12OSSignpostIDV_s12StaticStringVtFZTq', 
+                       '_$s12SiriUIBridge14SignpostLoggerP3logSo06OS_os_E0CvgZTj', 
+                       '_$s12SiriUIBridge14SignpostLoggerP3logSo06OS_os_E0CvgZTq', 
+                       '_$s12SiriUIBridge14SignpostLoggerP5begin4name24parameterOverrideOptions0G02os12OSSignpostIDVs12StaticStringV_ALSgSSSgtFZTj', 
+                       '_$s12SiriUIBridge14SignpostLoggerP5begin4name24parameterOverrideOptions0G02os12OSSignpostIDVs12StaticStringV_ALSgSSSgtFZTq', 
+                       '_$s12SiriUIBridge14SignpostLoggerP5begin_15enableTelemetry2os12OSSignpostIDVs12StaticStringV_SbtFZTj', 
+                       '_$s12SiriUIBridge14SignpostLoggerP5begin_15enableTelemetry2os12OSSignpostIDVs12StaticStringV_SbtFZTq', 
+                       '_$s12SiriUIBridge14SignpostLoggerP5eventyys12StaticStringVFZTj', 
+                       '_$s12SiriUIBridge14SignpostLoggerP5eventyys12StaticStringVFZTq', 
+                       '_$s12SiriUIBridge14SignpostLoggerPAAE3endyy2os12OSSignpostIDV_s12StaticStringVtFZ', 
+                       '_$s12SiriUIBridge14SignpostLoggerPAAE5begin4name24parameterOverrideOptions0G02os12OSSignpostIDVs12StaticStringV_ALSgSSSgtFZ', 
+                       '_$s12SiriUIBridge14SignpostLoggerPAAE5begin_15enableTelemetry2os12OSSignpostIDVs12StaticStringV_SbtFZ', 
+                       '_$s12SiriUIBridge14SignpostLoggerPAAE5eventyys12StaticStringVFZ', 
+                       '_$s12SiriUIBridge14SignpostLoggerTL', _SiriUIBridgeVersionNumber, 
+                       _SiriUIBridgeVersionString ]
+    objc-classes:    [ _TtC12SiriUIBridge15UIBridgeService ]
+...

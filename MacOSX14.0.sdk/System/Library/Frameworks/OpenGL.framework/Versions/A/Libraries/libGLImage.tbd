@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64e-macos ]
+    symbols:         [ _glgCompress, _glgConvertPixelHeightToBlocks, _glgConvertPixelWidthToBlocks, 
+                       _glgConvertPixels, _glgConvertType, _glgCreateProcessor, _glgDecompress, 
+                       _glgDestroyProcessor, _glgGetCompressedBlockBytes, _glgGetCompressedBlockHeight, 
+                       _glgGetCompressedBlockWidth, _glgGetCompressedImageBytes, 
+                       _glgGetCompressedMinBlockDimensions, _glgGetPixelSize, _glgInitializeLibrary, 
+                       _glgPixelCenters, _glgProcessPixelsWithProcessor, _glgSaveImageToFile, 
+                       _glgSaveImageToFileGLG, _glgSetTakeLock, _glgTerminateLibrary ]
+...

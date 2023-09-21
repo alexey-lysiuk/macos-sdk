@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/LiveSpeechUI.framework/Versions/A/LiveSpeechUI'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s12LiveSpeechUI0aB11CallManagerC012currentVideoD5CountSivg', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC012currentVideoD5CountSivpMV', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC02isD6ActiveSbvg', '_$s12LiveSpeechUI0aB11CallManagerC02isD6ActiveSbvpMV', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC07currentD5CountSivg', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC07currentD5CountSivpMV', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC07isVideoD6ActiveSbvg', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC07isVideoD6ActiveSbvpMV', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC13endMonitoringyyF', '_$s12LiveSpeechUI0aB11CallManagerC15beginMonitoringyyF', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC5EventO10callDidEndyA2EmFWC', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC5EventO12callDidBeginyA2EmFWC', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC5EventO2eeoiySbAE_AEtFZ', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC5EventO4hash4intoys6HasherVz_tF', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC5EventO9hashValueSivg', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC5EventO9hashValueSivpMV', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC5EventOMa', '_$s12LiveSpeechUI0aB11CallManagerC5EventOMn', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC5EventON', '_$s12LiveSpeechUI0aB11CallManagerC5EventOSHAAMc', 
+                       '_$s12LiveSpeechUI0aB11CallManagerC5EventOSQAAMc', '_$s12LiveSpeechUI0aB11CallManagerC7Combine16ObservableObjectAAMc', 
+                       '_$s12LiveSpeechUI0aB11CallManagerCACycfC', '_$s12LiveSpeechUI0aB11CallManagerCACycfc', 
+                       '_$s12LiveSpeechUI0aB11CallManagerCMa', '_$s12LiveSpeechUI0aB11CallManagerCMn', 
+                       '_$s12LiveSpeechUI0aB11CallManagerCMo', '_$s12LiveSpeechUI0aB11CallManagerCN', 
+                       '_$s12LiveSpeechUI0aB11CallManagerCfD', '_$s12LiveSpeechUI0aB15MaxPhraseLengthSivg', 
+                       '_$s12LiveSpeechUI0aB22ClippedTextToMaxLengthyS2SF', '_$s12LiveSpeechUI0aB9LocStringyS2SF', 
+                       _LiveSpeechUIVersionNumber, _LiveSpeechUIVersionString ]
+    objc-classes:    [ _TtC12LiveSpeechUI21LiveSpeechCallManager ]
+...

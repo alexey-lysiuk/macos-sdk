@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SetupAssistantSupportUI.framework/Versions/A/SetupAssistantSupportUI'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SetupAssistantSupportUIVersionNumber, _SetupAssistantSupportUIVersionString ]
+    objc-classes:    [ SASBezierCurve, SASCursiveTextPath, SASCursiveTextView, SASCursiveTextWindow, 
+                       SASLogging, SASPathPoint, SASUIProximityCloudPlayerItem ]
+    objc-ivars:      [ SASCursiveTextPath._boundingBoxOfPath, SASCursiveTextPath._duration, 
+                       SASCursiveTextPath._finalWeight, SASCursiveTextPath._initialWeight, 
+                       SASCursiveTextPath._length, SASCursiveTextPath._pathDefinition, 
+                       SASCursiveTextPath._rampTime, SASCursiveTextPath._resolution, 
+                       SASCursiveTextView.dismissButtonImageView, SASCursiveTextView.dismissButtonLabel, 
+                       SASCursiveTextView.eventMonitor, SASCursiveTextView.textLayer, 
+                       SASCursiveTextView.textPath, SASCursiveTextView.textTransform ]
+...

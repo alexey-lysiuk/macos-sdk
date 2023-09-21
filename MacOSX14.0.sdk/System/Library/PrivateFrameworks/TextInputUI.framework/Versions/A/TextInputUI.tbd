@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/TextInputUI.framework/Versions/A/TextInputUI'
+reexported-libraries:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    libraries:       [ '/System/Library/PrivateFrameworks/TextInputUIMacHelper.framework/Versions/A/TextInputUIMacHelper' ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _TUIDictationActionKey, _TUIDictationLanguageButtonPressedAction, 
+                       _TUIDictationLanguageKey, _TUIDictationLanguageSelectedAction, 
+                       _TUIDictationMicButtonPressedAction ]
+    objc-classes:    [ TUICapslockAccessory, TUICursorAccessory, TUIDictationAccessory, 
+                       TUIGlowEffect, TUIInputModeAccessory, TUIInputModeSwitcherAccessory ]
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/TextInputUIMacHelper.framework/Versions/A/TextInputUIMacHelper'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _TUIDictationActionKey, _TUIDictationLanguageButtonPressedAction, 
+                       _TUIDictationLanguageKey, _TUIDictationLanguageSelectedAction, 
+                       _TUIDictationMicButtonPressedAction ]
+    objc-classes:    [ TUICapslockAccessory, TUICursorAccessory, TUICursorAccessoryAssertionController, 
+                       TUIDictationAccessory, TUIInputModeAccessory, TUIInputModeSwitcherAccessory, 
+                       TUIKeyboardInputModeIconRenderer, TUIKeyboardInputModeIconRendererConfiguration, 
+                       TUINSCursorUIController ]
+...

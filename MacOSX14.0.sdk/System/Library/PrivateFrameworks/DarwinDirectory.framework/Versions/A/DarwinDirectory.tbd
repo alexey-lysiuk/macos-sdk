@@ -1,0 +1,55 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/DarwinDirectory.framework/Versions/A/DarwinDirectory'
+current-version: 86.0.2
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s15DarwinDirectory17ObjcCompatibilityC029initializeLocalUsersAndGroupsH7PerformyyySo14NSMutableArrayC_AFtXBFZ', 
+                       '_$s15DarwinDirectory17ObjcCompatibilityC25updateLocalUsersAndGroups7performyySo14NSMutableArrayC_AGSAySo7NSErrorCSgGSgtXB_tKFZ', 
+                       '_$s15DarwinDirectory17ObjcCompatibilityCACycfC', '_$s15DarwinDirectory17ObjcCompatibilityCACycfc', 
+                       '_$s15DarwinDirectory17ObjcCompatibilityCMa', '_$s15DarwinDirectory17ObjcCompatibilityCMn', 
+                       '_$s15DarwinDirectory17ObjcCompatibilityCMo', '_$s15DarwinDirectory17ObjcCompatibilityCN', 
+                       '_$s15DarwinDirectory17ObjcCompatibilityCfD', '_$s15DarwinDirectory25updateLocalUsersAndGroups7performyySayAA4UserVGz_SayAA5GroupVGztKXE_tKF', 
+                       '_$s15DarwinDirectory29initializeLocalUsersAndGroups10andPerformyySayAA4UserVGz_SayAA5GroupVGztXE_tF', 
+                       '_$s15DarwinDirectory4UserV04homeB0SSvM', '_$s15DarwinDirectory4UserV04homeB0SSvg', 
+                       '_$s15DarwinDirectory4UserV04homeB0SSvpMV', '_$s15DarwinDirectory4UserV04homeB0SSvs', 
+                       '_$s15DarwinDirectory4UserV11membershipsSaySSGvM', '_$s15DarwinDirectory4UserV11membershipsSaySSGvg', 
+                       '_$s15DarwinDirectory4UserV11membershipsSaySSGvpMV', '_$s15DarwinDirectory4UserV11membershipsSaySSGvs', 
+                       '_$s15DarwinDirectory4UserV14primaryGroupIDs6UInt32VvM', '_$s15DarwinDirectory4UserV14primaryGroupIDs6UInt32Vvg', 
+                       '_$s15DarwinDirectory4UserV14primaryGroupIDs6UInt32VvpMV', 
+                       '_$s15DarwinDirectory4UserV14primaryGroupIDs6UInt32Vvs', '_$s15DarwinDirectory4UserV2eeoiySbAC_ACtFZ', 
+                       '_$s15DarwinDirectory4UserV3uids6UInt32VvM', '_$s15DarwinDirectory4UserV3uids6UInt32Vvg', 
+                       '_$s15DarwinDirectory4UserV3uids6UInt32VvpMV', '_$s15DarwinDirectory4UserV3uids6UInt32Vvs', 
+                       '_$s15DarwinDirectory4UserV4hash4intoys6HasherVz_tF', '_$s15DarwinDirectory4UserV4nameSSvM', 
+                       '_$s15DarwinDirectory4UserV4nameSSvg', '_$s15DarwinDirectory4UserV4nameSSvpMV', 
+                       '_$s15DarwinDirectory4UserV4nameSSvs', '_$s15DarwinDirectory4UserV4uuid10Foundation4UUIDVvM', 
+                       '_$s15DarwinDirectory4UserV4uuid10Foundation4UUIDVvg', '_$s15DarwinDirectory4UserV4uuid10Foundation4UUIDVvpMV', 
+                       '_$s15DarwinDirectory4UserV4uuid10Foundation4UUIDVvs', '_$s15DarwinDirectory4UserV5shellSSvM', 
+                       '_$s15DarwinDirectory4UserV5shellSSvg', '_$s15DarwinDirectory4UserV5shellSSvpMV', 
+                       '_$s15DarwinDirectory4UserV5shellSSvs', '_$s15DarwinDirectory4UserV8fullNameSSvM', 
+                       '_$s15DarwinDirectory4UserV8fullNameSSvg', '_$s15DarwinDirectory4UserV8fullNameSSvpMV', 
+                       '_$s15DarwinDirectory4UserV8fullNameSSvs', '_$s15DarwinDirectory4UserV9hashValueSivg', 
+                       '_$s15DarwinDirectory4UserV9hashValueSivpMV', '_$s15DarwinDirectory4UserVMa', 
+                       '_$s15DarwinDirectory4UserVMn', '_$s15DarwinDirectory4UserVN', 
+                       '_$s15DarwinDirectory4UserVSHAAMc', '_$s15DarwinDirectory4UserVSQAAMc', 
+                       '_$s15DarwinDirectory4UserVyACSo6DDUserCcfC', '_$s15DarwinDirectory5GroupV2eeoiySbAC_ACtFZ', 
+                       '_$s15DarwinDirectory5GroupV3gids6UInt32VvM', '_$s15DarwinDirectory5GroupV3gids6UInt32Vvg', 
+                       '_$s15DarwinDirectory5GroupV3gids6UInt32VvpMV', '_$s15DarwinDirectory5GroupV3gids6UInt32Vvs', 
+                       '_$s15DarwinDirectory5GroupV4hash4intoys6HasherVz_tF', '_$s15DarwinDirectory5GroupV4nameSSvM', 
+                       '_$s15DarwinDirectory5GroupV4nameSSvg', '_$s15DarwinDirectory5GroupV4nameSSvpMV', 
+                       '_$s15DarwinDirectory5GroupV4nameSSvs', '_$s15DarwinDirectory5GroupV4uuid10Foundation4UUIDVvM', 
+                       '_$s15DarwinDirectory5GroupV4uuid10Foundation4UUIDVvg', '_$s15DarwinDirectory5GroupV4uuid10Foundation4UUIDVvpMV', 
+                       '_$s15DarwinDirectory5GroupV4uuid10Foundation4UUIDVvs', '_$s15DarwinDirectory5GroupV8fullNameSSvM', 
+                       '_$s15DarwinDirectory5GroupV8fullNameSSvg', '_$s15DarwinDirectory5GroupV8fullNameSSvpMV', 
+                       '_$s15DarwinDirectory5GroupV8fullNameSSvs', '_$s15DarwinDirectory5GroupV9hashValueSivg', 
+                       '_$s15DarwinDirectory5GroupV9hashValueSivpMV', '_$s15DarwinDirectory5GroupVMa', 
+                       '_$s15DarwinDirectory5GroupVMn', '_$s15DarwinDirectory5GroupVN', 
+                       '_$s15DarwinDirectory5GroupVSHAAMc', '_$s15DarwinDirectory5GroupVSQAAMc', 
+                       '_$s15DarwinDirectory5GroupVyACSo7DDGroupCcfC', '_$sSo6DDUserC15DarwinDirectoryEyAbC4UserVcfC', 
+                       '_$sSo7DDGroupC15DarwinDirectoryEyAbC5GroupVcfC', _DDInitializeLocalUsersAndGroups, 
+                       _DDUpdateLocalUsersAndGroups ]
+    objc-classes:    [ DDGroup, DDObjcCompatibility, DDUser ]
+...
