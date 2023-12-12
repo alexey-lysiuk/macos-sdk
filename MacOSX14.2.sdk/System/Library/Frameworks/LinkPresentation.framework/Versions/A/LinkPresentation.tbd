@@ -1,0 +1,52 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/LinkPresentation.framework/Versions/A/LinkPresentation'
+current-version: 240.3.4
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _LPErrorDomain, _LPLinkMetadataTypeIdentifier, _LPLogChannelFetching, 
+                       _LPLogChannelFilesystem, _LPLogChannelPlugin, _LPLogChannelSerialization, 
+                       _LPLogChannelSnapshotGenerator, _LPLogChannelTranscoding, 
+                       _LPLogChannelUI, _LPLogChannelVideo, _LPYouTubePlayerErrorDomain, 
+                       _nameForSizeClass, _nameForStyle, _performForEachSizeClass, 
+                       _performForEachStyle ]
+    objc-classes:    [ LPARAsset, LPARAssetAttachmentSubstitute, LPARAssetMetadata, 
+                       LPARAssetProperties, LPAppLinkPresentationProperties, LPAppStoreStoryMetadata, 
+                       LPAppearanceDependentValue, LPAppleMusicTVShowMetadata, LPAppleNewsMetadata, 
+                       LPApplePhotosMomentMetadata, LPApplePhotosSharedLibraryInvitationMetadata, 
+                       LPApplePhotosStatusMetadata, LPAppleTVMetadata, LPArtworkMetadata, 
+                       LPAudio, LPAudioMetadata, LPAudioProperties, LPBusinessChatMetadata, 
+                       LPButtonAction, LPCaptionBarPresentationProperties, LPCaptionButtonCollapsedPresentationProperties, 
+                       LPCaptionButtonPresentationProperties, LPCaptionPresentationProperties, 
+                       LPCaptionRowPresentationProperties, LPCollaborationFooterPresentationProperties, 
+                       LPEvent, LPEventTimeline, LPFaceTimeInviteMetadata, LPFileMetadata, 
+                       LPGameCenterInvitationMetadata, LPIconMetadata, LPImage, LPImageAttachmentSubstitute, 
+                       LPImageMetadata, LPImagePresentationProperties, LPImageProperties, 
+                       LPInlineMediaPlaybackInformation, LPLinkHTMLGenerator, LPLinkHTMLTextGenerator, 
+                       LPLinkMetadata, LPLinkMetadataObserver, LPLinkMetadataPresentationTransformer, 
+                       LPLinkMetadataPreviewTransformer, LPLinkMetadataSharedWithYouTransformer, 
+                       LPLinkMetadataStatusTransformer, LPLinkMetadataStoreTransformer, 
+                       LPLinkRendererSizeClassParameters, LPLinkSnapshotConfiguration, 
+                       LPLinkSnapshotGenerator, LPLinkSnapshotGeneratorServiceDelegate, 
+                       LPLinkView, LPLyricExcerptMetadata, LPMIMETypeRegistry, LPMapCollectionMetadata, 
+                       LPMapCollectionPublisherMetadata, LPMapMetadata, LPMessagesPayload, 
+                       LPMetadataProvider, LPMultipleMetadataPresentationTransformer, 
+                       LPPasswordsInviteMetadata, LPPresentationSpecializations, 
+                       LPPriceMetadata, LPProductMetadata, LPSharePlayInviteMetadata, 
+                       LPSharedObjectMetadata, LPSharingMetadataWrapper, LPSharingStatusMetadata, 
+                       LPSourceApplicationMetadata, LPSpecializationMetadata, LPStocksMetadata, 
+                       LPStreamingAudioPlayer, LPSummarizedLinkMetadata, LPTestingOverrides, 
+                       LPTheme, LPVideo, LPVideoAttachmentSubstitute, LPVideoMetadata, 
+                       LPVideoProperties, LPVisualMedia, LPVisualMediaProperties, 
+                       LPWalletPassMetadata, LPWebLinkPresentationProperties, LPYouTubePlayerView, 
+                       LPYouTubeURLComponents, LPiCloudFamilyInvitationMetadata, 
+                       LPiCloudSharingMetadata, LPiTunesMediaAlbumMetadata, LPiTunesMediaArtistMetadata, 
+                       LPiTunesMediaAudioBookMetadata, LPiTunesMediaBookMetadata, 
+                       LPiTunesMediaMovieBundleMetadata, LPiTunesMediaMovieMetadata, 
+                       LPiTunesMediaMusicVideoMetadata, LPiTunesMediaPlaylistMetadata, 
+                       LPiTunesMediaPodcastEpisodeMetadata, LPiTunesMediaPodcastMetadata, 
+                       LPiTunesMediaRadioMetadata, LPiTunesMediaSoftwareMetadata, 
+                       LPiTunesMediaSongMetadata, LPiTunesMediaTVEpisodeMetadata, 
+                       LPiTunesMediaTVSeasonMetadata, LPiTunesUserProfileMetadata ]
+...

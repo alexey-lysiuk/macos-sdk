@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/AdPlatformsCommon.framework/Versions/A/AdPlatformsCommon'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _APLegacyNewsContextKey, _APSupplementalContextBetweenArticleKey, 
+                       _APSupplementalContextFeedMetadataContentProviderIdKey, _APSupplementalContextInArticleKey, 
+                       _APSupplementalContextInFeedKey, _APSupplementalContextNativeInArticleKey, 
+                       _APSupplementalContextNativeInFeedKey, _APSupplementalContextPlacementKey, 
+                       _APSupplementalContextVideoInArticleKey, _APSupplementalContextVideoInFeedKey, 
+                       _AdPlatformsCommonVersionNumber, _AdPlatformsCommonVersionString, 
+                       _gProxyIsRunning ]
+    objc-classes:    [ APAMSClientBagManager, APAdRequestContents, APContentData, 
+                       APContentDepiction, APContext, APControllerRequesterCoordinator, 
+                       APCoordinatedAdRequestBox, APCoordinatedProxyUrlRequestBox, 
+                       APCoordinatedRankRequestBox, APCoordinatedRetryBox, APFrequencyCapData, 
+                       APInstallAttribution, APMescalSigning, APMescalSigningRequestor, 
+                       APPCControllerRequester, APPolicyData, APRepresentationData, 
+                       APRequestCoordinator, APTapAction, PCNativeAsset, PCNativeAssetInfo, 
+                       PCNativeBorderStyle, PCNativeButton, PCNativeButtonStyle, 
+                       PCNativeColor, PCNativeElement, PCNativePrimitiveColor, PCNativeRepresentation, 
+                       PCNativeShadowStyle, PCNativeStyle ]
+...

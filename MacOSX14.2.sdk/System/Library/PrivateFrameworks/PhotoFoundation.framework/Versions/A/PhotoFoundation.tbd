@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/PhotoFoundation.framework/Versions/A/PhotoFoundation'
+current-version: 621.0.100
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _PFAbstractMethodException, _PFBackendGetLog, _PFCount, _PFExists, 
+                       _PFFilter, _PFFind, _PFMap, _PFMapDictionary, _PFMapIndexes, 
+                       _PFMethodNotImplementedException, _PFObjc_classIsSubclassOfClass, 
+                       _PFObjc_enumerateClassNamesForImageHeader, _PFObjc_enumerateSubclassesForHeader, 
+                       _PFObjc_implementingClassForInstanceMethod, _PFObjc_implementsClassMethod, 
+                       _PFObjc_implementsInstanceMethod, _PFPhotoFoundationBinaryImageUUID, 
+                       _PFProcessIsLaunchedToExecuteTests, _PFReduce, _PFReduceF, 
+                       _PFStateCaptureGetLog, __PFAssertContinueHandler, __PFAssertFailHandler ]
+    objc-classes:    [ PFAssertionHandler, PFAssertionInfo, PFAssertionPolicyAbort, 
+                       PFAssertionPolicyAlert, PFAssertionPolicyAlertRadar, PFAssertionPolicyComposite, 
+                       PFAssertionPolicyCrashReport, PFAssertionPolicyDebuggerFatal, 
+                       PFAssertionPolicyDebuggerWarning, PFAssertionPolicyLog, PFAssertionPolicyThrow, 
+                       PFAssertionPolicyThrowAlways, PFAssertionPolicyUnique, PFAssertionPolicyUnitTest, 
+                       PFCoalescer, PFCoalescerActivityToken, PFCoalescerContext, 
+                       PFMutualExclusionAssertion, PFStateCaptureHandler, PFTimeService, 
+                       PFTokenBucket ]
+...

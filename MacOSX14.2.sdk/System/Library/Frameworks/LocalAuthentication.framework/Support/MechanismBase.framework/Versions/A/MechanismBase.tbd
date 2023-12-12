@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/MechanismBase.framework/Versions/A/MechanismBase'
+current-version: 1394.60.57
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _kRemoteUIManagerDefaultActivateTimeout, _kRemoteUIManagerDefaultDeactivateTimeout, 
+                       _kRemoteUIManagerLongActivateTimeout ]
+    objc-classes:    [ ACMContextRecord, MechanismACM, MechanismAssertion, MechanismAssertionHolding, 
+                       MechanismAssertionLoginWindowShield, MechanismAssertionWithDarwinNotifications, 
+                       MechanismBase, MechanismBiometry, MechanismContext, MechanismKofN, 
+                       MechanismKofNReorganizer, RemoteUIActivator, RemoteUIManager, 
+                       RemoteUIManagerConfig, RemoteUIParams, _RemoteUIManager ]
+...

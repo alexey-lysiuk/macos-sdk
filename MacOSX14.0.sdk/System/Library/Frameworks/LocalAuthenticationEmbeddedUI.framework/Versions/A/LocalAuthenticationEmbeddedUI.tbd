@@ -1,9 +1,0 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
-install-name:    '/System/Library/Frameworks/LocalAuthenticationEmbeddedUI.framework/Versions/A/LocalAuthenticationEmbeddedUI'
-current-version: 1391.0.4
-exports:
-  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
-    objc-classes:    [ LAAuthenticationView, LAContextUITrampoline ]
-...

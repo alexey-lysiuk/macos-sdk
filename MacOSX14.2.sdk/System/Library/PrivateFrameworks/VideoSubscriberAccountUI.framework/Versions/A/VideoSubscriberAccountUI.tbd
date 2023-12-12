@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/Versions/A/VideoSubscriberAccountUI'
+current-version: 511.20.5
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _VSAppSettingsFacadeAppsDidChangeNotification, _VSWLKAppInstallationOperationNotificationUserInfoAppAdamIDKey, 
+                       _VSWLKAppInstallationOperationNotificationUserInfoInstallProgressKey, 
+                       _VSWLKAppInstallationOperationProgressDidChange, _kVSDeveloperTwoCharCode ]
+    objc-classes:    [ VSAMSStorefrontFetchAllOperation, VSAppDescription, VSAppInstallMetadata, 
+                       VSAppSettingsFacade, VSAppSettingsSectionKindMeta, VSAppSettingsViewModel, 
+                       VSFetchAllSupportedAppsOperation, VSFontCenter, VSIdentityProviderFetchAllOperation, 
+                       VSIdentityProviderFetchAppsOperation, VSIdentityProviderFetchOperation, 
+                       VSIdentityProviderFilter, VSIdentityProviderRequest, VSIdentityProviderRequestManager, 
+                       VSIdentityProviderStorefrontCollection, VSIdentityProviderStorefrontParser, 
+                       VSImageLoadOperation, VSLoadAllAppIconsOperation, VSMultiAppInstallUtility, 
+                       VSNonChannelAppDecider, VSStorefront, VSStorefrontFilter, 
+                       VSTopShelfPurger, VSViewControllerFactory, VSWLKAppInstallationOperation ]
+...

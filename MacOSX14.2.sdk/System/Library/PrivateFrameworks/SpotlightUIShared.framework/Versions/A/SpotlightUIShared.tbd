@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SpotlightUIShared.framework/Versions/A/SpotlightUIShared'
+current-version: 77.2.2
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SpotlightContactIdentifierKey, _SpotlightContactUserActivityType, 
+                       _SpotlightPreferredBundleIDsKey, _SpotlightUISharedVersionNumber, 
+                       _SpotlightUISharedVersionString ]
+    objc-classes:    [ SUIQueryContextBuilder, SUISRadarUtilities, SUISpotlightController, 
+                       SUIUtilities ]
+...

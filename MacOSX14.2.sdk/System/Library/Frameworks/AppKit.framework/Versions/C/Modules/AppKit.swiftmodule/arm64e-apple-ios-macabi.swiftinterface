@@ -1,0 +1,101 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64e-apple-ios17.2-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name AppKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 2487.30.104
+@_exported import Accessibility
+@_exported import AppKit
+import Cocoa
+@_exported import CoreGraphics
+@_exported import DeveloperToolsSupport
+import Foundation
+import OSLog
+import OpenGL
+import Swift
+@_exported import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension Swift.Sequence {
+  @available(macOS 14.0, *)
+  @inlinable internal func isSorted(by areInIncreasingOrder: (Self.Element, Self.Element) throws -> Swift.Bool) rethrows -> Swift.Bool {
+        return try self.adjacentPairs().allSatisfy({
+            // Since two equal-value elements are allowed to be contiguous, test that _none_ of the elements in reverse order are in increasing order.
+            // `areInIncreasingOrder($0.0, $0.1)` is to `<` as `!areInIncreasingOrder($0.1, $0.0)` is to `<=`.
+            return try !areInIncreasingOrder($0.1, $0.0)
+        })
+    }
+}
+extension Swift.Sequence where Self.Element : Swift.Comparable {
+  @available(macOS 14.0, *)
+  @inlinable internal func isSorted() -> Swift.Bool {
+        return self.isSorted(by: <)
+    }
+}
+extension Swift.Sequence {
+  @available(macOS 14.0, *)
+  @inlinable internal func adjacentPairs() -> AppKit.AdjacentPairsSequence<Self> {
+        return AdjacentPairsSequence(base: self)
+    }
+}
+@available(macOS 14.0, *)
+@usableFromInline
+internal struct AdjacentPairsSequence<Base> where Base : Swift.Sequence {
+  @usableFromInline
+  internal let base: Base
+  @usableFromInline
+  internal init(base: Base)
+}
+extension AppKit.AdjacentPairsSequence {
+  @available(macOS 14.0, *)
+  @usableFromInline
+  internal struct Iterator {
+    @usableFromInline
+    internal var base: Base.Iterator
+    @usableFromInline
+    internal var previous: Base.Element?
+    @usableFromInline
+    internal init(base: Base.Iterator)
+  }
+}
+extension AppKit.AdjacentPairsSequence.Iterator : Swift.IteratorProtocol {
+  @usableFromInline
+  internal typealias Element = (Base.Element, Base.Element)
+  @available(macOS 14.0, *)
+  @inlinable internal mutating func next() -> AppKit.AdjacentPairsSequence<Base>.Iterator.Element? {
+        if self.previous == nil {
+            self.previous = self.base.next()
+        }
+        
+        guard let previous = self.previous,
+              let next = self.base.next()
+        else {
+            return nil
+        }
+        
+        self.previous = next
+        return (previous, next)
+    }
+}
+extension AppKit.AdjacentPairsSequence : Swift.Sequence {
+  @available(macOS 14.0, *)
+  @inlinable internal func makeIterator() -> AppKit.AdjacentPairsSequence<Base>.Iterator {
+        return Iterator(base: self.base.makeIterator())
+    }
+  @available(macOS 14.0, *)
+  @inlinable internal var underestimatedCount: Swift.Int {
+    get {
+        let baseUnderestimatedCount = self.base.underestimatedCount
+        guard baseUnderestimatedCount > 0 else {
+            return 0
+        }
+        
+        // Since there are pairs, there is 1 fewer element in this sequence than its base.
+        return (baseUnderestimatedCount - 1)
+    }
+  }
+  @usableFromInline
+  internal typealias Element = AppKit.AdjacentPairsSequence<Base>.Iterator.Element
+}
+extension AppKit.AdjacentPairsSequence : Swift.LazySequenceProtocol where Base : Swift.LazySequenceProtocol {
+  @usableFromInline
+  internal typealias Elements = AppKit.AdjacentPairsSequence<Base>
+}

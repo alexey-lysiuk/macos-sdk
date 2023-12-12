@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/MLRuntime.framework/Versions/A/MLRuntime'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _MLRSanitizeError, _MLRuntimeVersionNumber, _MLRuntimeVersionString, 
+                       _kMLRTrialTaskMinInterval ]
+    objc-classes:    [ MLRBMLTSchedulingPolicy, MLRDonationManager, MLRExtensionPrincipalClass, 
+                       MLRExtensionRemoteContext, MLRExtensionService_Subsystem, 
+                       MLRInternalBMLTTask, MLRInternalTrialTask, MLRInternalTrialTaskResult, 
+                       MLROnDemandConnectionHandler, MLROnDemandPlugin, MLRSandboxExtensionRequest, 
+                       MLRServiceClient, MLRTask, MLRTaskAttachments, MLRTaskParameters, 
+                       MLRTaskResult, MLRTrialDediscoRecipe, MLRTrialDediscoTaskResult, 
+                       MLRTrialTask, MLRTrialTaskResult, MLRTrialTaskSchedulingPolicy ]
+...
