@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/TipsNextServices.framework/Versions/A/TipsNextServices'
+current-version: 55.4.17
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s16TipsNextServices13TipEventProxyC15unownedExecutorScevg', 
+                       '_$s16TipsNextServices13TipEventProxyC15unownedExecutorScevpMV', 
+                       '_$s16TipsNextServices13TipEventProxyC6donate15eventIdentifier3for4withySS_SSSDySSSe_SESQs8SendablepGSgtYaKFZ', 
+                       '_$s16TipsNextServices13TipEventProxyC6donate15eventIdentifier3for4withySS_SSSDySSSe_SESQs8SendablepGSgtYaKFZTu', 
+                       '_$s16TipsNextServices13TipEventProxyCMa', '_$s16TipsNextServices13TipEventProxyCMm', 
+                       '_$s16TipsNextServices13TipEventProxyCMn', '_$s16TipsNextServices13TipEventProxyCMo', 
+                       '_$s16TipsNextServices13TipEventProxyCMu', '_$s16TipsNextServices13TipEventProxyCN', 
+                       '_$s16TipsNextServices13TipEventProxyCScAAAMc', '_$s16TipsNextServices13TipEventProxyCfD', 
+                       '_$s16TipsNextServices13TipEventProxyCfd', '_$s16TipsNextServices18TipEventProxySwiftC6donate15eventIdentifier3forySS_SStYaKFZ', 
+                       '_$s16TipsNextServices18TipEventProxySwiftC6donate15eventIdentifier3forySS_SStYaKFZTu', 
+                       '_$s16TipsNextServices18TipEventProxySwiftCACycfC', '_$s16TipsNextServices18TipEventProxySwiftCACycfc', 
+                       '_$s16TipsNextServices18TipEventProxySwiftCMa', '_$s16TipsNextServices18TipEventProxySwiftCMn', 
+                       '_$s16TipsNextServices18TipEventProxySwiftCMo', '_$s16TipsNextServices18TipEventProxySwiftCN', 
+                       '_$s16TipsNextServices18TipEventProxySwiftCfD', '_$s16TipsNextServices8TipProxyC10invalidate13tipIdentifier3for4withySS_SSAC18InvalidationReasonVtYaKFZ', 
+                       '_$s16TipsNextServices8TipProxyC10invalidate13tipIdentifier3for4withySS_SSAC18InvalidationReasonVtYaKFZTu', 
+                       '_$s16TipsNextServices8TipProxyC15unownedExecutorScevg', '_$s16TipsNextServices8TipProxyC15unownedExecutorScevpMV', 
+                       '_$s16TipsNextServices8TipProxyC18InvalidationReasonV010userClosedD0AEvgZ', 
+                       '_$s16TipsNextServices8TipProxyC18InvalidationReasonV19userPerformedActionAEvgZ', 
+                       '_$s16TipsNextServices8TipProxyC18InvalidationReasonV23maxDisplayCountExceededAEvgZ', 
+                       '_$s16TipsNextServices8TipProxyC18InvalidationReasonV2eeoiySbAE_AEtFZ', 
+                       '_$s16TipsNextServices8TipProxyC18InvalidationReasonVMa', 
+                       '_$s16TipsNextServices8TipProxyC18InvalidationReasonVMn', 
+                       '_$s16TipsNextServices8TipProxyC18InvalidationReasonVN', '_$s16TipsNextServices8TipProxyC18InvalidationReasonVSQAAMc', 
+                       '_$s16TipsNextServices8TipProxyCMa', '_$s16TipsNextServices8TipProxyCMm', 
+                       '_$s16TipsNextServices8TipProxyCMn', '_$s16TipsNextServices8TipProxyCMo', 
+                       '_$s16TipsNextServices8TipProxyCMu', '_$s16TipsNextServices8TipProxyCN', 
+                       '_$s16TipsNextServices8TipProxyCScAAAMc', '_$s16TipsNextServices8TipProxyCfD', 
+                       '_$s16TipsNextServices8TipProxyCfd' ]
+    objc-classes:    [ TipEventProxy, _TtC16TipsNextServices18TipEventProxySwift ]
+...

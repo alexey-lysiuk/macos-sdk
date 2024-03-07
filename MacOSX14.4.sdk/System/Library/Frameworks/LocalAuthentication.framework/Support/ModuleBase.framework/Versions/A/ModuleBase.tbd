@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/ModuleBase.framework/Versions/A/ModuleBase'
+current-version: 1394.100.151
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AuthenticationPriorityForPolicy ]
+    objc-classes:    [ AgentProxy, AuthenticationInProgress, AuthenticationInProgressToken, 
+                       AuthenticationManager, ContextPlugin, MechanismManager, Module, 
+                       RemoteContext ]
+...

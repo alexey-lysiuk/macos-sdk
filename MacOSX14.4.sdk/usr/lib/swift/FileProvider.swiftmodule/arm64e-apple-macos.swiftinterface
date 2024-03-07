@@ -1,0 +1,63 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.5 clang-1500.3.9.1.1)
+// swift-module-flags: -target arm64e-apple-macos14.4 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftFileProvider -swift-version 5 -enforce-exclusivity=checked -O -library-level other -enable-bare-slash-regex -user-module-version 1835.101.2 -module-name FileProvider
+@_exported import FileProvider
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 11.3, iOS 16.0, *)
+@available(macCatalyst, unavailable)
+public enum _FileProvider_CSQueryExpression<T> {
+  case falseCase
+  case trueCase
+  case and(expression1: T, expression2: T)
+  case or(expression1: T, expression2: T)
+  case not(expression: T)
+  case equal(attributeName: Swift.String, attributeValue: Swift.String, flags: FileProvider._FileProvider_CSQueryExpressionFlag)
+  case notEqual(attributeName: Swift.String, attributeValue: Swift.String, flags: FileProvider._FileProvider_CSQueryExpressionFlag)
+  case ident(attributeName: Swift.String, attributeValue: Swift.String, flags: FileProvider._FileProvider_CSQueryExpressionFlag)
+  case notIdent(attributeName: Swift.String, attributeValue: Swift.String, flags: FileProvider._FileProvider_CSQueryExpressionFlag)
+  case lessThan(attributeName: Swift.String, attributeValue: Swift.String, flags: FileProvider._FileProvider_CSQueryExpressionFlag)
+  case greaterThan(attributeName: Swift.String, attributeValue: Swift.String, flags: FileProvider._FileProvider_CSQueryExpressionFlag)
+  case lessThanOrEqual(attributeName: Swift.String, attributeValue: Swift.String, flags: FileProvider._FileProvider_CSQueryExpressionFlag)
+  case greaterThanOrEqual(attributeName: Swift.String, attributeValue: Swift.String, flags: FileProvider._FileProvider_CSQueryExpressionFlag)
+  case inRange(attributeName: Swift.String, maxValue: Swift.String, minValue: Swift.String)
+}
+@available(macOS 11.3, iOS 16.0, *)
+@available(macCatalyst, unavailable)
+public struct _FileProvider_CSQueryExpressionFlag : Swift.OptionSet {
+  public let rawValue: Swift.UInt32
+  public init(rawValue: Swift.UInt32)
+  public static var caseInsensitive: FileProvider._FileProvider_CSQueryExpressionFlag
+  public static var diacriticInsensitive: FileProvider._FileProvider_CSQueryExpressionFlag
+  public static var wordBasedMatching: FileProvider._FileProvider_CSQueryExpressionFlag
+  public static var attributeIsMultivalued: FileProvider._FileProvider_CSQueryExpressionFlag
+  public static var wildcardAtStart: FileProvider._FileProvider_CSQueryExpressionFlag
+  public static var wildcardAtEnd: FileProvider._FileProvider_CSQueryExpressionFlag
+  public static var fuzzyMatching: FileProvider._FileProvider_CSQueryExpressionFlag
+  public static var fuzzyThreshold: FileProvider._FileProvider_CSQueryExpressionFlag
+  public static var collationTypeNoSearch: FileProvider._FileProvider_CSQueryExpressionFlag
+  public typealias ArrayLiteralElement = FileProvider._FileProvider_CSQueryExpressionFlag
+  public typealias Element = FileProvider._FileProvider_CSQueryExpressionFlag
+  public typealias RawValue = Swift.UInt32
+}
+@_hasMissingDesignatedInitializers @available(macOS 11.3, iOS 16.0, *)
+@available(macCatalyst, unavailable)
+public class _FileProvider_CSQueryParser<T> {
+  public static func parseSpotlightQuery<T>(spotlightQuery: Swift.String, callback: @escaping (FileProvider._FileProvider_CSQueryExpression<T>) throws -> T) throws -> T
+  @objc deinit
+}
+@available(macOS 11.3, iOS 16.0, *)
+@available(macCatalyst, unavailable)
+extension FileProvider.NSFileProviderDomainVersion : Swift.Comparable {
+  public static func < (lhs: FileProvider.NSFileProviderDomainVersion, rhs: FileProvider.NSFileProviderDomainVersion) -> Swift.Bool
+}
+@available(macOS 13.0, iOS 16.0, *)
+@available(macCatalyst, unavailable)
+extension FileProvider.NSFileProviderManager {
+  public func requestDownloadForItem(withIdentifier itemIdentifier: FileProvider.NSFileProviderItemIdentifier, requestedRange: Foundation.NSRange? = nil, completionHandler: @escaping ((any Swift.Error)?) -> Swift.Void)
+  #if compiler(>=5.3) && $AsyncAwait
+  public func requestDownloadForItem(withIdentifier itemIdentifier: FileProvider.NSFileProviderItemIdentifier, requestedRange: Foundation.NSRange? = nil) async throws
+  #endif
+}

@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/BiomeFlexibleStorage.framework/Versions/A/BiomeFlexibleStorage'
+current-version: 123.5.23
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _BiomeFlexibleStorageVersionNumber, _BiomeFlexibleStorageVersionString ]
+    objc-classes:    [ BMBFSPruningDelegate, BMRegistrar, BMRemoteSQLStoreManager, 
+                       BMSQLRow, BMSQLStore, BMSQLStoreManager, BMSelectExpression, 
+                       BMTable, BMTableSchema, BMTableStore, BMTableUpsertSubscriber, 
+                       BiomeFlexibleStorageDirectory, _BMRegistrarRegistration ]
+...

@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/_SonicKit_MusicKit.framework/Versions/A/_SonicKit_MusicKit'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E011applicationD0ACyFZ', 
+                       '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E011multiplayerD0ACyFZ', 
+                       '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E06systemD0ACvgZ', 
+                       '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E12supportsSingSbvM', 
+                       '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E12supportsSingSbvg', 
+                       '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E12supportsSingSbvpMV', 
+                       '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E12supportsSingSbvs', 
+                       '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E16supportsAutoplaySbvM', 
+                       '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E16supportsAutoplaySbvg', 
+                       '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E16supportsAutoplaySbvpMV', 
+                       '_$s8SonicKit13ConfigurationC01_ab6_MusicB0E16supportsAutoplaySbvs', 
+                       '_$s8SonicKit14PlaybackEngineC01_ab6_MusicB0E5music13configurationAcA13ConfigurationC_tFZ' ]
+...

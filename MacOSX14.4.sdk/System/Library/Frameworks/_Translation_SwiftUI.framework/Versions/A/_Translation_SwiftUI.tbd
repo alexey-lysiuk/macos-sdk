@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/_Translation_SwiftUI.framework/Versions/A/_Translation_SwiftUI'
+current-version: 255.14
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s7SwiftUI4ViewP013_Translation_aB0E23translationPresentation11isPresented4text16attachmentAnchor9arrowEdge17replacementActionQrAA7BindingVySbG_SSAA017PopoverAttachmentK0OAA0M0OySScSgtF', 
+                       '_$s7SwiftUI4ViewP013_Translation_aB0E23translationPresentation11isPresented4text16attachmentAnchor9arrowEdge17replacementActionQrAA7BindingVySbG_SSAA017PopoverAttachmentK0OAA0M0OySScSgtFQOMQ' ]
+...

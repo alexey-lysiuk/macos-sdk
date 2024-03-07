@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/NearFieldPrivateServices.framework/Versions/A/NearFieldPrivateServices'
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ nfcd ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _NearFieldPrivateServicesVersionNumber, _NearFieldPrivateServicesVersionString, 
+                       _kNFUIServiceCoreNFC_UserCancel ]
+    objc-classes:    [ NFPrivateService, NFPrivateServiceInterface, NFRadioPowerSwitch, 
+                       NFRestoreService, NFUIService ]
+...

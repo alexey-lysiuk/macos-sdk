@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/MailService.framework/Versions/A/MailService'
+current-version: 3774.255.171
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ CalendarAgent, Mail, MailShareExtension, MailShortcutsExtension, 
+                       MailTests, MailUI, TimeMachine, UnitTests, backupd, com.apple.MailServiceAgent, 
+                       maild ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _MSErrorDomain, _MSKVCKeyAccountID, _MSPersistenceInfoKeyLastUsedVersionDirectoryName, 
+                       _MSPersistenceInfoKeyVersionDirectoryIdentifiers, _MSSequenceNumberKey ]
+    objc-classes:    [ MSAttachment, MSClient, MSEmailModel, MSExternalAction, MSExternalAppendAction, 
+                       MSExternalSendLaterDeleteAction, MSExternalSendLaterDeliveryAction, 
+                       MSExternalUpdatesManager, MSMailPersistenceInfo ]
+...

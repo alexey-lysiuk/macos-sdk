@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/RequestDispatcherBridges.framework/Versions/A/RequestDispatcherBridges'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s24RequestDispatcherBridges0A16ControllerBridgeC4name16messagePublisher13serviceHelper5queue27conversationSessionsManager6logger025waitBeforeReplacingActiveA0ACSS_16SiriMessageTypes0U10Publishing_pSo09AFRequestb7ServiceJ0_pSo012OS_dispatch_K0CAK012ConversationM8Managing_p2os6LoggerVSbtcfC', 
+                       '_$s24RequestDispatcherBridges0A16ControllerBridgeC4name16messagePublisher13serviceHelper5queue27conversationSessionsManager6logger025waitBeforeReplacingActiveA0ACSS_16SiriMessageTypes0U10Publishing_pSo09AFRequestb7ServiceJ0_pSo012OS_dispatch_K0CAK012ConversationM8Managing_p2os6LoggerVSbtcfc', 
+                       '_$s24RequestDispatcherBridges0A16ControllerBridgeCMa', '_$s24RequestDispatcherBridges0A16ControllerBridgeCMm', 
+                       '_$s24RequestDispatcherBridges0A16ControllerBridgeCMn', '_$s24RequestDispatcherBridges0A16ControllerBridgeCMo', 
+                       '_$s24RequestDispatcherBridges0A16ControllerBridgeCMs', '_$s24RequestDispatcherBridges0A16ControllerBridgeCMu', 
+                       '_$s24RequestDispatcherBridges0A16ControllerBridgeCfD', '_$s24RequestDispatcherBridges0A16ControllerBridgeCfd', 
+                       _RequestDispatcherBridgesVersionNumber, _RequestDispatcherBridgesVersionString ]
+...
