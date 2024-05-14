@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/ContextSync.framework/Versions/A/ContextSync'
+current-version: 123.9
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _ContextSyncErrorDomain, _kCurrentVersion, _kMessageDSL, _kMessageDSLIdentifiers, 
+                       _kMessageDSLs, _kMessageType, _kMessageVersion, _kMessageVersionKey, 
+                       _kNewContextType, _kNonWakingDevicesKey, _kSubscriptionType, 
+                       _kVersionKey, _kWakeKey, _kWakingDevicesKey ]
+    objc-classes:    [ ContextSyncClient, ContextSyncService, _ContextSyncDeviceUtilities, 
+                       _ContextSyncLogger, _ContextSyncOtherDeviceSubscriptions, 
+                       _ContextSyncSubscriptions, _ContextSyncWakeState, _ContextSyncWakeSubscription, 
+                       _DASBiomeStream ]
+...

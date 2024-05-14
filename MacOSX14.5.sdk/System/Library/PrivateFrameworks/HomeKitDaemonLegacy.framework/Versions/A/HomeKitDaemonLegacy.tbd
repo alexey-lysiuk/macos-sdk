@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/HomeKitDaemonLegacy.framework/Versions/A/HomeKitDaemonLegacy'
+current-version: 1124.6.30
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s19HomeKitDaemonLegacy13InterfaceInfoV4name4type6hwAddrACSS_S2StcfC', 
+                       '_$s19HomeKitDaemonLegacy13InterfaceInfoVMa', '_$s19HomeKitDaemonLegacy13InterfaceInfoVMn', 
+                       '_$s19HomeKitDaemonLegacy13InterfaceInfoVN', '_$s19HomeKitDaemonLegacy19DiscoveryControllerC16visibleSFDevicesSDySS12HMFoundation3HMFO13VisibleDeviceVGvpfi', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerC27obtainSFVisibleDevicesProtoSaySo025HMAccessoryDiagnosticInfoj13VisibleDeviceM0CGyF', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerC27obtainSFVisibleDevicesProtoSaySo025HMAccessoryDiagnosticInfoj13VisibleDeviceM0CGyFTq', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerC32obtainNetworkVisibleDevicesProtoSaySo025HMAccessoryDiagnosticInfoki6DeviceN0CGyF', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerC32obtainNetworkVisibleDevicesProtoSaySo025HMAccessoryDiagnosticInfoki6DeviceN0CGyFTq', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerC5queueSo012OS_dispatch_G0Cvpfi', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerC5startyyF', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerC5startyyFTq', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerC6logger2os6LoggerVvpfi', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerCACycfC', '_$s19HomeKitDaemonLegacy19DiscoveryControllerCACycfc', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerCMa', '_$s19HomeKitDaemonLegacy19DiscoveryControllerCMn', 
+                       '_$s19HomeKitDaemonLegacy19DiscoveryControllerCN', '_$s19HomeKitDaemonLegacy19DiscoveryControllerCfD', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC06obtaineF0Say12HMFoundation3HMFO0eF0VG_SayAG0e7ServiceF0VGtyF', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC06obtaineF0Say12HMFoundation3HMFO0eF0VG_SayAG0e7ServiceF0VGtyFTq', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC06obtaineF5ProtoSDySSSayyXlGGyF', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC06obtaineF5ProtoSDySSSayyXlGGyFTq', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC0e7ServiceF3KeySSvau', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC0e7ServiceF3KeySSvgZ', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC0e7ServiceF3KeySSvpZ', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC0eF3KeySSvau', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC0eF3KeySSvgZ', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC0eF3KeySSvpZ', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC10dataSourceAcA0ef4DataI0_p_tcfC', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC10dataSourceAcA0ef4DataI0_p_tcfCTq', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC10dataSourceAcA0ef4DataI0_p_tcfc', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC5startyyF', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC5startyyFTq', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC5store33_E97E28228A7F7C7E6B1007440B9FFDBALLSo17SCDynamicStoreRefaSgvpfi', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerC6logger33_E97E28228A7F7C7E6B1007440B9FFDBALL2os6LoggerVvpfi', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerCACycfC', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerCACycfc', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerCMa', '_$s19HomeKitDaemonLegacy21NetworkInfoControllerCMn', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoControllerCN', '_$s19HomeKitDaemonLegacy21NetworkInfoControllerCfD', 
+                       '_$s19HomeKitDaemonLegacy21NetworkInfoDataSourceMp', '_$s19HomeKitDaemonLegacy21NetworkInfoDataSourceTL' ]
+    objc-classes:    [ HMDDiscoveryController, HMDMainDriver, HMDNetworkInfoController ]
+...

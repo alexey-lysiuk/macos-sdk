@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/PhotosUIEdit.framework/Versions/A/PhotosUIEdit'
+current-version: 651.0.100
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _PEAdjustmentDataCacheTimeout, _PEAnalyticsEditSessionThirdPartyPlugin, 
+                       _PEAnalyticsEventEditAction, _PEAnalyticsEventEditCopyAdjustmentsAction, 
+                       _PEAnalyticsEventEditSession, _PEAutoWhiteBalanceFaceIKey, 
+                       _PEAutoWhiteBalanceFaceQKey, _PEAutoWhiteBalanceFaceStrengthKey, 
+                       _PEAutoWhiteBalanceFaceWarmthKey, _PEAutoWhiteBalanceWarmFace, 
+                       _PEAutoWhiteBalanceWarmTemp, _PEAutoWhiteBalanceWarmTint, 
+                       _PECanRenderPortrait, _PEEditActionErrorDomain, _PEEditActionTypeString, 
+                       _PEPhotoEditSessionEndString, _PEPhotoEditSessionEntryPointString, 
+                       _PEPhotoEditSessionSaveActionTypeString, _PESCAPActionTypeString, 
+                       _PESCAPReviewFallbackReasonString, _PESerializationUtilityErrorDomain, 
+                       _PESingleActionKey, _PEVideoTrimBurnInUtilityErrorDomain, 
+                       _kDiffAddedKey, _kDiffModifiedKey, _kDiffRemovedKey ]
+    objc-classes:    [ PEAdjustmentDataCache, PEAdjustmentDataCacheEntry, PEAdjustmentDataCacheKey, 
+                       PEAdjustmentPreset, PEAdjustmentPresetManager, PEAnalyticsUtility, 
+                       PEAutoAdjustmentController, PEAutoEnhanceAction, PEAutoEnhanceActionHelper, 
+                       PECopyActionEventBuilder, PEEditAction, PEEditActionBatch, 
+                       PEEditActionEventBuilder, PEEditActionResult, PEEditSessionEventBuilder, 
+                       PEGlobals, PELivePortraitBehaviorController, PEPasteablePreset, 
+                       PEPhotoKitMediaDestination, PEQuickEdit, PEResourceLoadRequest, 
+                       PEResourceLoadResult, PEResourceLoader, PEResourceManager, 
+                       PERevertPreset, PERotateAction, PESCAPReviewManager, PESCAPReviewPayload, 
+                       PESaveRequest, PESerializationUtility, PESmartPasteablePreset, 
+                       PESupport, PEValuesCalculator, PEVideoTrimBurnInResult, PEVideoTrimBurnInUtility, 
+                       PUPhotoEditImageValues, _PEResourceHandler ]
+...

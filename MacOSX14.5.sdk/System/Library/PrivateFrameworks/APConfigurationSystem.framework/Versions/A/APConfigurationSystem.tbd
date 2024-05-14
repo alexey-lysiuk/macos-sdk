@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/APConfigurationSystem.framework/Versions/A/APConfigurationSystem'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _APConfigurationSystemVersionNumber, _APConfigurationSystemVersionString, 
+                       _kAPCAConfigSystemEventNameKey, _kAPCAConfigVersionKey, _kAPCAStatusCodeKey, 
+                       _kAPCATestingFlagKey, _kAPCSBundle, _kAPCSPath, _kAPCSPollValueKey, 
+                       _kAPCSProperties, _kAPCSVersion, _kAPConfigSystemLastRequestKey, 
+                       _kAPConfigSystemServerVersionKey, _kAPConfigSystemTarGzName, 
+                       _kAPConfigSystemTarName, _kAPConfigSystemTempDir, _kAPConfigSystemTestEnvironmentKey, 
+                       _kAPConfigSystemTraverseDir, _kAPConfigSystemURLPRDHost, _kAPConfigSystemURLPath, 
+                       _kAPConfigSystemURLRVWHost, _kAPConfigSystemURLSTGHost, _kAPConfigSystemURLScheme, 
+                       _kAPConfigSystemVersionKey, _kAPConfigurationSystemJSONFile, 
+                       _kAPConfigurationSystemPlistFile, _kAPDaemonBundleID, _kConfigSystemMaxCappingPollValue, 
+                       _kDefaultConfigSystemPollValue, _kJSONExtension, _kPlistExtension ]
+    objc-classes:    [ APAttributionConfig, APAttributionErrorCodeBucketsConfig, 
+                       APCSAgeSensitiveNoise, APCSAgeSensitiveThreshold, APCSConfiguration, 
+                       APCSEventDatabase, APCSIntegrityReport, APCSPolicyAppleSubscriptions, 
+                       APCSProxyRequest, APCSReports, APClientMetricsConfig, APConfiguration, 
+                       APConfigurationCache, APConfigurationDecompressor, APConfigurationMediator, 
+                       APConfigurationMigrator, APConfigurationResponseHandler, APECDiagnosticPurposeConfig, 
+                       APECGroupRandomizerConfig, APECJourneyPurposeConfig, APECObservabilityConfig, 
+                       APECObservabilityPurposeConfig, APECReportsPurposeConfig, 
+                       APECSettingsConfig, APSLPPlacementConfig, APVersionData, APVersionHelper, 
+                       APVersionTestData ]
+...

@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/Versions/A/VideoSubscriberAccountUI'
+current-version: 511.50.13
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s10Foundation3URLV24VideoSubscriberAccountUIE8vsStringACSgSS_tcfC', 
+                       '_$sSo5NSURLC24VideoSubscriberAccountUIE6vs_URL10withStringABSgSS_tFZ', 
+                       '_$sSo5NSURLC24VideoSubscriberAccountUIE8vsStringABSgSS_tcfC', 
+                       '_$sSo5NSURLC24VideoSubscriberAccountUIE8vsStringABSgSS_tcfc', 
+                       _VSAppSettingsFacadeAppsDidChangeNotification, _VSWLKAppInstallationOperationNotificationUserInfoAppAdamIDKey, 
+                       _VSWLKAppInstallationOperationNotificationUserInfoInstallProgressKey, 
+                       _VSWLKAppInstallationOperationProgressDidChange, _kVSDeveloperTwoCharCode ]
+    objc-classes:    [ VSAMSStorefrontFetchAllOperation, VSAppDescription, VSAppInstallMetadata, 
+                       VSAppSettingsFacade, VSAppSettingsSectionKindMeta, VSAppSettingsViewModel, 
+                       VSApps, VSAppsOperation, VSFetchAllSupportedAppsOperation, 
+                       VSFontCenter, VSIdentityProviderChannelAppsResponse, VSIdentityProviderFetchAllOperation, 
+                       VSIdentityProviderFetchAppsOperation, VSIdentityProviderFetchOperation, 
+                       VSIdentityProviderFilter, VSIdentityProviderRequest, VSIdentityProviderRequestManager, 
+                       VSIdentityProviderStorefrontCollection, VSIdentityProviderStorefrontParser, 
+                       VSImageLoadOperation, VSLoadAllAppIconsOperation, VSMultiAppInstallUtility, 
+                       VSNonChannelAppDecider, VSStorefront, VSStorefrontFilter, 
+                       VSTopShelfPurger, VSViewControllerFactory, VSWLKAppInstallationOperation ]
+...

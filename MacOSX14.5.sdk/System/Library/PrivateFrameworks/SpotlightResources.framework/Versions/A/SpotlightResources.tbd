@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SpotlightResources.framework/Versions/A/SpotlightResources'
+current-version: 2274.31
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SRLogCategoryGeneral, _SRLogCategorySignpost, _SpotlightResourcesErrorDomain, 
+                       _SpotlightResourcesVersionNumber, _SpotlightResourcesVersionString, 
+                       _getMobileAssetPropertiesFromPath, _languageCodeForLocale, 
+                       _localeIdentifierForLocale ]
+    objc-classes:    [ PlistReader, SRAsset, SRAssetBundle, SRAssetConfiguration, 
+                       SRAssetType, SRDefaultsManager, SRNamespaceType, SRPARSession, 
+                       SRParameter, SRResources, SRResourcesManager, SRTrialConfiguration, 
+                       SRTrialParameter, SSTrialManager ]
+...

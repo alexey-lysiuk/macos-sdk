@@ -1,0 +1,140 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.5 clang-1500.3.9.1.1)
+// swift-module-flags: -disable-objc-attr-requires-foundation-module -target arm64e-apple-macosx14.5 -enable-objc-interop -enable-library-evolution -module-link-name swift_Backtracing -parse-stdlib -swift-version 5 -O -library-level api -enforce-exclusivity=unchecked -target-min-inlining-version min -user-module-version 5.10.0.12.5 -module-name _Backtracing
+// swift-module-flags-ignorable: -enable-lexical-lifetimes=false
+import Swift
+public struct Backtrace : Swift.CustomStringConvertible, Swift.Sendable {
+  public typealias Address = Swift.UInt64
+  public enum UnwindAlgorithm {
+    case auto
+    case fast
+    case precise
+    public static func == (a: _Backtracing.Backtrace.UnwindAlgorithm, b: _Backtracing.Backtrace.UnwindAlgorithm) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Frame : Swift.CustomStringConvertible, Swift.Sendable {
+    case programCounter(_Backtracing.Backtrace.Address)
+    case returnAddress(_Backtracing.Backtrace.Address)
+    case asyncResumePoint(_Backtracing.Backtrace.Address)
+    case omittedFrames(Swift.Int)
+    case truncated
+    public var originalProgramCounter: _Backtracing.Backtrace.Address {
+      get
+    }
+    public var adjustedProgramCounter: _Backtracing.Backtrace.Address {
+      get
+    }
+    public func description(width: Swift.Int) -> Swift.String
+    public var description: Swift.String {
+      get
+    }
+  }
+  public struct Image : Swift.CustomStringConvertible, Swift.Sendable {
+    public var name: Swift.String
+    public var path: Swift.String
+    public var buildID: [Swift.UInt8]?
+    public var baseAddress: _Backtracing.Backtrace.Address
+    public var endOfText: _Backtracing.Backtrace.Address
+    public func description(width: Swift.Int) -> Swift.String
+    public var description: Swift.String {
+      get
+    }
+  }
+  public var architecture: Swift.String
+  public var addressWidth: Swift.Int
+  public var frames: [_Backtracing.Backtrace.Frame]
+  public var images: [_Backtracing.Backtrace.Image]?
+  public struct SharedCacheInfo : Swift.Sendable {
+    public var uuid: [Swift.UInt8]
+    public var baseAddress: _Backtracing.Backtrace.Address
+    public var noCache: Swift.Bool
+  }
+  public var sharedCacheInfo: _Backtracing.Backtrace.SharedCacheInfo?
+  public func formatAddress(_ address: _Backtracing.Backtrace.Address, prefix: Swift.Bool = true) -> Swift.String
+  @inline(never) @_semantics("use_frame_pointer") public static func capture(algorithm: _Backtracing.Backtrace.UnwindAlgorithm = .auto, limit: Swift.Int? = 64, offset: Swift.Int = 0, top: Swift.Int = 16) throws -> _Backtracing.Backtrace
+  public static func captureImages() -> [_Backtracing.Backtrace.Image]
+  public static func captureSharedCacheInfo() -> _Backtracing.Backtrace.SharedCacheInfo?
+  public func symbolicated(with images: [_Backtracing.Backtrace.Image]? = nil, sharedCacheInfo: _Backtracing.Backtrace.SharedCacheInfo? = nil, showInlineFrames: Swift.Bool = true, useSymbolCache: Swift.Bool = true) -> _Backtracing.SymbolicatedBacktrace?
+  public var description: Swift.String {
+    get
+  }
+}
+public struct SymbolicatedBacktrace : Swift.CustomStringConvertible {
+  public var backtrace: _Backtracing.Backtrace
+  public struct SourceLocation : Swift.CustomStringConvertible, Swift.Sendable, Swift.Hashable {
+    public var path: Swift.String
+    public var line: Swift.Int
+    public var column: Swift.Int
+    public var description: Swift.String {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: _Backtracing.SymbolicatedBacktrace.SourceLocation, b: _Backtracing.SymbolicatedBacktrace.SourceLocation) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct Frame : Swift.CustomStringConvertible {
+    public var captured: _Backtracing.Backtrace.Frame
+    public var symbol: _Backtracing.SymbolicatedBacktrace.Symbol?
+    public var inlined: Swift.Bool
+    public var isSwiftRuntimeFailure: Swift.Bool {
+      get
+    }
+    public var isSwiftThunk: Swift.Bool {
+      get
+    }
+    public var isSystem: Swift.Bool {
+      get
+    }
+    public func description(width: Swift.Int) -> Swift.String
+    public var description: Swift.String {
+      get
+    }
+  }
+  public class Symbol : Swift.CustomStringConvertible {
+    public var imageIndex: Swift.Int
+    public var imageName: Swift.String
+    public var rawName: Swift.String
+    public var name: Swift.String {
+      get
+      set
+    }
+    public var offset: Swift.Int
+    public var sourceLocation: _Backtracing.SymbolicatedBacktrace.SourceLocation?
+    public var isSwiftRuntimeFailure: Swift.Bool {
+      get
+    }
+    public var isSwiftThunk: Swift.Bool {
+      get
+    }
+    public var isSystemFunction: Swift.Bool {
+      get
+    }
+    public init(imageIndex: Swift.Int, imageName: Swift.String, rawName: Swift.String, offset: Swift.Int, sourceLocation: _Backtracing.SymbolicatedBacktrace.SourceLocation?)
+    public var description: Swift.String {
+      get
+    }
+    @objc deinit
+  }
+  public var addressWidth: Swift.Int {
+    get
+  }
+  public var frames: [_Backtracing.SymbolicatedBacktrace.Frame]
+  public var images: [_Backtracing.Backtrace.Image]
+  public var sharedCacheInfo: _Backtracing.Backtrace.SharedCacheInfo?
+  public var isSwiftRuntimeFailure: Swift.Bool {
+    get
+  }
+  public var swiftRuntimeFailure: Swift.String? {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
+extension _Backtracing.Backtrace.UnwindAlgorithm : Swift.Equatable {}
+extension _Backtracing.Backtrace.UnwindAlgorithm : Swift.Hashable {}
