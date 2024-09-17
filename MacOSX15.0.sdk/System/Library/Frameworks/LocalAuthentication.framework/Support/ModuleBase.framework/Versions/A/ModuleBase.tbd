@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/ModuleBase.framework/Versions/A/ModuleBase'
+current-version: 1656.0.99
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ '-allowable_client', CoreAuthUI, DaemonUtils, LARecoveryUITest, 
+                       LATester, LATester macOS, LocalAuthentication, LocalAuthenticationBinTests, 
+                       LocalAuthenticationCoreTests, LocalAuthenticationCoreUI, LocalAuthenticationCoreUITests, 
+                       LocalAuthenticationEmbeddedUI, LocalAuthenticationInterfaceTests, 
+                       LocalAuthenticationPreboard, LocalAuthenticationPreboardTests, 
+                       LocalAuthenticationPrivateUI, LocalAuthenticationRecoveryUI, 
+                       LocalAuthenticationRemoteService, LocalAuthenticationTestSupport, 
+                       LocalAuthenticationTests, LocalAuthenticationUI, LocalAuthorizationTests, 
+                       MechOyster, MechPasscode, MechPearl, MechPushButton, MechTouchId, 
+                       MechWatch, MechanismBase, ModuleACM, ModuleBase, SecurityAgentPlugin, 
+                       SharedUtils, coreautha, coreauthd, latool ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AuthenticationPriorityForPolicy ]
+    objc-classes:    [ AgentProxy, AuthenticationInProgress, AuthenticationInProgressToken, 
+                       AuthenticationManager, ContextPlugin, MechanismManager, Module, 
+                       RemoteContext ]
+...

@@ -1,0 +1,56 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/MicroLocationDaemon.framework/Versions/A/MicroLocationDaemon'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst ]
+    weak-symbols:    [ __ZTIFdRKNSt3__18multisetIdNS_4lessIdEENS_9allocatorIdEEEEE, 
+                       __ZTIN5boost10wrapexceptINS_16bad_lexical_castEEE, __ZTIN5boost10wrapexceptINS_5uuids13entropy_errorEEE, 
+                       __ZTIN5boost10wrapexceptISt13runtime_errorEE, __ZTIN5boost16bad_lexical_castE, 
+                       __ZTIN5boost16exception_detail10clone_baseE, __ZTIN5boost5uuids13entropy_errorE, 
+                       __ZTIN5boost9exceptionE, __ZTINSt3__110__function6__baseIFNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKS7_EEE, 
+                       __ZTINSt3__110__function6__baseIFNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKyEEE, 
+                       __ZTINSt3__110__function6__baseIFbvEEE, __ZTINSt3__110__function6__baseIFdNS_8multisetIdNS_4lessIdEENS_9allocatorIdEEEEEEE, 
+                       __ZTINSt3__110__function6__baseIFvNS_8functionIFbvEEEEEE, 
+                       __ZTINSt3__110__function6__baseIFvRKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEE, 
+                       __ZTINSt3__110__function6__baseIFvRKyEEE, __ZTINSt3__110__function6__funcIPFdRKNS_8multisetIdNS_4lessIdEENS_9allocatorIdEEEEENS5_ISB_EEFdS7_EEE, 
+                       __ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__117bad_function_callE, __ZTIPFdRKNSt3__18multisetIdNS_4lessIdEENS_9allocatorIdEEEEE, 
+                       __ZTSFdRKNSt3__18multisetIdNS_4lessIdEENS_9allocatorIdEEEEE, 
+                       __ZTSN5boost10wrapexceptINS_16bad_lexical_castEEE, __ZTSN5boost10wrapexceptINS_5uuids13entropy_errorEEE, 
+                       __ZTSN5boost10wrapexceptISt13runtime_errorEE, __ZTSN5boost16bad_lexical_castE, 
+                       __ZTSN5boost16exception_detail10clone_baseE, __ZTSN5boost5uuids13entropy_errorE, 
+                       __ZTSN5boost9exceptionE, __ZTSNSt3__110__function6__baseIFNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKS7_EEE, 
+                       __ZTSNSt3__110__function6__baseIFNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKyEEE, 
+                       __ZTSNSt3__110__function6__baseIFbvEEE, __ZTSNSt3__110__function6__baseIFdNS_8multisetIdNS_4lessIdEENS_9allocatorIdEEEEEEE, 
+                       __ZTSNSt3__110__function6__baseIFvNS_8functionIFbvEEEEEE, 
+                       __ZTSNSt3__110__function6__baseIFvRKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEE, 
+                       __ZTSNSt3__110__function6__baseIFvRKyEEE, __ZTSNSt3__110__function6__funcIPFdRKNS_8multisetIdNS_4lessIdEENS_9allocatorIdEEEEENS5_ISB_EEFdS7_EEE, 
+                       __ZTSNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__117bad_function_callE, __ZTSPFdRKNSt3__18multisetIdNS_4lessIdEENS_9allocatorIdEEEEE ]
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s19MicroLocationDaemon10ULKeychainC17storeSymmetricKey09symmetricG05labelSb9CryptoKit0fG0V_SStFZ', 
+                       '_$s19MicroLocationDaemon10ULKeychainC20retrieveSymmetricKeyyypSgSSFZ', 
+                       '_$s19MicroLocationDaemon10ULKeychainC26getSymmetricKeyOrCreateNewyypSgSSFZ', 
+                       '_$s19MicroLocationDaemon10ULKeychainC30retrieveSymmetricKeyWithStatus5label6status9CryptoKit0fG0VSgSS_s5Int32VztFZ', 
+                       '_$s19MicroLocationDaemon10ULKeychainC9removeKeyySbSSFZ', 
+                       '_$s19MicroLocationDaemon10ULKeychainCACycfC', '_$s19MicroLocationDaemon10ULKeychainCACycfc', 
+                       '_$s19MicroLocationDaemon10ULKeychainCMa', '_$s19MicroLocationDaemon10ULKeychainCMn', 
+                       '_$s19MicroLocationDaemon10ULKeychainCN', '_$s19MicroLocationDaemon10ULKeychainCfD', 
+                       '_$s19MicroLocationDaemon12ULEncryptionC11decryptData_8keyLabel10Foundation0F0VSgAH_SStFZ', 
+                       '_$s19MicroLocationDaemon12ULEncryptionC11decryptFile_15destinationPath8keyLabel13keychainClassSbSS_S2SyXlXptFZ', 
+                       '_$s19MicroLocationDaemon12ULEncryptionC11encryptData_8keyLabel10Foundation0F0VSgAH_SStFZ', 
+                       '_$s19MicroLocationDaemon12ULEncryptionC11encryptFile_15destinationPath8keyLabel13keychainClassSbSS_S2SyXlXptFZ', 
+                       '_$s19MicroLocationDaemon12ULEncryptionCACycfC', '_$s19MicroLocationDaemon12ULEncryptionCACycfc', 
+                       '_$s19MicroLocationDaemon12ULEncryptionCMa', '_$s19MicroLocationDaemon12ULEncryptionCMn', 
+                       '_$s19MicroLocationDaemon12ULEncryptionCN', '_$s19MicroLocationDaemon12ULEncryptionCfD', 
+                       '_$s19MicroLocationDaemon14ULKeychainMockC20retrieveSymmetricKeyyypSgSSFZ', 
+                       '_$s19MicroLocationDaemon14ULKeychainMockCACycfC', '_$s19MicroLocationDaemon14ULKeychainMockCACycfc', 
+                       '_$s19MicroLocationDaemon14ULKeychainMockCMa', '_$s19MicroLocationDaemon14ULKeychainMockCMn', 
+                       '_$s19MicroLocationDaemon14ULKeychainMockCN', '_$s19MicroLocationDaemon14ULKeychainMockCfD' ]
+    objc-classes:    [ ULEnvironment, ULServer, _TtC19MicroLocationDaemon10ULKeychain, 
+                       _TtC19MicroLocationDaemon12ULEncryption, _TtC19MicroLocationDaemon14ULKeychainMock ]
+...

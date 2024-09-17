@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SiriAutoComplete.framework/Versions/A/SiriAutoComplete'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s16SiriAutoComplete0abC12IndexBuilderC06updateD13ForAppInstall9bundleIdsSiSaySSG_tYaFTj', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderC06updateD13ForAppInstall9bundleIdsSiSaySSG_tYaFTjTu', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderC06updateD13ForAppInstall9bundleIdsSiSaySSG_tYaFTq', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderC20deletePhrasesFromApp9bundleIdsSbSaySSG_tYaFTj', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderC20deletePhrasesFromApp9bundleIdsSbSaySSG_tYaFTjTu', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderC20deletePhrasesFromApp9bundleIdsSbSaySSG_tYaFTq', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderC3run23firstBuildPostOSInstallSiSb_tYaFTj', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderC3run23firstBuildPostOSInstallSiSb_tYaFTjTu', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderC3run23firstBuildPostOSInstallSiSb_tYaFTq', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderCACycfC', '_$s16SiriAutoComplete0abC12IndexBuilderCMa', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderCMm', '_$s16SiriAutoComplete0abC12IndexBuilderCMn', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderCMo', '_$s16SiriAutoComplete0abC12IndexBuilderCMu', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderCN', '_$s16SiriAutoComplete0abC12IndexBuilderCfD', 
+                       '_$s16SiriAutoComplete0abC12IndexBuilderCfd', _SiriAutoCompleteVersionNumber, 
+                       _SiriAutoCompleteVersionString ]
+...

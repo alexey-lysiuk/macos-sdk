@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s14CoreBrightness14PILCalibrationC14cilCalibrations6UInt16Vvg', 
+                       '_$s14CoreBrightness14PILCalibrationC14cilCalibrations6UInt16VvpMV', 
+                       '_$s14CoreBrightness14PILCalibrationC14milCalibrations6UInt16Vvg', 
+                       '_$s14CoreBrightness14PILCalibrationC14milCalibrations6UInt16VvpMV', 
+                       '_$s14CoreBrightness14PILCalibrationC7versions5UInt8Vvg', 
+                       '_$s14CoreBrightness14PILCalibrationC7versions5UInt8VvpMV', 
+                       '_$s14CoreBrightness14PILCalibrationCACycfC', '_$s14CoreBrightness14PILCalibrationCACycfc', 
+                       '_$s14CoreBrightness14PILCalibrationCMa', '_$s14CoreBrightness14PILCalibrationCMn', 
+                       '_$s14CoreBrightness14PILCalibrationCMo', '_$s14CoreBrightness14PILCalibrationCMu', 
+                       '_$s14CoreBrightness14PILCalibrationCN', '_$s14CoreBrightness14PILCalibrationCfD', 
+                       '_$s14CoreBrightness21PILCalibrationManagerC15loadCalibrationAA0C0CSgyFZ', 
+                       '_$s14CoreBrightness21PILCalibrationManagerCACycfC', '_$s14CoreBrightness21PILCalibrationManagerCACycfc', 
+                       '_$s14CoreBrightness21PILCalibrationManagerCMa', '_$s14CoreBrightness21PILCalibrationManagerCMn', 
+                       '_$s14CoreBrightness21PILCalibrationManagerCMo', '_$s14CoreBrightness21PILCalibrationManagerCN', 
+                       '_$s14CoreBrightness21PILCalibrationManagerCfD', _CBALCALSCopyALSServiceClient, 
+                       _CBALCDisplayFeatureAvailable, _CBALCGetBoolPreferenceForKey, 
+                       _CBALCGetDictPreferenceForKey, _CBALCGetDisplayAutoBrightnessEnabled, 
+                       _CBALCGetFloatPreferenceForKey, _CBALCGetIntPreferenceForKey, 
+                       _CBALCGetKeyboardAutoBrightnessEnabled, _CBALCGetKeyboardDimTime, 
+                       _CBALCKeyboardFeatureAvailable, _CBALCLGPVersion, _CBALCRegisterALSPluginCallback, 
+                       _CBALCSetBoolPreferenceForKey, _CBALCSetDictPreferenceForKey, 
+                       _CBALCSetDictionary, _CBALCSetDisplayAutoBrightnessEnabled, 
+                       _CBALCSetFloatPreferenceForKey, _CBALCSetIntPreferenceForKey, 
+                       _CBALCSetKeyboardAutoBrightnessEnabled, _CBALCSetKeyboardDimTime, 
+                       _CBALCUnregisterALSPluginCallback, _kKBIDBuiltIn, _kKBIDDefault, 
+                       _kKBIDPrimary, _kKBIDSecondary ]
+    objc-classes:    [ BrightnessSystem, BrightnessSystemClient, BrightnessSystemClientInternal, 
+                       CBAdaptationClient, CBBlueLightClient, CBClient, CBKeyboardPreferencesManager, 
+                       CBTrueToneClient, DisplayServicesClient, KeyboardBrightnessClient, 
+                       _TtC14CoreBrightness14PILCalibration, _TtC14CoreBrightness21PILCalibrationManager ]
+...

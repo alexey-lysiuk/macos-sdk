@@ -1,0 +1,42 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/TemplateKit.framework/Versions/A/TemplateKit'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s11TemplateKit13TLKAsyncCacheC10getObjects7forKeys17completionHandlerySaySo8NSObjectCG_yAISgcSgtFTj', 
+                       '_$s11TemplateKit13TLKAsyncCacheC10getObjects7forKeys17completionHandlerySaySo8NSObjectCG_yAISgcSgtFTq', 
+                       '_$s11TemplateKit13TLKAsyncCacheC13computeObject6forKeySo8NSObjectCSgAG_tYaF', 
+                       '_$s11TemplateKit13TLKAsyncCacheC13computeObject6forKeySo8NSObjectCSgAG_tYaFTu', 
+                       '_$s11TemplateKit13TLKAsyncCacheC15getCachedObject3forSo8NSObjectCSgAG_tFTj', 
+                       '_$s11TemplateKit13TLKAsyncCacheC15getCachedObject3forSo8NSObjectCSgAG_tFTq', 
+                       '_$s11TemplateKit13TLKAsyncCacheC5clearyyFTj', '_$s11TemplateKit13TLKAsyncCacheC5clearyyFTq', 
+                       '_$s11TemplateKit13TLKAsyncCacheC9getObject6forKey17completionHandlerySo8NSObjectC_yAHSgcSgtFTj', 
+                       '_$s11TemplateKit13TLKAsyncCacheC9getObject6forKey17completionHandlerySo8NSObjectC_yAHSgcSgtFTq', 
+                       '_$s11TemplateKit13TLKAsyncCacheCACycfC', '_$s11TemplateKit13TLKAsyncCacheCACycfc', 
+                       '_$s11TemplateKit13TLKAsyncCacheCMa', '_$s11TemplateKit13TLKAsyncCacheCMn', 
+                       '_$s11TemplateKit13TLKAsyncCacheCMo', '_$s11TemplateKit13TLKAsyncCacheCMu', 
+                       '_$s11TemplateKit13TLKAsyncCacheCN', '_$s11TemplateKit13TLKAsyncCacheCfD', 
+                       _TLKBiggerSuggestionsLayoutEnabled, _TLKContentSizeCategoryDidChangeNotification, 
+                       _TLKImageViewBadgeOutset, _TLKMinimumHorizontalSpacingBetweenImageAndText, 
+                       _TLKMinimumHorizontalSpacingBetweenSmallImageAndText, _TLKMinimumHorizontalSpacingBetweenText, 
+                       _TLKMinimumVerticalSpacingBetweenTextBaselineAndImage, _TLKSnippetModernizationEnabled, 
+                       _TLKStandardBaselineSpacingBetweenText, _TemplateKitVersionNumber, 
+                       _TemplateKitVersionString ]
+    objc-classes:    [ TLKActivityIndicatorView, TLKAppearance, TLKAsyncCache, TLKAuxilliaryTextView, 
+                       TLKButton, TLKButtonView, TLKDescriptionView, TLKDetailsSection, 
+                       TLKDetailsView, TLKEmbossedLabel, TLKEnlargedTitleView, TLKFontUtilities, 
+                       TLKFormattedText, TLKFormattedTextItem, TLKGridLayoutManager, 
+                       TLKGridRowView, TLKHeaderView, TLKIcon, TLKImage, TLKImageAttachment, 
+                       TLKImageView, TLKImagesView, TLKInlineImage, TLKInlineRoundedText, 
+                       TLKKeyValueTuple, TLKKeyValueView, TLKLabel, TLKLayoutUtilities, 
+                       TLKMediaInfoView, TLKMultilineText, TLKObject, TLKPassThroughScrollView, 
+                       TLKProminenceView, TLKRichText, TLKRoundedCornerLabel, TLKSButton, 
+                       TLKSectionHeaderView, TLKSelectableGridTuple, TLKSelectableGridView, 
+                       TLKSimpleRowView, TLKSplitHeaderView, TLKStackView, TLKStars, 
+                       TLKStoreButton, TLKTableCellView, TLKTableColumnAlignment, 
+                       TLKTableHeaderRow, TLKTableRow, TLKTableViewController, TLKTextAreaView, 
+                       TLKTextButton, TLKTextView, TLKTitleContainerView, TLKTrialManager, 
+                       TLKUtilities, TLKView ]
+...

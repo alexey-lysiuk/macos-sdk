@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/MicroLocation.framework/Versions/A/MicroLocation'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _ULConfidenceReasonToString, _ULConfidenceToString, _ULConnectionAvailableNotification, 
+                       _ULLocationTypeToString, _ULServiceQualityReasonToString, 
+                       _ULServiceQualityToString, _ULServiceStateToString, _ULServiceSuspendReasonToString, 
+                       _ULServiceTypeToString ]
+    objc-classes:    [ ULConfidenceReason, ULConnection, ULCustomLoiConfiguration, 
+                       ULFingerprintError, ULFingerprintMetaInfo, ULLocationType, 
+                       ULPlace, ULPrediction, ULServiceDescriptor, ULServiceMetaInfo, 
+                       ULServiceQualityInfo, ULServiceQualityReason, ULServiceStatus, 
+                       ULServiceSuspendReason, ULUpdateConfiguration, ULXPCProtocols ]
+...

@@ -1,0 +1,58 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/StatusKitAgentCore.framework/Versions/A/StatusKitAgentCore'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s14LocalStatusKit07PublishB10InvocationC0bC9AgentCoreE6invoke4with7context6clientAC8ResponseVAC10ParametersV_AD08SKALocalB6ServerC7Sharing16SFClientIdentityOtYaKF', 
+                       '_$s14LocalStatusKit07PublishB10InvocationC0bC9AgentCoreE6invoke4with7context6clientAC8ResponseVAC10ParametersV_AD08SKALocalB6ServerC7Sharing16SFClientIdentityOtYaKFTu', 
+                       '_$s14LocalStatusKit07PublishB10InvocationC7Sharing28_SFXPCAsyncInvocableProtocol0bC9AgentCoreMc', 
+                       '_$s14LocalStatusKit07PublishB10InvocationC7Sharing31_AnySFXPCAsyncInvocableProtocol0bC9AgentCoreMc', 
+                       '_$s14LocalStatusKit09SubscribeB10InvocationC0bC9AgentCoreE6invoke4with7context6client7Sharing18SFXPCAsyncSequenceVySayAA08LSKLocalB11ObservationVy10Foundation4DataVGGGAA6LSKKeyVyAPG_AD08SKALocalB6ServerCAI16SFClientIdentityOtYaKF', 
+                       '_$s14LocalStatusKit09SubscribeB10InvocationC0bC9AgentCoreE6invoke4with7context6client7Sharing18SFXPCAsyncSequenceVySayAA08LSKLocalB11ObservationVy10Foundation4DataVGGGAA6LSKKeyVyAPG_AD08SKALocalB6ServerCAI16SFClientIdentityOtYaKFTu', 
+                       '_$s14LocalStatusKit09SubscribeB10InvocationC7Sharing28_SFXPCAsyncInvocableProtocol0bC9AgentCoreMc', 
+                       '_$s14LocalStatusKit09SubscribeB10InvocationC7Sharing31_AnySFXPCAsyncInvocableProtocol0bC9AgentCoreMc', 
+                       '_$s14LocalStatusKit0aB10InvocationC0bC9AgentCoreE6invoke4with7context6clientAC8ResponseVAA6LSKKeyVy10Foundation4DataVG_AD08SKALocalB6ServerC7Sharing16SFClientIdentityOtYaKF', 
+                       '_$s14LocalStatusKit0aB10InvocationC0bC9AgentCoreE6invoke4with7context6clientAC8ResponseVAA6LSKKeyVy10Foundation4DataVG_AD08SKALocalB6ServerC7Sharing16SFClientIdentityOtYaKFTu', 
+                       '_$s14LocalStatusKit0aB10InvocationC7Sharing28_SFXPCAsyncInvocableProtocol0bC9AgentCoreMc', 
+                       '_$s14LocalStatusKit0aB10InvocationC7Sharing31_AnySFXPCAsyncInvocableProtocol0bC9AgentCoreMc', 
+                       '_$s14LocalStatusKit16LSKStatusOptionsV0bC9AgentCoreE17targetDeviceFlagsAA09LSKTargetiJ0Vvg', 
+                       '_$s14LocalStatusKit16LSKStatusOptionsV0bC9AgentCoreE17targetDeviceFlagsAA09LSKTargetiJ0VvpMV', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerC12objcShutdownyyF', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerC15unownedExecutorScevg', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerC15unownedExecutorScevpMV', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerC17idsDeviceProviderACSo21SKAIDSDeviceProviding_p_tcfC', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerC17idsDeviceProviderACSo21SKAIDSDeviceProviding_p_tcfCTj', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerC17idsDeviceProviderACSo21SKAIDSDeviceProviding_p_tcfCTq', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerC17idsDeviceProviderACSo21SKAIDSDeviceProviding_p_tcfc', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerC7service_14devicesChangedySo10IDSServiceCSg_SayypGSgtF', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerCACycfC', '_$s18StatusKitAgentCore08SKALocalA6ServerCACycfc', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerCMa', '_$s18StatusKitAgentCore08SKALocalA6ServerCMn', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerCMo', '_$s18StatusKitAgentCore08SKALocalA6ServerCMu', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerCN', '_$s18StatusKitAgentCore08SKALocalA6ServerCScAAAMc', 
+                       '_$s18StatusKitAgentCore08SKALocalA6ServerCfD', '_$s18StatusKitAgentCore08SKALocalA6ServerCfd', 
+                       '_$s18StatusKitAgentCore8SKAErrorO10Foundation14LocalizedErrorAAMc', 
+                       '_$s18StatusKitAgentCore8SKAErrorO10unexpectedyACSScACmFWC', 
+                       '_$s18StatusKitAgentCore8SKAErrorO16errorDescriptionSSSgvg', 
+                       '_$s18StatusKitAgentCore8SKAErrorO16errorDescriptionSSSgvpMV', 
+                       '_$s18StatusKitAgentCore8SKAErrorO3nilyACSScACmFWC', '_$s18StatusKitAgentCore8SKAErrorOMa', 
+                       '_$s18StatusKitAgentCore8SKAErrorOMn', '_$s18StatusKitAgentCore8SKAErrorON', 
+                       '_$s18StatusKitAgentCore8SKAErrorOs5ErrorAAMc', _SKAAccountProviderErrorDomain, 
+                       _SKAChannelManagerErrorDomain, _SKAChannelManagerErrorRetryIntervalKey, 
+                       _SKPushManagerErrorDomain ]
+    objc-classes:    [ SKAAccountProvider, SKAChannelManager, SKADatabaseChannel, 
+                       SKADatabaseInvitedUser, SKADatabaseManager, SKADatabasePendingPublishRequest, 
+                       SKADatabaseProvider, SKADatabasePublishedLocalStatus, SKADatabasePublishedLocalStatusDevice, 
+                       SKADatabaseReceivedInvitation, SKADatabaseRemovedUser, SKADatabaseStatus, 
+                       SKADatabaseSubscribedLocalStatus, SKADatabaseSubscriptionAssertion, 
+                       SKADatabaseTransientSubscriptionHistory, SKAGeneratedEncryptionKey, 
+                       SKAInvitationManager, SKALocalStatusServer, SKALocalStatusServerObjC, 
+                       SKAMessagingProvider, SKAOutgoingInvitationState, SKAPresenceClient, 
+                       SKAPresenceClientConnection, SKAPresenceManager, SKAPushManager, 
+                       SKAStatusEncryptionManager, SKAStatusPublishingManager, SKAStatusPublishingServiceClient, 
+                       SKAStatusPublishingServiceClientConnection, SKAStatusReceivingManager, 
+                       SKAStatusServer, SKAStatusSubscriptionManager, SKAStatusSubscriptionServiceClient, 
+                       SKAStatusSubscriptionServiceClientConnection, SKAStatusUnencryptedEnvelope, 
+                       SKASystemMonitor ]
+...

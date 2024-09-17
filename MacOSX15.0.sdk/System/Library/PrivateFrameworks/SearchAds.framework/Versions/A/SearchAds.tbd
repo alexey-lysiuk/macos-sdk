@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SearchAds.framework/Versions/A/SearchAds'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s9SearchAds22ADJourneyMetricsHelperC10interactedyyFTj', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC10interactedyyFTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC18adMarkerInteractedyyFTj', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC18adMarkerInteractedyyFTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC25promotedContentIdentifierACSS_tcfC', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC25promotedContentIdentifierACSS_tcfCTj', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC25promotedContentIdentifierACSS_tcfCTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC25promotedContentIdentifierACSS_tcfc', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC6placedyyFTj', '_$s9SearchAds22ADJourneyMetricsHelperC6placedyyFTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC7visible8starting8durationy10Foundation4DateV_SdtFTj', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC7visible8starting8durationy10Foundation4DateV_SdtFTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC8onScreenyyFTj', '_$s9SearchAds22ADJourneyMetricsHelperC8onScreenyyFTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC8received6adamId010impressionH010adMetadataySS_SSSgAHtFTj', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC8received6adamId010impressionH010adMetadataySS_SSSgAHtFTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC9completedyyFTj', '_$s9SearchAds22ADJourneyMetricsHelperC9completedyyFTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC9deliveredyyFTj', '_$s9SearchAds22ADJourneyMetricsHelperC9deliveredyyFTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC9discardedyyFTj', '_$s9SearchAds22ADJourneyMetricsHelperC9discardedyyFTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperC9offScreenyyFTj', '_$s9SearchAds22ADJourneyMetricsHelperC9offScreenyyFTq', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperCACycfC', '_$s9SearchAds22ADJourneyMetricsHelperCACycfc', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperCMa', '_$s9SearchAds22ADJourneyMetricsHelperCMn', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperCMo', '_$s9SearchAds22ADJourneyMetricsHelperCMu', 
+                       '_$s9SearchAds22ADJourneyMetricsHelperCN', '_$s9SearchAds22ADJourneyMetricsHelperCfD', 
+                       _SearchAdsVersionNumber, _SearchAdsVersionString ]
+    objc-classes:    [ ADAppAdvertisement, ADAppRepresentation, ADCapService, ADDESRecordsManager, 
+                       ADDataObject, ADFCapSettings, ADInstallAttributionData, ADJourneyMetricsHelperInternal, 
+                       ADMetricManager, ADNewCapService, ADParameterFactory, ADResponseData, 
+                       ADSearchAdsSettings, ADSearchCriteria, ADSearchObject, ADSearchSession ]
+...

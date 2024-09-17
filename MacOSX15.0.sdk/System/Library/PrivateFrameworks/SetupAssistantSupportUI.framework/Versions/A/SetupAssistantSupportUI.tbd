@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SetupAssistantSupportUI.framework/Versions/A/SetupAssistantSupportUI'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo40SASWelcomeToDeviceViewControllerProviderC23SetupAssistantSupportUIE13stopAnimationyyF', 
+                       '_$sSo40SASWelcomeToDeviceViewControllerProviderC23SetupAssistantSupportUIE14startAnimationyyF', 
+                       '_$sSo40SASWelcomeToDeviceViewControllerProviderC23SetupAssistantSupportUIEABycfC', 
+                       '_$sSo40SASWelcomeToDeviceViewControllerProviderC23SetupAssistantSupportUIEABycfc', 
+                       '_$sSo40SASWelcomeToDeviceViewControllerProviderCMa', _SetupAssistantSupportUIVersionNumber, 
+                       _SetupAssistantSupportUIVersionString ]
+    objc-classes:    [ SASBezierCurve, SASCursiveTextPath, SASCursiveTextView, SASCursiveTextWindow, 
+                       SASLogging, SASPathPoint, SASUIProximityCloudPlayerItem, SASWelcomeToDeviceViewControllerProvider, 
+                       SASWelcomeView ]
+    objc-ivars:      [ SASCursiveTextPath._boundingBoxOfPath, SASCursiveTextPath._duration, 
+                       SASCursiveTextPath._finalWeight, SASCursiveTextPath._initialWeight, 
+                       SASCursiveTextPath._length, SASCursiveTextPath._pathDefinition, 
+                       SASCursiveTextPath._rampTime, SASCursiveTextPath._resolution, 
+                       SASCursiveTextView.textLayer, SASCursiveTextView.textPath, 
+                       SASCursiveTextView.textTransform ]
+...

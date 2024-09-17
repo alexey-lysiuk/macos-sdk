@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/DeviceDiscoveryUICore.framework/Versions/A/DeviceDiscoveryUICore'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _DDUIBuildLocalizedKeyForDeviceTypes, _DDUICoreLocalizedString, 
+                       _DDUICorePrimaryQueue, _DDUIDeviceTypeString, _DDUIEndpointPairingBrowsingTransportForOptions, 
+                       _DDUIEndpointPairingListeningTransportForOptions, _DDUIEndpointPairingSessionResultString, 
+                       _DDUIFetchInfoPlistFromRecord, _DDUIInfoPlistFromTopLevelDictionary, 
+                       _DDUILocalizedString, _DDUILocalizedUsageStringForBundle, 
+                       _DDUILocalizedUsageStringWithSuffixForBundle, _DDUIMessageAdamIDKey, 
+                       _DDUIMessageAppNameKey, _DDUIMessageApplicationIDKey, _DDUIMessageBundleIDKey, 
+                       _DDUIMessageResponseCancelReasonKey, _DDUIMessageResponseIsCancelKey, 
+                       _DDUIMessageResponseListenerUUIDKey, _DDUIMessageResponseResultKey, 
+                       _DDUIMessageServiceIDKey, _DDUINotificationResultString, __DDUIApplicationServiceInfoLocalizedStringFormat, 
+                       __DDUIApplicationServiceInfoPlistAdvertisesKey, __DDUIApplicationServiceInfoPlistBrowsesKey, 
+                       __DDUIApplicationServiceInfoPlistKey, __DDUIApplicationServiceInfoPlistPlatforms, 
+                       __DDUIApplicationServiceInfoPlistServiceIdentifier, __DDUIApplicationServiceInfoPlistUsageDescription, 
+                       __DDUIApplicationServiceUsageDescription, __DDUICoreLog, __DDUICoreLogSubsystem, 
+                       __DDUICoreRapportLog, __DDUIRapportContinuityCameraInitiatorMessageID, 
+                       __DDUIRapportContinuityCameraResponseMessageID, __DDUIRapportPairingInitiatorMessageID, 
+                       __DDUIRapportPairingMessageInfoKey, __DDUIRapportPairingMessageMessageIDKey, 
+                       __DDUIRapportPairingMessageSessionIDKey, __DDUIRapportPairingMinimumVersion, 
+                       __DDUIRapportPairingResponderMessageID, __DDUIRapportServiceTypeNSString, 
+                       __DDUIRapportServiceTypeString ]
+    objc-classes:    [ DDUIApplicationInfo, DDUICoreAgent, DDUIEndpointPairingInitiator, 
+                       DDUIEndpointPairingListener, DDUIEndpointPairingSession, DDUIInfoPlist, 
+                       DDUIInfoPlistService, DDUIPairCompleteMessage, DDUIPairInitiateMessage, 
+                       DDUIRapportPeopleDiscovery, _DDUIRapportPairingTransport ]
+...

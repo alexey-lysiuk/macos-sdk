@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/FileProviderDaemon.framework/Versions/A/FileProviderDaemon'
+current-version: 2732.0.85
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _FPDAppStoreServiceName, _FPDAppStoreServiceXPCInterface, 
+                       _FPDomainPlistName, _FPDomainStateDirectoryName, _FPDomainTemporaryDirectoryName, 
+                       _FPVolumeRoleTelemetryField, _defaultsKeyForErrorInjectionCategory, 
+                       _errorInjectionCategoryByName, _errorInjectionPointEnabled, 
+                       _errorInjectionThrowOnDBQueryEnabled, _errorInjectionUnknownDBVersionEnabled ]
+    objc-classes:    [ FPDAccessControlStore, FPDActionOperation, FPDActionOperationQueue, 
+                       FPDAppMonitor, FPDCacheDeleteService, FPDCacheDeleteServiceForTesting, 
+                       FPDConfigurationStore, FPDDomain, FPDDomainCleanupResult, 
+                       FPDDomainExtensionBackend, FPDDomainIndexer, FPDDomainIndexerSchedulerAssertion, 
+                       FPDDomainIndexerState, FPDDomainPlistSignature, FPDDownloadOperation, 
+                       FPDDownloader, FPDExtension, FPDExtensionManager, FPDExternalVolume, 
+                       FPDFetchAppLibraryIconOperation, FPDFileCoordinationProvider, 
+                       FPDKeychainManager, FPDMoveAtom, FPDMoveOperation, FPDMoveReader, 
+                       FPDMoveWriter, FPDProcessMonitor, FPDProvider, FPDProviderDescriptor, 
+                       FPDRequest, FPDServer, FPDSharedScheduler, FPDSyncBubble, 
+                       FPDVolume, FPDVolumeManager, FPDXPCServicer ]
+    objc-ivars:      [ FPDCacheDeleteService._cacheDeleteCacheable, FPDCacheDeleteService._cacheDeleteServiceName, 
+                       FPDCacheDeleteService._cdNotificationsHandlers, FPDCacheDeleteService._notificationsHandlersQueue ]
+...

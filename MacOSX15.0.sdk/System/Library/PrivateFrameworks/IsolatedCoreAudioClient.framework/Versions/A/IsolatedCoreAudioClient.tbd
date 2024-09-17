@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/IsolatedCoreAudioClient.framework/Versions/A/IsolatedCoreAudioClient'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst ]
+    weak-symbols:    [ __ZTIFvvE, __ZTINSt3__110__function6__baseIFbvEEE, __ZTINSt3__110__function6__baseIFvdyEEE, 
+                       __ZTINSt3__110__function6__baseIFviEEE, __ZTINSt3__110__function6__baseIFvvEEE, 
+                       __ZTINSt3__110__function6__baseIFxvEEE, __ZTINSt3__110__function6__baseIFxxEEE, 
+                       __ZTINSt3__110__function6__funcIPFvvENS_9allocatorIS3_EES2_EE, 
+                       __ZTINSt3__110__function6__funcIU8__strongU13block_pointerFxvENS_9allocatorIS4_EES2_EE, 
+                       __ZTINSt3__110__function6__funcIU8__strongU13block_pointerFxxENS_9allocatorIS4_EES2_EE, 
+                       __ZTINSt3__117bad_function_callE, __ZTIPFvvE, __ZTIU13block_pointerFxvE, 
+                       __ZTIU13block_pointerFxxE, __ZTSFvvE, __ZTSNSt3__110__function6__baseIFbvEEE, 
+                       __ZTSNSt3__110__function6__baseIFvdyEEE, __ZTSNSt3__110__function6__baseIFviEEE, 
+                       __ZTSNSt3__110__function6__baseIFvvEEE, __ZTSNSt3__110__function6__baseIFxvEEE, 
+                       __ZTSNSt3__110__function6__baseIFxxEEE, __ZTSNSt3__110__function6__funcIPFvvENS_9allocatorIS3_EES2_EE, 
+                       __ZTSNSt3__110__function6__funcIU8__strongU13block_pointerFxvENS_9allocatorIS4_EES2_EE, 
+                       __ZTSNSt3__110__function6__funcIU8__strongU13block_pointerFxxENS_9allocatorIS4_EES2_EE, 
+                       __ZTSNSt3__117bad_function_callE, __ZTSPFvvE, __ZTSU13block_pointerFxvE, 
+                       __ZTSU13block_pointerFxxE ]
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _CreateIsolatedAudioServicePortal, _RegisterForIsolatedAudio, 
+                       _RequestIsolatedAudio, _SetAudioLapseHandler, _StartIsolatedAudio, 
+                       _StartIsolatedAudioAtTime, _StopIsolatedAudio ]
+...

@@ -1,0 +1,80 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.7.24 clang-1600.0.25.1)
+// swift-module-flags: -target arm64e-apple-ios18.0-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 3145.74.5.5 -module-name MediaExtension
+import AVFoundation
+import Foundation
+@_exported import MediaExtension
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public enum MERAWProcessorNotification {
+  public static let readyForMoreMediaDataDidChange: Foundation.NSNotification.Name
+  public static let valuesDidChange: Foundation.NSNotification.Name
+}
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MediaExtension.MERAWProcessingParameter {
+  public class func boolean(name: Swift.String, key: Swift.String, description: Swift.String, initialValue: Swift.Bool, neutralValue: Swift.Bool? = nil, cameraValue: Swift.Bool? = nil) -> MediaExtension.MERAWProcessingParameter.Boolean
+  public class func integer(name: Swift.String, key: Swift.String, description: Swift.String, initialValue: Swift.Int, maximum: Swift.Int, minimum: Swift.Int, neutralValue: Swift.Int?, cameraValue: Swift.Int?) -> MediaExtension.MERAWProcessingParameter.Integer
+  public class func float(name: Swift.String, key: Swift.String, description: Swift.String, initialValue: Swift.Float, maximum: Swift.Float, minimum: Swift.Float, neutralValue: Swift.Float?, cameraValue: Swift.Float?) -> MediaExtension.MERAWProcessingParameter.FloatingPoint
+  public class func listElement(name: Swift.String, description: Swift.String, elementID: Swift.Int) -> MediaExtension.MERAWProcessingParameter.ListElement
+  public class func list(name: Swift.String, key: Swift.String, description: Swift.String, list listElements: [MediaExtension.MERAWProcessingParameter.ListElement], initialValue: Swift.Int, neutralValue: Swift.Int?, cameraValue: Swift.Int?) -> MediaExtension.MERAWProcessingParameter.List
+  public class func subGroup(name: Swift.String, description: Swift.String, parameters: [MediaExtension.MERAWProcessingParameter]) -> MediaExtension.MERAWProcessingParameter.SubGroup
+}
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MediaExtension.MERAWProcessingParameter.Boolean {
+  convenience public init(name: Swift.String, key: Swift.String, description: Swift.String, initialValue: Swift.Bool, neutralValue: Swift.Bool? = nil, cameraValue: Swift.Bool? = nil)
+}
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MediaExtension.MERAWProcessingParameter.Integer {
+  convenience public init(name: Swift.String, key: Swift.String, description: Swift.String, initialValue: Swift.Int, maximum: Swift.Int, minimum: Swift.Int, neutralValue: Swift.Int? = nil, cameraValue: Swift.Int? = nil)
+}
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MediaExtension.MERAWProcessingParameter.FloatingPoint {
+  convenience public init(name: Swift.String, key: Swift.String, description: Swift.String, initialValue: Swift.Float, maximum: Swift.Float, minimum: Swift.Float, neutralValue: Swift.Float? = nil, cameraValue: Swift.Float? = nil)
+}
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MediaExtension.MERAWProcessingParameter.List {
+  convenience public init(name: Swift.String, key: Swift.String, description: Swift.String, list listElements: [MediaExtension.MERAWProcessingParameter.ListElement], initialValue: Swift.Int, neutralValue: Swift.Int? = nil, cameraValue: Swift.Int? = nil)
+}
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MediaExtension.MERAWProcessorPixelBufferManager {
+  @available(macOS 15.0, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public var pixelBufferAttributes: [Swift.String : any Swift.Sendable] {
+    get
+    set
+  }
+}

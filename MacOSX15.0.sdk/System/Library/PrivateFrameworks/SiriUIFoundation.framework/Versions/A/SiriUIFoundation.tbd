@@ -1,0 +1,43 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SiriUIFoundation.framework/Versions/A/SiriUIFoundation'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s16SiriUIFoundation6LoggerOMa', '_$s16SiriUIFoundation6LoggerOMn', 
+                       '_$s16SiriUIFoundation6LoggerON', _ASBDForSAUIAD, _SRUIFConstructLaunchContextForLaunchEnded, 
+                       _SRUIFConstructLaunchContextForLaunchStarted, _SRUIFConversationErrorDomain, 
+                       _SRUIFFileURLForConversationWithIdentifier, _SRUIFGetLanguageCode, 
+                       _SRUIFGetLocale, _SRUIFInstrumentButtonLaunchSignpost, _SRUIFInstrumentQuickTypeGestureLaunchSignpost, 
+                       _SRUIFInstrumentVoiceLaunchSignpost, _SRUIFInvokeOnMainQueue, 
+                       _SRUIFLanguageCodeDidChangeNotification, _SRUIFMachAbsoluteTimeToMachContinuousTime, 
+                       _SRUIFMaxIntervalForDisplayingPreviousConversation, _SRUIFPopulateSendCommandWithInstrumentationTurn, 
+                       _SRUIFPreferencesConversationStartersShownSinceOSInstalled, 
+                       _SRUIFPreferencesDefaultDomain, _SRUIFPreferencesMaxIntervalForDisplayingPreviousConversation, 
+                       _SRUIFPreferencesPreviousConversationEndTimestamp, _SRUIFPreviousConversationIdentifier, 
+                       _SRUIFResponseModeToSISchemaResponseMode, _SRUIFSetLanguageCode, 
+                       _SRUIFShouldInstrumentLaunchContextForAceCommand, _SRUIFShouldUseSAE, 
+                       _SRUIFSiriSessionEventGetDescription, _SRUIFSiriSessionStateGetDescription, 
+                       _SRUIFSpeechSynthesisResultGetName, _SRUIFStringForUserAttentionGainEvent, 
+                       _SRUIFStringForUserAttentionLossEvent, _SiriUIFoundationVersionNumber, 
+                       _SiriUIFoundationVersionString, _kMaximumDisplayDuration, 
+                       _kMinimumDisplayDuration, _kSiriPreferences, _kSiriPreferencesMinimumDurationForAddViewsKey ]
+    objc-classes:    [ SRUIFAceCommandRecord, SRUIFAceCommandRecords, SRUIFAddViewsDurationProvider, 
+                       SRUIFAlternativeInfo, SRUIFAnalyticsSupplement, SRUIFAssetUtilities, 
+                       SRUIFAudioPowerLevelUpdater, SRUIFCachedPreferences, SRUIFCardLoader, 
+                       SRUIFCardLoadingMonitor, SRUIFChildConversationItemList, SRUIFCoercion, 
+                       SRUIFConversation, SRUIFConversationError, SRUIFConversationInsertion, 
+                       SRUIFConversationItem, SRUIFConversationStore, SRUIFConversationTransaction, 
+                       SRUIFDataStore, SRUIFDebugLog, SRUIFDelayedActionCommandCache, 
+                       SRUIFDialogPhase, SRUIFDictionarySchema, SRUIFImagePNGData, 
+                       SRUIFInstrumentationManager, SRUIFLocalization, SRUIFMutableConversationItem, 
+                       SRUIFMutableStack, SRUIFPlatformHostingInstrumentationHandler, 
+                       SRUIFPreferences, SRUIFSiriSessionInfo, SRUIFSiriSessionStateHandler, 
+                       SRUIFSpeechRecognitionHypothesis, SRUIFSpeechRequestHandler, 
+                       SRUIFSpeechSynthesisRequest, SRUIFSpeechSynthesisTask, SRUIFSpeechSynthesisUtility, 
+                       SRUIFSpeechSynthesizer, SRUIFStack, SRUIFStateFeedbackDefaultProvider, 
+                       SRUIFStateFeedbackManager, SRUIFStateMachine, SRUIFTreeNode, 
+                       SRUIFTreeNodePropertyListSerialization, SRUIFUIBridgeClient, 
+                       SRUIFUtilities ]
+...

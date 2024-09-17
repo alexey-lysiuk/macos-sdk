@@ -1,0 +1,44 @@
+.\" Copyright (c) 2021 Apple Inc. All rights reserved.
+.Dd 17 September, 2021
+.Dt apple_ssh_and_fips 7
+.Os Darwin
+.
+.Sh NAME
+.Nm apple_ssh_and_fips
+.Nd Configuring SSH for FIPS algorithms
+.Sh DESCRIPTION
+The macOS version of SSH uses Apple’s FIPS Cryptographic Modules for
+FIPS 140-2 validated algorithms, automatically without the need for
+installation, administration, or configuration.  To restrict the SSH
+client and server to use
+.Em only
+FIPS algorithms, customize the configuration as directed below.
+.Pp
+The configuration files for
+.Xr ssh 1
+and
+.Xr sshd 8
+read the algorithm configuration directives from
+.Pa /etc/ssh/crypto.conf ,
+which should be a symbolic link to either the macOS
+default algorithm configuration file
+.Pa /etc/ssh/crypto/apple.conf ,
+or to the FIPS-only configuration file
+.Pa /etc/ssh/crypto/fips.conf .
+To choose FIPS algorithms
+.Em only ,
+update the symbolic
+link as follows.
+.Bd -literal -offset indent
+sudo ln -fs crypto/fips.conf /etc/ssh/crypto.conf
+.Ed
+.Pp
+To return to the default set of algorithms which largely prefer FIPS
+algorithms but allow others as well:
+.Bd -literal -offset indent
+sudo ln -fs crypto/apple.conf /etc/ssh/crypto.conf
+.Ed
+.Pp
+.Sh SEE ALSO
+.Xr ssh 1 ,
+.Xr sshd 8

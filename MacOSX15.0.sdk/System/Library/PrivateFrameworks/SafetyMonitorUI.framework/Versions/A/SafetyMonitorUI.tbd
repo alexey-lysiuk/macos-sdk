@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SafetyMonitorUI.framework/Versions/A/SafetyMonitorUI'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s15SafetyMonitorUI11PayloadKeysO015recipientHandleD3KeySSvau', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO015recipientHandleD3KeySSvgZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO015recipientHandleD3KeySSvpZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO019workoutActivityTypeD3KeySSvau', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO019workoutActivityTypeD3KeySSvgZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO019workoutActivityTypeD3KeySSvpZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO027workoutActivityTypeIsIndoorD3KeySSvau', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO027workoutActivityTypeIsIndoorD3KeySSvgZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO027workoutActivityTypeIsIndoorD3KeySSvpZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO04dataD3KeySSvau', '_$s15SafetyMonitorUI11PayloadKeysO04dataD3KeySSvgZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO04dataD3KeySSvpZ', '_$s15SafetyMonitorUI11PayloadKeysO17groupIDPayloadKeySSvau', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO17groupIDPayloadKeySSvgZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO17groupIDPayloadKeySSvpZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO24sessionStartEntryTypeKeySSvau', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO24sessionStartEntryTypeKeySSvgZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysO24sessionStartEntryTypeKeySSvpZ', 
+                       '_$s15SafetyMonitorUI11PayloadKeysOMa', '_$s15SafetyMonitorUI11PayloadKeysOMn', 
+                       '_$s15SafetyMonitorUI11PayloadKeysON', '_$s15SafetyMonitorUI12GeofenceSizeO21__derived_enum_equalsySbAC_ACtFZ', 
+                       '_$s15SafetyMonitorUI12GeofenceSizeO4hash4intoys6HasherVz_tF', 
+                       '_$s15SafetyMonitorUI12GeofenceSizeO6radiusSdvg', '_$s15SafetyMonitorUI12GeofenceSizeO6radiusSdvpMV', 
+                       '_$s15SafetyMonitorUI12GeofenceSizeO9hashValueSivg', '_$s15SafetyMonitorUI12GeofenceSizeO9hashValueSivpMV', 
+                       '_$s15SafetyMonitorUI12GeofenceSizeOMa', '_$s15SafetyMonitorUI12GeofenceSizeOMn', 
+                       '_$s15SafetyMonitorUI12GeofenceSizeON', '_$s15SafetyMonitorUI12GeofenceSizeOSHAAMc', 
+                       '_$s15SafetyMonitorUI12GeofenceSizeOSQAAMc', '_$s15SafetyMonitorUI25getGeofenceSizeFromRadius6radiusAA0eF0OSd_tF', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemV03mapH0So05MKMapH0CSgvpfi', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemV06searchG0So07MKLocaleG0CSgvpfi', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemV2eeoiySbAC_ACtFZ', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemV4hash4intoys6HasherVz_tF', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemV9hashValueSivg', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemV9hashValueSivpMV', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemVMa', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemVMn', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemVN', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemVSHAAMc', 
+                       '_$s15SafetyMonitorUI31LocationSearchRowCompletionItemVSQAAMc', 
+                       _SafetyMonitorUIVersionNumber, _SafetyMonitorUIVersionString ]
+...

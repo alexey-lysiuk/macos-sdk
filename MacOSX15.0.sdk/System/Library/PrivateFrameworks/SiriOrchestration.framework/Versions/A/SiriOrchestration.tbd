@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SiriOrchestration.framework/Versions/A/SiriOrchestration'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _AFSiriDidLaunchAppNotification, _NAFNetworkAvailabilityDidChangeNotification, 
+                       _SiriOrchestrationVersionNumber, _SiriOrchestrationVersionString, 
+                       _kExtendTimeoutReasonOnlyIfExpiring, _kRequestIdForMyriadNotificaiton, 
+                       _kRequestSettingCaptionVoiceFeedback, _kRequestSettingHideBackgroundContent, 
+                       _kRequestSettingShowRecognizedSpeech, _kRequestSettingTypeToSiri, 
+                       _kRequestSettingUseSpeakerForTTS, _kRequestSettings, _kRequestSiriInputLanguage ]
+    objc-classes:    [ MulticastMessageForwarder, NAFConnection, NAFConnectionAvailabilityObserver, 
+                       NAFConnectionClientServiceDelegate, NAFNetworkAvailability, 
+                       Receiver ]
+...

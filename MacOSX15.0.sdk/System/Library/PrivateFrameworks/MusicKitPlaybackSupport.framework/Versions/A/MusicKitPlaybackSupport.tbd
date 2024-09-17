@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/MusicKitPlaybackSupport.framework/Versions/A/MusicKitPlaybackSupport'
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    clients:         [ MusicKit Playground Internal, _SonicKit_MusicKit ]
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s8MusicKit4SongV0aB15PlaybackSupportE11_esotericIDAA0a4ItemG0Vvg', 
+                       '_$s8MusicKit4SongV0aB15PlaybackSupportE11_esotericIDAA0a4ItemG0VvpMV' ]
+...

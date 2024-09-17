@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SiriEntityMatcher.framework/Versions/A/SiriEntityMatcher'
+exports:
+  - targets:         [ x86_64-macos ]
+    weak-symbols:    [ __ZTIN4skit10WordFilterE, __ZTIN4skit11TokenFilterE, __ZTINSt3__120__shared_ptr_emplaceIN7morphun8analysis22DefaultAnalyzerFactoryENS_9allocatorIS3_EEEE, 
+                       __ZTSN4skit10WordFilterE, __ZTSN4skit11TokenFilterE, __ZTSNSt3__120__shared_ptr_emplaceIN7morphun8analysis22DefaultAnalyzerFactoryENS_9allocatorIS3_EEEE ]
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _SEMAppCustomVocabularyTypeFromNumber, _SEMAppCustomVocabularyTypeIsValid, 
+                       _SEMAppCustomVocabularyTypeToNumber, _SEMEntityTypeDescription, 
+                       _SEMEntityTypeIsValid, _SEMSandboxErrorDomain, _SEMSpanMatcherErrorDomain, 
+                       _SEMTokenizationErrorDomain ]
+    objc-classes:    [ SEMAdministrator, SEMAppCustomVocabularySearchResult, SEMAppCustomVocabularySearcher, 
+                       SEMCascadeEntityFieldInfo, SEMCascadeEntityInfo, SEMCascadeFieldTypeFilter, 
+                       SEMCascadeItemTypeFilter, SEMDispatcher, SEMFieldMatch, SEMIndexSiteManager, 
+                       SEMSandbox, SEMSpanInfo, SEMSpanMatchQuery, SEMSpanMatchQueryBuilder, 
+                       SEMSpanMatchResult, SEMSpanMatcher, SEMTokenizer ]
+...

@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SleepHealth.framework/Versions/A/SleepHealth'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _HDSleepHealthDaemonPluginServerInterface, _HKSHBreathingDisturbanceAnalysisSchedulerLastSuccessfulAnalysisAttemptDateKey, 
+                       _HKSHBreathingDisturbanceAnalysisSchedulerSuccessfulAnalysisAttemptCountKey, 
+                       _HKSHBreathingDisturbanceAnalysisWindowLength, _HKSHBreathingDisturbanceKeyValueDomainName, 
+                       _HKSHCreatePossibleSleepApneaDetectedNotificationRequest, 
+                       _HKSHHealthDaemonPluginIdentifier, _HKSHSleepApneaControlClientInterface, 
+                       _HKSHSleepApneaControlServerIdentifier, _HKSHSleepApneaControlServerInterface, 
+                       _HKSHSleepApneaEventSampleDetailURLPathComponent, _HKSHSleepApneaEventSampleDetailsLink, 
+                       _HKSHSleepApneaNotificationActionLearnMore, _HKSHSleepApneaNotificationCategoryFeatureIsAvailableAgainAndEnabled, 
+                       _HKSHSleepApneaNotificationCategoryPossibleSleepApnea, _HKSHSleepApneaNotificationCategoryRescindedNoLongerSupportedOnActiveRemoteDevice, 
+                       _HKSHSleepApneaNotificationCategoryRescindedNoLongerSupportedOnLocalDevice, 
+                       _HKSHSleepApneaNotificationCategoryRescindedRemoteDisabled, 
+                       _HKSHSleepApneaNotificationCategoryRescindedSeedExpired, _HKSHSleepApneaNotificationRequestIdentifier, 
+                       _HKSHSleepDurationGoalLeeway, _HKSleepHealthStoreInterface ]
+    objc-classes:    [ HKSHSleepApneaControl, HKSHSleepApneaNotificationInteractedAnalyticsEvent, 
+                       HKSHSleepMetrics, HKSHSleepMetricsEngine, HKSleepHealthStore ]
+...

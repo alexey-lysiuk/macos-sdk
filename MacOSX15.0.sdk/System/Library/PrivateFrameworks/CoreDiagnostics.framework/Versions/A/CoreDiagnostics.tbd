@@ -1,0 +1,60 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/CoreDiagnostics.framework/Versions/A/CoreDiagnostics'
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s15CoreDiagnostics10CriterialsC2id4type4pathACSS_S2StcfC', 
+                       '_$s15CoreDiagnostics10CriterialsC2id4type4pathACSS_S2StcfCTj', 
+                       '_$s15CoreDiagnostics10CriterialsC2id4type4pathACSS_S2StcfCTq', 
+                       '_$s15CoreDiagnostics10CriterialsC2id4type4pathACSS_S2Stcfc', 
+                       '_$s15CoreDiagnostics10CriterialsCACycfC', '_$s15CoreDiagnostics10CriterialsCACycfc', 
+                       '_$s15CoreDiagnostics10CriterialsCMa', '_$s15CoreDiagnostics10CriterialsCMn', 
+                       '_$s15CoreDiagnostics10CriterialsCMo', '_$s15CoreDiagnostics10CriterialsCMu', 
+                       '_$s15CoreDiagnostics10CriterialsCN', '_$s15CoreDiagnostics10CriterialsCfD', 
+                       '_$s15CoreDiagnostics15PanicCriterialsC2id4type4path11panicStringACSS_S3StcfC', 
+                       '_$s15CoreDiagnostics15PanicCriterialsC2id4type4path11panicStringACSS_S3StcfCTj', 
+                       '_$s15CoreDiagnostics15PanicCriterialsC2id4type4path11panicStringACSS_S3StcfCTq', 
+                       '_$s15CoreDiagnostics15PanicCriterialsC2id4type4path11panicStringACSS_S3Stcfc', 
+                       '_$s15CoreDiagnostics15PanicCriterialsC2id4type4pathACSS_S2StcfC', 
+                       '_$s15CoreDiagnostics15PanicCriterialsC2id4type4pathACSS_S2Stcfc', 
+                       '_$s15CoreDiagnostics15PanicCriterialsCMa', '_$s15CoreDiagnostics15PanicCriterialsCMn', 
+                       '_$s15CoreDiagnostics15PanicCriterialsCMo', '_$s15CoreDiagnostics15PanicCriterialsCMu', 
+                       '_$s15CoreDiagnostics15PanicCriterialsCN', '_$s15CoreDiagnostics15PanicCriterialsCfD', 
+                       '_$s15CoreDiagnostics19CompatibilityBridgeC23WriteJetsamMemoryReport22visibilityEndowmentSet014audioAssertionK0SbShySo8NSNumberCGSg_AJtFZ', 
+                       '_$s15CoreDiagnostics19CompatibilityBridgeCACycfC', '_$s15CoreDiagnostics19CompatibilityBridgeCACycfc', 
+                       '_$s15CoreDiagnostics19CompatibilityBridgeCMa', '_$s15CoreDiagnostics19CompatibilityBridgeCMn', 
+                       '_$s15CoreDiagnostics19CompatibilityBridgeCMo', '_$s15CoreDiagnostics19CompatibilityBridgeCN', 
+                       '_$s15CoreDiagnostics19CompatibilityBridgeCfD', '_$s15CoreDiagnostics22ExcResourceReportPathsSaySSGSgyF', 
+                       '_$s15CoreDiagnostics23WriteJetsamMemoryReport22visibilityEndowmentSet014audioAssertionI0SbShys5Int32VGSg_AHtF', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingC02isD16PayloadAvailableSbyF', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingC07lookForD06report10takeActionSbAA10CriterialsC_SbtF', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingC07lookForD5Async6report10takeAction8callbackyAA10CriterialsC_SbySbctF', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingC14getMatcherTypeSo21pattern_matching_typeVyF', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingC4typeACSgSo017pattern_matching_F0V_tcfC', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingC4typeACSgSo017pattern_matching_F0V_tcfCTj', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingC4typeACSgSo017pattern_matching_F0V_tcfCTq', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingC4typeACSgSo017pattern_matching_F0V_tcfc', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingCACycfC', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingCACycfc', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingCMa', '_$s15CoreDiagnostics25DiagnosticPatternMatchingCMn', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingCMo', '_$s15CoreDiagnostics25DiagnosticPatternMatchingCMu', 
+                       '_$s15CoreDiagnostics25DiagnosticPatternMatchingCN', '_$s15CoreDiagnostics25DiagnosticPatternMatchingCfD', 
+                       '_$s15CoreDiagnostics31DiagnosticReportCollectorBridgeC011ExcResourceD5PathsSaySSGSgyFZ', 
+                       '_$s15CoreDiagnostics31DiagnosticReportCollectorBridgeCACycfC', 
+                       '_$s15CoreDiagnostics31DiagnosticReportCollectorBridgeCACycfc', 
+                       '_$s15CoreDiagnostics31DiagnosticReportCollectorBridgeCMa', 
+                       '_$s15CoreDiagnostics31DiagnosticReportCollectorBridgeCMn', 
+                       '_$s15CoreDiagnostics31DiagnosticReportCollectorBridgeCMo', 
+                       '_$s15CoreDiagnostics31DiagnosticReportCollectorBridgeCN', 
+                       '_$s15CoreDiagnostics31DiagnosticReportCollectorBridgeCfD', 
+                       _CoreDiagnosticsVersionNumber, _CoreDiagnosticsVersionString, 
+                       _ExcResourceReportPaths, _WriteJetsamMemoryReport ]
+    objc-classes:    [ _SwiftCriterials, _SwiftDiagnosticPatternMatching, _SwiftPanicCriterials, 
+                       _TtC15CoreDiagnostics19CompatibilityBridge, _TtC15CoreDiagnostics31DiagnosticReportCollectorBridge, 
+                       objcCriterials, objcDiagnosticPatternMatching, objcPanicCriterials ]
+...

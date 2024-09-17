@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/AppStoreFoundation.framework/Versions/A/AppStoreFoundation'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _ASFDiskSpaceAvailableSpaceKey, _ASFDiskSpaceFreeSpaceKey, 
+                       _ASFDiskSpacePurgeableSpaceKey, _ASFVolumePreferenceKeyIconPath, 
+                       _ASFVolumePreferenceKeyName, _ASFVolumePreferenceKeyVolumeID ]
+    objc-classes:    [ ASFIAPItem, ASFReceipt, ASFVolume, ASFVolumeMonitor ]
+...

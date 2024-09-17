@@ -1,0 +1,52 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/DeviceSpecSupport.framework/Versions/A/DeviceSpecSupport'
+current-version: 5
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s17DeviceSpecSupport0A5GraphC2eeoiySbAC_ACtFZ', '_$s17DeviceSpecSupport0A5GraphC4from3urlAC10Foundation3URLV_tKFZ', 
+                       '_$s17DeviceSpecSupport0A5GraphC4from4dataAC10Foundation4DataV_tKFZ', 
+                       '_$s17DeviceSpecSupport0A5GraphC4from6stringACSS_tKFZ', '_$s17DeviceSpecSupport0A5GraphC4fromACs7Decoder_p_tKcfC', 
+                       '_$s17DeviceSpecSupport0A5GraphC4fromACs7Decoder_p_tKcfCTj', 
+                       '_$s17DeviceSpecSupport0A5GraphC4fromACs7Decoder_p_tKcfCTq', 
+                       '_$s17DeviceSpecSupport0A5GraphC4fromACs7Decoder_p_tKcfc', 
+                       '_$s17DeviceSpecSupport0A5GraphC6encode2toys7Encoder_p_tKFTj', 
+                       '_$s17DeviceSpecSupport0A5GraphC6encode2toys7Encoder_p_tKFTq', 
+                       '_$s17DeviceSpecSupport0A5GraphCACycfC', '_$s17DeviceSpecSupport0A5GraphCACycfCTj', 
+                       '_$s17DeviceSpecSupport0A5GraphCACycfCTq', '_$s17DeviceSpecSupport0A5GraphCACycfc', 
+                       '_$s17DeviceSpecSupport0A5GraphCMa', '_$s17DeviceSpecSupport0A5GraphCMm', 
+                       '_$s17DeviceSpecSupport0A5GraphCMn', '_$s17DeviceSpecSupport0A5GraphCMo', 
+                       '_$s17DeviceSpecSupport0A5GraphCMu', '_$s17DeviceSpecSupport0A5GraphCN', 
+                       '_$s17DeviceSpecSupport0A5GraphCSEAAMc', '_$s17DeviceSpecSupport0A5GraphCSQAAMc', 
+                       '_$s17DeviceSpecSupport0A5GraphCSeAAMc', '_$s17DeviceSpecSupport0A5GraphCfD', 
+                       '_$s17DeviceSpecSupport0A5GraphCfd', '_$s17DeviceSpecSupport0A7RealityO7virtualyA2CmFWC', 
+                       '_$s17DeviceSpecSupport0A7RealityO8physicalyA2CmFWC', '_$s17DeviceSpecSupport0A7RealityO8rawValueACSgSS_tcfC', 
+                       '_$s17DeviceSpecSupport0A7RealityO8rawValueSSvg', '_$s17DeviceSpecSupport0A7RealityO8rawValueSSvpMV', 
+                       '_$s17DeviceSpecSupport0A7RealityOMa', '_$s17DeviceSpecSupport0A7RealityOMn', 
+                       '_$s17DeviceSpecSupport0A7RealityON', '_$s17DeviceSpecSupport0A7RealityOSHAAMc', 
+                       '_$s17DeviceSpecSupport0A7RealityOSQAAMc', '_$s17DeviceSpecSupport0A7RealityOSYAAMc', 
+                       '_$s17DeviceSpecSupport0aB0C09convertToA19ComputeCapabilitiesSDySSypGyKF', 
+                       '_$s17DeviceSpecSupport0aB0C10deviceName14hardwareModels09marketingE08platform11productType7reality7osTrain0M7Version0M7Variant8rootURLs8prkitURL14setupCompleted0D19ComputeCapabilitiesACSSSg_SaySSGSgA3qA0A7RealityOSgA3qsQSbSgSDySSs8Sendable_pSgGSgtcfC', 
+                       '_$s17DeviceSpecSupport0aB0C10deviceName14hardwareModels09marketingE08platform11productType7reality7osTrain0M7Version0M7Variant8rootURLs8prkitURL14setupCompleted0D19ComputeCapabilitiesACSSSg_SaySSGSgA3qA0A7RealityOSgA3qsQSbSgSDySSs8Sendable_pSgGSgtcfCTj', 
+                       '_$s17DeviceSpecSupport0aB0C10deviceName14hardwareModels09marketingE08platform11productType7reality7osTrain0M7Version0M7Variant8rootURLs8prkitURL14setupCompleted0D19ComputeCapabilitiesACSSSg_SaySSGSgA3qA0A7RealityOSgA3qsQSbSgSDySSs8Sendable_pSgGSgtcfCTq', 
+                       '_$s17DeviceSpecSupport0aB0C10deviceName14hardwareModels09marketingE08platform11productType7reality7osTrain0M7Version0M7Variant8rootURLs8prkitURL14setupCompleted0D19ComputeCapabilitiesACSSSg_SaySSGSgA3qA0A7RealityOSgA3qsQSbSgSDySSs8Sendable_pSgGSgtcfc', 
+                       '_$s17DeviceSpecSupport0aB0C2eeoiySbAC_ACtFZ', '_$s17DeviceSpecSupport0aB0C4fromACs7Decoder_p_tKcfC', 
+                       '_$s17DeviceSpecSupport0aB0C4fromACs7Decoder_p_tKcfCTj', '_$s17DeviceSpecSupport0aB0C4fromACs7Decoder_p_tKcfCTq', 
+                       '_$s17DeviceSpecSupport0aB0C4fromACs7Decoder_p_tKcfc', '_$s17DeviceSpecSupport0aB0C5rootsSaySSGvM', 
+                       '_$s17DeviceSpecSupport0aB0C5rootsSaySSGvg', '_$s17DeviceSpecSupport0aB0C5rootsSaySSGvpMV', 
+                       '_$s17DeviceSpecSupport0aB0C5rootsSaySSGvs', '_$s17DeviceSpecSupport0aB0C6encode2toys7Encoder_p_tKFTj', 
+                       '_$s17DeviceSpecSupport0aB0C6encode2toys7Encoder_p_tKFTq', 
+                       '_$s17DeviceSpecSupport0aB0C7realityAA0A7RealityOSgvM', '_$s17DeviceSpecSupport0aB0C7realityAA0A7RealityOSgvg', 
+                       '_$s17DeviceSpecSupport0aB0C7realityAA0A7RealityOSgvpMV', 
+                       '_$s17DeviceSpecSupport0aB0C7realityAA0A7RealityOSgvs', '_$s17DeviceSpecSupport0aB0CACycfC', 
+                       '_$s17DeviceSpecSupport0aB0CACycfCTj', '_$s17DeviceSpecSupport0aB0CACycfCTq', 
+                       '_$s17DeviceSpecSupport0aB0CACycfc', '_$s17DeviceSpecSupport0aB0CMa', 
+                       '_$s17DeviceSpecSupport0aB0CMm', '_$s17DeviceSpecSupport0aB0CMn', 
+                       '_$s17DeviceSpecSupport0aB0CMo', '_$s17DeviceSpecSupport0aB0CMu', 
+                       '_$s17DeviceSpecSupport0aB0CN', '_$s17DeviceSpecSupport0aB0CSEAAMc', 
+                       '_$s17DeviceSpecSupport0aB0CSQAAMc', '_$s17DeviceSpecSupport0aB0CSeAAMc', 
+                       '_$s17DeviceSpecSupport0aB0CfD', '_$s17DeviceSpecSupport0aB0Cfd', 
+                       _DeviceSpecSupportVersionNumber, _DeviceSpecSupportVersionString ]
+...
