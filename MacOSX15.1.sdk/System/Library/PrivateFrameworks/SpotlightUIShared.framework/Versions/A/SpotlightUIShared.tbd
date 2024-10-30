@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SpotlightUIShared.framework/Versions/A/SpotlightUIShared'
+current-version: 117
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s17SpotlightUIShared0aB7PackageV10AppIntents0deC0AAMc', 
+                       '_$s17SpotlightUIShared0aB7PackageVMa', '_$s17SpotlightUIShared0aB7PackageVMn', 
+                       '_$s17SpotlightUIShared0aB7PackageVN', '_$s17SpotlightUIShared21AppIntentsQueryHelperC6update4withySS_tYaFTj', 
+                       '_$s17SpotlightUIShared21AppIntentsQueryHelperC6update4withySS_tYaFTjTu', 
+                       '_$s17SpotlightUIShared21AppIntentsQueryHelperC6update4withySS_tYaFTq', 
+                       '_$s17SpotlightUIShared21AppIntentsQueryHelperCACycfC', '_$s17SpotlightUIShared21AppIntentsQueryHelperCACycfc', 
+                       '_$s17SpotlightUIShared21AppIntentsQueryHelperCMa', '_$s17SpotlightUIShared21AppIntentsQueryHelperCMn', 
+                       '_$s17SpotlightUIShared21AppIntentsQueryHelperCMo', '_$s17SpotlightUIShared21AppIntentsQueryHelperCMu', 
+                       '_$s17SpotlightUIShared21AppIntentsQueryHelperCN', '_$s17SpotlightUIShared21AppIntentsQueryHelperCfD', 
+                       '_$sSo22SUIAppIntentsAnnotatorC17SpotlightUISharedEABycfC', 
+                       '_$sSo22SUIAppIntentsAnnotatorC17SpotlightUISharedEABycfc', 
+                       '_$sSo22SUIAppIntentsAnnotatorCMa', _SpotlightContactIdentifierKey, 
+                       _SpotlightContactUserActivityType, _SpotlightPreferredBundleIDsKey, 
+                       _SpotlightUISharedVersionNumber, _SpotlightUISharedVersionString ]
+    objc-classes:    [ SUIAppIntentsAnnotator, SUIAppIntentsQueryHelper, SUIQueryContextBuilder, 
+                       SUISRadarUtilities, SUISpotlightController, SUIUpdateSearchQueryCommand, 
+                       SUIUtilities ]
+...

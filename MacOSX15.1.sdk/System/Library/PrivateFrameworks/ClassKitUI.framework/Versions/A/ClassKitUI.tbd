@@ -1,0 +1,9 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ClassKitUI.framework/Versions/A/ClassKitUI'
+current-version: 150.1.7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ CLSNotificationBanner, CLSNotificationBannerDisplayManager ]
+...

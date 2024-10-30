@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/MatterPlugin.framework/Versions/A/MatterPlugin'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _MatterPluginVersionNumber, _MatterPluginVersionString, ___XPC_MTRRemoteDeviceController_initWithParameters_response, 
+                       ___XPC_MTRRemoteDevice_delegate_deviceBecameActive, ___XPC_MTRRemoteDevice_delegate_receivedAttributeReport, 
+                       ___XPC_MTRRemoteDevice_delegate_receivedEventReport, ___XPC_MTRRemoteDevice_delegate_stateChanged, 
+                       ___XPC_MTRRemoteDevice_estimatedStartTime_response, ___XPC_MTRRemoteDevice_invokeCommand_response, 
+                       ___XPC_MTRRemoteDevice_readAttribute_response ]
+    objc-classes:    [ MTRDevicePluginServer, MTRDevicePluginSyncManager, MTRPlugin, 
+                       MTRPluginDeviceControllerRegistry ]
+...

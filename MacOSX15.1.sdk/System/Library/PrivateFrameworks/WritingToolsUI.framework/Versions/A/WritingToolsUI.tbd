@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/WritingToolsUI.framework/Versions/A/WritingToolsUI'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _WTIATextAssistantLog, _WTIAWritingToolsLog, _WTInputAnalyticsLog, 
+                       _WritingToolsUIVersionNumber, _WritingToolsUIVersionString, 
+                       __WTVCLog, __performSyncOnMain, _getIAPayloadKeyWritingToolsIsEditable, 
+                       _getIAPayloadValueWritingToolsFeatureDetailsCompose, _getIAPayloadValueWritingToolsFeatureDetailsIndex, 
+                       _getIAPayloadValueWritingToolsFeatureDetailsSmartReply, _getIAPayloadValueWritingToolsFeatureDetailsSummaryTransform, 
+                       _getIAPayloadValueWritingToolsUIUnspecified, _kAffordanceDwellShowDelay, 
+                       _kAffordanceTrackingViewPadding, _kCornerRadiusLeading, _kCornerRadiusTip, 
+                       _kCornerRadiusTrailing, _kFadeInDuration, _kFadeOutDuration, 
+                       _kHeight, _kHideDelay, _kImageCenterYMargin, _kImagePointSize, 
+                       _kImageTrailingMargin, _kMaxNumberOfClientQueries, _kMinLengthOfSelectedRange, 
+                       _kMinNumberOfSelectedLines, _kMinNumberOfSelectedWords, _kPerceivedAsVisibleLayerOpacityLowerBound, 
+                       _kRectangleWidthFraction, _kSelectionDwellShowDelay, _kShadowOffset, 
+                       _kShadowOpacity, _kShadowRadius, _kShapeTopMargin, _kShapeTrailingMargin, 
+                       _kWidth ]
+    objc-classes:    [ WTAffordanceButton, WTAffordanceUIController, WTAffordanceView, 
+                       WTAffordanceWindow, WTAnalyticsDelegate, WTInputAnalytics, 
+                       WTProofreadingSuggestionView, WTTextSelectionRect, WTUIAttributedStringController, 
+                       WTWritingTools, WTWritingToolsController, WTWritingToolsRemoteViewController, 
+                       WTWritingToolsView, WTWritingToolsViewController, _WTColor, 
+                       _WTFinaleTextEffect, _WTLightEffectPalette, _WTLocatedColor, 
+                       _WTReplaceDestinationTextEffect, _WTReplaceRemainderTextEffect, 
+                       _WTReplaceSourceTextEffect, _WTReplaceTextEffect, _WTSweepTextEffect, 
+                       _WTTextChunk, _WTTextEffect, _WTTextEffectView, _WTTextPlaceholderController, 
+                       _WTTextPreview, _WTTextRangeChunk, _WTView ]
+...

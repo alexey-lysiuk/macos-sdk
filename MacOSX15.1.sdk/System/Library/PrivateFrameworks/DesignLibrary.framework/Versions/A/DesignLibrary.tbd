@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/DesignLibrary.framework/Versions/A/DesignLibrary'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s13DesignLibrary0A5IdiomO2eeoiySbAC_ACtFZ', '_$s13DesignLibrary0A5IdiomO2tvyA2CmFWC', 
+                       '_$s13DesignLibrary0A5IdiomO3macyA2CmFWC', '_$s13DesignLibrary0A5IdiomO3padyA2CmFWC', 
+                       '_$s13DesignLibrary0A5IdiomO4hash4intoys6HasherVz_tF', '_$s13DesignLibrary0A5IdiomO5phoneyA2CmFWC', 
+                       '_$s13DesignLibrary0A5IdiomO5watchyA2CmFWC', '_$s13DesignLibrary0A5IdiomO7spatialyA2CmFWC', 
+                       '_$s13DesignLibrary0A5IdiomO9hashValueSivg', '_$s13DesignLibrary0A5IdiomO9hashValueSivpMV', 
+                       '_$s13DesignLibrary0A5IdiomO9universalyA2CmFWC', '_$s13DesignLibrary0A5IdiomOMa', 
+                       '_$s13DesignLibrary0A5IdiomOMn', '_$s13DesignLibrary0A5IdiomON', 
+                       '_$s13DesignLibrary0A5IdiomOSHAAMc', '_$s13DesignLibrary0A5IdiomOSQAAMc', 
+                       '_$s13DesignLibrary16InteractionStateO13deeplyPressedyA2CmFWC', 
+                       '_$s13DesignLibrary16InteractionStateO2eeoiySbAC_ACtFZ', '_$s13DesignLibrary16InteractionStateO4hash4intoys6HasherVz_tF', 
+                       '_$s13DesignLibrary16InteractionStateO6normalyA2CmFWC', '_$s13DesignLibrary16InteractionStateO7hoveredyA2CmFWC', 
+                       '_$s13DesignLibrary16InteractionStateO7pressedyA2CmFWC', '_$s13DesignLibrary16InteractionStateO8disabledyA2CmFWC', 
+                       '_$s13DesignLibrary16InteractionStateO9hashValueSivg', '_$s13DesignLibrary16InteractionStateO9hashValueSivpMV', 
+                       '_$s13DesignLibrary16InteractionStateOMa', '_$s13DesignLibrary16InteractionStateOMn', 
+                       '_$s13DesignLibrary16InteractionStateON', '_$s13DesignLibrary16InteractionStateOSHAAMc', 
+                       '_$s13DesignLibrary16InteractionStateOSQAAMc' ]
+...

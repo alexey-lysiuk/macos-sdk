@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/BackgroundSystemTasks.framework/Versions/A/BackgroundSystemTasks'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _BGSystemTaskCustomCheckpointMax, _BGSystemTaskCustomCheckpointMin, 
+                       _BGSystemTaskSchedulerErrorDomain, __BGSTAssetsRateLimitConfigurationName, 
+                       __BGSTPECRateLimitConfigurationName, _kBGSTKeyFeatureCode, 
+                       _kBGSTKeyInvolvedProcesses, _kBGSTKeyPaused, _kBGSTKeyTaskName ]
+    objc-classes:    [ BGFastPassSystemTask, BGFastPassSystemTaskRequest, BGNonRepeatingSystemTask, 
+                       BGNonRepeatingSystemTaskRequest, BGRepeatingSystemTask, BGRepeatingSystemTaskRequest, 
+                       BGSystemTask, BGSystemTaskCheckpoints, BGSystemTaskCompletionDependency, 
+                       BGSystemTaskRequest, BGSystemTaskResult, BGSystemTaskResultDependency, 
+                       BGSystemTaskScheduler, BGSystemTaskStatus, BGSystemTaskWorkload ]
+...

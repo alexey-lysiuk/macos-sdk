@@ -1,0 +1,9 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/PIP.framework/Versions/A/PIP'
+current-version: 123.1.1
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    objc-classes:    [ PIPViewController ]
+...

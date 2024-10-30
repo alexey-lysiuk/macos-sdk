@@ -1,9 +1,0 @@
-// swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.7.24 clang-1600.0.25.1)
-// swift-module-flags: -target x86_64-apple-macos15.0 -target-variant x86_64-apple-ios18.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftContacts -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 3 -module-name Contacts
-@_exported import Contacts
-import Foundation
-import Swift
-import _Concurrency
-import _StringProcessing
-import _SwiftConcurrencyShims
