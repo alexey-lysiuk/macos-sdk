@@ -1,0 +1,4 @@
+extern module CUPS "../cups.modulemap"
+
+module CUPS_Placeholder_OldFile [system] {
+}

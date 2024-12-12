@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ZeoliteLanguage.framework/Versions/A/ZeoliteLanguage'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s15ZeoliteLanguage12joinMessagesySSSay0A9Framework16ExtractedMessageVGF', 
+                       '_$s15ZeoliteLanguage14filterBySenderySb0A9Framework16ExtractedMessageVF', 
+                       '_$s15ZeoliteLanguage16MessageExtractorV16isDataAccessibleSbyYaF', 
+                       '_$s15ZeoliteLanguage16MessageExtractorV16isDataAccessibleSbyYaFTu', 
+                       '_$s15ZeoliteLanguage16MessageExtractorV17makeAsyncIteratorACyF', 
+                       '_$s15ZeoliteLanguage16MessageExtractorV4next0A9Framework09ExtractedC0VSgyYaKF', 
+                       '_$s15ZeoliteLanguage16MessageExtractorV4next0A9Framework09ExtractedC0VSgyYaKFTu', 
+                       '_$s15ZeoliteLanguage16MessageExtractorV8lastDays11maxMessages0G6Length11cleanupText0eC4DateACSi_S2iSb10Foundation0L0VSgtcfC', 
+                       '_$s15ZeoliteLanguage16MessageExtractorVMa', '_$s15ZeoliteLanguage16MessageExtractorVMn', 
+                       '_$s15ZeoliteLanguage16MessageExtractorVN', '_$s15ZeoliteLanguage16MessageExtractorVScIAAMc', 
+                       '_$s15ZeoliteLanguage16MessageExtractorVSciAAMc', '_$s15ZeoliteLanguage18TokenGeneratorBaseC15modelIdentifierACSS_tcfC', 
+                       '_$s15ZeoliteLanguage18TokenGeneratorBaseC15modelIdentifierACSS_tcfCTj', 
+                       '_$s15ZeoliteLanguage18TokenGeneratorBaseC15modelIdentifierACSS_tcfCTq', 
+                       '_$s15ZeoliteLanguage18TokenGeneratorBaseC15modelIdentifierACSS_tcfc', 
+                       '_$s15ZeoliteLanguage18TokenGeneratorBaseC7process6system4userS2S_SStYaKFTj', 
+                       '_$s15ZeoliteLanguage18TokenGeneratorBaseC7process6system4userS2S_SStYaKFTjTu', 
+                       '_$s15ZeoliteLanguage18TokenGeneratorBaseC7process6system4userS2S_SStYaKFTq', 
+                       '_$s15ZeoliteLanguage18TokenGeneratorBaseCMa', '_$s15ZeoliteLanguage18TokenGeneratorBaseCMm', 
+                       '_$s15ZeoliteLanguage18TokenGeneratorBaseCMn', '_$s15ZeoliteLanguage18TokenGeneratorBaseCMo', 
+                       '_$s15ZeoliteLanguage18TokenGeneratorBaseCMu', '_$s15ZeoliteLanguage18TokenGeneratorBaseCN', 
+                       '_$s15ZeoliteLanguage18TokenGeneratorBaseCfD', '_$s15ZeoliteLanguage18TokenGeneratorBaseCfd', 
+                       '_$s15ZeoliteLanguage20groupAndSortMessagesySay0A9Framework21ExtractedConversationVGSayAC0H7MessageVGF', 
+                       '_$s15ZeoliteLanguage36convertSingleMessagesToConversationsySay0A9Framework21ExtractedConversationVGSayAC0I7MessageVGF', 
+                       _ZeoliteLanguageVersionNumber, _ZeoliteLanguageVersionString ]
+...

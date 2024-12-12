@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/AppleIDSetupDaemon.framework/Versions/A/AppleIDSetupDaemon'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s18AppleIDSetupDaemon0C0V5startyyYaKF', '_$s18AppleIDSetupDaemon0C0V5startyyYaKFTu', 
+                       '_$s18AppleIDSetupDaemon0C0VACycfC', '_$s18AppleIDSetupDaemon0C0VMa', 
+                       '_$s18AppleIDSetupDaemon0C0VMn', '_$s18AppleIDSetupDaemon0C0VN', 
+                       '_$sSo13audit_token_ta18AppleIDSetupDaemonE11descriptionSSvg', 
+                       '_$sSo13audit_token_ta18AppleIDSetupDaemonE11descriptionSSvpMV', 
+                       '_$sSo13audit_token_tas23CustomStringConvertible18AppleIDSetupDaemonMc', 
+                       _AppleIDSetupDaemonVersionNumber, _AppleIDSetupDaemonVersionString ]
+    objc-classes:    [ AISDCloudDataProtectionHelper, AISDGameCenterSignInHelper ]
+...

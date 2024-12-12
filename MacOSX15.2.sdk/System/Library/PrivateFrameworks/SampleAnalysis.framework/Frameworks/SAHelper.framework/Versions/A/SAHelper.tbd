@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SampleAnalysis.framework/Frameworks/SAHelper.framework/Versions/A/SAHelper'
+current-version: 382
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s8SAHelper11SAModelInfoC011gatherModelC09startDate03endG0SaySo0B0CG10Foundation0G0VSg_AMtYaKFZ', 
+                       '_$s8SAHelper11SAModelInfoC011gatherModelC09startDate03endG0SaySo0B0CG10Foundation0G0VSg_AMtYaKFZTu', 
+                       '_$s8SAHelper11SAModelInfoCACycfC', '_$s8SAHelper11SAModelInfoCACycfc', 
+                       '_$s8SAHelper11SAModelInfoCMa', '_$s8SAHelper11SAModelInfoCMn', 
+                       '_$s8SAHelper11SAModelInfoCMo', '_$s8SAHelper11SAModelInfoCN', 
+                       '_$s8SAHelper11SAModelInfoCfD', _SAModelGatherInfo ]
+    objc-classes:    [ _TtC8SAHelper11SAModelInfo ]
+...

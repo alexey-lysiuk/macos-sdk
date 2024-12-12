@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _CBALCALSCopyALSServiceClient, _CBALCDisplayFeatureAvailable, 
+                       _CBALCGetBoolPreferenceForKey, _CBALCGetDictPreferenceForKey, 
+                       _CBALCGetDisplayAutoBrightnessEnabled, _CBALCGetFloatPreferenceForKey, 
+                       _CBALCGetIntPreferenceForKey, _CBALCGetKeyboardAutoBrightnessEnabled, 
+                       _CBALCGetKeyboardDimTime, _CBALCKeyboardFeatureAvailable, 
+                       _CBALCLGPVersion, _CBALCRegisterALSPluginCallback, _CBALCSetBoolPreferenceForKey, 
+                       _CBALCSetDictPreferenceForKey, _CBALCSetDictionary, _CBALCSetDisplayAutoBrightnessEnabled, 
+                       _CBALCSetFloatPreferenceForKey, _CBALCSetIntPreferenceForKey, 
+                       _CBALCSetKeyboardAutoBrightnessEnabled, _CBALCSetKeyboardDimTime, 
+                       _CBALCUnregisterALSPluginCallback, _kKBIDBuiltIn, _kKBIDDefault, 
+                       _kKBIDPrimary, _kKBIDSecondary ]
+    objc-classes:    [ BrightnessSystem, BrightnessSystemClient, BrightnessSystemClientInternal, 
+                       CBAdaptationClient, CBBlueLightClient, CBClient, CBKeyboardPreferencesManager, 
+                       CBTrueToneClient, DisplayServicesClient, KeyboardBrightnessClient ]
+...
