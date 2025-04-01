@@ -1,1 +1,0 @@
-#define GK_VERSION 100000001

@@ -1,0 +1,10 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ComputationalGraph.framework/Versions/A/ComputationalGraph'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s18ComputationalGraph4NoOpyyF', _ComputationalGraphVersionNumber, 
+                       _ComputationalGraphVersionString ]
+...

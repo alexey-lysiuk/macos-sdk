@@ -1,0 +1,53 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/usr/lib/libnwswifttls.dylib'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s10nwswifttls20STLSClientHandshakerC11latestError33_7098A4882D697C4C7F806FCC2C6253E5LLs0E0_pSgvpfi', 
+                       '_$s10nwswifttls20STLSClientHandshakerC12getErrorCodes5Int32VyF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC12stateMachine33_7098A4882D697C4C7F806FCC2C6253E5LL8SwiftTLS014HandshakeStateE0VSgvpfi', 
+                       '_$s10nwswifttls20STLSClientHandshakerC13isImplementedSiyF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC14startHandshakeSo6NSDataCSgyF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC15getClientRandomSo6NSDataCSgyF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC15getSessionStateSo6NSDataCSgyF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC15hasSessionStateSbyF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC17continueHandshakeySo6NSDataCSgAGF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC18getEncryptionLevel5writeSiSb_tF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC19getEncryptionSecret5writeSo6NSDataCSgSb_tF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC19readEncryptionLevel33_7098A4882D697C4C7F806FCC2C6253E5LL8SwiftTLS0eF0OSgvpfi', 
+                       '_$s10nwswifttls20STLSClientHandshakerC20getEarlyDataAcceptedSbyF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC20writeEncryptionLevel33_7098A4882D697C4C7F806FCC2C6253E5LL8SwiftTLS0eF0OSgvpfi', 
+                       '_$s10nwswifttls20STLSClientHandshakerC21validateAuthenticator13authenticator7context9keyParserSay10Foundation4DataVGAJ_AJSgAlJXEtF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC22partialHandshakeResult33_7098A4882D697C4C7F806FCC2C6253E5LL8SwiftTLS07PartialeF0VSgvpfi', 
+                       '_$s10nwswifttls20STLSClientHandshakerC22receivedSessionTickets33_7098A4882D697C4C7F806FCC2C6253E5LLSay10Foundation4DataVGvpfi', 
+                       '_$s10nwswifttls20STLSClientHandshakerC24getNegotiatedCiphersuiteSiyF', 
+                       '_$s10nwswifttls20STLSClientHandshakerC30getPeerQUICTransportParametersSo6NSDataCSgyF', 
+                       '_$s10nwswifttls20STLSClientHandshakerCACycfC', '_$s10nwswifttls20STLSClientHandshakerCACycfc', 
+                       '_$s10nwswifttls20STLSClientHandshakerCMa', '_$s10nwswifttls20STLSClientHandshakerCMn', 
+                       '_$s10nwswifttls20STLSClientHandshakerCN', '_$s10nwswifttls20STLSClientHandshakerC_10serverName23quicTransportParameters4alpn12sessionState13ticketRequest16keyExchangeGroupACSgSo7NSArrayCSg_So8NSStringCSgSo6NSDataCSgAmSSays5UInt8VGSgs6UInt16VtcfC', 
+                       '_$s10nwswifttls20STLSClientHandshakerC_10serverName23quicTransportParameters4alpn12sessionState13ticketRequest16keyExchangeGroupACSgSo7NSArrayCSg_So8NSStringCSgSo6NSDataCSgAmSSays5UInt8VGSgs6UInt16VtcfCTq', 
+                       '_$s10nwswifttls20STLSClientHandshakerC_10serverName23quicTransportParameters4alpn12sessionState13ticketRequest16keyExchangeGroupACSgSo7NSArrayCSg_So8NSStringCSgSo6NSDataCSgAmSSays5UInt8VGSgs6UInt16Vtcfc', 
+                       '_$s10nwswifttls20STLSClientHandshakerCfD', '_$s10nwswifttls20STLSServerHandshakerC11latestError33_E491BE54D063C233B69354A447995618LLs0E0_pSgvpfi', 
+                       '_$s10nwswifttls20STLSServerHandshakerC12getErrorCodes5Int32VyF', 
+                       '_$s10nwswifttls20STLSServerHandshakerC12stateMachine33_E491BE54D063C233B69354A447995618LL8SwiftTLS020ServerHandshakeStateE0VSgvpfi', 
+                       '_$s10nwswifttls20STLSServerHandshakerC13isImplementedSiyF', 
+                       '_$s10nwswifttls20STLSServerHandshakerC15clientAppSecret33_E491BE54D063C233B69354A447995618LL9CryptoKit12SymmetricKeyVSgvpfi', 
+                       '_$s10nwswifttls20STLSServerHandshakerC17continueHandshakeySo6NSDataCSgAGF', 
+                       '_$s10nwswifttls20STLSServerHandshakerC18getEncryptionLevel5writeSiSb_tF', 
+                       '_$s10nwswifttls20STLSServerHandshakerC19getEncryptionSecret5writeSo6NSDataCSgSb_tF', 
+                       '_$s10nwswifttls20STLSServerHandshakerC19readEncryptionLevel33_E491BE54D063C233B69354A447995618LL8SwiftTLS0eF0OSgvpfi', 
+                       '_$s10nwswifttls20STLSServerHandshakerC20writeEncryptionLevel33_E491BE54D063C233B69354A447995618LL8SwiftTLS0eF0OSgvpfi', 
+                       '_$s10nwswifttls20STLSServerHandshakerC22partialHandshakeResult33_E491BE54D063C233B69354A447995618LL8SwiftTLS07PartialeF0VSgvpfi', 
+                       '_$s10nwswifttls20STLSServerHandshakerC24getNegotiatedCiphersuiteSiyF', 
+                       '_$s10nwswifttls20STLSServerHandshakerC30getPeerQUICTransportParametersSo6NSDataCSgyF', 
+                       '_$s10nwswifttls20STLSServerHandshakerCACycfC', '_$s10nwswifttls20STLSServerHandshakerCACycfc', 
+                       '_$s10nwswifttls20STLSServerHandshakerCMa', '_$s10nwswifttls20STLSServerHandshakerCMn', 
+                       '_$s10nwswifttls20STLSServerHandshakerCN', '_$s10nwswifttls20STLSServerHandshakerC_9serverKey23quicTransportParameters4alpnACSgSo8NSStringCSg_So03SecE3RefaSgSo6NSDataCSgSo7NSArrayCSgtcfC', 
+                       '_$s10nwswifttls20STLSServerHandshakerC_9serverKey23quicTransportParameters4alpnACSgSo8NSStringCSg_So03SecE3RefaSgSo6NSDataCSgSo7NSArrayCSgtcfCTq', 
+                       '_$s10nwswifttls20STLSServerHandshakerC_9serverKey23quicTransportParameters4alpnACSgSo8NSStringCSg_So03SecE3RefaSgSo6NSDataCSgSo7NSArrayCSgtcfc', 
+                       '_$s10nwswifttls20STLSServerHandshakerCfD', _nwswifttls_copy_definition, 
+                       _nwswifttls_copy_options_contents, _nwswifttls_identifier ]
+    objc-classes:    [ _TtC10nwswifttls20STLSClientHandshaker, _TtC10nwswifttls20STLSServerHandshaker ]
+...

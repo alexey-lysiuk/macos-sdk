@@ -1,8 +1,0 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
-install-name:    '/System/Library/PrivateFrameworks/AppPredictionToolsInternal.framework/Versions/A/AppPredictionToolsInternal'
-exports:
-  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
-    symbols:         [ _AppPredictionToolsInternalVersionNumber, _AppPredictionToolsInternalVersionString ]
-...

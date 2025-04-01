@@ -1,0 +1,48 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/TrustKit.framework/Versions/A/TrustKit'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s8TrustKit15TKRecordServiceC18fetchEncryptionKey10Foundation4DataVyYaKF', 
+                       '_$s8TrustKit15TKRecordServiceC18fetchEncryptionKey10Foundation4DataVyYaKFTu', 
+                       '_$s8TrustKit15TKRecordServiceC6sharedACvgZ', '_$s8TrustKit15TKRecordServiceC6sharedACvpZMV', 
+                       '_$s8TrustKit15TKRecordServiceC6uploadyAA7TKErrorOSgAA0C0CYaF', 
+                       '_$s8TrustKit15TKRecordServiceC6uploadyAA7TKErrorOSgAA0C0CYaFTu', 
+                       '_$s8TrustKit15TKRecordServiceCMa', '_$s8TrustKit15TKRecordServiceCMm', 
+                       '_$s8TrustKit15TKRecordServiceCMn', '_$s8TrustKit15TKRecordServiceCMo', 
+                       '_$s8TrustKit15TKRecordServiceCMu', '_$s8TrustKit15TKRecordServiceCN', 
+                       '_$s8TrustKit15TKRecordServiceCfD', '_$s8TrustKit15TKRecordServiceCfd', 
+                       '_$s8TrustKit15TKReportServiceC0C4TypeO2eeoiySbAE_AEtFZ', 
+                       '_$s8TrustKit15TKReportServiceC0C4TypeO4hash4intoys6HasherVz_tF', 
+                       '_$s8TrustKit15TKReportServiceC0C4TypeO4junkyA2EmFWC', '_$s8TrustKit15TKReportServiceC0C4TypeO7notJunkyA2EmFWC', 
+                       '_$s8TrustKit15TKReportServiceC0C4TypeO9hashValueSivg', '_$s8TrustKit15TKReportServiceC0C4TypeO9hashValueSivpMV', 
+                       '_$s8TrustKit15TKReportServiceC0C4TypeOMa', '_$s8TrustKit15TKReportServiceC0C4TypeOMn', 
+                       '_$s8TrustKit15TKReportServiceC0C4TypeON', '_$s8TrustKit15TKReportServiceC0C4TypeOSHAAMc', 
+                       '_$s8TrustKit15TKReportServiceC0C4TypeOSQAAMc', '_$s8TrustKit15TKReportServiceC6report3for4withyAC0C4TypeO_SDySSypGtYaKF', 
+                       '_$s8TrustKit15TKReportServiceC6report3for4withyAC0C4TypeO_SDySSypGtYaKFTu', 
+                       '_$s8TrustKit15TKReportServiceC6sharedACvgZ', '_$s8TrustKit15TKReportServiceC6sharedACvpZMV', 
+                       '_$s8TrustKit15TKReportServiceCMa', '_$s8TrustKit15TKReportServiceCMm', 
+                       '_$s8TrustKit15TKReportServiceCMn', '_$s8TrustKit15TKReportServiceCMo', 
+                       '_$s8TrustKit15TKReportServiceCMu', '_$s8TrustKit15TKReportServiceCN', 
+                       '_$s8TrustKit15TKReportServiceCfD', '_$s8TrustKit15TKReportServiceCfd', 
+                       '_$s8TrustKit7TKErrorO10Foundation14LocalizedErrorAAMc', '_$s8TrustKit7TKErrorO12invalidInputyACSScACmFWC', 
+                       '_$s8TrustKit7TKErrorO14networkFailureyACSScACmFWC', '_$s8TrustKit7TKErrorO15operationFailedyACSScACmFWC', 
+                       '_$s8TrustKit7TKErrorO16errorDescriptionSSSgvg', '_$s8TrustKit7TKErrorO16errorDescriptionSSSgvpMV', 
+                       '_$s8TrustKit7TKErrorOMa', '_$s8TrustKit7TKErrorOMn', '_$s8TrustKit7TKErrorON', 
+                       '_$s8TrustKit7TKErrorOs5ErrorAAMc', '_$s8TrustKit8TKRecordC10recordHash10Foundation4DataVvg', 
+                       '_$s8TrustKit8TKRecordC10recordHash10Foundation4DataVvpMV', 
+                       '_$s8TrustKit8TKRecordC11descriptionSSvg', '_$s8TrustKit8TKRecordC11descriptionSSvpMV', 
+                       '_$s8TrustKit8TKRecordC4with10recordHashACSS_10Foundation4DataVtKcfC', 
+                       '_$s8TrustKit8TKRecordC4with10recordHashACSS_10Foundation4DataVtKcfCTj', 
+                       '_$s8TrustKit8TKRecordC4with10recordHashACSS_10Foundation4DataVtKcfCTq', 
+                       '_$s8TrustKit8TKRecordC4with10recordHashACSS_10Foundation4DataVtKcfc', 
+                       '_$s8TrustKit8TKRecordC8recordIDSSvg', '_$s8TrustKit8TKRecordC8recordIDSSvpMV', 
+                       '_$s8TrustKit8TKRecordCMa', '_$s8TrustKit8TKRecordCMm', '_$s8TrustKit8TKRecordCMn', 
+                       '_$s8TrustKit8TKRecordCMo', '_$s8TrustKit8TKRecordCMu', '_$s8TrustKit8TKRecordCN', 
+                       '_$s8TrustKit8TKRecordCfD', '_$s8TrustKit8TKRecordCfd', '_$s8TrustKit8TKRecordCs23CustomStringConvertibleAAMc', 
+                       _TrustKitVersionNumber, _TrustKitVersionString ]
+...

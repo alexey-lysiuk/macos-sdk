@@ -1,9 +1,0 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ arm64-macos, arm64e-macos ]
-install-name:    '/System/Library/PrivateFrameworks/AppleHIDTransportSupport.framework/Versions/A/AppleHIDTransportSupport'
-current-version: 8000.26
-exports:
-  - targets:         [ arm64-macos, arm64e-macos ]
-    objc-classes:    [ AHTBootLoader, AHTCommon, AHTDevice, AHTInterface, AHTLoader ]
-...

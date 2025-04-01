@@ -1,8 +1,0 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ x86_64-macos, arm64e-macos ]
-install-name:    '/System/Library/PrivateFrameworks/AppSystemSettings.framework/Versions/A/AppSystemSettings'
-current-version: 3.2.3
-compatibility-version: 0
-swift-abi-version: 7
-...

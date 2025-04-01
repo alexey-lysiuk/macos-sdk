@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/DailyBriefingCommon.framework/Versions/A/DailyBriefingCommon'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s19DailyBriefingCommon10FatalErrorO05fatalE7Closureys5NeverOSS_s12StaticStringVSutcvMZ', 
+                       '_$s19DailyBriefingCommon10FatalErrorO05fatalE7Closureys5NeverOSS_s12StaticStringVSutcvgZ', 
+                       '_$s19DailyBriefingCommon10FatalErrorO05fatalE7Closureys5NeverOSS_s12StaticStringVSutcvpZMV', 
+                       '_$s19DailyBriefingCommon10FatalErrorO05fatalE7Closureys5NeverOSS_s12StaticStringVSutcvsZ', 
+                       '_$s19DailyBriefingCommon10FatalErrorO07defaultdE7Closureys5NeverOSS_s12StaticStringVSutcvgZ', 
+                       '_$s19DailyBriefingCommon10FatalErrorO07defaultdE7Closureys5NeverOSS_s12StaticStringVSutcvpZMV', 
+                       '_$s19DailyBriefingCommon10FatalErrorO07replacedE07closureys5NeverOSS_s12StaticStringVSutc_tFZ', 
+                       '_$s19DailyBriefingCommon10FatalErrorO07restoredE0yyFZ', '_$s19DailyBriefingCommon10FatalErrorOMa', 
+                       '_$s19DailyBriefingCommon10FatalErrorOMn', '_$s19DailyBriefingCommon10FatalErrorON', 
+                       '_$s19DailyBriefingCommon10fatalError_4file4lines5NeverOSSyXK_s12StaticStringVSutF', 
+                       _DailyBriefingCommonVersionNumber, _DailyBriefingCommonVersionString ]
+...

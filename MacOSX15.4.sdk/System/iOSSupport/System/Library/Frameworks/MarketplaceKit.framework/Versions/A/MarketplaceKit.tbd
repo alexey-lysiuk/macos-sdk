@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+install-name:    '/System/iOSSupport/System/Library/Frameworks/MarketplaceKit.framework/Versions/A/MarketplaceKit'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ '_$s14MarketplaceKit14AppDistributorO10testFlightyA2CmFWC', 
+                       '_$s14MarketplaceKit14AppDistributorO11marketplaceyACSScACmFWC', 
+                       '_$s14MarketplaceKit14AppDistributorO3webyA2CmFWC', '_$s14MarketplaceKit14AppDistributorO5otheryA2CmFWC', 
+                       '_$s14MarketplaceKit14AppDistributorO7currentACvgZ', '_$s14MarketplaceKit14AppDistributorO7currentACvgZTu', 
+                       '_$s14MarketplaceKit14AppDistributorO7currentACvpZMV', '_$s14MarketplaceKit14AppDistributorO8appStoreyA2CmFWC', 
+                       '_$s14MarketplaceKit14AppDistributorOMa', '_$s14MarketplaceKit14AppDistributorOMn', 
+                       '_$s14MarketplaceKit14AppDistributorON' ]
+...

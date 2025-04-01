@@ -1,0 +1,7 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CryptexServer.framework/Versions/A/CryptexServer'
+current-version: 493.101.1
+swift-abi-version: 7
+...

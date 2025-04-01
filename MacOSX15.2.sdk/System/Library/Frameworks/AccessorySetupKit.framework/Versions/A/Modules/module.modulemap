@@ -1,6 +1,0 @@
-framework module AccessorySetupKit {
-  umbrella header "AccessorySetupKit.h"
-  export *
-
-  module * { export * }
-}

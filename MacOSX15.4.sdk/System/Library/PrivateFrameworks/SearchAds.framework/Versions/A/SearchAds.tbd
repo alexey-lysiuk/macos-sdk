@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SearchAds.framework/Versions/A/SearchAds'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s9SearchAds20ClientIdentifierTypeO8rawValueACSgSi_tcfC', 
+                       '_$s9SearchAds20ClientIdentifierTypeO8rawValueSivg', '_$s9SearchAds20ClientIdentifierTypeO8rawValueSivpMV', 
+                       '_$s9SearchAds20ClientIdentifierTypeOMa', '_$s9SearchAds20ClientIdentifierTypeOMn', 
+                       '_$s9SearchAds20ClientIdentifierTypeON', '_$s9SearchAds20ClientIdentifierTypeOSHAAMc', 
+                       '_$s9SearchAds20ClientIdentifierTypeOSQAAMc', '_$s9SearchAds20ClientIdentifierTypeOSYAAMc', 
+                       '_$s9SearchAds24ClientIdentifierProviderC14getIdentifiers4typeSayAA0c8RotatingD0CGAA0cD4TypeO_tF', 
+                       '_$s9SearchAds24ClientIdentifierProviderCACycfC', '_$s9SearchAds24ClientIdentifierProviderCACycfc', 
+                       '_$s9SearchAds24ClientIdentifierProviderCMa', '_$s9SearchAds24ClientIdentifierProviderCMn', 
+                       '_$s9SearchAds24ClientIdentifierProviderCMo', '_$s9SearchAds24ClientIdentifierProviderCN', 
+                       '_$s9SearchAds24ClientIdentifierProviderCfD', '_$s9SearchAds24ClientRotatingIdentifierC08rotatingE0AC17AdPlatformsCommon0dE0C_tcfC', 
+                       '_$s9SearchAds24ClientRotatingIdentifierC08rotatingE0AC17AdPlatformsCommon0dE0C_tcfCTj', 
+                       '_$s9SearchAds24ClientRotatingIdentifierC08rotatingE0AC17AdPlatformsCommon0dE0C_tcfCTq', 
+                       '_$s9SearchAds24ClientRotatingIdentifierC08rotatingE0AC17AdPlatformsCommon0dE0C_tcfc', 
+                       '_$s9SearchAds24ClientRotatingIdentifierC4typeAA0cE4TypeOvM', 
+                       '_$s9SearchAds24ClientRotatingIdentifierC4typeAA0cE4TypeOvg', 
+                       '_$s9SearchAds24ClientRotatingIdentifierC4typeAA0cE4TypeOvpMV', 
+                       '_$s9SearchAds24ClientRotatingIdentifierC4typeAA0cE4TypeOvs', 
+                       '_$s9SearchAds24ClientRotatingIdentifierC5valueSSvM', '_$s9SearchAds24ClientRotatingIdentifierC5valueSSvg', 
+                       '_$s9SearchAds24ClientRotatingIdentifierC5valueSSvpMV', '_$s9SearchAds24ClientRotatingIdentifierC5valueSSvs', 
+                       '_$s9SearchAds24ClientRotatingIdentifierCACycfC', '_$s9SearchAds24ClientRotatingIdentifierCACycfc', 
+                       '_$s9SearchAds24ClientRotatingIdentifierCMa', '_$s9SearchAds24ClientRotatingIdentifierCMn', 
+                       '_$s9SearchAds24ClientRotatingIdentifierCMo', '_$s9SearchAds24ClientRotatingIdentifierCMu', 
+                       '_$s9SearchAds24ClientRotatingIdentifierCN', '_$s9SearchAds24ClientRotatingIdentifierCfD', 
+                       _SearchAdsVersionNumber, _SearchAdsVersionString ]
+    objc-classes:    [ ADAppAdvertisement, ADAppRepresentation, ADCapService, ADClientIdentifierProvider, 
+                       ADClientRotatingIdentifier, ADDESRecordsManager, ADDataObject, 
+                       ADFCapSettings, ADInstallAttributionData, ADMetricManager, 
+                       ADNewCapService, ADParameterFactory, ADResponseData, ADSearchAdsSettings, 
+                       ADSearchCriteria, ADSearchObject, ADSearchSession ]
+...
