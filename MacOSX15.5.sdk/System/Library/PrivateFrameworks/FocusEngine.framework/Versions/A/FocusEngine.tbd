@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                   arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/FocusEngine.framework/Versions/A/FocusEngine'
+current-version: 8506
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ AppKit, Exodus, Maxodus, UIKitCore ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64-macos, arm64-maccatalyst, 
+                       arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ __FEAXAssignFocusToItem, __FEAXAssignFocusToItemWithOptions, 
+                       __FEAXFocusItemIsFocusableInFocusSystemWithSearchInfo, __FEFocusDidUpdateNotification, 
+                       __FEFocusEngineCommonEnvironmentScrollableContainerForItems, 
+                       __FEFocusEngineFirstScrollableContainerTupleThatScrollsForItem, 
+                       __FEFocusEngineGestureDidBeginNotification, __FEFocusEngineScrollableContainerCanScroll, 
+                       __FEFocusGetSensitivitySetting, __FEFocusMovementDidFailNotification, 
+                       __FEFocusSetSensitivitySetting, __FEFocusUpdateContextKey ]
+    objc-classes:    [ FocusEngineDummy, _FEFocusContainerGuideRegion, _FEFocusDebugger, 
+                       _FEFocusGuideRegion, _FEFocusInputDeviceInfo, _FEFocusItemRegion, 
+                       _FEFocusLinearMovementSequence, _FEFocusMovementHint, _FEFocusMovementInfo, 
+                       _FEFocusMovementRequest, _FEFocusRegion, _FEFocusSearchInfo, 
+                       _FEFocusSystem, _FEFocusUpdateContext, _FEFocusUpdateRequest ]
+...

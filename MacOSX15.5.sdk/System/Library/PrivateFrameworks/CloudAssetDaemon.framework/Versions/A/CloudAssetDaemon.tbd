@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CloudAssetDaemon.framework/Versions/A/CloudAssetDaemon'
+current-version: 2260.10.3
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s16CloudAssetDaemon10DispatcherC15dispatchRequesty3XPC11XPCListenerC015IncomingSessionF0C8DecisionVAIF', 
+                       '_$s16CloudAssetDaemon10DispatcherC6sharedACvgZ', '_$s16CloudAssetDaemon10DispatcherC6sharedACvpZMV', 
+                       '_$s16CloudAssetDaemon10DispatcherCMa', '_$s16CloudAssetDaemon10DispatcherCMm', 
+                       '_$s16CloudAssetDaemon10DispatcherCMn', '_$s16CloudAssetDaemon10DispatcherCMo', 
+                       '_$s16CloudAssetDaemon10DispatcherCMu', '_$s16CloudAssetDaemon10DispatcherCN', 
+                       '_$s16CloudAssetDaemon10DispatcherCfD', '_$s16CloudAssetDaemon10DispatcherCfd' ]
+...

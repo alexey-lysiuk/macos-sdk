@@ -1,0 +1,25 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target x86_64-apple-macos15.5 -target-variant x86_64-apple-ios18.5-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swift_stdio -swift-version 6 -enforce-exclusivity=checked -O -library-level api -module-abi-name Darwin -enable-experimental-feature DebugDescriptionMacro -user-module-version 310.100.8.0.1 -module-name _stdio
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+import Swift
+@_exported import _stdio
+@available(macOS 10.9, iOS 7.0, watchOS 2.0, tvOS 9.0, visionOS 1.0, *)
+public var stdin: Swift.UnsafeMutablePointer<_stdio.FILE> {
+  get
+  set
+}
+@available(macOS 10.9, iOS 7.0, watchOS 2.0, tvOS 9.0, visionOS 1.0, *)
+public var stdout: Swift.UnsafeMutablePointer<_stdio.FILE> {
+  get
+  set
+}
+@available(macOS 10.9, iOS 7.0, watchOS 2.0, tvOS 9.0, visionOS 1.0, *)
+public var stderr: Swift.UnsafeMutablePointer<_stdio.FILE> {
+  get
+  set
+}
+@available(macOS 10.9, iOS 7.0, watchOS 2.0, tvOS 9.0, visionOS 1.0, *)
+public func dprintf(_ fd: Swift.Int, _ format: Swift.UnsafePointer<Swift.Int8>, _ args: any Swift.CVarArg...) -> Swift.Int32
+@available(macOS 10.9, iOS 7.0, watchOS 2.0, tvOS 9.0, visionOS 1.0, *)
+public func snprintf(ptr: Swift.UnsafeMutablePointer<Swift.Int8>, _ len: Swift.Int, _ format: Swift.UnsafePointer<Swift.Int8>, _ args: any Swift.CVarArg...) -> Swift.Int32

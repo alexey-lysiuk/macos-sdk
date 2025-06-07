@@ -1,0 +1,12 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64e-apple-ios17.0-macabi -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -library-level api -enable-experimental-feature DebugDescriptionMacro -user-module-version 1332.5.2 -module-name PDFKit
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+import DeveloperToolsSupport
+import Foundation
+@_exported import PDFKit
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims

@@ -1,0 +1,21 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target x86_64-apple-ios18.5-macabi -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature ExistentialAny -user-module-version 11.5.4 -module-name MarketplaceKit -package-name AppStoreDaemon
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+@_exported public import MarketplaceKit
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 17.4, macOS 15.0, *)
+public enum AppDistributor {
+  public static var current: MarketplaceKit.AppDistributor {
+    get async throws
+  }
+  case appStore
+  case testFlight
+  case marketplace(Swift.String)
+  @available(iOS 17.5, *)
+  case web
+  case other
+}

@@ -1,0 +1,16 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target x86_64-apple-ios18.5-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swift_time -swift-version 6 -enforce-exclusivity=checked -O -library-level api -module-abi-name Darwin -enable-experimental-feature DebugDescriptionMacro -user-module-version 310.100.8.0.1 -module-name _time
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+import Swift
+@_exported import _time
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, visionOS 1.0, *)
+extension _time.timespec {
+  @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, visionOS 1.0, *)
+  public init(_ duration: Swift.Duration)
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, visionOS 1.0, *)
+extension Swift.Duration {
+  @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, visionOS 1.0, *)
+  public init(_ ts: _time.timespec)
+}
