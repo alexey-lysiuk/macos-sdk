@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/HomeKitDaemonShared.framework/Versions/A/HomeKitDaemonShared'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ '_$s19HomeKitDaemonShared19notAnEmptyFrameworkyyF' ]
+    objc-classes:    [ HMDSKPresenceProvider, HMDStatusChannel, HMDStatusChannelManagementLogEvent, 
+                       HMDStatusChannelObserveLogEvent, HMDStatusChannelPublishLogEvent, 
+                       HMDStatusChannelRecord ]
+...

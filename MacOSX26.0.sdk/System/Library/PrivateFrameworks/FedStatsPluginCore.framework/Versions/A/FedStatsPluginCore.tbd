@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/FedStatsPluginCore.framework/Versions/A/FedStatsPluginCore'
+exports:
+  - targets:         [ x86_64-macos, arm64-macos, arm64e-macos ]
+    symbols:         [ _FedStatsPluginCoreVersionNumber, _FedStatsPluginCoreVersionString, 
+                       _FedStatsPluginErrorDomain, _FedStatsPluginSQLQueryValidatorAllowListFilename, 
+                       _FedStatsPluginSQLQueryValidatorBlockListFilename, _kFedStatsCohortMissingField, 
+                       _kFedStatsCohortQueryLengthCappedFieldPad, _kFedStatsDataCohortAllowList, 
+                       _kFedStatsDataCohortSafetyDataVersionCap, _kFedStatsDataCohortUseCaseIDCap, 
+                       _kFedStatsDataCohortValueAllowList, _kFedStatsDataCohortValueBlockList, 
+                       _kFedStatsDataEncoderCollectionKeyPrefix, _kFedStatsPluginExperimentRetentionPeriod, 
+                       _kFedStatsPluginMaskingDataSignifierKey, _kFedStatsPluginUserDefaultsDomain, 
+                       _kFedStatsPluginUserDefaultsKeyExperimentList ]
+    objc-classes:    [ FedStatsCohortFactory, FedStatsCohortGeohash, FedStatsCohortQueryDeviceType, 
+                       FedStatsCohortQueryFieldGeneric, FedStatsCohortQueryInstalledApps, 
+                       FedStatsCohortQueryInstalledAppsMedia, FedStatsCohortQueryInstalledAppsPhone, 
+                       FedStatsCohortQueryLengthCappedField, FedStatsCohortQueryLocale, 
+                       FedStatsCohortQueryURLBits, FedStatsCohortQueryUserSetDeviceRegion, 
+                       FedStatsCollectionKeyGenerator, FedStatsDataCohort, FedStatsPluginBiomeStreamPruner, 
+                       FedStatsPluginClientValidator, FedStatsPluginCoreConsentCheck, 
+                       FedStatsPluginCoreConsentCheckHelper, FedStatsPluginDefaultDonationParameters, 
+                       FedStatsPluginDnUConsentChecker, FedStatsPluginEngine, FedStatsPluginError, 
+                       FedStatsPluginIHAConsentChecker, FedStatsPluginLocationServiceConsentChecker, 
+                       FedStatsPluginLog, FedStatsPluginMaskingDataParameters, FedStatsPluginRecipe, 
+                       FedStatsPluginSQL, FedStatsPluginSQLQueryValidator, FedStatsPluginTelemetry, 
+                       FedStatsPluginUserProofingConsentChecker, InstalledApp ]
+...
