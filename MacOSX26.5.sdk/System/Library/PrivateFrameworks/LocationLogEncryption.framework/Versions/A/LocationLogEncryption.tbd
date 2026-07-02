@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/LocationLogEncryption.framework/Versions/A/LocationLogEncryption'
+current-version: 3075.0.8
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _LocationLogEncryptionClearObsoleteKeys, _LocationLogEncryptionDataSize, 
+                       _LocationLogEncryptionEncryptData, _LocationLogEncryptionKeyStoreDirPathForTime, 
+                       _LocationLogEncryptionSetDisabled ]
+    objc-classes:    [ LocationLogEncryptionData ]
+...

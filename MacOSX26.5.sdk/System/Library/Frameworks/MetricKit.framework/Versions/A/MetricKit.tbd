@@ -1,0 +1,53 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit'
+swift-abi-version: 7
+reexported-libraries:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    libraries:       [ '/System/Library/PrivateFrameworks/SignpostMetrics.framework/Versions/A/SignpostMetrics' ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '$ld$previous$/usr/lib/swift/libswiftMetricKit.dylib$$1$10.15$26.4$_$s9MetricKit10mxSignpost_3dso3log4name10signpostID__ySo03os_H7_type_ta_SVSo03OS_j1_F0Cs12StaticStringV0J0010OSSignpostI0VALSays7CVarArg_pGtF$', 
+                       '$ld$previous$/usr/lib/swift/libswiftMetricKit.dylib$$1$10.15$26.4$_$s9MetricKit32mxSignpostAnimationIntervalBegin3dso3log4name10signpostID__ySV_So06OS_os_I0Cs12StaticStringV0N0010OSSignpostL0VAJSays7CVarArg_pGtF$', 
+                       '$ld$previous$/usr/lib/swift/libswiftMetricKit.dylib$$6$13.0$26.4$_$s9MetricKit10mxSignpost_3dso3log4name10signpostID__ySo03os_H7_type_ta_SVSo03OS_j1_F0Cs12StaticStringV0J0010OSSignpostI0VALSays7CVarArg_pGtF$', 
+                       '$ld$previous$/usr/lib/swift/libswiftMetricKit.dylib$$6$13.0$26.4$_$s9MetricKit32mxSignpostAnimationIntervalBegin3dso3log4name10signpostID__ySV_So06OS_os_I0Cs12StaticStringV0N0010OSSignpostL0VAJSays7CVarArg_pGtF$', 
+                       '$ld$previous$@rpath/libswiftMetricKit.dylib$$1$10.15$10.15$_$s9MetricKit10mxSignpost_3dso3log4name10signpostID__ySo03os_H7_type_ta_SVSo03OS_j1_F0Cs12StaticStringV0J0010OSSignpostI0VALSays7CVarArg_pGtF$', 
+                       '_$s9MetricKit10mxSignpost_3dso3log4name10signpostID__ySo03os_H7_type_ta_SVSo03OS_j1_F0Cs12StaticStringV0J0010OSSignpostI0VALSays7CVarArg_pGtF', 
+                       '_$s9MetricKit15MXDateFormatterC10DateFormatO8rawValueAESgSi_tcfC', 
+                       '_$s9MetricKit15MXDateFormatterC10DateFormatO8rawValueSivg', 
+                       '_$s9MetricKit15MXDateFormatterC10DateFormatO8rawValueSivpMV', 
+                       '_$s9MetricKit15MXDateFormatterC10DateFormatOMa', '_$s9MetricKit15MXDateFormatterC10DateFormatOMn', 
+                       '_$s9MetricKit15MXDateFormatterC10DateFormatON', '_$s9MetricKit15MXDateFormatterC10DateFormatOSHAAMc', 
+                       '_$s9MetricKit15MXDateFormatterC10DateFormatOSQAAMc', '_$s9MetricKit15MXDateFormatterC10DateFormatOSYAAMc', 
+                       '_$s9MetricKit15MXDateFormatterC14dateFromString_6format10Foundation4DateVSgSS_AC0J6FormatOtFZ', 
+                       '_$s9MetricKit15MXDateFormatterC14stringFromDate_6formatSS10Foundation0G0V_AC0G6FormatOtFZ', 
+                       '_$s9MetricKit15MXDateFormatterC21dateTruncatedToMinutey10Foundation4DateVSgAGFZ', 
+                       '_$s9MetricKit15MXDateFormatterC6oneDaySdvgZ', '_$s9MetricKit15MXDateFormatterC6oneDaySdvpZMV', 
+                       '_$s9MetricKit15MXDateFormatterCACycfC', '_$s9MetricKit15MXDateFormatterCACycfc', 
+                       '_$s9MetricKit15MXDateFormatterCMa', '_$s9MetricKit15MXDateFormatterCMn', 
+                       '_$s9MetricKit15MXDateFormatterCMo', '_$s9MetricKit15MXDateFormatterCN', 
+                       '_$s9MetricKit15MXDateFormatterCfD', '_$s9MetricKit32mxSignpostAnimationIntervalBegin3dso3log4name10signpostID__ySV_So06OS_os_I0Cs12StaticStringV0N0010OSSignpostL0VAJSays7CVarArg_pGtF', 
+                       _MXErrorDomain, _MetricKitVersionNumber, _MetricKitVersionString, 
+                       '__swift_FORCE_LOAD_$_swiftMetricKit' ]
+    objc-classes:    [ MXAnimationMetric, MXAppExitMetric, MXAppLaunchDiagnostic, 
+                       MXAppLaunchMetric, MXAppResponsivenessMetric, MXAppRunTimeMetric, 
+                       MXAverage, MXBackgroundExitData, MXCPUExceptionDiagnostic, 
+                       MXCPUMetric, MXCallStackFrame, MXCallStackThread, MXCallStackTree, 
+                       MXCellularConditionMetric, MXCrashDiagnostic, MXCrashDiagnosticObjectiveCExceptionReason, 
+                       MXDiagnostic, MXDiagnosticPayload, MXDiskIOMetric, MXDiskSpaceUsageMetric, 
+                       MXDiskWriteExceptionDiagnostic, MXDisplayMetric, MXForegroundExitData, 
+                       MXGPUMetric, MXHangDiagnostic, MXHistogram, MXHistogramBucket, 
+                       MXLocationActivityMetric, MXMemoryMetric, MXMetaData, MXMetric, 
+                       MXMetricManager, MXMetricPayload, MXNetworkTransferMetric, 
+                       MXSignpostIntervalData, MXSignpostMetric, MXSignpostRecord, 
+                       MXUnitAveragePixelLuminance, MXUnitSignalBars, _TtC9MetricKit15MXDateFormatter ]
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SignpostMetrics.framework/Versions/A/SignpostMetrics'
+current-version: 174.8
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ __MXSignpostMetricsSnapshot ]
+...

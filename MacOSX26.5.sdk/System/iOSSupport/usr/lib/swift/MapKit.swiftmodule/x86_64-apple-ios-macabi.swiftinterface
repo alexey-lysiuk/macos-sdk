@@ -1,0 +1,69 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.2 clang-2100.0.123.2)
+// swift-module-flags: -target x86_64-apple-ios26.5-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftMapKit -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 14.25.2.9.2 -module-name MapKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
+import Foundation
+import GeoToolbox
+@_exported import MapKit
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public typealias MKMapItemIdentifier = MapKit.MKMapItem.Identifier
+@available(iOS 18.0, visionOS 2.0, tvOS 18.0, macOS 15.0, watchOS 11.0, *)
+extension MapKit.MKMapItem.Identifier : Swift.RawRepresentable, Swift.Codable {
+  public typealias RawValue = Swift.String
+}
+extension MapKit.MKAddressRepresentations {
+  @available(iOS 26.0, macOS 26.0, watchOS 26.0, tvOS 26.0, visionOS 26.0, *)
+  public var region: Foundation.Locale.Region? {
+    get
+  }
+}
+@available(iOS 14.0, tvOS 14.0, macOS 11.0, *)
+extension MapKit.MKGradientPolylineRenderer {
+  public var locations: [CoreFoundation.CGFloat] {
+    get
+  }
+  public func setColors(_ colors: [UIKit.UIColor], locations: [CoreFoundation.CGFloat])
+}
+extension MapKit.MKCoordinateSpan : Swift._ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> Foundation.NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: Foundation.NSValue, result: inout MapKit.MKCoordinateSpan?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: Foundation.NSValue, result: inout MapKit.MKCoordinateSpan?) -> Swift.Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: Foundation.NSValue?) -> MapKit.MKCoordinateSpan
+  public typealias _ObjectiveCType = Foundation.NSValue
+}
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension MapKit.MKLocalSearch.Request {
+  public typealias ResultType = MapKit.MKLocalSearch.ResultType
+}
+@available(iOS 18.0, macOS 15.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension MapKit.MKSelectionAccessory.MapItemDetailPresentationStyle {
+  public static func automatic(presentationViewController: UIKit.UIViewController? = nil) -> MapKit.MKSelectionAccessory.MapItemDetailPresentationStyle
+  public static func callout(_ style: MapKit.MKSelectionAccessory.MapItemDetailPresentationStyle.CalloutStyle = .automatic) -> MapKit.MKSelectionAccessory.MapItemDetailPresentationStyle
+}
+extension GeoToolbox.PlaceDescriptor {
+  @available(iOS 26.0, macOS 26.0, watchOS 26.0, tvOS 26.0, visionOS 26.0, *)
+  public init?(item: MapKit.MKMapItem)
+}
+@available(iOS 14.0, tvOS 14.0, macOS 11.0, watchOS 7.0, *)
+extension MapKit.MKMultiPoint {
+  public func locations(at indexes: Foundation.IndexSet) -> [CoreFoundation.CGFloat]
+}
+extension MapKit.MKMapItemRequest {
+  @available(iOS 26.0, macOS 26.0, watchOS 26.0, tvOS 26.0, visionOS 26.0, *)
+  convenience public init(placeDescriptor: GeoToolbox.PlaceDescriptor)
+  @available(iOS 26.0, macOS 26.0, watchOS 26.0, tvOS 26.0, visionOS 26.0, *)
+  public var placeDescriptor: GeoToolbox.PlaceDescriptor? {
+    get
+  }
+}

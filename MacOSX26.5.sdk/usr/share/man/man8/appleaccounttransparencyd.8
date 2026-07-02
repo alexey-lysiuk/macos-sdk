@@ -1,0 +1,26 @@
+.\" Copyright (c) 2026 Apple Inc. All rights reserved.
+.\"
+.Dd March 18, 2026
+.Dt APPLEACCOUNTTRANSPARENCYD 8
+.Os
+.Sh NAME
+.Nm appleaccounttransparencyd
+.Nd Apple Account daemon
+.Sh SYNOPSIS
+.Nm
+.Sh DESCRIPTION
+The
+.Nm
+daemon provides Apple Account services and serves XPC clients via the
+.Sy com.apple.appleaccount.transparency
+Mach service.
+.Pp
+.Nm
+is launched on-demand by
+.Xr launchd 8 .
+It must not be invoked directly by users or processes; all interaction
+must occur through the designated XPC service name.
+.Sh SEE ALSO
+.Xr appleaccountd 8 ,
+.Xr launchd 8 ,
+.Xr launchd.plist 5

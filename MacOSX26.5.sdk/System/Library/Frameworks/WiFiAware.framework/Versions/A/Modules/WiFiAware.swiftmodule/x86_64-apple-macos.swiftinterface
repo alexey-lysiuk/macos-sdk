@@ -1,0 +1,582 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.2 (swiftlang-6.3.2.1.2 clang-2100.0.123.2)
+// swift-module-flags: -target x86_64-apple-macos26.5 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -library-level api -enable-experimental-feature DebugDescriptionMacro -user-module-version 861.4 -module-name WiFiAware
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
+import Foundation
+import Network
+import OSLog
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public enum WAError : Swift.Error, Foundation.LocalizedError, Swift.Sendable, Swift.Codable {
+  case error(WiFiAware.WAError.ErrorDetails)
+  public struct ErrorDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case wifiAwareUnsupported(WiFiAware.WAError.WiFiAwareUnsupportedDetails)
+  public struct WiFiAwareUnsupportedDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case entitlementMissing(WiFiAware.WAError.EntitlementMissingDetails)
+  public struct EntitlementMissingDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case noRadioResources(WiFiAware.WAError.NoRadioResourcesDetails)
+  public struct NoRadioResourcesDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case serviceNotDeclared(WiFiAware.WAError.ServiceNotDeclaredDetails)
+  public struct ServiceNotDeclaredDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case serviceAlreadySubscribing(WiFiAware.WAError.ServiceAlreadySubscribingDetails)
+  public struct ServiceAlreadySubscribingDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case serviceAlreadyPublishing(WiFiAware.WAError.ServiceAlreadyPublishingDetails)
+  public struct ServiceAlreadyPublishingDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case noPairedDevices(WiFiAware.WAError.NoPairedDevicesDetails)
+  public struct NoPairedDevicesDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case deviceInvalid(WiFiAware.WAError.DeviceInvalidDetails)
+  public struct DeviceInvalidDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case deviceNoLongerAvailable(WiFiAware.WAError.DeviceNoLongerAvailableDetails)
+  public struct DeviceNoLongerAvailableDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case publisherTimeout(WiFiAware.WAError.PublisherTimeoutDetails)
+  public struct PublisherTimeoutDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case subscriberTimeout(WiFiAware.WAError.SubscriberTimeoutDetails)
+  public struct SubscriberTimeoutDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case connectionFailed(WiFiAware.WAError.ConnectionFailedDetails)
+  public struct ConnectionFailedDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case connectionIdleTimeout(WiFiAware.WAError.ConnectionIdleTimeoutDetails)
+  public struct ConnectionIdleTimeoutDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  case connectionTerminated(WiFiAware.WAError.ConnectionTerminatedDetails)
+  public struct ConnectionTerminatedDetails : Swift.Sendable, Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WACapabilities : Swift.Sendable {
+  public enum Feature : Swift.Sendable, Swift.Hashable, Swift.Equatable, Swift.CaseIterable, Swift.Codable {
+    case wifiAware
+    public static func == (a: WiFiAware.WACapabilities.Feature, b: WiFiAware.WACapabilities.Feature) -> Swift.Bool
+    @available(iOS 26.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    @available(macOS, unavailable)
+    @available(macCatalyst, unavailable)
+    public typealias AllCases = [WiFiAware.WACapabilities.Feature]
+    nonisolated public static var allCases: [WiFiAware.WACapabilities.Feature] {
+      get
+    }
+    public func encode(to encoder: any Swift.Encoder) throws
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public static var supportedFeatures: Swift.Set<WiFiAware.WACapabilities.Feature> {
+    get
+  }
+  public static var maximumConnectableDevices: Swift.Int {
+    get
+  }
+  public static var maximumPublishableServices: Swift.Int {
+    get
+  }
+  public static var maximumSubscribableServices: Swift.Int {
+    get
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WAPairedDevice : Swift.Sendable, Swift.Identifiable, Swift.Equatable, Swift.Hashable, Swift.CustomStringConvertible, Swift.Codable {
+  public typealias Devices = [WiFiAware.WAPairedDevice.ID : WiFiAware.WAPairedDevice]
+  public static var allDevices: WiFiAware.WAPairedDevice.DevicesSequence {
+    get
+  }
+  public static func allDevices(matching: Foundation.Predicate<WiFiAware.WAPairedDevice>) -> WiFiAware.WAPairedDevice.DevicesSequence
+  public typealias ID = Swift.UInt64
+  public let id: WiFiAware.WAPairedDevice.ID
+  public let name: Swift.String?
+  public let pairingInfo: WiFiAware.WAPairedDevice.PairingInfo?
+  public var description: Swift.String {
+    get
+  }
+  public struct PairingInfo : Swift.Sendable, Swift.Equatable, Swift.Hashable, Swift.CustomStringConvertible, Swift.Codable {
+    public let pairingName: Swift.String
+    public let vendorName: Swift.String
+    public let modelName: Swift.String
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: WiFiAware.WAPairedDevice.PairingInfo, b: WiFiAware.WAPairedDevice.PairingInfo) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct DevicesSequence : _Concurrency.AsyncSequence {
+    public typealias Element = WiFiAware.WAPairedDevice.Devices
+    public func current() async throws -> WiFiAware.WAPairedDevice.DevicesSequence.Element?
+    public func makeAsyncIterator() -> WiFiAware.WAPairedDevice.DevicesSequence.AsyncIterator
+    @_hasMissingDesignatedInitializers public class AsyncIterator : _Concurrency.AsyncIteratorProtocol {
+      public typealias Element = WiFiAware.WAPairedDevice.Devices
+      public typealias Failure = Swift.Error
+      public func next() async throws -> WiFiAware.WAPairedDevice.DevicesSequence.AsyncIterator.Element?
+      @objc deinit
+    }
+    @available(iOS 26.0, *)
+    @available(tvOS, unavailable, introduced: 18.0)
+    @available(watchOS, unavailable, introduced: 11.0)
+    @available(visionOS, unavailable, introduced: 2.0)
+    @available(macOS, unavailable, introduced: 15.0)
+    @available(macCatalyst, unavailable)
+    @_implements(_Concurrency.AsyncSequence, Failure) public typealias __AsyncSequence_Failure = any Swift.Error
+  }
+  public static func == (a: WiFiAware.WAPairedDevice, b: WiFiAware.WAPairedDevice) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public protocol WAService : Swift.CustomStringConvertible, Swift.Decodable, Swift.Encodable, Swift.Hashable, Swift.Identifiable, Swift.Sendable {
+  static var allServices: [Swift.String : Self] { get }
+  var name: Swift.String { get }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WAPublishableService : WiFiAware.WAService {
+  public static var allServices: [WiFiAware.WAPublishableService.ID : WiFiAware.WAPublishableService] {
+    get
+  }
+  public typealias ID = Swift.String
+  public var id: WiFiAware.WAPublishableService.ID {
+    get
+  }
+  public let name: Swift.String
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: WiFiAware.WAPublishableService, b: WiFiAware.WAPublishableService) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WASubscribableService : WiFiAware.WAService {
+  public static var allServices: [WiFiAware.WASubscribableService.ID : WiFiAware.WASubscribableService] {
+    get
+  }
+  public typealias ID = Swift.String
+  public var id: WiFiAware.WASubscribableService.ID {
+    get
+  }
+  public let name: Swift.String
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: WiFiAware.WASubscribableService, b: WiFiAware.WASubscribableService) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 26.4, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Network.NetworkConnection {
+  final public var wifiAware: WiFiAware.WAConnection<ApplicationProtocol>? {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.4, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public class WAConnection<ApplicationProtocol> where ApplicationProtocol : Network.NetworkProtocolOptions {
+  public func deriveSharedSecret(for protocolName: WiFiAware.WASharedSecret.ProtocolName, method: WiFiAware.WASharedSecret.DerivationMethod, context: WiFiAware.WASharedSecret.Context = .bundleID) async -> WiFiAware.WASharedSecret?
+  @objc deinit
+}
+@available(iOS 26.4, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WASharedSecret : Swift.Sendable, Swift.Equatable, Swift.Hashable {
+  public let derivation: WiFiAware.WASharedSecret.DerivationMethod
+  public let data: Foundation.Data
+  public struct DerivationMethod : Swift.Sendable, Swift.Equatable, Swift.Hashable {
+    public static let kdfHash256: WiFiAware.WASharedSecret.DerivationMethod
+    public static func == (a: WiFiAware.WASharedSecret.DerivationMethod, b: WiFiAware.WASharedSecret.DerivationMethod) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct ProtocolName : Swift.Sendable, Swift.Equatable, Swift.Hashable {
+    public static let tlsPSK: WiFiAware.WASharedSecret.ProtocolName
+    public static let ipsecPSK: WiFiAware.WASharedSecret.ProtocolName
+    public init?(_ string: Swift.String)
+    public init?(_ data: Foundation.Data)
+    public static func == (a: WiFiAware.WASharedSecret.ProtocolName, b: WiFiAware.WASharedSecret.ProtocolName) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct Context : Swift.Sendable, Swift.Equatable, Swift.Hashable {
+    public static let bundleID: WiFiAware.WASharedSecret.Context
+    public init?(_ string: Swift.String)
+    public init?(_ data: Foundation.Data)
+    public static func == (a: WiFiAware.WASharedSecret.Context, b: WiFiAware.WASharedSecret.Context) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func == (a: WiFiAware.WASharedSecret, b: WiFiAware.WASharedSecret) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 26.4, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Network.NWEndpoint {
+  public var wifiAware: WiFiAware.WAEndpoint? {
+    get
+  }
+  public func wifiAware(port: Network.NWEndpoint.Port) -> WiFiAware.WAEndpoint?
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Network.NWError {
+  public var wifiAware: WiFiAware.WAError? {
+    get
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Network.NWParameters {
+  final public var wifiAware: WiFiAware.WAParameters {
+    get
+    set
+  }
+  final public func wifiAware(_ configurator: (inout WiFiAware.WAParameters) -> Swift.Void) -> Self
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Network.NWParametersBuilder {
+  public func wifiAware(_ configurator: (inout WiFiAware.WAParameters) -> Swift.Void) -> Network.NWParametersBuilder<Top, repeat each P>
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WAParameters : Swift.Sendable {
+  public static let defaults: WiFiAware.WAParameters
+  public static let realtime: WiFiAware.WAParameters
+  public var performanceMode: WiFiAware.WAPerformanceMode
+  public init(performanceMode: WiFiAware.WAPerformanceMode = .bulk)
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Network.NWPath {
+  public var wifiAware: WiFiAware.WAPath? {
+    get async throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WAPath : Swift.Sendable {
+  public let endpoint: WiFiAware.WAEndpoint
+  public let performance: WiFiAware.WAPerformanceReport
+  public let durationActive: Swift.Duration
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Network.ListenerProvider where Self == WiFiAware.WAPublisherListener {
+  public static func wifiAware(_ action: WiFiAware.WAPublisherListener.Action, active requestedDuration: Swift.Duration? = nil) -> Self
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WAPublisherListener : Network.ListenerProvider, Swift.Sendable {
+  public var service: Network.NWListener.Service {
+    get
+  }
+  public func configureParameters(_ parameters: Network.NWParameters)
+  public var isApplicationService: Swift.Bool {
+    get
+  }
+  public struct Action : Swift.Sendable {
+    public static func connecting(to myPublishingService: WiFiAware.WAPublishableService, from pairedDevices: WiFiAware.WAPublisherListener.Devices, datapath wifiAware: WiFiAware.WAPublisherListener.DatapathParameters? = nil) -> WiFiAware.WAPublisherListener.Action
+    @available(iOS 26.4, *)
+    @available(macOS, unavailable)
+    @available(macCatalyst, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public static func addingConnections(from pairedDevices: WiFiAware.WAPublisherListener.Devices) -> WiFiAware.WAPublisherListener.Action
+  }
+  public struct Devices : Swift.Sendable {
+    public static let allPairedDevices: WiFiAware.WAPublisherListener.Devices
+    public static let userSpecifiedDevices: WiFiAware.WAPublisherListener.Devices
+    public static func selected(_ pairedDevices: some Sequence<WAPairedDevice>) -> WiFiAware.WAPublisherListener.Devices
+    public static func selected(_ pairedDevices: WiFiAware.WAPairedDevice.Devices) -> WiFiAware.WAPublisherListener.Devices
+    public static func matching(_ pairedDevicesFilter: Foundation.Predicate<WiFiAware.WAPairedDevice>) -> WiFiAware.WAPublisherListener.Devices
+  }
+  public struct DatapathParameters : Swift.Sendable {
+    public static let defaults: WiFiAware.WAPublisherListener.DatapathParameters
+    public static let realtime: WiFiAware.WAPublisherListener.DatapathParameters
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Network.BrowserProvider where Self == WiFiAware.WASubscriberBrowser {
+  public static func wifiAware(_ action: WiFiAware.WASubscriberBrowser.Action, active requestedDuration: Swift.Duration? = nil) -> Self
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WASubscriberBrowser : Network.BrowserProvider, Swift.Sendable {
+  public typealias Endpoint = WiFiAware.WAEndpoint
+  public func makeDescriptor() -> Network.NWBrowser.Descriptor
+  public func makeEndpoint(from browseResult: Network.NWBrowser.Result) throws -> WiFiAware.WASubscriberBrowser.Endpoint?
+  public func configureParameters(_ parameters: Network.NWParameters?) -> Network.NWParameters
+  public struct Action : Swift.Sendable {
+    public static func connecting(to pairedDevices: WiFiAware.WASubscriberBrowser.Devices, from mySubscribingService: WiFiAware.WASubscribableService) -> WiFiAware.WASubscriberBrowser.Action
+  }
+  public struct Devices : Swift.Sendable {
+    public static let allPairedDevices: WiFiAware.WASubscriberBrowser.Devices
+    public static let userSpecifiedDevices: WiFiAware.WASubscriberBrowser.Devices
+    public static func selected(_ pairedDevices: some Sequence<WAPairedDevice>) -> WiFiAware.WASubscriberBrowser.Devices
+    public static func selected(_ pairedDevices: WiFiAware.WAPairedDevice.Devices) -> WiFiAware.WASubscriberBrowser.Devices
+    public static func matching(_ pairedDevicesFilter: Foundation.Predicate<WiFiAware.WAPairedDevice>) -> WiFiAware.WASubscriberBrowser.Devices
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public enum WAPerformanceMode : Swift.Sendable, Swift.Equatable, Swift.Hashable, Swift.CaseIterable, Swift.Codable {
+  case bulk
+  case realtime
+  public static func == (a: WiFiAware.WAPerformanceMode, b: WiFiAware.WAPerformanceMode) -> Swift.Bool
+  @available(iOS 26.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  public typealias AllCases = [WiFiAware.WAPerformanceMode]
+  nonisolated public static var allCases: [WiFiAware.WAPerformanceMode] {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public enum WAAccessCategory : Swift.Sendable, Swift.Equatable, Swift.Hashable, Swift.CaseIterable, Swift.Codable {
+  case bestEffort
+  case background
+  case interactiveVideo
+  case interactiveVoice
+  public static func == (a: WiFiAware.WAAccessCategory, b: WiFiAware.WAAccessCategory) -> Swift.Bool
+  @available(iOS 26.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  public typealias AllCases = [WiFiAware.WAAccessCategory]
+  nonisolated public static var allCases: [WiFiAware.WAAccessCategory] {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WAPerformanceReport : Swift.Sendable, Swift.Codable {
+  public let timestamp: Foundation.Date
+  public let localTimestamp: _Concurrency.ContinuousClock.Instant
+  public let throughputCeiling: Swift.Double?
+  public let throughputCapacity: Swift.Double?
+  public var throughputCapacityRatio: Swift.Double? {
+    get
+  }
+  public let transmitLatency: [WiFiAware.WAAccessCategory : WiFiAware.WAPerformanceReport.TransmitLatencyMetrics]
+  public let signalStrength: Swift.Double?
+  public struct TransmitLatencyMetrics : Swift.Sendable, Swift.Codable {
+    public let accessCategory: WiFiAware.WAAccessCategory
+    public let average: Swift.Duration?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct WAEndpoint : Network.Connectable, Swift.Sendable, Swift.Equatable, Swift.Hashable, Swift.CustomStringConvertible {
+  public var publishedService: WiFiAware.WAPublishableService? {
+    get
+  }
+  public var subscribedService: WiFiAware.WASubscribableService? {
+    get
+  }
+  public let device: WiFiAware.WAPairedDevice
+  public var description: Swift.String {
+    get
+  }
+  public static func == (lhs: WiFiAware.WAEndpoint, rhs: WiFiAware.WAEndpoint) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}

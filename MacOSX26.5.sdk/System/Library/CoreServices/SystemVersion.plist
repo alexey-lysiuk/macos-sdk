@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildID</key>
+	<string>68E32B32-42C6-11F1-B58E-42443597F508</string>
+	<key>ProductBuildVersion</key>
+	<string>25F70</string>
+	<key>ProductCopyright</key>
+	<string>1983-2026 Apple Inc.</string>
+	<key>ProductName</key>
+	<string>macOS</string>
+	<key>ProductUserVisibleVersion</key>
+	<string>26.5</string>
+	<key>ProductVersion</key>
+	<string>26.5</string>
+	<key>iOSSupportVersion</key>
+	<string>26.5</string>
+</dict>
+</plist>

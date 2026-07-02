@@ -1,0 +1,49 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.2 (swiftlang-6.3.2.1.2 clang-2100.0.123.2)
+// swift-module-flags: -target arm64e-apple-macos26.5 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 259.6.4 -module-name Virtualization
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
+import OSLog
+import Swift
+@_exported import Virtualization
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 11.0, *)
+extension Virtualization.VZVirtualMachine {
+  public func start(completionHandler: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  public func pause(completionHandler: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  public func resume(completionHandler: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+}
+@available(macOS 11.0, *)
+extension Virtualization.VZVirtioSocketDevice {
+  public func connect(toPort port: Swift.UInt32, completionHandler: @escaping (Swift.Result<Virtualization.VZVirtioSocketConnection, any Swift.Error>) -> Swift.Void)
+}
+@available(macOS 12.0, *)
+extension Virtualization.VZMacOSRestoreImage {
+  @preconcurrency public class func load(from fileURL: Foundation.URL, completionHandler: @escaping @Sendable (Swift.Result<Virtualization.VZMacOSRestoreImage, any Swift.Error>) -> Swift.Void)
+  @preconcurrency public class func fetchLatestSupported(completionHandler: @escaping @Sendable (Swift.Result<Virtualization.VZMacOSRestoreImage, any Swift.Error>) -> Swift.Void)
+}
+@available(macOS 12.0, *)
+extension Virtualization.VZMacOSInstaller {
+  @preconcurrency public func install(completionHandler: @escaping @Sendable (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+}
+@available(macOS 14.0, *)
+extension Virtualization.VZLinuxRosettaDirectoryShare {
+  public enum CachingOptions {
+    case abstractSocket(Swift.String)
+    case unixSocket(Swift.String)
+    public static var defaultUnixSocket: Virtualization.VZLinuxRosettaDirectoryShare.CachingOptions {
+      get
+    }
+    public static var maximumNameLength: Swift.Int {
+      get
+    }
+    public static var maximumPathLength: Swift.Int {
+      get
+    }
+  }
+  public var cachingOptions: Virtualization.VZLinuxRosettaDirectoryShare.CachingOptions? {
+    get
+  }
+  public func setCachingOptions(_ cachingOptions: Virtualization.VZLinuxRosettaDirectoryShare.CachingOptions?) throws
+}

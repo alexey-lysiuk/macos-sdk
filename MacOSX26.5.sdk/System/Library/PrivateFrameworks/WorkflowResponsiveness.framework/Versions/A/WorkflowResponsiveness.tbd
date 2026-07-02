@@ -1,0 +1,57 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/WorkflowResponsiveness.framework/Versions/A/WorkflowResponsiveness'
+current-version: 419.10
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _AllDiagnosticKeys, _AllEnvironmentKeys, _AllEnvironmentMergeStrategyValues, 
+                       _AllEnvironmentSharingStrategyValues, _AllSignpostKeys, _AllWorkflowKeys, 
+                       _WRDiagnosticGatherTailspinKey, _WRDiagnosticNameKey, _WRDiagnosticOptionReportOmitNetworkBoundIntervalsKey, 
+                       _WRDiagnosticOptionReportOtherSignpostWithNameKey, _WRDiagnosticOptionReportProcessesWithNameKey, 
+                       _WRDiagnosticOptionTailspinIncludesOSLogsKey, _WRDiagnosticReportSpindumpForDispatchQueueWithLabelKey, 
+                       _WRDiagnosticReportSpindumpForMainThreadKey, _WRDiagnosticReportSpindumpForThisDispatchQueueKey, 
+                       _WRDiagnosticReportSpindumpForThisThreadKey, _WRDiagnosticReportSpindumpForThreadWithNameKey, 
+                       _WRDiagnosticTriggerEventTimeoutKey, _WRDiagnosticTriggerThresholdCountKey, 
+                       _WRDiagnosticTriggerThresholdDurationSingleKey, _WRDiagnosticTriggerThresholdDurationSumKey, 
+                       _WRDiagnosticTriggerThresholdDurationUnionKey, _WREnvironmentDisabledKey, 
+                       _WREnvironmentFieldNameKey, _WREnvironmentMergeStrategyConcatenateStr, 
+                       _WREnvironmentMergeStrategyFirstStr, _WREnvironmentMergeStrategyKey, 
+                       _WREnvironmentMergeStrategyLastStr, _WREnvironmentMergeStrategyMaxStr, 
+                       _WREnvironmentMergeStrategyMinStr, _WREnvironmentMergeStrategySumStr, 
+                       _WREnvironmentNameKey, _WREnvironmentSharingStrategyAllIncludingOtherIndividuationsStr, 
+                       _WREnvironmentSharingStrategyAllStr, _WREnvironmentSharingStrategyKey, 
+                       _WREnvironmentSharingStrategyNoneStr, _WREnvironmentSharingStrategyOverallWorkflowStr, 
+                       _WRErrorDomain, _WRFieldNameFromFormatPrefix, _WRIsDisabledWorkflow, 
+                       _WRMergeStrategyFromString, _WRSanitizeForCA, _WRSharingOptionsFromString, 
+                       _WRSignpostCategoryKey, _WRSignpostCustomEnvironmentCoreAnalyticsEventNameKey, 
+                       _WRSignpostDiagnosticsKey, _WRSignpostDiagnosticsThresholdCountKey, 
+                       _WRSignpostDiagnosticsThresholdIntervalKey, _WRSignpostDisabledKey, 
+                       _WRSignpostEnvironmentFieldNamesKey, _WRSignpostEnvironmentKey, 
+                       _WRSignpostEventEndGroupKey, _WRSignpostEventEndKey, _WRSignpostEventIdentifierFieldNameKey, 
+                       _WRSignpostEventIdentifierIsSignpostIdKey, _WRSignpostEventOverallIntervalKey, 
+                       _WRSignpostEventStartKey, _WRSignpostIndividuationFieldNameKey, 
+                       _WRSignpostIntervalBeginIsEventEndKey, _WRSignpostIntervalEndIsEventStartKey, 
+                       _WRSignpostNameKey, _WRSignpostNetworkBoundKey, _WRSignpostRequiredFieldNamesAndValuesKey, 
+                       _WRSignpostRequiredLogMessageContentsKey, _WRSignpostSubsystemKey, 
+                       _WRStringFromMergeStrategy, _WRStringFromSharingOptions, _WRTaskingDictForWorkflow, 
+                       _WRTaskingKeyForNewWorkflows, _WRTaskingKeyForWorkflowTelemetryEnabled, 
+                       _WRWorkflowContextualTelemetryKey, _WRWorkflowCustomEnvironmentCoreAnalyticsEventNameKey, 
+                       _WRWorkflowDiagnosticsKey, _WRWorkflowEndMachContTimeNSKey, 
+                       _WRWorkflowEndSignpostKey, _WRWorkflowEndThreadIDKey, _WRWorkflowEnvironmentKey, 
+                       _WRWorkflowMaximumDurationKey, _WRWorkflowNameKey, _WRWorkflowSignpostCountKey, 
+                       _WRWorkflowSignpostDurationSecondsKey, _WRWorkflowSignpostEmitMachContTimeNSKey, 
+                       _WRWorkflowSignpostEmitThreadIDKey, _WRWorkflowSignpostEmitsListKey, 
+                       _WRWorkflowSignpostIntervalBeginMachContTimeNSKey, _WRWorkflowSignpostIntervalBeginThreadIDKey, 
+                       _WRWorkflowSignpostIntervalEndMachContTimeNSKey, _WRWorkflowSignpostIntervalEndThreadIDKey, 
+                       _WRWorkflowSignpostIntervalsListKey, _WRWorkflowSignpostListKey, 
+                       _WRWorkflowSignpostNameKey, _WRWorkflowSignpostSecondsUntilFirstSignpostKey, 
+                       _WRWorkflowSignpostThresholdCountKey, _WRWorkflowSignpostThresholdDurationSecondsKey, 
+                       _WRWorkflowSignpostsKey, _WRWorkflowStartMachContTimeNSKey, 
+                       _WRWorkflowStartSignpostKey, _WRWorkflowStartThreadIDKey, 
+                       _WRWorkflowThresholdDurationSecondsKey, _kWREnvironmentDefaultMergeStrategy, 
+                       _kWREnvironmentDefaultSharingOptions ]
+    objc-classes:    [ WRDiagnostic, WREnvironmentMetadata, WRIntervalAndThreads, 
+                       WRSignpost, WRSignpostTracker, WRTimestampAndThread, WRWorkflow, 
+                       WRWorkflowEventTracker, WRWorkflowProvider ]
+...

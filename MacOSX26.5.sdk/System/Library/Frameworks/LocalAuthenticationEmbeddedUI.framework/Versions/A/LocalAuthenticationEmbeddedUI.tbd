@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/LocalAuthenticationEmbeddedUI.framework/Versions/A/LocalAuthenticationEmbeddedUI'
+current-version: 2005.121.1
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC04makefG0So0efG0CyFTj', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC04makefG0So0efG0CyFTq', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC12authenticate10completionyys6ResultOySDys11AnyHashableVypGs5Error_pGc_tFTj', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC12authenticate10completionyys6ResultOySDys11AnyHashableVypGs5Error_pGc_tFTq', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC13authenticator10mechanismsACSo15LAAuthenticatora_So0E9MechanismatcfC', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC13authenticator10mechanismsACSo15LAAuthenticatora_So0E9MechanismatcfCTj', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC13authenticator10mechanismsACSo15LAAuthenticatora_So0E9MechanismatcfCTq', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC13authenticator10mechanismsACSo15LAAuthenticatora_So0E9Mechanismatcfc', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC7prepareyyYaKFTj', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC7prepareyyYaKFTjTu', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyC7prepareyyYaKFTq', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyCACycfC', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyCACycfc', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyCMa', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyCMn', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyCMo', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyCMu', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyCN', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyCfD', 
+                       '_$s29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxyCs12IdentifiableAAMc', 
+                       _LAAuthenticationMechanismAny, _LAAuthenticationMechanismBiometry, 
+                       _LAAuthenticationMechanismBiometryOrCompanion, _LAAuthenticationMechanismBiometryOrCompanionOrPassword, 
+                       _LAAuthenticationMechanismCompanion, _LAAuthenticationMechanismNone, 
+                       _LAAuthenticationMechanismSmartCard, _LAAuthenticationMechanismUserPassword ]
+    objc-classes:    [ LAAuthenticationSheetController, LAAuthenticationSheetControllerPAMConfiguration, 
+                       LAAuthenticationView, LAContextUITrampoline, _TtC29LocalAuthenticationEmbeddedUI36LAAuthenticationSheetControllerProxy ]
+...

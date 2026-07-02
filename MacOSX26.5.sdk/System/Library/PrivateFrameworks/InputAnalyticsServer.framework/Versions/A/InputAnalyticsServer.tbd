@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/InputAnalyticsServer.framework/Versions/A/InputAnalyticsServer'
+current-version: 111.5.1
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s20InputAnalyticsServer20IASScreenshotUIUtilsC19keyboardBoundingBoxSo6CGRectVyFZ', 
+                       '_$s20InputAnalyticsServer20IASScreenshotUIUtilsCACycfC', 
+                       '_$s20InputAnalyticsServer20IASScreenshotUIUtilsCACycfc', 
+                       '_$s20InputAnalyticsServer20IASScreenshotUIUtilsCMa', '_$s20InputAnalyticsServer20IASScreenshotUIUtilsCMn', 
+                       '_$s20InputAnalyticsServer20IASScreenshotUIUtilsCMo', '_$s20InputAnalyticsServer20IASScreenshotUIUtilsCN', 
+                       '_$s20InputAnalyticsServer20IASScreenshotUIUtilsCfD', '_$s20InputAnalyticsServer26IASStickerStoreSwiftBridgeC010getStickerB05usingSaySDySSypGGSgAA0D8Fetching_p_tFZ', 
+                       '_$s20InputAnalyticsServer26IASStickerStoreSwiftBridgeC010getStickerB0SaySDySSypGGSgyFZ', 
+                       '_$s20InputAnalyticsServer26IASStickerStoreSwiftBridgeC14defaultFetcherAA0D8Fetching_pyFZ', 
+                       '_$s20InputAnalyticsServer26IASStickerStoreSwiftBridgeCACycfC', 
+                       '_$s20InputAnalyticsServer26IASStickerStoreSwiftBridgeCACycfc', 
+                       '_$s20InputAnalyticsServer26IASStickerStoreSwiftBridgeCMa', 
+                       '_$s20InputAnalyticsServer26IASStickerStoreSwiftBridgeCMn', 
+                       '_$s20InputAnalyticsServer26IASStickerStoreSwiftBridgeCMo', 
+                       '_$s20InputAnalyticsServer26IASStickerStoreSwiftBridgeCN', 
+                       '_$s20InputAnalyticsServer26IASStickerStoreSwiftBridgeCfD', 
+                       '_$sSo25IASGenerativeModelsBridgeC20InputAnalyticsServerEABycfC', 
+                       '_$sSo25IASGenerativeModelsBridgeC20InputAnalyticsServerEABycfc', 
+                       '_$sSo25IASGenerativeModelsBridgeCMa', '_$sSo29IASFeedbackServiceSwiftBridgeC20InputAnalyticsServerEABycfC', 
+                       '_$sSo29IASFeedbackServiceSwiftBridgeC20InputAnalyticsServerEABycfc', 
+                       '_$sSo29IASFeedbackServiceSwiftBridgeCMa' ]
+    objc-classes:    [ IASFeedbackServiceSwiftBridge, IASGenerativeModelsBridge, 
+                       IASStandaloneServer, IASStickerStoreSwiftBridge, IASXPCServer, 
+                       _TtC20InputAnalyticsServer20IASScreenshotUIUtils ]
+...
