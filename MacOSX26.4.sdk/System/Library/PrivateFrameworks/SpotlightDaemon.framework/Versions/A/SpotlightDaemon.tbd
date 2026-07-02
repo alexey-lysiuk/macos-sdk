@@ -54,9 +54,9 @@ exports:
                        SPCoreSpotlightIndexer, SPCoreSpotlightIndexerTask, SPCoreSpotlightInteractionHandler, 
                        SPCoreSpotlightLiveQueryTask, SPCoreSpotlightTask, SPCorrectionHandler, 
                        SPDASManager, SPHistoricalReport, SPHistoricalReportManager, 
-                       SPIndexMaintenanceTasks, SPIndexStorageUsageCollector, SPMaintenanceDeferralFlag, 
-                       SPQueryJob, SPQueryResultsQueue, SPUAProgressItem, SpotlightDaemonServer, 
-                       SpotlightReceiverConfig, SpotlightReceiverConnection, SpotlightReceiverConnectionManager, 
+                       SPIndexStorageUsageCollector, SPQueryJob, SPQueryResultsQueue, 
+                       SPUAProgressItem, SpotlightDaemonServer, SpotlightReceiverConfig, 
+                       SpotlightReceiverConnection, SpotlightReceiverConnectionManager, 
                        SpotlightSender, SpotlightSenderState, _SPBucketSet ]
     objc-ivars:      [ SDTrace._items, SPConcreteCoreSpotlightIndexer._aggregateWipeCount, 
                        SPConcreteCoreSpotlightIndexer._assertedBundleIds, SPConcreteCoreSpotlightIndexer._assertionEndTime, 

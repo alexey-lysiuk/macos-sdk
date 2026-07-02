@@ -2,7 +2,7 @@
 tbd-version:     4
 targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
 install-name:    '/usr/lib/swift/libswiftAppKit.dylib'
-current-version: 2685.50.119
+current-version: 2685.50.120
 reexported-libraries:
   - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
     libraries:       [ '/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit' ]
